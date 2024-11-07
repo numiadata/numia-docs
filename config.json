@@ -23,24 +23,43 @@
   "changelog": false,
   "navbar": [
     {
-      "label": "Guides",
-      "sidebarRef": "guides"
+      "label": "API",
+      "sidebarRef": "api"
     },
     {
-      "label": "API Reference",
-      "sidebarRef": "apiReference"
+      "label": "SQL Access",
+      "sidebarRef": "sql"
+    },
+    {
+      "label": "Infra",
+      "sidebarRef": "infra"
+    },
+    {
+      "label": "Lenses",
+      "sidebarRef": "infra"
+    },
+    {
+      "label": "Engage",
+      "sidebarRef": "engage"
+    },
+    {
+      "label": "Research",
+      "sidebarRef": "research"
+    },
+    {
+      "label": "AI",
+      "sidebarRef": "ai"
     }
   ],
   "externalLinks": [],
   "sidebars": [
     {
-      "sidebarRef": "guides",
+      "sidebarRef": "api",
       "categories": [
         {
           "categoryName": "Getting Started",
           "pages": [
-            "getting-started/introduction",
-            "getting-started/local-development"
+            "api/getting-started/whats-numia-api"
           ]
         },
         {
