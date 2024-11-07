@@ -10,11 +10,18 @@
     "en"
   ],
   "styles": {
-    "mainColor": "#0029F5",
-    "darkModeMainColor": "#F0F0FF",
-    "navbarColor": "#000621",
-    "navbarDarkModeColor": "#000621",
+    "mainColor": "#FB548C",
+    "darkModeMainColor": "#ffffff",
+    "navbarColor": "#FFFFFF",
+    "navbarDarkModeColor": "#10171F",
+    "backgroundDarkModeColor": "#10171F",
+    "logoSize": "",
+    "navbarMode": "tabbed",
     "pagination": false
+  },
+  "colorMode": {
+    "default": "dark",
+    "switchOff": false
   },
   "apiFiles": [
     "example.yml"
@@ -36,7 +43,7 @@
     },
     {
       "label": "Lenses",
-      "sidebarRef": "infra"
+      "sidebarRef": "lenses"
     },
     {
       "label": "Engage",
@@ -57,36 +64,75 @@
       "sidebarRef": "api",
       "categories": [
         {
-          "categoryName": "Getting Started",
+          "categoryName": "Overview",
           "pages": [
-            "api/getting-started/whats-numia-api"
-          ]
-        },
-        {
-          "categoryName": "Basics",
-          "pages": [
-            "basics/global-settings",
-            "basics/markdown-basics",
-            {
-              "groupName": "Page Templates",
-              "subpages": [
-                "basics/page-templates/api-introduction",
-                "basics/page-templates/environments",
-                "basics/page-templates/authentication"
-              ]
-            }
+            "api/overview/whats-numia-api"
           ]
         }
       ]
     },
     {
-      "sidebarRef": "apiReference",
+      "sidebarRef": "sql",
       "categories": [
         {
-          "categoryName": "Example",
+          "categoryName": "Overview",
           "pages": [
-            "reference/example/get-items",
-            "reference/example/create-item"
+            "sql/overview/whats-numia-sql"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "infra",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "infra/overview/whats-numia-infra"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "lenses",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "lenses/overview/whats-numia-lenses"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "engage",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "engage/overview/whats-numia-engage"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "research",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "research/overview/whats-numia-research"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "ai",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "ai/overview/whats-numia-ai"
           ]
         }
       ]
