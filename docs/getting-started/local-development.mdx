@@ -1,0 +1,30 @@
+---
+title: Local Development
+slug: /local-development
+description: Local Development description
+---
+
+WriteDocs CLI allows you to develop your documentation and preview it locally. 
+
+## Installation
+
+To install WriteDocs locally, run the following command line on your terminal:
+
+```
+npm i -g writedocs
+```
+
+## Commands
+
+To use the CLI commands, make sure you navigate to your project's directory on your terminal. The WriteDocs CLI currently offer the following commands:
+
+- `writedocs dev`: Start the WriteDocs development server. Your documentation portal will be available on http://localhost:3000/.
+
+    <Callout title="Port Management">
+    If port 3000 is being used, the CLI handles port conflicts and retries automatically.
+    </Callout>
+
+- `writedocs api`: Generates endpoint markdown pages from your OpenAPI Specification files.
+- `writedocs links`: Shows possible issues related to broken links. 
+- `writedocs translate`: Creates a `translations.json` file to map translations for categories and navbar items. 
+- `writedocs help`: Display help information, showing available commands and their descriptions.

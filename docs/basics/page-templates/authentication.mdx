@@ -1,0 +1,29 @@
+---
+title: Authentication
+slug: /authentication
+---
+
+The [your-company] API uses the ApiKey security schema to authenticate HTTP requests. API keys are alphanumeric credentials that authorize access to specific features within our API.
+
+## Authentication Headers
+Each request must include the following authorization headers:
+
+- `public-api-key:` Your public API key, which can be found in the [your-company]
+- `private-secret-key:` Your private secret key, also available in the [your-company] dashboard.
+- `X-idempotency-key:` A unique key, up to 64 characters long, to ensure idempotency. 
+
+The following code snippet shows an example of a request including the authentication headers:
+
+```js
+curl --request <Method> \
+     --url <URL> \
+     --header 'X-Idempotency-Key: <Your X-Idempotency-Key>' \
+     --header 'accept: application/json' \
+     --header 'content-type: application/json' \
+     --header 'private-secret-key: <Your private-secret-key>' \
+     --header 'public-api-key: <Your public-api-key>'
+```
+
+<Callout type="warning" title="Keep your keys safe">
+Do not share your secret API keys in public places like Github, Bitbucket, etc., because this opens space for malicious API calls.
+</Callout>

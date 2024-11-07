@@ -1,0 +1,146 @@
+---
+id: get-items
+title: "Get list of items"
+description: "Retrieves a list of items."
+sidebar_label: "Get list of items"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9kkGPmzAQhf+K9c4uJD36tocoyqmrNj1FOUxgNngLtmtP0EaI/14Z2CablRYhgcZv7OfvzQAfOJJY73Y1DM4s36xwl6BRc6qiDXkNBj9ZouWekyLV2iTKv6hJWUAjcgreJU4wA76vVvnzsf3pc1PlnbCTrKUQWltNNsrXlBsGpKrhjvKfXAPDgGKkKzRmf7e6P71yJdAIMV9G7GzD1nca64TPHKHBb9SFlmHWo4ajju9USaJ153sRdsKdWmN8wPFVy76xSeV3aV0ejY6l8QvlbJekgUH5zjtx7DkmmMOAS2xh0IiEZMqSgi2W/YvKd2W/xnjUsO7FT1asTAdvZol6et59iu/dFDnFN5kSr2ruvEsSSViR2m72ilytnn/82it2dfDWSU4rW5u3WherYpWJBJ+ko4nGDBJblo85P/oYbql/PVELXuE3KUNL1uUDJyrDAu6wDMJRo/FJcmEYTpT4d2zHMZf/XjheYQ5HjZ6ipVOmdDiOGg1TzXEi/YeveTyrikMOpaf2Mg3b40Rm4P8D3G72GMd/eTkXxA==
+sidebar_class_name: "get api-method"
+info_path: \reference\example/example-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get list of items"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/items"}
+>
+  
+</MethodEndpoint>
+
+
+
+Retrieves a list of items.
+
+<div>
+  <div>
+    <ApiTabs
+      label={undefined}
+      id={undefined}
+    >
+      <TabItem
+        label={"200"}
+        value={"200"}
+      >
+        <div>
+          
+          
+          A list of items.
+          
+          
+        </div><div>
+          <MimeTabs
+            className={"openapi-tabs__mime"}
+            schemaType={"response"}
+          >
+            <TabItem
+              label={"application/json"}
+              value={"application/json"}
+            >
+              <SchemaTabs
+                className={"openapi-tabs__schema"}
+              >
+                <TabItem
+                  label={"Schema"}
+                  value={"Schema"}
+                >
+                  <details
+                    style={{}}
+                    className={"openapi-markdown__details response"}
+                    data-collapsed={false}
+                    open={true}
+                  >
+                    <summary
+                      style={{}}
+                      className={"openapi-markdown__details-summary-response"}
+                    >
+                      <strong>
+                        Schema
+                      </strong>
+                    </summary><div
+                      style={{"textAlign":"left","marginLeft":"1rem"}}
+                    >
+                      
+                    </div><ul
+                      style={{"marginLeft":"1rem"}}
+                    >
+                      <li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem","paddingBottom":".5rem"}}
+                        >
+                          Array [
+                        </div>
+                      </li><SchemaItem
+                        collapsible={false}
+                        name={"id"}
+                        required={false}
+                        schemaName={"integer"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"integer","example":1}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"name"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"Item 1"}}
+                      >
+                        
+                      </SchemaItem><SchemaItem
+                        collapsible={false}
+                        name={"description"}
+                        required={false}
+                        schemaName={"string"}
+                        qualifierMessage={undefined}
+                        schema={{"type":"string","example":"This is item 1"}}
+                      >
+                        
+                      </SchemaItem><li>
+                        <div
+                          style={{"fontSize":"var(--ifm-code-font-size)","opacity":"0.6","marginLeft":"-.5rem"}}
+                        >
+                          ]
+                        </div>
+                      </li>
+                    </ul>
+                  </details>
+                </TabItem><TabItem
+                  label={"Example (from schema)"}
+                  value={"Example (from schema)"}
+                >
+                  <ResponseSamples
+                    responseExample={"[\n  {\n    \"id\": 1,\n    \"name\": \"Item 1\",\n    \"description\": \"This is item 1\"\n  }\n]"}
+                    language={"json"}
+                  >
+                    
+                  </ResponseSamples>
+                </TabItem>
+              </SchemaTabs>
+            </TabItem>
+          </MimeTabs>
+        </div>
+      </TabItem>
+    </ApiTabs>
+  </div>
+</div>
+      
