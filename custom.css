@@ -1,3 +1,8 @@
-.menu__link--active {
-    background: #FB548C;
+[data-theme="dark"]
+  .menu__link--active:not(.menu__list-item-collapsible .menu__link--active) {
+  background: #F78B4B !important;
+}
+
+.footer {
+    background: #01B4DB !important;
 }

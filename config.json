@@ -1,16 +1,16 @@
 {
-  "websiteName": "WriteDocs Documentation",
+  "websiteName": "Numia Documentation",
   "description": "Explore our documentation to learn how to create beautiful, scalable developer portals with WriteDocs.",
   "images": {
-    "logo": "media/logo.png",
+    "logo": "media/logo_numia_docs_black.svg",
     "favicon": "media/favicon.ico",
-    "darkLogo": ""
+    "darkLogo": "media/logo_numia_docs.svg"
   },
   "languages": [
     "en"
   ],
   "styles": {
-    "mainColor": "#FB548C",
+    "mainColor": "#F78B4B",
     "darkModeMainColor": "#ffffff",
     "navbarColor": "#FFFFFF",
     "navbarDarkModeColor": "#10171F",
@@ -46,7 +46,7 @@
       "sidebarRef": "lenses"
     },
     {
-      "label": "Engage",
+      "label": "NumiaEngage",
       "sidebarRef": "engage"
     },
     {
