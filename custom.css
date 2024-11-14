@@ -1,8 +1,13 @@
 [data-theme="dark"]
   .menu__link--active:not(.menu__list-item-collapsible .menu__link--active) {
-  background: #F78B4B !important;
+  background: #f78b4b !important;
+}
+
+[data-theme="dark"]
+  .menu__list-item-collapsible.menu__list-item-collapsible--active {
+  background: #f78b4b !important;
 }
 
 .footer {
-    background: #01B4DB !important;
+  background: #01b4db !important;
 }
