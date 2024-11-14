@@ -1,0 +1,133 @@
+{
+  "websiteName": "Numia Documentation",
+  "description": "Explore our documentation to learn how to create beautiful, scalable developer portals with WriteDocs.",
+  "images": {
+    "logo": "media/logo_numia_docs_black.svg",
+    "favicon": "media/favicon.ico",
+    "darkLogo": "media/logo_numia_docs.svg"
+  },
+  "languages": [
+    "en"
+  ],
+  "styles": {
+    "mainColor": "#F78B4B",
+    "darkModeMainColor": "#ffffff",
+    "navbarColor": "#FFFFFF",
+    "navbarDarkModeColor": "#10171F",
+    "backgroundDarkModeColor": "#10171F",
+    "logoSize": "",
+    "navbarMode": "tabbed",
+    "pagination": false
+  },
+  "colorMode": {
+    "default": "dark",
+    "switchOff": false
+  },
+  "apiFiles": [
+    "example.yml"
+  ],
+  "homepage": "/introduction",
+  "changelog": false,
+  "navbar": [
+    {
+      "label": "API",
+      "sidebarRef": "api"
+    },
+    {
+      "label": "SQL Access",
+      "sidebarRef": "sql"
+    },
+    {
+      "label": "Infra",
+      "sidebarRef": "infra"
+    },
+    {
+      "label": "Lenses",
+      "sidebarRef": "lenses"
+    },
+    {
+      "label": "NumiaEngage",
+      "sidebarRef": "engage"
+    }
+  ],
+  "externalLinks": [],
+  "sidebars": [
+    {
+      "sidebarRef": "api",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "api/overview/whats-numia-api"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "sql",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "sql/overview/whats-numia-sql"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "infra",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "infra/overview/whats-numia-infra"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "lenses",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "lenses/overview/whats-numia-lenses"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "engage",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "engage/overview/whats-numia-engage"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "research",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "research/overview/whats-numia-research"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "ai",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "ai/overview/whats-numia-ai"
+          ]
+        }
+      ]
+    }
+  ]
+}

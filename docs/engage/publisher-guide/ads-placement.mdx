@@ -1,0 +1,85 @@
+---
+title: Ads Placement
+slug: /engage/publisher-guide/ads-placement
+---
+
+The banner placement implementation in NumiaEngage is designed to be straightforward and adaptable, allowing you to easily integrate targeted ads across various placements. 
+
+Our API-based solution supports various ad formats, including:
+<CardList cols={5}>
+<Card 
+  title="Banner Ads"
+  icon="cards"
+  iconType='duotone'
+  iconSize='32px'
+/>
+<Card 
+  title="Notifications"
+  icon="bell-ringing"
+  iconType='duotone'
+  iconSize='32px'
+/>
+<Card 
+  title="Native Feed Integrations"
+  icon="rss-simple"
+  iconType='duotone'
+  iconSize='32px'
+/>
+<Card 
+  title="Rich Media Content"
+  icon="monitor-play"
+  iconType='duotone'
+  iconSize='32px'
+/>
+<Card 
+  title="Interactive Elements"
+  icon="cursor"
+  iconType='duotone'
+  iconSize='32px'
+/>
+</CardList>
+
+Below are the steps and specifications for setting up ad placements and the requirements for each format.
+
+
+## Step 1. Agreement on ad placement and `position_id`
+
+Numia collaborates with you to determine the specific ad placements on the publisher’s platform and assign each placement a unique `position_id`. 
+
+Example Position ID: `lwallet_home` for a banner in the wallet’s home section.
+
+
+## Step 2. Defining ad placement formats and constraints
+
+After ad placements and their corresponding `position_id`s are defined, both parties agree on the format and constraints for each placement. Each placement can display the following:
+
+* **Text-Only Ads**:
+    * Fields: Title, Body, Call-to-Action (CTA), and Logo.
+    * Character Limits: Defined for each field to ensure consistency.
+* **Image-Only Ads**:
+    * Dimensions: Height and width (e.g., 240x60 pixels for a logo).
+    * Resolutions: Specified to ensure quality across devices.
+
+
+## Step 3. Campaign agnostic setup
+
+NumiaEngage automatically assigns the appropriate campaign to each placement based on the user's profile and eligibility.
+* **Automatic Asset Retrieval**: When requesting an ad fill, the publisher only needs to pass the user’s connected wallet address. NumiaEngage’s API then returns the appropriate assets for the eligible campaign(s).
+* **Campaign Flexibility**: The banner setup is designed to be agnostic to multiple campaigns. This means that as long as the specified ad placement is used, the banner can seamlessly display ads from various campaigns (including those from different advertisers) without requiring new implementation efforts.
+
+NumiaEngage informs you of all potential campaigns that may be displayed. This allows you to opt out of specific campaigns (e.g., those from competitors) if desired.
+
+
+## Example configuration
+* **Placement**: Banner on the home section of a wallet app.
+* **Position ID**: `lwallet_home`
+* **Ad Placement Fields**:
+    * **Logo**: 240x60 pixels.
+    * **Title**: Up to 30 characters.
+    * **Body**: Up to 70 characters.
+    * **CTA**: Up to 10 characters.
+
+
+<Callout type="info" title="Empty State Handling">
+If the user's address does not qualify for any active campaign, the API will return an empty response. In this case, no ad or banner will be displayed, ensuring a clean user experience without unfilled ad spaces.
+</Callout>

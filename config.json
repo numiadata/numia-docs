@@ -1,6 +1,6 @@
 {
   "websiteName": "Numia Documentation",
-  "description": "Explore our documentation to learn how to create beautiful, scalable developer portals with WriteDocs.",
+  "description": "Explore our documentation to BUILD, MONITOR and GROW your project in web3.",
   "images": {
     "logo": "media/logo_numia_docs_black.svg",
     "favicon": "media/favicon.ico",
@@ -17,7 +17,7 @@
     "backgroundDarkModeColor": "#10171F",
     "logoSize": "",
     "navbarMode": "tabbed",
-    "pagination": false
+    "pagination": true
   },
   "colorMode": {
     "default": "dark",
@@ -26,113 +26,49 @@
   "apiFiles": [
     "example.yml"
   ],
-  "homepage": "/introduction",
+  "homepage": "home.html",
   "changelog": false,
   "navbar": [
     {
-      "label": "API",
-      "sidebarRef": "api"
-    },
-    {
-      "label": "SQL Access",
-      "sidebarRef": "sql"
-    },
-    {
-      "label": "Infra",
-      "sidebarRef": "infra"
-    },
-    {
-      "label": "Lenses",
-      "sidebarRef": "lenses"
-    },
-    {
       "label": "NumiaEngage",
       "sidebarRef": "engage"
-    },
-    {
-      "label": "Research",
-      "sidebarRef": "research"
-    },
-    {
-      "label": "AI",
-      "sidebarRef": "ai"
     }
   ],
   "externalLinks": [],
   "sidebars": [
-    {
-      "sidebarRef": "api",
-      "categories": [
-        {
-          "categoryName": "Overview",
-          "pages": [
-            "api/overview/whats-numia-api"
-          ]
-        }
-      ]
-    },
-    {
-      "sidebarRef": "sql",
-      "categories": [
-        {
-          "categoryName": "Overview",
-          "pages": [
-            "sql/overview/whats-numia-sql"
-          ]
-        }
-      ]
-    },
-    {
-      "sidebarRef": "infra",
-      "categories": [
-        {
-          "categoryName": "Overview",
-          "pages": [
-            "infra/overview/whats-numia-infra"
-          ]
-        }
-      ]
-    },
-    {
-      "sidebarRef": "lenses",
-      "categories": [
-        {
-          "categoryName": "Overview",
-          "pages": [
-            "lenses/overview/whats-numia-lenses"
-          ]
-        }
-      ]
-    },
     {
       "sidebarRef": "engage",
       "categories": [
         {
           "categoryName": "Overview",
           "pages": [
-            "engage/overview/whats-numia-engage"
+            "engage/overview/whats-numia-engage",
+            "engage/overview/getting-started",
+            "engage/overview/core-concepts"
           ]
-        }
-      ]
-    },
-    {
-      "sidebarRef": "research",
-      "categories": [
+        },
         {
-          "categoryName": "Overview",
+          "categoryName": "Publisher Guide",
           "pages": [
-            "research/overview/whats-numia-research"
+            "engage/publisher-guide/getting-started",
+            "engage/publisher-guide/ads-placement",
+            {
+              "page": "engage/publisher-guide/api-integration/introduction",
+              "groupName": "API Integration",
+              "subpages": [
+                "engage/publisher-guide/api-integration/environments",
+                "engage/publisher-guide/api-integration/example"
+              ]
+            },
+            "engage/publisher-guide/earnings-payments"
           ]
-        }
-      ]
-    },
-    {
-      "sidebarRef": "ai",
-      "categories": [
+        },
         {
-          "categoryName": "Overview",
+          "categoryName": "Advertiser Guide",
           "pages": [
-            "ai/overview/whats-numia-ai"
+            "engage/advertiser-guide/getting-started",
+            "engage/advertiser-guide/campaign-monitoring",
+            "engage/advertiser-guide/advertisement-reference"
           ]
         }
       ]

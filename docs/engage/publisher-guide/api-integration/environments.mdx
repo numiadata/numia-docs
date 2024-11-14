@@ -1,0 +1,26 @@
+---
+title: Environments
+slug: /engage/publisher-guide/api-integration/environments
+---
+
+You can interact with the NumiaEngage API using two environments: Sandbox and Production.
+
+## Sandbox
+The Sandbox is a controlled development environment where you can conduct tests during implementation. Data used in the Sandbox is not real, ensuring that your tests don't impact live data or accounting.
+
+The base URL for the Sandbox environment is:
+```
+https://api.staging.numia.xyz
+```
+
+## Production
+The Production environment handles real events, impacting live data and accounting. This environment should only be used once your integration tests have been completed and you’re ready to go live.
+
+The base URL for the Production environment is:
+```
+https://engage-api.numia.xyz
+```
+
+<Callout type="info" title="Credentials">
+The credentials used for the NumiaEngage API differ between the Sandbox and Production environments. Depending on the environment you select within the Dashboard, you will receive different API keys and account information.
+</Callout>
