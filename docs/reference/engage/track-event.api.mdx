@@ -5,7 +5,7 @@ description: "# Tracking an Event"
 sidebar_label: "Track an event"
 hide_title: true
 hide_table_of_contents: true
-api: eJylVMFu2zAM/RWDu7pJtqNu3dbDLluBZic3B1piE7WyrEpU2szwvw+U09ZZA2zATjFC8vHx6ZED9IEisu39NwMKOKJ+uNqTZ6iBcZtANWDI2T3FA2xqMJR0tEEKQMGHai0F1m8r9FWpu/VfidE6MtUst8K2z1zxMXtx66GGSI+ZEn/uzQHUALr3LI3VAPdJ4AdIekcdyhcfAoGCvr0nLdxCFOJsKUnUY0ezrMTR+i2MNVhDni0f/g4xRf+EqIF87kQENCZSSrApqGebafS9txrdmeg4jWsjGUEr0QIkeMgcbZt5zuSNJxpjRUN016dDZ+ewdQSKYybp0BGfFevfEdh2lBi7MIPxuWspvhuhaD5TeF68GccpPYXep6nZp9VKfk4NVCwz2YJMlbLWlNJddk7wZobAEJzVxafLF3PQM3ZByA/j1K4j3vXi4tCn8sDIO1CwLPBQQ6K4pyiWHiBHBwp2zCGp5ZL8Frd0gcEufO4sLp4Pv2DcSInOsfinGaAljBQvs6A2m3n4Rnw6jTlPepVQ+giBkgbqmFQktf6ul0xhNmnycbFarIqcLNPBd2FUXVRXhaQYTebr0L85H8oayg7ScXdPZJ7t1n+u7HEepmdeBofWC52i5XCUu5luiNyKnTyDamAYWkz0M7pxlL8fs9wS1Wxq2GO0kwEb2YMdoaFYtH6gAyj4MtG+WE/rskeXpX1xwFi/ZF1qTYFn8Xdukbd6dcf1j5s11NAez07XG6mJ+CQnCZ9AAYzj+BvHwMQr
+api: eJyllMFu2zAMhl/F4K5uku2oW7f1sMtWrN3J9YG22UStLKsSlTYz/O4DpbRx2mAdsFwSRNRP8ucnjjA48sh6sN86UMAe2/uLLVmGEhjXAVQFHRm9Jb+DuoSOQuu1kwug4ENxLRe0XRdoi3Tvxn4lRm2oK2axBTZD5IL30YsbCyV4eogU+PPQ7UCN0A6WJbEaAZ0zuk1lLe+CpBohtBvqUX7xzhEoGJo7aqVO56UJ1hTk1GJPs6jAXts1TCXojixr3r0vkU9fS5RANvZiCHadpxCgTqonk7VoB6tbNCdOp9y69tSJWjpNQqKHzF43keeVHOrErtPiCprL46ajMdgYAsU+kmToiU+a9e8KrHsKjL2bydjYN+TftJA8nzk8v1xPUw4PbrAhJ/u0WsnXMUwJn4wIdUWIbUsh3EZjRO8dOOgJeyfFj1NO1xNvBiHaDSENGHkDCpZJHkoI5LfkBe8RojegYMPsglouya5xTWfo9MLGXuPiafcbplqutNEnfqoRGkJP/jyKalXPj6+E09zmPOjFQskjBaQwUPugZKl08/PwKC5emtpDfSDxBMvPUGYkD6EzEmd8HmF2wOV47Cvh294OkkXcynP6uFgtVmnELMXBd3GpOCsuknEiLp73aGeFpzUhO4L2u+Vo9LO3/58rZe8F0xMvnUFtpZw033GPQJV3nOyyjaChKhjHBgP98maa5O+HKLtOVXUJW/Q6P4pK3uaGsCOf5n9PO1DwJZd9dp2f8BZNTKN4TehUPt84b1ty/NfYekbv5Y+rayih2a/IfujkjsdHWZ/4CAqghCH5kYhL/41g0K6jDENB1pTPH9k6Dlw=
 sidebar_class_name: "post api-method"
 info_path: reference/engage/numia-engage
 custom_edit_url: null
@@ -49,7 +49,7 @@ Detailed description about tracking.
 
 <RequestSchema
   title={"Body"}
-  body={{"content":{"json":{"schema":{"type":"object","properties":{"name":{"type":"string"},"identity":{"type":"object","properties":{"type":{"type":"string","enum":["address"]},"id":{"type":"string"},"canonical":{"type":"string"}},"required":["type","id"]},"attributes":{"type":"object","additionalProperties":{"nullable":true}},"meta":{"type":"object","additionalProperties":{"nullable":true}},"timestamp":{"type":"number"}},"required":["name","identity","timestamp"]}}}}}
+  body={{"content":{"application/json":{"schema":{"type":"object","properties":{"name":{"type":"string"},"identity":{"type":"object","properties":{"type":{"type":"string","enum":["address"]},"id":{"type":"string"},"canonical":{"type":"string"}},"required":["type","id"]},"attributes":{"type":"object","additionalProperties":{"nullable":true}},"meta":{"type":"object","additionalProperties":{"nullable":true}},"timestamp":{"type":"number"}},"required":["name","identity","timestamp"]}}}}}
 >
   
 </RequestSchema>

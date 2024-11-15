@@ -11,7 +11,47 @@ components:
     bearerAuth:
       type: http
       scheme: bearer
-  schemas: {}
+  schemas:
+    CampaignResponse:
+      type: object
+      properties:
+        campaign_id:
+          type: integer
+        campaign_owner:
+          type: string
+        campaign_name:
+          type: string
+        campaign_topic:
+          type: string
+        audience_id:
+          type: integer
+        audience_name:
+          type: string
+        address:
+          type: string
+        creatives:
+          type: object
+          properties:
+            position_id:
+              type: string
+            logo:
+              type: string
+            title:
+              type: string
+            body:
+              type: string
+            cta:
+              type: string
+            url:
+              type: string
+            banner_url:
+              type: string
+        start_date:
+          type: string
+          format: date-time
+        end_date:
+          type: string
+          format: date-time
   parameters: {}
 paths:
   /campaign/multiple-cointype:
@@ -40,7 +80,8 @@ paths:
           description: Successful response
           content:
             application/json:
-              example: {}
+              schema:
+                $ref: '#/components/schemas/CampaignResponse'
   /campaign/{address}:
     get:
       operationId: getCampaignForAddress
@@ -74,7 +115,8 @@ paths:
           description: Successful response
           content:
             application/json:
-              example: {}
+              schema:
+                $ref: '#/components/schemas/CampaignResponse'
   /click:
     get:
       operationId: redirectClickLink
@@ -124,7 +166,7 @@ paths:
         Detailed description about tracking.
       requestBody:
         content:
-          json:
+          application/json:
             schema:
               type: object
               properties:
@@ -167,12 +209,12 @@ paths:
   /sdk/track:
     post:
       operationId: trackSdkEvent
-      summary: Track an event from the numia engage sdk
+      summary: Track an event from the NumiaEngage SDK
       tags:
         - delivery
       requestBody:
         content:
-          json:
+          application/json:
             schema:
               type: object
               properties:
@@ -196,6 +238,15 @@ paths:
                 - name
                 - timestamp
                 - anonymousId
+              example:
+                name: "event_name"
+                attributes:
+                  key1: "value1"
+                  key2: "value2"
+                meta: {}
+                timestamp: 1633024800000
+                anonymousId: "anon123"
+                userId: "user456"
       responses:
         200:
           description: SDK event tracked successfully

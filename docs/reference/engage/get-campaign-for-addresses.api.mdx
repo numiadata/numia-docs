@@ -5,7 +5,7 @@ description: "Get most relevant campaign for a user using addresses of different
 sidebar_label: "Get most relevant campaign for a user using addresses of different cointypes"
 hide_title: true
 hide_table_of_contents: true
-api: eJy1U02P0zAQ/SvWnEBKP+DoW4WWFReQWDhVEZpNJqnBsb32uGqI8t/RpGkJ2+UGuUSJ58178954AB8oIhvvPtSgoSV+h11A07r3Pu7qOlJKlKAAxjaB3kNN1hwp9lAWEDBiR0xRTgZI1YE6BD0A94FAQ+JoXAtjAZGesolUg+aYqQCHnRQEn4xwfzM1FGAcaHjK0nwslu3Q9Z+aiWJujDFiLwimLr1AKPBnv8q/q8DFmEsNpSBS8E6O9ABvt1t51ZSqaILoBg0PuaoopSZbdSmGAirvmBxP4kOwppos3nxPghmATtgFS6CHUZ7iWc97YtX5xCqSpSM6VtUcimp8VKhyoqhyMq5VV/HKN6o2TUORBOCNEwdkpo744Od0QVLjA2jYXHpuumzZBEurCwgKSBSPl1xztKDhwByS3mzItdjSCoNZu9wZXJ/6n5NXiaocDfcT5pEwUtxlodqXy+MHifVs6LLoGpjwiICpDPRcJJmCcY2XSlF2durNerveynYaFjvhoyhSK3U3iZTNCz5xh5Prc9z/2N0/ortOwXTiTbBonIiYHBxm5/dw4ZNsbrwvCzj4xFI3DI+Y6Gu04yi/z2sp7tYm4aOVRW7QJroRcV0/ePV53vnXSmx6SdwP6m+u4hFtlsrpIv4HtuWV+81Vykc0QjZtTQEHwpriNPMZuKsqCrxA3Vwv6XLd+Pu7LzCOvwAwKrOG
+api: eJy1VE2P00AM/SuRTyClH3DMbYWWFReQduFUVSs3cdJZkplZj1M2RPnvyGmaZrdZEBKcqsbP9ptn+7XgPDGKcfZTBgkUJB+w8mgK+9HxVZYxhUABYhAsAiQbyKg0B+IGtjF4ZKxIiDXSQkj3VCEkLUjjCRIIwsYW0MXA9FgbpgwS4ZpisFgpwLtgtPe9ySAGYyGBx1qLd/G0HNrmS963GAojMzaaIVSFmYaa/uLT9nUWOHnmlMNWM4J3VkNJC+/Xa/3JKKRsvPKGBO7qNKUQ8rqMTmCIIXVWyEpP3vvSpL3Eq4egOTNKud0DpQIxeNaBiDl2TIdZqD5nsLFCBbHqOgLcD0s8K/0IOb72dwhx3qSzEKwzQzalV4mMgFe7DCrPM2BCMQcKf5ZkujJzpUpXuNmAGCnnme1c1szTkvltrrmcL4TWEt/Ph7suhiDIcp+hzBCJIXdcoUACCliIqUiLks3+KuP8VDid8u1pMbuup/F8g29IosoFiZhKOqCV6LQQUe44wqgOxFEdjC2i8VQil0eZyXNi0gRnrHLTC6pI9m7wEp0eyh4SWJ1qrqq6FONLWpySIIZAfDi5SK8e7EV8SFYrsgUWtEBvlrauDC6fmp/9ZQZKazbS9Dk7Qia+qrXVZjsN3+mlHTdnChql1D5KoIdBMoB6FY3N+01SZkel3i3XyzWc9f2sjKJFdN2T1GF5F6TC/sYHc/nH6j4b3fgKoSdZ+RKNnaznUfnNeN46mwvttzHsXRDFte0OA33jsuv089EEVd3MBNyVaps5loEuSIxmB29uB4d9G6lMc+S+U3Nh/Acsa0X2tv8fuk0N/txrq3/YaLN+a2LYE2bqopt2SLxKU/Iyybowc60ybvzN9Vfoul8RKovT
 sidebar_class_name: "get api-method"
 info_path: reference/engage/numia-engage
 custom_edit_url: null
@@ -55,7 +55,7 @@ Get most relevant campaign for a user using addresses of different cointypes
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"Successful response","content":{"application/json":{"example":{}}}}}}
+  responses={{"200":{"description":"Successful response","content":{"application/json":{"schema":{"type":"object","properties":{"campaign_id":{"type":"integer"},"campaign_owner":{"type":"string"},"campaign_name":{"type":"string"},"campaign_topic":{"type":"string"},"audience_id":{"type":"integer"},"audience_name":{"type":"string"},"address":{"type":"string"},"creatives":{"type":"object","properties":{"position_id":{"type":"string"},"logo":{"type":"string"},"title":{"type":"string"},"body":{"type":"string"},"cta":{"type":"string"},"url":{"type":"string"},"banner_url":{"type":"string"}}},"start_date":{"type":"string","format":"date-time"},"end_date":{"type":"string","format":"date-time"}},"title":"CampaignResponse"}}}}}}
 >
   
 </StatusCodes>

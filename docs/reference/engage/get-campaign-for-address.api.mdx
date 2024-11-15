@@ -5,7 +5,7 @@ description: "Get most relevant campaign for an address"
 sidebar_label: "Get most relevant campaign for an address"
 hide_title: true
 hide_table_of_contents: true
-api: eJytVMGO00AM/ZXIJ5Bm28IxtxVaVlxAYuG0qiI3cZNhJzOzM57SEOXfkadJt+wCEhK5VLGf/Z6fnY7gPAVk7eyHBkpoid9h71G39r0L100TKEZQwNhGKO+hIaMPFAbYKvAYsCemIJkRYt1Rj1COgHb4tM8xHjxBCZGDti0oIJt6adMat0MD20k9x0zbSUGgx6QDNVBySKTAYi8QPMvRFkrwyB1IhyfmP/E9kDeh6lxPoOYXOnrjgrwbQl99R2OIF0gO9W6nDT3LcEdVHQbPrkLvl2h0j4kiV/XsXY5XMbUtRYa/jORd1GJ+pZtlrMck/k5bqYne2UhRRnu72chPQ7EO2ksNlHCX6ppi3CdTLGBQUDvLZDmvwnuj67zf9bcoNSPQEXtvCMpxkkc963lLXPQuchHI0AEtF8tUxd6FAm3xtIeeuHPz3YA6baSE9VKwHmfoJB5ROCy3koKBEjpmH8v1mmyLLV2h1yubeo2r4/AjGxCpTkHzkGt2hIHCdRKK++1l+k72f3LpEnQ+B+ERARkG5QwCGV3bvROkKDuN/2a1WW1k0ZrFI/goioqr4iaLhEnJzrjHbOW8xX+x7BezzxKZjrz2BrUVhmzPONt5D0szUFAujbYKOhdZ0uO4w0hfg5kmCZ/uRxxrdMSdkZvbo4n0gvt8J/Dq83yerwsZ/XeaHmh4ca8HNEmQeVkHDFro/j/1HEQ7XHIukhZH8j9HR9hQyBJO2eu6Js8XdS++CNF+vuPbmy8wTT8BypHDFw==
+api: eJytVU1v2zAM/SsGTxvgNtmOvhXDVuyyAe12CgKDsRlbrSypEp3WC/zfByp24jZuhwI7BRYfycfHj+zBOvLIyprvJWRQEX/BxqGqzDfrr8rSUwiQAmMVIFtBSVrtyHewTsGhx4aYvFj2EIqaGoRsD2i6n9v4xp0jyCCwV6aCFMi0jYSptN2ghnWfvsT06z4FTw+t8lRCxr6lFAw2AsEjHWUgA4dcg0Q4ZX4t3z057fPaNgTp8EFPTlsv35rQ5Y+oNfEIiU+N3ShNLyxcU174zrHN0bnxNdiHlgLnxaBdfM9DW1UUGN4oydmgRPxclWNZD63o26/FJzhrAgUp7fNyKT8lhcIrJz6QwW1bFBTCttXJCIYUCmuYDMdWOKdVEfu7uAviMyOX3dxRwZCC8zINrA4Zj8WocgJWhqkiD316AthHQ/5c/ynkUO9bCLZOFbMQbEtFpqBXiRwBr2YZR2eWgSdktaPwb0mm7ZoLpW1lZw2sWM8z29iym6fFMyPdp9B6PR8IjSGfz5v7PoXA6DkvkWeIpLC1vkGGDARwwaohCUqmfJfHqVQY78jNOJh9H2k8n+Br4qSxgRNPmnZoOBkHItlan6BJTlvfENd2uFLSGtn/DBajw2I/QHvZSPK78TJFSaBmdiFbLMhUWNEFOnVp2kbh5VP3J65boKL1irvosyH05K9aSbFaT823sj6HcZiCjvpIHiEQYZANoCiNMts4HsLsUP6ny+XlEk6i/RBGyUXyNZKUDjgbuMG4uMPNeI9kz8Q+UmR64oXTqMxkoA5yro4LCSlkY6B1CrUNLOb9foOBfnvd9/J8uFaiWKkCbrRcuC3qQGe5j1cJPtwMx/BjIqXPcbqn7uw67lC3gozN2qFXku7/px4e0XTTnCOlUZH4P1UTlnL4VvvBelUU5Hjid3Z/hftxjq+//oK+/ws/+Ztk
 sidebar_class_name: "get api-method"
 info_path: reference/engage/numia-engage
 custom_edit_url: null
@@ -55,7 +55,7 @@ Get most relevant campaign for an address
 <StatusCodes
   id={undefined}
   label={undefined}
-  responses={{"200":{"description":"Successful response","content":{"application/json":{"example":{}}}}}}
+  responses={{"200":{"description":"Successful response","content":{"application/json":{"schema":{"type":"object","properties":{"campaign_id":{"type":"integer"},"campaign_owner":{"type":"string"},"campaign_name":{"type":"string"},"campaign_topic":{"type":"string"},"audience_id":{"type":"integer"},"audience_name":{"type":"string"},"address":{"type":"string"},"creatives":{"type":"object","properties":{"position_id":{"type":"string"},"logo":{"type":"string"},"title":{"type":"string"},"body":{"type":"string"},"cta":{"type":"string"},"url":{"type":"string"},"banner_url":{"type":"string"}}},"start_date":{"type":"string","format":"date-time"},"end_date":{"type":"string","format":"date-time"}},"title":"CampaignResponse"}}}}}}
 >
   
 </StatusCodes>

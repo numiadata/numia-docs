@@ -1,0 +1,119 @@
+---
+title: Track events
+slug: /engage/publisher-guide/api-integration/guides/track-events
+---
+
+This guide explains how to send conversion analytics events from your website to track user actions, such as `trade_made`, `wallet_connected`, or any other custom events related to conversions. It also outlines conventions for standard event names and attributes to improve reporting accuracy and benchmarks.
+
+You can send conversion analytics events directly from your website. For on-chain conversions, ensure the relevant blockchain is indexed by NumiaEngage to track these events automatically. If the chain isn’t indexed, you’ll need to manually track the key conversion events on your website.
+
+## Required parameters for event tracking
+
+Each event must include the following required fields:
+
+- **`name`**: The name of the conversion event (e.g., `wallet_connected`).
+- **`identity`**: Contains user identity information such as wallet address.
+- **`timestamp`**: The date and time of the event in the required format.
+
+While the `attributes` and `meta` objects are optional, we strongly recommend adding additional details such as `token_amounts`, `token_denoms`, and `contract` for on-chain conversions.
+
+## Request payload
+Below is the standard payload format for submitting an event:
+
+```json
+{
+    "name": "$event_name", // required
+    "identity": {
+        "type": "address", // required
+        "id": "$address" // required
+    },
+    "attributes": {
+        "attribute_key_1": "attribute_value_1",
+        "attribute_key_2": "attribute_value_2",
+        "attribute_key_3": "attribute_value_3"
+    },
+    "meta": {}, // optional but recommended
+    "timestamp": "$Date.now()" // required
+}
+```
+
+## Conventions for event tracking
+To standardize reporting and improve benchmarks, we recommend using the following standard event names:
+- `wallet_connected`
+- `open_position`
+- `claim_rewards`
+
+### `wallet_connected`
+This event tracks when a user connects their wallet.
+
+```json
+{
+    "name": "wallet_connected",
+    "identity": {
+        "type": "address",
+        "id": "0x123456789abcdef"
+    },
+    "timestamp": "2024-11-14T12:00:00Z"
+}
+```
+
+### `open_position`
+We recommend using the data directly from the on-chain message. Here’s an example:
+
+```json
+{
+    "name": "open_position",
+    "identity": {
+        "type": "address",
+        "id": "0x123456789abcdef"
+    },
+    "attributes": {
+        "tokens": [
+            {"amount": 5, "denom": "ETH"},
+            {"amount": 2, "denom": "BTC"}
+        ],
+        "amount_usd": 50.00
+    },
+    "timestamp": "2024-11-14T12:00:00Z"
+}
+```
+
+### `claim_rewards`
+This event tracks when a user claims rewards. We recommend including token details from the on-chain message.
+
+```json
+{
+    "name": "claim_rewards",
+    "identity": {
+        "type": "address",
+        "id": "0x123456789abcdef"
+    },
+    "attributes": {
+        "tokens": [
+            {"amount": 5, "denom": "ETH"}
+        ],
+        "amount_usd": 50.00
+    },
+    "timestamp": "2024-11-14T12:00:00Z"
+}
+```
+
+## Next step
+The next step is of the integration is to test the Event Tracking endpoints. 
+
+<CardList cols={2}>
+<Card 
+  title="Track an event"
+  link="/reference/engage/track-event"
+  icon="arrow-square-up-right"
+  iconType='regular'
+  iconSize='32px'
+/>
+<Card 
+  title="Track an event from the NumiaEngage SDK"
+  link="/reference/engage/track-sdk-event"
+  icon="arrow-square-up-right"
+  iconType='regular'
+  iconSize='32px'
+/>
+</CardList>

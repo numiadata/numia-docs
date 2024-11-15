@@ -1,0 +1,105 @@
+---
+title: Get campaign
+slug: /engage/publisher-guide/api-integration/guides/get-campaign
+---
+
+Here’s the revised version with a bulleted approach for the parameters:
+
+---
+
+# Get Campaign Guide
+
+This guide explains how to request an ad using the NumiaEngage API, including the required parameters and a sample response.
+
+
+## Request an Ad
+
+To request an ad, use the following **cURL command**:
+
+```bash
+curl -X GET "https://api.staging.numia.xyz/campaign/:address?position_id=:position_id" \
+  -H "Accept: application/json" \
+  -H "Authorization: Bearer :bearer_token"
+```
+
+### Parameters
+
+- **`address` (Path Parameter)**: 
+  - The blockchain address of the connected wallet.
+  - For non-wallet-specific ads, pass `address=global`.
+
+- **`position_id` (Query Parameter)**: 
+  - The unique identifier for the ad placement, such as `wallet_home`.
+
+- **`bearer_token` (Header)**:
+  - The authentication token required to authorize the request.
+
+
+## Example response
+
+The API returns a JSON object containing the details of the requested ad. Below is an example response:
+
+```json
+[
+  {
+    "campaign_id": 1,
+    "campaign_owner": "Quasar",
+    "campaign_name": "01 - Quasar CL Campaign",
+    "campaign_topic": "Concentrated Liquidity",
+    "audience_id": 1,
+    "audience_name": "Osmosis - OOB & don't manage positions",
+    "address": "osmo1k2a9heyxv95xl9j88dz90ge4qs6qq9hun7qgy8",
+    "creatives": {
+      "position_id": "wallet_home",
+      "logo": "https://storage.googleapis.com/numia-campaigns/campaign-assets/1-quasar-cl/quasar-logo.png",
+      "title": "No time to manage positions?🧪",
+      "body": "Optimize returns with our managed vaults!",
+      "cta": "Dive deeper",
+      "url": "https://app.quasar.fi/?utm_source=wallet-numia&utm_medium=wallet&utm_campaign=01-quasar-cl-campaign",
+      "banner_url": "https://storage.googleapis.com/numia-campaigns/campaign-assets/1-quasar-cl/quasar-banner.png"
+    },
+    "start_date": "2023-09-29T00:00:00.000Z",
+    "end_date": "2023-10-31T00:00:00.000Z"
+  }
+]
+```
+
+### Response Fields
+
+- **`campaign_id`**: The unique ID of the campaign.
+- **`campaign_owner`**: The entity managing the campaign.
+- **`campaign_name`**: The name of the campaign.
+- **`campaign_topic`**: The main focus or theme of the campaign.
+- **`audience_id`**: The ID of the target audience.
+- **`audience_name`**: The description of the target audience segment.
+- **`address`**: The wallet address or `global` identifier tied to the campaign.
+- **`creatives`**:
+  - **`position_id`**: The identifier for the placement of the ad.
+  - **`logo`**: URL for the logo image.
+  - **`title`**: The headline text of the ad.
+  - **`body`**: The main text or description of the ad.
+  - **`cta`**: The call-to-action button text.
+  - **`url`**: The landing page URL linked to the ad.
+  - **`banner_url`**: URL for the banner image (if included).
+- **`start_date`**: The campaign's start date.
+- **`end_date`**: The campaign's end date.
+
+## Next step
+The next step is of the integration is to test the Campaign endpoints. Testing allows you to verify that the ad data is fetched correctly and displayed as intended.
+
+<CardList cols={2}>
+<Card 
+  title="Get most relevant campaign for an address"
+  link="/reference/engage/get-campaign-for-address"
+  icon="arrow-square-up-right"
+  iconType='regular'
+  iconSize='32px'
+/>
+<Card 
+  title="Get most relevant campaign for a user using addresses of different cointypes"
+  link="/reference/engage/get-campaign-for-addresses"
+  icon="arrow-square-up-right"
+  iconType='regular'
+  iconSize='32px'
+/>
+</CardList>

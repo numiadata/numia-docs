@@ -62,7 +62,13 @@
               "groupName": "API Integration",
               "subpages": [
                 "engage/publisher-guide/api-integration/environments",
-                "engage/publisher-guide/api-integration/example",
+                {
+                  "groupName": "API Guides",
+                  "subpages": [
+                    "engage/publisher-guide/api-integration/guides/get-campaign",
+                    "engage/publisher-guide/api-integration/guides/track-events"
+                  ]
+                },
                 {
                   "groupName": "Endpoints",
                   "subpages": [
