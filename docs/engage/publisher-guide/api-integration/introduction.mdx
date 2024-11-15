@@ -7,30 +7,44 @@ Once onboarded, you can start using the Publisher API to request targeted ads an
 
 ## First steps to start integrating
 1. **API Access**: Contact the NumiaEngage team to set up access credentials and obtain API keys.
-2. **Define Ad Placements**: Work with the Numia team to determine the ideal placements for your ads, including assigning specific `position_id`'s to each location.
-3. **Review Endpoints Documentation**: Familiarize yourself with the available endpoints in the API Playground and configure initial requests.
+2. [**Environments**](/engage/publisher-guide/api-integration/environments): Check the details of each available environments. 
+3. **Ad Placements**: Work with the Numia team to determine the ideal placements for your ads, including assigning specific `position_id`'s to each location.
+4. [**API Guides**](/engage/publisher-guide/api-integration/guides/get-campaign): Understand how to request ads and track events.
+5. **Test Endpoints**: Familiarize yourself with the available endpoints in the API Playground and configure initial requests.
 
 
-# API Services
-
+# API Endpoints
+<CardList cols={2}>
+<Card 
+  title="Get most relevant campaign for an address​" 
+  icon="arrow-square-up-right"
+  iconType='regular'
+  link="/reference/engage/get-campaign-for-address"
+/>
+<Card 
+  title="Get most relevant campaign for a user using addresses of different cointypes​"
+  icon="arrow-square-up-right"
+  iconType='regular'
+  link="/reference/engage/get-campaign-for-addresses"
+/>
+</CardList>
 <CardList cols={3}>
-
 <Card 
-  title="Get Campaign for Address with Different Cointypes​"
+  title="Redirect a link click" 
   icon="arrow-square-up-right"
   iconType='regular'
+  link="/reference/engage/redirect-click-link"
 />
-
 <Card 
-  title="Get Campaign for an Address​" 
+  title="Track an event" 
   icon="arrow-square-up-right"
   iconType='regular'
+  link="/reference/engage/track-event"
 />
-
 <Card 
-  title="Redirect Link Click" 
+  title="Track an event from the NumiaEngage SDK" 
   icon="arrow-square-up-right"
   iconType='regular'
+  link="/reference/engage/track-sdk-event"
 />
-
 </CardList>
