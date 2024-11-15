@@ -1,0 +1,66 @@
+---
+id: track-event
+title: "Track an event"
+description: "# Tracking an Event"
+sidebar_label: "Track an event"
+hide_title: true
+hide_table_of_contents: true
+api: eJylVMFu2zAM/RWDu7pJtqNu3dbDLluBZic3B1piE7WyrEpU2szwvw+U09ZZA2zATjFC8vHx6ZED9IEisu39NwMKOKJ+uNqTZ6iBcZtANWDI2T3FA2xqMJR0tEEKQMGHai0F1m8r9FWpu/VfidE6MtUst8K2z1zxMXtx66GGSI+ZEn/uzQHUALr3LI3VAPdJ4AdIekcdyhcfAoGCvr0nLdxCFOJsKUnUY0ezrMTR+i2MNVhDni0f/g4xRf+EqIF87kQENCZSSrApqGebafS9txrdmeg4jWsjGUEr0QIkeMgcbZt5zuSNJxpjRUN016dDZ+ewdQSKYybp0BGfFevfEdh2lBi7MIPxuWspvhuhaD5TeF68GccpPYXep6nZp9VKfk4NVCwz2YJMlbLWlNJddk7wZobAEJzVxafLF3PQM3ZByA/j1K4j3vXi4tCn8sDIO1CwLPBQQ6K4pyiWHiBHBwp2zCGp5ZL8Frd0gcEufO4sLp4Pv2DcSInOsfinGaAljBQvs6A2m3n4Rnw6jTlPepVQ+giBkgbqmFQktf6ul0xhNmnycbFarIqcLNPBd2FUXVRXhaQYTebr0L85H8oayg7ScXdPZJ7t1n+u7HEepmdeBofWC52i5XCUu5luiNyKnTyDamAYWkz0M7pxlL8fs9wS1Wxq2GO0kwEb2YMdoaFYtH6gAyj4MtG+WE/rskeXpX1xwFi/ZF1qTYFn8Xdukbd6dcf1j5s11NAez07XG6mJ+CQnCZ9AAYzj+BvHwMQr
+sidebar_class_name: "post api-method"
+info_path: reference/engage/numia-engage
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Track an event"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/track"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+# Tracking an Event
+Detailed description about tracking.
+
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"json":{"schema":{"type":"object","properties":{"name":{"type":"string"},"identity":{"type":"object","properties":{"type":{"type":"string","enum":["address"]},"id":{"type":"string"},"canonical":{"type":"string"}},"required":["type","id"]},"attributes":{"type":"object","additionalProperties":{"nullable":true}},"meta":{"type":"object","additionalProperties":{"nullable":true}},"timestamp":{"type":"number"}},"required":["name","identity","timestamp"]}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Event tracked successfully","content":{"application/json":{"example":{}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

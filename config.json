@@ -24,7 +24,7 @@
     "switchOff": false
   },
   "apiFiles": [
-    "example.yml"
+    "engage.json"
   ],
   "homepage": "home.html",
   "changelog": false,
@@ -34,7 +34,12 @@
       "sidebarRef": "engage"
     }
   ],
-  "externalLinks": [],
+  "externalLinks": [
+    {
+      "name": "Let's Talk!",
+      "link": "https://engage.numia.xyz/#cta"
+    }
+  ],
   "sidebars": [
     {
       "sidebarRef": "engage",
@@ -57,7 +62,17 @@
               "groupName": "API Integration",
               "subpages": [
                 "engage/publisher-guide/api-integration/environments",
-                "engage/publisher-guide/api-integration/example"
+                "engage/publisher-guide/api-integration/example",
+                {
+                  "groupName": "Endpoints",
+                  "subpages": [
+                    "reference/engage/get-campaign-for-address",
+                    "reference/engage/get-campaign-for-addresses",
+                    "reference/engage/redirect-click-link",
+                    "reference/engage/track-event",
+                    "reference/engage/track-sdk-event"
+                  ]
+                }
               ]
             },
             "engage/publisher-guide/earnings-payments"

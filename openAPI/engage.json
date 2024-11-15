@@ -1,0 +1,204 @@
+openapi: 3.0.0
+servers:
+  - url: https://engage-api.numia.xyz
+security:
+  - bearerAuth: []
+info:
+  version: 1.0.0
+  title: Numia - Engage
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+  schemas: {}
+  parameters: {}
+paths:
+  /campaign/multiple-cointype:
+    get:
+      operationId: getCampaignForAddresses
+      summary: Get most relevant campaign for a user using addresses of different cointypes
+      tags:
+        - delivery
+      parameters:
+        - schema:
+            type: string
+          required: true
+          name: position_id
+          in: query
+        - schema:
+            anyOf:
+              - type: array
+                items:
+                  type: string
+              - type: string
+          required: true
+          name: addresses
+          in: query
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              example: {}
+  /campaign/{address}:
+    get:
+      operationId: getCampaignForAddress
+      summary: Get most relevant campaign for an address
+      tags:
+        - delivery
+      parameters:
+        - schema:
+            anyOf:
+              - type: string
+                enum:
+                  - global
+              - type: string
+          required: true
+          name: address
+          in: path
+        - schema:
+            type: string
+            enum:
+              - keplr_home
+              - keplr_explore
+              - leap_wallet_home
+              - leap_mobile_wallet_home
+              - the_crypto_app_home
+              - soquest_campaign_home_suggest
+          required: true
+          name: position_id
+          in: query
+      responses:
+        200:
+          description: Successful response
+          content:
+            application/json:
+              example: {}
+  /click:
+    get:
+      operationId: redirectClickLink
+      summary: Redirect a link click
+      tags:
+        - delivery
+      parameters:
+        - schema:
+            type: string
+          required: true
+          name: url
+          in: query
+        - schema:
+            type: string
+          required: true
+          name: address
+          in: query
+        - schema:
+            type: string
+          required: true
+          name: campaign_id
+          in: query
+        - schema:
+            type: string
+          required: true
+          name: audience_id
+          in: query
+        - schema:
+            type: string
+          required: true
+          name: position_id
+          in: query
+      responses:
+        200:
+          description: Redirect successful
+          content:
+            application/json:
+              example: {}
+  /track:
+    post:
+      operationId: trackEvent
+      summary: Track an event
+      tags:
+        - delivery
+      description: |
+        # Tracking an Event
+        Detailed description about tracking.
+      requestBody:
+        content:
+          json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                identity:
+                  type: object
+                  properties:
+                    type:
+                      type: string
+                      enum:
+                        - address
+                    id:
+                      type: string
+                    canonical:
+                      type: string
+                  required:
+                    - type
+                    - id
+                attributes:
+                  type: object
+                  additionalProperties:
+                    nullable: true
+                meta:
+                  type: object
+                  additionalProperties:
+                    nullable: true
+                timestamp:
+                  type: number
+              required:
+                - name
+                - identity
+                - timestamp
+      responses:
+        200:
+          description: Event tracked successfully
+          content:
+            application/json:
+              example: {}
+  /sdk/track:
+    post:
+      operationId: trackSdkEvent
+      summary: Track an event from the numia engage sdk
+      tags:
+        - delivery
+      requestBody:
+        content:
+          json:
+            schema:
+              type: object
+              properties:
+                name:
+                  type: string
+                attributes:
+                  type: object
+                  additionalProperties:
+                    nullable: true
+                meta:
+                  type: object
+                  additionalProperties:
+                    nullable: true
+                timestamp:
+                  type: number
+                anonymousId:
+                  type: string
+                userId:
+                  type: string
+              required:
+                - name
+                - timestamp
+                - anonymousId
+      responses:
+        200:
+          description: SDK event tracked successfully
+          content:
+            application/json:
+              example: {}
