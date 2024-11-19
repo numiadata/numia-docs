@@ -26,7 +26,7 @@
   "apiFiles": [
     "engage.json"
   ],
-  "homepage": "home.html",
+  "homepage": "/engage/whats-numia-engage",
   "changelog": false,
   "navbar": [
     {
