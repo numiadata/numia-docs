@@ -106,7 +106,22 @@
           "pages": [
             "sql/overview/whats-numia-sql",
             "sql/overview/use-cases",
-            "sql/overview/getting-started"
+            "sql/overview/getting-started",
+            {
+              "groupName": "Core Concepts",
+              "page": "sql/overview/core-concepts/core-concepts",
+              "subpages": [
+                "sql/overview/core-concepts/raw-tables",
+                "sql/overview/core-concepts/processed-tables"
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Querying Data",
+          "pages": [
+            "sql/querying-data/how-to-query-numia-datasets",
+            "sql/querying-data/optimize-queries"
           ]
         }
       ]

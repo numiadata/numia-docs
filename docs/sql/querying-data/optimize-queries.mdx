@@ -1,0 +1,41 @@
+---
+title: Optimize Queries
+---
+
+To reduce query costs and improve performance when working with Numia’s datasets, it's essential to minimize the number of bytes scanned. Below are key recommendations to help you optimize your queries effectively.
+
+## Avoid `SELECT *`
+BigQuery uses column-based storage, meaning the number of columns you query directly affects the number of bytes scanned. Specify only the columns you need in your query to reduce unnecessary data processing.
+
+## Leverage Partitions and Clusters
+Most Numia tables are partitioned by `ingestion_timestamp` (the time data is ingested into BigQuery) and clustered by `event_type` and `attribute_key`. To optimize performance:
+- Use these columns in your `WHERE` clause to narrow down the dataset and minimize data scans.
+- Avoid using `ingestion_timestamp` in production environments, as it may not align with the actual `block_timestamp`. It’s best reserved for testing purposes.
+
+## Perform Late Aggregation
+- Aggregate data as late as possible in your query workflow.
+- Avoid using `GROUP BY` clauses in subqueries unless the data is significantly reduced before joining.
+
+## Join Tables Efficiently
+- **Order Matters**: Always join tables in decreasing order of size, starting with the largest table.
+- **Filter Before Joining**: Use `WHERE` clauses on all tables being joined to remove unnecessary data before the join. Applying filters early ensures better performance.
+
+## Optimize `WHERE` Clause Order
+BigQuery processes filters in the order they appear in your `WHERE` clause. Place the filter that eliminates the largest amount of data first to improve query efficiency.
+
+### Example Optimized Query
+
+```sql
+SELECT event_type, COUNT(*) 
+FROM `numia-data.osmosis.events`
+WHERE ingestion_timestamp BETWEEN '2023-01-01' AND '2023-01-31'
+  AND event_type = 'transfer'
+GROUP BY event_type
+```
+
+- Filters are applied early (`ingestion_timestamp`, `event_type`).
+- Only relevant columns (`event_type`, `COUNT(*)`) are selected.
+- Aggregation (`GROUP BY`) occurs after filtering to reduce data being processed.
+
+
+
