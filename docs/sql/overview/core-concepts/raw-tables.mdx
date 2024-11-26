@@ -1,0 +1,74 @@
+---
+title: Raw Tables
+---
+
+Numia datasets follow the Cosmos SDK schema, providing standardized raw tables for each chain. These raw tables are marked with a dotted icon in BigQuery and include details on how they are partitioned and clustered to optimize query performance. Every chain will contain the following tables, although specific chains like Evmos will have additional tables:
+
+- **transactions**: High-level data about transactions.
+- **blocks**: Details about individual blocks.
+- **event_attributes**: All transaction-related events, mapped sequentially to the transaction.
+- **message_event_attributes**: Events tied to specific messages within transactions.
+
+<Image 
+  src="media/sql/raw-tables-1.png" 
+  size="100%"
+/>
+
+<Callout type="info" title="Update frequency">
+The raw tables are updated in real-time. 
+</Callout>
+
+Below are detailed explanations of each table and how they map to specific Cosmos SDK components.
+
+## `transactions` 
+Contains high-level information about transactions, such as timestamps, transaction IDs, and senders. This table is your starting point for analyzing overall blockchain activity.
+<Image 
+  src="media/sql/raw-tables-2.png" 
+  size="50%"
+/>    
+
+
+## `blocks` 
+Provides high-level block information, including timestamps, proposers, and block heights. This table is essential for understanding network performance and block production.
+<Image 
+  src="media/sql/raw-tables-3.png" 
+  size="50%"
+/>
+
+
+## `event_atributes`
+Contains all transaction-related events, including both message-specific and transaction-level events.
+
+- **Purpose**: Analyze transaction events holistically, including failed transactions.
+- **Example**: Transfer events from different messages within the same transaction are grouped here without message-specific indexing.
+
+<Image 
+  src="media/sql/raw-tables-4.png" 
+  size="100%"
+/>
+
+## `message_event_attributes`
+This table captures all events triggered by state changes within messages. Cosmos transactions often include multiple messages, and each message can emit multiple events.
+
+- **Purpose**: Analyze events tied to individual messages in a transaction.
+- **Example**: In a Mintscan transaction with two messages, the corresponding events are logged in this table, indexed by `message_index`.
+
+<Image 
+  src="media/sql/raw-tables-5.png" 
+  size="100%"
+/>
+
+<Callout type="success" title="Key Feature">
+Use the `message_index` column to retrieve events tied to specific messages within the same transaction.
+</Callout>
+
+## `message_event_attributes` vs `event_atribtues`
+When working with Cosmos SDK datasets in Numia, understanding the difference between the `message_event_attributes` and `event_attributes` tables is essential. While both tables provide insights into events generated during blockchain transactions, their structure and use cases differ. This section explains when to use each table based on your analysis needs. 
+
+Use `message_event_attributes` when:
+- Analyzing multiple messages within the same transaction.
+- Identifying events of the same type emitted by different messages.
+
+Use `event_attributes` when:
+- Retrieving data about failed transactions (failed transactions emit only transaction-level events).
+- Retrieving transaction signer information using `event_type = tx` and `attribute_key = acc_seq`.

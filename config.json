@@ -122,7 +122,7 @@
           "pages": [
             "sql/querying-data/how-to-query-numia-datasets",
             "sql/querying-data/optimize-queries",
-            "sql/querying-data/sample-sql-query"
+            "sql/querying-data/sample-sql-queries"
           ]
         }
       ]
