@@ -122,7 +122,44 @@
           "pages": [
             "sql/querying-data/how-to-query-numia-datasets",
             "sql/querying-data/optimize-queries",
-            "sql/querying-data/sample-sql-queries"
+            "sql/querying-data/sample-sql-queries",
+            {
+              "groupName": "Available Chains",
+              "page": "sql/querying-data/chains/available-chains",
+              "subpages": [
+                "sql/querying-data/chains/akash",
+                "sql/querying-data/chains/axelar",
+                "sql/querying-data/chains/celestia",
+                "sql/querying-data/chains/celestia-testnet",
+                "sql/querying-data/chains/comdex",
+                "sql/querying-data/chains/cosmos-hub",
+                "sql/querying-data/chains/crescent",
+                "sql/querying-data/chains/cronos",
+                "sql/querying-data/chains/dydx",
+                "sql/querying-data/chains/dydx-testnet",
+                "sql/querying-data/chains/dymension",
+                "sql/querying-data/chains/evmos",
+                "sql/querying-data/chains/injective",
+                "sql/querying-data/chains/juno",
+                "sql/querying-data/chains/kava",
+                "sql/querying-data/chains/kujira",
+                "sql/querying-data/chains/mars",
+                "sql/querying-data/chains/neutron",
+                "sql/querying-data/chains/nillion-testnet",
+                "sql/querying-data/chains/noble",
+                "sql/querying-data/chains/nolus",
+                "sql/querying-data/chains/osmosis",
+                "sql/querying-data/chains/persistence",
+                "sql/querying-data/chains/quasar",
+                "sql/querying-data/chains/quicksilver",
+                "sql/querying-data/chains/secret-network",
+                "sql/querying-data/chains/sei",
+                "sql/querying-data/chains/stargaze",
+                "sql/querying-data/chains/stride",
+                "sql/querying-data/chains/terra-2",
+                "sql/querying-data/chains/umee"
+              ]
+            }
           ]
         }
       ]
