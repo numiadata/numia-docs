@@ -1,0 +1,28 @@
+---
+title: What's NumiaSQL?
+---
+
+
+NumiaSQL operates nodes on every chain we support, enabling real-time streaming of on-chain data into our BigQuery data warehouse through a custom-built, reliable data pipeline. BigQuery provides access to this data via its SQL interface, Google Sheets, and Google Looker Studio—versatile tools for data analysis that influenced our decision to use it over other options.
+
+Currently, Numia provides SQL-based access to on-chain data through BigQuery, so you can query billions of rows using SQL-like syntax, making it an ideal solution for working with Numia’s extensive datasets.
+
+<Image 
+  src="/media/sql/sql-overview-2.png"
+/>
+
+## Why BigQuery?
+
+- **Native Integration with Looker Studio**: Create data visualizations and dashboards effortlessly.  
+- **Google Sheets Integration**: Analyze data collaboratively in spreadsheets.  
+- **BigQuery API Access**: Programmatically retrieve data for advanced workflows.  
+- **Data Joining Capabilities**: Merge Numia’s data with other public or private datasets.  
+- **Python Driver Support**: Connect BigQuery to Jupyter Notebooks for Python-based analysis.
+
+<Image 
+  src="/media/sql/sql-overview-1.png"
+/>
+
+<Callout type="info" title="Note">
+Google charges based on the amount of data processed by each query, regardless of computation power. Numia’s raw data tables can be terabytes in size, but we regularly create smaller, optimized tables to reduce query costs. For tips on minimizing expenses, refer to the [Optimze Queries](/sql/querying-data/optimize-queries) page.
+</Callout>

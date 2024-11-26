@@ -1,0 +1,50 @@
+---
+title: How to Query Numia Datasets
+---
+
+This guide will help you get started with accessing and querying Numia’s production datasets on Google BigQuery.
+
+## Step 1: Pin `numia-data` to your datasets
+
+BigQuery organizes data into projects, which act as containers for datasets. Numia currently provides two projects:
+
+- **`immaculate-355716` (Beta)**: Temporary and will be deprecated in the coming months.  
+- **`numia-data` (Production)**: The official production project for long-term use.
+
+### Instructions:
+1. Open the BigQuery Console in Google Cloud.
+2. Click **ADD DATA** > **Star a project by name**.
+3. Enter `numia-data` to pin our production dataset. 
+
+<Image src="/media/sql/querying-data.gif"/>
+
+<Callout type="info" title="Note">
+Avoid using `immaculate-355716` as it will be deprecated soon.
+</Callout>
+
+## Step 2: Query `numia-data`
+
+Once the `numia-data` project is pinned, you can start exploring and querying the datasets. To query a table, use the following structure in your SQL `FROM` clause:
+
+```sql
+`project`.`dataset`.`table`
+```
+
+For example, to query the `osmosis_blocks` table in the `osmosis` dataset, use the following:
+
+```sql
+SELECT * 
+FROM `numia-data.osmosis.osmosis_blocks`
+```
+
+- **`numia-data`**: The project containing Numia’s datasets.
+- **`osmosis`**: The dataset for the Osmosis blockchain.
+- **`osmosis_blocks`**: The specific table being queried.
+
+<Card 
+    title="Query Optimization"
+    icon="money"
+    description="Explore the Optimize Queries page for query optimization tips and data examples."
+    link="/sql/querying-data/optimize-queries"
+    iconType='regular'
+/>

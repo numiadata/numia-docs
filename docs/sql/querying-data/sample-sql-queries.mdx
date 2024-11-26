@@ -1,0 +1,193 @@
+---
+title: Sample SQL Queries
+---
+
+This page presents two practical examples of how to query Numia’s datasets for insights. These examples demonstrate analyzing trades on the Osmosis DEX and querying staking balances on Celestia.
+
+
+## Trades on Osmosis DEX by pool
+
+This query counts all token swaps on the Osmosis DEX and groups the trades by `Pool_ID`, ordering the results by the number of trades in descending order. It helps identify the most active liquidity pools on the Osmosis DEX.
+
+
+```sql
+SELECT
+  COUNT(*) AS Trades,
+  attribute_value AS Pool_ID
+FROM `numia-data.osmosis.osmosis_event_attributes`
+WHERE event_type = 'token_swapped'  
+  AND attribute_key = 'pool_id'
+GROUP BY Pool_ID
+ORDER BY Trades DESC;
+```
+
+### Breakdown:
+- **`COUNT(*)`**: Counts the total number of token swaps (trades).  
+- **`attribute_value AS Pool_ID`**: Identifies the pool associated with each trade.  
+- **`GROUP BY`**: Groups results by `Pool_ID`.  
+- **`ORDER BY Trades DESC`**: Orders the pools by the number of trades, from highest to lowest.  
+
+
+## Staking calance of a Celestia user
+
+This query calculates the total staking balance for a specific user (`sender`) at a particular block height by combining their delegations and undelegations.
+
+```sql
+SELECT sender, SUM(token_amount) AS token_amount
+FROM (
+  SELECT sender, token_amount 
+  FROM `numia-data.celestia.celestia_delegate`
+  WHERE sender = 'celestia1r0gmufmz9em8anlxd8exygwwllhk3ny6g4hqlz'
+    AND block_height <= 1654914
+
+  UNION ALL
+
+  SELECT sender, -token_amount
+  FROM `numia-data.celestia.celestia_undelegate`
+  WHERE sender = 'celestia1r0gmufmz9em8anlxd8exygwwllhk3ny6g4hqlz'
+    AND block_height <= 1654914
+)
+GROUP BY sender
+ORDER BY token_amount DESC;
+```
+
+### Breakdown:
+- **Delegations and Undelegations**:  
+  - Delegated amounts are pulled from `celestia_delegate`.  
+  - Undelegated amounts are pulled from `celestia_undelegate` as negative values using `-token_amount`.  
+- **`UNION ALL`**: Combines both delegated and undelegated amounts for the same user.  
+- **`SUM(token_amount)`**: Calculates the net staking balance.  
+- **`block_height <= 1654914`**: Ensures the calculation reflects the state at the specified block height.  
+- **`GROUP BY sender`**: Groups results by the user.  
+- **`ORDER BY token_amount DESC`**: Orders users by staking balance.
+
+
+## Most common user paths
+This query returns the most common paths by message type, helping you understand what users do after claiming rewards, delegating tokens, or performing other specific actions.
+
+```sql
+WITH transactions AS (
+  SELECT
+    tx_id,
+    msg_index,
+    block_timestamp,
+    message_type AS action,
+    sender AS sender,
+    RANK() OVER(PARTITION BY sender ORDER BY block_timestamp ASC, tx_id ASC, msg_index ASC) AS sequence
+  FROM `numia-data.evmos.evmos_message_types_transactions`
+  WHERE block_timestamp >= TIMESTAMP_SUB(CURRENT_TIMESTAMP(), INTERVAL 90 DAY)
+  ORDER BY sender ASC, sequence ASC, msg_index ASC
+)
+SELECT 
+  t1.tx_id,
+  t1.sender,
+  t1.action AS action_1,
+  t2.action AS action_2,
+  t3.action AS action_3
+FROM transactions t1
+INNER JOIN transactions t2 ON t1.sender = t2.sender AND t2.sequence = t1.sequence + 1 AND t1.action <> t2.action
+INNER JOIN transactions t3 ON t1.sender = t3.sender AND t3.sequence = t1.sequence + 2 AND t1.action <> t2.action
+ORDER BY sender, t1.sequence ASC;
+
+SELECT 
+  action_1 || ' -> ' || action_2 || ' -> ' || action_3 AS path,
+  COUNT(*) AS frequency
+FROM transactions
+GROUP BY 1
+ORDER BY 2 DESC;
+```
+
+## Monthly Retention
+This query calculates monthly retention by identifying user cohorts and tracking their activity over time.
+
+```sql
+WITH active_users AS (
+  SELECT 
+    attribute_value AS user,
+    DATE(b.block_timestamp) AS activity_date
+  FROM `numia-data.evmos.evmos_event_attributes` ea
+  INNER JOIN `numia-data.evmos.evmos_blocks` b ON CAST(b.block_height AS INT64) = ea.block_height
+  WHERE attribute_key = 'sender'
+    AND attribute_value LIKE 'evmos%'
+),
+user_cohorts AS (
+  SELECT 
+    user AS user,
+    MIN(DATE_TRUNC(DATE(activity_date), MONTH)) AS cohortMonth
+  FROM active_users
+  GROUP BY 1
+),
+order_month AS (
+  SELECT 
+    uc.user AS user,
+    DATE_DIFF(DATE_TRUNC(DATE(activity_date), MONTH), cohortMonth, MONTH) AS month_number,
+    COUNT(DISTINCT(uc.user)) AS users
+  FROM active_users au
+  LEFT JOIN user_cohorts uc ON uc.user = au.user
+  GROUP BY 1, 2
+),
+cohort_size AS (
+  SELECT  
+    COUNT(DISTINCT(user)) AS users, 
+    cohortMonth
+  FROM user_cohorts uc
+  GROUP BY 2
+  ORDER BY 1
+),
+retention_table AS (
+  SELECT  
+    c.cohortMonth, 
+    o.month_number, 
+    SUM(users) AS users
+  FROM order_month o
+  LEFT JOIN user_cohorts c ON c.user = o.user
+  GROUP BY 1, 2
+)
+SELECT  
+  r.cohortMonth, 
+  s.users AS totalUsers,
+  r.month_number, 
+  r.users / s.users AS percentage
+FROM retention_table r
+LEFT JOIN cohort_size s ON s.cohortMonth = r.cohortMonth
+WHERE r.cohortMonth IS NOT NULL
+ORDER BY 1, 3;
+```
+
+## Active users
+This query calculates the daily count of active users by action type.
+
+```sql
+SELECT
+  DATE(block_timestamp) AS day,
+  message_type AS action,
+  COUNT(DISTINCT(sender)) AS active_users
+FROM 
+  `numia-data.evmos.evmos_message_types_transactions`
+GROUP BY 
+  day, action
+ORDER BY 
+  day, action;
+```
+
+## Delegations over time by validator
+This query tracks token delegations over time, grouped by validator.
+
+```sql
+SELECT 
+  DATE(block_timestamp) AS day,
+  validator,
+  SUM(osmo_amount) AS delegated_amount,
+  COUNT(*) AS n_delegations
+FROM 
+  `numia-data.evmos.evmos_delegate`
+GROUP BY
+  day, validator
+ORDER BY
+  day, validator;
+```
+
+<Callout type="success" title="Tip">
+If you're new to SQL, start with the basics to build a strong foundation. Visit [SQL Tutorials on W3Schools](https://www.w3schools.com/sql/) for an introduction to SQL syntax and best practices.
+</Callout>
+
