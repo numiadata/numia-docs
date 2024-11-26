@@ -105,7 +105,7 @@
           "categoryName": "Overview",
           "pages": [
             "sql/overview/whats-numia-sql",
-            "sql/overview/use-cases",
+            "sql/overview/usecases",
             "sql/overview/getting-started",
             {
               "groupName": "Core Concepts",
