@@ -18,47 +18,19 @@ To begin using Numia's Advanced API and access rich blockchain data, follow the 
 4. Get your API key to be used for Bearer Token authentication in your API requests, allowing you to interact with Numia’s data. You'll also be able to see the LCD and RPC endpoints for that chain. 
 5. Feel free to check the endpoints documentation and send request using the API docs playground. 
 
-With your API key in hand, you can now start making API requests. Here’s how to make a simple test request using `curl`:
-
-<Tabs>
-  <TabItem value="lcd" label="Osmosis LCD" default>
-    ```bash
-    curl https://osmosis-lcd.numia.xyz/blocks/latest   
-    -H "Accept: application/json"   
-    -H "Authorization: Bearer <Token>"
-    ```
-  </TabItem>
-  <TabItem value="rpc" label="Osmosis RPC">
-    ```bash
-    curl https://osmosis-rpc.numia.xyz/blocks/latest   
-    -H "Accept: application/json"   
-    -H "Authorization: Bearer <Token>"
-    ```
-  </TabItem>
-</Tabs>
-
-Replace `Token` with the API key you generated from the dashboard.
-
 ## Services
 
 <CardList cols={4}>
 <Card 
   title="Osmosis"
-  link="/reference/osmosis/core-concepts#osmosis"
+  link="/reference/osmosis/get-apr-for-earn-strategies"
   icon="arrow-square-up-right"
   iconType="regular"
   iconSize="32px"
 />
 <Card 
   title="Quasar"
-  link="/reference/quasar/core-concepts#quasar"
-  icon="arrow-square-up-right"
-  iconType="regular"
-  iconSize="32px"
-/>
-<Card 
-  title="Prices"
-  link="/reference/prices/get-astroport-pool"
+  link="/reference/quasar/create-point-campaigns"
   icon="arrow-square-up-right"
   iconType="regular"
   iconSize="32px"
@@ -66,6 +38,13 @@ Replace `Token` with the API key you generated from the dashboard.
 <Card 
   title="XION"
   link="/reference/xion/get-abstract-account-authenticators"
+  icon="arrow-square-up-right"
+  iconType="regular"
+  iconSize="32px"
+/>
+<Card 
+  title="Prices"
+  link="/reference/prices/get-astroport-pool"
   icon="arrow-square-up-right"
   iconType="regular"
   iconSize="32px"

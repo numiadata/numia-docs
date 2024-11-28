@@ -1,0 +1,64 @@
+---
+id: get-market-price
+title: "Get market price and deviation from oracle"
+description: "Get market price and deviation from oracle"
+sidebar_label: "Get market price and deviation from oracle"
+hide_title: true
+hide_table_of_contents: true
+api: eJzFVE1vm0AQ/SurObUSsdMeuVlKleTgKqrbg2UhawxjswksZHY2jYv479WAg4nzoVY9lAuCfTvz5s2baaCqiVFs5a4ziGFHMke+I7lhmxJE4IkfiD3EqwYCFxBDLlL7eDrN9tnjxIXS4uRx/wvaJIIaGUuSJ7zDkiAGL8iyzlA0nnUQw30g3kMETPfBMmUQb7HwFIFPcyoR4gZkX/d32bodRJCRT9nWShRiuEAhY52RnMy24hLFLJfL5dl8fnZxYa6u4vk8XiygbaOBBbnsv3MoO2nfZiAc3iEwjrRjdKFAtrL/h4LIhRLiFeRVYK0P9f5PojuIoKyc5JC02lcmX1fOk9cgn8/P9fVcjIWgBB8bPYwgrZyQE4VhXRc27Qw2vfWKbV4SQuYutRUq/eh/tbmlVPWqWW0qtmdQ4IYK/4pACrQpra1bB5+lI4QL5YZYERk92I7OestVua4Y04JeIiNwoShwo2falrYdK7t64nCa8a34Sds9px66JDG9KUwXx6DLzBDBaARziBBBSZJXhyHVxCg5xDDt70/rYWDT0NlCJ3BDyMSzoMhVoq18Ol5oD3o5x6BBBp1yOHhHv3uQehCs21aK1L3Ql/Fpcj7RvosV1Qu+6lYwZ2Z2bWY7cmJmN9dddyovJXYeOPj4rwR4pt3AVOhRpnWB1mmKbkc1B3FWx4nr5UkiyCsvetI0G/T0g4u21d/99KhmmfXa9uP83NH+dIs9YBE0N+hIvnFhtHDeh5+UNQwPfPh2MNxHo+K+Vm6faqjyT3g9Xx3HG4l+sO0tv0raCHLCjLgTpb86S1Oqx3leTLdGGXx6+eU7tO1v/UEr7Q==
+sidebar_class_name: "get api-method"
+info_path: reference/ai/numia-ai-agent-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get market price and deviation from oracle"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/market/price"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get market price and deviation from oracle
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"start_date","in":"query","required":false,"schema":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"}},{"name":"end_date","in":"query","required":false,"schema":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"}},{"name":"market","in":"query","required":true,"schema":{"type":"string"}},{"name":"granularity","in":"query","required":false,"schema":{"type":"string","enum":["hour","day","week","month"]}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"labels":{"type":"string"},"price_in_usdc":{"type":"number"},"deviation_from_oracle":{"type":"number","nullable":true}},"required":["labels","price_in_usdc","deviation_from_oracle"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
