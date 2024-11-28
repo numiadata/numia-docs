@@ -42,10 +42,6 @@
       "sidebarRef": "api"
     },
     {
-      "label": "Lenses",
-      "sidebarRef": "numia-lenses"
-    },
-    {
       "label": "AI",
       "sidebarRef": "ai"
     }
@@ -336,25 +332,6 @@
       ]
     },
     {
-      "sidebarRef": "numia-lenses",
-      "categories": [
-        {
-          "categoryName":"Internal",
-          "pages":[
-            {
-              "groupName": "Internal Endpoints",
-              "subpages": [
-                "reference/snapshot/create-snapshot-campaign",
-                "reference/snapshot/get-snapshot-campaign-configuration-options",
-                "reference/snapshot/list-snapshot-campaigns",
-                "reference/snapshot/update-snapshot-campaign"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "sidebarRef": "ai",
       "categories": [
         {
@@ -370,7 +347,7 @@
               "groupName": "Internal Endpoints",
               "subpages": [
                 "reference/ai/get-collateral-metrics",
-                "reference/ai/get-leverage-metrics",
+                "reference/ai/get-leverage-metriconfig.jsoncs",
                 "reference/ai/get-long-short-ratio",
                 "reference/ai/get-market-price",
                 "reference/ai/get-orderbook-depth",
