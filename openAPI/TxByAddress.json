@@ -1,0 +1,210 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Numia - API - Transactions by Address",
+    "description": "### Supported Networks\n- akash (https://akash.numia.xyz)\n- axelar (https://axelar.numia.xyz)\n- celestia (https://celestia.numia.xyz)\n- comdex (https://comdex.numia.xyz)\n- cosmoshub (https://cosmoshub.numia.xyz)\n- cryptoorgchain (https://cryptoorgchain.numia.xyz)\n- dydx (https://dydx.numia.xyz)\n- dymension (https://dymension.numia.xyz)\n- juno (https://juno.numia.xyz)\n- migaloo (https://migaloo.numia.xyz)\n- neutron (https://neutron.numia.xyz)\n- noble (https://noble.numia.xyz)\n- nolus (https://nolus.numia.xyz)\n- osmosis (https://osmosis.numia.xyz)\n- osmosis-testnet (https://osmosis-testnet.numia.xyz)\n- persistence (https://persistence.numia.xyz)\n- quasar (https://quasar.numia.xyz)\n- quicksilver (https://quicksilver.numia.xyz)\n- stargaze (https://stargaze.numia.xyz)\n- stride (https://stride.numia.xyz)\n- terra2 (https://terra2.numia.xyz)\n- umee (https://umee.numia.xyz)\n"
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://akash.numia.xyz"
+    },
+    {
+      "url": "https://axelar.numia.xyz"
+    },
+    {
+      "url": "https://celestia.numia.xyz"
+    },
+    {
+      "url": "https://comdex.numia.xyz"
+    },
+    {
+      "url": "https://cosmoshub.numia.xyz"
+    },
+    {
+      "url": "https://cryptoorgchain.numia.xyz"
+    },
+    {
+      "url": "https://dydx.numia.xyz"
+    },
+    {
+      "url": "https://dymension.numia.xyz"
+    },
+    {
+      "url": "https://juno.numia.xyz"
+    },
+    {
+      "url": "https://migaloo.numia.xyz"
+    },
+    {
+      "url": "https://neutron.numia.xyz"
+    },
+    {
+      "url": "https://noble.numia.xyz"
+    },
+    {
+      "url": "https://nolus.numia.xyz"
+    },
+    {
+      "url": "https://osmosis.numia.xyz"
+    },
+    {
+      "url": "https://osmosis-testnet.numia.xyz"
+    },
+    {
+      "url": "https://persistence.numia.xyz"
+    },
+    {
+      "url": "https://quasar.numia.xyz"
+    },
+    {
+      "url": "https://quicksilver.numia.xyz"
+    },
+    {
+      "url": "https://stargaze.numia.xyz"
+    },
+    {
+      "url": "https://stride.numia.xyz"
+    },
+    {
+      "url": "https://terra2.numia.xyz"
+    },
+    {
+      "url": "https://umee.numia.xyz"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/v2/txs/{address}": {
+      "get": {
+        "operationId": "getTransactionsByAddress",
+        "summary": "Get transactions by address",
+        "description": "Get transactions associated with a given address across supported networks.",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "address",
+            "in": "path",
+            "required": true,
+            "description": "The address for which to fetch transactions.",
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "page",
+            "in": "query",
+            "required": false,
+            "description": "Page number for pagination.",
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d+$"
+            }
+          },
+          {
+            "name": "pageSize",
+            "in": "query",
+            "required": false,
+            "description": "Number of transactions to return per page (max 100).",
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d+$"
+            }
+          },
+          {
+            "name": "messageTypes",
+            "in": "query",
+            "required": false,
+            "description": "Comma-separated list of message types to filter by.",
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "example": [
+                "transfer",
+                "delegate"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A list of transactions for the given address.",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "transactions": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "txHash": {
+                            "type": "string"
+                          },
+                          "blockHeight": {
+                            "type": "integer"
+                          },
+                          "timestamp": {
+                            "type": "string",
+                            "format": "date-time"
+                          },
+                          "messageType": {
+                            "type": "string",
+                            "description": "The type of transaction message (e.g., \"transfer\", \"delegate\")."
+                          },
+                          "amount": {
+                            "type": "string",
+                            "description": "Amount involved in the transaction."
+                          },
+                          "sender": {
+                            "type": "string"
+                          },
+                          "receiver": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "transactions"
+                  ]
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Bad request (invalid parameters)"
+          },
+          "401": {
+            "description": "Unauthorized (authentication failed)"
+          },
+          "500": {
+            "description": "Internal server error"
+          }
+        }
+      }
+    }
+  }
+}

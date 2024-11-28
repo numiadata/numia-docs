@@ -1,0 +1,64 @@
+---
+id: get-transactions-by-address
+title: "Get transactions by address"
+description: "Get transactions associated with a given address across supported networks."
+sidebar_label: "Get transactions by address"
+hide_title: true
+hide_table_of_contents: true
+api: eJytl8FyozgQhl9FpewhqXXsTGrnwi2ztTWTy9TUJnOKvVVtaIMSkIjUeExcvPtWC2zAEDKZ3Vxi4JP0I/XfdO+lydECKaNvIxnIGOnegnYQ8i33qbyJIovOyZmM0IVW5XxfBvIzkqAOKcA5EyogjMQPRYkAEastagH1BAJCa5wTrshzY5nSSD+MfXJzOZMOw8IqKmXwsJdrBIv2pqBEBg+rajWTOVjIkNA6D2jIUAYSjtIUK8qBEjmTFp8LZTGSAdkCT2XfJ3hUtDFW/EhUmAgyYoPEPzpv5HWFCWYgg72kMuc1HVmlY1lVs6OMHGI8aHgu0JY9ERtI3UDFN4hR6CJbo/UqcoiV9ocwtSjvAxFanuGf5TL6/beBjjv18l4tX2sZZtM/TjLCIhVWixy9QBTnGezEh6uri/8gMkPnIMb7Mkf3TqF/miyDS4ccDBw/qXLEspspBevwujcqJbRiXY7qBGuBV1OEmRs52ZnEHWR5ijJ4kH5LNmh9+KcYA6FcVRySFl1utEM/xfXVFf/r6705KuxtLJ83Jdh3BysNjSbUxBNBnqcq9AGxeHQ82374Imb9iCHxhlv2MKlaS3exn3jt12bZfQGXjG7POjXh0xdUcUKd50oTxmgZIJWhI8jysejYGJsByUBGQHjJKA/phMXYoKGHmTjZ2mMgnOM8ns/E8nh6S8lXhwNcyos5rwmZKTS9vdyN54TSW5NuMRJK+/PrrOync6gjtKM7ZjFEtR19yH/dyH/on9+qfv7HWHx9gkjwQHQkzpXeQqoi0WbKC+kHfhgO/K6hoMRY9YKROOffqKkJN7EBlWLkB38cW/VWs7khFQ7tFq1Aa41li8sMKTHNN6ROA4kM5GJ7vaCdW+ybSK98tuehdS4vbCoDmRDlLlgs4AlcMtdFpmC+K18kZ44TYocp2EkkxBQdKZiGTBbh7g3EZcYlxXqasmVOxtg4TEDpSTQqo+kVozJD7TiipqjHQptJIFMxpGaa0ViQfWMhbdYpvkGkhZsk/B6qn2IuCR1ppEk2R+uUI9ThtLLnAtwbcfJcqPDJqXSL05wjsDG8TK/Hho6mEUJr4XoSKTLszbFqS6M7zv91cu4WSMeMwlMcvnd8XUPemUpvDJNsutrFH+ZX8yvJqZr4Q8dFgAJxKW6+3YpL0a0AxboUr9WAZ2dn4u5Yz31t6rmlvhTex+L8FVtfeMQbucOcGNtDByu32NDcNejt3MFO7N1AjaG73MDjNdpzdYd/xe1+EPu7Rftub4DG311qYHmPsslbqm95DzQmb5mB6z3W+LzFBsavMbZ6B+o7v0HSwnWRnvU90hi5hQbu72IHvw/wYSLwwzrWb4eM5gOP1xmgJU8zQgMdc0CXHEkMHj+kgpYdJocG5HTQxfrpwUN1Qmih0wThIU4JLdJPEBdLzR/q3DjKwFeJTZk96M7WpYBxF+/bwvN/buqaxES4o0WegvJafb7bN9XBg9xeM7hjVcFB4GomE+OIH+/3a3D43aZVxbfrToHLhkg5WKev9Qrdd5rutUY1PmHZ9nVbSAtGfLb++WV/sa16Q0/T3/2ipl/roCYknXRzrawVX1jFut55XOd/N7XwhXhnrz6q89D96LKr76D/EHHVqprJBMEX8A/75ulNGGJOnXGDtozf81j2fv7rXs4k9L/KzVd4dvjBs49q2u9r4t48oa6qo0TiaxZYVf8C2040nQ==
+sidebar_class_name: "get api-method"
+info_path: reference/TxByAddress/numia-api-transactions-by-address
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get transactions by address"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/txs/{address}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get transactions associated with a given address across supported networks.
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"address","in":"path","required":true,"description":"The address for which to fetch transactions.","schema":{"type":"string"}},{"name":"page","in":"query","required":false,"description":"Page number for pagination.","schema":{"type":"string","pattern":"^\\d+$"}},{"name":"pageSize","in":"query","required":false,"description":"Number of transactions to return per page (max 100).","schema":{"type":"string","pattern":"^\\d+$"}},{"name":"messageTypes","in":"query","required":false,"description":"Comma-separated list of message types to filter by.","schema":{"type":"array","items":{"type":"string"},"example":["transfer","delegate"]}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"A list of transactions for the given address.","content":{"application/json":{"schema":{"type":"object","properties":{"transactions":{"type":"array","items":{"type":"object","properties":{"txHash":{"type":"string"},"blockHeight":{"type":"integer"},"timestamp":{"type":"string","format":"date-time"},"messageType":{"type":"string","description":"The type of transaction message (e.g., \"transfer\", \"delegate\")."},"amount":{"type":"string","description":"Amount involved in the transaction."},"sender":{"type":"string"},"receiver":{"type":"string"}}}}},"required":["transactions"]}}}},"400":{"description":"Bad request (invalid parameters)"},"401":{"description":"Unauthorized (authentication failed)"},"500":{"description":"Internal server error"}}}
+>
+  
+</StatusCodes>
+
+
+      

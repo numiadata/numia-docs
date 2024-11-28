@@ -1,0 +1,64 @@
+---
+id: get-abstract-account-authenticators
+title: "getAbstractAccountAuthenticators"
+description: "getAbstractAccountAuthenticators"
+sidebar_label: "getAbstractAccountAuthenticators"
+hide_title: true
+hide_table_of_contents: true
+api: eJyNVE1r20AQ/StiTi1srDRH3XwoJZcWmhYKxpixNLY2lXaV3ZGxKva/l9GHbcmC5CTQvpl5781HC57ciZyHZNNC7QpIIGeufBLHZ23NytSlxtW5+QdBLQEemDwb4lvgVoGtyCFra54zSOBIvN57dpjyOk1tbXhdc06GdYpsnQcFjEfhsFVQocOSeOTk05xKhKQFbiqCBDw7bY4QFDh6q7WjDBJ2NSkwWHaAEh3vsC8ECrSBBCrkvJPwoXwHLPw1Idac73Q2pnqryTWdSke+ssaTl3RPj4/yycinTleiHRJ4YeTaJ5E8KkitYTIsMKyqQtRra+JXL9gFanb/SqlIqJwYyrqvNBW4pCS1GQnj65upyz05UGDqosB9Qb1pQcGQZzcg7tIthUy7dw1B57ARn5hK/76Q/nWB/6TA+4idNhmdO1tN8+PQzc08Yu5E2IZJyzf9+7z2cqVtmAfPh27swJ2/d+5JLsk2HZwPrExJnNthvcRamfAE4tNT3JEZwuJ2Qi3EOM/jKa2d5qazbU/oyEkt2UYZ8vH5Raaz79st6OKrXAXJ1sEgGUAg0rQ5WEHKoenlfVk9rmQjWLPMFXyX6xE9RH/kOSiorOcSu60YlvBIHI2ORIO26M6TiYkXakxnjqsCdZe7O2Lt4NcGTk/C+sYxUJDM2znvmYLcepbwtt2jp9+uCEF+98dBnMy0l6W5XpO/1EyOyQmLWth1p+SETvc7thQ6k3W5I/Dp5zCDnyNxc0nuuJqmua050pkKDdugICfM5BBs2gGzTlOq+Cb67niJgss4fvv6C0L4Dxw2OOY=
+sidebar_class_name: "get api-method"
+info_path: reference/xion/numia-xion
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getAbstractAccountAuthenticators"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/v2/smartAccount/{smart_account}/authenticators"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getAbstractAccountAuthenticators
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"required":true,"name":"smart_account","in":"path"},{"schema":{"type":"string"},"required":false,"name":"auth_id","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"object","properties":{"smart_account":{"type":"string"},"code_id":{"type":"number","nullable":true},"account_number":{"type":"string","nullable":true},"authenticators":{"type":"array","items":{"type":"object","properties":{"type":{"type":"string"},"authenticator":{"type":"string"},"authenticator_index":{"anyOf":[{"type":"string"},{"type":"number"}]}},"required":["type","authenticator","authenticator_index"]}}},"required":["smart_account","code_id","account_number","authenticators"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

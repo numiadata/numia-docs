@@ -1,0 +1,563 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Numia - Prices",
+    "version": "1.0.0"
+  },
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://terra2.numia.xyz"
+    },
+    {
+      "url": "https://neutron.numia.xyz"
+    },
+    {
+      "url": "https://injective.numia.xyz"
+    },
+    {
+      "url": "https://osmosis.numia.xyz"
+    },
+    {
+      "url": "https://juno.numia.xyz"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/astroport/prices": {
+      "get": {
+        "operationId": "getAstroportPrices",
+        "summary": "Get prices from Astroport",
+        "description": "Currently supported on:\n- terra2\n- neutron\n",
+        "tags": [
+          "astroport"
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "prices": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "asset": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "servers": [
+        {
+          "url": "https://terra2.numia.xyz"
+        },
+        {
+          "url": "https://neutron.numia.xyz"
+        }
+      ]
+    },
+    "/astroport/pools": {
+      "get": {
+        "operationId": "getAstroportPools",
+        "summary": "Get list of pools for Astroport",
+        "description": "Currently supported on:\n- terra2\n- neutron\n- injective\n",
+        "tags": [
+          "astroport"
+        ],
+        "parameters": [
+          {
+            "name": "pool_ids",
+            "in": "query",
+            "description": "List of pool IDs",
+            "required": false,
+            "schema": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://terra2.numia.xyz"
+          },
+          {
+            "url": "https://neutron.numia.xyz"
+          },
+          {
+            "url": "https://injective.numia.xyz"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "chainId": {
+                        "type": "string"
+                      },
+                      "poolAddress": {
+                        "type": "string"
+                      },
+                      "poolType": {
+                        "type": "string"
+                      },
+                      "dayVolumeUsd": {
+                        "type": "number"
+                      },
+                      "poolLiquidity": {
+                        "type": "number"
+                      },
+                      "poolLiquidityUsd": {
+                        "type": "number"
+                      },
+                      "poolStakedLiquidity": {
+                        "type": "number"
+                      },
+                      "poolStakedLiquidityUsd": {
+                        "type": "number"
+                      },
+                      "assets": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "address": {
+                              "type": "string"
+                            },
+                            "amount": {
+                              "type": "string",
+                              "pattern": "^\\d+$"
+                            },
+                            "symbol": {
+                              "type": "string"
+                            },
+                            "price": {
+                              "type": "number"
+                            },
+                            "precision": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "address",
+                            "amount",
+                            "symbol",
+                            "price",
+                            "precision"
+                          ]
+                        }
+                      },
+                      "totalRewards": {
+                        "type": "object",
+                        "properties": {
+                          "apr": {
+                            "type": "number"
+                          },
+                          "apy": {
+                            "type": "number"
+                          },
+                          "day": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "apr",
+                          "apy",
+                          "day"
+                        ]
+                      },
+                      "tradingFees": {
+                        "type": "object",
+                        "properties": {
+                          "apr": {
+                            "type": "number"
+                          },
+                          "apy": {
+                            "type": "number"
+                          },
+                          "day": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "apr",
+                          "apy",
+                          "day"
+                        ]
+                      },
+                      "astroRewards": {
+                        "type": "object",
+                        "properties": {
+                          "apr": {
+                            "type": "number"
+                          },
+                          "apy": {
+                            "type": "number"
+                          },
+                          "day": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "apr",
+                          "apy",
+                          "day"
+                        ]
+                      },
+                      "protocolRewards": {
+                        "type": "object",
+                        "nullable": true,
+                        "properties": {
+                          "apr": {
+                            "type": "number"
+                          },
+                          "apy": {
+                            "type": "number"
+                          },
+                          "day": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "apr",
+                          "apy",
+                          "day"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "chainId",
+                      "poolAddress",
+                      "poolType",
+                      "dayVolumeUsd",
+                      "poolLiquidity",
+                      "poolLiquidityUsd",
+                      "poolStakedLiquidity",
+                      "poolStakedLiquidityUsd",
+                      "assets",
+                      "totalRewards",
+                      "tradingFees",
+                      "astroRewards"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/astroport/pools/{address}": {
+      "get": {
+        "operationId": "getAstroportPool",
+        "summary": "Get single pool by address from Astroport",
+        "description": "Currently supported on:\n- terra2\n- neutron\n- injective\n",
+        "tags": [
+          "astroport"
+        ],
+        "parameters": [
+          {
+            "name": "address",
+            "in": "path",
+            "description": "The pool address",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "servers": [
+          {
+            "url": "https://terra2.numia.xyz"
+          },
+          {
+            "url": "https://neutron.numia.xyz"
+          },
+          {
+            "url": "https://injective.numia.xyz"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "chainId": {
+                      "type": "string"
+                    },
+                    "poolAddress": {
+                      "type": "string"
+                    },
+                    "poolType": {
+                      "type": "string"
+                    },
+                    "dayVolumeUsd": {
+                      "type": "number"
+                    },
+                    "poolLiquidity": {
+                      "type": "number"
+                    },
+                    "poolLiquidityUsd": {
+                      "type": "number"
+                    },
+                    "poolStakedLiquidity": {
+                      "type": "number"
+                    },
+                    "poolStakedLiquidityUsd": {
+                      "type": "number"
+                    },
+                    "assets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "address": {
+                            "type": "string"
+                          },
+                          "amount": {
+                            "type": "string",
+                            "pattern": "^\\d+$"
+                          },
+                          "symbol": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "number"
+                          },
+                          "precision": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "address",
+                          "amount",
+                          "symbol",
+                          "price",
+                          "precision"
+                        ]
+                      }
+                    },
+                    "totalRewards": {
+                      "type": "object",
+                      "properties": {
+                        "apr": {
+                          "type": "number"
+                        },
+                        "apy": {
+                          "type": "number"
+                        },
+                        "day": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "apr",
+                        "apy",
+                        "day"
+                      ]
+                    },
+                    "tradingFees": {
+                      "type": "object",
+                      "properties": {
+                        "apr": {
+                          "type": "number"
+                        },
+                        "apy": {
+                          "type": "number"
+                        },
+                        "day": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "apr",
+                        "apy",
+                        "day"
+                      ]
+                    },
+                    "astroRewards": {
+                      "type": "object",
+                      "properties": {
+                        "apr": {
+                          "type": "number"
+                        },
+                        "apy": {
+                          "type": "number"
+                        },
+                        "day": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "apr",
+                        "apy",
+                        "day"
+                      ]
+                    },
+                    "protocolRewards": {
+                      "type": "object",
+                      "nullable": true,
+                      "properties": {
+                        "apr": {
+                          "type": "number"
+                        },
+                        "apy": {
+                          "type": "number"
+                        },
+                        "day": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "apr",
+                        "apy",
+                        "day"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "chainId",
+                    "poolAddress",
+                    "poolType",
+                    "dayVolumeUsd",
+                    "poolLiquidity",
+                    "poolLiquidityUsd",
+                    "poolStakedLiquidity",
+                    "poolStakedLiquidityUsd",
+                    "assets",
+                    "totalRewards",
+                    "tradingFees",
+                    "astroRewards"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/prices": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getOsmosisPrices",
+        "summary": "Get prices from Osmosis",
+        "description": "Currently only supported on Osmosis",
+        "tags": [
+          "osmosis"
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "prices": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "asset": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/wyndex/prices": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://juno.numia.xyz"
+          }
+        ],
+        "operationId": "getWyndexPrices",
+        "summary": "Get prices from Wyndex",
+        "description": "Currently only supported on Juno",
+        "tags": [
+          "wyndex"
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "prices": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "asset": {
+                            "type": "string"
+                          },
+                          "price": {
+                            "type": "number"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

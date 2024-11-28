@@ -24,7 +24,7 @@
     "switchOff": false
   },
   "apiFiles": [
-    "engage.json"
+    "engage.json", "prices.json", "xion.json", "TxByAddress.json"
   ],
   "homepage": "/engage/whats-numia-engage",
   "changelog": false,
@@ -36,6 +36,10 @@
     {
       "label": "NumiaSQL",
       "sidebarRef": "sql"
+    },
+    {
+      "label": "NumiaAPI",
+      "sidebarRef": "api"
     }
   ],
   "externalLinks": [
@@ -160,6 +164,34 @@
                 "sql/querying-data/chains/umee"
               ]
             }
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "api",
+      "categories": [
+        {
+          "categoryName": "Prices",
+          "pages": [
+            "reference/prices/get-astroport-pool",
+            "reference/prices/get-astroport-pools",
+            "reference/prices/get-osmosis-prices",
+            "reference/prices/get-wyndex-prices"
+          ]
+        },
+        {
+          "categoryName": "Transactions by Address",
+          "pages": [
+            "reference/TxByAddress/get-transactions-by-address"
+          ]
+        },
+        {
+          "categoryName": "Xion",
+          "pages": [
+            "reference/xion/get-abstract-account-authenticators",
+            "reference/xion/get-abstract-accounts-by-authenticator",
+            "reference/xion/get-abstract-accounts-details-by-authenticator"
           ]
         }
       ]
