@@ -1,0 +1,64 @@
+---
+id: get-points-per-vault
+title: "getPointsPerVault"
+description: "getPointsPerVault"
+sidebar_label: "getPointsPerVault"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVU8GOm0AM/RXkMw3bHrnlUFV7qVJt20uEIge8YbYwTGwTLUX8e+WBZJM2h20uSPHzm+fn5xG6QIzqOv9YQQ4H0k3nvMqG+Cf2jUIKigeBfAvBCrsS24Du4AWKFIT4RGzVEXpuIIdaNUieZcceBXnl+9bh6nX4DVORQkDGlvTcIWVNLUI+gg6BIAdRdv4AUwpMx94xVZA/YyOUgsfWECfTtMOqYhKBFJyHHI498RAfYJLQeSEx0k8PD/apSEp2wUaEHJ4UtZc8sWIKZeeVvBoMQ2hcGZ3IXsSwdwR2+xcqzZPA5pu6+aWoSq5wyIyDyVNq5Z39d32Inl8z+L7dE8N049F2YbjgC6trp9js/ovBLL1pKyb7pX+ZeC8lLWndLREyIag15LDkIJvpsssjQmXPToeYgz0hE69769gWU/FWfrIFzB5dgy6zWNqMLcIgX0BxNuefu+gtscyqP64eVrZ0ddoY+KtlM/mQfIsSk/XmcXZctMW4/iVzB9JkHjfZECfngW8suShSetUsNOi8kcWbGBcztjCb8bam9Ox6kULdiRpmHPco9IObabK/52ybS5UT3DdXJ/GLhjsXccKmNyHxHk7IzpqirynUhBVxZJub12VJQa+6/rkCY7ms9svn7zBNfwARB3PF
+sidebar_class_name: "get api-method"
+info_path: reference/quasar/numia-quasar-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getPointsPerVault"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/quasar/points/vaults"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getPointsPerVault
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"required":false,"name":"vault_address","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"object","properties":{"vaults":{"type":"array","items":{"type":"object","properties":{"vault":{"type":"string"},"points":{"type":"number"}},"required":["vault","points"]}},"total_points":{"type":"number"}},"required":["vaults","total_points"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

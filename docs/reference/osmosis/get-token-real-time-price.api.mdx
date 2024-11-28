@@ -1,0 +1,64 @@
+---
+id: get-token-real-time-price
+title: "getTokenRealTimePrice"
+description: "getTokenRealTimePrice"
+sidebar_label: "getTokenRealTimePrice"
+hide_title: true
+hide_table_of_contents: true
+api: eJx1kk1v2zAMhv+KwNMGKHGWo249DEMvW9FlpyAYFJuJ1dqSKtJBM0P/faDiZOnS+mJb4sfDl+8IhOmAicCsRxhSBwZa5kimqgL1gRzN/dA7O389/oGsP4iZMRJ75OvYjYYQMVl2wd83YGCPvArP6B/RdivX40NyNYIGtntpv9EQbbI98hmH6hZ7C2YEPkYEA8TJ+T1oaJDq5KKUBgOrFpUlQlYN+tCrsFPcomJpBllDwpfBJWzAcBpQg7e9VCspoMFJjWi5LcwJKQZPSNJ3uVjI6227n2x5IKPkUkMdPKNnCbMxdq4uA1dPJLHvzBC2T1hL25hEHnanToX8dtSsYaDmdyxS/bv1Q7/FBPnNcOupyHXKJsvzv2AfbaJHbsO0KiEUTQxURUiqDssqoe1m7HqsxqJeruKU6vwuCKB46dTky3wxF4HYcSfM38UaaqZ+nCyj7h7uZbwYiHtbtJr2skdWBU8JnxJAdSZ8M8dFDsZXrmJnXVl3ceg40a/hRA8aDksQuaYJQIM5O2DSSkMbiCVnHLeW8FfqcpbjlwHT8WTRg03ObmWg9QiNI/luwOxsR3iDd/EGfHqc1vRZiSTvYU+H1h+F1XaD/IGGZzxezJo3WUOLtsFUAE53d3WNka+ybowoxr4s99vXFeT8F5UHWx8=
+sidebar_class_name: "get api-method"
+info_path: reference/osmosis/numia-osmosis-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getTokenRealTimePrice"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tokens/v2/real-time/{asset}/price"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getTokenRealTimePrice
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","description":"The asset denom of the token"},"required":true,"name":"asset","in":"path"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"object","properties":{"denom":{"type":"string"},"usd_price":{"type":"number"}},"required":["denom","usd_price"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,64 @@
+---
+id: get-token-data
+title: "getTokenData"
+description: "getTokenData"
+sidebar_label: "getTokenData"
+hide_title: true
+hide_table_of_contents: true
+api: eJydVU1r20AQ/StiTi1sLMcUCnsLtJRcmtKmJ2PMWppYm2g/sjsyVoX+exlJduxIKXF1kbzzsW/fm31uIGLYYYgglw1UoQQJBZGPMk1dNC7qOLOV0Wq2r/9AK97IuSKMZJFOc1cCnMegSDt7m4OELdK9e0L7RZECAaS2vOtKgFdBGaQDipgVaBTIBqj2CBIiBW230AoI+FzpgDlIChUKsMpwgooRCQRoCxK8oqLbPWD0zkaM3Goxn/Mrx5gF7RkTSPhFiqooEw4KyJwltMRpyvtSZx309DFy7gQsFYKqeVdCE0/W3eYRM4bjAxNAukcQa7Nx5eSxcrTOTEb6A06V6OhLVU/GjNIdYmXru4eO0iFl41yJynY6Dku2MhsMIMBoq01lQM65wb7/vm5XrQDce2cHZs7LWmZN2y1mT26t8zEaAbYqS7UpsZesFbBzZWVwvfhUjPv9M32dFcpu8V1VPujsgsz19eXd/wvS+nN+SU2pnyuda6ovy74U2ouGJlP+HSVnV3F5GO3DIA9j+zKkw0ieTNKruTmbiinND4qO9ZpQY8z1KZNv8DRiYdV2j3jlGa9czCAVbnA33pjNR0JKnBLT3SJtOnNqO3d6cMwt223f63o2n7HzkCamFr6zeyZXyV3vqsnNj1u+Yt5FMqq70oPhbZGSDkUywDjDeJSPcE+pL5n7VvTO3QwQl9BDZLYXIED2HroSULhIHG+ajYr4O5Rty8vPFYa69+udCrofhmXDGvN3DvJBlRFHUI6uCh9+DiPzMeEzT0E8OKtlmXaqrPgXCHjC+mjznSUVqHIMHYA+dpNl6OmkamTh/JdwVOvb13to27/8bWWu
+sidebar_class_name: "get api-method"
+info_path: reference/osmosis/numia-osmosis-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getTokenData"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tokens/v2/{asset}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getTokenData
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"required":true,"name":"asset","in":"path"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"symbol":{"type":"string"},"denom":{"type":"string"},"name":{"type":"string"},"display":{"type":"string"},"main":{"anyOf":[{"type":"boolean"},{"type":"number","minimum":0,"maximum":1}]},"exponent":{"type":"number"},"coingecko_id":{"type":"string","nullable":true},"volume_24h":{"type":"number","nullable":true},"volume_24h_change":{"type":"number","nullable":true},"price":{"type":"number","nullable":true},"price_1h_change":{"type":"number","nullable":true},"price_24h_change":{"type":"number","nullable":true},"price_7d_change":{"type":"number","nullable":true},"liquidity":{"type":"number","nullable":true},"liquidity_24h_change":{"type":"number","nullable":true},"coingecko_mcap":{"type":"number","nullable":true}},"required":["symbol","denom","name","display","main","exponent","coingecko_id","volume_24h","volume_24h_change","price","price_1h_change","price_24h_change","price_7d_change","liquidity","liquidity_24h_change","coingecko_mcap"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

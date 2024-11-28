@@ -1,0 +1,64 @@
+---
+id: get-balances-for-earn-strategies
+title: "getBalancesForEarnStrategies"
+description: "getBalancesForEarnStrategies"
+sidebar_label: "getBalancesForEarnStrategies"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1v20gM/SsDXtoFtFK6R92yaFrk0hZNcwqMgpZoa1ppZkpSab2G/vuC+nDtxFvvqb7I0FDz3uMj3x6E+JFYoHzYQ88tlNCoJimLIkoXxUse+s5j/mP3DwyrDGIiRvUx3NZQwpb0b2wxVCRvIt8ghztlVNp6EshAcWs3AyEHWGWQkLEjXfCkaqhDKPegu0RQgij7sIUMapKKfTIcKOG2pqB+44ld3DhtyMmEsnOUb3MnHbK6KgZlrNRhXTOJuE3ksfgR+1ZhyIDpW++ZaiiVe8ogYDejjpdBBt7gEmoDQ/b/+d0LsbueUUdGL6x5r/I8f/EL3JnnKezKyiXFICSG/NfVlT1OAe8UtZfS2WEGJpyCWhmm1Ppq9Kf4IlZ7RkVcf6FKIYPE5qb6CenQhot6P9KGmMz0EzNyX7uNp7bO3ffGV43zczfGolOPnnmznsboMk3sYj+J/TXJT1GxdfO1y9xo/ErBMSUmsZkK24lcg0wusktR/Pj9kEEv9RFK6Ls18X+g3N+9do/Y9gec3iZikTScjMDDomBCWA0ZjKwuK5/G5qnuIQPZdevYnj2qqfIdtvJcyYir2H6WPqX2jOtPaZ9UG+0+VC36jurPTN+Ra7ksYbrjbGfPw00tenJ0tLBLj8+xWQ32e+rYhcjqSJs4R5vRt6UsobAEK+RQWOwXDkMxUyj28z4P40Jvokm0aJ1gX+VXuS2rem1N9TtLVfenez+lrLv+cGuWpCjaYfhpt/FwC2H3JrIzyu6E84nAQ1+VfmiRWvTTNPM4IJOeOZEzkONryrN9LZeYWmXQRFH7er9fo9A9t8Ngr7/1xDsoH1YZPCJ7XJvChz3UXux/DeUGW6FnRA/BBS8/zvb+4axH5wTMLzEYvXHZoATI4CvtjjPccvs34i7NGWwhGsKaeJQ+nV5XFSU9+u5ZPlveH0bu7c0nGIZ/ASSTn4Y=
+sidebar_class_name: "get api-method"
+info_path: reference/osmosis/numia-osmosis-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getBalancesForEarnStrategies"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/earn/strategies/{strategy}/balance/{address}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getBalancesForEarnStrategies
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","description":"Identifier of the strategy e.g. smart contract address for the vault"},"required":true,"name":"strategy","in":"path"},{"schema":{"type":"string","description":"User Address e.g. 'osmo1...'"},"required":true,"name":"address","in":"path"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"object","properties":{"strategy":{"type":"string","description":"References the strategy.id field. which is e.g. the smart contract for the vault"},"balance":{"type":"object","properties":{"amount":{"type":"string","description":"Total balance of the token representing the share or position"},"usd":{"type":"number","description":"Total USD value of the user balance"}},"required":["amount","usd"]},"token":{"type":"object","properties":{"name":{"type":"string"},"symbol":{"type":"string"},"decimals":{"type":"number"},"total_supply":{"type":"string"}},"required":["total_supply"]},"unclaimed_rewards":{"type":"object","properties":{"total_usd":{"type":"number"}},"required":["total_usd"]}},"required":["strategy","balance","unclaimed_rewards"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

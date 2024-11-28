@@ -1,0 +1,64 @@
+---
+id: get-vaults-depositors-metrics
+title: "getVaultsDepositorsMetrics"
+description: "getVaultsDepositorsMetrics"
+sidebar_label: "getVaultsDepositorsMetrics"
+hide_title: true
+hide_table_of_contents: true
+api: eJx9U8GO00AM/ZXIJ5BCWzjmVgmE9gACFrhUVeUm3maWJDO1PdWWKv+OPOlms9suuUSaebbfPL93AiE+EAsUqxNEbqCAWjVIMZ/vIwryrIutw9nD8S/06xx8IEZ1vrupoIAd6W+MjcpHCl6cepYvpOxKgRwUd9YWKpR665ErWOcQkLElfZwoZU0tQnECPQaCAkTZdTvoc2DaR8dUQaEcKYcOWwMcbB7k4DooYB+Jj4kXkwTfCYn1+rBY2K8iKdkFYwsF3CpqlCKzyxxK3yl1ajAMoXFletT8Xgx7hRcy49HGKrUyOffbeyqNT2CTRt3AAKuKSeTqw2Ln9pE21SDZFNPFdkt8ifF8HYWH3SNkU8VhL1eAz8RcjdwumVyb+8qUdZ++/IXI/zVES1r7s21MMdQaCpiP/pin3cpk+qYdi4XKyE6PyTZbQiZeRmuwWtv+H69vbXHDDqagURMzt3VLMCjOoKSR6+68IS0Ow2vezxYzM4s6bQz81aKQvcu+p2Rky283toXgRVtMwp89uiPNBhmyJx2yJyGeaTZSU3rQeWjQdckBlsXTWaRpiHJ4XaZ1DrUXtYLTaYtCv7jpezsekmLaVU5w25gV7rARumAzJgPe/Di75m1mIlxj+YeOk0wesImGSYk8IDsblDaUQ01YEScGQ9GyLClMqy5yaF1Gz3z+9BP6/h8VP6UM
+sidebar_class_name: "get api-method"
+info_path: reference/quasar/numia-quasar-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getVaultsDepositorsMetrics"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/dashboard/vaults_depositors_metrics"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getVaultsDepositorsMetrics
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"required":true,"name":"vault","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"address":{"type":"string"},"unique_deposits":{"type":"number"},"unique_depositors":{"type":"number"},"avg_deposit_duration":{"type":"number"}},"required":["address","unique_deposits","unique_depositors","avg_deposit_duration"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

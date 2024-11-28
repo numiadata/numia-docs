@@ -24,7 +24,7 @@
     "switchOff": false
   },
   "apiFiles": [
-    "engage.json", "prices.json", "xion.json", "TxByAddress.json"
+    "engage.json", "prices.json", "xion.json", "TxByAddress.json", "osmosis.json", "quasar.json"
   ],
   "homepage": "/engage/whats-numia-engage",
   "changelog": false,
@@ -172,26 +172,92 @@
       "sidebarRef": "api",
       "categories": [
         {
+          "categoryName": "Overview",
+          "pages": [
+            "api/overview/whats-numia-api",
+            "api/overview/getting-started"
+          ]
+        },
+        {
           "categoryName": "Prices",
           "pages": [
-            "reference/prices/get-astroport-pool",
-            "reference/prices/get-astroport-pools",
-            "reference/prices/get-osmosis-prices",
-            "reference/prices/get-wyndex-prices"
+            {
+              "groupName": "Get Prices",
+              "subpages": [
+                "reference/prices/get-astroport-pool",
+                "reference/prices/get-astroport-pools",
+                "reference/prices/get-osmosis-prices",
+                "reference/prices/get-wyndex-prices"
+              ]
+            }
           ]
         },
         {
           "categoryName": "Transactions by Address",
           "pages": [
-            "reference/TxByAddress/get-transactions-by-address"
+            {
+              "groupName": "Get Transactions",
+              "subpages": [
+                "reference/TxByAddress/get-transactions-by-address"
+              ]
+            }
           ]
         },
         {
-          "categoryName": "Xion",
+          "categoryName": "XION",
           "pages": [
-            "reference/xion/get-abstract-account-authenticators",
-            "reference/xion/get-abstract-accounts-by-authenticator",
-            "reference/xion/get-abstract-accounts-details-by-authenticator"
+            {
+              "groupName": "Get Abstract Accounts",
+              "subpages": [
+                "reference/xion/get-abstract-account-authenticators",
+                "reference/xion/get-abstract-accounts-by-authenticator",
+                "reference/xion/get-abstract-accounts-details-by-authenticator"
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Quasar",
+          "pages": [
+            {
+              "groupName": "Manage Points",
+              "subpages": [
+                "reference/quasar/create-point-campaigns",
+                "reference/quasar/delete-point-campaigns",
+                "reference/quasar/get-point-campaigns",
+                "reference/quasar/update-point-campaigns",
+                "reference/quasar/get-average-position",
+                "reference/quasar/get-points-per-user",
+                "reference/quasar/get-points-per-vault"
+              ]
+            },
+            {
+              "groupName": "Get Vaults",
+              "subpages": [
+                "reference/quasar/get-cl-vaults-list",
+                "reference/quasar/get-vault-historical-positions",
+                "reference/quasar/get-vault-positions",
+                "reference/quasar/get-vault-vs-pool-performance",
+                "reference/quasar/get-vaults-accrued-rewards",
+                "reference/quasar/get-vaults-avg-tvl",
+                "reference/quasar/get-vaults-balancing-slippage",
+                "reference/quasar/get-vaults-depositors-metrics",
+                "reference/quasar/get-vaults-depositors-over-time",
+                "reference/quasar/get-vaults-depositors-rolling-growth",
+                "reference/quasar/get-vaults-depositors-top-10",
+                "reference/quasar/get-vaults-impermanent-loss",
+                "reference/quasar/get-vaults-liquidity-flow",
+                "reference/quasar/get-vaults-list",
+                "reference/quasar/get-vaults-pool-incentives",
+                "reference/quasar/get-vaults-positions-liquidity-distribution"
+              ]
+            },
+            {
+              "groupName": "Tokenomics",
+              "subpages": [
+                "reference/quasar/get-tokenomics-supply-metrics"
+              ]
+            }    
           ]
         }
       ]

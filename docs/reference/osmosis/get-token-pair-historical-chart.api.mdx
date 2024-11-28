@@ -1,0 +1,64 @@
+---
+id: get-token-pair-historical-chart
+title: "getTokenPairHistoricalChart"
+description: "getTokenPairHistoricalChart"
+sidebar_label: "getTokenPairHistoricalChart"
+hide_title: true
+hide_table_of_contents: true
+api: eJy1VE1v2zAM/SsGscOGqXGyywDfimJYC2xrsHWn1CsUm7HVypIq0WmzwP+9oD/SpE3WAVtzcGCZfHyPFN8aAvol+gDJbA2115BASeRCEsc2VDaoMDJ1peTofvUbGnEg5ogwkEHajk0FWIdekrLmLIcECqQLe4NmKpU/VYGsV5nUJ6X0BAJIFkwiFeCklxXSQCpkJVYSkjXQyiEkEMgrUwAHEqE3kMCvy8v8/RtoBHi8rZXHHBLyNQowsuIcZ62+UjkIUBzvJJWtmkPgh5FkCEhXygxQtzX61T9h2Zr+HkwAmrqCZAaTEgRMWNJHfkwqy88VCJBaQyogx4WsNUHCAYdJeGkKfEIg5ejgrAkYmMOH8Zj/cgyZV44nCgn8IEl1SCL+KCCzhtAQh0nntMrawcfXgWP36JHeSyarCKuwdW7n15hxQ5zn60OqY0CKyW6iTF3N0YOAShlVcUPGAvA+03VQS/w6HLLQpr2HZl/yrp5zhyaaepVhZBcRlRhN0Svb9i7TNuytvwtxwmGHMEpVlC9DnKqixECHQLS9exnji707CLFzEWZdX/sODTJ7ql2xtGl/T0v8eZkrpNL2O98tagkJxE4qH+LlJC43GfG6X80mzvpkZRaWNbItdcUmo/GI7xgp0iz7G7tMdBSdd+4THU/PuDfOBqpkO+n+bhdIUUszYp7RI9FoYLqjatNXwnuKnZbKMG5reetexQxaFSBgOWk7NUCCgOTRZjoxqYDSBuKs9XouA/70umn4uFs09rdcBTnXPI2F1AGfUdosFrz93g/uXcTN2Ef1Ble7HrWUuuaw1lRerVRnYa9da3Cqxzopv3jFhf5/LwejMqvtmgOZYdRNyquNMkffUui+HmcZuu2ePPNE5r5Zk8+fLqBpHgCIHY0d
+sidebar_class_name: "get api-method"
+info_path: reference/osmosis/numia-osmosis-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getTokenPairHistoricalChart"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/pairs/v1/historical/{pool_id}/chart"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getTokenPairHistoricalChart
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","pattern":"^\\d+$"},"required":true,"name":"pool_id","in":"path"},{"schema":{"type":"string"},"required":true,"name":"asset_in","in":"query"},{"schema":{"type":"string"},"required":true,"name":"asset_out","in":"query"},{"schema":{"type":"string","enum":["1h","1d","7d","1mo","1y","all"],"default":"7d"},"required":true,"name":"range","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"time":{"type":"number","minimum":0,"exclusiveMinimum":true},"open":{"type":"number","description":"Open Price of the Period"},"close":{"type":"number","description":"Close Price of the Period"},"high":{"type":"number","description":"Highest Price of the Period"},"low":{"type":"number","description":"Lowest Price of the Period"}},"required":["time","open","close","high","low"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,64 @@
+---
+id: get-token-historical-chart
+title: "getTokenHistoricalChart"
+description: "getTokenHistoricalChart"
+sidebar_label: "getTokenHistoricalChart"
+hide_title: true
+hide_table_of_contents: true
+api: eJytVMFu2zAM/RWDpw1wYyfNtsK3ohjWAttabN0uQQ6Kw8RqZckV6bRZ4H8vKNtZ0ibrZTkoNk0+Pj6R3AChX6EnyCYbqL2BDArmirIkcVQ60jSwdanV4Gn9B5r4iM8JI7FF3vWdxuAq9Iq1s1dzyGCJfOvu0V5qYud1rsxFoTxDDKyWQmAaQ6W8KpF7QpQXWCrINsDrCiEDYq/tEmKYI+VeVwIOGQTcaI7WlZHzEa3LmTPQxODxodYe55CxrzEGq0qBUUQoibUEV4qLUNrxbGjrErIJDCGGDxDDMJVDnk7l6WN4Hck5Gss5PpPzU7AMx8E0TNNgHJ+epSlMpYKFqg1DJuHHqfKi5/lQo18HXT1S5SwhCddRmsrfviA/WXFNWSQfY8idZbQsbqqqjM7DpSR3JL4H6lbeq7WkZSxpx+5md5iLbpWXq2XdMmAtTLdeti5n6CGGUltdinBpDPiUm5r0Cr/1RqmyCT1iDwXv13NdoY1uvM4xcouIC4xu0Gs3F+Fy4+hg/n2IC3E7hlHoZfE2xKVeFkh8DMS4x7cxvrrHf0CsnKkPi7mP8jv4vYzf66JJey+dwr1MXakt2W2+aRN+L7Mcn9gSuXDdUEs/yAhlkLB4U7IaJcU2JNmEaWuSvIvVduGkQlk7bZ7hIB1In7JmI0V/ly0SnUTX7XaJzm+uRJzKEZcqdEs3HEvkqJ39vxSjnuNeLVtBGZ84qYzSViDDNtt0/CfQ8hddRkGpHhNiyPqd0ZYxjaFwxBK02cwU4S9vmkbM7ZjK9pprUjMjd7FQhvAVo+1Ywrsf3bW9j0SGQ0zvcd1vg5UytTiEXbBSXkuW/5+xXwZ2vZuzZ9LK0UxleFDN0QcC7bfzPMeKd6JebR1hvu2hL59voWmeAZ7pLYA=
+sidebar_class_name: "get api-method"
+info_path: reference/osmosis/numia-osmosis-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getTokenHistoricalChart"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/tokens/v2/historical/{asset}/chart"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getTokenHistoricalChart
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","description":"Token denom or symbol"},"required":true,"name":"asset","in":"path"},{"schema":{"type":"string","enum":["1","5","10","15","30","60","120","240","480","720","1440","10080","43800"],"default":"60"},"required":true,"name":"tf","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"time":{"type":"number","minimum":0,"exclusiveMinimum":true},"open":{"type":"number","description":"Open Price of the Period"},"close":{"type":"number","description":"Close Price of the Period"},"high":{"type":"number","description":"Highest Price of the Period"},"low":{"type":"number","description":"Lowest Price of the Period"},"volume":{"type":"number","description":"Volume of the Period"}},"required":["time","open","close","high","low","volume"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

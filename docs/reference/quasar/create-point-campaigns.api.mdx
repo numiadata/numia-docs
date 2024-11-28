@@ -1,0 +1,64 @@
+---
+id: create-point-campaigns
+title: "createPointCampaigns"
+description: "createPointCampaigns"
+sidebar_label: "createPointCampaigns"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1v2zAM/SsGsaOTtMNOvnXtpYeuHdodgtQLaJup1dmSIlFpM0P/faDcZkm7LwzYLpYhUuJ7j9QbwFhyyMro8wYKqB0h05VRmk+xt6jutIccGO88FAuwEljWu0iZgye3ISfRAYLroICW2fpiNlsH9OimOvQKp4/brxDLHBytA3l+b5otFAPURjNplt97b7Ssvm6pR/njrSUowFT3VDPkYJ2AZUU+5TE6XjbItJfr2Sl9J7nITE5DAZ9vb5vhXZzI8vZ5eQM5NORrp6xwhwLOkClTOuOWspVxPXI2n8/nk4uLydkZxBxIN/+xWh86VrZT5Pbq6dBX5NJlKwwdQ3EcpbjDPkliNF2uUid+Ld1mPPySR8whaMVLs1p2ah1Uo3j7unrMAa3tVI0jl9dqkA69TIvxvVmmWssKO9Q1SXDTv9grYxznQjlq5NwI70dgDkuXMf97ptaY7t9LELTyD2iXnf093YToT1i/umHvKezN6cEQ7cakjHE87q3RPqkUX07nT1ygJ26NuIQ1nsepb6GAp4c+S+bgZ/XeCU91cEnCxQAVoSN3EuTQoozl9/C1PPmxYftJO1nFUeS2lAbFUxIID6VXJjWanB/BH0+PpkfiWYo7Sf4g/pNNso8JZXZydT6233OPqXca06Uj6SyxzvZpH2izw8T0yDPbodJpaFwaplGRBYyKpJ6KJpDDgWe2ol+xgGGo0NMn18Uo2+tATqQqc9igU1gJ/kUZc2gJG3GCxQBfaAsFnI6+ObkRMJLeBQGVPFSU3bXq6vL6BnKonvy2N43kOXyAPH0LgBjjN9u7F0c=
+sidebar_class_name: "post api-method"
+info_path: reference/quasar/numia-quasar-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"createPointCampaigns"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"post"}
+  path={"/quasar/points/campaigns"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+createPointCampaigns
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={undefined}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={{"content":{"json":{"schema":{"type":"object","properties":{"start_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"end_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"multiplier":{"type":"number","default":1},"params":{"oneOf":[{"type":"object","properties":{"vault":{"type":"string"},"unit_of_liquidity":{"type":"number"},"application":{"type":"string","enum":["osmo_vault_balance","evm_vault_balance"]}},"required":["vault","unit_of_liquidity","application"]},{"type":"object","properties":{"vault":{"type":"string"},"pool":{"type":"string"},"unit_of_liquidity":{"type":"number"},"application":{"type":"string","enum":["uniswap_lp_balance"]}},"required":["vault","pool","unit_of_liquidity","application"]}]}},"required":["start_date","end_date","multiplier","params"]}}}}}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{}}
+>
+  
+</StatusCodes>
+
+
+      

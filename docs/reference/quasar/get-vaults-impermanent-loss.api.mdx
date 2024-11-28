@@ -1,0 +1,64 @@
+---
+id: get-vaults-impermanent-loss
+title: "getVaultsImpermanentLoss"
+description: "getVaultsImpermanentLoss"
+sidebar_label: "getVaultsImpermanentLoss"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VMFq20AQ/ZVlTi1s7LTHvQVSmkBd2rotmCDMSJpYm0qrzewoxDX69zKS7TiJU+gh1UVIevtm5s172kAiviNO4K420HENDiqRmNx0etthQp6ErvE4uV//hj6z0EZiFN+GyxIcrEh+YldLumwicYOBgnxqUwILgislhRJTlbfIJWQWIjI2JLt6qaioQXAbkHUkcJCEfViBhZJSwT5qIXBwjkLGByMVmeuWGxSzWCwWJ7PZyfm5ubhws5mbz6G3wHTbeaYSnHBHFgI2Iy+yLEsUAgteKW874jX09j82QaH8xxZe5rpT1Z8QZYpOsQ2JknK9Pz3V2+Mp5oLSJWf0o4WiDUJBFIYx1r4YVju9SYo90hcy41rLCjXp4H2b31Ch/URWg4gfO6gxpzodncs/GGZZq2MeQKFrcmLoH01/tSM7cjTrh+vpwv5izoakarcG1q5RKnAw3Xt1Ouibls9KWUhUdOxlPRg4J2Tis06PX2W6gd3nuUo3qnAI2g+pIVO2AQZuCxqG9uG6VaTGcpzk3eR0ousSL7WCP2skzYn5OiTUnH25VEljm6TBYXFbl6xIzCiBOdDAbEV4pNa+MaF7mcYafVDO4Y+w2Qp0GGYLL0mUWajaJArfbHJM9IPrvtfXo09Vt9InzGvd6zXWiZ71svclvPm2tcBbowIc6/EXrZ9G/A7rToFDul6h2EGUX7vULukPdTJ9YK+FBtdZqAhL4kHZ8dBZUVA8PPUs3cqyT8HHD9+h7/8A5l8S2Q==
+sidebar_class_name: "get api-method"
+info_path: reference/quasar/numia-quasar-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getVaultsImpermanentLoss"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/dashboard/vaults_impermanent_loss"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getVaultsImpermanentLoss
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"required":true,"name":"start_date","in":"query"},{"schema":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"required":true,"name":"end_date","in":"query"},{"schema":{"type":"string"},"required":true,"name":"vault","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"labels":{"type":"string"},"impermanent_loss":{"type":"number"}},"required":["labels","impermanent_loss"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,64 @@
+---
+id: get-pool-stream-data
+title: "getPoolStreamData"
+description: "getPoolStreamData"
+sidebar_label: "getPoolStreamData"
+hide_title: true
+hide_table_of_contents: true
+api: eJztWEtv40YM/isCTy2g9SMoUEC3RVsUuXQX3RY9BIZAS7Q9G82MMkNl4xr+7wX1sCRHcpQU3lNOhmfI4cePHGrIA3hyj+Q8RHcHKFwGEeyYcx/N59Zr65WfmUIrnD3t/4VjOCLzgcmzIe7KrkKwOTlkZc1tChFsiT9bm31hR6h/RUYIgXErplch5OhQEzdQfLIjjRAdgPc5QQSenTJbCCGlDRYZQwTL8p9PnMrFCERwuwlya7NYpT5QPkhpowylYZAprVhW1NZYR+kMjiE4eiiUoxQidgWFYFCLIa1MnKmHQqWK9xCCkoMfCnL70v9xYGQKDdEdPNqs0BTf/LSDELontRtxskOzpe5+s7Tqethqj+O1LiUX39ObsAp9EAL6pG+4XH/J5vpVJjtxWyyuErlS9m2QrgPIbjaeLiJCs/+0KRO+xobOYUkrk/bPMR9F/Wxp1QOwwcy3CBoXzjCsRMPn1ngqjdwsFvLTZ+ALIxc+Cm7KcCXWMBkuQed5ppLyYs+/epEdINmuv1IivudOygCrylKOW2WwsvCSrKEnjmsOh7gyhV6TKxk1RZbhOqMqAAMrQhJbxiwWSrrMNqf0WLzrGe+rylHnh4yFbcQzjarr/9rajNBIJlUr4xe2Kcpb1Hr2uFwT43ImZRXC/p4g1DalzM88CxH+G+ZjGok1CRl2yJSeas64sNff0GuxcJL5xXr9D3pdyjYMxSodIDoEgRJviIbCEAI9KR7frSLxjdR2x7F1sU8wE4rGZf0OHU0ISkrG6iHuz5MLUNuiugoviJ7lVGXhpH+iie09Gf+qevA6Hy5gPja1YoLffq/XNpskmiqfZ7ifJEtPuTU0iVCpQ8psKbm3/eQaV7iUKi0HOblkEILsOZVMI6iU7H7g/2+K1ME5Ud8S26HtjJQhl1sHG3cGwK66X5eRBEPviRfvifieiFdNxLBKtOV7or0n2pUrXg9MXd5O6bcqH45tG/bslTFASdvSDdIyrthpHF8n/gYjPw+8zIZeOmnqyA81Im00YuS4Ytaaibcqd4RpvMGErZt2BwrnxJR/cLWxSWqskvvY55gMXoILdkTx1QrxUJ5cutcpTb3SynhGwwqZYu2n+HKW2GXHUbcX7eO8+xTvPrzHn9n9F2t/vjGY+GF/HjI0A2lTsk241fHcg07n2PRfIiRi/b51aM6kiXe2HkKJOvIOIpj7UmYup80fl3PMsrJR3lghWMZi1YnL2WImRYEVC7/wh0y5gg/Bp6ojCj5+vi2rpvWssWzs6vZ7SxwIlqACE9RoenhPkWR64nmeSaCOYTVnO9RI76BCWnsunMnwS/CuQthZzyJzOKzR098uOx5luer1pZdIlZfMaKcDZwBOvT388GfN+I9Bky3nwGTS9HxK9ohZIbJlN34Fe90p1/extf4eppqR1dVdagYZlw1Vwp2hUSu+kj9OVRXmTr6KO8KUXJlgld7HJKG8a+TZoEhOOV3F33/7C47H/wDjPM1o
+sidebar_class_name: "get api-method"
+info_path: reference/osmosis/numia-osmosis-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getPoolStreamData"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/stream/pool/v1/all"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getPoolStreamData
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","default":"1","description":"If pool_ids is defined, limit is ignored."},"required":true,"name":"min_liquidity","in":"query"},{"schema":{"type":"string","enum":["volume_24h","liquidity","volume_24h_change","liquidity_change"],"default":"liquidity"},"required":true,"name":"order_key","in":"query"},{"schema":{"type":"string","enum":["desc","asc"],"default":"desc"},"required":true,"name":"order_by","in":"query"},{"schema":{"type":"string","default":"100","description":"If pool_ids is defined, limit is ignored."},"required":true,"name":"limit","in":"query"},{"schema":{"type":"string","default":"0","description":"If pool_ids is defined, limit is ignored."},"required":true,"name":"offset","in":"query"},{"schema":{"anyOf":[{"type":"array","items":{"type":"string"}},{"type":"string"}]},"required":false,"name":"pool_ids","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"object","properties":{"pagination":{"type":"object","properties":{"next_offset":{"anyOf":[{"type":"number"},{"nullable":true},{"nullable":true}]},"total_pools":{"type":"number"}},"required":["next_offset","total_pools"]},"pools":{"type":"array","items":{"type":"object","properties":{"main":{"type":"boolean"},"type":{"type":"string","enum":["osmosis.gamm.v1beta1.Pool","osmosis.gamm.poolmodels.stableswap.v1beta1.Pool","osmosis.concentratedliquidity.v1beta1.Pool","osmosis.cosmwasmpool.v1beta1.CosmWasmPool"]},"pool_id":{"type":"number"},"swap_fees":{"type":"number"},"exit_fees":{"type":"number"},"total_weight_or_scaling":{"type":"number"},"total_shares":{"type":"object","properties":{"denom":{"type":"string","nullable":true},"amount":{"type":"string","nullable":true}},"required":["denom","amount"]},"pool_tokens":{"anyOf":[{"type":"array","items":{"type":"object","properties":{"denom":{"type":"string"},"amount":{"type":"string"},"name":{"type":"string","nullable":true},"symbol":{"type":"string","nullable":true},"display":{"type":"string","nullable":true},"exponent":{"type":"string","nullable":true},"coingecko_id":{"type":"string","nullable":true},"weight_or_scaling":{"type":"string"},"percent":{"type":"string"},"price":{"type":"string","nullable":true},"price_24h_change":{"type":"string","nullable":true}},"required":["denom","amount","name","symbol","display","exponent","coingecko_id","weight_or_scaling","percent","price","price_24h_change"]}},{"type":"object","properties":{"asset0":{"type":"object","properties":{"denom":{"type":"string"},"amount":{"type":"string"},"name":{"type":"string","nullable":true},"symbol":{"type":"string","nullable":true},"display":{"type":"string","nullable":true},"exponent":{"type":"string","nullable":true},"coingecko_id":{"type":"string","nullable":true},"weight_or_scaling":{"type":"string"},"percent":{"type":"string"},"price":{"type":"string","nullable":true},"price_24h_change":{"type":"string","nullable":true}},"required":["denom","amount","name","symbol","display","exponent","coingecko_id","weight_or_scaling","percent","price","price_24h_change"]},"asset1":{"type":"object","properties":{"denom":{"type":"string"},"amount":{"type":"string"},"name":{"type":"string","nullable":true},"symbol":{"type":"string","nullable":true},"display":{"type":"string","nullable":true},"exponent":{"type":"string","nullable":true},"coingecko_id":{"type":"string","nullable":true},"weight_or_scaling":{"type":"string"},"percent":{"type":"string"},"price":{"type":"string","nullable":true},"price_24h_change":{"type":"string","nullable":true}},"required":["denom","amount","name","symbol","display","exponent","coingecko_id","weight_or_scaling","percent","price","price_24h_change"]}},"required":["asset0","asset1"]}]},"liquidity":{"type":"number","nullable":true},"liquidity_24h_change":{"type":"number","nullable":true},"volume_24h":{"type":"number","nullable":true},"volume_24h_change":{"type":"number","nullable":true},"volume_7d":{"type":"number","nullable":true},"address":{"type":"string"},"exponent_at_price_one":{"type":"string","nullable":true},"spread_factor":{"type":"string","nullable":true},"current_sqrt_price":{"type":"string","nullable":true},"tick_spacing":{"type":"string","nullable":true},"current_tick":{"type":"string","nullable":true},"current_tick_liquidity":{"type":"string","nullable":true},"code_id":{"type":"string","nullable":true},"instantiate_msg":{"type":"string","nullable":true}},"required":["main","type","pool_id","swap_fees","exit_fees","total_weight_or_scaling","pool_tokens","liquidity","liquidity_24h_change","volume_24h","volume_24h_change","volume_7d","address"]}}},"required":["pagination","pools"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

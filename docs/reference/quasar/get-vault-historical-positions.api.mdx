@@ -1,0 +1,64 @@
+---
+id: get-vault-historical-positions
+title: "getVaultHistoricalPositions"
+description: "getVaultHistoricalPositions"
+sidebar_label: "getVaultHistoricalPositions"
+hide_title: true
+hide_table_of_contents: true
+api: eJzlVU1vm0AQ/Sto1EMr4Y9EPXGLlKrJwVUaN5WshFoDTMwmwG52hzSuxX+vBjDGCXHVQ6RK5bKCmdl5+3j7ZgOO7CNZB8H1BkqbQQAps3HBZPJQokM7Lspc4fhp/Quq0AdtyCIrXZwnEMCK+DuWGZ8px9qqGLML7ZSEHfjAuJJ9IUGXRhptAqEPBi3mxNuWLk4pRwg2wGtDEIBjq4oVVD5YeiiVpQQCtiX5UGAuCY/SEHxQBQTwUJJdQ+W/vpF0ZCYr2T9ubpLNx2oky/F2eQc+JORiq4wAhwBOkclThccpebfa5sjeYrFYjGaz0enpAWSO0fIyQaZ/Eh4VyRC4UAqc0YUjJ/iOp1NZ9nvOGbl0gSdBH2JdMBUsaWhMpuJaEZM7J7kDZ0VrcS1tmXLX+66jO4rlXxorumLVIIgyHd8vWeXkGHMzRNpfMOKdnQWzWTCfCzX8tEzRpYN6M610lyrpxYsyj8g2cZ29FiuNIbs0VsU0GM/0z4NxdI54+mdq3DqPdDYIP6FC54MRzHXZ/K2BoljlmLlBUI1uBqoyvdJXl+duILgnv+st3i26Dkuvc9sn3LJw9H+z8Kz0+V3YSXhfsDt57otxX3qd0Dquw6p+nt+ow8aeE6e69f/GwVIIYNL5/KT26GXaFS9Nr9pRXFrF69r/I0JL9qSUHa5DMaNteC4u0hpCL6njWsaU7FanQdAm1dyr4lZLpgy25jxH4+lYTs2KM0n+IkPNG3lf6xnnnVyctw7AOdYe1nrmitirifB2THh9KvZo67AxPfHEZKiK2hxsrdWGpv449OEAUaEPqXYsFZtNhI6ubFZV8rkxbmEvUQ6jTJRyi5mjF3A6o4b3l62oPnhCwxDMe1r3xusjZqXk1NPrDfrsDcu3btYbfbtWobxYJb1q7fmQEiZka2abupM4JtNn48W4k1266/D50zeoqt9cHDMB
+sidebar_class_name: "get api-method"
+info_path: reference/quasar/numia-quasar-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getVaultHistoricalPositions"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/dashboard/vault_historical_positions"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getVaultHistoricalPositions
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"required":true,"name":"vault","in":"query"},{"schema":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"required":true,"name":"start_date","in":"query"},{"schema":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"required":true,"name":"end_date","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"block_timestamp":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"tx_hash":{"type":"string"},"position_id":{"type":"number"},"pool_id":{"type":"number"},"upper_price":{"type":"number"},"lower_price":{"type":"number"},"asset0":{"type":"object","properties":{"symbol":{"type":"string"},"denom":{"type":"string"},"amount":{"type":"string"},"decimals":{"type":"number"},"name":{"type":"string"},"logoURIs":{"type":"string"}},"required":["symbol","denom","amount","decimals","name"]},"asset1":{"type":"object","properties":{"symbol":{"type":"string"},"denom":{"type":"string"},"amount":{"type":"string"},"decimals":{"type":"number"},"name":{"type":"string"},"logoURIs":{"type":"string"}},"required":["symbol","denom","amount","decimals","name"]}},"required":["block_timestamp","tx_hash","position_id","pool_id","upper_price","lower_price","asset0","asset1"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

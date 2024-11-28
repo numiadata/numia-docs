@@ -1,0 +1,64 @@
+---
+id: get-tokenomics-supply-metrics
+title: "getTokenomicsSupplyMetrics"
+description: "getTokenomicsSupplyMetrics"
+sidebar_label: "getTokenomicsSupplyMetrics"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VMFu2zAM/RWDpw1wk25H3wp0WHvIsC3dISiCgLaZWI0sqxJV1Av87wPtxElcN6dtvhi2HsnHR+rtwJN7IechedxBcBoSKJitT6bT54Ae3cSEUuHktf4NzTKGypJDVpW5zyGBDfFDtSVTlSrz82CtrmfETmUeYmDcSFrI0RdphS6HZQwWHZbEh4o+K6hESHbAtSVIwLNTZgMx5OQzp6yUggRukSlSJuKConXlSuRosVgsrmazq9vb6O4umc2S+RyaGBw9B+Uoh4RdoBgMll1edLzKkQliUJLyOZCroYn/Iwky+RiFpQR4WxlPXlh8vr6W13nxOSMHn0RyGENWGSbDAkNrtcramUyfvGBHOkLnsJayTKU/+V+lT5QxxGCdTJZVx0BjStr/TUW0KhWvfLsiJ3lNKFNyAuCKUV8ClMow5ZcQaXDmYg1dZdvLKTLlsqCRldlcgq2D1vUqVzoIpRfUATtFxnij2xKvMrSjx8qs9fvBe8btlRsBnK3a42FsA7UH2g6VHOg2VGlUk/cVOOv3tLtBL8umfYYLddFQSuKi2tuOrCxyAQlMe3+Zch867Yiuyj7YUxac4rq1nZTQkbsJkuBxKRfwcDyXm9NdglNQr7yYo2RrYZDsQe0klFm3MxI77br5NLmeyG1lxVrA38RKo6voR+us0c33e5mxrTyX2M5/7xMb4ugoQ9TpEB2FONOsp8b0ylOrURnJ2nr5bi/SqQnLOhxSSyfnQi1jKCrPErLbpejpl9NNI787sxL1cuUx1bJya9Se3vDpzQk+/Nxv58dI6o7x3FI9tGfZJgG25vwPip3Y8LHUUj6cklrtTsRQEObk2o67uJssI8snUW+sV7L0W/r1ywM0zR9nAZEh
+sidebar_class_name: "get api-method"
+info_path: reference/quasar/numia-quasar-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getTokenomicsSupplyMetrics"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/dashboard/tokenomics/supply_metrics"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getTokenomicsSupplyMetrics
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"required":true,"name":"start_date","in":"query"},{"schema":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"required":true,"name":"end_date","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"labels":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"limit_supply":{"type":"number"},"total_supply":{"type":"number"},"minted_supply":{"type":"number"},"burnt_supply":{"type":"number"},"locked_supply":{"type":"number"},"circulating_supply":{"type":"number"},"fully_diluted_valuation":{"type":"number"},"market_cap":{"type":"number"},"inflation":{"type":"number"},"locked_ratio":{"type":"number"}},"required":["labels","limit_supply","total_supply","minted_supply","burnt_supply","locked_supply","circulating_supply","fully_diluted_valuation","market_cap","inflation","locked_ratio"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
