@@ -1,0 +1,64 @@
+---
+id: get-position-duration-metrics
+title: "Get position duration metrics for a market"
+description: "Get position duration metrics for a market"
+sidebar_label: "Get position duration metrics for a market"
+hide_title: true
+hide_table_of_contents: true
+api: eJyVVMFu2zAM/RWBpw3w4mxH3wJsKHLYUKzbKQgKxWZitZasUlQQz/C/D7Qd120WIPPFkPhIPj09qoXaI2k2tVsXkMEB+b4ORtZf47D/HZlMHiCBgHRECpBtWohUQQYlsw9ZmhZNcVq4aI1enJo/0G0T8Jq0RT7jnbYIGVhNz8iQgHGQwUtEaiABwpdoCAvImCImEPISrYasBW68pAUm4w7QSWHC4GsXMEj8y3IpvwJDTsYLXcjggTXHkCkJJpDXjtGxwLT3lcn7U6VPQbDtZS9NpIWUYbRhtl/vnjAX6p5EMzYDA4uF0e6xGNV6tMZFxnmii3aHBF0CVp9uBJpbK+Jtvbu5yJurpK9QvELoWvtt13/Ju2u5Q1Z+NJc6Jyk72Evta1JaTf6wyGU9OlI011xCBukQT89lQvrafGbTPJLhpvfdDjUhraKkb7bin3P4QS5+EGsOmqQTb8PoRVkPoF5K4/a1IGUahrN9XiwXYjY2XAn4h8yC+qRWa7U6oGO1ul/Lffk6sNW98caJ+C9V3gg6MWU8ceorbZy06CezHRXbvE7cpJnUea/aNoGyDiwJbbvTAX9T1XWyPcyoSFmYoHeVGGivq4AXbKZBgw8/R699VKLJv1g+YzN/Do66igLqn46jJiOd+htLoERdIPUUhqxVnqOfZ13MtVSZHHT37Rd03V/Kw7rk
+sidebar_class_name: "get api-method"
+info_path: reference/ai/numia-ai-agent-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"Get position duration metrics for a market"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/market/positions/duration_metrics"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+Get position duration metrics for a market
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"name":"market","in":"query","required":true,"schema":{"type":"string"}}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"median_duration_minutes":{"type":"number"},"max_duration_minutes":{"type":"number"},"min_duration_minutes":{"type":"number"},"mean_duration_minutes":{"type":"number"}},"required":["median_duration_minutes","max_duration_minutes","min_duration_minutes","mean_duration_minutes"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

@@ -1,0 +1,64 @@
+---
+id: get-vaults-depositors-over-time
+title: "getVaultsDepositorsOverTime"
+description: "getVaultsDepositorsOverTime"
+sidebar_label: "getVaultsDepositorsOverTime"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VF1vm0AQ/CunfWolYqd95C2SqyYP7pfTSlaErAU25lK4I3uLG9fiv1cLtkNsN1WlprwguLnZubnZ3UAgXhEHiG820HAJMRQidYjH4/sGA/LINZXF0cP6J7RJBL4mRrHeXeUQw5LkGzalhAnVPljxHD6uiK9tRRCB4FJ5IcdQpB45hySCGhkrkl3JkBVUIcQbkHVNEEMQtm4JEeQUMra11oIYJihkrDNSkLn1XKGY+Xw+P5tOzyYTc3kZT6fxbAZtBEz3jWXKIRZuKAKHVc+LLIscRZVZpbxviNfQRv9RBLn8LyX8nmulxh8QJYoOtXeBgnK9PT/X19NTzASlCbHRxQgy74ScKAzrurRZd7vju6DYE7qQGddaVqgKg/8+vaNM9dSsGRHbKygxpTL8S2sxz5nCCUpdy8SuaJHv0zhAuaZKiRXl6MefIFnRsKP8ediTu7nZHfVR4Sk9R9VP1kra7jk06fl2q0gKv+1KvQeUAmIY77tv3CUmDOos/Ip4If32QFnDVtZdW6aETHzRKMVNornaLc80EP3dDkF7c3R6KFsHg3gL6syy7tYrUudNf6A3o/ORhlCslAr+oLPGnJnP3egxF5+u9DJqH6TCLo7b7C9JTO+EebTCqBdma8YT4/bihB5kXJdonfJ2426zNWo4piJ4zqokgsIH0S2bTYqBvnLZtvq770L1L7cB01JzcYtloCM9+66DV1+2EXpt1IhTOr/T+nCArbBsFNjNjhcoNhhUL11qN8ce6yT6wVYLdemLoCDMiTtn+00XWUb1cNfR7FKWfUe8f3cNbfsLpRpikQ==
+sidebar_class_name: "get api-method"
+info_path: reference/quasar/numia-quasar-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getVaultsDepositorsOverTime"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/dashboard/vaults_depositors_over_time"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getVaultsDepositorsOverTime
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"required":true,"name":"start_date","in":"query"},{"schema":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"required":true,"name":"end_date","in":"query"},{"schema":{"type":"string"},"required":true,"name":"vault","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"labels":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"address":{"type":"string"},"active_depositors":{"type":"number"},"new_depositors":{"type":"number"},"churned_depositors":{"type":"number"}},"required":["labels","address","active_depositors","new_depositors","churned_depositors"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

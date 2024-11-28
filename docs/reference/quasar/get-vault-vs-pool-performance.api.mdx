@@ -1,0 +1,64 @@
+---
+id: get-vault-vs-pool-performance
+title: "getVaultVsPoolPerformance"
+description: "getVaultVsPoolPerformance"
+sidebar_label: "getVaultVsPoolPerformance"
+hide_title: true
+hide_table_of_contents: true
+api: eJy9VE1vm0AQ/StoTq1EbLdHbpFSNTm4Sus2kmUha4CJ2XRh8e5gxUX892oWTPwVRz2kXBDs2zdv3s6+BhzZDVkH0aKB2mqIIGeuXDQer2t0aEdlXSgcPW//QBuHYCqyyMqUdxlEsCJ+wFrzg7s3Rt+TfTS2wDIlCIFxJayQocsTgzaDOIQKLRbEu4IuzalAiBrgbUUQgWOryhWEkJFLraqkEkRwg0yBKgPOKfAlOJjP5/Or6fTq5ia4vY2m02g2gzYES+taWcogYltTCCUWHS9aXmbIokwJ5bomu4U2/I8iqMz+UcLrXBux/YgoFrSrTOnICdfnyUReh13MGLl2USCLIaSmZCpZYFhVWqX+bMdPTrBndKG1uJWyTIXb+2+SJ0pFT2VlQlh1CjQmpN3Zvipj9FJlZ9fYMOrlxuhaeh0AZV0kZAXgu78E6Bi0WtcqU7y9QPIGxpdY+pE/Cxi2X8D0JG9DD457sXPvxasjZ458OO36tMejjk71v6o2bv1zfCkuJUBBnJs+JqQL5BwiGA+BMO7lu6VvsDrY7CitrT+WRQMJoSV7XQvBIpZB3y3PZEK7YdsHDdZKmAmbh0HUg7zVqnz0hyDx1zXzaTQZya1gxVrA3yT6gqvgu0/C4Pr+rptcxwX6+9FfxhVx4F0IHlwgPgSHRhxYNkhjeuZxpVGVwuqzt+lN2k/N4ZTP2BSHkBvHsqFpEnT0y+q2ld9dJIh3mXKYaJmoR9SOTtQMEQAffvTD9zEQE86p/E3b4zTdoK4F6IPsHYrtpeZ7l9qF6kudWD6skkJ+8kLICTOy3tlu03WaUrW/6yRIhWW4C1+//IS2/Qs8jZcJ
+sidebar_class_name: "get api-method"
+info_path: reference/quasar/numia-quasar-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getVaultVsPoolPerformance"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/dashboard/vault_vs_pool_performance"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getVaultVsPoolPerformance
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"required":true,"name":"start_date","in":"query"},{"schema":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"required":true,"name":"end_date","in":"query"},{"schema":{"type":"string"},"required":true,"name":"vault","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"labels":{"type":"string"},"pool_id":{"type":"string"},"total_volume":{"type":"number"},"vault_volume":{"type":"number"},"total_liquidity":{"type":"number"},"vault_liquidity":{"type":"number"},"volume_ratio":{"type":"number"},"liquidity_ratio":{"type":"number"},"volume_liquidity_ratio":{"type":"number"}},"required":["labels","pool_id","total_volume","vault_volume","total_liquidity","vault_liquidity","volume_ratio","liquidity_ratio","volume_liquidity_ratio"]}}}}}}}
+>
+  
+</StatusCodes>
+
+
+      

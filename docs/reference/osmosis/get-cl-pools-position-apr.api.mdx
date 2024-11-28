@@ -1,0 +1,64 @@
+---
+id: get-cl-pools-position-apr
+title: "getClPoolsPositionApr"
+description: "getClPoolsPositionApr"
+sidebar_label: "getClPoolsPositionApr"
+hide_title: true
+hide_table_of_contents: true
+api: eJydUsFu2zAM/RWDpw1Q42RH34JiGHrZgm47Bcag2GysVpZUkU6bGf73gbLTJlkCDPPFtvT4+Pj4eiCMO4wExbqHLloooGEOVOS5p9aToZnrWqNnr/vfMKgrmBtGYod8jC0V+IBRs/HuroYCtsi3duW9pZUnI8fLEEEB6620LxUEHXWLfJBDVYOthqIH3geEAoijcVsYFER87kzEGgqOHSpwuhVA8N6CAuPkW3OTFP8TzYO29M5j/QvGX2yqpwPbc4dx/790XQiX6UqpoeAdIQnjp/lcXjVSFU0Qi6CA76y5oyKTSwWVd4yOBaZDsKZKBuePJNgL6vzmESsGBSHKOtiMnZar+yOQ69oNRhhOZlgnUDnIo840Xdtli9z4adnSU3ZQQF7ZfLfIdYh5xBcda8p7WdWQ7HjwokRCOHIvZvOZTMqGrYj7KpnKbrJvY9ay5epOzA6euNVp6MnmLXJ2a7MkKzvoykZhJ/Lf5mZ85TxYbZwwpmj3k+g1VBKl3QIU6EQxSQcFRcpZqaDxxALt+40m/BntMMjxuF2JcG1Ib+xRIp5wf56vnbadiEnpulJwkqD3glJ+opGKy+3Oxn4LD3y4n/b8MROrL9kxHWq3P+55UJQsGMpBQYO6xpj6j1fLqsLAR0V/BVWEv0Xly+cfMAx/AGVgiYw=
+sidebar_class_name: "get api-method"
+info_path: reference/osmosis/numia-osmosis-api
+custom_edit_url: null
+proxy: https://proxy.writechoice.io/
+---
+
+<Heading
+  as={"h1"}
+  className={"openapi__heading"}
+  children={"getClPoolsPositionApr"}
+>
+</Heading>
+
+<MethodEndpoint
+  method={"get"}
+  path={"/cl/v1/apr/rewards/{pool}"}
+  context={"endpoint"}
+>
+  
+</MethodEndpoint>
+
+
+
+getClPoolsPositionApr
+
+<Heading
+  id={"request"}
+  as={"h2"}
+  className={"openapi-tabs__heading"}
+  children={"Request"}
+>
+</Heading>
+
+<ParamsDetails
+  parameters={[{"schema":{"type":"string"},"required":true,"name":"pool","in":"path"},{"schema":{"type":"string"},"required":false,"name":"lower_tick","in":"query"},{"schema":{"type":"string"},"required":false,"name":"upper_tick","in":"query"}]}
+>
+  
+</ParamsDetails>
+
+<RequestSchema
+  title={"Body"}
+  body={undefined}
+>
+  
+</RequestSchema>
+
+<StatusCodes
+  id={undefined}
+  label={undefined}
+  responses={{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"object","properties":{"APR":{"type":"number"}},"required":["APR"]}}}}}}
+>
+  
+</StatusCodes>
+
+
+      
