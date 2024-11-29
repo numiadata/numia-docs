@@ -17,7 +17,7 @@
     "backgroundDarkModeColor": "#10171F",
     "logoSize": "",
     "navbarMode": "tabbed",
-    "pagination": false
+    "pagination": true
   },
   "colorMode": {
     "default": "dark",
@@ -355,7 +355,7 @@
               "groupName": "Internal Endpoints",
               "subpages": [
                 "reference/ai/get-collateral-metrics",
-                "reference/ai/get-leverage-metriconfig.jsoncs",
+                "reference/ai/get-leverage-metrics",
                 "reference/ai/get-long-short-ratio",
                 "reference/ai/get-market-price",
                 "reference/ai/get-orderbook-depth",
