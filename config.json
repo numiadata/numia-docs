@@ -17,14 +17,22 @@
     "backgroundDarkModeColor": "#10171F",
     "logoSize": "",
     "navbarMode": "tabbed",
-    "pagination": true
+    "pagination": false
   },
   "colorMode": {
     "default": "dark",
     "switchOff": false
   },
   "apiFiles": [
-    "engage.json", "prices.json", "xion.json", "TxByAddress.json", "osmosis.json", "quasar.json", "lenses.json", "snapshot.json", "ai.json"
+    "engage.json",
+    "prices.json",
+    "xion.json",
+    "TxByAddress.json",
+    "osmosis.json",
+    "quasar.json",
+    "lenses.json",
+    "snapshot.json",
+    "ai.json"
   ],
   "homepage": "/engage/whats-numia-engage",
   "changelog": false,
@@ -246,7 +254,7 @@
               ]
             }
           ]
-        },        
+        },
         {
           "categoryName": "Quasar",
           "pages": [
@@ -288,7 +296,7 @@
               "subpages": [
                 "reference/quasar/get-tokenomics-supply-metrics"
               ]
-            }    
+            }
           ]
         },
         {
@@ -335,14 +343,14 @@
       "sidebarRef": "ai",
       "categories": [
         {
-          "categoryName":"Overview",
-          "pages":[
+          "categoryName": "Overview",
+          "pages": [
             "ai/overview/whats-numia-ai"
           ]
         },
         {
-          "categoryName":"Internal",
-          "pages":[
+          "categoryName": "Internal",
+          "pages": [
             {
               "groupName": "Internal Endpoints",
               "subpages": [
