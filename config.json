@@ -17,7 +17,7 @@
     "backgroundDarkModeColor": "#10171F",
     "logoSize": "",
     "navbarMode": "tabbed",
-    "pagination": true
+    "pagination": false
   },
   "colorMode": {
     "default": "dark",
