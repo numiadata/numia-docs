@@ -332,7 +332,7 @@
             {
               "groupName": "Get Transactions",
               "subpages": [
-                "reference/TxByAddress/get-transactions-by-address"
+                "reference/txbyaddress/get-transactions-by-address"
               ]
             }
           ]
