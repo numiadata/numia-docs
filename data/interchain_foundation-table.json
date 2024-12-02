@@ -1,0 +1,201 @@
+{
+  "dataset": "interchain_foundation",
+  "tables": [
+    {
+      "name": "cosmos_chains_registry",
+      "description": "This table provides a comprehensive registry of Cosmos-based blockchain chains,    offering a unified view of their network configurations and operational status.",
+      "columns": [
+        {
+          "name": "chain_name",
+          "description": "Name of the Cosmos-based blockchain chain.",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "chain_id",
+          "description": "Unique identifier of the blockchain chain.",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "status",
+          "description": "Current operational status of the blockchain chain.",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "network_type",
+          "description": "Type of network (e.g., public, private, testnet) the blockchain chain operates on.",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "bech32_prefix",
+          "description": "Bech32 prefix used for address formatting in the blockchain chain.",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "github_repo",
+          "description": "GitHub repository URL for the blockchain chain's source code.",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "last_refresh",
+          "description": "Date and time when the blockchain chain's information was last updated.",
+          "type": "TIMESTAMP",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "ingestion_date",
+          "description": "Date and time when the blockchain chain's information was ingested into the registry.",
+          "type": "TIMESTAMP",
+          "mode": "NULLABLE"
+        }
+      ]
+    },
+    {
+      "name": "cosmwasm_github_analysis",
+      "description": "This table provides insights into the GitHub repository analysis data from the Cosmos ecosystem, focusing on CosmWasm- based projects. It offers a comprehensive view of the repositories, their owners, and their performance metrics.",
+      "columns": [
+        {
+          "name": "month",
+          "description": "The month in which the repository analysis data was recorded.",
+          "type": "TIMESTAMP",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "owner",
+          "description": "The GitHub username or organization that owns the repository.",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "repo_name",
+          "description": "The name of the GitHub repository.",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "file_path",
+          "description": "The path to the file within the repository that contains CosmWasm-related data.",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "stars",
+          "description": "The number of stars the repository has received on GitHub.",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "watchers",
+          "description": "The number of users watching the repository on GitHub.",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "forks",
+          "description": "The number of times the repository has been forked on GitHub.",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "cosmwasm",
+          "description": "The presence or absence of CosmWasm in the repository, indicating whether the repository uses CosmWasm or not.",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        }
+      ]
+    },
+    {
+      "name": "cosmwasm_penetration_analysis",
+      "description": "Cosmos Ecosystem Penetration Analysis provides insights into the growth and adoption of the cosmos ecosystem. This analysis helps identify trends and patterns in the deployment and instantiation of contracts, as well as their economic impact.",
+      "columns": [
+        {
+          "name": "date",
+          "description": "Date of the block from which the data is sourced",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "chain_id",
+          "description": "Unique identifier for the blockchain within the cosmos ecosystem",
+          "type": "STRING"
+        },
+        {
+          "name": "day_deployments",
+          "description": "Number of contracts deployed on the blockchain on a given day",
+          "type": "INTEGER"
+        },
+        {
+          "name": "day_instantiations",
+          "description": "Number of contract instantiations on the blockchain on a given day",
+          "type": "INTEGER"
+        },
+        {
+          "name": "economic_impact",
+          "description": "Estimated economic impact of the contracts deployed and instantiated on the blockchain on a given day",
+          "type": "FLOAT"
+        }
+      ]
+    },
+    {
+      "name": "cosmwasm_traffic_analysis",
+      "description": "This table contains traffic analysis data for CosmWasm smart contracts across the Cosmos ecosystem. It provides insights into the number of transactions, calls, and fees associated with each contract on different blockchain chains.",
+      "columns": [
+        {
+          "name": "date",
+          "description": "Date of block creation in a standard ISO 8601 format (YYYY-MM-DD HH:MM:SSZ)",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "chain_id",
+          "description": "Unique identifier for the blockchain chain where the transaction occurred",
+          "type": "STRING"
+        },
+        {
+          "name": "contract",
+          "description": "Address of the CosmWasm smart contract involved in the transaction",
+          "type": "STRING"
+        },
+        {
+          "name": "n_txns",
+          "description": "Total number of transactions associated with the contract on the given chain",
+          "type": "INTEGER"
+        },
+        {
+          "name": "n_calls",
+          "description": "Total number of calls made to the contract on the given chain",
+          "type": "INTEGER"
+        },
+        {
+          "name": "fee_amount",
+          "description": "Total fee amount associated with the transactions on the given chain",
+          "type": "FLOAT"
+        }
+      ]
+    },
+    {
+      "name": "cosmwasm_users_analysis",
+      "description": "This table analyzes the users of CosmWasm smart contracts across the Cosmos ecosystem. It provides insights into the activity and participation of users in the ecosystem.",
+      "columns": [
+        {
+          "name": "date",
+          "description": "The date when the CosmWasm transaction occurred, in ISO 8601 format.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "chain_id",
+          "description": "The ID of the Cosmos chain where the CosmWasm transaction occurred.",
+          "type": "STRING"
+        },
+        {
+          "name": "sender",
+          "description": "The address of the user who initiated the CosmWasm transaction.",
+          "type": "STRING"
+        }
+      ]
+    }
+  ]
+}
