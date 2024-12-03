@@ -80,7 +80,8 @@
       "name": "celestia_block_events",
       "description": "This table provides information about the events occurring on the blockchain within the Cosmos ecosystem, offering insights into the block height, timestamp, and event occurrences. The data is sourced from the blockchain to provide a comprehensive view of the network's activity.",
       "tags": [
-        "celestia"
+        "celestia",
+        "raw_table"
       ],
       "columns": [
         {
@@ -129,7 +130,8 @@
       "name": "celestia_blocks",
       "description": "Cosmos Blockchain Blocks Dataset: This dataset contains information about blocks in the Cosmos ecosystem, providing insights into network activity and block production. It includes data on block height, timestamp, and other key metrics.",
       "tags": [
-        "celestia"
+        "celestia",
+        "raw_table"
       ],
       "columns": [
         {
@@ -247,7 +249,8 @@
       "name": "celestia_message_events",
       "description": "This table contains a comprehensive log of all blockchain events within the Cosmos ecosystem, capturing key aspects of block, transaction, and message processing. The data is sourced from various Cosmos-based blockchains, providing a unified view of the network's activity.",
       "tags": [
-        "celestia"
+        "celestia",
+        "raw_table"
       ],
       "columns": [
         {
@@ -306,7 +309,8 @@
       "name": "celestia_transactions",
       "description": "This table contains a comprehensive collection of transaction data from the Cosmos ecosystem, providing insights into the blockchain's activity and behavior.",
       "tags": [
-        "celestia"
+        "celestia",
+        "raw_table"
       ],
       "columns": [
         {
@@ -415,7 +419,8 @@
       "name": "celestia_tx_messages",
       "description": "This table contains transaction messages from various blockchains in the Cosmos ecosystem. It provides insights into the transactions and their associated details.",
       "tags": [
-        "celestia"
+        "celestia",
+        "raw_table"
       ],
       "columns": [
         {
@@ -543,7 +548,8 @@
       "name": "celestia_validators",
       "description": "This table tracks information about validators in the Cosmos ecosystem, including their operational details, commission rates, and tokens. It provides valuable insights into the validator landscape and their performance.",
       "tags": [
-        "celestia"
+        "celestia",
+        "raw_table"
       ],
       "columns": [
         {

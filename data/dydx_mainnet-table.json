@@ -38,7 +38,8 @@
       "name": "dydx_block_events",
       "description": "Cosmos blockchain block events data, providing insights into the distributed ledger activity across the ecosystem. This table captures key metrics and timestamps from various blockchains.",
       "tags": [
-        "dydx_mainnet"
+        "dydx_mainnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -87,7 +88,8 @@
       "name": "dydx_blocks",
       "description": "This table provides a comprehensive overview of blocks from the Cosmos ecosystem, containing essential details about each block's metadata. It offers valuable insights for understanding block production and validation within the Cosmos network.",
       "tags": [
-        "dydx_mainnet"
+        "dydx_mainnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -472,7 +474,8 @@
       "name": "dydx_mempool_transactions",
       "description": "This table contains information about mempool transactions on the Cosmos ecosystem blockchains. It provides a real- time snapshot of unconfirmed transactions awaiting inclusion in the blockchain.",
       "tags": [
-        "dydx_mainnet"
+        "dydx_mainnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -511,7 +514,8 @@
       "name": "dydx_message_events",
       "description": "This table contains events from the Cosmos blockchain ecosystem, specifically related to transactions and block data. It provides a comprehensive view of the blockchain activity.",
       "tags": [
-        "dydx_mainnet"
+        "dydx_mainnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -624,7 +628,8 @@
       "name": "dydx_message_types_transactions",
       "description": "This table contains a collection of transactions from various blockchains within the Cosmos ecosystem. It provides insights into the message types and related transactions.",
       "tags": [
-        "dydx_mainnet"
+        "dydx_mainnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -895,7 +900,8 @@
       "name": "dydx_transactions",
       "description": "Cosmos Blockchain Transaction Data. This table contains information about transactions that occurred on various Cosmos blockchain chains.",
       "tags": [
-        "dydx_mainnet"
+        "dydx_mainnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -1078,7 +1084,8 @@
       "name": "dydx_tx_messages",
       "description": "This table contains a collection of messages related to transactions on Cosmos- based blockchains, providing insights into the blockchain's activities and events.",
       "tags": [
-        "dydx_mainnet"
+        "dydx_mainnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -1206,7 +1213,8 @@
       "name": "dydx_validators",
       "description": "This table contains information about active validators in the Cosmos ecosystem, providing insights into their performance, settings, and participation in the network. Validators are crucial for maintaining the integrity and security of the blockchain.",
       "tags": [
-        "dydx_mainnet"
+        "dydx_mainnet",
+        "raw_table"
       ],
       "columns": [
         {
