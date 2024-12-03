@@ -4,6 +4,9 @@
     {
       "name": "cosmoshub_block_events",
       "description": "This table provides information about the events occurring on the blockchain within the Cosmos ecosystem, offering insights into the block height, timestamp, and event occurrences. The data is sourced from the blockchain to provide a comprehensive view of the network's activity.",
+      "tags": [
+        "cosmoshub"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -50,6 +53,9 @@
     {
       "name": "cosmoshub_blocks",
       "description": "Cosmos Blockchain Blocks Dataset: This dataset contains information about blocks in the Cosmos ecosystem, providing insights into network activity and block production. It includes data on block height, timestamp, and other key metrics.",
+      "tags": [
+        "cosmoshub"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -96,6 +102,9 @@
     {
       "name": "cosmoshub_event_attributes",
       "description": "This table provides information about the attributes associated with events on the Cosmos blockchain ecosystem. It allows for analysis of various event attributes across different blockchains.",
+      "tags": [
+        "cosmoshub"
+      ],
       "columns": [
         {
           "name": "deprecated_warning",
@@ -167,6 +176,9 @@
     {
       "name": "cosmoshub_message_event_attributes",
       "description": "This table contains various attributes of messages from the Cosmos blockchain ecosystem. It provides information about the attributes associated with specific events on the blockchain.",
+      "tags": [
+        "cosmoshub"
+      ],
       "columns": [
         {
           "name": "deprecated_warning",
@@ -238,6 +250,9 @@
     {
       "name": "cosmoshub_message_events",
       "description": "This table contains a comprehensive log of all blockchain events within the Cosmos ecosystem, capturing key aspects of block, transaction, and message processing. The data is sourced from various Cosmos-based blockchains, providing a unified view of the network's activity.",
+      "tags": [
+        "cosmoshub"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -294,6 +309,9 @@
     {
       "name": "cosmoshub_transactions",
       "description": "This table contains a comprehensive collection of transaction data from the Cosmos ecosystem, providing insights into the blockchain's activity and behavior.",
+      "tags": [
+        "cosmoshub"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -400,6 +418,9 @@
     {
       "name": "cosmoshub_tx_messages",
       "description": "This table contains transaction messages from various blockchains in the Cosmos ecosystem. It provides insights into the transactions and their associated details.",
+      "tags": [
+        "cosmoshub"
+      ],
       "columns": [
         {
           "name": "block_height",

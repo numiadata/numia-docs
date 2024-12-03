@@ -4,6 +4,9 @@
     {
       "name": "osmosis_arbitrage_trades",
       "description": "Arbitrage trades data from the Cosmos ecosystem, showcasing opportunities where traders took advantage of price discrepancies across different blockchain networks.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -90,6 +93,9 @@
     {
       "name": "osmosis_asset_denoms",
       "description": "This table contains information about asset denominations from various chains in the Cosmos ecosystem, including details about their tokens, origins, and sources.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "chain_name",
@@ -166,6 +172,9 @@
     {
       "name": "osmosis_block_events",
       "description": "This table provides information about the events occurring on the blockchain within the Cosmos ecosystem, offering insights into the block height, timestamp, and event occurrences. The data is sourced from the blockchain to provide a comprehensive view of the network's activity.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -212,6 +221,9 @@
     {
       "name": "osmosis_blocks",
       "description": "Cosmos Blockchain Blocks Dataset: This dataset contains information about blocks in the Cosmos ecosystem, providing insights into network activity and block production. It includes data on block height, timestamp, and other key metrics.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -258,6 +270,9 @@
     {
       "name": "osmosis_delegate",
       "description": "This table contains information about transactions and actions on the Cosmos blockchain, specifically related to validators and token transfers. It provides a detailed breakdown of each transaction, including sender and recipient information.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -324,6 +339,9 @@
     {
       "name": "osmosis_event_attributes",
       "description": "This table provides information about the attributes associated with events on the Cosmos blockchain ecosystem. It allows for analysis of various event attributes across different blockchains.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "deprecated_warning",
@@ -395,6 +413,9 @@
     {
       "name": "osmosis_ibc_transfer_delays",
       "description": "This table provides insights into the delays experienced by IBC (Inter-Blockchain Communication) transfers on the Cosmos ecosystem. It helps analyze and understand the timing discrepancies between transfer initiation and acknowledgement on various blockchains.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "tx_id",
@@ -436,6 +457,9 @@
     {
       "name": "osmosis_ics20_acknowledgement",
       "description": "This table contains information about ICS-20 acknowledgement events from the Cosmos ecosystem. It provides insights into the blockchains' transactions and their associated acknowledgements.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -497,6 +521,9 @@
     {
       "name": "osmosis_ics20_receive",
       "description": "This table captures receiving ICS-20 token transfers within the Cosmos ecosystem. It provides insights into the flow of tokens between accounts.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -593,6 +620,9 @@
     {
       "name": "osmosis_ics20_transfer",
       "description": "This table contains records of token transfers between connections within the Cosmos ecosystem, providing insights into the flow of assets across the network.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -684,6 +714,9 @@
     {
       "name": "osmosis_ics20_transfer_delays",
       "description": "This dataset contains information about delayed ICS-20 transfers in the Cosmos ecosystem. It provides insights into the transfers that took longer than expected to be processed on the Cosmos network.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "tx_hash",
@@ -725,6 +758,9 @@
     {
       "name": "osmosis_lock_tokens",
       "description": "This table provides information on lock tokens in the Cosmos ecosystem, including the block height and timestamp of each transaction. It offers insights into the tokens being locked and the associated sender and pool information.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -781,6 +817,9 @@
     {
       "name": "osmosis_lp_cl_create_position",
       "description": "This table contains information about liquidity pool position creations in the Cosmos ecosystem. It provides details about each position creation, including the tokens involved and the liquidity added.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -877,6 +916,9 @@
     {
       "name": "osmosis_lp_cl_withdraw_position",
       "description": "This table provides information on liquidity provision (LP) withdrawal positions across the Cosmos ecosystem blockchains. It captures key details about each position, including the tokens involved and the liquidity provided.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -973,6 +1015,9 @@
     {
       "name": "osmosis_lp_gamm_exit_pool",
       "description": "This table contains information about token transfers in and out of liquidity pools on the Cosmos ecosystem, specifically related to the LP Gamm Exit Pool. It provides a record of all transactions involving this pool.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1034,6 +1079,9 @@
     {
       "name": "osmosis_lp_gamm_join_pool",
       "description": "This table contains data from the liquidity pool join pool transactions on the Cosmos blockchain ecosystem, providing insights into token transfers and pool activity.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1095,6 +1143,9 @@
     {
       "name": "osmosis_message_event_attributes",
       "description": "This table contains various attributes of messages from the Cosmos blockchain ecosystem. It provides information about the attributes associated with specific events on the blockchain.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "deprecated_warning",
@@ -1166,6 +1217,9 @@
     {
       "name": "osmosis_message_events",
       "description": "This table contains a comprehensive log of all blockchain events within the Cosmos ecosystem, capturing key aspects of block, transaction, and message processing. The data is sourced from various Cosmos-based blockchains, providing a unified view of the network's activity.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1222,6 +1276,9 @@
     {
       "name": "osmosis_message_senders",
       "description": "This table contains information about senders of messages in the Cosmos ecosystem. It tracks the senders and their actions across various blockchains.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1273,6 +1330,9 @@
     {
       "name": "osmosis_pools_liquidity",
       "description": "This dataset provides information on the liquidity of pools in the Cosmos ecosystem, specifically the liquidity and pool shares per minute. It offers insights into the dynamic liquidity distribution across various pools.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "minute",
@@ -1309,6 +1369,9 @@
     {
       "name": "osmosis_pools_volume",
       "description": "This table presents the total USDC volume for each pool in the Cosmos ecosystem, providing insights into liquidity and trading activity across the network's various pools. By analyzing this data, users can gain a deeper understanding of the dynamics at play in the Cosmos ecosystem.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "minute",
@@ -1333,6 +1396,9 @@
     {
       "name": "osmosis_redelegate",
       "description": "This table provides information on validator redelegations in the Cosmos ecosystem. It includes the block height and timestamp when the redelegation occurred, along with the sender and recipient validators, and the amount of tokens redelegated.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1404,6 +1470,9 @@
     {
       "name": "osmosis_sends",
       "description": "This table displays all the transactions (txs) sent across the Cosmos network, providing a comprehensive overview of the blockchain activity. It captures the key details of each transaction, including sender, recipient, and token transfers.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1460,6 +1529,9 @@
     {
       "name": "osmosis_superfluid_staking",
       "description": "This table provides insights into Superfluid Staking on the Cosmos ecosystem. It includes information on transactions, bonding periods, and staking activity.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1516,6 +1588,9 @@
     {
       "name": "osmosis_swaps",
       "description": "This table contains records of swaps executed within the Cosmos ecosystem. It provides insights into the assets exchanged, amounts, and the contracts involved in these transactions.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1587,6 +1662,9 @@
     {
       "name": "osmosis_transactions",
       "description": "This table contains a comprehensive collection of transaction data from the Cosmos ecosystem, providing insights into the blockchain's activity and behavior.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1693,6 +1771,9 @@
     {
       "name": "osmosis_tx_messages",
       "description": "This table contains transaction messages from various blockchains in the Cosmos ecosystem. It provides insights into the transactions and their associated details.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1739,6 +1820,9 @@
     {
       "name": "osmosis_undelegate",
       "description": "Undelegate operations on the Cosmos blockchain, providing insights into validators and token transfers. This data is extracted from the blockchain, offering a transparent view of the network's activity.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1805,6 +1889,9 @@
     {
       "name": "osmosis_validators",
       "description": "This table tracks information about validators in the Cosmos ecosystem, including their operational details, commission rates, and tokens. It provides valuable insights into the validator landscape and their performance.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "operator_address",
@@ -1916,6 +2003,9 @@
     {
       "name": "osmosis_vote",
       "description": "This table contains a comprehensive record of all votes made within the Cosmos ecosystem. It covers various parameters, including sender, proposal ID, and voting options.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -1972,6 +2062,9 @@
     {
       "name": "osmosis_withdraw_rewards",
       "description": "This table contains information about rewards withdrawal events from the Cosmos ecosystem. It provides details about the transactions and actions performed by validators.",
+      "tags": [
+        "osmosis"
+      ],
       "columns": [
         {
           "name": "block_height",

@@ -4,6 +4,9 @@
     {
       "name": "stride_block_events",
       "description": "This table provides information about the events occurring on the blockchain within the Cosmos ecosystem, offering insights into the block height, timestamp, and event occurrences. The data is sourced from the blockchain to provide a comprehensive view of the network's activity.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -50,6 +53,9 @@
     {
       "name": "stride_blocks",
       "description": "Cosmos Blockchain Blocks Dataset: This dataset contains information about blocks in the Cosmos ecosystem, providing insights into network activity and block production. It includes data on block height, timestamp, and other key metrics.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -96,6 +102,9 @@
     {
       "name": "stride_celestia_tvl",
       "description": "This table displays the total value locked (TVL) in the Celestia network, providing insights into the ecosystem's growth and user activity. It tracks the cumulative amount of tokens and their corresponding USD value over time.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "date",
@@ -122,6 +131,9 @@
     {
       "name": "stride_conversion_rates",
       "description": "This table contains the latest conversion rates between different token denominations in the Cosmos ecosystem, providing insight into the real-time exchange values of various blockchain-based assets.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "day",
@@ -153,6 +165,9 @@
     {
       "name": "stride_delegate",
       "description": "This table contains information about transactions and actions on the Cosmos blockchain, specifically related to validators and token transfers. It provides a detailed breakdown of each transaction, including sender and recipient information.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -219,6 +234,9 @@
     {
       "name": "stride_ics20_receive",
       "description": "This table captures receiving ICS-20 token transfers within the Cosmos ecosystem. It provides insights into the flow of tokens between accounts.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -315,6 +333,9 @@
     {
       "name": "stride_ics20_transfer",
       "description": "This table contains records of token transfers between connections within the Cosmos ecosystem, providing insights into the flow of assets across the network.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -406,6 +427,9 @@
     {
       "name": "stride_liquid_stake",
       "description": "This dataset provides information on liquid staking in the Cosmos ecosystem, including token transactions and balances. It offers insights into the liquidity of various tokens within the ecosystem.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -467,6 +491,9 @@
     {
       "name": "stride_liquid_unstake",
       "description": "This table provides information on liquid unstaking events in the Cosmos ecosystem, offering insights into the tokens being unstaked and the associated transactions.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -533,6 +560,9 @@
     {
       "name": "stride_message_events",
       "description": "This table contains a comprehensive log of all blockchain events within the Cosmos ecosystem, capturing key aspects of block, transaction, and message processing. The data is sourced from various Cosmos-based blockchains, providing a unified view of the network's activity.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -589,6 +619,9 @@
     {
       "name": "stride_redelegate",
       "description": "This table provides information on validator redelegations in the Cosmos ecosystem. It includes the block height and timestamp when the redelegation occurred, along with the sender and recipient validators, and the amount of tokens redelegated.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -660,6 +693,9 @@
     {
       "name": "stride_send",
       "description": "Cosmos Blockchain Transactions: A collection of transaction data from various Cosmos chains, providing insights into token movements and interactions.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -721,6 +757,9 @@
     {
       "name": "stride_transactions",
       "description": "This table contains a comprehensive collection of transaction data from the Cosmos ecosystem, providing insights into the blockchain's activity and behavior.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -827,6 +866,9 @@
     {
       "name": "stride_undelegate",
       "description": "Undelegate operations on the Cosmos blockchain, providing insights into validators and token transfers. This data is extracted from the blockchain, offering a transparent view of the network's activity.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -893,6 +935,9 @@
     {
       "name": "stride_withdraw_delegator_rewards",
       "description": "Cosmos Delegator Withdrawal Rewards: This table contains information about Cosmos network delegator withdrawal rewards. It provides insights into the transactions and validators involved in these rewards.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -950,6 +995,9 @@
     {
       "name": "stride_yield",
       "description": "This table provides information on the yield generated by validators in the Cosmos ecosystem. It offers insights into the rewards earned by validators for participating in the network.",
+      "tags": [
+        "stride"
+      ],
       "columns": [
         {
           "name": "block_height",
