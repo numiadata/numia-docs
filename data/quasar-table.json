@@ -5,7 +5,8 @@
       "name": "quasar_atom_pro_lp_transactions",
       "description": "This datasource contains transaction data from the LP (liquidity pool) on the Cosmos ecosystem. It captures various details about each transaction, providing insight into the liquidity pool's activity.",
       "tags": [
-        "quasar"
+        "quasar",
+        "raw_table"
       ],
       "columns": [
         {
@@ -79,7 +80,8 @@
       "name": "quasar_blocks",
       "description": "Cosmos Blockchain Blocks Dataset: This dataset contains information about blocks in the Cosmos ecosystem, providing insights into network activity and block production. It includes data on block height, timestamp, and other key metrics.",
       "tags": [
-        "quasar"
+        "quasar",
+        "raw_table"
       ],
       "columns": [
         {
@@ -128,7 +130,8 @@
       "name": "quasar_event_attributes",
       "description": "This table provides information about the attributes associated with events on the Cosmos blockchain ecosystem. It allows for analysis of various event attributes across different blockchains.",
       "tags": [
-        "quasar"
+        "quasar",
+        "raw_table"
       ],
       "columns": [
         {
@@ -192,7 +195,8 @@
       "name": "quasar_message_event_attributes",
       "description": "This table contains various attributes of messages from the Cosmos blockchain ecosystem. It provides information about the attributes associated with specific events on the blockchain.",
       "tags": [
-        "quasar"
+        "quasar",
+        "raw_table"
       ],
       "columns": [
         {
@@ -251,7 +255,8 @@
       "name": "quasar_osmo_pro_lp_transactions",
       "description": "This table contains a list of transactions from liquidity pool providers in the Cosmos ecosystem, providing insights into the liquidity pool activities and associated asset movements. The data is sourced from blockchain events and represents the flow of assets within the ecosystem.",
       "tags": [
-        "quasar"
+        "quasar",
+        "raw_table"
       ],
       "columns": [
         {
@@ -330,7 +335,8 @@
       "name": "quasar_transactions",
       "description": "This table contains a comprehensive collection of transaction data from the Cosmos ecosystem, providing insights into the blockchain's activity and behavior.",
       "tags": [
-        "quasar"
+        "quasar",
+        "raw_table"
       ],
       "columns": [
         {
@@ -439,7 +445,8 @@
       "name": "quasar_tx_messages",
       "description": "This table contains transaction messages from various blockchains in the Cosmos ecosystem. It provides insights into the transactions and their associated details.",
       "tags": [
-        "quasar"
+        "quasar",
+        "raw_table"
       ],
       "columns": [
         {

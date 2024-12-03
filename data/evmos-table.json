@@ -5,7 +5,8 @@
       "name": "evm_blocks",
       "description": "EVM (Ethereum Virtual Machine) block data in the Cosmos ecosystem, including metadata about each block.",
       "tags": [
-        "evmos"
+        "evmos",
+        "raw_table"
       ],
       "columns": [
         {
@@ -138,7 +139,8 @@
       "name": "evm_transactions",
       "description": "This table contains a collection of Ethereum Virtual Machine (EVM) transactions from the Cosmos ecosystem. It includes essential details such as transaction hash, sender, and recipient.",
       "tags": [
-        "evmos"
+        "evmos",
+        "raw_table"
       ],
       "columns": [
         {
@@ -469,7 +471,8 @@
       "name": "evmos_blocks",
       "description": "Cosmos Blockchain Blocks Dataset: This dataset contains information about blocks in the Cosmos ecosystem, providing insights into network activity and block production. It includes data on block height, timestamp, and other key metrics.",
       "tags": [
-        "evmos"
+        "evmos",
+        "raw_table"
       ],
       "columns": [
         {
@@ -774,7 +777,8 @@
       "name": "evmos_event_attributes",
       "description": "This table provides information about the attributes associated with events on the Cosmos blockchain ecosystem. It allows for analysis of various event attributes across different blockchains.",
       "tags": [
-        "evmos"
+        "evmos",
+        "raw_table"
       ],
       "columns": [
         {
@@ -1075,7 +1079,8 @@
       "name": "evmos_message_event_attributes",
       "description": "This table contains various attributes of messages from the Cosmos blockchain ecosystem. It provides information about the attributes associated with specific events on the blockchain.",
       "tags": [
-        "evmos"
+        "evmos",
+        "raw_table"
       ],
       "columns": [
         {
@@ -1134,7 +1139,8 @@
       "name": "evmos_message_types_transactions",
       "description": "Transaction messages from the Cosmos ecosystem, providing insight into the blockchain activity. This dataset captures all types of messages sent across the network.",
       "tags": [
-        "evmos"
+        "evmos",
+        "raw_table"
       ],
       "columns": [
         {
@@ -1316,7 +1322,8 @@
       "name": "evmos_transactions",
       "description": "This table contains a comprehensive collection of transaction data from the Cosmos ecosystem, providing insights into the blockchain's activity and behavior.",
       "tags": [
-        "evmos"
+        "evmos",
+        "raw_table"
       ],
       "columns": [
         {
@@ -1489,7 +1496,8 @@
       "name": "evmos_validators",
       "description": "This table tracks information about validators in the Cosmos ecosystem, including their operational details, commission rates, and tokens. It provides valuable insights into the validator landscape and their performance.",
       "tags": [
-        "evmos"
+        "evmos",
+        "raw_table"
       ],
       "columns": [
         {

@@ -5,7 +5,8 @@
       "name": "qsr_blocks",
       "description": "This table contains a summary of block data from the cosmos ecosystem, providing insights into the growth and activity of the network. It includes key metrics such as block height and transaction count.",
       "tags": [
-        "quasar_testnet"
+        "quasar_testnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -54,7 +55,8 @@
       "name": "qsr_event_attributes",
       "description": "This table contains detailed event attributes from the Cosmos ecosystem's blockchain data. It provides insights into the key-value pairs associated with each event, allowing for deeper analysis of the blockchain's activity.",
       "tags": [
-        "quasar_testnet"
+        "quasar_testnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -118,7 +120,8 @@
       "name": "qsr_message_event_attributes",
       "description": "This table contains detailed attributes from message events within the Cosmos ecosystem. It includes information about the block, transaction, and event, along with specific attribute details.",
       "tags": [
-        "quasar_testnet"
+        "quasar_testnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -177,7 +180,8 @@
       "name": "qsr_transactions",
       "description": "QSR Transaction Data from the Cosmos Ecosystem: This table contains transaction logs from various blockchains within the Cosmos ecosystem, providing insights into the activity and performance of the network.",
       "tags": [
-        "quasar_testnet"
+        "quasar_testnet",
+        "raw_table"
       ],
       "columns": [
         {
@@ -286,7 +290,8 @@
       "name": "qsr_tx_messages",
       "description": "This table contains a collection of transaction messages from various blockchains within the Cosmos ecosystem. It provides a comprehensive view of the transactions that have taken place across different chains.",
       "tags": [
-        "quasar_testnet"
+        "quasar_testnet",
+        "raw_table"
       ],
       "columns": [
         {
