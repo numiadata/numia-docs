@@ -1,0 +1,1606 @@
+{
+  "dataset": "evmos",
+  "tables": [
+    {
+      "name": "evm_blocks",
+      "description": "EVM (Ethereum Virtual Machine) block data in the Cosmos ecosystem, including metadata about each block.",
+      "columns": [
+        {
+          "name": "height",
+          "description": "The height of the block in the Cosmos blockchain, representing the sequential order of blocks.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "timestamp",
+          "description": "The timestamp of the block in the Cosmos blockchain, indicating when the block was created.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "hash",
+          "description": "The hash of the EVM block, ensuring the integrity and uniqueness of the block within the blockchain.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the EVM block data was ingested into the system, representing when the data was processed.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evm_logs",
+      "description": "This table contains logs from EVM (Ethereum Virtual Machine) smart contracts on the Cosmos blockchain network. It provides insights into the activities of these contracts and their interactions with the blockchain.",
+      "columns": [
+        {
+          "name": "address",
+          "description": "The address of the EVM smart contract that triggered the log.",
+          "type": "STRING"
+        },
+        {
+          "name": "data",
+          "description": "The hexadecimal data associated with the log.",
+          "type": "STRING"
+        },
+        {
+          "name": "block_hash",
+          "description": "The hash of the block in which the log was recorded.",
+          "type": "STRING"
+        },
+        {
+          "name": "log_index",
+          "description": "The index of the log within the block.",
+          "type": "STRING"
+        },
+        {
+          "name": "transaction_hash_evm",
+          "description": "The hash of the EVM transaction that triggered the log.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the log was ingested into the system.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "topics",
+          "description": "The list of topics associated with the log.",
+          "type": "RECORD",
+          "mode": "REPEATED"
+        }
+      ]
+    },
+    {
+      "name": "evm_tokens_sales",
+      "description": "This table contains sales data of EVM tokens in the Cosmos ecosystem, providing insights into the blockchain transactions and their corresponding marketplaces.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the transaction was recorded.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp when the block was mined.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "description": "The unique hash of the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_hash_evm",
+          "description": "The EVM-compatible transaction hash.",
+          "type": "STRING"
+        },
+        {
+          "name": "log_index",
+          "description": "The index of the log entry in the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "marketplace",
+          "description": "The marketplace involved in the token sale.",
+          "type": "STRING"
+        },
+        {
+          "name": "from",
+          "description": "The account that initiated the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "to",
+          "description": "The account that received the tokens.",
+          "type": "STRING"
+        },
+        {
+          "name": "token_address",
+          "description": "The address of the token being sold.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested from the blockchain.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evm_transactions",
+      "description": "This table contains a collection of Ethereum Virtual Machine (EVM) transactions from the Cosmos ecosystem. It includes essential details such as transaction hash, sender, and recipient.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the EVM transaction was recorded.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "hash",
+          "description": "A unique identifier for the EVM transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "hash_evm",
+          "description": "The hash of the EVM transaction on the Cosmos blockchain.",
+          "type": "STRING"
+        },
+        {
+          "name": "evm_index",
+          "description": "The index of the EVM transaction in the block.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "gas_used",
+          "description": "The amount of gas consumed by the EVM transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "amount",
+          "description": "The amount of tokens transferred in the EVM transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "sender",
+          "description": "The address of the sender in the EVM transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "evm_sender",
+          "description": "The sender's address in the EVM transaction format.",
+          "type": "STRING"
+        },
+        {
+          "name": "recipient",
+          "description": "The address of the recipient in the EVM transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "code",
+          "description": "The opcode or instruction executed in the EVM transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "data",
+          "description": "The data attached to the EVM transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "index",
+          "description": "The index of the EVM transaction in the block.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "gas_limit",
+          "description": "The maximum amount of gas allowed for the EVM transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_json",
+          "description": "The raw JSON data of the EVM transaction.",
+          "type": "JSON"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the EVM transaction was ingested into the database.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "MsgEthereumTx",
+          "description": "The Cosmos SDK message type for the EVM transaction.",
+          "type": "RECORD"
+        },
+        {
+          "name": "LegacyTx",
+          "description": "A legacy transaction type.",
+          "type": "RECORD"
+        },
+        {
+          "name": "AccessListTx",
+          "description": "An access list transaction type.",
+          "type": "RECORD"
+        },
+        {
+          "name": "DynamicFeeTx",
+          "description": "A dynamic fee transaction type.",
+          "type": "RECORD"
+        },
+        {
+          "name": "raw_data",
+          "description": "The raw data of the EVM transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "TxRaw",
+          "description": "The raw EVM transaction data.",
+          "type": "RECORD"
+        },
+        {
+          "name": "gas_price",
+          "description": "The price of gas used in the EVM transaction.",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "name": "evm_transfer_event",
+      "description": "This table provides information on transfer events across the Cosmos ecosystem, capturing details of token movements between accounts.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the transfer event occurred.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp at which the block containing the transfer event was mined.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash_evm",
+          "description": "The hash of the transaction containing the transfer event, in the EVM-compatible format.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_hash",
+          "description": "The hash of the transaction containing the transfer event, in the native blockchain format.",
+          "type": "STRING"
+        },
+        {
+          "name": "log_index",
+          "description": "The index of the log entry within the transaction that triggered the transfer event.",
+          "type": "STRING"
+        },
+        {
+          "name": "token_address",
+          "description": "The address of the token involved in the transfer event.",
+          "type": "STRING"
+        },
+        {
+          "name": "from",
+          "description": "The address from which the token was transferred.",
+          "type": "STRING"
+        },
+        {
+          "name": "to",
+          "description": "The address to which the token was transferred.",
+          "type": "STRING"
+        },
+        {
+          "name": "amount",
+          "description": "The amount of token transferred during the event.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp at which the transfer event data was ingested into the system.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evm_transfer_single_event",
+      "description": "This table contains information about token transfers on the Cosmos ecosystem blockchains, providing insights into the flow of assets within the network. The data is sourced from blockchain events and helps track token movements from one address to another.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the transfer event occurred.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp when the block was mined, indicating the time the transfer event occurred.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash_evm",
+          "description": "The Ethereum Virtual Machine (EVM) transaction hash, used for cross-chain compatibility.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_hash",
+          "description": "The unique identifier for the blockchain transaction in which the transfer occurred.",
+          "type": "STRING"
+        },
+        {
+          "name": "log_index",
+          "description": "The index of the transfer event within the transaction log.",
+          "type": "STRING"
+        },
+        {
+          "name": "token_address",
+          "description": "The address of the token being transferred, used to identify the asset type.",
+          "type": "STRING"
+        },
+        {
+          "name": "operator",
+          "description": "The entity responsible for the token transfer, such as a validator or a smart contract.",
+          "type": "STRING"
+        },
+        {
+          "name": "from",
+          "description": "The address from which the tokens were transferred.",
+          "type": "STRING"
+        },
+        {
+          "name": "to",
+          "description": "The address to which the tokens were transferred.",
+          "type": "STRING"
+        },
+        {
+          "name": "id",
+          "description": "A unique identifier for the transfer event, used for data tracking and analysis.",
+          "type": "STRING"
+        },
+        {
+          "name": "amount",
+          "description": "The quantity of tokens transferred during the event.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the transfer data was ingested into the system, indicating the data's freshness and accuracy.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evm_uniswap_v2_dex_swaps",
+      "description": "This table provides information on Uniswap V2 DEX swaps executed on the Cosmos ecosystem. It includes details of the swaps, such as the pairs involved, the tokens exchanged, and the time of the swaps.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp of the block in which the transaction was included.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash_evm",
+          "description": "The hash of the EVM transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_hash",
+          "description": "The hash of the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "sender",
+          "description": "The sender of the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "evm_sender",
+          "description": "The sender of the EVM transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "log_index",
+          "description": "The index of the log entry.",
+          "type": "STRING"
+        },
+        {
+          "name": "pair",
+          "description": "The Uniswap V2 pair involved in the swap.",
+          "type": "STRING"
+        },
+        {
+          "name": "dex_router",
+          "description": "The Uniswap V2 router used for the swap.",
+          "type": "STRING"
+        },
+        {
+          "name": "to",
+          "description": "The recipient of the tokens in the swap.",
+          "type": "STRING"
+        },
+        {
+          "name": "amount_0_in",
+          "description": "The amount of the first token transferred in.",
+          "type": "STRING"
+        },
+        {
+          "name": "amount_1_in",
+          "description": "The amount of the second token transferred in.",
+          "type": "STRING"
+        },
+        {
+          "name": "amount_0_out",
+          "description": "The amount of the first token transferred out.",
+          "type": "STRING"
+        },
+        {
+          "name": "amount_1_out",
+          "description": "The amount of the second token transferred out.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_blocks",
+      "description": "Cosmos Blockchain Blocks Dataset: This dataset contains information about blocks in the Cosmos ecosystem, providing insights into network activity and block production. It includes data on block height, timestamp, and other key metrics.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in the blockchain.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp at which the block was produced.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "chain_id",
+          "description": "The unique identifier of the Cosmos blockchain.",
+          "type": "STRING"
+        },
+        {
+          "name": "proposer_address",
+          "description": "The address of the validator that proposed the block.",
+          "type": "STRING"
+        },
+        {
+          "name": "validators_hash",
+          "description": "A hash of the validators involved in the block production process.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp at which the block data was ingested into the dataset.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "messages_bytes",
+          "description": "The total size of the messages included in the block, in bytes.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "tx_count",
+          "description": "The total number of transactions included in the block.",
+          "type": "INTEGER"
+        }
+      ]
+    },
+    {
+      "name": "evmos_convert_ERC20",
+      "description": "This table tracks conversions of ERC20 tokens from the Cosmos ecosystem, providing insights into token transfers and balances. The data is sourced from blockchain events.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the transaction occurred.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp of the block in which the transaction occurred.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "The unique identifier of the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message in the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "The action number of the message in the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "sender",
+          "description": "The address of the sender who initiated the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "receiver",
+          "description": "The address of the recipient who received the token.",
+          "type": "STRING"
+        },
+        {
+          "name": "amount",
+          "description": "The amount of tokens transferred.",
+          "type": "STRING"
+        },
+        {
+          "name": "erc20_token",
+          "description": "The ERC20 token being converted.",
+          "type": "STRING"
+        },
+        {
+          "name": "cosmos_coin",
+          "description": "The Cosmos coin being converted or used in the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the database.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_convert_coin",
+      "description": "This table represents blockchain transactions within the Cosmos ecosystem, detailing conversions between different cryptocurrencies.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The block height at which the transaction occurred in the Cosmos blockchain.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp when the block containing the transaction was mined.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "A unique identifier for the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the transaction message within the block.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "The index of the specific action within the transaction message.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "sender",
+          "description": "The wallet address that initiated the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "receiver",
+          "description": "The wallet address that received the cryptocurrency.",
+          "type": "STRING"
+        },
+        {
+          "name": "amount",
+          "description": "The amount of cryptocurrency involved in the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "cosmos_coin",
+          "description": "The specific Cosmos-based cryptocurrency involved in the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "erc20_token",
+          "description": "The specific Ethereum-based token (ERC20) involved in the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction data was ingested into the system.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_delegate",
+      "description": "This table contains information about transactions and actions on the Cosmos blockchain, specifically related to validators and token transfers. It provides a detailed breakdown of each transaction, including sender and recipient information.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block at which the transaction was processed.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp of the block at which the transaction was processed.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message within the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "No description available",
+          "type": "INTEGER"
+        },
+        {
+          "name": "validator",
+          "description": "The validator that processed the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "moniker",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "delegator",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "parsed_EVMOS_amount",
+          "description": "No description available",
+          "type": "FLOAT"
+        },
+        {
+          "name": "new_shares",
+          "description": "The new shares allocated to the sender as a result of the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the system.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_developer_revenue",
+      "description": "This table contains developer revenue data from the Cosmos ecosystem blockchains, providing insights into the financial activities of developers within the network. It offers a comprehensive view of the revenue generated by developers through various transactions.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the transaction was recorded.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp when the block was recorded on the blockchain.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "A unique identifier for the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message in the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "The action number in the message.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "sender",
+          "description": "The address of the sender involved in the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "amount",
+          "description": "The amount of cryptocurrency transferred during the transaction.",
+          "type": "FLOAT"
+        },
+        {
+          "name": "amount_in_usdc",
+          "description": "The amount of USDC equivalent to the transferred cryptocurrency.",
+          "type": "FLOAT"
+        },
+        {
+          "name": "contract",
+          "description": "The address of the contract involved in the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "withdraw_address",
+          "description": "The address to which the withdrawn funds were transferred.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction data was ingested into the system.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_event_attributes",
+      "description": "This table provides information about the attributes associated with events on the Cosmos blockchain ecosystem. It allows for analysis of various event attributes across different blockchains.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the event occurred.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "description": "The ID of the Cosmos blockchain on which the event occurred.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_id",
+          "description": "The ID of the transaction in which the event occurred.",
+          "type": "STRING"
+        },
+        {
+          "name": "event_index",
+          "description": "The index of the event within the transaction in which it occurred.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "description": "The type of event that occurred.",
+          "type": "STRING"
+        },
+        {
+          "name": "event_source",
+          "description": "The source of the event, indicating the module or contract that triggered it.",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_key",
+          "description": "The key of the attribute associated with the event.",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_value",
+          "description": "The value of the attribute associated with the event.",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
+          "description": "The index of the attribute within the event in which it occurred.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the system.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp of the block in which the event occurred.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_ibc_receive",
+      "description": "This table contains information about incoming Inter-Blockchain Communication (IBC) packets received by the Cosmos ecosystem. It provides a detailed view of the packets' attributes.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the IBC packet was received.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp of the block in which the IBC packet was received.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "The unique identifier of the transaction that initiated the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message within the transaction that initiated the IBC packet.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "The index of the action within the message that initiated the IBC packet.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "packet_src_channel",
+          "description": "The source channel of the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "packet_dts_channel",
+          "description": "The destination channel of the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "packet_connection",
+          "description": "The connection ID of the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "packet_sequence",
+          "description": "The sequence number of the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "packet_ack",
+          "description": "The acknowledgment status of the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "sender",
+          "description": "The validator or address that sent the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "receiver",
+          "description": "The validator or address that received the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "token_amount",
+          "description": "The amount of tokens sent through the IBC packet.",
+          "type": "FLOAT"
+        },
+        {
+          "name": "token_path",
+          "description": "The path of the token transfer through the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "token_alias",
+          "description": "The alias of the token sent through the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "token_denom",
+          "description": "The denomination of the token sent through the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "memo",
+          "description": "Any additional information provided with the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the database.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_ibc_transfer",
+      "description": "This table contains information about Inter-Blockchain Communication (IBC) transfers within the Cosmos ecosystem. It provides a detailed view of token movements between different blockchain networks.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the transfer was recorded.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp at which the block containing the transfer was mined.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "The unique identifier of the transaction containing the IBC transfer.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message within the transaction that contains the IBC transfer.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "The action number of the IBC transfer within the message.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "packet_src_channel",
+          "description": "The source channel of the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "packet_dts_channel",
+          "description": "The destination channel of the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "packet_connection",
+          "description": "The connection ID of the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "packet_sequence",
+          "description": "The sequence number of the IBC packet.",
+          "type": "STRING"
+        },
+        {
+          "name": "sender",
+          "description": "The address of the sender of the IBC transfer.",
+          "type": "STRING"
+        },
+        {
+          "name": "receiver",
+          "description": "The address of the recipient of the IBC transfer.",
+          "type": "STRING"
+        },
+        {
+          "name": "token_amount",
+          "description": "The amount of tokens transferred in the IBC transfer.",
+          "type": "FLOAT"
+        },
+        {
+          "name": "token_path",
+          "description": "The path of tokens transferred in the IBC transfer.",
+          "type": "STRING"
+        },
+        {
+          "name": "token_alias",
+          "description": "The alias of the token transferred in the IBC transfer.",
+          "type": "STRING"
+        },
+        {
+          "name": "memo",
+          "description": "Any additional information or memo associated with the IBC transfer.",
+          "type": "STRING"
+        },
+        {
+          "name": "token_denom",
+          "description": "The denomination of the token transferred in the IBC transfer.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the database.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_ibc_transfer_delays",
+      "description": "This table provides insights into the delays experienced by IBC (Inter-Blockchain Communication) transfers on the Cosmos ecosystem. It helps analyze and understand the timing discrepancies between transfer initiation and acknowledgement on various blockchains.",
+      "columns": [
+        {
+          "name": "tx_id",
+          "description": "Unique identifier of the IBC transfer transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "block_height",
+          "description": "Height of the block where the IBC transfer transaction was initiated.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ack_block_height",
+          "description": "Height of the block where the IBC transfer acknowledgement was received.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "sender",
+          "description": "Address of the account that initiated the IBC transfer transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_delay",
+          "description": "Time delay experienced by the IBC transfer transaction, calculated as the difference between the block timestamp and the acknowledgement block timestamp.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "Timestamp of the block where the IBC transfer transaction was initiated.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "Timestamp when the IBC transfer data was ingested into the database.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_message_event_attributes",
+      "description": "This table contains various attributes of messages from the Cosmos blockchain ecosystem. It provides information about the attributes associated with specific events on the blockchain.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the event occurred.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "description": "The unique identifier of the Cosmos blockchain.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_id",
+          "description": "The unique identifier of the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message in the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_index",
+          "description": "The index of the event in the message.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "description": "The type of event that occurred.",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_key",
+          "description": "The key of the attribute associated with the event.",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_value",
+          "description": "The value of the attribute associated with the event.",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
+          "description": "The index of the attribute in the message.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_message_types_transactions",
+      "description": "Transaction messages from the Cosmos ecosystem, providing insight into the blockchain activity. This dataset captures all types of messages sent across the network.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp at which the block was sealed.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "A unique identifier for the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "No description available",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "No description available",
+          "type": "INTEGER"
+        },
+        {
+          "name": "sender",
+          "description": "The public address of the account that sent the message.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_type",
+          "description": "The type of message sent across the network.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the system.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_redelegate",
+      "description": "This table provides information on validator redelegations in the Cosmos ecosystem. It includes the block height and timestamp when the redelegation occurred, along with the sender and recipient validators, and the amount of tokens redelegated.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The block height at which the redelegation was recorded.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp when the redelegation was recorded.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message within the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "No description available",
+          "type": "INTEGER"
+        },
+        {
+          "name": "source_validator",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "source_moniker",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "destination_validator",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "destination_moniker",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "delegator",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "evmos_amount",
+          "description": "No description available",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "completion_time",
+          "description": "The timestamp when the redelegation was completed.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the redelegation data was ingested into the database.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_sends",
+      "description": "This table displays all the transactions (txs) sent across the Cosmos network, providing a comprehensive overview of the blockchain activity. It captures the key details of each transaction, including sender, recipient, and token transfers.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the transaction was mined.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp when the block containing the transaction was mined.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "The unique identifier of the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message within the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "The type of action (e.g., transfer) performed in the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "sender",
+          "description": "The address of the account that initiated the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "recipient",
+          "description": "The address of the account that received the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "tokens_amount",
+          "description": "The amount of tokens transferred in the transaction.",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "tokens_denom",
+          "description": "The denomination (e.g., atom, ubi, luna) of the tokens transferred.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction data was ingested into the system.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_transactions",
+      "description": "This table contains a comprehensive collection of transaction data from the Cosmos ecosystem, providing insights into the blockchain's activity and behavior.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block within which the transaction was committed.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "description": "A unique identifier for the specific Cosmos blockchain network.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_id",
+          "description": "A unique identifier for the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_info",
+          "description": "Detailed information about the transaction, including its type and parameters.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_log_message",
+          "description": "A human-readable message describing the outcome of the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "fee",
+          "description": "The amount of coins paid by the sender as a transaction fee.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_code",
+          "description": "The return code of the transaction, indicating its success or failure.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "tx_index",
+          "description": "The index of the transaction within the block.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "gas_used",
+          "description": "The total amount of gas consumed by the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "gas_wanted",
+          "description": "The amount of gas requested by the sender to execute the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction was ingested into the blockchain.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "memo",
+          "description": "A note or comment left by the sender or receiver of the transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "schema_version",
+          "description": "The version of the transaction schema used to validate the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "fee_coins",
+          "description": "The coins used to pay the transaction fee.",
+          "type": "STRING"
+        },
+        {
+          "name": "fee_granter",
+          "description": "The account that granted the funds to pay the transaction fee.",
+          "type": "STRING"
+        },
+        {
+          "name": "fee_payer",
+          "description": "The account that paid the transaction fee.",
+          "type": "STRING"
+        },
+        {
+          "name": "gas_limit",
+          "description": "The maximum amount of gas that can be consumed by the transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "single_sign_mode",
+          "description": "A flag indicating whether the transaction was executed in single-sign mode.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "multi_sign_json",
+          "description": "JSON data containing information about the multi-signature transaction.",
+          "type": "STRING"
+        },
+        {
+          "name": "timeout_height",
+          "description": "The height of the block at which the transaction will timeout if not executed.",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "name": "evmos_undelegate",
+      "description": "Undelegate operations on the Cosmos blockchain, providing insights into validators and token transfers. This data is extracted from the blockchain, offering a transparent view of the network's activity.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The block height at which the undelegate operation was recorded.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp of the block at which the undelegate operation was recorded.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message in the transaction containing the undelegate operation.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "No description available",
+          "type": "INTEGER"
+        },
+        {
+          "name": "validator",
+          "description": "The validator address of the account that initiated the undelegate operation.",
+          "type": "STRING"
+        },
+        {
+          "name": "moniker",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "delegator",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "parsed_EVMOS_amount",
+          "description": "No description available",
+          "type": "FLOAT"
+        },
+        {
+          "name": "completion_time",
+          "description": "The time at which the undelegate operation was completed.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the system.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_validators",
+      "description": "This table tracks information about validators in the Cosmos ecosystem, including their operational details, commission rates, and tokens. It provides valuable insights into the validator landscape and their performance.",
+      "columns": [
+        {
+          "name": "account_address",
+          "description": "Unique address of the validator's account.",
+          "type": "STRING"
+        },
+        {
+          "name": "operator_address",
+          "description": "Unique address of the validator operator.",
+          "type": "STRING"
+        },
+        {
+          "name": "consensus_pubkey",
+          "description": "Public key used for consensus in the validator's blockchain.",
+          "type": "STRING"
+        },
+        {
+          "name": "status",
+          "description": "Current status of the validator, e.g., bonded, unbonded, etc.",
+          "type": "FLOAT"
+        },
+        {
+          "name": "moniker",
+          "description": "Human-readable name of the validator.",
+          "type": "STRING"
+        },
+        {
+          "name": "identity",
+          "description": "Validator's identity key or public key.",
+          "type": "STRING"
+        },
+        {
+          "name": "rate",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "max_rate",
+          "description": "No description available",
+          "type": "FLOAT"
+        },
+        {
+          "name": "min_self_delegation",
+          "description": "Minimum self-delegation amount required for the validator.",
+          "type": "FLOAT"
+        },
+        {
+          "name": "Network",
+          "description": "No description available",
+          "type": "STRING"
+        },
+        {
+          "name": "Snapshot_date",
+          "description": "No description available",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "proposer_hashed_address",
+          "description": "No description available",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "name": "evmos_voting",
+      "description": "This table represents voting data from the Cosmos ecosystem, capturing the votes cast by validators and community members on proposals. The data provides insights into the voting behavior and decision-making process within the Cosmos network.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the vote was recorded.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp at which the block was created.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "The identifier of the transaction that contains the voting data.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message within the transaction that contains the voting data.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "The action index of the vote within the message.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "voter",
+          "description": "The validator or community member who cast the vote.",
+          "type": "STRING"
+        },
+        {
+          "name": "proposal_id",
+          "description": "The unique identifier of the proposal being voted on.",
+          "type": "STRING"
+        },
+        {
+          "name": "proposal_option",
+          "description": "The specific option chosen by the voter in the proposal.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "evmos_withdraw_rewards",
+      "description": "This table contains information about rewards withdrawal events from the Cosmos ecosystem. It provides details about the transactions and actions performed by validators.",
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The height of the block in which the withdrawal event was recorded.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "The timestamp when the block was created.",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_id",
+          "description": "The unique identifier of the transaction in which the withdrawal event occurred.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The index of the message within the transaction that triggered the withdrawal event.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "nth_action",
+          "description": "The index of the action within the message that performed the withdrawal.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "validator",
+          "description": "The validator account that initiated the withdrawal event.",
+          "type": "STRING"
+        },
+        {
+          "name": "moniker",
+          "description": "The human-readable name of the validator account.",
+          "type": "STRING"
+        },
+        {
+          "name": "receiver",
+          "description": "The account that received the withdrawn rewards.",
+          "type": "STRING"
+        },
+        {
+          "name": "token_amount",
+          "description": "The amount of tokens withdrawn from the validator's account.",
+          "type": "FLOAT"
+        },
+        {
+          "name": "token_amount_in_usdc",
+          "description": "The value of the withdrawn tokens in USDC.",
+          "type": "FLOAT"
+        },
+        {
+          "name": "token_denom",
+          "description": "The denomination of the withdrawn tokens.",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the database.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    }
+  ]
+}
