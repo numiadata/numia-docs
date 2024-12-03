@@ -46,10 +46,6 @@
       "sidebarRef": "sql"
     },
     {
-      "label": "API",
-      "sidebarRef": "api"
-    },
-    {
       "label": "AI",
       "sidebarRef": "ai"
     }
@@ -87,16 +83,6 @@
                   "subpages": [
                     "engage/publisher-guide/api-integration/guides/get-campaign",
                     "engage/publisher-guide/api-integration/guides/track-events"
-                  ]
-                },
-                {
-                  "groupName": "Endpoints",
-                  "subpages": [
-                    "reference/engage/get-campaign-for-address",
-                    "reference/engage/get-campaign-for-addresses",
-                    "reference/engage/redirect-click-link",
-                    "reference/engage/track-event",
-                    "reference/engage/track-sdk-event"
                   ]
                 }
               ]
@@ -180,188 +166,12 @@
       ]
     },
     {
-      "sidebarRef": "api",
-      "categories": [
-        {
-          "categoryName": "Overview",
-          "pages": [
-            "api/overview/whats-numia-api",
-            "api/overview/getting-started"
-          ]
-        },
-        {
-          "categoryName": "Osmosis",
-          "pages": [
-            {
-              "groupName": "Earn Strategies",
-              "subpages": [
-                "reference/osmosis/get-apr-for-earn-strategies",
-                "reference/osmosis/get-balances-for-earn-strategies",
-                "reference/osmosis/get-earn-strategies",
-                "reference/osmosis/get-tvl-for-earn-strategies"
-              ]
-            },
-            {
-              "groupName": "APR & Revenue",
-              "subpages": [
-                "reference/osmosis/get-apr",
-                "reference/osmosis/get-cl-pools-position-apr",
-                "reference/osmosis/get-chain-revenue",
-                "reference/osmosis/get-pools-apr-range",
-                "reference/osmosis/get-pools-apr"
-              ]
-            },
-            {
-              "groupName": "Limit Orders",
-              "subpages": [
-                "reference/osmosis/get-closed-limit-orders-history"
-              ]
-            },
-            {
-              "groupName": "Coingecko & Defillama",
-              "subpages": [
-                "reference/osmosis/get-coingecko-osmosis-native-factory-assets-supply",
-                "reference/osmosis/get-defillama-osmosis-chain-fees-and-revenue"
-              ]
-            },
-            {
-              "groupName": "Chain & Pool Metrics",
-              "subpages": [
-                "reference/osmosis/get-i-bc-chain-status",
-                "reference/osmosis/get-landing-page-metrics",
-                "reference/osmosis/get-pairs-summary",
-                "reference/osmosis/get-pool-stream-data",
-                "reference/osmosis/get-pools-fees"
-              ]
-            },
-            {
-              "groupName": "Portfolio & Position",
-              "subpages": [
-                "reference/osmosis/get-portfolio-over-time",
-                "reference/osmosis/get-position-info"
-              ]
-            },
-            {
-              "groupName": "Rewards & Token Data",
-              "subpages": [
-                "reference/osmosis/get-rewards-estimation",
-                "reference/osmosis/get-supply-metrics",
-                "reference/osmosis/get-token-data",
-                "reference/osmosis/get-token-historical-chart",
-                "reference/osmosis/get-token-pair-historical-chart",
-                "reference/osmosis/get-token-real-time-price"
-              ]
-            }
-          ]
-        },
-        {
-          "categoryName": "Quasar",
-          "pages": [
-            {
-              "groupName": "Manage Points",
-              "subpages": [
-                "reference/quasar/create-point-campaigns",
-                "reference/quasar/delete-point-campaigns",
-                "reference/quasar/get-point-campaigns",
-                "reference/quasar/update-point-campaigns",
-                "reference/quasar/get-average-position",
-                "reference/quasar/get-points-per-user",
-                "reference/quasar/get-points-per-vault"
-              ]
-            },
-            {
-              "groupName": "Get Vaults",
-              "subpages": [
-                "reference/quasar/get-cl-vaults-list",
-                "reference/quasar/get-vault-historical-positions",
-                "reference/quasar/get-vault-positions",
-                "reference/quasar/get-vault-vs-pool-performance",
-                "reference/quasar/get-vaults-accrued-rewards",
-                "reference/quasar/get-vaults-avg-tvl",
-                "reference/quasar/get-vaults-balancing-slippage",
-                "reference/quasar/get-vaults-depositors-metrics",
-                "reference/quasar/get-vaults-depositors-over-time",
-                "reference/quasar/get-vaults-depositors-rolling-growth",
-                "reference/quasar/get-vaults-depositors-top-10",
-                "reference/quasar/get-vaults-impermanent-loss",
-                "reference/quasar/get-vaults-liquidity-flow",
-                "reference/quasar/get-vaults-list",
-                "reference/quasar/get-vaults-pool-incentives",
-                "reference/quasar/get-vaults-positions-liquidity-distribution"
-              ]
-            },
-            {
-              "groupName": "Tokenomics",
-              "subpages": [
-                "reference/quasar/get-tokenomics-supply-metrics"
-              ]
-            }
-          ]
-        },
-        {
-          "categoryName": "XION",
-          "pages": [
-            {
-              "groupName": "Get Abstract Accounts",
-              "subpages": [
-                "reference/xion/get-abstract-account-authenticators",
-                "reference/xion/get-abstract-accounts-by-authenticator",
-                "reference/xion/get-abstract-accounts-details-by-authenticator"
-              ]
-            }
-          ]
-        },
-        {
-          "categoryName": "Prices",
-          "pages": [
-            {
-              "groupName": "Get Prices",
-              "subpages": [
-                "reference/prices/get-astroport-pool",
-                "reference/prices/get-astroport-pools",
-                "reference/prices/get-osmosis-prices",
-                "reference/prices/get-wyndex-prices"
-              ]
-            }
-          ]
-        },
-        {
-          "categoryName": "Transactions by Address",
-          "pages": [
-            {
-              "groupName": "Get Transactions",
-              "subpages": [
-                "reference/txbyaddress/get-transactions-by-address"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
       "sidebarRef": "ai",
       "categories": [
         {
           "categoryName": "Overview",
           "pages": [
             "ai/overview/whats-numia-ai"
-          ]
-        },
-        {
-          "categoryName": "Internal",
-          "pages": [
-            {
-              "groupName": "Internal Endpoints",
-              "subpages": [
-                "reference/ai/get-collateral-metrics",
-                "reference/ai/get-leverage-metrics",
-                "reference/ai/get-long-short-ratio",
-                "reference/ai/get-market-price",
-                "reference/ai/get-orderbook-depth",
-                "reference/ai/get-position-duration-metrics",
-                "reference/ai/get-slippage-info"
-              ]
-            }
           ]
         }
       ]
