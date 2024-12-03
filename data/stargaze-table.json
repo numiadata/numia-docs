@@ -4,6 +4,9 @@
     {
       "name": "stargaze_block_events",
       "description": "This table provides information about the events occurring on the blockchain within the Cosmos ecosystem, offering insights into the block height, timestamp, and event occurrences. The data is sourced from the blockchain to provide a comprehensive view of the network's activity.",
+      "tags": [
+        "stargaze"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -50,6 +53,9 @@
     {
       "name": "stargaze_blocks",
       "description": "Cosmos Blockchain Blocks Dataset: This dataset contains information about blocks in the Cosmos ecosystem, providing insights into network activity and block production. It includes data on block height, timestamp, and other key metrics.",
+      "tags": [
+        "stargaze"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -96,6 +102,9 @@
     {
       "name": "stargaze_collections",
       "description": "Cosmos Blockchain Collection Data: This table contains a comprehensive list of collections from the Cosmos ecosystem, providing insights into the creation and management of digital assets. The data is sourced directly from the blockchain, ensuring its accuracy and authenticity.",
+      "tags": [
+        "stargaze"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -132,6 +141,9 @@
     {
       "name": "stargaze_event_attributes",
       "description": "This table provides information about the attributes associated with events on the Cosmos blockchain ecosystem. It allows for analysis of various event attributes across different blockchains.",
+      "tags": [
+        "stargaze"
+      ],
       "columns": [
         {
           "name": "deprecated_warning",
@@ -203,6 +215,9 @@
     {
       "name": "stargaze_message_event_attributes",
       "description": "This table contains various attributes of messages from the Cosmos blockchain ecosystem. It provides information about the attributes associated with specific events on the blockchain.",
+      "tags": [
+        "stargaze"
+      ],
       "columns": [
         {
           "name": "deprecated_warning",
@@ -274,6 +289,9 @@
     {
       "name": "stargaze_message_events",
       "description": "This table contains a comprehensive log of all blockchain events within the Cosmos ecosystem, capturing key aspects of block, transaction, and message processing. The data is sourced from various Cosmos-based blockchains, providing a unified view of the network's activity.",
+      "tags": [
+        "stargaze"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -330,6 +348,9 @@
     {
       "name": "stargaze_nft_transfers",
       "description": "This table contains information about Non-Fungible Token (NFT) transfers within the Cosmos ecosystem. It provides insights into the movement of NFTs across different collections.",
+      "tags": [
+        "stargaze"
+      ],
       "columns": [
         {
           "name": "block_height",
@@ -381,6 +402,9 @@
     {
       "name": "stargaze_transactions",
       "description": "This table contains a comprehensive collection of transaction data from the Cosmos ecosystem, providing insights into the blockchain's activity and behavior.",
+      "tags": [
+        "stargaze"
+      ],
       "columns": [
         {
           "name": "block_height",

@@ -44,6 +44,7 @@ async function generateTablesMetadata(table: Table): Promise<TableMetadata> {
     return {
         name: tableMetadata.tableReference.tableId,
         description: tableMetadata.description || '',
+        tags: [table.dataset.id],
         columns: tableMetadata.schema.fields.map((field) => ({
             name: field.name,
             description: field.description,
