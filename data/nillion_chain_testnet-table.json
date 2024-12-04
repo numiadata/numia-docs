@@ -5,7 +5,6 @@
       "name": "nillion_chain_testnet_block_events",
       "description": "This table provides information about the events occurring on the blockchain within the Cosmos ecosystem, offering insights into the block height, timestamp, and event occurrences. The data is sourced from the blockchain to provide a comprehensive view of the network's activity.",
       "tags": [
-        "nillion_chain_testnet",
         "raw_table"
       ],
       "columns": [
@@ -55,7 +54,6 @@
       "name": "nillion_chain_testnet_blocks",
       "description": "Cosmos Blockchain Blocks Dataset: This dataset contains information about blocks in the Cosmos ecosystem, providing insights into network activity and block production. It includes data on block height, timestamp, and other key metrics.",
       "tags": [
-        "nillion_chain_testnet",
         "raw_table"
       ],
       "columns": [
@@ -105,7 +103,6 @@
       "name": "nillion_chain_testnet_message_events",
       "description": "This table contains a comprehensive log of all blockchain events within the Cosmos ecosystem, capturing key aspects of block, transaction, and message processing. The data is sourced from various Cosmos-based blockchains, providing a unified view of the network's activity.",
       "tags": [
-        "nillion_chain_testnet",
         "raw_table"
       ],
       "columns": [
@@ -165,7 +162,6 @@
       "name": "nillion_chain_testnet_transactions",
       "description": "This table contains a comprehensive collection of transaction data from the Cosmos ecosystem, providing insights into the blockchain's activity and behavior.",
       "tags": [
-        "nillion_chain_testnet",
         "raw_table"
       ],
       "columns": [
@@ -275,7 +271,6 @@
       "name": "nillion_chain_testnet_tx_messages",
       "description": "This table contains transaction messages from various blockchains in the Cosmos ecosystem. It provides insights into the transactions and their associated details.",
       "tags": [
-        "nillion_chain_testnet",
         "raw_table"
       ],
       "columns": [

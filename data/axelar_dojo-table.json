@@ -5,7 +5,6 @@
       "name": "axelar_block_events",
       "description": "This table captures block events from various blockchains within the Cosmos ecosystem, providing insights into the occurrence of different events across the network. It offers a comprehensive view of the blockchain events and their associated metadata.",
       "tags": [
-        "axelar_dojo",
         "raw_table"
       ],
       "columns": [
@@ -55,7 +54,6 @@
       "name": "axelar_blocks",
       "description": "This table contains information about blocks on Axelar Network, a decentralized platform for cross-chain communication and interoperability within the Cosmos ecosystem. It provides insights into block heights, timestamps, and validator information.",
       "tags": [
-        "axelar_dojo",
         "raw_table"
       ],
       "columns": [
@@ -105,7 +103,6 @@
       "name": "axelar_event_attributes",
       "description": "This table contains information about attributes associated with events on the Cosmos ecosystem blockchains. It provides insights into the blockchains' activity, including transaction and event data.",
       "tags": [
-        "axelar_dojo",
         "raw_table"
       ],
       "columns": [
@@ -180,7 +177,6 @@
       "name": "axelar_message_event_attributes",
       "description": "This table provides details on message events in the Axelar network, offering insights into the activities occurring across various chains in the Cosmos ecosystem.",
       "tags": [
-        "axelar_dojo",
         "raw_table"
       ],
       "columns": [
@@ -255,7 +251,6 @@
       "name": "axelar_message_events",
       "description": "This table contains blockchain data from the Cosmos ecosystem, providing insights into the Axelar network's message events. It captures key information about the block height, transaction details, and event occurrence.",
       "tags": [
-        "axelar_dojo",
         "raw_table"
       ],
       "columns": [
@@ -315,7 +310,6 @@
       "name": "axelar_transactions",
       "description": "Axelar transaction data table, providing information about transactions executed on the Axelar network within the Cosmos ecosystem. This data can be used to analyze transaction behavior, network activity, and associated fees.",
       "tags": [
-        "axelar_dojo",
         "raw_table"
       ],
       "columns": [
@@ -425,7 +419,6 @@
       "name": "axelar_tx_messages",
       "description": "This table contains transaction messages from various chains within the Cosmos ecosystem, providing insight into the communication and interactions between different blockchain networks.",
       "tags": [
-        "axelar_dojo",
         "raw_table"
       ],
       "columns": [
