@@ -5,7 +5,7 @@
       "name": "dydx_balance_module_account",
       "description": "This table provides a daily snapshot of account balances in the Cosmos ecosystem. It contains the address, denomination, and amount of each account at a specific day.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -38,7 +38,6 @@
       "name": "dydx_block_events",
       "description": "Cosmos blockchain block events data, providing insights into the distributed ledger activity across the ecosystem. This table captures key metrics and timestamps from various blockchains.",
       "tags": [
-        "dydx_mainnet",
         "raw_table"
       ],
       "columns": [
@@ -88,7 +87,6 @@
       "name": "dydx_blocks",
       "description": "This table provides a comprehensive overview of blocks from the Cosmos ecosystem, containing essential details about each block's metadata. It offers valuable insights for understanding block production and validation within the Cosmos network.",
       "tags": [
-        "dydx_mainnet",
         "raw_table"
       ],
       "columns": [
@@ -138,7 +136,7 @@
       "name": "dydx_cancel_order",
       "description": "This table contains information about cancelled orders in the Cosmos ecosystem, enabling insights into market dynamics and user behavior. The data provides a comprehensive view of order cancellations, facilitating analysis and decision-making.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -212,7 +210,7 @@
       "name": "dydx_delegate",
       "description": "This table contains the blockchain data related to the Delegators of the Cosmos network. It includes information about the transactions and events related to the delegation process.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -281,7 +279,7 @@
       "name": "dydx_deposit",
       "description": "This table contains data about deposits made on the Cosmos ecosystem, providing insights into the movement of assets within the network. It offers a detailed view of transactional activity, enabling analysis of user behavior and network dynamics.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -350,7 +348,7 @@
       "name": "dydx_match",
       "description": "This table provides a record of trades and order activity on the DyDx platform, capturing key details of each interaction within the Cosmos-based blockchain ecosystem.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -474,7 +472,6 @@
       "name": "dydx_mempool_transactions",
       "description": "This table contains information about mempool transactions on the Cosmos ecosystem blockchains. It provides a real- time snapshot of unconfirmed transactions awaiting inclusion in the blockchain.",
       "tags": [
-        "dydx_mainnet",
         "raw_table"
       ],
       "columns": [
@@ -514,7 +511,6 @@
       "name": "dydx_message_events",
       "description": "This table contains events from the Cosmos blockchain ecosystem, specifically related to transactions and block data. It provides a comprehensive view of the blockchain activity.",
       "tags": [
-        "dydx_mainnet",
         "raw_table"
       ],
       "columns": [
@@ -574,7 +570,7 @@
       "name": "dydx_message_senders",
       "description": "This table contains information about the senders of messages in the Cosmos ecosystem. It provides data on block heights, timestamps, and the actions performed by these senders.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -628,7 +624,6 @@
       "name": "dydx_message_types_transactions",
       "description": "This table contains a collection of transactions from various blockchains within the Cosmos ecosystem. It provides insights into the message types and related transactions.",
       "tags": [
-        "dydx_mainnet",
         "raw_table"
       ],
       "columns": [
@@ -683,7 +678,7 @@
       "name": "dydx_place_order",
       "description": "This table contains information about Dydx place order events. It captures key details about each order placement in the Cosmos ecosystem.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -797,7 +792,7 @@
       "name": "dydx_settled_funding",
       "description": "This table provides settled funding data for perpetual contracts on the Cosmos-based DyDX exchange. It captures key metrics for each funding event.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -861,7 +856,7 @@
       "name": "dydx_state",
       "description": "This table provides a snapshot of the state of the Dydx protocol on the cosmos blockchain, including its current status and value. The data is sourced from the blockchain and reflects the state at a specific block height.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -900,7 +895,6 @@
       "name": "dydx_transactions",
       "description": "Cosmos Blockchain Transaction Data. This table contains information about transactions that occurred on various Cosmos blockchain chains.",
       "tags": [
-        "dydx_mainnet",
         "raw_table"
       ],
       "columns": [
@@ -1010,7 +1004,7 @@
       "name": "dydx_transfer",
       "description": "This table contains a comprehensive record of all transfer events on the Cosmos ecosystem blockchains, providing valuable insights into the flow of assets and transactions across the network. It captures every transfer event, enabling in-depth analysis and tracking of asset movements.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -1084,7 +1078,6 @@
       "name": "dydx_tx_messages",
       "description": "This table contains a collection of messages related to transactions on Cosmos- based blockchains, providing insights into the blockchain's activities and events.",
       "tags": [
-        "dydx_mainnet",
         "raw_table"
       ],
       "columns": [
@@ -1144,7 +1137,7 @@
       "name": "dydx_undelegate",
       "description": "This table contains information about DYDX tokens undelegated from validators in the Cosmos ecosystem. It provides a detailed record of the undelegation events that have occurred.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -1213,7 +1206,6 @@
       "name": "dydx_validators",
       "description": "This table contains information about active validators in the Cosmos ecosystem, providing insights into their performance, settings, and participation in the network. Validators are crucial for maintaining the integrity and security of the blockchain.",
       "tags": [
-        "dydx_mainnet",
         "raw_table"
       ],
       "columns": [
@@ -1328,7 +1320,7 @@
       "name": "dydx_vote",
       "description": "This table provides information on voting events in the Cosmos ecosystem, specifically related to DYDX proposals. It contains data about the proposals, their options, and the voting activity.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -1387,7 +1379,7 @@
       "name": "dydx_withdrawal",
       "description": "This table contains information about withdrawals from the DyDx protocol on the cosmos ecosystem, providing a snapshot of on-chain transactions and their associated details.",
       "tags": [
-        "dydx_mainnet"
+        "parsed_table"
       ],
       "columns": [
         {

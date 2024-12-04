@@ -44,12 +44,12 @@ async function generateDatasetMetadata(dataset: Dataset) {
 
 async function generateTablesMetadata(table: Table): Promise<TableMetadata> {
     const [tableMetadata] = await table.getMetadata()
-    const tableTags = [table.dataset.id]
-    if (rawTables.some((t) => {
+    const isRawTable = rawTables.some((t) => {
         return tableMetadata.tableReference.tableId.endsWith(t)
-    })) {
-        tableTags.push('raw_table')
-    }
+    })
+
+    const tableTags = isRawTable ? ['raw_table'] : ['parsed_table']
+
     return {
         name: tableMetadata.tableReference.tableId,
         description: tableMetadata.description || '',

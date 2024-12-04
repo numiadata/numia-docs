@@ -5,7 +5,7 @@
       "name": "cosmos_chains_registry",
       "description": "This table provides a comprehensive registry of Cosmos-based blockchain chains,    offering a unified view of their network configurations and operational status.",
       "tags": [
-        "interchain_foundation"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -62,7 +62,7 @@
       "name": "cosmwasm_github_analysis",
       "description": "This table provides insights into the GitHub repository analysis data from the Cosmos ecosystem, focusing on CosmWasm- based projects. It offers a comprehensive view of the repositories, their owners, and their performance metrics.",
       "tags": [
-        "interchain_foundation"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -119,7 +119,7 @@
       "name": "cosmwasm_penetration_analysis",
       "description": "Cosmos Ecosystem Penetration Analysis provides insights into the growth and adoption of the cosmos ecosystem. This analysis helps identify trends and patterns in the deployment and instantiation of contracts, as well as their economic impact.",
       "tags": [
-        "interchain_foundation"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -153,7 +153,7 @@
       "name": "cosmwasm_traffic_analysis",
       "description": "This table contains traffic analysis data for CosmWasm smart contracts across the Cosmos ecosystem. It provides insights into the number of transactions, calls, and fees associated with each contract on different blockchain chains.",
       "tags": [
-        "interchain_foundation"
+        "parsed_table"
       ],
       "columns": [
         {
@@ -192,7 +192,7 @@
       "name": "cosmwasm_users_analysis",
       "description": "This table analyzes the users of CosmWasm smart contracts across the Cosmos ecosystem. It provides insights into the activity and participation of users in the ecosystem.",
       "tags": [
-        "interchain_foundation"
+        "parsed_table"
       ],
       "columns": [
         {
