@@ -1,46 +1,59 @@
 .tabsContainer {
-    border: 1px solid var(--ifm-toc-border-color);
-    border-radius: 5px;
-    margin-bottom: 20px;
-  }
-  
-  .tabButtons {
-    display: flex;
-    background-color: rgba(0.142118, 0.142118, 0.142118, 0.04);
-    border-radius: 5px 5px 0 0;
-  }
-  
-  [data-theme="dark"] .tabButtons {
-    background-color: #000;
-  }
-  
-  .tabButton {
-    padding: 0.5rem 1rem;
-    border: none;
-    background: none;
-    cursor: pointer;
-    font-size: 1rem;
-  }
-  
-  .activeTab {
-    color: var(--primary-color);
-    border-radius: 5px 5px 0 0;
-    background-color: #fff;
-  }
-  
-  [data-theme="dark"] .activeTab {
-    background-color: var(--ifm-background-color);
-    color: #f78b4b;
-  }
-  
-  .tabContent {
-    padding: 1rem 0 0;
-  }
-  
-  .tabContent p {
-    padding: 0 1rem;
-  }
-  
-  .tabContent table {
-    margin-bottom: 0 !important;
-  }
+  border: 1px solid var(--ifm-toc-border-color);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.tabButtons {
+  display: flex;
+  overflow-x: auto; /* Enable horizontal scrolling */
+  scrollbar-width: thin; /* For Firefox */
+  background-color: rgba(0.142118, 0.142118, 0.142118, 0.04);
+  border-radius: 5px 5px 0 0;
+}
+
+[data-theme='dark'] .tabButtons {
+  background-color: #000;
+}
+
+.tabButtons::-webkit-scrollbar {
+  height: 6px; /* Adjust scrollbar height */
+}
+
+.tabButtons::-webkit-scrollbar-thumb {
+  background-color: var(--primary-color); /* Adjust scrollbar thumb color */
+  border-radius: 10px;
+}
+
+.tabButton {
+  flex-shrink: 0; /* Prevent buttons from shrinking */
+  padding: 0.5rem 1rem 0.7rem 1rem;
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 1rem;
+  white-space: nowrap; /* Prevent text wrapping */
+}
+
+.activeTab {
+  color: var(--primary-color);
+  border-radius: 5px 5px 0 0;
+  background-color: #fff;
+}
+
+[data-theme='dark'] .activeTab {
+  background-color: var(--ifm-background-color);
+  color: #f78b4b;
+}
+
+.tabContent {
+  padding: 1rem 0 0;
+}
+
+.tabContent p {
+  padding: 0 1rem;
+}
+
+.tabContent table {
+  margin-bottom: 0 !important;
+}
