@@ -1,0 +1,18 @@
+---
+title: Query Balances
+---
+
+Retrieve the balances of a specific wallet address using REST endpoints. This is useful for applications that need to display the current token holdings of a user or track balance changes over time.
+
+```bash
+curl -X GET "https://<chain>-lcd.numia.xyz/cosmos/bank/v1beta1/balances/<address>" \
+  -H "Authorization: Bearer <your_api_key>"
+```
+
+**Parameters:**
+- **`<chain>`**: Replace with the chain you’re querying (e.g., `osmosis-lcd`).
+- **`<address>`**: The wallet address whose balances you want to fetch.
+- **`<your_api_key>`**: Your API key for authentication.
+
+The response includes a list of tokens held by the specified address, with details such as token denominations and amounts.
+

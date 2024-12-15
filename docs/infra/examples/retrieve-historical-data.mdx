@@ -1,0 +1,41 @@
+---
+title: Retrieve Historical Data
+---
+
+Historical data is a critical component for understanding trends, analyzing past blockchain activity, and conducting compliance checks. NumiaInfra provides robust caching mechanisms that allow you to access historical blockchain data, even for chains with aggressive pruning policies. This enables you to retrieve information about past transactions, blocks, and events that would otherwise be inaccessible.
+
+## Example: Query Historical Blocks
+Retrieve detailed information about a specific block by specifying its height. This query provides metadata such as the block’s timestamp, proposer, transaction count, and associated events.
+
+```bash
+curl -X GET "https://<chain>-lcd.numia.xyz/blocks/<block_height>" \
+  -H "Authorization: Bearer <your_api_key>"
+```
+
+**Parameters:**
+- **`<chain>`**: The specific blockchain you are querying (e.g., `osmosis-lcd`).
+- **`<block_height>`**: The height of the block you wish to retrieve.
+- **`<your_api_key>`**: Your API key for authentication.
+
+## Example: Query Historical Transactions
+To analyze a specific wallet’s activity over time, you can query historical transactions tied to its address. This is especially useful for monitoring wallet behaviors, such as staking, delegation, or token transfers.
+
+```bash
+curl -X GET "https://<chain>-lcd.numia.xyz/cosmos/tx/v1beta1/txs?events=message.sender='<wallet_address>'" \
+  -H "Authorization: Bearer <your_api_key>"
+```
+
+## Example: Time-Series Data
+Time-series data analysis often requires retrieving blocks or transactions over a continuous range of time. By iterating through block heights or timestamps, you can build datasets for:
+
+- Transaction throughput analysis.
+- Validator activity over specific periods.
+- Changes in staking or governance participation.
+
+## Handling Pruning and Caching Limitations
+Many Cosmos SDK chains prune older states to optimize performance, which means older blocks or events might not be available directly from the chain’s nodes. NumiaInfra mitigates this by caching historical data, ensuring you can:
+
+- Access historical blocks and transactions that are no longer available on-chain.
+- Query specific past events for auditing or investigative purposes.
+
+This caching system is updated in near-real-time, ensuring minimal latency while providing access to a vast dataset of historical blockchain activity.

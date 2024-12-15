@@ -1,0 +1,24 @@
+---
+title: Advanced Use Cases with RPC
+---
+
+For more complex operations, leverage the RPC endpoints for raw blockchain interaction. These endpoints are ideal for advanced developers needing low-level access to blockchain data or performing operations unavailable in REST endpoints.
+
+## Example: Fetch Raw Block Data
+Retrieve raw data for a specific block. This includes detailed metadata like block hashes, timestamps, and transaction IDs.
+
+```bash
+curl -X GET "https://<chain>-rpc.numia.xyz/block?height=<block_height>" \
+  -H "Authorization: Bearer <your_api_key>"
+```
+
+## Example: Broadcast a Transaction
+Submit a new transaction to the blockchain. This requires constructing the transaction payload and encoding it in the appropriate format.
+
+```bash
+curl -X POST "https://<chain>-rpc.numia.xyz/broadcast_tx_async" \
+  -H "Content-Type: application/json" \
+  -H "Authorization: Bearer <your_api_key>" \
+  -d '{ "tx": { ... } }'
+```
+

@@ -1,0 +1,13 @@
+---
+title: Query Governance Modules
+---
+
+Governance modules enable access to blockchain governance activities, such as proposals and voting records. This data is essential for tracking decision-making processes and user participation in the network.
+
+## Example: Retrieve Proposals
+List all active and past proposals, including their statuses, voting results, and metadata. This is particularly useful for platforms providing governance dashboards or analytics.
+
+```bash
+curl -X GET "https://<chain>-lcd.numia.xyz/cosmos/gov/v1beta1/proposals" \
+  -H "Authorization: Bearer <your_api_key>"
+```
