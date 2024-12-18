@@ -1,0 +1,44 @@
+---
+title: Getting Started
+---
+
+NumiaInfra provides seamless access to blockchain data and services through REST and RPC endpoints. Follow the steps below to set up your account, generate an API key, and begin querying blockchain data.
+
+1. First, you need to create an account with Numia. Visit our dashboard and [sign up](https://app.numia.xyz/login) to get started. 
+2. Once logged in, click **Create** on the **New Project** card, and choose a name for your project
+    
+    <Image 
+    src="/media/api/create-project.gif"
+    />
+    
+3. After creating your project, you need to open it and add the blockchain protocol you want to access through the API. 
+    
+    <Image 
+    src="/media/api/add-protocol.gif"
+    />
+4. Get your API key to be used for Bearer Token authentication in your API requests, allowing you to interact with Numia’s data. You'll also be able to see the LCD and RPC endpoints for that chain. 
+
+5. Include your API key in the `Authorization` header of each request:
+
+    ```bash
+    curl -X GET "https://<chain>-lcd.numia.xyz/blocks/latest" \
+    -H "Authorization: Bearer <your_api_key>"
+    ```
+
+6. Choose between REST and RPC endpoints. 
+    - Example REST request to fetch the latest block:
+        ```bash
+        curl -X GET "https://osmosis-lcd.numia.xyz/blocks/latest" \
+        -H "Authorization: Bearer <your_api_key>"
+        ```
+
+    - Example RPC Request to fetch block details:
+        ```bash
+        curl -X GET "https://osmosis-rpc.numia.xyz/block?height=<block_height>" \
+        -H "Authorization: Bearer <your_api_key>"
+        ```
+
+7.  Once authenticated, you can start exploring NumiaInfra’s capabilities:
+    - Query balances, transactions, and staking data.
+    - Retrieve historical data for supported chains.
+    - Interact with validator and governance modules.

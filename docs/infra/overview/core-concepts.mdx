@@ -1,0 +1,70 @@
+---
+title: Core Concepts
+---
+NumiaInfra is built on key principles and mechanisms that ensure reliability, ease of use, and comprehensive access to blockchain data. Understanding these core concepts will help you make the most of the platform.
+
+## Endpoints Defined by Blockchains
+
+NumiaInfra exposes endpoints that follow the standards defined by the blockchain networks themselves. These include:
+
+- **REST (LCD) Endpoints**: JSON-based and user-friendly, suitable for high-level queries.
+- **RPC Endpoints**: CometBFT-based, designed for low-level interaction and requiring protochain encoding.
+
+While these endpoints provide a uniform structure, specific implementations can vary by chain. For detailed information, refer to the respective blockchain’s documentation.
+
+## Pruning and Caching
+
+Pruning is a technique used by blockchain nodes to optimize performance by removing older state data that is no longer essential for immediate operations. While this ensures efficient resource usage, it limits the ability to retrieve historical state information directly from the nodes.
+
+To address this, NumiaInfra incorporates caching as part of its infrastructure. Cached historical blocks allow developers to access past transaction data and events, even for blockchains that aggressively prune their states. This enables NumiaInfra users to analyze historical data without compromising the performance benefits of pruning. By combining pruning and caching, NumiaInfra strikes a balance between operational efficiency and comprehensive data availability.
+
+- **Pruning**: Nodes remove old states to maintain efficiency.
+- **Caching**: NumiaInfra caches historical blocks, enabling access to past transactions and events even for chains that prune aggressively.
+
+This approach ensures that developers can retrieve necessary historical data while maintaining node performance.
+
+## REST vs RPC
+
+NumiaInfra supports both REST (LCD) and RPC endpoints, each suited for specific use cases:
+
+- **REST (LCD)**:
+  - Returns JSON-encoded responses.
+  - Ideal for front-end applications and simple queries like balances and transaction details.
+  - Self-decodes responses for ease of integration.
+
+- **RPC**:
+  - Designed for advanced queries and backend operations.
+  - Requires protochain encoding to interact with raw blockchain data.
+  - Offers deeper control and flexibility for complex use cases.
+
+Understanding when to use REST or RPC will help optimize performance and development workflows.
+
+## Standardization with Cosmos SDK
+
+NumiaInfra aligns with the Cosmos SDK’s conventions for node functionality and data structure. This ensures consistency across chains built on the Cosmos SDK and simplifies development for applications that interact with multiple chains.
+
+<CardList cols={3}>
+<Card 
+  title="Modularity"
+  description="Developers can include only the modules they need, ensuring streamlined and efficient blockchains."
+  icon="cube"
+  iconType="regular"
+  iconSize="32px"
+/>
+<Card 
+  title="Interoperability"
+  description="Chains built with the Cosmos SDK can communicate with each other through the Inter-Blockchain Communication (IBC) protocol."
+  icon="plugs"
+  iconType="regular"
+  iconSize="32px"
+/>
+<Card 
+  title="Tendermint Core"
+  description="Provides fast finality, high throughput, and secure consensus."
+  icon="speedometer"
+  iconType="regular"
+  iconSize="32px"
+/>
+</CardList>
+
+For more information on the Cosmos SDK, visit the [official documentation](https://docs.cosmos.network/).

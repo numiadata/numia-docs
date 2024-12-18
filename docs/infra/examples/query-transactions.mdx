@@ -1,0 +1,21 @@
+---
+title: Query Transactions
+---
+
+Retrieve transaction details to understand the activity associated with a wallet address or a specific transaction hash. This is essential for auditing, monitoring, or creating transaction history features in your application.
+
+## Example: Fetching a Specific Transaction
+Fetch the details of a single transaction using its unique hash. This is commonly used to verify the status and metadata of a transaction.
+
+```bash
+curl -X GET "https://<chain>-lcd.numia.xyz/cosmos/tx/v1beta1/txs/<tx_hash>" \
+  -H "Authorization: Bearer <your_api_key>"
+```
+
+## Example: Filtering Transactions by Events
+Filter transactions based on specific criteria, such as events triggered by a transaction. This is useful for analyzing patterns or querying targeted activities like staking, delegation, or token swaps.
+
+```bash
+curl -X GET "https://<chain>-lcd.numia.xyz/cosmos/tx/v1beta1/txs?events=tx.hash='<tx_hash>'" \
+  -H "Authorization: Bearer <your_api_key>"
+```

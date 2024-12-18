@@ -1,0 +1,21 @@
+---
+title: Interact with Validators and Staking Data
+---
+
+Validator and staking data provide insights into the health and performance of validators and the staking behaviors of network participants. This is useful for monitoring governance, user engagement, and overall network security.
+
+## Example: Validator Data
+Fetch details about active validators, including their voting power, commission rates, and operational status.
+
+```bash
+curl -X GET "https://<chain>-lcd.numia.xyz/cosmos/staking/v1beta1/validators" \
+  -H "Authorization: Bearer <your_api_key>"
+```
+
+## Example: Delegation Data
+Retrieve data on tokens delegated by a specific address, including amounts and associated validators. This is particularly useful for portfolio tracking or understanding staking contributions.
+
+```bash
+curl -X GET "https://<chain>-lcd.numia.xyz/cosmos/staking/v1beta1/delegations/<address>" \
+  -H "Authorization: Bearer <your_api_key>"
+```

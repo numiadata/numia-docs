@@ -46,6 +46,10 @@
       "sidebarRef": "sql"
     },
     {
+      "label": "Infra",
+      "sidebarRef": "infra"
+    },
+    {
       "label": "AI",
       "sidebarRef": "ai"
     }
@@ -158,6 +162,31 @@
                 "sql/querying-data/chains/umee"
               ]
             }
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "infra",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "infra/overview/whats-numia-infra",
+            "infra/overview/supported-chains",
+            "infra/overview/getting-started",
+            "infra/overview/core-concepts"
+          ]
+        },
+        {
+          "categoryName": "Examples",
+          "pages": [
+            "infra/examples/query-balances",
+            "infra/examples/query-transactions",
+            "infra/examples/query-governance-modules",
+            "infra/examples/retrieve-historical-data",
+            "infra/examples/interact-with-validators",
+            "infra/examples/advanced-use-cases-rpc"
           ]
         }
       ]
