@@ -1,0 +1,85 @@
+---
+title: Attribution SDK
+---
+
+This page provides all the necessary steps and examples to get started with the NumiaEngage Attribution SDK, from installation to advanced usage.
+
+## Installation
+
+Install the SDK using your preferred package manager:
+
+```bash
+# npm
+npm install @numia/engage-sdk
+
+# yarn
+yarn add @numia/engage-sdk
+
+# pnpm
+pnpm add @numia/engage-sdk
+```
+
+## Setup
+
+To begin using the SDK, you need to create an instance of the analytics class. Obtain your API key from the Numia dashboard:
+
+```typescript
+import { createEngage } from "@numia/engage-sdk";
+
+const analytics = createEngage({
+  app: "soon-unicorn-app", // Your app name
+  apiKey: "MySecretWriteKey", // Replace with your WriteKey
+  test: true, // Set to false for production
+});
+```
+
+- **`app`**: The name of your application.
+- **`apiKey`**: Your unique WriteKey obtained from the Numia dashboard.
+- **`test`**: Optional. Set to `true` for testing environments and `false` for production.
+
+
+## Usage
+
+### Basic Tracking Methods
+
+The SDK provides three core methods for tracking:
+
+- **Identify**: Links events to a specific wallet address.
+- **Track**: Records user actions with associated metadata.
+- **Page**: Tracks page views and attribution parameters.
+
+### Identify
+
+Use `Identify` to associate a wallet with the events you are tracking. Numia also assigns an `anonymousId` for visitors who haven't connected a wallet, allowing you to track actions seamlessly.
+
+#### Example:
+```typescript
+analytics.identify("wallet1234567890", {
+  wallet: "Metamask", // Optional metadata
+});
+```
+
+### Track
+
+The `Track` method records specific user actions, enabling detailed attribution of events to campaigns.
+
+#### Example:
+```typescript
+analytics.track("Swap Completed", {
+  market: "ETH-USDT",
+  amount: 50,
+  currency: "USDT",
+});
+```
+
+### Page
+
+The `Page` method captures page views and attribution data, such as UTM parameters, ensuring you don't miss interactions from anonymous users.
+
+#### Example:
+```typescript
+analytics.page({
+  title: "Homepage",
+  utm_source: "campaignX",
+});
+```

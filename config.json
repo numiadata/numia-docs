@@ -101,6 +101,13 @@
             "engage/advertiser-guide/campaign-monitoring",
             "engage/advertiser-guide/advertisement-reference"
           ]
+        },
+        {
+          "categoryName": "Attribution",
+          "pages": [
+            "engage/attribution/overview",
+            "engage/attribution/attribution-sdk"
+          ]
         }
       ]
     },
