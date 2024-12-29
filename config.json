@@ -11,13 +11,12 @@
   ],
   "styles": {
     "mainColor": "#F78B4B",
-    "darkModeMainColor": "#ffffff",
     "navbarColor": "#FFFFFF",
     "navbarDarkModeColor": "#10171F",
     "backgroundDarkModeColor": "#10171F",
-    "logoSize": "",
+    "logoSize": "large",
     "navbarMode": "tabbed",
-    "pagination": false
+    "pagination": true
   },
   "colorMode": {
     "default": "dark",
@@ -204,7 +203,9 @@
         {
           "categoryName": "Overview",
           "pages": [
-            "ai/overview/whats-numia-ai"
+            "ai/overview/whats-numia-ai",
+            "ai/overview/how-numia-ai-works",
+            "ai/overview/best-practices-limitations"
           ]
         }
       ]

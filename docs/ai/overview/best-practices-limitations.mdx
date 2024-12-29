@@ -1,0 +1,45 @@
+---
+title: Best Practices and Limitations
+---
+
+To make the most out of NumiaAI, it is essential to understand its capabilities as well as its inherent limitations. These constraints are shaped by the user prompts and the underlying tools and modules that power NumiaAI. This section provides a detailed breakdown to help manage expectations and guide effective usage.
+
+## Tips for Effective Use
+
+1. **Provide Context**: Always include details such as timeframes, specific blockchains, or comparative data points in your query.
+2. **Be Specific**: Avoid open-ended questions and focus on well-defined goals or metrics.
+3. **Know the Scope**: Familiarize yourself with the supported APIs and data sources to align your queries with what the agent can access.
+4. **Iterative Refinement**: If the initial response is insufficient, refine your prompt by adding more context or narrowing the focus.
+
+
+## Limitations
+
+### Usage Limitations
+The effectiveness of NumiaAI heavily depends on the clarity and context of user prompts. Ambiguous or overly broad prompts may result in incomplete or irrelevant answers.
+
+<Callout type="warning" title="Example">
+  - **Ineffective Prompt**: *"Why did the price of BTC on dYdX not hit $100,000?"*
+  - This query is too vague and lacks sufficient context for the agent to provide a meaningful response.
+</Callout>
+
+
+<Callout type="success" title="Example">
+- **Effective Prompt**: *"Why did the price of BTC on dYdX not hit $100,000 while over the past 24 hours it was reached on multiple other exchanges?"*
+  - By adding context, the user specifies the timeframe and comparison scope, enabling a more targeted response.
+</Callout>
+
+### Data & Model Limitations
+Even with clear prompts, certain limitations persist due to the nature of available data and the capabilities of the underlying AI models:
+
+- **Data Scope**: The agent can only access data from APIs explicitly integrated into the NumiaAI system. For example:
+  - dYdX data is sourced from a limited set of pre-configured APIs.
+  - The agent cannot scrape external websites or access unlinked data sources.
+
+- **Complex Queries**: Questions involving extensive causal analysis or predictions are beyond the scope of NumiaAI. For instance:
+  - Predicting future prices (e.g., "What will the price of BTC be tomorrow?") is not feasible.
+  - Analyzing why specific market events occurred (e.g., "Why was BTC volume unusually high yesterday?") requires a level of context and expertise that the system cannot guarantee.
+
+- **Toolset Constraints**: The agent's outputs are limited to the capabilities of its tools. For example:
+  - Asking for a bubble chart when the data-rendering module does not support that feature will result in an unsupported response.
+  - Multi-market liquidation analyses cannot be performed if the necessary visualization tools are unavailable.
+

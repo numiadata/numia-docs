@@ -1,0 +1,67 @@
+---
+title: Tool Details
+---
+
+Each NumiaAI tool is designed to handle specific aspects of data interaction, from fetching blockchain information to visualizing trends and performing advanced analytics. This page provides details and examples of these tools. 
+
+### User-Facing Main Agent
+The main agent is the interface users interact with directly. Powered by **GPT-4o**, its primary responsibilities include:
+- Managing user communication.
+- Understanding natural language queries.
+- Delegating tasks to other components based on user requests.
+
+<Callout type="success" title="Examples">
+- "What is the total transaction volume on Osmosis for the last 7 days?"
+- "Who are the top 5 validators by delegation on Cosmos Hub this month?"
+- "Summarize staking rewards for wallet juno1abc... over the last quarter."
+- "What is the average gas fee for transactions on Evmos during the past week?"
+- "List all governance proposals voted on by wallet cosmos1xyz... in the last year."
+</Callout>
+
+### Data-Sourcing Tools
+These tools connect NumiaAI to the backend APIs and data sources, fetching the required blockchain data for analysis. Their primary functions are:
+- Querying Numia's APIs for transactional, historical, and analytical data.
+- Aggregating responses from multiple endpoints.
+
+<Callout type="success" title="Examples">
+- "Fetch all transactions for wallet address osmo1xyz... on Osmosis over the last 30 days."
+- "Provide details for governance proposal #45 on Cosmos Hub."
+- "Retrieve historical IBC transaction volumes between Evmos and Crescent for the past quarter."
+- "Fetch staking delegation history for wallet cosmos1abc... on Cosmos Hub."
+- "Get a log of block proposals and voting power changes for validator juno123... on Juno."
+</Callout>
+
+### Data-Rendering Tools
+NumiaAI includes specialized rendering tools to present data in user-friendly formats. These tools handle:
+- **Visualizations**: Generating bar charts, line charts, and other graphs.
+- **Details Cards**: Displaying transaction-specific or user-centric information.
+- **Summary Views**: Condensing large datasets into easily digestible insights.
+
+<Callout type="success" title="Examples">
+- "Show me a line chart of staking rewards on Osmosis for the last 6 months."
+- "Display a bar chart of token distributions in my wallet on Juno."
+- "Create a pie chart of validator voting power in the Cosmos Hub network."
+- "Visualize IBC transaction volume trends between Evmos and Crescent over the past year."
+- "Display a detailed card for transaction ID 0x12345 on Evmos."
+</Callout>
+
+### Back-Office Sub-Agent
+The back-office sub-agent acts as a dedicated data analyst. Using a **GPT-assistant** model combined with a code sandbox environment for Python execution, it performs:
+- Advanced data processing (e.g., calculating averages, medians, correlations).
+- Dataset analysis based on user-provided or fetched inputs.
+- Generating detailed reports or insights for complex queries.
+
+<Callout type="success" title="Examples">
+- "Calculate the average transaction value on Osmosis over the last 30 days."
+- "Determine the correlation between staking rewards and validator uptime on Cosmos Hub."
+- "Analyze the median gas fees for Evmos transactions during the past quarter."
+- "Perform a trend analysis of staking rewards on Juno for the top 10 validators over the last year."
+- "Compare IBC transaction volumes between Osmosis and Crescent over the last 6 months."
+</Callout>
+
+### Export Tools (Coming Soon)
+In development are tools to enable users to export analyzed data from NumiaAI into formats such as CSV. These tools will:
+- Facilitate integration with external systems or workflows.
+- Provide a bridge between NumiaAI's analytical outputs and user reporting needs.
+
+
