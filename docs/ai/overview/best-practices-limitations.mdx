@@ -12,23 +12,21 @@ To make the most out of NumiaAI, it is essential to understand its capabilities 
 4. **Iterative Refinement**: If the initial response is insufficient, refine your prompt by adding more context or narrowing the focus.
 
 
-## Limitations
-
-### Usage Limitations
+## Usage Limitations
 The effectiveness of NumiaAI heavily depends on the clarity and context of user prompts. Ambiguous or overly broad prompts may result in incomplete or irrelevant answers.
 
 <Callout type="warning" title="Example">
-  - **Ineffective Prompt**: *"Why did the price of BTC on dYdX not hit $100,000?"*
-  - This query is too vague and lacks sufficient context for the agent to provide a meaningful response.
+  **Ineffective Prompt**: *"Why did the price of BTC on dYdX not hit $100,000?"*
+  This query is too vague and lacks sufficient context for the agent to provide a meaningful response.
 </Callout>
 
 
 <Callout type="success" title="Example">
-- **Effective Prompt**: *"Why did the price of BTC on dYdX not hit $100,000 while over the past 24 hours it was reached on multiple other exchanges?"*
-  - By adding context, the user specifies the timeframe and comparison scope, enabling a more targeted response.
+  **Effective Prompt**: *"Why did the price of BTC on dYdX not hit $100,000 while over the past 24 hours it was reached on multiple other exchanges?"*
+  By adding context, the user specifies the timeframe and comparison scope, enabling a more targeted response.
 </Callout>
 
-### Data & Model Limitations
+## Data & Model Limitations
 Even with clear prompts, certain limitations persist due to the nature of available data and the capabilities of the underlying AI models:
 
 - **Data Scope**: The agent can only access data from APIs explicitly integrated into the NumiaAI system. For example:
