@@ -51,6 +51,10 @@
     {
       "label": "AI",
       "sidebarRef": "ai"
+    },
+    {
+      "label": "Lenses",
+      "sidebarRef": "lenses"
     }
   ],
   "externalLinks": [
@@ -193,6 +197,17 @@
             "infra/examples/retrieve-historical-data",
             "infra/examples/interact-with-validators",
             "infra/examples/advanced-use-cases-rpc"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "lenses",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "lenses/overview/whats-numia-lenses"
           ]
         }
       ]
