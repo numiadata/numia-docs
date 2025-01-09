@@ -13,23 +13,38 @@ KPI (Key Performance Indicator) Widgets provide static, at-a-glance metrics that
 <Image src="media/lenses/kpi-widgets.png"/>
 
 ## Interactive Widgets
-Interactive Widgets allow users to explore data more dynamically, offering the ability to customize views and drill down into specific datasets. Filters and toggles can be used to refine timeframes, select specific data series, adjust accumulation settings, and more, providing you with a more tailored analysis. 
+Interactive Widgets allow users to explore data more dynamically, offering the ability to customize views and drill down into specific datasets. Filters and toggles can be used to refine timeframes, select specific data series, adjust accumulation settings, and more, providing you with a more tailored analysis.
+
+You can see the information either in Table or Chart format:
+
+The widget can:
+- Be shown either in [Chart](#chart) or [Table](#table) format.
+- [Export data as CSV](/lenses/core-components/data-export)
+- Tweet it!
+
+<Image src="media/lenses/main-options.png"/>
+
+Either chart or table presentation allow you to change the timeframe being shown, as exemplified below:
+
+<Video src="media/lenses/widget-interaction-timeframe.mp4"/>
+
+### Chart
+
+In the chart presentation format, you can toggle between the following options:
+
+- **Bar/Line**: Choose between bar charts for comparing quantities across categories or line charts for visualizing trends over time.
+- **Cumulated/Standard**: Toggle between cumulated data (aggregated values over time) and standard data (individual data points for specific intervals).
+- **Log/Linear**: Switch between logarithmic scale (helpful for visualizing data with large value ranges) and linear scale (for evenly spaced data points).
+- **Timespan**: Adjust the time interval displayed in the chart, selecting from hourly, daily, weekly, or monthly views to suit your analysis needs.
 
 In the video example below, the Market Volume Overview widget is configured to show only BTC/USD, hourly, for the last 14 days as a bar chart. 
 
 <Video src="media/lenses/widget-interaction.mp4"/>
 
-Now, you can also change the timeframe being shown, as exemplified below:
+### Table
 
-<Video src="media/lenses/widget-interaction2.mp4"/>
+The table presentation format presents data in a paginated layout, making it easy to navigate through large datasets. Users can sort the table by any column to organize data according to their preferred criteria.
 
-The widget also can:
-- Show as either Table or Chart.
-- [Export data as CSV](/lenses/core-components/data-exports)
-- Tweet it!
+The image below orders the table with the BTC/USD column.
 
-<Image src="media/lenses/show-table.png"/>
-
-<Callout type="training">
-Refer to the [Data Export guide](/lenses/core-components/data-exports) to see details on exporting what you need to CSV.
-</Callout>
+<Image src="media/lenses/table-view.png"/>
