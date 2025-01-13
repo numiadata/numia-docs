@@ -207,7 +207,10 @@
         {
           "categoryName": "Overview",
           "pages": [
-            "lenses/overview/whats-numia-lenses"
+            "lenses/overview/whats-numia-lenses",
+            "lenses/core-components/widgets",
+            "lenses/core-components/data-export",
+            "lenses/core-components/snapshot-tool"
           ]
         }
       ]
