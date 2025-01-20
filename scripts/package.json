@@ -1,0 +1,19 @@
+{
+  "name": "doc-scripts",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit",
+    "table-metadata": "bun run src/tables-metadata.ts"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "eslint": "^8.57.0",
+    "typescript": "^5.5.4"
+  },
+  "dependencies": {
+    "@google-cloud/bigquery": "^7.9.1",
+    "p-map": "^7.0.2"
+  }
+}
