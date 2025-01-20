@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "lint": "eslint .",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "codegen": "bun run src/tables-metadata.ts"
   },
   "devDependencies": {
     "@types/node": "^18.11.18",
