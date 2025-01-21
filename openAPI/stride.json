@@ -1,0 +1,197 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://stride.numia.xyz"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Numia - Stride API"
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/stride/token-metrics": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_stride_tokenmetrics",
+        "summary": "Get stride tokenmetrics"
+      }
+    },
+    "/stride/redemption-rate": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_stride_redemptionrate",
+        "summary": "Get stride redemptionrate"
+      }
+    },
+    "/stride/total-users": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_stride_totalusers",
+        "summary": "Get stride totalusers"
+      }
+    },
+    "/stride/average-staked": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_stride_averagestaked",
+        "summary": "Get stride averagestaked"
+      }
+    },
+    "/stride/tvl": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_stride_tvl",
+        "summary": "Get stride tvl"
+      }
+    },
+    "/stride/total-yield": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_stride_totalyield",
+        "summary": "Get stride totalyield"
+      }
+    },
+    "/stride/apr": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_stride_apr",
+        "summary": "Get stride apr"
+      }
+    }
+  }
+}

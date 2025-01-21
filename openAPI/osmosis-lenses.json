@@ -1,0 +1,361 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://osmosis.numia.xyz/lensesV2"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Numia - Osmosis Lenses API"
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/liquidity/liquidity_flow": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "pool",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "total_inflow": {
+                        "type": "number"
+                      },
+                      "total_outflow": {
+                        "type": "number"
+                      },
+                      "top_inflow": {
+                        "type": "number"
+                      },
+                      "top_inflow_tx_id": {
+                        "type": "string"
+                      },
+                      "top_outflow": {
+                        "type": "number"
+                      },
+                      "top_outflow_tx_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "total_inflow",
+                      "total_outflow",
+                      "top_inflow",
+                      "top_inflow_tx_id",
+                      "top_outflow",
+                      "top_outflow_tx_id"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_liquidity_liquidity_flow",
+        "summary": "Get liquidity liquidity flow"
+      }
+    },
+    "/liquidity/flow_by_market": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "pool",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "total_inflow": {
+                        "type": "number"
+                      },
+                      "total_outflow": {
+                        "type": "number"
+                      },
+                      "top_inflow": {
+                        "type": "number"
+                      },
+                      "top_inflow_tx_id": {
+                        "type": "string"
+                      },
+                      "top_outflow": {
+                        "type": "number"
+                      },
+                      "top_outflow_tx_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "total_inflow",
+                      "total_outflow",
+                      "top_inflow",
+                      "top_inflow_tx_id",
+                      "top_outflow",
+                      "top_outflow_tx_id"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_liquidity_flow_by_market",
+        "summary": "Get liquidity flow by market"
+      }
+    },
+    "/superfluid/superfluid_flow": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "total_inflow": {
+                        "type": "number"
+                      },
+                      "total_outflow": {
+                        "type": "number"
+                      },
+                      "top_inflow": {
+                        "type": "number"
+                      },
+                      "top_inflow_tx_id": {
+                        "type": "string"
+                      },
+                      "top_outflow": {
+                        "type": "number"
+                      },
+                      "top_outflow_tx_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "total_inflow",
+                      "total_outflow",
+                      "top_inflow",
+                      "top_inflow_tx_id",
+                      "top_outflow",
+                      "top_outflow_tx_id"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_superfluid_superfluid_flow",
+        "summary": "Get superfluid superfluid flow"
+      }
+    },
+    "/staking/superfluid/flow_by_market": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "total_inflow": {
+                        "type": "number"
+                      },
+                      "total_outflow": {
+                        "type": "number"
+                      },
+                      "top_inflow": {
+                        "type": "number"
+                      },
+                      "top_inflow_tx_id": {
+                        "type": "string"
+                      },
+                      "top_outflow": {
+                        "type": "number"
+                      },
+                      "top_outflow_tx_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "total_inflow",
+                      "total_outflow",
+                      "top_inflow",
+                      "top_inflow_tx_id",
+                      "top_outflow",
+                      "top_outflow_tx_id"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "get_staking_superfluid_flow_by_market",
+        "summary": "Get staking superfluid flow by market"
+      }
+    }
+  }
+}
