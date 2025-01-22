@@ -3,473 +3,391 @@
   "tables": [
     {
       "name": "cosmoshub_block_events",
-      "description": "This table provides information about the events occurring on the blockchain within the Cosmos ecosystem, offering insights into the block height, timestamp, and event occurrences. The data is sourced from the blockchain to provide a comprehensive view of the network's activity.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block within the blockchain, representing the number of blocks mined up to this point.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block was mined, indicating the time at which the events occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "event_index",
-          "description": "The index of the event within the block, identifying its position in the list of events.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "The type of event that occurred, categorizing the type of action or transaction.",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
-          "description": "Additional attributes associated with the event, providing more detailed information about the occurrence.",
           "type": "JSON"
         },
         {
           "name": "source",
-          "description": "The source of the data, indicating the blockchain or network from which the information was obtained.",
           "type": "STRING"
         },
         {
           "name": "schema_version",
-          "description": "The version of the schema used to describe the structure of the data, ensuring consistency and compatibility.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the data was ingested into the system, indicating the time at which the data was received.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "cosmoshub_blocks",
-      "description": "Cosmos Blockchain Blocks Dataset: This dataset contains information about blocks in the Cosmos ecosystem, providing insights into network activity and block production. It includes data on block height, timestamp, and other key metrics.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in the blockchain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp at which the block was produced.",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
-          "description": "The unique identifier of the Cosmos blockchain.",
           "type": "STRING"
         },
         {
           "name": "proposer_address",
-          "description": "The address of the validator that proposed the block.",
           "type": "STRING"
         },
         {
           "name": "validators_hash",
-          "description": "A hash of the validators involved in the block production process.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp at which the block data was ingested into the dataset.",
           "type": "TIMESTAMP"
         },
         {
           "name": "messages_bytes",
-          "description": "The total size of the messages included in the block, in bytes.",
           "type": "INTEGER"
         },
         {
           "name": "tx_count",
-          "description": "The total number of transactions included in the block.",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "cosmoshub_event_attributes",
-      "description": "This table provides information about the attributes associated with events on the Cosmos blockchain ecosystem. It allows for analysis of various event attributes across different blockchains.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "deprecated_warning",
-          "description": "Indicates if the attribute is deprecated, indicating a potential change in the future.",
           "type": "STRING"
         },
         {
           "name": "block_height",
-          "description": "The height of the block in which the event occurred.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "The ID of the Cosmos blockchain on which the event occurred.",
           "type": "STRING"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp of the block in which the event occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_index",
-          "description": "The index of the transaction within the block in which the event occurred.",
           "type": "INTEGER"
         },
         {
           "name": "tx_id",
-          "description": "The ID of the transaction in which the event occurred.",
           "type": "STRING"
         },
         {
           "name": "event_index",
-          "description": "The index of the event within the transaction in which it occurred.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "The type of event that occurred.",
           "type": "STRING"
         },
         {
           "name": "event_source",
-          "description": "The source of the event, indicating the module or contract that triggered it.",
           "type": "STRING"
         },
         {
           "name": "attribute_key",
-          "description": "The key of the attribute associated with the event.",
           "type": "STRING"
         },
         {
           "name": "attribute_value",
-          "description": "The value of the attribute associated with the event.",
           "type": "STRING"
         },
         {
           "name": "attribute_index",
-          "description": "The index of the attribute within the event in which it occurred.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp at which the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "cosmoshub_message_event_attributes",
-      "description": "This table contains various attributes of messages from the Cosmos blockchain ecosystem. It provides information about the attributes associated with specific events on the blockchain.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "deprecated_warning",
-          "description": "Indicates if the attribute is deprecated, marking its potential removal in future updates.",
           "type": "STRING"
         },
         {
           "name": "block_height",
-          "description": "The height of the block in which the event occurred.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "The unique identifier of the Cosmos blockchain.",
           "type": "STRING"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_index",
-          "description": "The index of the transaction in the block.",
           "type": "INTEGER"
         },
         {
           "name": "tx_id",
-          "description": "The unique identifier of the transaction.",
           "type": "STRING"
         },
         {
           "name": "message_index",
-          "description": "The index of the message in the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
-          "description": "The index of the event in the message.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "The type of event that occurred.",
           "type": "STRING"
         },
         {
           "name": "attribute_key",
-          "description": "The key of the attribute associated with the event.",
           "type": "STRING"
         },
         {
           "name": "attribute_value",
-          "description": "The value of the attribute associated with the event.",
           "type": "STRING"
         },
         {
           "name": "attribute_index",
-          "description": "The index of the attribute in the message.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "cosmoshub_message_events",
-      "description": "This table contains a comprehensive log of all blockchain events within the Cosmos ecosystem, capturing key aspects of block, transaction, and message processing. The data is sourced from various Cosmos-based blockchains, providing a unified view of the network's activity.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in which the event was processed.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp at which the block was processed.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
-          "description": "The unique hash of the transaction that triggered the event.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
-          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
-          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
-          "description": "The index of the event within the message.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "The type of event that occurred (e.g., creation, execution, deletion).",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
-          "description": "A JSON object containing additional attributes of the event.",
           "type": "JSON"
         },
         {
           "name": "schema_version",
-          "description": "The version of the schema used to store the event data.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp at which the event data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "cosmoshub_transactions",
-      "description": "This table contains a comprehensive collection of transaction data from the Cosmos ecosystem, providing insights into the blockchain's activity and behavior.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block within which the transaction was committed.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "A unique identifier for the specific Cosmos blockchain network.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "A unique identifier for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_info",
-          "description": "Detailed information about the transaction, including its type and parameters.",
           "type": "STRING"
         },
         {
           "name": "tx_log_message",
-          "description": "A human-readable message describing the outcome of the transaction.",
           "type": "STRING"
         },
         {
           "name": "fee",
-          "description": "The amount of coins paid by the sender as a transaction fee.",
           "type": "STRING"
         },
         {
           "name": "tx_code",
-          "description": "The return code of the transaction, indicating its success or failure.",
           "type": "INTEGER"
         },
         {
           "name": "tx_index",
-          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "gas_used",
-          "description": "The total amount of gas consumed by the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "gas_wanted",
-          "description": "The amount of gas requested by the sender to execute the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the transaction was ingested into the blockchain.",
           "type": "TIMESTAMP"
         },
         {
           "name": "memo",
-          "description": "A note or comment left by the sender or receiver of the transaction.",
           "type": "STRING"
         },
         {
           "name": "schema_version",
-          "description": "The version of the transaction schema used to validate the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "fee_coins",
-          "description": "The coins used to pay the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "fee_granter",
-          "description": "The account that granted the funds to pay the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "fee_payer",
-          "description": "The account that paid the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "gas_limit",
-          "description": "The maximum amount of gas that can be consumed by the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "single_sign_mode",
-          "description": "A flag indicating whether the transaction was executed in single-sign mode.",
           "type": "INTEGER"
         },
         {
           "name": "multi_sign_json",
-          "description": "JSON data containing information about the multi-signature transaction.",
           "type": "STRING"
         },
         {
           "name": "timeout_height",
-          "description": "The height of the block at which the transaction will timeout if not executed.",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "cosmoshub_tx_messages",
-      "description": "This table contains transaction messages from various blockchains in the Cosmos ecosystem. It provides insights into the transactions and their associated details.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "The identifier of the blockchain where the transaction occurred.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "A unique identifier for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
-          "description": "The index of the transaction in the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
-          "description": "The index of the message in the transaction.",
           "type": "STRING"
         },
         {
           "name": "message_type",
-          "description": "The type of message sent in the transaction.",
           "type": "STRING"
         },
         {
           "name": "message",
-          "description": "The actual message sent in the transaction.",
           "type": "JSON"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
-          "description": "The version of the schema used to store the data.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block was created.",
           "type": "STRING"
         }
       ]
