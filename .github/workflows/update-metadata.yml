@@ -21,7 +21,7 @@ jobs:
         working-directory: scripts
 
       - name: Run Tables Metadata
-        run: bun run tables-metadata
+        run: bun run table-metadata
         working-directory: scripts
 
       - name: Status
