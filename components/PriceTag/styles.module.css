@@ -1,0 +1,90 @@
+.priceTag {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 14px;
+  background-color: transparent;
+  font-weight: 600;
+  float: left;
+  top: -228px;
+  border: 1px solid #a5a5a5;
+  border-radius: 34px;
+  height: 20px;
+  gap: 2px;
+  cursor: pointer;
+}
+
+@media (max-width: 996px) {
+  .priceTag {
+    top: -186px;
+  }
+}
+
+@media (max-width: 713px) {
+  .priceTag {
+    top: -230px;
+  }
+}
+
+@media (max-width: 402px) {
+  .priceTag {
+    top: -256px;
+  }
+}
+
+@media (max-width: 400px) {
+  .priceTag {
+    top: -296px;
+  }
+}
+
+@media (max-width: 291px) {
+  .priceTag {
+    top: -336px;
+  }
+}
+
+.amount {
+  font-size: 14px;
+  height: 20px;
+  margin-bottom: 2px;
+}
+
+.coin {
+  margin-top: 2px;
+}
+
+.tooltip {
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.868);
+  color: white;
+  padding: 3px 8px;
+  border-radius: 4px;
+  margin-left: 6px;
+  white-space: nowrap;
+  z-index: 1000;
+  transition: opacity 0.3s;
+  opacity: 0;
+  visibility: hidden;
+  font-size: 12px;
+}
+
+.tooltip::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -8px;
+  margin-top: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent rgba(0, 0, 0, 0.8) transparent transparent;
+}
+
+.priceTag:hover .tooltip {
+  opacity: 1;
+  visibility: visible;
+}
