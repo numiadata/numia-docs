@@ -21,6 +21,7 @@ fs.readdir(openAPIDir, (err, files) => {
         try {
           const openAPISpec = JSON.parse(data);
           const paths = openAPISpec.paths;
+          let updated = false;
 
           for (const route in paths) {
             for (const method in paths[route]) {
@@ -29,27 +30,33 @@ fs.readdir(openAPIDir, (err, files) => {
               const priceTag = `import PriceTag from "@site/src/components/PriceTag";\n<PriceTag price={${xCredit}}>`;
 
               if (operation.description) {
-                operation.description += `\n\n${priceTag}`;
+                if (!operation.description.includes("<PriceTag")) {
+                  updated = true;
+                  operation.description += `\n\n${priceTag}`;
+                }
               } else {
+                updated = true;
                 operation.description = priceTag;
               }
             }
           }
 
-          fs.writeFile(
-            filePath,
-            JSON.stringify(openAPISpec, null, 2),
-            "utf8",
-            (err) => {
-              if (err) {
-                console.error("Error writing file:", err);
-              } else {
-                console.log(`Updated file: ${file}`);
+          if (updated) {
+            fs.writeFile(
+              filePath,
+              JSON.stringify(openAPISpec, null, 2),
+              "utf8",
+              (err) => {
+                if (err) {
+                  console.error("Error writing file:", err);
+                } else {
+                  console.log(`Updated file: ${file}`);
+                }
               }
-            }
-          );
+            );
+          }
         } catch (parseError) {
-          console.error("Error parsing JSON:", parseError);
+          console.error("Error parsing " + file, parseError);
         }
       });
     }
