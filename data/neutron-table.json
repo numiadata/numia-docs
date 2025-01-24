@@ -141,6 +141,71 @@
       ]
     },
     {
+      "name": "neutron_dex_limit_order_cancel",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "sender",
+          "type": "STRING"
+        },
+        {
+          "name": "receiver",
+          "type": "STRING"
+        },
+        {
+          "name": "token_denom_in",
+          "type": "STRING"
+        },
+        {
+          "name": "token_amount_in_remaining",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "token_denom_out",
+          "type": "STRING"
+        },
+        {
+          "name": "token_amount_out",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "tranche_key",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
       "name": "neutron_dex_limit_order_place",
       "description": "",
       "tags": [
@@ -222,6 +287,71 @@
         {
           "name": "fee",
           "type": "BIGNUMERIC"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "neutron_dex_limit_order_withdraw",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "sender",
+          "type": "STRING"
+        },
+        {
+          "name": "receiver",
+          "type": "STRING"
+        },
+        {
+          "name": "token_denom_in",
+          "type": "STRING"
+        },
+        {
+          "name": "token_amount_in_remaining",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "token_denom_out",
+          "type": "STRING"
+        },
+        {
+          "name": "token_amount_out",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "tranche_key",
+          "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
@@ -364,6 +494,71 @@
         {
           "name": "tick_index",
           "type": "INTEGER"
+        },
+        {
+          "name": "fee",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "neutron_dex_swap",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "token_denom_0",
+          "type": "STRING"
+        },
+        {
+          "name": "token_denom_1",
+          "type": "STRING"
+        },
+        {
+          "name": "token_denom_in",
+          "type": "STRING"
+        },
+        {
+          "name": "reserves",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "tick_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "tranche_key",
+          "type": "STRING"
         },
         {
           "name": "fee",
