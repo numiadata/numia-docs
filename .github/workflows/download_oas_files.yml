@@ -1,0 +1,92 @@
+name: Download OpenAPI Files and Update Config
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 0 * * 1" # Runs weekly at midnight on Monday
+
+jobs:
+  update_openapi_and_config:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup bun
+        uses: ./.github/actions/setup
+
+      - name: Clean openAPI directory
+        run: rm -rf openAPI
+
+      - name: Download OpenAPI files
+        run: |
+          mkdir -p openAPI
+          curl -o openAPI/engage-ads.json https://api-docs.numia.xyz/engage/ads/openapi.json
+          curl -o openAPI/txbyaddress.json https://api-docs.numia.xyz/api/byaddress/openapi.json
+          curl -o openAPI/cosmos.json https://api-docs.numia.xyz/lenses/cosmos/openapi.json
+          curl -o openAPI/dex.json https://api-docs.numia.xyz/osmosis/openapi.json
+          curl -o openAPI/osmosis-lenses.json https://api-docs.numia.xyz/lenses/osmosis/openapi.json
+          curl -o openAPI/dydx-lenses.json https://api-docs.numia.xyz/lenses/dydx/openapi.json
+          curl -o openAPI/numiaai.json https://api-docs.numia.xyz/numiaAI/openapi.json
+          curl -o openAPI/quasar.json https://api-docs.numia.xyz/quasar/openapi.json
+          curl -o openAPI/stride.json https://api-docs.numia.xyz/stride/openapi.json
+          curl -o openAPI/xion.json https://api-docs.numia.xyz/xion/openapi.json
+          curl -o openAPI/snapshots.json https://api-docs.numia.xyz/aadao-snapshots/openapi.json
+      - name: Update config.json
+        run: |
+          files=(
+            "engage-ads.json"
+            "txbyaddress.json"
+            "dex.json"
+            "osmosis-lenses.json"
+            "dydx-lenses.json"
+            "numiaai.json"
+            "quasar.json"
+            "stride.json"
+            "xion.json"
+            "snapshots.json"
+            "cosmos.json"
+          )
+
+          config_file="config.json"
+          jq '.apiFiles = (.apiFiles + $files | unique)' \
+            --argjson files "$(printf '%s\n' "${files[@]}" | jq -R . | jq -s .)" \
+            "$config_file" > tmp_config.json
+
+          mv tmp_config.json "$config_file"
+
+      - name: Validate and Add Missing Responses to OAS Files
+        run: node scripts/oasFiles/fixOasProperties.js
+
+      - name: Transform OAS files to add credits MDX
+        run: bun run src/add-credits-to-description.ts
+        working-directory: scripts
+
+      - name: Install writedocs package
+        run: npm install -g writedocs
+
+      - name: Generate API documentation
+        run: writedocs api
+
+      - name: Generate sidebar and add it to config.json
+        run: node scripts/oasFiles/oasFilesAutomation.js
+
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        id: cpr
+        with:
+          commit-message: "chore: update table metadata"
+          title: "chore: update table metadata"
+          body: "updated table definitions from BigQuery"
+          branch: "${{ steps.date.outputs.date }}-chore-codegen-update-metadata"
+          base: main
+
+      - name: Enable Pull Request Automerge
+        run: gh pr merge --squash --auto "${{ steps.cpr.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

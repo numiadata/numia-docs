@@ -23,15 +23,17 @@
     "switchOff": false
   },
   "apiFiles": [
-    "engage.json",
-    "prices.json",
-    "xion.json",
-    "TxByAddress.json",
-    "osmosis.json",
+    "cosmos.json",
+    "dex.json",
+    "dydx-lenses.json",
+    "engage-ads.json",
+    "numiaai.json",
+    "osmosis-lenses.json",
     "quasar.json",
-    "lenses.json",
-    "snapshot.json",
-    "ai.json"
+    "snapshots.json",
+    "stride.json",
+    "txbyaddress.json",
+    "xion.json"
   ],
   "homepage": "/engage/whats-numia-engage",
   "changelog": false,
@@ -55,6 +57,10 @@
     {
       "label": "Lenses",
       "sidebarRef": "lenses"
+    },
+    {
+      "label": "API",
+      "sidebarRef": "apiReference"
     }
   ],
   "externalLinks": [
@@ -90,6 +96,15 @@
                   "subpages": [
                     "engage/publisher-guide/api-integration/guides/get-campaign",
                     "engage/publisher-guide/api-integration/guides/track-events"
+                  ]
+                },
+                {
+                  "groupName": "API Endpoints",
+                  "subpages": [
+                    "reference/engage-ads/getcampaignforaddress",
+                    "reference/engage-ads/getcampaignforaddresses",
+                    "reference/engage-ads/redirectclicklink",
+                    "reference/engage-ads/trackevent"
                   ]
                 }
               ]
@@ -224,6 +239,193 @@
             "ai/overview/whats-numia-ai",
             "ai/overview/how-numia-ai-works",
             "ai/overview/best-practices-limitations"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "apiReference",
+      "categories": [
+        {
+          "categoryName": "Overview",
+          "pages": [
+            "api/overview/whats-numia-api",
+            "api/overview/getting-started"
+          ]
+        },
+        {
+          "categoryName": "Advanced APIs",
+          "pages": [
+            {
+              "groupName": "Analytics",
+              "subpages": [
+                "reference/cosmos/get-tokenomics-top-stakeholders",
+                "reference/cosmos/get-aez-revenue-share-by-consumer",
+                "reference/cosmos/get-staking-liquid-share-by-provider",
+                "reference/cosmos/get-staking-liquid-flow-by-provider",
+                "reference/cosmos/gethydrodeploymentsoverview",
+                "reference/cosmos/gethydrodeploymentsoverviewstaging",
+                "reference/cosmos/gethydrometrics"
+              ]
+            },
+            {
+              "groupName": "Osmosis",
+              "subpages": [
+                {
+                  "groupName": "DEX",
+                  "subpages": [
+                    "reference/dex/getapr",
+                    "reference/dex/getaprforearnstrategies",
+                    "reference/dex/getbalancesforearnstrategies",
+                    "reference/dex/getchainrevenue",
+                    "reference/dex/getclosedlimitordershistory",
+                    "reference/dex/getclpoolspositionapr",
+                    "reference/dex/getcoingeckoosmosisnativefactoryassetssupply",
+                    "reference/dex/getdefillamaosmosischainfeesandrevenue",
+                    "reference/dex/getearnstrategies",
+                    "reference/dex/getibcchainstatus",
+                    "reference/dex/getlandingpagemetrics",
+                    "reference/dex/getpairssummaryv1",
+                    "reference/dex/getpairssummaryv2",
+                    "reference/dex/getpoolsapr",
+                    "reference/dex/getpoolsaprrange",
+                    "reference/dex/getpoolsfees",
+                    "reference/dex/getpoolsliquidityovertime",
+                    "reference/dex/getpoolstreamdata",
+                    "reference/dex/getportfolioovertime",
+                    "reference/dex/getpositioninfo",
+                    "reference/dex/getrewardsestimation",
+                    "reference/dex/getsupplymetrics",
+                    "reference/dex/gettokendata",
+                    "reference/dex/gettokenhistoricalchart",
+                    "reference/dex/gettokenpairhistoricalchart",
+                    "reference/dex/gettokenrealtimeprice",
+                    "reference/dex/gettvlforearnstrategies"
+                  ]
+                },
+                {
+                  "groupName": "Analytics",
+                  "subpages": [
+                    "reference/osmosis-lenses/get-liquidity-flow-by-market",
+                    "reference/osmosis-lenses/get-liquidity-liquidity-flow",
+                    "reference/osmosis-lenses/get-staking-superfluid-flow-by-market",
+                    "reference/osmosis-lenses/get-superfluid-superfluid-flow"
+                  ]
+                }
+              ]
+            },
+            {
+              "groupName": "dYdX",
+              "subpages": [
+                {
+                  "groupName": "Lenses Analytics",
+                  "subpages": [
+                    "reference/dydx-lenses/get-business-expenses-share-by-destination",
+                    "reference/dydx-lenses/get-tokenomics-wallets-treasury-subdao",
+                    "reference/dydx-lenses/get-trading-liquidation-flow-by-market",
+                    "reference/dydx-lenses/get-trading-traders-ranking",
+                    "reference/dydx-lenses/get-trading-trading-fees"
+                  ]
+                },
+                {
+                  "groupName": "AI Agent Analytics",
+                  "subpages": [
+                    "reference/numiaai/get-market-collateral",
+                    "reference/numiaai/get-market-leverage",
+                    "reference/numiaai/get-market-orderbook-depth",
+                    "reference/numiaai/get-market-orderbook-slippage",
+                    "reference/numiaai/get-market-positions-duration-metrics",
+                    "reference/numiaai/get-market-positions-long-short-ratio",
+                    "reference/numiaai/get-market-price"
+                  ]
+                }
+              ]
+            },
+            {
+              "groupName": "Quasar",
+              "subpages": [
+                "reference/quasar/createpointcampaigns",
+                "reference/quasar/deletepointcampaigns",
+                "reference/quasar/getallvaultstvlovertime",
+                "reference/quasar/getaverageposition",
+                "reference/quasar/getclvaultslist",
+                "reference/quasar/getpointcampaigns",
+                "reference/quasar/getpointsperuser",
+                "reference/quasar/getpointsperusertop",
+                "reference/quasar/getpointspervalidator",
+                "reference/quasar/getpointspervault",
+                "reference/quasar/getquasarrevenue",
+                "reference/quasar/getquasartvl",
+                "reference/quasar/gettokenomicssupplymetrics",
+                "reference/quasar/gettransactionsbyaddressandvault",
+                "reference/quasar/getuservaultbalance",
+                "reference/quasar/getuservaultbalanceovertime",
+                "reference/quasar/getvaultapyovertime",
+                "reference/quasar/getvaulthistoricalpositions",
+                "reference/quasar/getvaultinfo",
+                "reference/quasar/getvaultpositions",
+                "reference/quasar/getvaultsaccruedrewards",
+                "reference/quasar/getvaultsavgtvl",
+                "reference/quasar/getvaultsbalancingslippage",
+                "reference/quasar/getvaultsdepositorsmetrics",
+                "reference/quasar/getvaultsdepositorsovertime",
+                "reference/quasar/getvaultsdepositorsrollinggrowth",
+                "reference/quasar/getvaultsdepositorstop10",
+                "reference/quasar/getvaultsimpermanentloss",
+                "reference/quasar/getvaultsliquidityflow",
+                "reference/quasar/getvaultslist",
+                "reference/quasar/getvaultspoolincentives",
+                "reference/quasar/getvaultspositionsliquiditydistribution",
+                "reference/quasar/getvaulttvl",
+                "reference/quasar/getvaultvspoolperformance",
+                "reference/quasar/updatepointcampaigns"
+              ]
+            },
+            {
+              "groupName": "Stride",
+              "subpages": [
+                "reference/stride/get-stride-tokenmetrics",
+                "reference/stride/get-stride-redemptionrate",
+                "reference/stride/get-stride-totalusers",
+                "reference/stride/get-stride-averagestaked",
+                "reference/stride/get-stride-tvl",
+                "reference/stride/get-stride-totalyield",
+                "reference/stride/get-stride-apr"
+              ]
+            },
+            {
+              "groupName": "Multichain",
+              "subpages": [
+                {
+                  "groupName": "Transaction By Address",
+                  "subpages": [
+                    "reference/txbyaddress/gettransactionsbyaddress"
+                  ]
+                }
+              ]
+            },
+            {
+              "groupName": "Xion",
+              "subpages": [
+                "reference/xion/getabstractaccountauthenticators",
+                "reference/xion/getabstractaccountsbyauthenticator",
+                "reference/xion/getabstractaccountsdetailsbyauthenticator"
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Tools",
+          "pages": [
+            {
+              "groupName": "Snapshots",
+              "subpages": [
+                "reference/snapshots/createsnapshotcampaign",
+                "reference/snapshots/getsnapshotcampaignconfigurationoptions",
+                "reference/snapshots/listsnapshotcampaigns",
+                "reference/snapshots/updatesnapshotcampaign"
+              ]
+            }
           ]
         }
       ]
