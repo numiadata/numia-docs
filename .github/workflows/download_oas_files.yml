@@ -13,6 +13,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
 
+      - name: Setup bun
+        uses: ./.github/actions/setup
+
+      - name: Clean openAPI directory
+        run: rm -rf openAPI
+
       - name: Download OpenAPI files
         run: |
           mkdir -p openAPI
@@ -53,6 +59,10 @@ jobs:
       - name: Validate and Add Missing Responses to OAS Files
         run: node scripts/oasFiles/fixOasProperties.js
 
+      - name: Transform OAS files to add credits MDX
+        run: bun run src/add-credits-to-description.ts
+        working-directory: scripts
+
       - name: Install writedocs package
         run: npm install -g writedocs
 
@@ -62,14 +72,21 @@ jobs:
       - name: Generate sidebar and add it to config.json
         run: node scripts/oasFiles/oasFilesAutomation.js
 
-      - name: Commit and push changes
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git fetch origin main
-          git merge origin/main --no-edit || echo "No conflicts to resolve."
-          git add .
-          git commit -m "Update API Reference based on OpenAPI files"
-          git push
+      - name: Get current date
+        id: date
+        run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        uses: peter-evans/create-pull-request@v7
+        id: cpr
+        with:
+          commit-message: "chore: update table metadata"
+          title: "chore: update table metadata"
+          body: "updated table definitions from BigQuery"
+          branch: "${{ steps.date.outputs.date }}-chore-codegen-update-metadata"
+          base: main
+
+      - name: Enable Pull Request Automerge
+        run: gh pr merge --squash --auto "${{ steps.cpr.outputs.pull-request-number }}"
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
