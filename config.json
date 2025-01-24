@@ -288,10 +288,10 @@
                     "reference/dex/get-coingecko-osmosis-native-factory-assets-supply",
                     "reference/dex/get-defillama-osmosis-chain-fees-and-revenue",
                     "reference/dex/get-earn-strategies",
-                    "reference/dex/get-ibc-chain-status",
+                    "reference/dex/get-i-bc-chain-status",
                     "reference/dex/get-landing-page-metrics",
-                    "reference/dex/get-pairs-summary-v1",
-                    "reference/dex/get-pairs-summary-v2",
+                    "reference/dex/get-pairs-summary-v-1",
+                    "reference/dex/get-pairs-summary-v-2",
                     "reference/dex/get-pool-stream-data",
                     "reference/dex/get-pools-apr-range",
                     "reference/dex/get-pools-apr",
@@ -368,7 +368,6 @@
                   "groupName": "Dashboard",
                   "subpages": [
                     "reference/quasar/get-vaults-list",
-                    "reference/quasar/get-clvaults-list",
                     "reference/quasar/get-vault-positions",
                     "reference/quasar/get-vault-historical-positions",
                     "reference/quasar/get-vaults-accrued-rewards",
@@ -382,7 +381,6 @@
                     "reference/quasar/get-tokenomics-supply-metrics",
                     "reference/quasar/get-vaults-liquidity-flow",
                     "reference/quasar/get-average-position",
-                    "reference/quasar/get-vaults-depositors-top10",
                     "reference/quasar/get-vault-vs-pool-performance",
                     "reference/quasar/get-vaults-avg-tvl"
                   ]
@@ -399,7 +397,9 @@
                     "reference/quasar/get-points-per-validator",
                     "reference/quasar/get-points-per-vault"
                   ]
-                }
+                },
+                "reference/quasar/get-cl-vaults-list",
+                "reference/quasar/get-vaults-depositors-top-10"
               ]
             },
             {
