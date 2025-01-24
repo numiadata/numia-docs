@@ -103,12 +103,8 @@
                   "subpages": [
                     "reference/engage-ads/get-campaign-for-address",
                     "reference/engage-ads/get-campaign-for-addresses",
-                    "reference/engage-ads/getcampaignforaddress",
-                    "reference/engage-ads/getcampaignforaddresses",
                     "reference/engage-ads/redirect-click-link",
-                    "reference/engage-ads/redirectclicklink",
-                    "reference/engage-ads/track-event",
-                    "reference/engage-ads/trackevent"
+                    "reference/engage-ads/track-event"
                   ]
                 }
               ]
@@ -274,10 +270,7 @@
                     "reference/cosmos/get-hydro-deployments-overview-staging",
                     "reference/cosmos/get-hydro-metrics"
                   ]
-                },
-                "reference/cosmos/gethydrodeploymentsoverview",
-                "reference/cosmos/gethydrodeploymentsoverviewstaging",
-                "reference/cosmos/gethydrometrics"
+                }
               ]
             },
             {
@@ -313,34 +306,7 @@
                     "reference/dex/get-token-historical-chart",
                     "reference/dex/get-token-pair-historical-chart",
                     "reference/dex/get-token-real-time-price",
-                    "reference/dex/get-tvl-for-earn-strategies",
-                    "reference/dex/getapr",
-                    "reference/dex/getaprforearnstrategies",
-                    "reference/dex/getbalancesforearnstrategies",
-                    "reference/dex/getchainrevenue",
-                    "reference/dex/getclosedlimitordershistory",
-                    "reference/dex/getclpoolspositionapr",
-                    "reference/dex/getcoingeckoosmosisnativefactoryassetssupply",
-                    "reference/dex/getdefillamaosmosischainfeesandrevenue",
-                    "reference/dex/getearnstrategies",
-                    "reference/dex/getibcchainstatus",
-                    "reference/dex/getlandingpagemetrics",
-                    "reference/dex/getpairssummaryv1",
-                    "reference/dex/getpairssummaryv2",
-                    "reference/dex/getpoolsapr",
-                    "reference/dex/getpoolsaprrange",
-                    "reference/dex/getpoolsfees",
-                    "reference/dex/getpoolsliquidityovertime",
-                    "reference/dex/getpoolstreamdata",
-                    "reference/dex/getportfolioovertime",
-                    "reference/dex/getpositioninfo",
-                    "reference/dex/getrewardsestimation",
-                    "reference/dex/getsupplymetrics",
-                    "reference/dex/gettokendata",
-                    "reference/dex/gettokenhistoricalchart",
-                    "reference/dex/gettokenpairhistoricalchart",
-                    "reference/dex/gettokenrealtimeprice",
-                    "reference/dex/gettvlforearnstrategies"
+                    "reference/dex/get-tvl-for-earn-strategies"
                   ]
                 },
                 {
@@ -433,42 +399,7 @@
                     "reference/quasar/get-points-per-validator",
                     "reference/quasar/get-points-per-vault"
                   ]
-                },
-                "reference/quasar/createpointcampaigns",
-                "reference/quasar/deletepointcampaigns",
-                "reference/quasar/getallvaultstvlovertime",
-                "reference/quasar/getaverageposition",
-                "reference/quasar/getclvaultslist",
-                "reference/quasar/getpointcampaigns",
-                "reference/quasar/getpointsperuser",
-                "reference/quasar/getpointsperusertop",
-                "reference/quasar/getpointspervalidator",
-                "reference/quasar/getpointspervault",
-                "reference/quasar/getquasarrevenue",
-                "reference/quasar/getquasartvl",
-                "reference/quasar/gettokenomicssupplymetrics",
-                "reference/quasar/gettransactionsbyaddressandvault",
-                "reference/quasar/getuservaultbalance",
-                "reference/quasar/getuservaultbalanceovertime",
-                "reference/quasar/getvaultapyovertime",
-                "reference/quasar/getvaulthistoricalpositions",
-                "reference/quasar/getvaultinfo",
-                "reference/quasar/getvaultpositions",
-                "reference/quasar/getvaultsaccruedrewards",
-                "reference/quasar/getvaultsavgtvl",
-                "reference/quasar/getvaultsbalancingslippage",
-                "reference/quasar/getvaultsdepositorsmetrics",
-                "reference/quasar/getvaultsdepositorsovertime",
-                "reference/quasar/getvaultsdepositorsrollinggrowth",
-                "reference/quasar/getvaultsdepositorstop10",
-                "reference/quasar/getvaultsimpermanentloss",
-                "reference/quasar/getvaultsliquidityflow",
-                "reference/quasar/getvaultslist",
-                "reference/quasar/getvaultspoolincentives",
-                "reference/quasar/getvaultspositionsliquiditydistribution",
-                "reference/quasar/getvaulttvl",
-                "reference/quasar/getvaultvspoolperformance",
-                "reference/quasar/updatepointcampaigns"
+                }
               ]
             },
             {
@@ -489,8 +420,7 @@
                 {
                   "groupName": "Transaction By Address",
                   "subpages": [
-                    "reference/txbyaddress/get-transactions-by-address",
-                    "reference/txbyaddress/gettransactionsbyaddress"
+                    "reference/txbyaddress/get-transactions-by-address"
                   ]
                 }
               ]
@@ -500,10 +430,7 @@
               "subpages": [
                 "reference/xion/get-abstract-account-authenticators",
                 "reference/xion/get-abstract-accounts-by-authenticator",
-                "reference/xion/get-abstract-accounts-details-by-authenticator",
-                "reference/xion/getabstractaccountauthenticators",
-                "reference/xion/getabstractaccountsbyauthenticator",
-                "reference/xion/getabstractaccountsdetailsbyauthenticator"
+                "reference/xion/get-abstract-accounts-details-by-authenticator"
               ]
             }
           ]
@@ -515,13 +442,9 @@
               "groupName": "Snapshots",
               "subpages": [
                 "reference/snapshots/create-snapshot-campaign",
-                "reference/snapshots/createsnapshotcampaign",
                 "reference/snapshots/get-snapshot-campaign-configuration-options",
-                "reference/snapshots/getsnapshotcampaignconfigurationoptions",
                 "reference/snapshots/list-snapshot-campaigns",
-                "reference/snapshots/listsnapshotcampaigns",
-                "reference/snapshots/update-snapshot-campaign",
-                "reference/snapshots/updatesnapshotcampaign"
+                "reference/snapshots/update-snapshot-campaign"
               ]
             }
           ]
