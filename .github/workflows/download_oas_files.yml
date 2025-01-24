@@ -19,6 +19,9 @@ jobs:
       - name: Clean openAPI directory
         run: rm -rf openAPI
 
+      - name: Clean openAPI directory
+        run: rm -rf docs/reference
+
       - name: Download OpenAPI files
         run: |
           mkdir -p openAPI
