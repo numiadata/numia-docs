@@ -101,9 +101,13 @@
                 {
                   "groupName": "API Endpoints",
                   "subpages": [
+                    "reference/engage-ads/get-campaign-for-address",
+                    "reference/engage-ads/get-campaign-for-addresses",
                     "reference/engage-ads/getcampaignforaddress",
                     "reference/engage-ads/getcampaignforaddresses",
+                    "reference/engage-ads/redirect-click-link",
                     "reference/engage-ads/redirectclicklink",
+                    "reference/engage-ads/track-event",
                     "reference/engage-ads/trackevent"
                   ]
                 }
@@ -263,6 +267,14 @@
                 "reference/cosmos/get-aez-revenue-share-by-consumer",
                 "reference/cosmos/get-staking-liquid-share-by-provider",
                 "reference/cosmos/get-staking-liquid-flow-by-provider",
+                {
+                  "groupName": "Hydro",
+                  "subpages": [
+                    "reference/cosmos/get-hydro-deployments-overview",
+                    "reference/cosmos/get-hydro-deployments-overview-staging",
+                    "reference/cosmos/get-hydro-metrics"
+                  ]
+                },
                 "reference/cosmos/gethydrodeploymentsoverview",
                 "reference/cosmos/gethydrodeploymentsoverviewstaging",
                 "reference/cosmos/gethydrometrics"
@@ -274,6 +286,34 @@
                 {
                   "groupName": "DEX",
                   "subpages": [
+                    "reference/dex/get-apr-for-earn-strategies",
+                    "reference/dex/get-apr",
+                    "reference/dex/get-balances-for-earn-strategies",
+                    "reference/dex/get-chain-revenue",
+                    "reference/dex/get-cl-pools-position-apr",
+                    "reference/dex/get-closed-limit-orders-history",
+                    "reference/dex/get-coingecko-osmosis-native-factory-assets-supply",
+                    "reference/dex/get-defillama-osmosis-chain-fees-and-revenue",
+                    "reference/dex/get-earn-strategies",
+                    "reference/dex/get-ibc-chain-status",
+                    "reference/dex/get-landing-page-metrics",
+                    "reference/dex/get-pairs-summary-v1",
+                    "reference/dex/get-pairs-summary-v2",
+                    "reference/dex/get-pool-stream-data",
+                    "reference/dex/get-pools-apr-range",
+                    "reference/dex/get-pools-apr",
+                    "reference/dex/get-pools-fees",
+                    "reference/dex/get-pools-liquidity-over-time",
+                    "reference/dex/get-portfolio-current",
+                    "reference/dex/get-portfolio-over-time",
+                    "reference/dex/get-position-info",
+                    "reference/dex/get-rewards-estimation",
+                    "reference/dex/get-supply-metrics",
+                    "reference/dex/get-token-data",
+                    "reference/dex/get-token-historical-chart",
+                    "reference/dex/get-token-pair-historical-chart",
+                    "reference/dex/get-token-real-time-price",
+                    "reference/dex/get-tvl-for-earn-strategies",
                     "reference/dex/getapr",
                     "reference/dex/getaprforearnstrategies",
                     "reference/dex/getbalancesforearnstrategies",
@@ -344,6 +384,56 @@
             {
               "groupName": "Quasar",
               "subpages": [
+                {
+                  "groupName": "Vaults",
+                  "subpages": [
+                    "reference/quasar/get-quasar-tvl",
+                    "reference/quasar/get-vault-info",
+                    "reference/quasar/get-user-vault-balance",
+                    "reference/quasar/get-user-vault-balance-over-time",
+                    "reference/quasar/get-all-vaults-tvl-over-time",
+                    "reference/quasar/get-vault-tvl",
+                    "reference/quasar/get-vault-apy-over-time",
+                    "reference/quasar/get-transactions-by-address-and-vault",
+                    "reference/quasar/get-quasar-revenue"
+                  ]
+                },
+                {
+                  "groupName": "Dashboard",
+                  "subpages": [
+                    "reference/quasar/get-vaults-list",
+                    "reference/quasar/get-clvaults-list",
+                    "reference/quasar/get-vault-positions",
+                    "reference/quasar/get-vault-historical-positions",
+                    "reference/quasar/get-vaults-accrued-rewards",
+                    "reference/quasar/get-vaults-pool-incentives",
+                    "reference/quasar/get-vaults-impermanent-loss",
+                    "reference/quasar/get-vaults-balancing-slippage",
+                    "reference/quasar/get-vaults-positions-liquidity-distribution",
+                    "reference/quasar/get-vaults-depositors-metrics",
+                    "reference/quasar/get-vaults-depositors-over-time",
+                    "reference/quasar/get-vaults-depositors-rolling-growth",
+                    "reference/quasar/get-tokenomics-supply-metrics",
+                    "reference/quasar/get-vaults-liquidity-flow",
+                    "reference/quasar/get-average-position",
+                    "reference/quasar/get-vaults-depositors-top10",
+                    "reference/quasar/get-vault-vs-pool-performance",
+                    "reference/quasar/get-vaults-avg-tvl"
+                  ]
+                },
+                {
+                  "groupName": "Point_campaigns",
+                  "subpages": [
+                    "reference/quasar/get-point-campaigns",
+                    "reference/quasar/create-point-campaigns",
+                    "reference/quasar/update-point-campaigns",
+                    "reference/quasar/delete-point-campaigns",
+                    "reference/quasar/get-points-per-user-top",
+                    "reference/quasar/get-points-per-user",
+                    "reference/quasar/get-points-per-validator",
+                    "reference/quasar/get-points-per-vault"
+                  ]
+                },
                 "reference/quasar/createpointcampaigns",
                 "reference/quasar/deletepointcampaigns",
                 "reference/quasar/getallvaultstvlovertime",
@@ -399,6 +489,7 @@
                 {
                   "groupName": "Transaction By Address",
                   "subpages": [
+                    "reference/txbyaddress/get-transactions-by-address",
                     "reference/txbyaddress/gettransactionsbyaddress"
                   ]
                 }
@@ -407,6 +498,9 @@
             {
               "groupName": "Xion",
               "subpages": [
+                "reference/xion/get-abstract-account-authenticators",
+                "reference/xion/get-abstract-accounts-by-authenticator",
+                "reference/xion/get-abstract-accounts-details-by-authenticator",
                 "reference/xion/getabstractaccountauthenticators",
                 "reference/xion/getabstractaccountsbyauthenticator",
                 "reference/xion/getabstractaccountsdetailsbyauthenticator"
@@ -420,9 +514,13 @@
             {
               "groupName": "Snapshots",
               "subpages": [
+                "reference/snapshots/create-snapshot-campaign",
                 "reference/snapshots/createsnapshotcampaign",
+                "reference/snapshots/get-snapshot-campaign-configuration-options",
                 "reference/snapshots/getsnapshotcampaignconfigurationoptions",
+                "reference/snapshots/list-snapshot-campaigns",
                 "reference/snapshots/listsnapshotcampaigns",
+                "reference/snapshots/update-snapshot-campaign",
                 "reference/snapshots/updatesnapshotcampaign"
               ]
             }
