@@ -13,15 +13,19 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
-        uses: oven-sh/setup-bun@v1
+      - name: Setup bun
+        uses: ./.github/actions/setup
 
-      - name: Install Dependencies
-        run: bun install
-        working-directory: scripts
+      - name: Store GCO Credentials
+        env:
+          GCP_SERVICE_ACCOUNT_JSON: ${{ secrets.GCP_SERVICE_ACCOUNT_JSON }}
+        shell: bash
+        run: echo "$GCP_SERVICE_ACCOUNT_JSON" > ${{ runner.temp }}/gateway_service_account.json
 
       - name: Run Tables Metadata
-        run: bun run tables-metadata
+        run: bun run table-metadata
+        env:
+          GOOGLE_APPLICATION_CREDENTIALS: ${{runner.temp}}/gateway_service_account.json
         working-directory: scripts
 
       - name: Status
@@ -35,11 +39,13 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         id: cpr
         with:
-          commit-message: "chore: update metadata"
-          title: "chore: update metadata"
-          body: "Ran update metadata and updated table definitions"
+          commit-message: "chore: update table metadata"
+          title: "chore: update table metadata"
+          body: "updated table definitions from BigQuery"
           branch: "${{ steps.date.outputs.date }}-chore-codegen-update-metadata"
           base: main
 
       - name: Enable Pull Request Automerge
         run: gh pr merge --squash --auto "${{ steps.cpr.outputs.pull-request-number }}"
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
