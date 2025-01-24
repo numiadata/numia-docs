@@ -112,7 +112,8 @@
           }
         },
         "operationId": "get_market_orderbook_slippage",
-        "summary": "Get market orderbook slippage"
+        "summary": "Get market orderbook slippage",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
       }
     },
     "/market/orderbook/depth": {
@@ -202,7 +203,8 @@
           }
         },
         "operationId": "get_market_orderbook_depth",
-        "summary": "Get market orderbook depth"
+        "summary": "Get market orderbook depth",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
       }
     },
     "/market/positions/duration_metrics": {
@@ -258,7 +260,8 @@
           }
         },
         "operationId": "get_market_positions_duration_metrics",
-        "summary": "Get market positions duration metrics"
+        "summary": "Get market positions duration metrics",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
       }
     },
     "/market/positions/long_short_ratio": {
@@ -348,7 +351,8 @@
           }
         },
         "operationId": "get_market_positions_long_short_ratio",
-        "summary": "Get market positions long short ratio"
+        "summary": "Get market positions long short ratio",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
       }
     },
     "/market/leverage": {
@@ -441,7 +445,8 @@
           }
         },
         "operationId": "get_market_leverage",
-        "summary": "Get market leverage"
+        "summary": "Get market leverage",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
       }
     },
     "/market/price": {
@@ -527,7 +532,8 @@
           }
         },
         "operationId": "get_market_price",
-        "summary": "Get market price"
+        "summary": "Get market price",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
       }
     },
     "/market/collateral": {
@@ -620,7 +626,8 @@
           }
         },
         "operationId": "get_market_collateral",
-        "summary": "Get market collateral"
+        "summary": "Get market collateral",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
       }
     }
   }
