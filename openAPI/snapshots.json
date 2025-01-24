@@ -1,1 +1,896 @@
-{"openapi":"3.0.0","servers":[{"url":"https://engage-api.numia.xyz"}],"security":[{"bearerAuth":[]}],"info":{"version":"1.0.0","title":"Numia - Engage"},"components":{"securitySchemes":{"bearerAuth":{"type":"http","scheme":"bearer"}},"schemas":{},"parameters":{}},"paths":{"/admin/snapshot-campaigns/configuration":{"get":{"operationId":"getSnapshotCampaignConfigurationOptions","summary":"Get snapshot campaign configuration options","tags":["snapshot-campaigns"],"responses":{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"type":"array","items":{"type":"object","properties":{"chain_id":{"type":"string"},"chain_name":{"type":"string"},"symbols":{"type":"array","items":{"type":"string"}},"applications":{"type":"array","items":{"type":"string","enum":["bank","osmosis-pools","osmosis-lp","osmosis-cl","astroport"]}}},"required":["chain_id","chain_name","symbols","applications"]}}}}}}}},"/admin/snapshot-campaigns/{org_id}":{"get":{"operationId":"listSnapshotCampaigns","summary":"List the snapshot campaigns for an organization","tags":["snapshot-campaigns"],"parameters":[{"schema":{"type":"string"},"required":true,"name":"org_id","in":"path"}],"responses":{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"anyOf":[{"type":"object","properties":{"error":{"type":"string"}},"required":["error"]},{"type":"object","properties":{"content":{"type":"array","items":{"type":"object","properties":{"snapshot_campaign_id":{"type":"number"},"org_id":{"type":"string"},"created_at":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"updated_at":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"start_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"end_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"multiplier":{"type":"number","default":1},"type":{"type":"string","enum":["aadao-snapshot"]},"params":{"type":"object","properties":{"campaign_title":{"type":"string"},"campaign_description":{"type":"string"},"chain_id":{"type":"string","enum":["akashnet-2","archway-1","axelar-dojo-1","carbon-1","core-1","coreum-mainnet-1","cosmoshub-4","dymension_1100-1","evmos_9001-2","injective-1","juno-1","kaiyo-1","kava_2222-10","neutron-1","noble-1","Oraichain","osmosis-1","quicksilver-2","secret-4","stargaze-1","stride-1","umee-1"]},"symbol":{"type":"string","enum":["ATOM","qATOM","stATOM","stkATOM","dATOM"]},"application":{"type":"string","enum":["bank","osmosis-pools","osmosis-lp","osmosis-cl","astroport"]},"number_of_snapshots":{"type":"number"}},"required":["campaign_title","campaign_description","chain_id","symbol","application","number_of_snapshots"]},"deleted":{"type":"boolean"},"schedule_unit":{"type":"string","enum":["d","w","m"],"default":"d"},"schedule_interval":{"type":"number","default":1},"snapshot":{"type":"array","items":{"type":"object","properties":{"snapshot_id":{"type":"number"},"snapshot_campaign_id":{"type":"number"},"status":{"type":"string","enum":["processing","empty","completed"]},"file_link":{"type":"string","nullable":true},"created_at":{"type":"string"},"snapshot_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"}},"required":["snapshot_id","snapshot_campaign_id","status","file_link","created_at","snapshot_date"]}}},"required":["snapshot_campaign_id","org_id","created_at","updated_at","start_date","end_date","multiplier","type","params","deleted","schedule_unit","schedule_interval","snapshot"]}}},"required":["content"]}]}}}}}}},"/admin/snapshot-campaigns":{"post":{"operationId":"createSnapshotCampaign","summary":"Create a snapshot campaign","tags":["snapshot-campaigns"],"requestBody":{"content":{"json":{"schema":{"type":"object","properties":{"org_id":{"type":"string"},"start_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"end_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"multiplier":{"type":"number","default":1},"type":{"type":"string","enum":["aadao-snapshot"]},"params":{"type":"object","properties":{"campaign_title":{"type":"string"},"campaign_description":{"type":"string"},"chain_id":{"type":"string","enum":["akashnet-2","archway-1","axelar-dojo-1","carbon-1","core-1","coreum-mainnet-1","cosmoshub-4","dymension_1100-1","evmos_9001-2","injective-1","juno-1","kaiyo-1","kava_2222-10","neutron-1","noble-1","Oraichain","osmosis-1","quicksilver-2","secret-4","stargaze-1","stride-1","umee-1"]},"symbol":{"type":"string","enum":["ATOM","qATOM","stATOM","stkATOM","dATOM"]},"application":{"type":"string","enum":["bank","osmosis-pools","osmosis-lp","osmosis-cl","astroport"]},"number_of_snapshots":{"type":"number"}},"required":["campaign_title","campaign_description","chain_id","symbol","application","number_of_snapshots"]},"schedule_unit":{"type":"string","enum":["d","w","m"],"default":"d"},"schedule_interval":{"type":"number","default":1}},"required":["org_id","start_date","end_date","multiplier","type","params","schedule_unit","schedule_interval"]}}}},"responses":{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"oneOf":[{"type":"object","properties":{"success":{"type":"boolean","enum":[true]},"snapshot_data":{"type":"object","properties":{"snapshot_campaign_id":{"type":"number"},"org_id":{"type":"string"},"created_at":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"updated_at":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"start_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"end_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"multiplier":{"type":"number","default":1},"type":{"type":"string","enum":["aadao-snapshot"]},"params":{"type":"object","properties":{"campaign_title":{"type":"string"},"campaign_description":{"type":"string"},"chain_id":{"type":"string","enum":["akashnet-2","archway-1","axelar-dojo-1","carbon-1","core-1","coreum-mainnet-1","cosmoshub-4","dymension_1100-1","evmos_9001-2","injective-1","juno-1","kaiyo-1","kava_2222-10","neutron-1","noble-1","Oraichain","osmosis-1","quicksilver-2","secret-4","stargaze-1","stride-1","umee-1"]},"symbol":{"type":"string","enum":["ATOM","qATOM","stATOM","stkATOM","dATOM"]},"application":{"type":"string","enum":["bank","osmosis-pools","osmosis-lp","osmosis-cl","astroport"]},"number_of_snapshots":{"type":"number"}},"required":["campaign_title","campaign_description","chain_id","symbol","application","number_of_snapshots"]},"deleted":{"type":"boolean"},"schedule_unit":{"type":"string","enum":["d","w","m"],"default":"d"},"schedule_interval":{"type":"number","default":1}},"required":["snapshot_campaign_id","org_id","created_at","updated_at","start_date","end_date","multiplier","type","params","deleted","schedule_unit","schedule_interval"]}},"required":["success","snapshot_data"]},{"type":"object","properties":{"success":{"type":"boolean","enum":[false]},"error":{"type":"string"}},"required":["success","error"]}]}}}}}}},"/admin/snapshot-campaigns/{snapshot_campaign_id}":{"put":{"operationId":"updateSnapshotCampaign","summary":"Update a snapshot campaign","tags":["snapshot-campaigns"],"parameters":[{"schema":{"type":"string"},"required":true,"name":"snapshot_campaign_id","in":"path"}],"requestBody":{"content":{"json":{"schema":{"type":"object","properties":{"start_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"end_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"multiplier":{"type":"number","default":1},"params":{"type":"object","properties":{"campaign_title":{"type":"string"},"campaign_description":{"type":"string"}}},"schedule_unit":{"type":"string","enum":["d","w","m"],"default":"d"},"schedule_interval":{"type":"number","default":1}}}}}},"responses":{"200":{"description":"Status: 200","content":{"application/json":{"schema":{"oneOf":[{"type":"object","properties":{"success":{"type":"boolean","enum":[true]},"snapshot_data":{"type":"object","properties":{"snapshot_campaign_id":{"type":"number"},"org_id":{"type":"string"},"created_at":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"updated_at":{"type":"string","description":"Date in the format YYYY-MM-DD HH:MM:SS"},"start_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"end_date":{"type":"string","pattern":"^\\d{4}-\\d{2}-\\d{2}$","description":"Date in the format YYYY-MM-DD"},"multiplier":{"type":"number","default":1},"type":{"type":"string","enum":["aadao-snapshot"]},"params":{"type":"object","properties":{"campaign_title":{"type":"string"},"campaign_description":{"type":"string"},"chain_id":{"type":"string","enum":["akashnet-2","archway-1","axelar-dojo-1","carbon-1","core-1","coreum-mainnet-1","cosmoshub-4","dymension_1100-1","evmos_9001-2","injective-1","juno-1","kaiyo-1","kava_2222-10","neutron-1","noble-1","Oraichain","osmosis-1","quicksilver-2","secret-4","stargaze-1","stride-1","umee-1"]},"symbol":{"type":"string","enum":["ATOM","qATOM","stATOM","stkATOM","dATOM"]},"application":{"type":"string","enum":["bank","osmosis-pools","osmosis-lp","osmosis-cl","astroport"]},"number_of_snapshots":{"type":"number"}},"required":["campaign_title","campaign_description","chain_id","symbol","application","number_of_snapshots"]},"deleted":{"type":"boolean"},"schedule_unit":{"type":"string","enum":["d","w","m"],"default":"d"},"schedule_interval":{"type":"number","default":1}},"required":["snapshot_campaign_id","org_id","created_at","updated_at","start_date","end_date","multiplier","type","params","deleted","schedule_unit","schedule_interval"]}},"required":["success","snapshot_data"]},{"type":"object","properties":{"success":{"type":"boolean","enum":[false]},"error":{"type":"string"}},"required":["success","error"]}]}}}}}}}}}
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://engage-api.numia.xyz"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Numia - Engage"
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/admin/snapshot-campaigns/configuration": {
+      "get": {
+        "operationId": "getSnapshotCampaignConfigurationOptions",
+        "summary": "Get snapshot campaign configuration options",
+        "tags": [
+          "snapshot-campaigns"
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "chain_id": {
+                        "type": "string"
+                      },
+                      "chain_name": {
+                        "type": "string"
+                      },
+                      "symbols": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        }
+                      },
+                      "applications": {
+                        "type": "array",
+                        "items": {
+                          "type": "string",
+                          "enum": [
+                            "bank",
+                            "osmosis-pools",
+                            "osmosis-lp",
+                            "osmosis-cl",
+                            "astroport"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "chain_id",
+                      "chain_name",
+                      "symbols",
+                      "applications"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+      }
+    },
+    "/admin/snapshot-campaigns/{org_id}": {
+      "get": {
+        "operationId": "listSnapshotCampaigns",
+        "summary": "List the snapshot campaigns for an organization",
+        "tags": [
+          "snapshot-campaigns"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "org_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "anyOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "error": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "error"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "content": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "snapshot_campaign_id": {
+                                "type": "number"
+                              },
+                              "org_id": {
+                                "type": "string"
+                              },
+                              "created_at": {
+                                "type": "string",
+                                "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                              },
+                              "updated_at": {
+                                "type": "string",
+                                "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                              },
+                              "start_date": {
+                                "type": "string",
+                                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                                "description": "Date in the format YYYY-MM-DD"
+                              },
+                              "end_date": {
+                                "type": "string",
+                                "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                                "description": "Date in the format YYYY-MM-DD"
+                              },
+                              "multiplier": {
+                                "type": "number",
+                                "default": 1
+                              },
+                              "type": {
+                                "type": "string",
+                                "enum": [
+                                  "aadao-snapshot"
+                                ]
+                              },
+                              "params": {
+                                "type": "object",
+                                "properties": {
+                                  "campaign_title": {
+                                    "type": "string"
+                                  },
+                                  "campaign_description": {
+                                    "type": "string"
+                                  },
+                                  "chain_id": {
+                                    "type": "string",
+                                    "enum": [
+                                      "akashnet-2",
+                                      "archway-1",
+                                      "axelar-dojo-1",
+                                      "carbon-1",
+                                      "core-1",
+                                      "coreum-mainnet-1",
+                                      "cosmoshub-4",
+                                      "dymension_1100-1",
+                                      "evmos_9001-2",
+                                      "injective-1",
+                                      "juno-1",
+                                      "kaiyo-1",
+                                      "kava_2222-10",
+                                      "neutron-1",
+                                      "noble-1",
+                                      "Oraichain",
+                                      "osmosis-1",
+                                      "quicksilver-2",
+                                      "secret-4",
+                                      "stargaze-1",
+                                      "stride-1",
+                                      "umee-1"
+                                    ]
+                                  },
+                                  "symbol": {
+                                    "type": "string",
+                                    "enum": [
+                                      "ATOM",
+                                      "qATOM",
+                                      "stATOM",
+                                      "stkATOM",
+                                      "dATOM"
+                                    ]
+                                  },
+                                  "application": {
+                                    "type": "string",
+                                    "enum": [
+                                      "bank",
+                                      "osmosis-pools",
+                                      "osmosis-lp",
+                                      "osmosis-cl",
+                                      "astroport"
+                                    ]
+                                  },
+                                  "number_of_snapshots": {
+                                    "type": "number"
+                                  }
+                                },
+                                "required": [
+                                  "campaign_title",
+                                  "campaign_description",
+                                  "chain_id",
+                                  "symbol",
+                                  "application",
+                                  "number_of_snapshots"
+                                ]
+                              },
+                              "deleted": {
+                                "type": "boolean"
+                              },
+                              "schedule_unit": {
+                                "type": "string",
+                                "enum": [
+                                  "d",
+                                  "w",
+                                  "m"
+                                ],
+                                "default": "d"
+                              },
+                              "schedule_interval": {
+                                "type": "number",
+                                "default": 1
+                              },
+                              "snapshot": {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "snapshot_id": {
+                                      "type": "number"
+                                    },
+                                    "snapshot_campaign_id": {
+                                      "type": "number"
+                                    },
+                                    "status": {
+                                      "type": "string",
+                                      "enum": [
+                                        "processing",
+                                        "empty",
+                                        "completed"
+                                      ]
+                                    },
+                                    "file_link": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "created_at": {
+                                      "type": "string"
+                                    },
+                                    "snapshot_date": {
+                                      "type": "string",
+                                      "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                                      "description": "Date in the format YYYY-MM-DD"
+                                    }
+                                  },
+                                  "required": [
+                                    "snapshot_id",
+                                    "snapshot_campaign_id",
+                                    "status",
+                                    "file_link",
+                                    "created_at",
+                                    "snapshot_date"
+                                  ]
+                                }
+                              }
+                            },
+                            "required": [
+                              "snapshot_campaign_id",
+                              "org_id",
+                              "created_at",
+                              "updated_at",
+                              "start_date",
+                              "end_date",
+                              "multiplier",
+                              "type",
+                              "params",
+                              "deleted",
+                              "schedule_unit",
+                              "schedule_interval",
+                              "snapshot"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "content"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+      }
+    },
+    "/admin/snapshot-campaigns": {
+      "post": {
+        "operationId": "createSnapshotCampaign",
+        "summary": "Create a snapshot campaign",
+        "tags": [
+          "snapshot-campaigns"
+        ],
+        "requestBody": {
+          "content": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "org_id": {
+                    "type": "string"
+                  },
+                  "start_date": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "description": "Date in the format YYYY-MM-DD"
+                  },
+                  "end_date": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "description": "Date in the format YYYY-MM-DD"
+                  },
+                  "multiplier": {
+                    "type": "number",
+                    "default": 1
+                  },
+                  "type": {
+                    "type": "string",
+                    "enum": [
+                      "aadao-snapshot"
+                    ]
+                  },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "campaign_title": {
+                        "type": "string"
+                      },
+                      "campaign_description": {
+                        "type": "string"
+                      },
+                      "chain_id": {
+                        "type": "string",
+                        "enum": [
+                          "akashnet-2",
+                          "archway-1",
+                          "axelar-dojo-1",
+                          "carbon-1",
+                          "core-1",
+                          "coreum-mainnet-1",
+                          "cosmoshub-4",
+                          "dymension_1100-1",
+                          "evmos_9001-2",
+                          "injective-1",
+                          "juno-1",
+                          "kaiyo-1",
+                          "kava_2222-10",
+                          "neutron-1",
+                          "noble-1",
+                          "Oraichain",
+                          "osmosis-1",
+                          "quicksilver-2",
+                          "secret-4",
+                          "stargaze-1",
+                          "stride-1",
+                          "umee-1"
+                        ]
+                      },
+                      "symbol": {
+                        "type": "string",
+                        "enum": [
+                          "ATOM",
+                          "qATOM",
+                          "stATOM",
+                          "stkATOM",
+                          "dATOM"
+                        ]
+                      },
+                      "application": {
+                        "type": "string",
+                        "enum": [
+                          "bank",
+                          "osmosis-pools",
+                          "osmosis-lp",
+                          "osmosis-cl",
+                          "astroport"
+                        ]
+                      },
+                      "number_of_snapshots": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "campaign_title",
+                      "campaign_description",
+                      "chain_id",
+                      "symbol",
+                      "application",
+                      "number_of_snapshots"
+                    ]
+                  },
+                  "schedule_unit": {
+                    "type": "string",
+                    "enum": [
+                      "d",
+                      "w",
+                      "m"
+                    ],
+                    "default": "d"
+                  },
+                  "schedule_interval": {
+                    "type": "number",
+                    "default": 1
+                  }
+                },
+                "required": [
+                  "org_id",
+                  "start_date",
+                  "end_date",
+                  "multiplier",
+                  "type",
+                  "params",
+                  "schedule_unit",
+                  "schedule_interval"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "success": {
+                          "type": "boolean",
+                          "enum": [
+                            true
+                          ]
+                        },
+                        "snapshot_data": {
+                          "type": "object",
+                          "properties": {
+                            "snapshot_campaign_id": {
+                              "type": "number"
+                            },
+                            "org_id": {
+                              "type": "string"
+                            },
+                            "created_at": {
+                              "type": "string",
+                              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                            },
+                            "updated_at": {
+                              "type": "string",
+                              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                            },
+                            "start_date": {
+                              "type": "string",
+                              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                              "description": "Date in the format YYYY-MM-DD"
+                            },
+                            "end_date": {
+                              "type": "string",
+                              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                              "description": "Date in the format YYYY-MM-DD"
+                            },
+                            "multiplier": {
+                              "type": "number",
+                              "default": 1
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "aadao-snapshot"
+                              ]
+                            },
+                            "params": {
+                              "type": "object",
+                              "properties": {
+                                "campaign_title": {
+                                  "type": "string"
+                                },
+                                "campaign_description": {
+                                  "type": "string"
+                                },
+                                "chain_id": {
+                                  "type": "string",
+                                  "enum": [
+                                    "akashnet-2",
+                                    "archway-1",
+                                    "axelar-dojo-1",
+                                    "carbon-1",
+                                    "core-1",
+                                    "coreum-mainnet-1",
+                                    "cosmoshub-4",
+                                    "dymension_1100-1",
+                                    "evmos_9001-2",
+                                    "injective-1",
+                                    "juno-1",
+                                    "kaiyo-1",
+                                    "kava_2222-10",
+                                    "neutron-1",
+                                    "noble-1",
+                                    "Oraichain",
+                                    "osmosis-1",
+                                    "quicksilver-2",
+                                    "secret-4",
+                                    "stargaze-1",
+                                    "stride-1",
+                                    "umee-1"
+                                  ]
+                                },
+                                "symbol": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ATOM",
+                                    "qATOM",
+                                    "stATOM",
+                                    "stkATOM",
+                                    "dATOM"
+                                  ]
+                                },
+                                "application": {
+                                  "type": "string",
+                                  "enum": [
+                                    "bank",
+                                    "osmosis-pools",
+                                    "osmosis-lp",
+                                    "osmosis-cl",
+                                    "astroport"
+                                  ]
+                                },
+                                "number_of_snapshots": {
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "campaign_title",
+                                "campaign_description",
+                                "chain_id",
+                                "symbol",
+                                "application",
+                                "number_of_snapshots"
+                              ]
+                            },
+                            "deleted": {
+                              "type": "boolean"
+                            },
+                            "schedule_unit": {
+                              "type": "string",
+                              "enum": [
+                                "d",
+                                "w",
+                                "m"
+                              ],
+                              "default": "d"
+                            },
+                            "schedule_interval": {
+                              "type": "number",
+                              "default": 1
+                            }
+                          },
+                          "required": [
+                            "snapshot_campaign_id",
+                            "org_id",
+                            "created_at",
+                            "updated_at",
+                            "start_date",
+                            "end_date",
+                            "multiplier",
+                            "type",
+                            "params",
+                            "deleted",
+                            "schedule_unit",
+                            "schedule_interval"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "success",
+                        "snapshot_data"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "success": {
+                          "type": "boolean",
+                          "enum": [
+                            false
+                          ]
+                        },
+                        "error": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "success",
+                        "error"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+      }
+    },
+    "/admin/snapshot-campaigns/{snapshot_campaign_id}": {
+      "put": {
+        "operationId": "updateSnapshotCampaign",
+        "summary": "Update a snapshot campaign",
+        "tags": [
+          "snapshot-campaigns"
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "snapshot_campaign_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "start_date": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "description": "Date in the format YYYY-MM-DD"
+                  },
+                  "end_date": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "description": "Date in the format YYYY-MM-DD"
+                  },
+                  "multiplier": {
+                    "type": "number",
+                    "default": 1
+                  },
+                  "params": {
+                    "type": "object",
+                    "properties": {
+                      "campaign_title": {
+                        "type": "string"
+                      },
+                      "campaign_description": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "schedule_unit": {
+                    "type": "string",
+                    "enum": [
+                      "d",
+                      "w",
+                      "m"
+                    ],
+                    "default": "d"
+                  },
+                  "schedule_interval": {
+                    "type": "number",
+                    "default": 1
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "oneOf": [
+                    {
+                      "type": "object",
+                      "properties": {
+                        "success": {
+                          "type": "boolean",
+                          "enum": [
+                            true
+                          ]
+                        },
+                        "snapshot_data": {
+                          "type": "object",
+                          "properties": {
+                            "snapshot_campaign_id": {
+                              "type": "number"
+                            },
+                            "org_id": {
+                              "type": "string"
+                            },
+                            "created_at": {
+                              "type": "string",
+                              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                            },
+                            "updated_at": {
+                              "type": "string",
+                              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                            },
+                            "start_date": {
+                              "type": "string",
+                              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                              "description": "Date in the format YYYY-MM-DD"
+                            },
+                            "end_date": {
+                              "type": "string",
+                              "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                              "description": "Date in the format YYYY-MM-DD"
+                            },
+                            "multiplier": {
+                              "type": "number",
+                              "default": 1
+                            },
+                            "type": {
+                              "type": "string",
+                              "enum": [
+                                "aadao-snapshot"
+                              ]
+                            },
+                            "params": {
+                              "type": "object",
+                              "properties": {
+                                "campaign_title": {
+                                  "type": "string"
+                                },
+                                "campaign_description": {
+                                  "type": "string"
+                                },
+                                "chain_id": {
+                                  "type": "string",
+                                  "enum": [
+                                    "akashnet-2",
+                                    "archway-1",
+                                    "axelar-dojo-1",
+                                    "carbon-1",
+                                    "core-1",
+                                    "coreum-mainnet-1",
+                                    "cosmoshub-4",
+                                    "dymension_1100-1",
+                                    "evmos_9001-2",
+                                    "injective-1",
+                                    "juno-1",
+                                    "kaiyo-1",
+                                    "kava_2222-10",
+                                    "neutron-1",
+                                    "noble-1",
+                                    "Oraichain",
+                                    "osmosis-1",
+                                    "quicksilver-2",
+                                    "secret-4",
+                                    "stargaze-1",
+                                    "stride-1",
+                                    "umee-1"
+                                  ]
+                                },
+                                "symbol": {
+                                  "type": "string",
+                                  "enum": [
+                                    "ATOM",
+                                    "qATOM",
+                                    "stATOM",
+                                    "stkATOM",
+                                    "dATOM"
+                                  ]
+                                },
+                                "application": {
+                                  "type": "string",
+                                  "enum": [
+                                    "bank",
+                                    "osmosis-pools",
+                                    "osmosis-lp",
+                                    "osmosis-cl",
+                                    "astroport"
+                                  ]
+                                },
+                                "number_of_snapshots": {
+                                  "type": "number"
+                                }
+                              },
+                              "required": [
+                                "campaign_title",
+                                "campaign_description",
+                                "chain_id",
+                                "symbol",
+                                "application",
+                                "number_of_snapshots"
+                              ]
+                            },
+                            "deleted": {
+                              "type": "boolean"
+                            },
+                            "schedule_unit": {
+                              "type": "string",
+                              "enum": [
+                                "d",
+                                "w",
+                                "m"
+                              ],
+                              "default": "d"
+                            },
+                            "schedule_interval": {
+                              "type": "number",
+                              "default": 1
+                            }
+                          },
+                          "required": [
+                            "snapshot_campaign_id",
+                            "org_id",
+                            "created_at",
+                            "updated_at",
+                            "start_date",
+                            "end_date",
+                            "multiplier",
+                            "type",
+                            "params",
+                            "deleted",
+                            "schedule_unit",
+                            "schedule_interval"
+                          ]
+                        }
+                      },
+                      "required": [
+                        "success",
+                        "snapshot_data"
+                      ]
+                    },
+                    {
+                      "type": "object",
+                      "properties": {
+                        "success": {
+                          "type": "boolean",
+                          "enum": [
+                            false
+                          ]
+                        },
+                        "error": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "success",
+                        "error"
+                      ]
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+      }
+    }
+  }
+}
