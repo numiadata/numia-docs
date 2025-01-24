@@ -116,7 +116,7 @@
           }
         },
         "summary": "Get Abstract Account Authenticators",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/v2/authenticators/{authenticator}/smartAccounts": {
@@ -187,7 +187,7 @@
           }
         },
         "summary": "Get Abstract Accounts By Authenticator",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/v2/authenticators/{authenticator}/smartAccounts/details": {
@@ -276,7 +276,7 @@
           }
         },
         "summary": "Get Abstract Accounts Details By Authenticator",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     }
   }

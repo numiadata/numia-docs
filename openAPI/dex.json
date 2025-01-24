@@ -119,7 +119,7 @@
           }
         },
         "summary": "Get Token Pair Historical Chart",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/tokens/v2/historical/{asset}/chart": {
@@ -220,7 +220,7 @@
           }
         },
         "summary": "Get Token Historical Chart",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/tokens/v2/real-time/{asset}/price": {
@@ -271,7 +271,7 @@
           }
         },
         "summary": "Get Token Real Time Price",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/tokens/v2/{asset}": {
@@ -399,7 +399,7 @@
           }
         },
         "summary": "Get Token Data",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/fees/v1/pools": {
@@ -476,7 +476,7 @@
           }
         },
         "summary": "Get Pools Fees",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/stream/pool/v1/all": {
@@ -922,7 +922,7 @@
           }
         },
         "summary": "Get Pool Stream Data",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/lp/v1/rewards/estimation/{bech32Address}": {
@@ -999,7 +999,7 @@
           }
         },
         "summary": "Get Rewards Estimation",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/rewards/token/{address}/{denom}": {
@@ -1068,7 +1068,7 @@
           }
         },
         "summary": "Get Rewards Estimation",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/rewards/token/{address}": {
@@ -1117,7 +1117,7 @@
           }
         },
         "summary": "Get Rewards Estimation",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/cl/v1/position/last/id/{positionId}": {
@@ -1296,7 +1296,7 @@
           }
         },
         "summary": "Get Position Info",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/ibc/v1/source/{source}/destination/{destination}": {
@@ -1369,7 +1369,7 @@
           }
         },
         "summary": "Get IBc Chain Status",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/pools/liquidity/{pool_id}/over_time": {
@@ -1422,7 +1422,7 @@
           }
         },
         "summary": "Get Pools Liquidity Over Time",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/apr": {
@@ -1503,7 +1503,7 @@
           }
         },
         "summary": "Get Apr",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/pools_apr": {
@@ -1532,7 +1532,7 @@
           }
         },
         "summary": "Get Pools Apr",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/pools_apr_range": {
@@ -1561,7 +1561,7 @@
           }
         },
         "summary": "Get Pools Apr Range",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/cl/v1/apr/rewards/{pool}": {
@@ -1623,7 +1623,7 @@
           }
         },
         "summary": "Get Cl Pools Position Apr",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/supply/v1/metrics": {
@@ -1664,7 +1664,7 @@
           }
         },
         "summary": "Get Supply Metrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/users/portfolio/over_time": {
@@ -1733,7 +1733,7 @@
           }
         },
         "summary": "Get Portfolio Over Time",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/users/portfolio/current": {
@@ -1779,7 +1779,7 @@
           }
         },
         "summary": "Get Portfolio Current",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/users/limit_orders/history/closed": {
@@ -1881,7 +1881,7 @@
           }
         },
         "summary": "Get Closed Limit Orders History",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/pairs/v1/summary": {
@@ -2003,7 +2003,7 @@
           }
         },
         "summary": "Get Pairs Summary V1",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/pairs/v2/summary": {
@@ -2125,7 +2125,7 @@
           }
         },
         "summary": "Get Pairs Summary V2",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/tokenomics/chain_revenue": {
@@ -2197,7 +2197,7 @@
           }
         },
         "summary": "Get Chain Revenue",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/landing_page_metrics": {
@@ -2274,7 +2274,7 @@
           }
         },
         "summary": "Get Landing Page Metrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/external/defillama/chain_fees_and_revenue": {
@@ -2347,7 +2347,7 @@
           }
         },
         "summary": "Get Defillama Osmosis Chain Fees And Revenue",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/external/coingecko/native_factory_assets_supply": {
@@ -2414,7 +2414,7 @@
           }
         },
         "summary": "Get Coingecko Osmosis Native Factory Assets Supply",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/earn/strategies": {
@@ -2570,7 +2570,7 @@
           }
         },
         "summary": "Get Earn Strategies",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/earn/strategies/{strategy}/balance/{address}": {
@@ -2676,7 +2676,7 @@
           }
         },
         "summary": "Get Balances For Earn Strategies",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/earn/strategies/{strategy}/apr": {
@@ -2722,7 +2722,7 @@
           }
         },
         "summary": "Get Apr For Earn Strategies",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/earn/strategies/{strategy}/tvl": {
@@ -2793,7 +2793,7 @@
           }
         },
         "summary": "Get Tvl For Earn Strategies",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     }
   }

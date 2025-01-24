@@ -97,7 +97,7 @@
     "/v2/txs/{address}": {
       "get": {
         "operationId": "getTransactionsByAddress",
-        "description": "get transactions by address\n\nimport PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>",
+        "description": "get transactions by address\n\nimport PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>",
         "servers": [
           {
             "url": "https://cosmoshub.numia.xyz"

@@ -47,7 +47,7 @@
         },
         "operationId": "get_stride_tokenmetrics",
         "summary": "Get stride tokenmetrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/stride/redemption-rate": {
@@ -72,7 +72,7 @@
         },
         "operationId": "get_stride_redemptionrate",
         "summary": "Get stride redemptionrate",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/stride/total-users": {
@@ -97,7 +97,7 @@
         },
         "operationId": "get_stride_totalusers",
         "summary": "Get stride totalusers",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/stride/average-staked": {
@@ -122,7 +122,7 @@
         },
         "operationId": "get_stride_averagestaked",
         "summary": "Get stride averagestaked",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/stride/tvl": {
@@ -147,7 +147,7 @@
         },
         "operationId": "get_stride_tvl",
         "summary": "Get stride tvl",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/stride/total-yield": {
@@ -172,7 +172,7 @@
         },
         "operationId": "get_stride_totalyield",
         "summary": "Get stride totalyield",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/stride/apr": {
@@ -197,7 +197,7 @@
         },
         "operationId": "get_stride_apr",
         "summary": "Get stride apr",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     }
   }

@@ -96,7 +96,7 @@
         },
         "operationId": "get_tokenomics_top_stakeholders",
         "summary": "Get tokenomics top stakeholders",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/aez/revenue_share_by_consumer": {
@@ -149,7 +149,7 @@
         },
         "operationId": "get_aez_revenue_share_by_consumer",
         "summary": "Get aez revenue share by consumer",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/staking/liquid/share_by_provider": {
@@ -202,7 +202,7 @@
         },
         "operationId": "get_staking_liquid_share_by_provider",
         "summary": "Get staking liquid share by provider",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/staking/liquid/flow_by_provider": {
@@ -290,7 +290,7 @@
         },
         "operationId": "get_staking_liquid_flow_by_provider",
         "summary": "Get staking liquid flow by provider",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/hydro/deployments_overview": {
@@ -444,7 +444,7 @@
           }
         },
         "summary": "Get Hydro Deployments Overview",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/hydro/deployments_overview_staging": {
@@ -598,7 +598,7 @@
           }
         },
         "summary": "Get Hydro Deployments Overview Staging",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/hydro/metrics": {
@@ -716,7 +716,7 @@
           }
         },
         "summary": "Get Hydro Metrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     }
   }
