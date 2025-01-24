@@ -79,17 +79,29 @@ jobs:
         id: date
         run: echo "date=$(date +'%Y-%m-%d')" >> $GITHUB_OUTPUT
 
-      - name: Create Pull Request
-        uses: peter-evans/create-pull-request@v7
-        id: cpr
-        with:
-          commit-message: "chore: update table metadata"
-          title: "chore: update table metadata"
-          body: "updated table definitions from BigQuery"
-          branch: "${{ steps.date.outputs.date }}-chore-codegen-update-metadata"
-          base: main
+      # - name: Create Pull Request
+      #   uses: peter-evans/create-pull-request@v7
+      #   id: cpr
+      #   with:
+      #     commit-message: "chore: update table metadata"
+      #     title: "chore: update table metadata"
+      #     body: "updated table definitions from BigQuery"
+      #     branch: "${{ steps.date.outputs.date }}-chore-codegen-update-metadata"
+      #     base: main
 
-      - name: Enable Pull Request Automerge
-        run: gh pr merge --squash --auto "${{ steps.cpr.outputs.pull-request-number }}"
+      # - name: Enable Pull Request Automerge
+      #   run: gh pr merge --squash --auto "${{ steps.cpr.outputs.pull-request-number }}"
+      #   env:
+      #     GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin main
+          git merge origin/main --no-edit || echo "No conflicts to resolve."
+          git add .
+          git commit -m "chore: updates API Reference based on OpenAPI files"
+          git push
         env:
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
