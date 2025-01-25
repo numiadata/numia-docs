@@ -3,7 +3,7 @@
   "tables": [
     {
       "name": "quasar_atom_pro_lp_transactions",
-      "description": "This datasource contains transaction data from the LP (liquidity pool) on the Cosmos ecosystem. It captures various details about each transaction, providing insight into the liquidity pool's activity.",
+      "description": "This table contains a comprehensive list of transactions related to liquidity pool actions within the Cosmos ecosystem, providing insights into the flow of assets and the dynamics of liquidity provision.",
       "tags": [
         "raw_table"
       ],
@@ -15,7 +15,7 @@
         },
         {
           "name": "sender",
-          "description": "Address of the sender in the Cosmos ecosystem.",
+          "description": "Address of the sender performing the liquidity pool action.",
           "type": "STRING"
         },
         {
@@ -25,214 +25,243 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when the transaction was processed on the blockchain.",
+          "description": "Timestamp when the transaction was included in a block within the Cosmos blockchain.",
           "type": "TIMESTAMP"
         },
         {
           "name": "type",
-          "description": "Type of transaction (e.g., LP creation, token transfer, etc.).",
+          "description": "Type of liquidity pool action, such as deposit or withdraw.",
           "type": "STRING"
         },
         {
           "name": "raw_tokens",
-          "description": "Raw amount of tokens transferred in the transaction.",
+          "description": "Total amount of tokens involved in the transaction, without converting them to base assets.",
           "type": "STRING"
         },
         {
           "name": "base_asset",
-          "description": "Asset being transferred in the transaction.",
+          "description": "Base asset of the transaction, often a stablecoin or a widely traded cryptocurrency.",
           "type": "STRING"
         },
         {
           "name": "base_amount",
-          "description": "Amount of the base asset transferred in the transaction.",
+          "description": "Amount of the base asset involved in the transaction.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "base_amount_usd",
-          "description": "Amount of the base asset transferred in USD.",
+          "description": "Amount of the base asset involved in the transaction, converted to US dollars.",
           "type": "FLOAT"
         },
         {
           "name": "base_price",
-          "description": "Price of the base asset at the time of the transaction.",
+          "description": "Current market price of the base asset.",
           "type": "FLOAT"
         },
         {
           "name": "asset",
-          "description": "Asset associated with the base asset.",
+          "description": "Asset involved in the transaction, which can be a cryptocurrency or a token.",
           "type": "STRING"
         },
         {
           "name": "asset_amount_usd",
-          "description": "Amount of the asset associated with the base asset in USD.",
+          "description": "Amount of the asset involved in the transaction, converted to US dollars.",
           "type": "FLOAT"
         },
         {
           "name": "asset_price",
-          "description": "Price of the asset associated with the base asset at the time of the transaction.",
+          "description": "Current market price of the asset.",
           "type": "FLOAT"
         }
       ]
     },
     {
       "name": "quasar_blocks",
-      "description": "",
+      "description": "This table contains information about blocks in the Cosmos blockchain ecosystem, providing insights into block heights, timestamps, and other relevant metrics.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in the blockchain, indicating its position in the chain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created, measured in seconds since the Unix epoch.",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
+          "description": "A unique identifier for the Cosmos blockchain network, distinguishing it from other networks.",
           "type": "STRING"
         },
         {
           "name": "proposer_address",
+          "description": "The address of the validator that proposed the block for inclusion in the blockchain.",
           "type": "STRING"
         },
         {
           "name": "validators_hash",
+          "description": "A hash of the validators that participated in the block's validation process.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the block data was ingested into the system, measured in seconds since the Unix epoch.",
           "type": "TIMESTAMP"
         },
         {
           "name": "messages_bytes",
+          "description": "The total number of bytes in all the messages (transactions) included in the block.",
           "type": "INTEGER"
         },
         {
           "name": "tx_count",
+          "description": "The total number of transactions (messages) included in the block.",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "quasar_event_attributes",
-      "description": "",
+      "description": "This table provides information about blockchain events from the Cosmos ecosystem, including metadata and attribute values. It is useful for analyzing and understanding event data in the Cosmos network.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in the blockchain",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "The ID of the blockchain",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "The ID of the transaction",
           "type": "STRING"
         },
         {
           "name": "event_index",
+          "description": "The index of the event within the transaction",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "The type of the event",
           "type": "STRING"
         },
         {
           "name": "event_source",
+          "description": "The source of the event",
           "type": "STRING"
         },
         {
           "name": "attribute_key",
+          "description": "The key of the attribute value",
           "type": "STRING"
         },
         {
           "name": "attribute_value",
+          "description": "The value of the attribute",
           "type": "STRING"
         },
         {
           "name": "attribute_index",
+          "description": "The index of the attribute within the event",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested",
           "type": "TIMESTAMP"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "quasar_message_event_attributes",
-      "description": "",
+      "description": "This table provides detailed information about message events from various blockchains in the Cosmos ecosystem, offering insights into transaction activity and network behavior.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the message event was recorded.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "The unique identifier of the blockchain on which the message event occurred.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "The unique identifier of the transaction in which the message event occurred.",
           "type": "STRING"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within which the event was recorded.",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
+          "description": "The index of the event within the message.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "The type of event that occurred.",
           "type": "STRING"
         },
         {
           "name": "attribute_key",
+          "description": "The key associated with an attribute of the message event.",
           "type": "STRING"
         },
         {
           "name": "attribute_value",
+          "description": "The value associated with an attribute of the message event.",
           "type": "STRING"
         },
         {
           "name": "attribute_index",
+          "description": "The index of the attribute within the message event.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the message event data was ingested into the database.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "quasar_osmo_pro_lp_transactions",
-      "description": "This table contains a list of transactions from liquidity pool providers in the Cosmos ecosystem, providing insights into the liquidity pool activities and associated asset movements. The data is sourced from blockchain events and represents the flow of assets within the ecosystem.",
+      "description": "This table contains a record of all Osmosis liquidity pool transactions, providing insights into the Cosmos ecosystem's liquidity pool activities. It includes information about the transactions, such as sender, pool ID, and asset involved.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "tx_id",
-          "description": "Unique identifier of the transaction on the blockchain.",
+          "description": "Unique identifier of the blockchain transaction, typically a hash value.",
           "type": "STRING"
         },
         {
           "name": "sender",
-          "description": "Address of the sender who initiated the transaction.",
+          "description": "Address of the account that initiated the transaction.",
           "type": "STRING"
         },
         {
@@ -242,195 +271,225 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when the transaction was included in a block on the blockchain.",
+          "description": "Timestamp at which the transaction was included in a block on the blockchain.",
           "type": "TIMESTAMP"
         },
         {
           "name": "type",
-          "description": "Type of transaction, such as token transfer or liquidity pool activity.",
+          "description": "Type of transaction, indicating the operation performed on the liquidity pool.",
           "type": "STRING"
         },
         {
           "name": "raw_tokens",
-          "description": "Total number of raw tokens involved in the transaction.",
+          "description": "Number of tokens involved in the transaction, in their raw form.",
           "type": "STRING"
         },
         {
           "name": "osmo_asset",
-          "description": "Name of the OSMO asset involved in the transaction.",
+          "description": "Identifier of the Osmosis asset involved in the transaction.",
           "type": "STRING"
         },
         {
           "name": "osmo_amount",
-          "description": "Amount of OSMO asset transferred in the transaction.",
+          "description": "Amount of Osmosis asset transferred or exchanged during the transaction.",
           "type": "FLOAT"
         },
         {
           "name": "osmo_amount_usd",
-          "description": "Amount of OSMO asset transferred in USD.",
+          "description": "Amount of Osmosis asset in USD, calculated based on the current market price.",
           "type": "FLOAT"
         },
         {
           "name": "osmo_price",
-          "description": "Current price of OSMO asset at the time of the transaction.",
+          "description": "Current market price of Osmosis asset, used for calculating the asset value.",
           "type": "FLOAT"
         },
         {
           "name": "asset",
-          "description": "Name of the asset involved in the transaction.",
+          "description": "Identifier of the asset involved in the transaction, other than Osmosis.",
           "type": "STRING"
         },
         {
           "name": "asset_amount",
-          "description": "Amount of asset transferred in the transaction.",
+          "description": "Amount of the non-Osmosis asset transferred or exchanged during the transaction.",
           "type": "FLOAT"
         },
         {
           "name": "asset_amount_usd",
-          "description": "Amount of asset transferred in USD.",
+          "description": "Amount of the non-Osmosis asset in USD, calculated based on the current market price.",
           "type": "FLOAT"
         },
         {
           "name": "asset_price",
-          "description": "Current price of the asset at the time of the transaction.",
+          "description": "Current market price of the non-Osmosis asset, used for calculating the asset value.",
           "type": "FLOAT"
         }
       ]
     },
     {
       "name": "quasar_transactions",
-      "description": "",
+      "description": "Cosmos Ecosystem Blockchain Transactions. This table contains information about all transactions occurring across various chains in the Cosmos ecosystem.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The block height at which the transaction was processed.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "The ID of the blockchain on which the transaction occurred.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "A unique identifier for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_info",
+          "description": "Additional information about the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_log_message",
+          "description": "A log message related to the transaction.",
           "type": "STRING"
         },
         {
           "name": "memo",
+          "description": "A memo or note associated with the transaction.",
           "type": "STRING"
         },
         {
           "name": "fee",
+          "description": "The fee paid for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_code",
+          "description": "The transaction code or result.",
           "type": "INTEGER"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within a block.",
           "type": "INTEGER"
         },
         {
           "name": "gas_used",
+          "description": "The amount of gas used during the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "gas_wanted",
+          "description": "The amount of gas requested for the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the transaction was ingested.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to process the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "fee_coins",
+          "description": "The coins used to pay the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "fee_granter",
+          "description": "The account that granted the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "fee_payer",
+          "description": "The account that paid the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "gas_limit",
+          "description": "The maximum amount of gas the transaction was allowed to use.",
           "type": "INTEGER"
         },
         {
           "name": "single_sign_mode",
+          "description": "Whether the transaction was processed in single sign mode.",
           "type": "INTEGER"
         },
         {
           "name": "multi_sign_json",
+          "description": "JSON data related to multi- sign transactions.",
           "type": "STRING"
         },
         {
           "name": "timeout_height",
+          "description": "The block height at which the transaction was timed out.",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "quasar_tx_messages",
-      "description": "",
+      "description": "This table contains a collection of transactions from various blockchains within the Cosmos ecosystem, providing insights into the blockchain activity over time.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "The unique identifier of the blockchain on which the transaction occurred.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "The unique identifier of the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "STRING"
         },
         {
           "name": "message_type",
+          "description": "The type of message within the transaction.",
           "type": "STRING"
         },
         {
           "name": "message",
+          "description": "The actual message within the transaction.",
           "type": "JSON"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction data was ingested into the database.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to store the transaction data.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created, which includes the transaction.",
           "type": "STRING"
         }
       ]
