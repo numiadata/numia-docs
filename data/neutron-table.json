@@ -3,1358 +3,1648 @@
   "tables": [
     {
       "name": "neutron_block_events",
-      "description": "",
+      "description": "This table provides a detailed record of all events that occurred on the Cosmos blockchain, including block height, timestamp, and event type. It offers a comprehensive view of the blockchain's activity and evolution.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in the blockchain, uniquely identifying each block.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created on the blockchain.",
           "type": "TIMESTAMP"
         },
         {
           "name": "event_index",
+          "description": "The index of the event within the block.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "The type of event that occurred, which can be used to categorize and analyze the data.",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
+          "description": "Additional attributes related to the event, providing more context and information.",
           "type": "JSON"
         },
         {
           "name": "source",
+          "description": "The source of the data, indicating which blockchain or node provided the information.",
           "type": "STRING"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to structure and organize the data.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_blocks",
-      "description": "",
+      "description": "This table contains information about blocks in the Cosmos blockchain ecosystem, providing insights into block heights, timestamps, and other relevant metrics.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in the blockchain, indicating its position in the chain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created, measured in seconds since the Unix epoch.",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
+          "description": "A unique identifier for the Cosmos blockchain network, distinguishing it from other networks.",
           "type": "STRING"
         },
         {
           "name": "proposer_address",
+          "description": "The address of the validator that proposed the block for inclusion in the blockchain.",
           "type": "STRING"
         },
         {
           "name": "validators_hash",
+          "description": "A hash of the validators that participated in the block's validation process.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the block data was ingested into the system, measured in seconds since the Unix epoch.",
           "type": "TIMESTAMP"
         },
         {
           "name": "messages_bytes",
+          "description": "The total number of bytes in all the messages (transactions) included in the block.",
           "type": "INTEGER"
         },
         {
           "name": "tx_count",
+          "description": "The total number of transactions (messages) included in the block.",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "neutron_delegate",
-      "description": "",
+      "description": "This table provides a comprehensive view of transactions and actions within the Cosmos ecosystem, including block height, timestamps, and token-related activities.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The current height of the block in the blockchain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "A unique identifier for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the account that initiated the transaction.",
           "type": "STRING"
         },
         {
           "name": "validator",
+          "description": "The validator responsible for processing the transaction.",
           "type": "STRING"
         },
         {
           "name": "token_amount",
+          "description": "The amount of tokens transferred or exchanged.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom",
+          "description": "The denomination of the token (e.g., ATOM, UST).",
           "type": "STRING"
         },
         {
           "name": "new_shares",
+          "description": "The newly minted or exchanged shares.",
           "type": "FLOAT"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_dex_limit_order_cancel",
-      "description": "",
+      "description": "This table contains the details of transactions where a limit order was canceled on a Dex in the Cosmos ecosystem. It captures the sender and receiver of the transaction, along with the tokens involved.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp at which the block was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash identifier of the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The account address that initiated the transaction.",
           "type": "STRING"
         },
         {
           "name": "receiver",
+          "description": "The account address that received the transaction.",
           "type": "STRING"
         },
         {
           "name": "token_denom_in",
+          "description": "The denomination of the token that was input into the transaction.",
           "type": "STRING"
         },
         {
           "name": "token_amount_in_remaining",
+          "description": "The remaining amount of the input token.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom_out",
+          "description": "The denomination of the token that was output from the transaction.",
           "type": "STRING"
         },
         {
           "name": "token_amount_out",
+          "description": "The amount of the output token.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "tranche_key",
+          "description": "A unique identifier for a specific investment product.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_dex_limit_order_place",
-      "description": "",
+      "description": "This table provides information on limit orders placed on Cosmos ecosystem decentralized exchanges. It contains data on the orders, including the sender, receiver, tokens involved, and the order's status.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp at which the block was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the sender who placed the limit order.",
           "type": "STRING"
         },
         {
           "name": "receiver",
+          "description": "The address of the receiver of the limit order.",
           "type": "STRING"
         },
         {
           "name": "token_denom_in",
+          "description": "The denomination of the token being sold (input).",
           "type": "STRING"
         },
         {
           "name": "token_amount_in_total",
+          "description": "The total amount of the token being sold (input).",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_amount_in_executed",
+          "description": "The amount of the token that has been executed (sold).",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_amount_in_remaining",
+          "description": "The amount of the token remaining in the order.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom_out",
+          "description": "The denomination of the token being bought (output).",
           "type": "STRING"
         },
         {
           "name": "token_amount_out",
+          "description": "The amount of the token being bought (output).",
           "type": "BIGNUMERIC"
         },
         {
           "name": "limit_tick",
+          "description": "The tick size for the limit order.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "order_type",
+          "description": "The type of the order (e.g. buy or sell).",
           "type": "STRING"
         },
         {
           "name": "min_avg_sell_price",
+          "description": "The minimum average price at which the token can be sold.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "tranche_key",
+          "description": "The key of the tranche in which the limit order is placed.",
           "type": "STRING"
         },
         {
           "name": "fee",
+          "description": "The fee associated with the limit order.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_dex_limit_order_withdraw",
-      "description": "",
+      "description": "This table captures limit order withdrawals from decentralized exchanges in the Cosmos ecosystem, providing insights into the movement of assets within these networks. The data is sourced from blockchain transactions.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block containing the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block containing the transaction was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "A unique identifier for the transaction that triggered the limit order withdrawal.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The account that initiated the limit order withdrawal.",
           "type": "STRING"
         },
         {
           "name": "receiver",
+          "description": "The account that received the withdrawn assets.",
           "type": "STRING"
         },
         {
           "name": "token_denom_in",
+          "description": "The denomination of the token being withdrawn.",
           "type": "STRING"
         },
         {
           "name": "token_amount_in_remaining",
+          "description": "The remaining amount of the token after the withdrawal.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom_out",
+          "description": "The denomination of the token being withdrawn to.",
           "type": "STRING"
         },
         {
           "name": "token_amount_out",
+          "description": "The amount of the token withdrawn.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "tranche_key",
+          "description": "A unique identifier for the tranche associated with the limit order withdrawal.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_dex_lp_deposit",
-      "description": "",
+      "description": "Data related to liquidity pool (LP) deposits on decentralized exchanges (DEXs) within the Cosmos ecosystem, providing insights into the LP token minting process.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was confirmed.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp at which the block was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction in the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the account that initiated the transaction.",
           "type": "STRING"
         },
         {
           "name": "receiver",
+          "description": "The address of the account that received the tokens.",
           "type": "STRING"
         },
         {
           "name": "token_denom_0",
+          "description": "The denomination of the first token involved in the transaction.",
           "type": "STRING"
         },
         {
           "name": "token_amount_0",
+          "description": "The amount of the first token transferred.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom_1",
+          "description": "The denomination of the second token involved in the transaction.",
           "type": "STRING"
         },
         {
           "name": "token_amount_1",
+          "description": "The amount of the second token transferred.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "shares_minted",
+          "description": "The amount of LP tokens minted as a result of the deposit.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "tick_index",
+          "description": "The index of the tick within the liquidity pool.",
           "type": "INTEGER"
         },
         {
           "name": "fee",
+          "description": "The fee associated with the transaction.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_dex_lp_withdraw",
-      "description": "",
+      "description": "This table contains data related to liquidity pool withdrawals on decentralized exchanges within the Cosmos ecosystem. It captures key information about the withdrawal transactions, including the involved tokens and fees.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the withdrawal transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block in which the withdrawal transaction was included.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash identifying the withdrawal transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the withdrawal transaction within a batch of transactions.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the withdrawal transaction message within a block.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the withdrawal action within a transaction message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the account that initiated the liquidity pool withdrawal.",
           "type": "STRING"
         },
         {
           "name": "receiver",
+          "description": "The address of the account that received the withdrawn tokens.",
           "type": "STRING"
         },
         {
           "name": "token_denom_0",
+          "description": "The denomination of the first token involved in the withdrawal.",
           "type": "STRING"
         },
         {
           "name": "token_amount_0",
+          "description": "The amount of the first token withdrawn.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom_1",
+          "description": "The denomination of the second token involved in the withdrawal (if applicable).",
           "type": "STRING"
         },
         {
           "name": "token_amount_1",
+          "description": "The amount of the second token withdrawn (if applicable).",
           "type": "BIGNUMERIC"
         },
         {
           "name": "shares_burnt",
+          "description": "The amount of liquidity pool shares burnt as a result of the withdrawal.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "tick_index",
+          "description": "The tick index associated with the withdrawal (representing the token price).",
           "type": "INTEGER"
         },
         {
           "name": "fee",
+          "description": "The fee associated with the withdrawal transaction.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the withdrawal transaction data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_dex_swap",
-      "description": "",
+      "description": "This table captures data from decentralized exchanges on the Cosmos ecosystem, providing insights into token swap transactions. It contains key information about each swap, including token amounts and fees.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the swap transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block in which the swap transaction was included.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction that initiated the swap.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "token_denom_0",
+          "description": "The denomination of the first token involved in the swap.",
           "type": "STRING"
         },
         {
           "name": "token_denom_1",
+          "description": "The denomination of the second token involved in the swap.",
           "type": "STRING"
         },
         {
           "name": "token_denom_in",
+          "description": "The denomination of the token being swapped in.",
           "type": "STRING"
         },
         {
           "name": "reserves",
+          "description": "The amounts of each token involved in the swap.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "tick_index",
+          "description": "The index of the tick within the swap.",
           "type": "INTEGER"
         },
         {
           "name": "tranche_key",
+          "description": "The key of the tranche within the swap.",
           "type": "STRING"
         },
         {
           "name": "fee",
+          "description": "The fee paid for the swap transaction.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_dex_tick_update",
-      "description": "",
+      "description": "This table contains detailed information about tick updates in the Cosmos ecosystem. It provides data on token reserves, fees, and other relevant metrics.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the tick update occurred.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block in which the tick update occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction that triggered the tick update.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction in the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message in the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action in the message.",
           "type": "INTEGER"
         },
         {
           "name": "token_denom_0",
+          "description": "The denomination of the first token involved in the tick update.",
           "type": "STRING"
         },
         {
           "name": "token_denom_1",
+          "description": "The denomination of the second token involved in the tick update.",
           "type": "STRING"
         },
         {
           "name": "token_denom_in",
+          "description": "The denomination of the token involved in the tick update.",
           "type": "STRING"
         },
         {
           "name": "reserves",
+          "description": "The updated reserves of the token after the tick update.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "tick_index",
+          "description": "A unique identifier for the tick update.",
           "type": "INTEGER"
         },
         {
           "name": "tranche_key",
+          "description": "A unique key for the tranche related to the tick update.",
           "type": "STRING"
         },
         {
           "name": "fee",
+          "description": "The fee associated with the tick update.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_dex_tranche_user_update",
-      "description": "",
+      "description": "This table contains updates to specific tranches within a decentralized exchange (DEX) in the Cosmos ecosystem, capturing the dynamic changes in token holdings and share ownership.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp at which the block was mined.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "A unique identifier for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within a block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within a transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within a message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The account address of the sender.",
           "type": "STRING"
         },
         {
           "name": "token_denom_0",
+          "description": "The denomination of the first token involved in the transaction.",
           "type": "STRING"
         },
         {
           "name": "token_denom_1",
+          "description": "The denomination of the second token involved in the transaction.",
           "type": "STRING"
         },
         {
           "name": "token_denom_in",
+          "description": "The denomination of the token being transferred in.",
           "type": "STRING"
         },
         {
           "name": "tick_index",
+          "description": "The index of the tick within the tranche.",
           "type": "INTEGER"
         },
         {
           "name": "shares_owned",
+          "description": "The number of shares owned by the user within the tranche.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "shares_burnt",
+          "description": "The number of shares burnt by the user within the tranche.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "tranche_key",
+          "description": "A unique key identifying the tranche.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested from the blockchain.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_ics20_receive",
-      "description": "",
+      "description": "This table captures information about ICS-20 receive transactions within the Cosmos ecosystem, providing insights into token transfer activities across the network. It includes key details about the transactions, such as sender and receiver addresses, token denominations, and transfer amounts.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block containing the transaction was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "A unique identifier for the transaction, assigned by the blockchain.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the account that initiated the transaction.",
           "type": "STRING"
         },
         {
           "name": "receiver",
+          "description": "The address of the account that received the tokens.",
           "type": "STRING"
         },
         {
           "name": "token_amount",
+          "description": "The amount of tokens transferred during the transaction.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom",
+          "description": "The denomination of the tokens transferred, typically a cosmos-native token.",
           "type": "STRING"
         },
         {
           "name": "token_path",
+          "description": "A path representing the token transfer, including any intermediate denominations.",
           "type": "STRING"
         },
         {
           "name": "memo",
+          "description": "A note or comment attached to the transaction by the sender.",
           "type": "STRING"
         },
         {
           "name": "src_channel",
+          "description": "The source channel of the transaction.",
           "type": "STRING"
         },
         {
           "name": "dst_channel",
+          "description": "The destination channel of the transaction.",
           "type": "STRING"
         },
         {
           "name": "connection",
+          "description": "The connection identifier associated with the transaction.",
           "type": "STRING"
         },
         {
           "name": "sequence",
+          "description": "The sequence number of the transaction within the channel.",
           "type": "STRING"
         },
         {
           "name": "ack",
+          "description": "An acknowledgment flag indicating whether the transaction was successfully processed.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_ics20_transfer",
-      "description": "",
+      "description": "This table contains information about ICS-20 transfers in the Cosmos ecosystem, providing insights into token transfers between different accounts and channels.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transfer occurred.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block in which the transfer occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique identifier of the transaction in which the transfer occurred.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transfer within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message in which the transfer occurred.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message in which the transfer occurred.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The account that initiated the transfer.",
           "type": "STRING"
         },
         {
           "name": "receiver",
+          "description": "The account that received the transfer.",
           "type": "STRING"
         },
         {
           "name": "token_amount",
+          "description": "The amount of tokens transferred.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom",
+          "description": "The denomination of the token transferred.",
           "type": "STRING"
         },
         {
           "name": "token_path",
+          "description": "The path of the token transfer, including any intermediary channels.",
           "type": "STRING"
         },
         {
           "name": "memo",
+          "description": "Any additional information provided with the transfer.",
           "type": "STRING"
         },
         {
           "name": "src_channel",
+          "description": "The source channel of the transfer.",
           "type": "STRING"
         },
         {
           "name": "dst_channel",
+          "description": "The destination channel of the transfer.",
           "type": "STRING"
         },
         {
           "name": "connection",
+          "description": "The connection through which the transfer occurred.",
           "type": "STRING"
         },
         {
           "name": "sequence",
+          "description": "The sequence number of the transfer, used for ordering and consistency.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the transfer data was ingested into the database.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_message_events",
-      "description": "",
+      "description": "This table contains events from blockchains within the Cosmos ecosystem, providing insights into network activity and behavior.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the event was recorded.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "A unique identifier for the transaction containing the event.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
+          "description": "The index of the event within the message.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "The category or type of event that occurred.",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
+          "description": "Additional information about the event, such as sender, recipient, or amount transferred.",
           "type": "JSON"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to ingest the data.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_redelegate",
-      "description": "",
+      "description": "This table contains information about redelegations in the Cosmos ecosystem. It lists all redelegations made across different validators, including the source and destination validators, as well as the amount of tokens redelegated.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "Height of the block in which the redelegation transaction occurred.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "Timestamp of the block in which the redelegation transaction occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "Hash of the transaction that initiated the redelegation.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "Index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "Index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "Index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "Address of the validator that initiated the redelegation.",
           "type": "STRING"
         },
         {
           "name": "src_validator",
+          "description": "Address of the validator from which tokens were redelegated.",
           "type": "STRING"
         },
         {
           "name": "dst_validator",
+          "description": "Address of the validator to which tokens were redelegated.",
           "type": "STRING"
         },
         {
           "name": "token_amount",
+          "description": "Amount of tokens redelegated.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom",
+          "description": "Denomination of the tokens redelegated.",
           "type": "STRING"
         },
         {
           "name": "completion_time",
+          "description": "Timestamp when the redelegation was completed.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "Timestamp when the redelegation data was ingested into the database.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_send",
-      "description": "",
+      "description": "Cosmos Block Data: This table contains data from various blockchains within the Cosmos ecosystem, providing insights into transactions and token movements. It serves as a comprehensive dataset for analyzing the activity and dynamics of the Cosmos network.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The unique identifier for a block in the blockchain, representing its position in the chain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created, indicating when the transactions within the block were processed.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "A unique identifier for a transaction, allowing for the tracking of its movement through the blockchain.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within a block, providing a specific position within the block's transaction list.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within a transaction, indicating its position within the transaction's message list.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within a message, indicating its position within the message's action list.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the account that initiated a transaction, responsible for sending tokens or executing actions.",
           "type": "STRING"
         },
         {
           "name": "receiver",
+          "description": "The address of the account that received tokens or executed actions as a result of a transaction.",
           "type": "STRING"
         },
         {
           "name": "token_amount",
+          "description": "The quantity of tokens involved in a transaction, representing the change in token balance.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom",
+          "description": "The denomination of the tokens involved in a transaction, specifying the unit of the token.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the database, indicating when the information became available.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_transactions",
-      "description": "",
+      "description": "Cosmos Ecosystem Blockchain Transactions. This table contains information about all transactions occurring across various chains in the Cosmos ecosystem.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The block height at which the transaction was processed.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "The ID of the blockchain on which the transaction occurred.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "A unique identifier for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_info",
+          "description": "Additional information about the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_log_message",
+          "description": "A log message related to the transaction.",
           "type": "STRING"
         },
         {
           "name": "memo",
+          "description": "A memo or note associated with the transaction.",
           "type": "STRING"
         },
         {
           "name": "fee",
+          "description": "The fee paid for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_code",
+          "description": "The transaction code or result.",
           "type": "INTEGER"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within a block.",
           "type": "INTEGER"
         },
         {
           "name": "gas_used",
+          "description": "The amount of gas used during the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "gas_wanted",
+          "description": "The amount of gas requested for the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the transaction was ingested.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to process the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "fee_coins",
+          "description": "The coins used to pay the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "fee_granter",
+          "description": "The account that granted the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "fee_payer",
+          "description": "The account that paid the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "gas_limit",
+          "description": "The maximum amount of gas the transaction was allowed to use.",
           "type": "INTEGER"
         },
         {
           "name": "single_sign_mode",
+          "description": "Whether the transaction was processed in single sign mode.",
           "type": "INTEGER"
         },
         {
           "name": "multi_sign_json",
+          "description": "JSON data related to multi- sign transactions.",
           "type": "STRING"
         },
         {
           "name": "timeout_height",
+          "description": "The block height at which the transaction was timed out.",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "neutron_tx_messages",
-      "description": "",
+      "description": "This table contains a collection of transactions from various blockchains within the Cosmos ecosystem, providing insights into the blockchain activity over time.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "The unique identifier of the blockchain on which the transaction occurred.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "The unique identifier of the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "STRING"
         },
         {
           "name": "message_type",
+          "description": "The type of message within the transaction.",
           "type": "STRING"
         },
         {
           "name": "message",
+          "description": "The actual message within the transaction.",
           "type": "JSON"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction data was ingested into the database.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to store the transaction data.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created, which includes the transaction.",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "neutron_undelegate",
-      "description": "",
+      "description": "This table provides a detailed view of undelegation events on Cosmos chain, offering insights into validator redelegation and token movement.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block where the undelegation event occurred.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block where the undelegation event occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction containing the undelegation event.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction containing the undelegation event within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message containing the undelegation event within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action containing the undelegation event within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The account that initiated the undelegation event.",
           "type": "STRING"
         },
         {
           "name": "validator",
+          "description": "The validator that was redelegated from by the undelegation event.",
           "type": "STRING"
         },
         {
           "name": "token_amount",
+          "description": "The amount of tokens redelegated from the validator.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom",
+          "description": "The denomination of the tokens redelegated from the validator.",
           "type": "STRING"
         },
         {
           "name": "completion_time",
+          "description": "The time at which the undelegation event is expected to be completed.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when this data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_vote",
-      "description": "",
+      "description": "This table contains voting data from the Cosmos ecosystem, providing insights into proposals and their outcomes. It includes details about the voting process and the entities involved.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the vote was recorded, indicating the chronological order of votes.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block in which the vote was recorded, showing when the vote was processed.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "A unique identifier for the transaction that contains the vote, allowing for tracking of vote- related activities.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within a block, providing a way to identify and track transactions.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within a transaction, enabling the identification of specific votes.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within a message, facilitating the isolation of vote-related actions.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The entity that initiated the vote, such as a validator or a user, indicating who is responsible for the vote.",
           "type": "STRING"
         },
         {
           "name": "proposal_id",
+          "description": "A unique identifier for the proposal being voted on, enabling tracking of proposal-related activities.",
           "type": "STRING"
         },
         {
           "name": "option",
+          "description": "The specific option or choice made by the sender in the vote, indicating their preference or stance.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the vote data was ingested into the system, providing an audit trail for data processing.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_wasm_contract_labels",
-      "description": "",
+      "description": "This table contains labels for WASM contract events from the Cosmos ecosystem, providing insights into the actions and transactions performed on these contracts. It includes metadata such as block height, timestamp, and contract address.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The block height at which the contract event occurred.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block at which the contract event occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction that triggered the contract event.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block that triggered the contract event.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the block that triggered the contract event.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message that triggered the contract event.",
           "type": "INTEGER"
         },
         {
           "name": "contract_address",
+          "description": "The address of the WASM contract that triggered the event.",
           "type": "STRING"
         },
         {
           "name": "action",
+          "description": "A description of the action performed on the WASM contract.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the contract event data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "neutron_wasm_executed_actions",
-      "description": "",
+      "description": "This table contains executed actions from the Cosmos ecosystem, providing insights into the activities and transactions that have taken place on the blockchain. It includes details about the block, transaction, and action that were executed.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the action was executed.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block in which the action was executed.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction that contained the action.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction in the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message in the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action in the message.",
           "type": "INTEGER"
         },
         {
           "name": "contract_address",
+          "description": "The address of the smart contract that the action was executed on.",
           "type": "STRING"
         },
         {
           "name": "action",
+          "description": "A description of the action that was executed, such as a function call or message.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the action data was ingested into the database.",
           "type": "TIMESTAMP"
         }
       ]
