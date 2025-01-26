@@ -3,74 +3,74 @@
   "tables": [
     {
       "name": "accounting_balances",
-      "description": "This table contains the current state of each account's balance in the Cosmos ecosystem. It provides a snapshot of the liquid, staking, and reward balances for each address across various blockchains.",
+      "description": "This table provides a snapshot of account balances in the Cosmos ecosystem, including liquid and staking balances, as well as unclaimed and claimed rewards in various denominations. It offers a comprehensive view of account financials on the Cosmos blockchain.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block at which the balance data was recorded.",
+          "description": "The height of the block in which the account balance was recorded.",
           "type": "INTEGER",
           "mode": "NULLABLE"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp of the block at which the balance data was recorded.",
+          "description": "The timestamp of the block in which the account balance was recorded.",
           "type": "TIMESTAMP",
           "mode": "NULLABLE"
         },
         {
           "name": "address",
-          "description": "The unique address associated with the account's balance.",
+          "description": "The address of the account for which the balance was recorded.",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "liquid_balance",
-          "description": "The available balance in the account's native cryptocurrency.",
+          "description": "The liquid balance of the account in the native cryptocurrency.",
           "type": "FLOAT",
           "mode": "NULLABLE"
         },
         {
           "name": "staking_balance",
-          "description": "The balance staked in the account's native cryptocurrency.",
+          "description": "The staking balance of the account in the native cryptocurrency.",
           "type": "FLOAT",
           "mode": "NULLABLE"
         },
         {
           "name": "unclaimed_rewards",
-          "description": "The unclaimed rewards in the account's native cryptocurrency.",
+          "description": "The unclaimed rewards of the account in the native cryptocurrency.",
           "type": "FLOAT",
           "mode": "NULLABLE"
         },
         {
           "name": "claimed_rewards",
-          "description": "The claimed rewards in the account's native cryptocurrency.",
+          "description": "The claimed rewards of the account in the native cryptocurrency.",
           "type": "FLOAT",
           "mode": "NULLABLE"
         },
         {
           "name": "liquid_balance_usdc",
-          "description": "The available balance in USDC (USD Coin) equivalent to the native cryptocurrency.",
+          "description": "The liquid balance of the account in USDC, denominated in the native cryptocurrency.",
           "type": "FLOAT",
           "mode": "NULLABLE"
         },
         {
           "name": "staking_balance_usdc",
-          "description": "The balance staked in USDC (USD Coin) equivalent to the native cryptocurrency.",
+          "description": "The staking balance of the account in USDC, denominated in the native cryptocurrency.",
           "type": "FLOAT",
           "mode": "NULLABLE"
         },
         {
           "name": "unclaimed_rewards_usdc",
-          "description": "The unclaimed rewards in USDC (USD Coin) equivalent to the native cryptocurrency.",
+          "description": "The unclaimed rewards of the account in USDC, denominated in the native cryptocurrency.",
           "type": "FLOAT",
           "mode": "NULLABLE"
         },
         {
           "name": "claimed_rewards_usdc",
-          "description": "The claimed rewards in USDC (USD Coin) equivalent to the native cryptocurrency.",
+          "description": "The claimed rewards of the account in USDC, denominated in the native cryptocurrency.",
           "type": "FLOAT",
           "mode": "NULLABLE"
         }
@@ -78,352 +78,408 @@
     },
     {
       "name": "celestia_block_events",
-      "description": "",
+      "description": "This table provides a detailed record of all events that occurred on the Cosmos blockchain, including block height, timestamp, and event type. It offers a comprehensive view of the blockchain's activity and evolution.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in the blockchain, uniquely identifying each block.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created on the blockchain.",
           "type": "TIMESTAMP"
         },
         {
           "name": "event_index",
+          "description": "The index of the event within the block.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "The type of event that occurred, which can be used to categorize and analyze the data.",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
+          "description": "Additional attributes related to the event, providing more context and information.",
           "type": "JSON"
         },
         {
           "name": "source",
+          "description": "The source of the data, indicating which blockchain or node provided the information.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to structure and organize the data.",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "celestia_blocks",
-      "description": "",
+      "description": "This table contains information about blocks in the Cosmos blockchain ecosystem, providing insights into block heights, timestamps, and other relevant metrics.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in the blockchain, indicating its position in the chain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created, measured in seconds since the Unix epoch.",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
+          "description": "A unique identifier for the Cosmos blockchain network, distinguishing it from other networks.",
           "type": "STRING"
         },
         {
           "name": "proposer_address",
+          "description": "The address of the validator that proposed the block for inclusion in the blockchain.",
           "type": "STRING"
         },
         {
           "name": "validators_hash",
+          "description": "A hash of the validators that participated in the block's validation process.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the block data was ingested into the system, measured in seconds since the Unix epoch.",
           "type": "TIMESTAMP"
         },
         {
           "name": "messages_bytes",
+          "description": "The total number of bytes in all the messages (transactions) included in the block.",
           "type": "INTEGER"
         },
         {
           "name": "tx_count",
+          "description": "The total number of transactions (messages) included in the block.",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "celestia_delagate",
-      "description": "This table contains a record of transactions and actions on the Cosmos blockchain, showcasing the dynamics of token distribution and validator participation. It provides a comprehensive view of the blockchain's activity over time.",
+      "description": "This table provides a detailed overview of Cosmos blockchain transactions, covering various aspects of token transfers and validator actions. It offers insights into the dynamics of the Cosmos ecosystem.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in the blockchain, indicating the transaction's position in the chain.",
+          "description": "The height of the block in which the transaction was processed.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp of the block, marking the moment when the transactions within it were processed.",
+          "description": "The timestamp when the block was processed.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
-          "description": "A unique hash identifying the transaction, allowing for its retrieval and verification.",
+          "description": "A unique identifier for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
-          "description": "The index of the transaction within the block, specifying its order among other transactions.",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
-          "description": "The index of the message within the transaction, indicating its position among other messages.",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
-          "description": "The index of the action within the message, specifying its order among other actions.",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
-          "description": "The address of the account that initiated the transaction, responsible for the token transfer.",
+          "description": "The public address of the account that initiated the transaction.",
           "type": "STRING"
         },
         {
           "name": "validator",
-          "description": "The validator that participated in the transaction, responsible for verifying and processing the action.",
+          "description": "The public address of the validator that processed the transaction.",
           "type": "STRING"
         },
         {
           "name": "token_amount",
-          "description": "The amount of tokens transferred during the transaction, reflecting the change in token ownership.",
+          "description": "The amount of tokens transferred or exchanged.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom",
-          "description": "The denomination of the token, specifying its type and unit of measurement.",
+          "description": "The denomination of the tokens transferred or exchanged.",
           "type": "STRING"
         },
         {
           "name": "new_shares",
-          "description": "The new amount of shares allocated or modified during the transaction, reflecting changes in token distribution.",
+          "description": "The new amount of tokens held by the sender after the transaction.",
           "type": "FLOAT"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the data was ingested into the system, indicating the freshness of the information.",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "celestia_message_events",
-      "description": "",
+      "description": "This table contains events from blockchains within the Cosmos ecosystem, providing insights into network activity and behavior.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the event was recorded.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "A unique identifier for the transaction containing the event.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
+          "description": "The index of the event within the message.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "The category or type of event that occurred.",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
+          "description": "Additional information about the event, such as sender, recipient, or amount transferred.",
           "type": "JSON"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to ingest the data.",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "celestia_transactions",
-      "description": "",
+      "description": "Cosmos Ecosystem Blockchain Transactions. This table contains information about all transactions occurring across various chains in the Cosmos ecosystem.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The block height at which the transaction was processed.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "The ID of the blockchain on which the transaction occurred.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "A unique identifier for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_info",
+          "description": "Additional information about the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_log_message",
+          "description": "A log message related to the transaction.",
           "type": "STRING"
         },
         {
           "name": "memo",
+          "description": "A memo or note associated with the transaction.",
           "type": "STRING"
         },
         {
           "name": "fee",
+          "description": "The fee paid for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_code",
+          "description": "The transaction code or result.",
           "type": "INTEGER"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within a block.",
           "type": "INTEGER"
         },
         {
           "name": "gas_used",
+          "description": "The amount of gas used during the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "gas_wanted",
+          "description": "The amount of gas requested for the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the transaction was ingested.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to process the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "fee_coins",
+          "description": "The coins used to pay the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "fee_granter",
+          "description": "The account that granted the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "fee_payer",
+          "description": "The account that paid the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "gas_limit",
+          "description": "The maximum amount of gas the transaction was allowed to use.",
           "type": "INTEGER"
         },
         {
           "name": "single_sign_mode",
+          "description": "Whether the transaction was processed in single sign mode.",
           "type": "INTEGER"
         },
         {
           "name": "multi_sign_json",
+          "description": "JSON data related to multi- sign transactions.",
           "type": "STRING"
         },
         {
           "name": "timeout_height",
+          "description": "The block height at which the transaction was timed out.",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "celestia_tx_messages",
-      "description": "",
+      "description": "This table contains a collection of transactions from various blockchains within the Cosmos ecosystem, providing insights into the blockchain activity over time.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "The unique identifier of the blockchain on which the transaction occurred.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "The unique identifier of the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "STRING"
         },
         {
           "name": "message_type",
+          "description": "The type of message within the transaction.",
           "type": "STRING"
         },
         {
           "name": "message",
+          "description": "The actual message within the transaction.",
           "type": "JSON"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to store the transaction data.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction data was ingested into the database.",
           "type": "TIMESTAMP"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created, which includes the transaction.",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "celestia_undelagate",
-      "description": "This table provides a comprehensive overview of blockchain transactions from the Cosmos ecosystem. It contains metadata and financial information related to each transaction.",
+      "description": "This table provides an overview of transactions and actions within the Cosmos ecosystem, offering insights into the blockchain's activity and validation process. It includes key metrics such as block height, transaction hash, and token transfers.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block that contains the transaction.",
+          "description": "The height of the block in which the transaction was recorded.",
           "type": "INTEGER"
         },
         {
@@ -453,12 +509,12 @@
         },
         {
           "name": "sender",
-          "description": "The address of the sender of the transaction.",
+          "description": "The account address that initiated the transaction.",
           "type": "STRING"
         },
         {
           "name": "validator",
-          "description": "The validator who processed the transaction.",
+          "description": "The validator that validated the transaction.",
           "type": "STRING"
         },
         {
@@ -468,110 +524,131 @@
         },
         {
           "name": "token_denom",
-          "description": "The denomination of the tokens transferred during the transaction.",
+          "description": "The denomination of the tokens transferred.",
           "type": "STRING"
         },
         {
           "name": "completion_time",
-          "description": "The timestamp when the transaction was completed.",
+          "description": "The time it took for the transaction to be completed.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the transaction data was ingested.",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "celestia_validators",
-      "description": "",
+      "description": "This table lists the active and inactive validators in the Cosmos ecosystem, providing essential information for validators and users to make informed decisions.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "operator_address",
+          "description": "The address associated with the validator's operator.",
           "type": "STRING"
         },
         {
           "name": "account_address",
+          "description": "The address of the validator, which is used for account management and custody.",
           "type": "STRING"
         },
         {
           "name": "consensus_pubkey",
+          "description": "The public key used by the validator for consensus and vote casting.",
           "type": "STRING"
         },
         {
           "name": "jailed",
+          "description": "A flag indicating whether the validator is currently jailed, meaning it is temporarily unable to participate in the network.",
           "type": "BOOLEAN"
         },
         {
           "name": "status",
+          "description": "The current status of the validator, including active, unbonding, or jailed.",
           "type": "STRING"
         },
         {
           "name": "tokens",
+          "description": "The total amount of tokens staked by the validator.",
           "type": "STRING"
         },
         {
           "name": "moniker",
+          "description": "The human- readable name or identifier for the validator.",
           "type": "STRING"
         },
         {
           "name": "identity",
+          "description": "The identity key of the validator, used for key management and verification.",
           "type": "STRING"
         },
         {
           "name": "website",
+          "description": "The validator's official website or contact information.",
           "type": "STRING"
         },
         {
           "name": "security_contact",
+          "description": "The contact information for the validator's security team.",
           "type": "STRING"
         },
         {
           "name": "details",
+          "description": "Additional details or notes about the validator.",
           "type": "STRING"
         },
         {
           "name": "unbonding_height",
+          "description": "The block height at which the validator's unbonding period begins.",
           "type": "INTEGER"
         },
         {
           "name": "unbonding_time",
+          "description": "The duration of the validator's unbonding period.",
           "type": "DATETIME"
         },
         {
           "name": "commission_rate",
+          "description": "The current commission rate charged by the validator.",
           "type": "FLOAT"
         },
         {
           "name": "commission_max_rate",
+          "description": "The maximum commission rate that the validator can charge.",
           "type": "FLOAT"
         },
         {
           "name": "commission_max_change_rate",
+          "description": "The rate at which the validator's commission rate can change.",
           "type": "FLOAT"
         },
         {
           "name": "commission_update_time",
+          "description": "The block height at which the validator's commission rate was last updated.",
           "type": "DATETIME"
         },
         {
           "name": "min_self_delegation",
+          "description": "The minimum amount of tokens that validators must self-delegate.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "snapshot_height",
+          "description": "The block height at which the validator's snapshot was taken.",
           "type": "INTEGER"
         },
         {
           "name": "snapshot_time",
+          "description": "The timestamp at which the validator's snapshot was taken.",
           "type": "DATETIME"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the validator's data was ingested and recorded.",
           "type": "TIMESTAMP"
         }
       ]
