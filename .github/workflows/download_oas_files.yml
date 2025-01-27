@@ -83,10 +83,10 @@ jobs:
         uses: peter-evans/create-pull-request@v7
         id: cpr
         with:
-          commit-message: "chore: update table metadata"
-          title: "chore: update table metadata"
-          body: "updated table definitions from BigQuery"
-          branch: "${{ steps.date.outputs.date }}-chore-codegen-update-metadata"
+          commit-message: "chore: update oas definitions"
+          title: "chore: update oas definitions"
+          body: "updated oas definitions"
+          branch: "${{ steps.date.outputs.date }}-chore-codegen-update-oas"
           base: main
 
       - name: Enable Pull Request Automerge
