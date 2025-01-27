@@ -110,7 +110,7 @@
         },
         "operationId": "get_liquidity_liquidity_flow",
         "summary": "Get liquidity liquidity flow",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/liquidity/flow_by_market": {
@@ -198,7 +198,7 @@
         },
         "operationId": "get_liquidity_flow_by_market",
         "summary": "Get liquidity flow by market",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/superfluid/superfluid_flow": {
@@ -278,7 +278,7 @@
         },
         "operationId": "get_superfluid_superfluid_flow",
         "summary": "Get superfluid superfluid flow",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/staking/superfluid/flow_by_market": {
@@ -358,7 +358,7 @@
         },
         "operationId": "get_staking_superfluid_flow_by_market",
         "summary": "Get staking superfluid flow by market",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     }
   }

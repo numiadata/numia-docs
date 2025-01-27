@@ -27,7 +27,7 @@ fs.readdir(openAPIDir, (err, files) => {
             for (const method in paths[route]) {
               const operation = paths[route][method];
               const xCredit = operation["x-credit"] || 1;
-              const priceTag = `import PriceTag from "@site/src/components/PriceTag";\n<PriceTag price={${xCredit}}>`;
+              const priceTag = `import PriceTag from "@site/src/components/PriceTag";\n\n<PriceTag price={${xCredit}}/>`;
 
               if (operation.description) {
                 if (!operation.description.includes("<PriceTag")) {

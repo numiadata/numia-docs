@@ -7,7 +7,8 @@
   background-color: transparent;
   font-weight: 600;
   float: left;
-  top: -228px;
+  top: -140px;
+  /* top: -228px; */
   border: 1px solid #a5a5a5;
   border-radius: 34px;
   height: 20px;
@@ -15,33 +16,33 @@
   cursor: pointer;
 }
 
+@media (max-width: 1293px) {
+  .priceTag {
+    top: -182px;
+  }
+}
+
 @media (max-width: 996px) {
   .priceTag {
-    top: -186px;
+    top: -140px;
   }
 }
 
-@media (max-width: 713px) {
+@media (max-width: 595px) {
   .priceTag {
-    top: -230px;
+    top: -182px;
   }
 }
 
-@media (max-width: 402px) {
+@media (max-width: 347px) {
   .priceTag {
-    top: -256px;
+    top: -226px;
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 273px) {
   .priceTag {
-    top: -296px;
-  }
-}
-
-@media (max-width: 291px) {
-  .priceTag {
-    top: -336px;
+    top: -266px;
   }
 }
 

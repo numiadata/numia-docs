@@ -76,7 +76,7 @@
           }
         },
         "summary": "Get Quasar Tvl",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/vaults/{vaultAddress}/info": {
@@ -500,7 +500,7 @@
           }
         },
         "summary": "Get Vault Info",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/vaults/{vaultAddress}/balances/{userAddress}/now": {
@@ -680,7 +680,7 @@
           }
         },
         "summary": "Get User Vault Balance",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/vaults/{vaultAddress}/balances/{userAddress}/over-time": {
@@ -761,7 +761,7 @@
           }
         },
         "summary": "Get User Vault Balance Over Time",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/tvl-over-time": {
@@ -824,7 +824,7 @@
           }
         },
         "summary": "Get All Vaults Tvl Over Time",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/vaults/{vault}/tvl": {
@@ -932,7 +932,7 @@
           }
         },
         "summary": "Get Vault Tvl",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/vaults/{vault}/apy-over-time": {
@@ -1032,7 +1032,7 @@
           }
         },
         "summary": "Get Vault Apy Over Time",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/txs/address/{address}/vault/{vault}": {
@@ -1187,7 +1187,7 @@
           }
         },
         "summary": "Get Transactions By Address And Vault",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/revenue": {
@@ -1230,7 +1230,7 @@
           }
         },
         "summary": "Get Quasar Revenue",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults": {
@@ -1283,7 +1283,7 @@
           }
         },
         "summary": "Get Vaults List",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/cl_vaults": {
@@ -1336,7 +1336,7 @@
           }
         },
         "summary": "Get CLVaults List",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vault_positions": {
@@ -1564,7 +1564,7 @@
           }
         },
         "summary": "Get Vault Positions",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vault_historical_positions": {
@@ -1715,7 +1715,7 @@
           }
         },
         "summary": "Get Vault Historical Positions",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults_accrued_rewards": {
@@ -1743,7 +1743,7 @@
           }
         },
         "summary": "Get Vaults Accrued Rewards",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults_pool_incentives": {
@@ -1771,7 +1771,7 @@
           }
         },
         "summary": "Get Vaults Pool Incentives",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults_impermanent_loss": {
@@ -1841,7 +1841,7 @@
           }
         },
         "summary": "Get Vaults Impermanent Loss",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults_balancing_slippage": {
@@ -1948,7 +1948,7 @@
           }
         },
         "summary": "Get Vaults Balancing Slippage",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults_positions_liquidity_distribution": {
@@ -1976,7 +1976,7 @@
           }
         },
         "summary": "Get Vaults Positions Liquidity Distribution",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults_depositors_metrics": {
@@ -2036,7 +2036,7 @@
           }
         },
         "summary": "Get Vaults Depositors Metrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults_depositors_over_time": {
@@ -2119,7 +2119,7 @@
           }
         },
         "summary": "Get Vaults Depositors Over Time",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vault_depositors_rolling_growth": {
@@ -2202,7 +2202,7 @@
           }
         },
         "summary": "Get Vaults Depositors Rolling Growth",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/tokenomics/supply_metrics": {
@@ -2301,7 +2301,7 @@
           }
         },
         "summary": "Get Tokenomics Supply Metrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults_liquidity_flow": {
@@ -2391,7 +2391,7 @@
           }
         },
         "summary": "Get Vaults Liquidity Flow",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/average_position_over_time": {
@@ -2461,7 +2461,7 @@
           }
         },
         "summary": "Get Average Position",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults_depositors_top_10": {
@@ -2513,7 +2513,7 @@
           }
         },
         "summary": "Get Vaults Depositors Top10",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vault_vs_pool_performance": {
@@ -2611,7 +2611,7 @@
           }
         },
         "summary": "Get Vault Vs Pool Performance",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/dashboard/vaults_avg_tvl": {
@@ -2673,7 +2673,7 @@
           }
         },
         "summary": "Get Vaults Avg TVL",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/points/campaigns": {
@@ -2711,7 +2711,7 @@
           }
         },
         "summary": "Get Point Campaigns",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       },
       "post": {
         "operationId": "createPointCampaigns",
@@ -2821,7 +2821,7 @@
           }
         },
         "summary": "Create Point Campaigns",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/points/campaigns/{snapshot_campaign_id}": {
@@ -2937,7 +2937,7 @@
           }
         },
         "summary": "Update Point Campaigns",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       },
       "delete": {
         "operationId": "deletePointCampaigns",
@@ -2973,7 +2973,7 @@
           }
         },
         "summary": "Delete Point Campaigns",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/points/users/top": {
@@ -3038,7 +3038,7 @@
           }
         },
         "summary": "Get Points Per User Top",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/points/users/{user_address}": {
@@ -3127,7 +3127,7 @@
           }
         },
         "summary": "Get Points Per User",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/points/validators": {
@@ -3177,7 +3177,7 @@
           }
         },
         "summary": "Get Points Per Validator",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/quasar/points/vaults": {
@@ -3241,7 +3241,7 @@
           }
         },
         "summary": "Get Points Per Vault",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n<PriceTag price={1}>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     }
   }
