@@ -1,6 +1,8 @@
 import fs from "fs";
 import path from "path";
 import { OpenAPIV3 } from "openapi-types";
+import { addCreditsToDescription } from "./oas-transforms/add-credits-to-description";
+import { removePrivateEndpoints } from "./oas-transforms/remove-private-endpoints";
 
 const openAPIDir = path.join(__dirname, "../../openAPI");
 
@@ -24,28 +26,11 @@ fs.readdir(openAPIDir, (err, files) => {
             data
           ) as OpenAPIV3.Document;
           const paths = openAPISpec.paths;
-          let updated = false;
 
-          for (const route in paths) {
-            for (const method in paths[route]) {
-              const operation = paths[route][method];
+          const updatedCredits = addCreditsToDescription(paths);
+          const updatedPrivate = removePrivateEndpoints(paths);
 
-              const xCredit = operation["x-credit"] || 1;
-              const priceTag = `import PriceTag from "@site/src/components/PriceTag";\n\n<PriceTag price={${xCredit}}/>`;
-
-              if (operation.description) {
-                if (!operation.description.includes("<PriceTag")) {
-                  updated = true;
-                  operation.description += `\n\n${priceTag}`;
-                }
-              } else {
-                updated = true;
-                operation.description = priceTag;
-              }
-            }
-          }
-
-          if (updated) {
+          if (updatedCredits || updatedPrivate) {
             fs.writeFile(
               filePath,
               JSON.stringify(openAPISpec, null, 2),
