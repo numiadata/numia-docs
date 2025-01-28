@@ -1,0 +1,19 @@
+name: Run CI checks
+
+on:
+  push:
+
+jobs:
+  CI:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Setup bun
+        uses: ./.github/actions/setup
+
+      - name: Run checks on OAS files
+        run: bun run src/check.ts
+        working-directory: scripts
