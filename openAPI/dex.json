@@ -1310,7 +1310,9 @@
           }
         ],
         "operationId": "getIBcChainStatus",
+        "summary": "Get IBC Chain Status",
         "tags": [],
+        "deprecated": true,
         "parameters": [
           {
             "schema": {
@@ -1368,7 +1370,6 @@
             }
           }
         },
-        "summary": "Get IBc Chain Status",
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
@@ -1428,6 +1429,7 @@
     "/apr": {
       "get": {
         "operationId": "getApr",
+        "summary": "Get staking APR",
         "tags": [],
         "servers": [
           {
@@ -1502,13 +1504,13 @@
             }
           }
         },
-        "summary": "Get Apr",
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/pools_apr": {
       "get": {
         "operationId": "getPoolsApr",
+        "summary": "Get Pools APR",
         "tags": [],
         "servers": [
           {
@@ -1531,13 +1533,13 @@
             }
           }
         },
-        "summary": "Get Pools Apr",
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/pools_apr_range": {
       "get": {
         "operationId": "getPoolsAprRange",
+        "summary": "Get Pools APR Range",
         "tags": [],
         "servers": [
           {
@@ -1560,7 +1562,6 @@
             }
           }
         },
-        "summary": "Get Pools Apr Range",
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
@@ -1575,6 +1576,7 @@
           }
         ],
         "operationId": "getClPoolsPositionApr",
+        "summary": "Get CL Pools Position APR",
         "tags": [],
         "parameters": [
           {
@@ -1622,7 +1624,6 @@
             }
           }
         },
-        "summary": "Get Cl Pools Position Apr",
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
@@ -1881,128 +1882,6 @@
           }
         },
         "summary": "Get Closed Limit Orders History",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
-      }
-    },
-    "/pairs/v1/summary": {
-      "get": {
-        "servers": [
-          {
-            "url": "https://osmosis.numia.xyz"
-          },
-          {
-            "url": "https://osmosis-testnet.numia.xyz"
-          }
-        ],
-        "operationId": "getPairsSummaryV1",
-        "tags": [],
-        "responses": {
-          "200": {
-            "description": "Status: 200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "pool_address": {
-                            "type": "string",
-                            "description": "Pool address"
-                          },
-                          "pool_id": {
-                            "type": "string",
-                            "description": "Pool id"
-                          },
-                          "base_name": {
-                            "type": "string",
-                            "description": "Name of the base asset"
-                          },
-                          "base_symbol": {
-                            "type": "string",
-                            "description": "Symbol of the base asset"
-                          },
-                          "base_address": {
-                            "type": "string",
-                            "description": "Denom of the base asset"
-                          },
-                          "quote_name": {
-                            "type": "string",
-                            "description": "Name of the quote asset"
-                          },
-                          "quote_symbol": {
-                            "type": "string",
-                            "description": "Symbol of the quote asset"
-                          },
-                          "quote_address": {
-                            "type": "string",
-                            "description": "Denom of the quote asset"
-                          },
-                          "price": {
-                            "type": "number",
-                            "description": "Price of the pair inside the pool"
-                          },
-                          "base_volume_24h": {
-                            "type": "number",
-                            "description": "Total amount of base asset swapped in the pool in the last 24 hours"
-                          },
-                          "quote_volume_24h": {
-                            "type": "number",
-                            "description": "Total amount of quote asset swapped in the pool in the last 24 hours"
-                          },
-                          "volume_24h": {
-                            "type": "number",
-                            "description": "Total amount of USD swapped in the pool in the last 24 hours"
-                          },
-                          "volume_7d": {
-                            "type": "number",
-                            "description": "Total amount of USD swapped in the pool in the last 7 days"
-                          },
-                          "liquidity": {
-                            "type": "number",
-                            "description": "Total value locked in USD in the pool"
-                          },
-                          "liquidity_atom": {
-                            "type": "number",
-                            "description": "Total value locked in ATOM in the pool"
-                          }
-                        },
-                        "required": [
-                          "pool_address",
-                          "pool_id",
-                          "base_name",
-                          "base_symbol",
-                          "base_address",
-                          "quote_name",
-                          "quote_symbol",
-                          "quote_address",
-                          "price",
-                          "base_volume_24h",
-                          "quote_volume_24h",
-                          "volume_24h",
-                          "volume_7d",
-                          "liquidity",
-                          "liquidity_atom"
-                        ]
-                      }
-                    },
-                    "last_update_at": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "data",
-                    "last_update_at"
-                  ]
-                }
-              }
-            }
-          }
-        },
-        "summary": "Get Pairs Summary V1",
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
