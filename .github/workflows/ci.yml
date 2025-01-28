@@ -1,4 +1,4 @@
-name: Download OpenAPI Files and Update Config
+name: Run CI checks
 
 on:
   push:
