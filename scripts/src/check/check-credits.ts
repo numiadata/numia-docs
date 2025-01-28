@@ -3,6 +3,7 @@ import path from "path";
 
 import { OpenAPIV3 } from "openapi-types";
 import assert from "assert";
+import { getAttributes } from "../openapi-util";
 
 export function verifyCreditsInDescription(
   openAPI: OpenAPIV3.Document,
@@ -11,9 +12,7 @@ export function verifyCreditsInDescription(
 ): boolean {
   const operation = openAPI.paths?.[route]?.[method];
   assert(operation, `operation not found: ${route} ${method}`);
-  const attributes = (operation as any).attributes as
-    | undefined
-    | Record<string, string>;
+  const attributes = getAttributes(operation);
   const xCredit = attributes?.["x-credits"] || 1;
   const expectedPriceTag = `<PriceTag price={${xCredit}}/>`;
 
