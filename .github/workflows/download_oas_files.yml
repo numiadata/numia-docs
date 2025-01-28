@@ -60,7 +60,8 @@ jobs:
           mv tmp_config.json "$config_file"
 
       - name: Validate and Add Missing Responses to OAS Files
-        run: node scripts/oasFiles/fixOasProperties.js
+        run: bun run oasFiles/fixOasProperties.js
+        working-directory: scripts
 
       - name: Transform OAS files
         run: bun run src/transform-oas.ts
@@ -77,7 +78,8 @@ jobs:
         run: writedocs api
 
       - name: Generate sidebar and add it to config.json
-        run: node scripts/oasFiles/oasFilesAutomation.js
+        run: bun run oasFiles/oasFilesAutomation.js
+        working-directory: scripts
 
       - name: Get current date
         id: date
