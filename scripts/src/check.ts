@@ -1,20 +1,27 @@
 import path from "path";
 import fs from "fs";
 
-import { verifyCreditsInDescription } from "./check/check-credits";
+import {
+  verifyCreditsInDescription,
+  verifyAllCreditsInDirectory,
+} from "./check/check-credits";
 import { verifyNoPrivateEndpoints } from "./check/check-private";
+import { OpenAPIV3 } from "openapi-types";
 
 /**
  * Check Credits in Description
  */
 const filePath = path.join(__dirname, "../../openAPI/dex.json");
+const fileContent = fs.readFileSync(filePath, "utf-8");
+const dexFile = JSON.parse(fileContent) as OpenAPIV3.Document;
 verifyCreditsInDescription(
-  filePath,
+  dexFile,
   "/pairs/v1/historical/{pool_id}/chart",
-  "get"
+  OpenAPIV3.HttpMethods.GET
 );
 
-// Load the OpenAPI specification
-const openAPIContent = fs.readFileSync(filePath, "utf-8");
-const openAPI = JSON.parse(openAPIContent);
-verifyNoPrivateEndpoints(openAPI.paths);
+// Check credits in all files in the openAPI directory
+const openAPIDirectoryPath = path.join(__dirname, "../../openAPI");
+verifyAllCreditsInDirectory(openAPIDirectoryPath);
+
+verifyNoPrivateEndpoints(dexFile.paths);

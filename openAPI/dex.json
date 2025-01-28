@@ -119,7 +119,7 @@
           }
         },
         "summary": "Get Token Pair Historical Chart",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>"
       }
     },
     "/tokens/v2/historical/{asset}/chart": {
