@@ -37,11 +37,17 @@ export function verifyAllCreditsInDirectory(directoryPath: string): void {
   files.forEach((file) => {
     const filePath = path.join(directoryPath, file);
     const fileContent = fs.readFileSync(filePath, "utf-8");
-    const openAPI = JSON.parse(fileContent) as OpenAPI;
+    const openAPI = JSON.parse(fileContent) as OpenAPIV3.Document;
 
-    Object.keys(openAPI.paths).forEach((route) => {
-      Object.keys(openAPI.paths[route]).forEach((method) => {
-        verifyCreditsInDescription(openAPI, route, method);
+    Object.keys(openAPI.paths).forEach((routeName) => {
+      const route = openAPI.paths[routeName];
+      assert(route, `route not found: ${routeName}`);
+      Object.keys(route).forEach((method) => {
+        verifyCreditsInDescription(
+          openAPI,
+          routeName,
+          method as OpenAPIV3.HttpMethods
+        );
       });
     });
   });
