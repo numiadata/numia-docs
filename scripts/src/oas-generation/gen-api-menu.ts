@@ -4,6 +4,8 @@ import { apiConfig } from "../api-config";
 import { capitalize, kebabCase } from "es-toolkit";
 import type { OpenAPIV3 } from "openapi-types";
 import { OAS_ROOT_DIR } from "./download-oas";
+import { getAttributes } from "../openapi-util";
+import assert from "assert";
 
 const REPOSITORY_ROOT = path.join(__dirname, "../../../");
 const CONFIG_FILE_PATH = path.join(REPOSITORY_ROOT, "config.json");
@@ -148,20 +150,27 @@ function generateSidebars(): any {
       operationIdToFile[operationId] = `reference/${folderName}/${file}`;
     });
 
-    Object.entries(openApi.paths || {}).forEach(([_, methods]) => {
-      if (!methods) return;
-      Object.values(methods).forEach((method: any) => {
-        const operationId = kebabCase(method.operationId);
+    const paths = openApi.paths;
+    for (const route in paths) {
+      for (const method in paths[route]) {
+        const httpMethod = method as OpenAPIV3.HttpMethods;
+        const operation = paths[route][httpMethod];
+
+        const operationId = operation?.operationId;
+        assert(operationId, `operationId not found: ${route} ${httpMethod}`);
+
+        const attributes = getAttributes(operation);
 
         if (operationId && operationIdToFile[operationId]) {
           const pagePath = operationIdToFile[operationId];
-          const tag = method.tags?.[0] || "_untagged";
+          const sidebar = attributes?.["x-sidebar"];
+          const tag = typeof sidebar === "string" ? sidebar : "_untagged";
 
           if (!groupedPages[tag]) groupedPages[tag] = [];
           groupedPages[tag].push(pagePath);
         }
-      });
-    });
+      }
+    }
 
     Object.keys(operationIdToFile).forEach((operationId) => {
       const pagePath = operationIdToFile[operationId];

@@ -23,7 +23,7 @@ async function downloadOasFiles() {
       const response = await fetch(apiSection.oasFile);
       const body = await response.json();
       writeFileSync(
-        Path.join(OAS_ROOT_DIR, `${apiSection.oasFile}.json`),
+        Path.join(OAS_ROOT_DIR, `${apiSection.name}.json`),
         JSON.stringify(body, null, 2)
       );
     })

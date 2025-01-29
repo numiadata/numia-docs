@@ -16,6 +16,12 @@ export const apiConfig: ApiSection[] = [
     oasFile: "https://api-docs.numia.xyz/osmosis/openapi.json",
     title: "Osmosis",
   },
+  {
+    name: "osmosis-lenses",
+    categoryName: "Advanced APIs",
+    oasFile: "https://api-docs.numia.xyz/lenses/osmosis/openapi.json",
+    title: "Osmosis Analytics",
+  },
   //   {
   //     name: "engage-ads",
   //     categoryName: "Advanced APIs",
@@ -49,17 +55,7 @@ export const apiConfig: ApiSection[] = [
   //     ],
   //     title: "Analytics",
   //   },
-  //   {
-  //     name: "osmosis-lenses",
-  //     categoryName: "Advanced APIs",
-  //     oasFiles: [
-  //       {
-  //         name: "osmosis-lenses",
-  //         url: "https://api-docs.numia.xyz/lenses/osmosis/openapi.json",
-  //       },
-  //     ],
-  //     title: "Analytics",
-  //   },
+
   //   {
   //     name: "dydx-lenses",
   //     categoryName: "Advanced APIs",
