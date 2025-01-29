@@ -4,13 +4,8 @@ export type ApiSection = {
   title: string;
   categoryName: "Advanced APIs" | "Tools";
   name: string;
-  oasFiles: OasFile[];
+  oasFile: string;
 };
-
-interface OasFile {
-  name: string;
-  url: string;
-}
 
 export const REPOSITORY_ROOT = path.join(__dirname, "../../");
 
@@ -18,16 +13,7 @@ export const apiConfig: ApiSection[] = [
   {
     name: "osmosis",
     categoryName: "Advanced APIs",
-    oasFiles: [
-      {
-        name: "osmosis",
-        url: "https://api-docs.numia.xyz/osmosis/openapi.json",
-      },
-      {
-        name: "osmosis-lenses",
-        url: "https://api-docs.numia.xyz/lenses/osmosis/openapi.json",
-      },
-    ],
+    oasFile: "https://api-docs.numia.xyz/osmosis/openapi.json",
     title: "Osmosis",
   },
   //   {

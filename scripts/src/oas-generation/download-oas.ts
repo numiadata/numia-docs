@@ -19,26 +19,19 @@ function cleanOasDir() {
 
 async function downloadOasFiles() {
   return await Promise.all(
-    apiConfig.map(
-      async (apiSection) =>
-        await Promise.all(
-          apiSection.oasFiles.map(async (oasFile) => {
-            const response = await fetch(oasFile.url);
-            const body = await response.json();
-            writeFileSync(
-              Path.join(OAS_ROOT_DIR, `${oasFile.name}.json`),
-              JSON.stringify(body, null, 2)
-            );
-          })
-        )
-    )
+    apiConfig.map(async (apiSection) => {
+      const response = await fetch(apiSection.oasFile);
+      const body = await response.json();
+      writeFileSync(
+        Path.join(OAS_ROOT_DIR, `${apiSection.oasFile}.json`),
+        JSON.stringify(body, null, 2)
+      );
+    })
   );
 }
 
 function updateApiFilesInConfig() {
   const config = JSON.parse(readFileSync(CONFIG_FILE_PATH, "utf-8"));
-  config.apiFiles = apiConfig.flatMap((c) =>
-    c.oasFiles.map((f) => `${f.name}.json`)
-  );
+  config.apiFiles = apiConfig.flatMap((c) => `${c.name}.json`);
   writeFileSync(CONFIG_FILE_PATH, JSON.stringify(config, null, 2));
 }
