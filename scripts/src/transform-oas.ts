@@ -32,7 +32,7 @@ fs.readdir(openAPIDir, (err, files) => {
           const updatedPrivate = removePrivateEndpoints(paths);
           const withDefaultValues = addDefaultValues(paths);
 
-          if (updatedCredits || updatedPrivate) {
+          if (updatedCredits || updatedPrivate || withDefaultValues) {
             fs.writeFile(
               filePath,
               JSON.stringify(openAPISpec, null, 2),

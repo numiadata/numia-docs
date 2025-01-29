@@ -11,7 +11,7 @@ import { OpenAPIV3 } from "openapi-types";
 /**
  * Check Credits in Description
  */
-const filePath = path.join(__dirname, "../../openAPI/dex.json");
+const filePath = path.join(__dirname, "../../openAPI/osmosis.json");
 const fileContent = fs.readFileSync(filePath, "utf-8");
 const dexFile = JSON.parse(fileContent) as OpenAPIV3.Document;
 verifyCreditsInDescription(
