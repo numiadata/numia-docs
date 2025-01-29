@@ -74,9 +74,7 @@
               }
             }
           }
-        },
-        "summary": "Get Quasar Tvl",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/vaults/{vaultAddress}/info": {
@@ -498,9 +496,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vault Info",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/vaults/{vaultAddress}/balances/{userAddress}/now": {
@@ -678,9 +674,7 @@
               }
             }
           }
-        },
-        "summary": "Get User Vault Balance",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/vaults/{vaultAddress}/balances/{userAddress}/over-time": {
@@ -759,9 +753,7 @@
               }
             }
           }
-        },
-        "summary": "Get User Vault Balance Over Time",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/tvl-over-time": {
@@ -822,9 +814,7 @@
               }
             }
           }
-        },
-        "summary": "Get All Vaults Tvl Over Time",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/vaults/{vault}/tvl": {
@@ -930,9 +920,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vault Tvl",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/vaults/{vault}/apy-over-time": {
@@ -1030,9 +1018,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vault Apy Over Time",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/txs/address/{address}/vault/{vault}": {
@@ -1185,9 +1171,7 @@
               }
             }
           }
-        },
-        "summary": "Get Transactions By Address And Vault",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/revenue": {
@@ -1216,21 +1200,7 @@
             "in": "query"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "summary": "Get Quasar Revenue",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "responses": {}
       }
     },
     "/dashboard/vaults": {
@@ -1281,9 +1251,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vaults List",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/cl_vaults": {
@@ -1334,9 +1302,7 @@
               }
             }
           }
-        },
-        "summary": "Get CLVaults List",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vault_positions": {
@@ -1562,9 +1528,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vault Positions",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vault_historical_positions": {
@@ -1713,9 +1677,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vault Historical Positions",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vaults_accrued_rewards": {
@@ -1729,21 +1691,7 @@
         "tags": [
           "dashboard"
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "summary": "Get Vaults Accrued Rewards",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "responses": {}
       }
     },
     "/dashboard/vaults_pool_incentives": {
@@ -1757,21 +1705,7 @@
         "tags": [
           "dashboard"
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "summary": "Get Vaults Pool Incentives",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "responses": {}
       }
     },
     "/dashboard/vaults_impermanent_loss": {
@@ -1839,9 +1773,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vaults Impermanent Loss",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vaults_balancing_slippage": {
@@ -1946,9 +1878,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vaults Balancing Slippage",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vaults_positions_liquidity_distribution": {
@@ -1962,21 +1892,7 @@
         "tags": [
           "dashboard"
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "summary": "Get Vaults Positions Liquidity Distribution",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "responses": {}
       }
     },
     "/dashboard/vaults_depositors_metrics": {
@@ -2034,9 +1950,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vaults Depositors Metrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vaults_depositors_over_time": {
@@ -2117,9 +2031,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vaults Depositors Over Time",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vault_depositors_rolling_growth": {
@@ -2200,9 +2112,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vaults Depositors Rolling Growth",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/tokenomics/supply_metrics": {
@@ -2299,9 +2209,7 @@
               }
             }
           }
-        },
-        "summary": "Get Tokenomics Supply Metrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vaults_liquidity_flow": {
@@ -2389,9 +2297,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vaults Liquidity Flow",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/average_position_over_time": {
@@ -2459,9 +2365,7 @@
               }
             }
           }
-        },
-        "summary": "Get Average Position",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vaults_depositors_top_10": {
@@ -2511,9 +2415,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vaults Depositors Top10",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vault_vs_pool_performance": {
@@ -2609,9 +2511,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vault Vs Pool Performance",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/dashboard/vaults_avg_tvl": {
@@ -2671,9 +2571,7 @@
               }
             }
           }
-        },
-        "summary": "Get Vaults Avg TVL",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/points/campaigns": {
@@ -2697,24 +2595,214 @@
             "in": "query"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
+        "responses": {}
+      },
+      "post": {
+        "operationId": "createPointCampaigns",
+        "tags": [
+          "point_campaigns"
+        ],
+        "private": true,
+        "servers": [
+          {
+            "url": "https://quasar.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-private": true
+        },
+        "requestBody": {
+          "content": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "start_date": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "description": "Date in the format YYYY-MM-DD"
+                  },
+                  "end_date": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "description": "Date in the format YYYY-MM-DD"
+                  },
+                  "multiplier": {
+                    "type": "number",
+                    "default": 1
+                  },
+                  "params": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "vault": {
+                            "type": "string"
+                          },
+                          "unit_of_liquidity": {
+                            "type": "number"
+                          },
+                          "application": {
+                            "type": "string",
+                            "enum": [
+                              "osmo_vault_balance",
+                              "evm_vault_balance"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "vault",
+                          "unit_of_liquidity",
+                          "application"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "vault": {
+                            "type": "string"
+                          },
+                          "pool": {
+                            "type": "string"
+                          },
+                          "unit_of_liquidity": {
+                            "type": "number"
+                          },
+                          "application": {
+                            "type": "string",
+                            "enum": [
+                              "uniswap_lp_balance"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "vault",
+                          "pool",
+                          "unit_of_liquidity",
+                          "application"
+                        ]
+                      }
+                    ]
+                  }
+                },
+                "required": [
+                  "start_date",
+                  "end_date",
+                  "multiplier",
+                  "params"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {}
+      }
+    },
+    "/quasar/points/campaigns/{snapshot_campaign_id}": {
+      "post": {
+        "operationId": "updatePointCampaigns",
+        "tags": [
+          "point_campaigns"
+        ],
+        "private": true,
+        "servers": [
+          {
+            "url": "https://quasar.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-private": true
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "snapshot_campaign_id",
+            "in": "path"
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "start_date": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "description": "Date in the format YYYY-MM-DD"
+                  },
+                  "end_date": {
+                    "type": "string",
+                    "pattern": "^\\d{4}-\\d{2}-\\d{2}$",
+                    "description": "Date in the format YYYY-MM-DD"
+                  },
+                  "multiplier": {
+                    "type": "number",
+                    "default": 1
+                  },
+                  "params": {
+                    "oneOf": [
+                      {
+                        "type": "object",
+                        "properties": {
+                          "vault": {
+                            "type": "string"
+                          },
+                          "unit_of_liquidity": {
+                            "type": "number"
+                          },
+                          "application": {
+                            "type": "string",
+                            "enum": [
+                              "osmo_vault_balance",
+                              "evm_vault_balance"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "vault",
+                          "unit_of_liquidity",
+                          "application"
+                        ]
+                      },
+                      {
+                        "type": "object",
+                        "properties": {
+                          "vault": {
+                            "type": "string"
+                          },
+                          "pool": {
+                            "type": "string"
+                          },
+                          "unit_of_liquidity": {
+                            "type": "number"
+                          },
+                          "application": {
+                            "type": "string",
+                            "enum": [
+                              "uniswap_lp_balance"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "vault",
+                          "pool",
+                          "unit_of_liquidity",
+                          "application"
+                        ]
+                      }
+                    ]
+                  }
                 }
               }
             }
           }
         },
-        "summary": "Get Point Campaigns",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
-      }
-    },
-    "/quasar/points/campaigns/{snapshot_campaign_id}": {
+        "responses": {}
+      },
       "delete": {
         "operationId": "deletePointCampaigns",
         "tags": [
@@ -2735,21 +2823,7 @@
             "in": "path"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "summary": "Delete Point Campaigns",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "responses": {}
       }
     },
     "/quasar/points/users/top": {
@@ -2812,9 +2886,7 @@
               }
             }
           }
-        },
-        "summary": "Get Points Per User Top",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/points/users/{user_address}": {
@@ -2901,9 +2973,7 @@
               }
             }
           }
-        },
-        "summary": "Get Points Per User",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/points/validators": {
@@ -2951,9 +3021,7 @@
               }
             }
           }
-        },
-        "summary": "Get Points Per Validator",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/quasar/points/vaults": {
@@ -3015,9 +3083,7 @@
               }
             }
           }
-        },
-        "summary": "Get Points Per Vault",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     }
   }

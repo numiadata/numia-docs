@@ -32,6 +32,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getOrderbookSlippage",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -110,10 +112,7 @@
               }
             }
           }
-        },
-        "operationId": "get_market_orderbook_slippage",
-        "summary": "Get market orderbook slippage",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/market/orderbook/depth": {
@@ -123,6 +122,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getOrderbookDepth",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -201,10 +202,7 @@
               }
             }
           }
-        },
-        "operationId": "get_market_orderbook_depth",
-        "summary": "Get market orderbook depth",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/market/positions/duration_metrics": {
@@ -214,6 +212,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getPositionsDurationMetrics",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -258,10 +258,7 @@
               }
             }
           }
-        },
-        "operationId": "get_market_positions_duration_metrics",
-        "summary": "Get market positions duration metrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/market/positions/long_short_ratio": {
@@ -271,6 +268,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getPositionsLongShortRatio",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -349,10 +348,7 @@
               }
             }
           }
-        },
-        "operationId": "get_market_positions_long_short_ratio",
-        "summary": "Get market positions long short ratio",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/market/leverage": {
@@ -362,6 +358,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getMarketsLeverage",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -443,10 +441,7 @@
               }
             }
           }
-        },
-        "operationId": "get_market_leverage",
-        "summary": "Get market leverage",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/market/price": {
@@ -456,6 +451,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getMarketsPrice",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -530,10 +527,7 @@
               }
             }
           }
-        },
-        "operationId": "get_market_price",
-        "summary": "Get market price",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/market/collateral": {
@@ -543,6 +537,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getMarketsCollateral",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -624,10 +620,86 @@
               }
             }
           }
-        },
-        "operationId": "get_market_collateral",
-        "summary": "Get market collateral",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
+      }
+    },
+    "/megavault/flow": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getMegavaultFlow",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "total_inflow": {
+                        "type": "number"
+                      },
+                      "top_inflow": {
+                        "type": "number"
+                      },
+                      "top_inflow_tx_id": {
+                        "type": "string"
+                      },
+                      "total_outflow": {
+                        "type": "number"
+                      },
+                      "top_outflow": {
+                        "type": "number"
+                      },
+                      "top_outflow_tx_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "total_inflow",
+                      "top_inflow",
+                      "top_inflow_tx_id",
+                      "total_outflow",
+                      "top_outflow",
+                      "top_outflow_tx_id"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

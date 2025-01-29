@@ -32,6 +32,8 @@
             "url": "https://osmosis.numia.xyz"
           }
         ],
+        "operationId": "getLiquidityFlow",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -107,10 +109,7 @@
               }
             }
           }
-        },
-        "operationId": "get_liquidity_liquidity_flow",
-        "summary": "Get liquidity liquidity flow",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/liquidity/flow_by_market": {
@@ -120,6 +119,8 @@
             "url": "https://osmosis.numia.xyz"
           }
         ],
+        "operationId": "getLiquidityFlowByMarket",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -195,10 +196,7 @@
               }
             }
           }
-        },
-        "operationId": "get_liquidity_flow_by_market",
-        "summary": "Get liquidity flow by market",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/superfluid/superfluid_flow": {
@@ -208,6 +206,8 @@
             "url": "https://osmosis.numia.xyz"
           }
         ],
+        "operationId": "getSuperfluidFlow",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -275,10 +275,7 @@
               }
             }
           }
-        },
-        "operationId": "get_superfluid_superfluid_flow",
-        "summary": "Get superfluid superfluid flow",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/staking/superfluid/flow_by_market": {
@@ -288,6 +285,8 @@
             "url": "https://osmosis.numia.xyz"
           }
         ],
+        "operationId": "getSuperfluidFlowByMarket",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -355,10 +354,7 @@
               }
             }
           }
-        },
-        "operationId": "get_staking_superfluid_flow_by_market",
-        "summary": "Get staking superfluid flow by market",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     }
   }

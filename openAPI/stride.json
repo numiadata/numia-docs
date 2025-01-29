@@ -32,22 +32,9 @@
             "url": "https://stride.numia.xyz"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_stride_tokenmetrics",
-        "summary": "Get stride tokenmetrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "operationId": "getTokenMetrics",
+        "tags": [],
+        "responses": {}
       }
     },
     "/stride/redemption-rate": {
@@ -57,22 +44,9 @@
             "url": "https://stride.numia.xyz"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_stride_redemptionrate",
-        "summary": "Get stride redemptionrate",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "operationId": "getRedemptionRate",
+        "tags": [],
+        "responses": {}
       }
     },
     "/stride/total-users": {
@@ -82,22 +56,9 @@
             "url": "https://stride.numia.xyz"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_stride_totalusers",
-        "summary": "Get stride totalusers",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "operationId": "getTotalUsers",
+        "tags": [],
+        "responses": {}
       }
     },
     "/stride/average-staked": {
@@ -107,22 +68,9 @@
             "url": "https://stride.numia.xyz"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_stride_averagestaked",
-        "summary": "Get stride averagestaked",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "operationId": "getAverageStaked",
+        "tags": [],
+        "responses": {}
       }
     },
     "/stride/tvl": {
@@ -132,22 +80,9 @@
             "url": "https://stride.numia.xyz"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_stride_tvl",
-        "summary": "Get stride tvl",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "operationId": "getTvl",
+        "tags": [],
+        "responses": {}
       }
     },
     "/stride/total-yield": {
@@ -157,22 +92,9 @@
             "url": "https://stride.numia.xyz"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_stride_totalyield",
-        "summary": "Get stride totalyield",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "operationId": "getTotalYield",
+        "tags": [],
+        "responses": {}
       }
     },
     "/stride/apr": {
@@ -182,22 +104,9 @@
             "url": "https://stride.numia.xyz"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_stride_apr",
-        "summary": "Get stride apr",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "operationId": "getApr",
+        "tags": [],
+        "responses": {}
       }
     }
   }

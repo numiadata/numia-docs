@@ -79,8 +79,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/admin/snapshot-campaigns/{org_id}": {
@@ -315,8 +314,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/admin/snapshot-campaigns": {
@@ -635,8 +633,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/admin/snapshot-campaigns/{snapshot_campaign_id}": {
@@ -888,8 +885,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     }
   }

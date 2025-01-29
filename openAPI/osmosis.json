@@ -1,0 +1,2836 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://osmosis.numia.xyz"
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Numia - Osmosis API"
+  },
+  "components": {
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/pairs/v1/historical/{pool_id}/chart": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getTokenPairHistoricalChart",
+        "tags": [],
+        "sidebar": "pools",
+        "attributes": {
+          "x-credits": 5,
+          "x-sidebar": "pools"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "pattern": "^\\d+$"
+            },
+            "required": true,
+            "name": "pool_id",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "asset_in",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "asset_out",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "1h",
+                "1d",
+                "7d",
+                "1mo",
+                "1y",
+                "all"
+              ],
+              "default": "7d"
+            },
+            "required": true,
+            "name": "range",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "time": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                      },
+                      "open": {
+                        "type": "number",
+                        "description": "Open Price of the Period"
+                      },
+                      "close": {
+                        "type": "number",
+                        "description": "Close Price of the Period"
+                      },
+                      "high": {
+                        "type": "number",
+                        "description": "Highest Price of the Period"
+                      },
+                      "low": {
+                        "type": "number",
+                        "description": "Lowest Price of the Period"
+                      }
+                    },
+                    "required": [
+                      "time",
+                      "open",
+                      "close",
+                      "high",
+                      "low"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tokens/v2/historical/{asset}/chart": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getTokenHistoricalChart",
+        "tags": [],
+        "sidebar": "tokens",
+        "attributes": {
+          "x-sidebar": "tokens"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Token denom or symbol"
+            },
+            "required": true,
+            "name": "asset",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "1",
+                "5",
+                "10",
+                "15",
+                "30",
+                "60",
+                "120",
+                "240",
+                "480",
+                "720",
+                "1440",
+                "10080",
+                "43800"
+              ],
+              "default": "60"
+            },
+            "required": true,
+            "name": "tf",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "time": {
+                        "type": "number",
+                        "minimum": 0,
+                        "exclusiveMinimum": true
+                      },
+                      "open": {
+                        "type": "number",
+                        "description": "Open Price of the Period"
+                      },
+                      "close": {
+                        "type": "number",
+                        "description": "Close Price of the Period"
+                      },
+                      "high": {
+                        "type": "number",
+                        "description": "Highest Price of the Period"
+                      },
+                      "low": {
+                        "type": "number",
+                        "description": "Lowest Price of the Period"
+                      },
+                      "volume": {
+                        "type": "number",
+                        "description": "Volume of the Period"
+                      }
+                    },
+                    "required": [
+                      "time",
+                      "open",
+                      "close",
+                      "high",
+                      "low",
+                      "volume"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tokens/v2/real-time/{asset}/price": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getTokenRealTimePrice",
+        "tags": [],
+        "sidebar": "tokens",
+        "attributes": {
+          "x-sidebar": "tokens"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "The asset denom of the token"
+            },
+            "required": true,
+            "name": "asset",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "denom": {
+                      "type": "string"
+                    },
+                    "usd_price": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "denom",
+                    "usd_price"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tokens/v2/{asset}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getTokenData",
+        "tags": [],
+        "sidebar": "tokens",
+        "attributes": {
+          "x-sidebar": "tokens"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "asset",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "symbol": {
+                        "type": "string"
+                      },
+                      "denom": {
+                        "type": "string"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "display": {
+                        "type": "string"
+                      },
+                      "main": {
+                        "anyOf": [
+                          {
+                            "type": "boolean"
+                          },
+                          {
+                            "type": "number",
+                            "minimum": 0,
+                            "maximum": 1
+                          }
+                        ]
+                      },
+                      "exponent": {
+                        "type": "number"
+                      },
+                      "coingecko_id": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "volume_24h": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "volume_24h_change": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "price": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "price_1h_change": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "price_24h_change": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "price_7d_change": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "liquidity": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "liquidity_24h_change": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "coingecko_mcap": {
+                        "type": "number",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "symbol",
+                      "denom",
+                      "name",
+                      "display",
+                      "main",
+                      "exponent",
+                      "coingecko_id",
+                      "volume_24h",
+                      "volume_24h_change",
+                      "price",
+                      "price_1h_change",
+                      "price_24h_change",
+                      "price_7d_change",
+                      "liquidity",
+                      "liquidity_24h_change",
+                      "coingecko_mcap"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/fees/v1/pools": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getPoolsFees",
+        "tags": [],
+        "sidebar": "pools",
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "pool_id": {
+                            "type": "string",
+                            "description": "Pool id"
+                          },
+                          "volume_24h": {
+                            "type": "number",
+                            "description": "Total amount of USD swapped in the pool in the last 24 hours"
+                          },
+                          "volume_7d": {
+                            "type": "number",
+                            "description": "Total amount of USD swapped in the pool in the last 7 days"
+                          },
+                          "fees_spent_24h": {
+                            "type": "number",
+                            "description": "Total amount of USD spent in fees in the last 24 hours"
+                          },
+                          "fees_spent_7d": {
+                            "type": "number",
+                            "description": "Total amount of USD spent in fees in the last 7 days"
+                          },
+                          "fees_percentage": {
+                            "type": "string",
+                            "description": "Actual swap fees percetage of the pool"
+                          }
+                        },
+                        "required": [
+                          "pool_id",
+                          "volume_24h",
+                          "volume_7d",
+                          "fees_spent_24h",
+                          "fees_spent_7d",
+                          "fees_percentage"
+                        ]
+                      }
+                    },
+                    "last_update_at": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "last_update_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/stream/pool/v1/all": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getPoolStreamData",
+        "tags": [],
+        "sidebar": "pools",
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "default": "1",
+              "description": "If pool_ids is defined, limit is ignored."
+            },
+            "required": true,
+            "name": "min_liquidity",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "volume_24h",
+                "liquidity",
+                "volume_24h_change",
+                "liquidity_change"
+              ],
+              "default": "liquidity"
+            },
+            "required": true,
+            "name": "order_key",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "desc",
+                "asc"
+              ],
+              "default": "desc"
+            },
+            "required": true,
+            "name": "order_by",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "100",
+              "description": "If pool_ids is defined, limit is ignored."
+            },
+            "required": true,
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "0",
+              "description": "If pool_ids is defined, limit is ignored."
+            },
+            "required": true,
+            "name": "offset",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "anyOf": [
+                {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
+                },
+                {
+                  "type": "string"
+                }
+              ]
+            },
+            "required": false,
+            "name": "pool_ids",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "pagination": {
+                      "type": "object",
+                      "properties": {
+                        "next_offset": {
+                          "anyOf": [
+                            {
+                              "type": "number"
+                            },
+                            {
+                              "nullable": true
+                            },
+                            {
+                              "nullable": true
+                            }
+                          ]
+                        },
+                        "total_pools": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "next_offset",
+                        "total_pools"
+                      ]
+                    },
+                    "pools": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "main": {
+                            "type": "boolean"
+                          },
+                          "type": {
+                            "type": "string",
+                            "enum": [
+                              "osmosis.gamm.v1beta1.Pool",
+                              "osmosis.gamm.poolmodels.stableswap.v1beta1.Pool",
+                              "osmosis.concentratedliquidity.v1beta1.Pool",
+                              "osmosis.cosmwasmpool.v1beta1.CosmWasmPool"
+                            ]
+                          },
+                          "pool_id": {
+                            "type": "number"
+                          },
+                          "swap_fees": {
+                            "type": "number"
+                          },
+                          "exit_fees": {
+                            "type": "number"
+                          },
+                          "total_weight_or_scaling": {
+                            "type": "number"
+                          },
+                          "total_shares": {
+                            "type": "object",
+                            "properties": {
+                              "denom": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "amount": {
+                                "type": "string",
+                                "nullable": true
+                              }
+                            },
+                            "required": [
+                              "denom",
+                              "amount"
+                            ]
+                          },
+                          "pool_tokens": {
+                            "anyOf": [
+                              {
+                                "type": "array",
+                                "items": {
+                                  "type": "object",
+                                  "properties": {
+                                    "denom": {
+                                      "type": "string"
+                                    },
+                                    "amount": {
+                                      "type": "string"
+                                    },
+                                    "name": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "symbol": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "display": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "exponent": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "coingecko_id": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "weight_or_scaling": {
+                                      "type": "string"
+                                    },
+                                    "percent": {
+                                      "type": "string"
+                                    },
+                                    "price": {
+                                      "type": "string",
+                                      "nullable": true
+                                    },
+                                    "price_24h_change": {
+                                      "type": "string",
+                                      "nullable": true
+                                    }
+                                  },
+                                  "required": [
+                                    "denom",
+                                    "amount",
+                                    "name",
+                                    "symbol",
+                                    "display",
+                                    "exponent",
+                                    "coingecko_id",
+                                    "weight_or_scaling",
+                                    "percent",
+                                    "price",
+                                    "price_24h_change"
+                                  ]
+                                }
+                              },
+                              {
+                                "type": "object",
+                                "properties": {
+                                  "asset0": {
+                                    "type": "object",
+                                    "properties": {
+                                      "denom": {
+                                        "type": "string"
+                                      },
+                                      "amount": {
+                                        "type": "string"
+                                      },
+                                      "name": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "symbol": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "display": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "exponent": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "coingecko_id": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "weight_or_scaling": {
+                                        "type": "string"
+                                      },
+                                      "percent": {
+                                        "type": "string"
+                                      },
+                                      "price": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "price_24h_change": {
+                                        "type": "string",
+                                        "nullable": true
+                                      }
+                                    },
+                                    "required": [
+                                      "denom",
+                                      "amount",
+                                      "name",
+                                      "symbol",
+                                      "display",
+                                      "exponent",
+                                      "coingecko_id",
+                                      "weight_or_scaling",
+                                      "percent",
+                                      "price",
+                                      "price_24h_change"
+                                    ]
+                                  },
+                                  "asset1": {
+                                    "type": "object",
+                                    "properties": {
+                                      "denom": {
+                                        "type": "string"
+                                      },
+                                      "amount": {
+                                        "type": "string"
+                                      },
+                                      "name": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "symbol": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "display": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "exponent": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "coingecko_id": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "weight_or_scaling": {
+                                        "type": "string"
+                                      },
+                                      "percent": {
+                                        "type": "string"
+                                      },
+                                      "price": {
+                                        "type": "string",
+                                        "nullable": true
+                                      },
+                                      "price_24h_change": {
+                                        "type": "string",
+                                        "nullable": true
+                                      }
+                                    },
+                                    "required": [
+                                      "denom",
+                                      "amount",
+                                      "name",
+                                      "symbol",
+                                      "display",
+                                      "exponent",
+                                      "coingecko_id",
+                                      "weight_or_scaling",
+                                      "percent",
+                                      "price",
+                                      "price_24h_change"
+                                    ]
+                                  }
+                                },
+                                "required": [
+                                  "asset0",
+                                  "asset1"
+                                ]
+                              }
+                            ]
+                          },
+                          "liquidity": {
+                            "type": "number",
+                            "nullable": true
+                          },
+                          "liquidity_24h_change": {
+                            "type": "number",
+                            "nullable": true
+                          },
+                          "volume_24h": {
+                            "type": "number",
+                            "nullable": true
+                          },
+                          "volume_24h_change": {
+                            "type": "number",
+                            "nullable": true
+                          },
+                          "volume_7d": {
+                            "type": "number",
+                            "nullable": true
+                          },
+                          "address": {
+                            "type": "string"
+                          },
+                          "exponent_at_price_one": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "spread_factor": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "current_sqrt_price": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "tick_spacing": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "current_tick": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "current_tick_liquidity": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "code_id": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "instantiate_msg": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        },
+                        "required": [
+                          "main",
+                          "type",
+                          "pool_id",
+                          "swap_fees",
+                          "exit_fees",
+                          "total_weight_or_scaling",
+                          "pool_tokens",
+                          "liquidity",
+                          "liquidity_24h_change",
+                          "volume_24h",
+                          "volume_24h_change",
+                          "volume_7d",
+                          "address"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "pagination",
+                    "pools"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/lp/v1/rewards/estimation/{bech32Address}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getRewardsEstimationForBech32Address",
+        "tags": [],
+        "sidebar": "users",
+        "attributes": {
+          "x-sidebar": "users"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "bech32Address",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "pools": {
+                      "type": "object",
+                      "additionalProperties": {
+                        "type": "object",
+                        "properties": {
+                          "day_usd": {
+                            "type": "number"
+                          },
+                          "month_usd": {
+                            "type": "number"
+                          },
+                          "year_usd": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "day_usd",
+                          "month_usd",
+                          "year_usd"
+                        ]
+                      }
+                    },
+                    "total_day_usd": {
+                      "type": "number"
+                    },
+                    "total_month_usd": {
+                      "type": "number"
+                    },
+                    "total_year_usd": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "pools",
+                    "total_day_usd",
+                    "total_month_usd",
+                    "total_year_usd"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rewards/token/{address}/{denom}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getRewardsEstimationForAddressAndDenom",
+        "tags": [],
+        "sidebar": "users",
+        "attributes": {
+          "x-sidebar": "users"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "address",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "denom",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "timestamp": {
+                        "type": "string"
+                      },
+                      "cl_amount": {
+                        "type": "string"
+                      },
+                      "gamm_amount": {
+                        "type": "string"
+                      },
+                      "staking_amount": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "timestamp",
+                      "cl_amount",
+                      "gamm_amount",
+                      "staking_amount"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/rewards/token/{address}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getRewardsEstimationForAddress",
+        "tags": [],
+        "sidebar": "users",
+        "attributes": {
+          "x-sidebar": "users"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "address",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "denoms": {
+                      "type": "array",
+                      "items": {
+                        "type": "string"
+                      }
+                    }
+                  },
+                  "required": [
+                    "denoms"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/cl/v1/position/last/id/{positionId}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getPositionInfo",
+        "tags": [],
+        "sidebar": "pools",
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "positionId",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "total_spread_rewards": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "denom": {
+                            "type": "string"
+                          },
+                          "amount": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "denom",
+                          "amount"
+                        ]
+                      }
+                    },
+                    "total_incentives_rewards": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "denom": {
+                            "type": "string"
+                          },
+                          "amount": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "denom",
+                          "amount"
+                        ]
+                      }
+                    },
+                    "total_forfeit_rewards": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "denom": {
+                            "type": "string"
+                          },
+                          "amount": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "denom",
+                          "amount"
+                        ]
+                      }
+                    },
+                    "principal": {
+                      "type": "object",
+                      "properties": {
+                        "action": {
+                          "type": "string"
+                        },
+                        "address": {
+                          "type": "string"
+                        },
+                        "tx_hash": {
+                          "type": "string"
+                        },
+                        "block": {
+                          "type": "number"
+                        },
+                        "tx_time": {
+                          "type": "string",
+                          "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                        },
+                        "value": {
+                          "type": "number"
+                        },
+                        "position": {
+                          "type": "object",
+                          "properties": {
+                            "position_id": {
+                              "type": "number"
+                            },
+                            "pool_id": {
+                              "type": "number"
+                            },
+                            "lower_tick": {
+                              "type": "number"
+                            },
+                            "upper_tick": {
+                              "type": "number"
+                            }
+                          },
+                          "required": [
+                            "position_id",
+                            "pool_id",
+                            "lower_tick",
+                            "upper_tick"
+                          ]
+                        },
+                        "assets": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "denom": {
+                                "type": "string"
+                              },
+                              "amount": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "type": "number"
+                              }
+                            },
+                            "required": [
+                              "denom",
+                              "amount",
+                              "value"
+                            ]
+                          }
+                        }
+                      },
+                      "required": [
+                        "action",
+                        "address",
+                        "tx_hash",
+                        "block",
+                        "tx_time",
+                        "value",
+                        "position",
+                        "assets"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "total_spread_rewards",
+                    "total_incentives_rewards",
+                    "total_forfeit_rewards",
+                    "principal"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/ibc/v1/source/{source}/destination/{destination}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getIBcChainStatus",
+        "summary": "Get IBC Chain Status",
+        "tags": [],
+        "deprecated": true,
+        "sidebar": "chain",
+        "attributes": {
+          "x-sidebar": "chain"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "source",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "destination",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "source": {
+                        "type": "string"
+                      },
+                      "destination": {
+                        "type": "string"
+                      },
+                      "channel_id": {
+                        "type": "string"
+                      },
+                      "size_queue": {
+                        "type": "number"
+                      },
+                      "duration_minutes": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "source",
+                      "destination",
+                      "channel_id",
+                      "size_queue",
+                      "duration_minutes"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pools/liquidity/{pool_id}/over_time": {
+      "get": {
+        "operationId": "getPoolsLiquidityOverTime",
+        "tags": [],
+        "sidebar": "pools",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "pool_id",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "timestamp": {
+                        "type": "string"
+                      },
+                      "liquidity_usd": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "timestamp",
+                      "liquidity_usd"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apr": {
+      "get": {
+        "operationId": "getApr",
+        "summary": "Get staking APR",
+        "tags": [],
+        "sidebar": "chain",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "chain"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "1d",
+                "7d",
+                "30d"
+              ]
+            },
+            "required": false,
+            "name": "trailing_period",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "symbol": {
+                        "type": "string"
+                      },
+                      "apr": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "symbol",
+                      "apr"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pools_apr": {
+      "get": {
+        "operationId": "getPoolsApr",
+        "summary": "Get Pools APR",
+        "tags": [],
+        "sidebar": "pools",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "responses": {}
+      }
+    },
+    "/pools_apr_range": {
+      "get": {
+        "operationId": "getPoolsAprRange",
+        "summary": "Get Pools APR Range",
+        "tags": [],
+        "sidebar": "pools",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "responses": {}
+      }
+    },
+    "/cl/v1/apr/rewards/{pool}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getClPoolsPositionApr",
+        "summary": "Get CL Pools Position APR",
+        "tags": [],
+        "sidebar": "pools",
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "pool",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "lower_tick",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "upper_tick",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "APR": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "APR"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/supply/v1/metrics": {
+      "get": {
+        "operationId": "getSupplyMetrics",
+        "tags": [],
+        "sidebar": "chain",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "chain"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "totalSupply",
+                "circulatingSupply",
+                "burntSupply"
+              ]
+            },
+            "required": false,
+            "name": "metric",
+            "in": "query"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/users/portfolio/over_time": {
+      "get": {
+        "operationId": "getPortfolioOverTime",
+        "tags": [],
+        "sidebar": "users",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "users"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "address",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "1d",
+                "7d",
+                "1mo",
+                "1y",
+                "all"
+              ]
+            },
+            "required": true,
+            "name": "range",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "timestamp": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "usd": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "timestamp",
+                      "usd"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/portfolio/current": {
+      "get": {
+        "operationId": "getPortfolioCurrent",
+        "tags": [],
+        "sidebar": "users",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "users"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "address",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "usd": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "usd"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/users/limit_orders/history/closed": {
+      "get": {
+        "operationId": "getClosedLimitOrdersHistory",
+        "tags": [],
+        "sidebar": "users",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "users"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "address",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "place_timestamp": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "place_tx_hash": {
+                        "type": "string"
+                      },
+                      "order_denom": {
+                        "type": "string"
+                      },
+                      "output_denom": {
+                        "type": "string"
+                      },
+                      "quantity": {
+                        "type": "string"
+                      },
+                      "claimed_quantity": {
+                        "type": "string"
+                      },
+                      "tick_id": {
+                        "type": "string"
+                      },
+                      "order_id": {
+                        "type": "string"
+                      },
+                      "order_direction": {
+                        "type": "string",
+                        "enum": [
+                          "ask",
+                          "bid"
+                        ]
+                      },
+                      "price": {
+                        "type": "string"
+                      },
+                      "status": {
+                        "type": "string",
+                        "enum": [
+                          "fullyClaimed",
+                          "cancelled"
+                        ]
+                      },
+                      "contract": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "place_timestamp",
+                      "place_tx_hash",
+                      "order_denom",
+                      "output_denom",
+                      "quantity",
+                      "claimed_quantity",
+                      "tick_id",
+                      "order_id",
+                      "order_direction",
+                      "price",
+                      "status",
+                      "contract"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pairs/v1/summary": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getPairsSummaryV1",
+        "deprecated": true,
+        "description": "Only for CoinGecko integration",
+        "tags": [],
+        "private": true,
+        "sidebar": "pools",
+        "attributes": {
+          "x-private": true,
+          "x-sidebar": "pools"
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "pool_address": {
+                            "type": "string",
+                            "description": "Pool address"
+                          },
+                          "pool_id": {
+                            "type": "string",
+                            "description": "Pool id"
+                          },
+                          "base_name": {
+                            "type": "string",
+                            "description": "Name of the base asset"
+                          },
+                          "base_symbol": {
+                            "type": "string",
+                            "description": "Symbol of the base asset"
+                          },
+                          "base_address": {
+                            "type": "string",
+                            "description": "Denom of the base asset"
+                          },
+                          "quote_name": {
+                            "type": "string",
+                            "description": "Name of the quote asset"
+                          },
+                          "quote_symbol": {
+                            "type": "string",
+                            "description": "Symbol of the quote asset"
+                          },
+                          "quote_address": {
+                            "type": "string",
+                            "description": "Denom of the quote asset"
+                          },
+                          "price": {
+                            "type": "number",
+                            "description": "Price of the pair inside the pool"
+                          },
+                          "base_volume_24h": {
+                            "type": "number",
+                            "description": "Total amount of base asset swapped in the pool in the last 24 hours"
+                          },
+                          "quote_volume_24h": {
+                            "type": "number",
+                            "description": "Total amount of quote asset swapped in the pool in the last 24 hours"
+                          },
+                          "volume_24h": {
+                            "type": "number",
+                            "description": "Total amount of USD swapped in the pool in the last 24 hours"
+                          },
+                          "volume_7d": {
+                            "type": "number",
+                            "description": "Total amount of USD swapped in the pool in the last 7 days"
+                          },
+                          "liquidity": {
+                            "type": "number",
+                            "description": "Total value locked in USD in the pool"
+                          },
+                          "liquidity_atom": {
+                            "type": "number",
+                            "description": "Total value locked in ATOM in the pool"
+                          }
+                        },
+                        "required": [
+                          "pool_address",
+                          "pool_id",
+                          "base_name",
+                          "base_symbol",
+                          "base_address",
+                          "quote_name",
+                          "quote_symbol",
+                          "quote_address",
+                          "price",
+                          "base_volume_24h",
+                          "quote_volume_24h",
+                          "volume_24h",
+                          "volume_7d",
+                          "liquidity",
+                          "liquidity_atom"
+                        ]
+                      }
+                    },
+                    "last_update_at": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "last_update_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/pairs/v2/summary": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getPairsSummaryV2",
+        "tags": [],
+        "sidebar": "pools",
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "pool_address": {
+                            "type": "string",
+                            "description": "Pool address"
+                          },
+                          "pool_id": {
+                            "type": "string",
+                            "description": "Pool id"
+                          },
+                          "base_name": {
+                            "type": "string",
+                            "description": "Name of the base asset"
+                          },
+                          "base_symbol": {
+                            "type": "string",
+                            "description": "Symbol of the base asset"
+                          },
+                          "base_address": {
+                            "type": "string",
+                            "description": "Denom of the base asset"
+                          },
+                          "quote_name": {
+                            "type": "string",
+                            "description": "Name of the quote asset"
+                          },
+                          "quote_symbol": {
+                            "type": "string",
+                            "description": "Symbol of the quote asset"
+                          },
+                          "quote_address": {
+                            "type": "string",
+                            "description": "Denom of the quote asset"
+                          },
+                          "price": {
+                            "type": "number",
+                            "description": "Price of the pair inside the pool"
+                          },
+                          "base_volume_24h": {
+                            "type": "number",
+                            "description": "Total amount of base asset swapped in the pool in the last 24 hours"
+                          },
+                          "quote_volume_24h": {
+                            "type": "number",
+                            "description": "Total amount of quote asset swapped in the pool in the last 24 hours"
+                          },
+                          "volume_24h": {
+                            "type": "number",
+                            "description": "Total amount of USD swapped in the pool in the last 24 hours"
+                          },
+                          "volume_7d": {
+                            "type": "number",
+                            "description": "Total amount of USD swapped in the pool in the last 7 days"
+                          },
+                          "liquidity": {
+                            "type": "number",
+                            "description": "Total value locked in USD in the pool"
+                          },
+                          "liquidity_atom": {
+                            "type": "number",
+                            "description": "Total value locked in ATOM in the pool"
+                          }
+                        },
+                        "required": [
+                          "pool_address",
+                          "pool_id",
+                          "base_name",
+                          "base_symbol",
+                          "base_address",
+                          "quote_name",
+                          "quote_symbol",
+                          "quote_address",
+                          "price",
+                          "base_volume_24h",
+                          "quote_volume_24h",
+                          "volume_24h",
+                          "volume_7d",
+                          "liquidity",
+                          "liquidity_atom"
+                        ]
+                      }
+                    },
+                    "last_update_at": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "last_update_at"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/tokenomics/chain_revenue": {
+      "get": {
+        "operationId": "getChainRevenue",
+        "tags": [],
+        "sidebar": "chain",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "chain"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": true,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": true,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "protorev": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "tx_fees": {
+                        "type": "number"
+                      },
+                      "swap_fees": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "taker_fees": {
+                        "type": "number",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "labels"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trading_metrics": {
+      "get": {
+        "operationId": "getTradingMetrics",
+        "tags": [],
+        "sidebar": "chain",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "chain"
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "assets_in_chain": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "number"
+                        },
+                        "growth_rate_seconds": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "traders_last_30_days": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "number"
+                        },
+                        "growth_rate_seconds": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "cumulative_volume": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "number"
+                        },
+                        "growth_rate_seconds": {
+                          "type": "number"
+                        }
+                      }
+                    },
+                    "volume_24h": {
+                      "type": "object",
+                      "properties": {
+                        "value": {
+                          "type": "number"
+                        },
+                        "growth_rate_seconds": {
+                          "type": "number"
+                        }
+                      }
+                    }
+                  },
+                  "required": [
+                    "assets_in_chain",
+                    "traders_last_30_days",
+                    "cumulative_volume",
+                    "volume_24h"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/external/defillama/chain_fees_and_revenue": {
+      "get": {
+        "operationId": "getDefillamaOsmosisChainFeesAndRevenue",
+        "tags": [],
+        "private": true,
+        "sidebar": "chain",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-private": true,
+          "x-sidebar": "chain"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "timestamp": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "dailyFees": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "totalFees": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "dailyRevenue": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "totalRevenue": {
+                        "type": "number",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "timestamp"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/external/coingecko/native_factory_assets_supply": {
+      "get": {
+        "operationId": "getCoingeckoOsmosisNativeFactoryAssetsSupply",
+        "tags": [],
+        "private": true,
+        "sidebar": "tokens",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-private": true,
+          "x-sidebar": "tokens"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "asset",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "lastUpdated": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "denom": {
+                        "type": "string"
+                      },
+                      "symbol": {
+                        "type": "string"
+                      },
+                      "circulatingSupply": {
+                        "type": "number"
+                      },
+                      "totalSupply": {
+                        "type": "number"
+                      },
+                      "maxSupply": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "lastUpdated",
+                      "denom",
+                      "symbol",
+                      "circulatingSupply",
+                      "totalSupply",
+                      "maxSupply"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/earn/strategies": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getEarnStrategies",
+        "tags": [
+          "earn"
+        ],
+        "sidebar": "earn",
+        "attributes": {
+          "x-sidebar": "earn"
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string",
+                        "description": "Identifier of the strategy e.g. smart contract address for the vault"
+                      },
+                      "type": {
+                        "type": "string",
+                        "enum": [
+                          "osmosis-staking",
+                          "liquid-osmosis-staking",
+                          "quasar-cl-vault",
+                          "levana-pool-lp",
+                          "levana-pool-xlp",
+                          "umee-lending",
+                          "mars-lending",
+                          "ondo"
+                        ],
+                        "description": "Internal type, to know how to fetch the metrics"
+                      },
+                      "name": {
+                        "type": "string",
+                        "description": "Name of the strategy e.g. 'ATOM Pro M+ Vault'"
+                      },
+                      "provider": {
+                        "type": "string",
+                        "description": "Provider of the strategy e.g. Osmosis, Quasar, Levana etc."
+                      },
+                      "category": {
+                        "type": "string",
+                        "description": "Category of the strategy e.g. 'Staking', 'Lending' etc."
+                      },
+                      "link": {
+                        "type": "string",
+                        "description": "Link to the strategy on the provider site"
+                      },
+                      "tvl": {
+                        "type": "object",
+                        "properties": {
+                          "tvlUsd": {
+                            "type": "string"
+                          },
+                          "maxTvlUsd": {
+                            "type": "string"
+                          },
+                          "assets": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "coinMinimalDenom": {
+                                  "type": "string"
+                                },
+                                "tvl": {
+                                  "type": "string"
+                                },
+                                "maxTvl": {
+                                  "type": "string"
+                                }
+                              },
+                              "required": [
+                                "coinMinimalDenom",
+                                "tvl"
+                              ]
+                            }
+                          }
+                        },
+                        "required": [
+                          "tvlUsd",
+                          "assets"
+                        ]
+                      },
+                      "apr": {
+                        "type": "number"
+                      },
+                      "tokenDenoms": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "denom": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "symbol": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "description": "List of tokens of the underlying balance"
+                      },
+                      "rewardDenoms": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "denom": {
+                              "type": "string"
+                            },
+                            "name": {
+                              "type": "string"
+                            },
+                            "symbol": {
+                              "type": "string"
+                            }
+                          }
+                        },
+                        "description": "Denoms that are rewarded by the strategy"
+                      },
+                      "lockDuration": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "id",
+                      "type",
+                      "name",
+                      "provider",
+                      "category",
+                      "link",
+                      "tvl",
+                      "apr",
+                      "tokenDenoms",
+                      "rewardDenoms"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/earn/strategies/{strategy}/balance/{address}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getBalancesForEarnStrategies",
+        "tags": [
+          "earn"
+        ],
+        "sidebar": "earn",
+        "attributes": {
+          "x-sidebar": "earn"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Identifier of the strategy e.g. smart contract address for the vault"
+            },
+            "required": true,
+            "name": "strategy",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "User Address e.g. 'osmo1...'"
+            },
+            "required": true,
+            "name": "address",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "strategy": {
+                      "type": "string",
+                      "description": "References the strategy.id field. which is e.g. the smart contract for the vault"
+                    },
+                    "balance": {
+                      "type": "object",
+                      "properties": {
+                        "amount": {
+                          "type": "string",
+                          "description": "Total balance of the token representing the share or position"
+                        },
+                        "usd": {
+                          "type": "number",
+                          "description": "Total USD value of the user balance"
+                        }
+                      },
+                      "required": [
+                        "amount",
+                        "usd"
+                      ]
+                    },
+                    "token": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "symbol": {
+                          "type": "string"
+                        },
+                        "decimals": {
+                          "type": "number"
+                        },
+                        "total_supply": {
+                          "type": "string"
+                        }
+                      },
+                      "required": [
+                        "total_supply"
+                      ]
+                    },
+                    "unclaimed_rewards": {
+                      "type": "object",
+                      "properties": {
+                        "total_usd": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "total_usd"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "strategy",
+                    "balance",
+                    "unclaimed_rewards"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/earn/strategies/{strategy}/apr": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getAprForEarnStrategies",
+        "tags": [
+          "earn"
+        ],
+        "sidebar": "earn",
+        "attributes": {
+          "x-sidebar": "earn"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Identifier of the strategy e.g. smart contract address for the vault"
+            },
+            "required": true,
+            "name": "strategy",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "apr": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "apr"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/earn/strategies/{strategy}/tvl": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getTvlForEarnStrategies",
+        "tags": [
+          "earn"
+        ],
+        "sidebar": "earn",
+        "attributes": {
+          "x-sidebar": "earn"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Identifier of the strategy e.g. smart contract address for the vault"
+            },
+            "required": true,
+            "name": "strategy",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "tvlUsd": {
+                      "type": "string"
+                    },
+                    "maxTvlUsd": {
+                      "type": "string"
+                    },
+                    "assets": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "coinMinimalDenom": {
+                            "type": "string"
+                          },
+                          "tvl": {
+                            "type": "string"
+                          },
+                          "maxTvl": {
+                            "type": "string"
+                          }
+                        },
+                        "required": [
+                          "coinMinimalDenom",
+                          "tvl"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "tvlUsd",
+                    "assets"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

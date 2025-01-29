@@ -7,10 +7,58 @@
   ],
   "servers": [
     {
+      "url": "https://akash.numia.xyz"
+    },
+    {
+      "url": "https://axelar.numia.xyz"
+    },
+    {
+      "url": "https://celestia.numia.xyz"
+    },
+    {
+      "url": "https://comdex.numia.xyz"
+    },
+    {
       "url": "https://cosmoshub.numia.xyz"
     },
     {
+      "url": "https://cryptoorgchain.numia.xyz"
+    },
+    {
+      "url": "https://dydx.numia.xyz"
+    },
+    {
+      "url": "https://dymension.numia.xyz"
+    },
+    {
+      "url": "https://juno.numia.xyz"
+    },
+    {
+      "url": "https://migaloo.numia.xyz"
+    },
+    {
+      "url": "https://neutron.numia.xyz"
+    },
+    {
+      "url": "https://noble.numia.xyz"
+    },
+    {
+      "url": "https://nolus.numia.xyz"
+    },
+    {
       "url": "https://osmosis.numia.xyz"
+    },
+    {
+      "url": "https://osmosis-testnet.numia.xyz"
+    },
+    {
+      "url": "https://persistence.numia.xyz"
+    },
+    {
+      "url": "https://quasar.numia.xyz"
+    },
+    {
+      "url": "https://quicksilver.numia.xyz"
     },
     {
       "url": "https://stargaze.numia.xyz"
@@ -19,58 +67,10 @@
       "url": "https://stride.numia.xyz"
     },
     {
-      "url": "https://juno.numia.xyz"
-    },
-    {
-      "url": "https://quasar.numia.xyz"
-    },
-    {
-      "url": "https://umee.numia.xyz"
-    },
-    {
       "url": "https://terra2.numia.xyz"
     },
     {
-      "url": "https://neutron.numia.xyz"
-    },
-    {
-      "url": "https://comdex.numia.xyz"
-    },
-    {
-      "url": "https://persistence.numia.xyz"
-    },
-    {
-      "url": "https://quicksilver.numia.xyz"
-    },
-    {
-      "url": "https://cryptoorgchain.numia.xyz"
-    },
-    {
-      "url": "https://axelar.numia.xyz"
-    },
-    {
-      "url": "https://migaloo.numia.xyz"
-    },
-    {
-      "url": "https://dydx.numia.xyz"
-    },
-    {
-      "url": "https://celestia.numia.xyz"
-    },
-    {
-      "url": "https://nolus.numia.xyz"
-    },
-    {
-      "url": "https://noble.numia.xyz"
-    },
-    {
-      "url": "https://akash.numia.xyz"
-    },
-    {
-      "url": "https://dymension.numia.xyz"
-    },
-    {
-      "url": "https://osmosis-testnet.numia.xyz"
+      "url": "https://umee.numia.xyz"
     }
   ],
   "tags": [
@@ -97,7 +97,7 @@
     "/v2/txs/{address}": {
       "get": {
         "operationId": "getTransactionsByAddress",
-        "description": "get transactions by address\n\nimport PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>",
+        "description": "get transactions by address",
         "servers": [
           {
             "url": "https://cosmoshub.numia.xyz"
@@ -224,20 +224,7 @@
             "in": "query"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "summary": "Get Transactions By Address"
+        "responses": {}
       }
     }
   }

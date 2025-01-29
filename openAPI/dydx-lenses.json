@@ -32,6 +32,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getTradersRanking",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -89,10 +91,7 @@
               }
             }
           }
-        },
-        "operationId": "get_trading_traders_ranking",
-        "summary": "Get trading traders ranking",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/trading/trading_fees": {
@@ -102,6 +101,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getTradingFees",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -164,10 +165,7 @@
               }
             }
           }
-        },
-        "operationId": "get_trading_trading_fees",
-        "summary": "Get trading trading fees",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/trading/liquidation/flow_by_market": {
@@ -177,6 +175,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getLiquidationFlowByMarket",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -266,10 +266,7 @@
               }
             }
           }
-        },
-        "operationId": "get_trading_liquidation_flow_by_market",
-        "summary": "Get trading liquidation flow by market",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/tokenomics/wallets/treasury_subdao": {
@@ -279,6 +276,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getTokenomicsWalletsTreasurySubdao",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -307,22 +306,7 @@
             "in": "query"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_tokenomics_wallets_treasury_subdao",
-        "summary": "Get tokenomics wallets treasury subdao",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "responses": {}
       }
     },
     "/business/expenses_share_by_destination": {
@@ -332,6 +316,8 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
+        "operationId": "getBusinessExpensesShareByDestination",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -360,22 +346,7 @@
             "in": "query"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_business_expenses_share_by_destination",
-        "summary": "Get business expenses share by destination",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "responses": {}
       }
     }
   }

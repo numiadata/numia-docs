@@ -2,64 +2,134 @@ export type ApiSection = {
   title: string;
   categoryName: "Advanced APIs" | "Tools";
   name: string;
-  oasFiles: string[];
+  oasFiles: OasFile[];
 };
+
+interface OasFile {
+  name: string;
+  url: string;
+}
 
 export const apiConfig: ApiSection[] = [
   {
     name: "osmosis",
     categoryName: "Advanced APIs",
-    oasFiles: ["https://api-docs.numia.xyz/osmosis/openapi.json"],
+    oasFiles: [
+      {
+        name: "osmosis",
+        url: "https://api-docs.numia.xyz/osmosis/openapi.json",
+      },
+    ],
     title: "Osmosis",
   },
-  //   {
-  //     name: "engage-ads",
-  //     title: "Engage Ads",
-  //     oasFiles: ["https://api-docs.numia.xyz/engage/ads/openapi.json"],
-  //   },
-  //   {
-  //     name: "txbyaddress",
-  //     oasFiles: ["https://api-docs.numia.xyz/api/byaddress/openapi.json"],
-  //     title: "Transaction by Address",
-  //   },
-  //   {
-  //     name: "cosmos",
-  //     oasFiles: ["https://api-docs.numia.xyz/lenses/cosmos/openapi.json"],
-  //     title: "Analytics",
-  //   },
-  //   {
-  //     name: "osmosis-lenses",
-  //     oasFiles: ["https://api-docs.numia.xyz/lenses/osmosis/openapi.json"],
-  //     title: "Analytics",
-  //   },
-  //   {
-  //     name: "dydx-lenses",
-  //     oasFiles: ["https://api-docs.numia.xyz/lenses/dydx/openapi.json"],
-  //     title: "Lenses Analytics",
-  //   },
-  //   {
-  //     name: "numiaai",
-  //     oasFiles: ["https://api-docs.numia.xyz/numiaAI/openapi.json"],
-  //     title: "AI Agent Analytics",
-  //   },
-  //   {
-  //     name: "quasar",
-  //     oasFiles: ["https://api-docs.numia.xyz/quasar/openapi.json"],
-  //     title: "Quasar",
-  //   },
-  //   {
-  //     name: "stride",
-  //     oasFiles: ["https://api-docs.numia.xyz/stride/openapi.json"],
-  //     title: "Stride",
-  //   },
-  //   {
-  //     name: "xion",
-  //     oasFiles: ["https://api-docs.numia.xyz/xion/openapi.json"],
-  //     title: "Xion",
-  //   },
-  //   {
-  //     name: "snapshots",
-  //     oasFiles: ["https://api-docs.numia.xyz/aadao-snapshots/openapi.json"],
-  //     title: "Snapshots",
-  //   },
+  {
+    name: "engage-ads",
+    categoryName: "Advanced APIs",
+    title: "Engage Ads",
+    oasFiles: [
+      {
+        name: "engage-ads",
+        url: "https://api-docs.numia.xyz/engage/ads/openapi.json",
+      },
+    ],
+  },
+  {
+    name: "txbyaddress",
+    categoryName: "Tools",
+    oasFiles: [
+      {
+        name: "txbyaddress",
+        url: "https://api-docs.numia.xyz/api/byaddress/openapi.json",
+      },
+    ],
+    title: "Transaction by Address",
+  },
+  {
+    name: "cosmos",
+    categoryName: "Advanced APIs",
+    oasFiles: [
+      {
+        name: "cosmos",
+        url: "https://api-docs.numia.xyz/lenses/cosmos/openapi.json",
+      },
+    ],
+    title: "Analytics",
+  },
+  {
+    name: "osmosis-lenses",
+    categoryName: "Advanced APIs",
+    oasFiles: [
+      {
+        name: "osmosis-lenses",
+        url: "https://api-docs.numia.xyz/lenses/osmosis/openapi.json",
+      },
+    ],
+    title: "Analytics",
+  },
+  {
+    name: "dydx-lenses",
+    categoryName: "Advanced APIs",
+    oasFiles: [
+      {
+        name: "dydx-lenses",
+        url: "https://api-docs.numia.xyz/lenses/dydx/openapi.json",
+      },
+    ],
+    title: "Lenses Analytics",
+  },
+  {
+    name: "numiaai",
+    categoryName: "Tools",
+    oasFiles: [
+      {
+        name: "numiaai",
+        url: "https://api-docs.numia.xyz/numiaAI/openapi.json",
+      },
+    ],
+    title: "AI Agent Analytics",
+  },
+  {
+    name: "quasar",
+    categoryName: "Advanced APIs",
+    oasFiles: [
+      {
+        name: "quasar",
+        url: "https://api-docs.numia.xyz/quasar/openapi.json",
+      },
+    ],
+    title: "Quasar",
+  },
+  {
+    name: "stride",
+    categoryName: "Advanced APIs",
+    oasFiles: [
+      {
+        name: "stride",
+        url: "https://api-docs.numia.xyz/stride/openapi.json",
+      },
+    ],
+    title: "Stride",
+  },
+  {
+    name: "xion",
+    categoryName: "Advanced APIs",
+    oasFiles: [
+      {
+        name: "xion",
+        url: "https://api-docs.numia.xyz/xion/openapi.json",
+      },
+    ],
+    title: "Xion",
+  },
+  {
+    name: "snapshots",
+    categoryName: "Tools",
+    oasFiles: [
+      {
+        name: "snapshots",
+        url: "https://api-docs.numia.xyz/aadao-snapshots/openapi.json",
+      },
+    ],
+    title: "Snapshots",
+  },
 ];

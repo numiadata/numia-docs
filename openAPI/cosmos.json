@@ -32,6 +32,8 @@
             "url": "https://cosmos.numia.xyz"
           }
         ],
+        "operationId": "getTokenomicsTopStakeholders",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -93,10 +95,7 @@
               }
             }
           }
-        },
-        "operationId": "get_tokenomics_top_stakeholders",
-        "summary": "Get tokenomics top stakeholders",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/aez/revenue_share_by_consumer": {
@@ -106,6 +105,8 @@
             "url": "https://cosmos.numia.xyz"
           }
         ],
+        "operationId": "getAezRevenueShareByConsumer",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -134,22 +135,7 @@
             "in": "query"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_aez_revenue_share_by_consumer",
-        "summary": "Get aez revenue share by consumer",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "responses": {}
       }
     },
     "/staking/liquid/share_by_provider": {
@@ -159,6 +145,8 @@
             "url": "https://cosmos.numia.xyz"
           }
         ],
+        "operationId": "getLiquidStakingShareByProvider",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -187,22 +175,7 @@
             "in": "query"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "operationId": "get_staking_liquid_share_by_provider",
-        "summary": "Get staking liquid share by provider",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        "responses": {}
       }
     },
     "/staking/liquid/flow_by_provider": {
@@ -212,6 +185,8 @@
             "url": "https://cosmos.numia.xyz"
           }
         ],
+        "operationId": "getLiquidStakingFlowByProvider",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -287,10 +262,7 @@
               }
             }
           }
-        },
-        "operationId": "get_staking_liquid_flow_by_provider",
-        "summary": "Get staking liquid flow by provider",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/hydro/deployments_overview": {
@@ -300,10 +272,8 @@
             "url": "https://cosmos.numia.xyz"
           }
         ],
-        "tags": [
-          "Hydro"
-        ],
         "operationId": "getHydroDeploymentsOverview",
+        "tags": [],
         "parameters": [
           {
             "schema": {
@@ -442,9 +412,7 @@
               }
             }
           }
-        },
-        "summary": "Get Hydro Deployments Overview",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/hydro/deployments_overview_staging": {
@@ -596,9 +564,7 @@
               }
             }
           }
-        },
-        "summary": "Get Hydro Deployments Overview Staging",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     },
     "/hydro/metrics": {
@@ -714,9 +680,7 @@
               }
             }
           }
-        },
-        "summary": "Get Hydro Metrics",
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
+        }
       }
     }
   }
