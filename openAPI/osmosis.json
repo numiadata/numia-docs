@@ -28,7 +28,7 @@
         "tags": [],
         "sidebar": "pools",
         "attributes": {
-          "x-credits": 5,
+          "x-credits": 25,
           "x-sidebar": "pools"
         },
         "parameters": [
@@ -120,7 +120,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={25}/>",
         "summary": "Get Token Pair Historical Chart"
       }
     },
@@ -138,6 +138,7 @@
         "tags": [],
         "sidebar": "tokens",
         "attributes": {
+          "x-credits": 25,
           "x-sidebar": "tokens"
         },
         "parameters": [
@@ -225,7 +226,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={25}/>",
         "summary": "Get Token Historical Chart"
       }
     },
