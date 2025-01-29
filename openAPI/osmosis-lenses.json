@@ -110,7 +110,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Liquidity Flow"
       }
     },
@@ -199,7 +199,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Liquidity Flow By Market"
       }
     },
@@ -280,7 +280,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Superfluid Flow"
       }
     },
@@ -361,7 +361,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>",
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Superfluid Flow By Market"
       }
     }
