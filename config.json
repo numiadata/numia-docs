@@ -24,7 +24,8 @@
   },
   "apiFiles": [
     "osmosis.json",
-    "osmosis-lenses.json"
+    "osmosis-lenses.json",
+    "engage-ads.json"
   ],
   "homepage": "/engage/whats-numia-engage",
   "changelog": false,

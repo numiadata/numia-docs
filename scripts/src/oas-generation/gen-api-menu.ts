@@ -191,6 +191,10 @@ function generateSidebars(): any {
       );
 
       if (configSection) {
+        if (!configSection.title) {
+          // Then we are not using it here (but maybe in a different secion)
+          return;
+        }
         const group = {
           groupName: configSection.title,
           subpages: apiFiles.map((file) => `reference/${dir}/${file}`),
@@ -229,9 +233,9 @@ function generateSidebars(): any {
     }
   });
 
-  if (engageIntegrationGroup.length > 0) {
-    insertEngageAds(engageIntegrationGroup);
-  }
+  // if (engageIntegrationGroup.length > 0) {
+  //   insertEngageAds(engageIntegrationGroup);
+  // }
 
   return sidebar;
 }
