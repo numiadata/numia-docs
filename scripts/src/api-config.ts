@@ -2,7 +2,7 @@ import path from "path";
 
 export type ApiSection = {
   title: string;
-  categoryName: "Advanced APIs" | "Tools";
+  categoryName?: "Advanced APIs" | "Tools";
   name: string;
   oasFile: string;
 };
@@ -22,17 +22,11 @@ export const apiConfig: ApiSection[] = [
     oasFile: "https://api-docs.numia.xyz/lenses/osmosis/openapi.json",
     title: "Osmosis Analytics",
   },
-  //   {
-  //     name: "engage-ads",
-  //     categoryName: "Advanced APIs",
-  //     title: "Engage Ads",
-  //     oasFiles: [
-  //       {
-  //         name: "engage-ads",
-  //         url: "https://api-docs.numia.xyz/engage/ads/openapi.json",
-  //       },
-  //     ],
-  //   },
+  {
+    name: "engage-ads",
+    title: "Engage Ads",
+    oasFile: "https://api-docs.numia.xyz/engage/ads/openapi.json",
+  },
   //   {
   //     name: "txbyaddress",
   //     categoryName: "Tools",
