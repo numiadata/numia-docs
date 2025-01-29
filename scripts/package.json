@@ -5,7 +5,7 @@
   "scripts": {
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
-    "table-metadata": "bun run src/tables-metadata.ts",
+    "table-metadata": "bun run src/cmd/tables-metadata.ts",
     "check": "bun run src/check.ts"
   },
   "devDependencies": {
