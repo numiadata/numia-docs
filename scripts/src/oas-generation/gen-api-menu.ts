@@ -159,15 +159,23 @@ function generateSidebars(): any {
         const operationId = operation?.operationId;
         assert(operationId, `operationId not found: ${route} ${httpMethod}`);
 
+        const fileOperationId = kebabCase(operationId);
+
         const attributes = getAttributes(operation);
 
-        if (operationId && operationIdToFile[operationId]) {
-          const pagePath = operationIdToFile[operationId];
+        if (fileOperationId && operationIdToFile[fileOperationId]) {
+          const pagePath = operationIdToFile[fileOperationId];
           const sidebar = attributes?.["x-sidebar"];
           const tag = typeof sidebar === "string" ? sidebar : "_untagged";
 
           if (!groupedPages[tag]) groupedPages[tag] = [];
           groupedPages[tag].push(pagePath);
+        } else {
+          console.warn(
+            fileOperationId,
+            "not found in files:",
+            Object.keys(operationIdToFile)
+          );
         }
       }
     }
@@ -190,15 +198,31 @@ function generateSidebars(): any {
         (section) => section.name.toLowerCase() === dir.toLowerCase()
       );
 
+      const { groupedPages, untaggedPages } = groupPagesByTags(apiFiles, dir);
+
+      const subpages = [
+        ...Object.entries(groupedPages).map(([tag, pages]) => {
+          if (tag === "_untagged") {
+            return pages;
+          }
+          return {
+            groupName: capitalize(tag),
+            subpages: pages,
+          };
+        }),
+        ...untaggedPages,
+      ];
+
+      const group = {
+        groupName: capitalize(dir),
+        subpages: subpages.flat(),
+      };
+
       if (configSection) {
         if (!configSection.title) {
           // Then we are not using it here (but maybe in a different secion)
           return;
         }
-        const group = {
-          groupName: configSection.title,
-          subpages: apiFiles.map((file) => `reference/${dir}/${file}`),
-        };
 
         const category = sidebar.categories.find(
           (cat) => cat.categoryName === configSection.categoryName
@@ -208,26 +232,6 @@ function generateSidebars(): any {
           category.pages.push(group);
         }
       } else {
-        const { groupedPages, untaggedPages } = groupPagesByTags(apiFiles, dir);
-
-        const subpages = [
-          ...Object.entries(groupedPages).map(([tag, pages]) => {
-            if (tag === "_untagged") {
-              return pages;
-            }
-            return {
-              groupName: capitalize(tag),
-              subpages: pages,
-            };
-          }),
-          ...untaggedPages,
-        ];
-
-        const group = {
-          groupName: capitalize(dir),
-          subpages: subpages.flat(),
-        };
-
         sidebar.categories[1].pages.push(group);
       }
     }
