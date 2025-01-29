@@ -3,6 +3,7 @@ import path from "path";
 import { OpenAPIV3 } from "openapi-types";
 import { addCreditsToDescription } from "./oas-transforms/add-credits-to-description";
 import { removePrivateEndpoints } from "./oas-transforms/remove-private-endpoints";
+import { addDefaultValues } from "./oas-transforms/default-values";
 
 const openAPIDir = path.join(__dirname, "../../openAPI");
 
@@ -29,6 +30,7 @@ fs.readdir(openAPIDir, (err, files) => {
 
           const updatedCredits = addCreditsToDescription(paths);
           const updatedPrivate = removePrivateEndpoints(paths);
+          const withDefaultValues = addDefaultValues(paths);
 
           if (updatedCredits || updatedPrivate) {
             fs.writeFile(
