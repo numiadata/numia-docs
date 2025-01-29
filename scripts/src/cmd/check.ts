@@ -4,8 +4,8 @@ import fs from "fs";
 import {
   verifyCreditsInDescription,
   verifyAllCreditsInDirectory,
-} from "./check/check-credits";
-import { verifyNoPrivateEndpoints } from "./check/check-private";
+} from "../check/check-credits";
+import { verifyNoPrivateEndpoints } from "../check/check-private";
 import { OpenAPIV3 } from "openapi-types";
 
 /**

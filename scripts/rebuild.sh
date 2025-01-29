@@ -1,9 +1,8 @@
-bun run src/oas-generation/download-oas.ts
+bun run src/cmd/download-oas.ts
 
-bun run src/transform-oas.ts
+bun run src/cmd/transform-oas.ts
 
-bun run src/check.ts
-
+bun run src/cmd/check.ts
 
 
 cd ..
@@ -11,4 +10,4 @@ rm -rf docs/reference
 bunx writedocs api
 
 cd scripts
-bun run src/oas-generation/gen-api-menu.ts
+bun run src/cmd/generate-menu.ts

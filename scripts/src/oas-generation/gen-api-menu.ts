@@ -38,7 +38,7 @@ interface NavbarEntry {
   label: string;
   sidebarRef: string;
 }
-function main(): void {
+export function generateApiMenu(): void {
   const sidebars = generateSidebars();
   updateConfig(sidebars);
   console.log("Config updated with API reference sidebar.");

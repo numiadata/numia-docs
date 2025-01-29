@@ -5,8 +5,8 @@ import { apiConfig } from "../api-config";
 const REPOSITORY_ROOT = Path.join(__dirname, "../../../");
 export const OAS_ROOT_DIR = Path.join(REPOSITORY_ROOT, "openAPI");
 const CONFIG_FILE_PATH = Path.join(REPOSITORY_ROOT, "config.json");
-main();
-async function main() {
+
+export async function rebuildOas() {
   cleanOasDir();
   await downloadOasFiles();
   updateApiFilesInConfig();

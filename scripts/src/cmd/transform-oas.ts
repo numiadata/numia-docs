@@ -1,9 +1,9 @@
 import fs from "fs";
 import path from "path";
 import { OpenAPIV3 } from "openapi-types";
-import { addCreditsToDescription } from "./oas-transforms/add-credits-to-description";
-import { removePrivateEndpoints } from "./oas-transforms/remove-private-endpoints";
-import { addDefaultValues } from "./oas-transforms/default-values";
+import { addCreditsToDescription } from "../oas-transforms/add-credits-to-description";
+import { removePrivateEndpoints } from "../oas-transforms/remove-private-endpoints";
+import { addDefaultValues } from "../oas-transforms/default-values";
 
 const openAPIDir = path.join(__dirname, "../../openAPI");
 
