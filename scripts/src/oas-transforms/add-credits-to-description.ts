@@ -12,7 +12,7 @@ export function addCreditsToDescription(paths: OpenAPIV3.PathsObject): boolean {
       const attributes = (operation as any).attributes as
         | undefined
         | Record<string, string>;
-      const xCredit = attributes?.["x-credits"] || 1;
+      const xCredit = attributes?.["x-credits"] || 5;
 
       const priceTag = `import PriceTag from "@site/src/components/PriceTag";\n\n<PriceTag price={${xCredit}}/>`;
       const priceTagRegex = /<PriceTag price={\d+}\/>/;

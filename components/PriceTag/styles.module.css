@@ -7,50 +7,32 @@
 }
 
 .priceTag {
-  position: absolute;
-  display: inline-flex;
+  margin: 8px 0 0 12px;
+  align-self: center;
+  position: relative;
+  display: flex;
   align-items: center;
   justify-content: center;
   padding: 0 14px;
   background-color: transparent;
   font-weight: 600;
-  float: left;
-  top: 220px;
-  /* top: -228px; */
   border: 1px solid #a5a5a5;
   border-radius: 34px;
   height: 20px;
-  gap: 2px;
+  gap: 3px;
   cursor: pointer;
   color: var(--text-color);
 }
 
-@media (max-width: 996px) {
-  .priceTag {
-    top: 165px;
-  }
-}
-
-@media (max-width: 460px) {
-  .priceTag {
-    top: 200px;
-  }
-}
-
-@media (max-width: 270px) {
-  .priceTag {
-    top: 250px;
-  }
-}
-
 .amount {
   font-size: 14px;
-  height: 20px;
   margin-bottom: 2px;
 }
 
 .coin {
   margin-top: 1px;
+  position: relative;
+  top: -6px;
 }
 
 .coin_svg {

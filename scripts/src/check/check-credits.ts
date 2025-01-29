@@ -13,7 +13,7 @@ export function verifyCreditsInDescription(
   const operation = openAPI.paths?.[route]?.[method];
   assert(operation, `operation not found: ${route} ${method}`);
   const attributes = getAttributes(operation);
-  const xCredit = attributes?.["x-credits"] || 1;
+  const xCredit = attributes?.["x-credits"] || 5;
   const expectedPriceTag = `<PriceTag price={${xCredit}}/>`;
 
   if (

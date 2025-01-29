@@ -1,8 +1,67 @@
 ---
-route: POST /sdk/track
+route: POST /track
 ---
 
 {/* Don't change the file name or the metadata in this file */}
+# Tracking an Event
+
+We offer the ability to send conversion analytics events from your website like, trade_made, wallet_connected, or any other custom events related to any conversion you want to track. If the conversion is an on-chain conversion please check with our team if the chain is indexed so it’s tracked automatically. Otherwise please make sure you track the key conversion events on your website.
+
+Currently, the event_name and the identity object are required. The meta data regarding event attributes can be omitted but ew strongly recommend do add additional information like token_amounts, token_denoms, contract for specific on-chain conversions.
+
+```json
+{
+    "name": "$event_name", // required
+    "identity": {
+        "type": "address", // required
+        "id": "$address" // required
+    },
+    "attributes": {
+        "attribute_key_1": "attribute_value_1",
+        "attribute_key_2": "attribute_value_2",
+        "attribute_key_3": "attribute_value_3",
+        // ...
+        "attribute_key_n": "attribute_value_n"
+    },
+    "meta": {},
+    "timestamp": "$Date.now()" // required
+}
+```
+
+### Conventions for Event Tracking
+
+Conventions for some events
+Some events are very standard across all dapp funnels and in order for us to have better benchmarks for you and run our standard reports, we ask you to follow the following conventions:
+Standard event names with their standard attributes:
+
+-   `wallet_connected`
+-   `open_position`:
+    -   We recommend taking this directly from the message you send onchain.
+
+```json
+{
+    "tokens": [
+        {"amount": 5, "denom": $token_denom_1 },{"amount":2, "denom":$token_denom_2 },
+        // ...
+        {"amount":3, "denom":$token_denom_3}
+    ],
+    "amount_usd": 50.00
+}
+```
+
+-   `claim_rewards`:
+    -   We recommend taking this directly from the message you send onchain.
+
+```json
+{
+    "tokens": [
+        {"amount": 5, "denom": $token_denom_1 }
+    ],
+    "amount_usd": 50.00
+}
+```
+
+
 import PriceTag from "@site/src/components/PriceTag";
 
-<PriceTag price={1}/>
+<PriceTag price={5}/>

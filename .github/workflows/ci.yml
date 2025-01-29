@@ -15,5 +15,5 @@ jobs:
         uses: ./.github/actions/setup
 
       - name: Run checks on OAS files
-        run: bun run src/check.ts
+        run: bun run src/cmd/check.ts
         working-directory: scripts

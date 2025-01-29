@@ -16,69 +16,23 @@ jobs:
       - name: Setup bun
         uses: ./.github/actions/setup
 
-      - name: Clean openAPI directory
-        run: rm -rf openAPI
-
-      - name: Clean openAPI directory
-        run: rm -rf docs/reference
-
-      - name: Download OpenAPI files
-        run: |
-          mkdir -p openAPI
-          curl -o openAPI/engage-ads.json https://api-docs.numia.xyz/engage/ads/openapi.json
-          curl -o openAPI/txbyaddress.json https://api-docs.numia.xyz/api/byaddress/openapi.json
-          curl -o openAPI/cosmos.json https://api-docs.numia.xyz/lenses/cosmos/openapi.json
-          curl -o openAPI/dex.json https://api-docs.numia.xyz/osmosis/openapi.json
-          curl -o openAPI/osmosis-lenses.json https://api-docs.numia.xyz/lenses/osmosis/openapi.json
-          curl -o openAPI/dydx-lenses.json https://api-docs.numia.xyz/lenses/dydx/openapi.json
-          curl -o openAPI/numiaai.json https://api-docs.numia.xyz/numiaAI/openapi.json
-          curl -o openAPI/quasar.json https://api-docs.numia.xyz/quasar/openapi.json
-          curl -o openAPI/stride.json https://api-docs.numia.xyz/stride/openapi.json
-          curl -o openAPI/xion.json https://api-docs.numia.xyz/xion/openapi.json
-          curl -o openAPI/snapshots.json https://api-docs.numia.xyz/aadao-snapshots/openapi.json
-      - name: Update config.json
-        run: |
-          files=(
-            "engage-ads.json"
-            "txbyaddress.json"
-            "dex.json"
-            "osmosis-lenses.json"
-            "dydx-lenses.json"
-            "numiaai.json"
-            "quasar.json"
-            "stride.json"
-            "xion.json"
-            "snapshots.json"
-            "cosmos.json"
-          )
-
-          config_file="config.json"
-          jq '.apiFiles = (.apiFiles + $files | unique)' \
-            --argjson files "$(printf '%s\n' "${files[@]}" | jq -R . | jq -s .)" \
-            "$config_file" > tmp_config.json
-
-          mv tmp_config.json "$config_file"
-
-      - name: Validate and Add Missing Responses to OAS Files
-        run: bun run oasFiles/fixOasProperties.js
+      - name: Download OAS Files
+        run: bun run src/cmd/download-oas.ts
         working-directory: scripts
 
-      - name: Transform OAS files
-        run: bun run src/transform-oas.ts
+      - name: Transform OAS Files
+        run: bun run src/cmd/transform-oas.ts
         working-directory: scripts
 
       - name: Run checks on transforms
-        run: bun run src/check.ts
+        run: bun run src/cmd/check.ts
         working-directory: scripts
 
-      - name: Install writedocs package
-        run: npm install -g writedocs
-
-      - name: Generate API documentation
-        run: writedocs api
+      - name: Run writedocs api generation
+        run: bunx writedocs api
 
       - name: Generate sidebar and add it to config.json
-        run: bun run oasFiles/oasFilesAutomation.js
+        run: bun run src/cmd/generate-menu.ts
         working-directory: scripts
 
       - name: Get current date
@@ -99,15 +53,4 @@ jobs:
         run: gh pr merge --squash --auto "${{ steps.cpr.outputs.pull-request-number }}"
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      # - name: Commit and push changes
-      #   run: |
-      #     git config user.name "github-actions[bot]"
-      #     git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-      #     git fetch origin main
-      #     git merge origin/main --no-edit || echo "No conflicts to resolve."
-      #     git add .
-      #     git commit -m "chore: updates API Reference based on OpenAPI files"
-      #     git push
-      #   env:
-      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        if: steps.cpr.outputs.pull-request-number
