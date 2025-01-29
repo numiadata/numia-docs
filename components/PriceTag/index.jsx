@@ -37,14 +37,17 @@ const PriceTag = ({ price }) => {
         </svg>
       </span>
 
-      {isHovered && (
-        <div className={styles.tooltip}>This request cost {price} credits</div>
+      {isHovered && formattedPrice === 1 && (
+        <div className={styles.tooltip}>This request costs {price} credit</div>
+      )}
+      {isHovered && formattedPrice > 1 && (
+        <div className={styles.tooltip}>This request costs {price} credits</div>
       )}
     </span>
   );
 
   if (!targetNode) {
-    return null; // or could return null to render nothing until target is found
+    return null;
   }
 
   return ReactDOM.createPortal(priceTagContent, targetNode);
