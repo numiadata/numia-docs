@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "@google-cloud/bigquery": "^7.9.1",
+    "es-toolkit": "^1.31.0",
     "p-map": "^7.0.2"
   },
   "module": "index.ts",
