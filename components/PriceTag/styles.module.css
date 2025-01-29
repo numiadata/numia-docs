@@ -15,8 +15,7 @@
   background-color: transparent;
   font-weight: 600;
   float: left;
-  top: 220px;
-  /* top: -228px; */
+  top: 200px;
   border: 1px solid #a5a5a5;
   border-radius: 34px;
   height: 20px;
@@ -25,9 +24,15 @@
   color: var(--text-color);
 }
 
+@media (max-width: 1033px) {
+  .priceTag {
+    top: 230px;
+  }
+}
+
 @media (max-width: 996px) {
   .priceTag {
-    top: 165px;
+    top: 160px;
   }
 }
 
