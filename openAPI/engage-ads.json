@@ -60,7 +60,20 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/campaign/{address}": {
@@ -108,7 +121,20 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/click": {
@@ -160,7 +186,20 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     },
     "/track": {
@@ -170,7 +209,7 @@
         "tags": [
           "delivery"
         ],
-        "description": "# Tracking an Event\n\nWe offer the ability to send conversion analytics events from your website like, trade_made, wallet_connected, or any other custom events related to any conversion you want to track. If the conversion is an on-chain conversion please check with our team if the chain is indexed so it’s tracked automatically. Otherwise please make sure you track the key conversion events on your website.\n\nCurrently, the event_name and the identity object are required. The meta data regarding event attributes can be omitted but ew strongly recommend do add additional information like token_amounts, token_denoms, contract for specific on-chain conversions.\n\n```json\n{\n    \"name\": \"$event_name\", // required\n    \"identity\": {\n        \"type\": \"address\", // required\n        \"id\": \"$address\" // required\n    },\n    \"attributes\": {\n        \"attribute_key_1\": \"attribute_value_1\",\n        \"attribute_key_2\": \"attribute_value_2\",\n        \"attribute_key_3\": \"attribute_value_3\",\n        // ...\n        \"attribute_key_n\": \"attribute_value_n\"\n    },\n    \"meta\": {},\n    \"timestamp\": \"$Date.now()\" // required\n}\n```\n\n### Conventions for Event Tracking\n\nConventions for some events\nSome events are very standard across all dapp funnels and in order for us to have better benchmarks for you and run our standard reports, we ask you to follow the following conventions:\nStandard event names with their standard attributes:\n\n-   `wallet_connected`\n-   `open_position`:\n    -   We recommend taking this directly from the message you send onchain.\n\n```json\n{\n    \"tokens\": [\n        {\"amount\": 5, \"denom\": $token_denom_1 },{\"amount\":2, \"denom\":$token_denom_2 },\n        // ...\n        {\"amount\":3, \"denom\":$token_denom_3}\n    ],\n    \"amount_usd\": 50.00\n}\n```\n\n-   `claim_rewards`:\n    -   We recommend taking this directly from the message you send onchain.\n\n```json\n{\n    \"tokens\": [\n        {\"amount\": 5, \"denom\": $token_denom_1 }\n    ],\n    \"amount_usd\": 50.00\n}\n```\n",
+        "description": "# Tracking an Event\n\nWe offer the ability to send conversion analytics events from your website like, trade_made, wallet_connected, or any other custom events related to any conversion you want to track. If the conversion is an on-chain conversion please check with our team if the chain is indexed so it’s tracked automatically. Otherwise please make sure you track the key conversion events on your website.\n\nCurrently, the event_name and the identity object are required. The meta data regarding event attributes can be omitted but ew strongly recommend do add additional information like token_amounts, token_denoms, contract for specific on-chain conversions.\n\n```json\n{\n    \"name\": \"$event_name\", // required\n    \"identity\": {\n        \"type\": \"address\", // required\n        \"id\": \"$address\" // required\n    },\n    \"attributes\": {\n        \"attribute_key_1\": \"attribute_value_1\",\n        \"attribute_key_2\": \"attribute_value_2\",\n        \"attribute_key_3\": \"attribute_value_3\",\n        // ...\n        \"attribute_key_n\": \"attribute_value_n\"\n    },\n    \"meta\": {},\n    \"timestamp\": \"$Date.now()\" // required\n}\n```\n\n### Conventions for Event Tracking\n\nConventions for some events\nSome events are very standard across all dapp funnels and in order for us to have better benchmarks for you and run our standard reports, we ask you to follow the following conventions:\nStandard event names with their standard attributes:\n\n-   `wallet_connected`\n-   `open_position`:\n    -   We recommend taking this directly from the message you send onchain.\n\n```json\n{\n    \"tokens\": [\n        {\"amount\": 5, \"denom\": $token_denom_1 },{\"amount\":2, \"denom\":$token_denom_2 },\n        // ...\n        {\"amount\":3, \"denom\":$token_denom_3}\n    ],\n    \"amount_usd\": 50.00\n}\n```\n\n-   `claim_rewards`:\n    -   We recommend taking this directly from the message you send onchain.\n\n```json\n{\n    \"tokens\": [\n        {\"amount\": 5, \"denom\": $token_denom_1 }\n    ],\n    \"amount_usd\": 50.00\n}\n```\n\n\nimport PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>",
         "requestBody": {
           "content": {
             "json": {
@@ -226,7 +265,19 @@
             }
           }
         },
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/sdk/track": {
@@ -276,7 +327,20 @@
             }
           }
         },
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={1}/>"
       }
     }
   }
