@@ -1,3 +1,5 @@
+cd scripts
+
 bun run src/cmd/download-oas.ts
 
 bun run src/cmd/transform-oas.ts

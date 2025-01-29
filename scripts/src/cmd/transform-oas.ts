@@ -4,8 +4,9 @@ import { OpenAPIV3 } from "openapi-types";
 import { addCreditsToDescription } from "../oas-transforms/add-credits-to-description";
 import { removePrivateEndpoints } from "../oas-transforms/remove-private-endpoints";
 import { addDefaultValues } from "../oas-transforms/default-values";
+import { REPOSITORY_ROOT } from "../api-config";
 
-const openAPIDir = path.join(__dirname, "../../openAPI");
+const openAPIDir = path.join(REPOSITORY_ROOT, "/openAPI");
 
 fs.readdir(openAPIDir, (err, files) => {
   if (err) {

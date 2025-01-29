@@ -7,11 +7,12 @@ import {
 } from "../check/check-credits";
 import { verifyNoPrivateEndpoints } from "../check/check-private";
 import { OpenAPIV3 } from "openapi-types";
+import { REPOSITORY_ROOT } from "../api-config";
 
 /**
  * Check Credits in Description
  */
-const filePath = path.join(__dirname, "../../openAPI/osmosis.json");
+const filePath = path.join(REPOSITORY_ROOT, "openAPI/osmosis.json");
 const fileContent = fs.readFileSync(filePath, "utf-8");
 const dexFile = JSON.parse(fileContent) as OpenAPIV3.Document;
 verifyCreditsInDescription(
@@ -21,7 +22,7 @@ verifyCreditsInDescription(
 );
 
 // Check credits in all files in the openAPI directory
-const openAPIDirectoryPath = path.join(__dirname, "../../openAPI");
+const openAPIDirectoryPath = path.join(REPOSITORY_ROOT, "openAPI");
 verifyAllCreditsInDirectory(openAPIDirectoryPath);
 
 verifyNoPrivateEndpoints(dexFile.paths);
