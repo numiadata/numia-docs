@@ -9,8 +9,6 @@ const REPOSITORY_ROOT = path.join(__dirname, "../../../");
 const CONFIG_FILE_PATH = path.join(REPOSITORY_ROOT, "config.json");
 const REFERENCE_PATH = path.join(REPOSITORY_ROOT, "docs/reference");
 
-main();
-
 interface Sidebar {
   sidebarRef: string;
   categories: Category[];

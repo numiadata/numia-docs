@@ -259,23 +259,23 @@
             {
               "groupName": "Lenses Analytics",
               "subpages": [
+                "reference/dydx-lenses/get-trading-fees",
                 "reference/dydx-lenses/get-business-expenses-share-by-destination",
                 "reference/dydx-lenses/get-tokenomics-wallets-treasury-subdao",
-                "reference/dydx-lenses/get-trading-traders-ranking",
-                "reference/dydx-lenses/get-trading-liquidation-flow-by-market",
-                "reference/dydx-lenses/get-trading-trading-fees"
+                "reference/dydx-lenses/get-liquidation-flow-by-market",
+                "reference/dydx-lenses/get-traders-ranking"
               ]
             },
             {
               "groupName": "Stride",
               "subpages": [
-                "reference/stride/get-stride-redemptionrate",
-                "reference/stride/get-stride-tokenmetrics",
-                "reference/stride/get-stride-totalusers",
-                "reference/stride/get-stride-totalyield",
-                "reference/stride/get-stride-tvl",
-                "reference/stride/get-stride-averagestaked",
-                "reference/stride/get-stride-apr"
+                "reference/stride/get-average-staked",
+                "reference/stride/get-tvl",
+                "reference/stride/get-total-yield",
+                "reference/stride/get-apr",
+                "reference/stride/get-redemption-rate",
+                "reference/stride/get-token-metrics",
+                "reference/stride/get-total-users"
               ]
             },
             {
@@ -319,21 +319,21 @@
             {
               "groupName": "Analytics",
               "subpages": [
-                "reference/cosmos/get-staking-liquid-share-by-provider",
                 "reference/cosmos/get-aez-revenue-share-by-consumer",
+                "reference/cosmos/get-liquid-staking-flow-by-provider",
                 "reference/cosmos/get-tokenomics-top-stakeholders",
                 "reference/cosmos/get-hydro-deployments-overview",
+                "reference/cosmos/get-liquid-staking-share-by-provider",
                 "reference/cosmos/get-hydro-deployments-overview-staging",
-                "reference/cosmos/get-hydro-metrics",
-                "reference/cosmos/get-staking-liquid-flow-by-provider"
+                "reference/cosmos/get-hydro-metrics"
               ]
             },
             {
               "groupName": "Analytics",
               "subpages": [
-                "reference/osmosis-lenses/get-superfluid-superfluid-flow",
-                "reference/osmosis-lenses/get-liquidity-liquidity-flow",
-                "reference/osmosis-lenses/get-staking-superfluid-flow-by-market",
+                "reference/osmosis-lenses/get-liquidity-flow",
+                "reference/osmosis-lenses/get-superfluid-flow",
+                "reference/osmosis-lenses/get-superfluid-flow-by-market",
                 "reference/osmosis-lenses/get-liquidity-flow-by-market"
               ]
             },
@@ -346,41 +346,42 @@
               ]
             },
             {
-              "groupName": "Dex",
+              "groupName": "Osmosis",
               "subpages": [
-                "reference/dex/get-token-pair-historical-chart",
-                "reference/dex/get-pools-apr",
-                "reference/dex/get-portfolio-current",
-                "reference/dex/get-apr",
-                "reference/dex/get-pools-fees",
-                "reference/dex/get-balances-for-earn-strategies",
-                "reference/dex/get-closed-limit-orders-history",
-                "reference/dex/get-token-data",
-                "reference/dex/get-portfolio-over-time",
-                "reference/dex/get-rewards-estimation",
-                "reference/dex/get-defillama-osmosis-chain-fees-and-revenue",
-                "reference/dex/get-tvl-for-earn-strategies",
-                "reference/dex/get-pools-liquidity-over-time",
-                "reference/dex/get-landing-page-metrics",
-                "reference/dex/get-pools-apr-range",
-                "reference/dex/get-position-info",
-                "reference/dex/get-chain-revenue",
-                "reference/dex/get-pairs-summary-v-2",
-                "reference/dex/get-token-historical-chart",
-                "reference/dex/get-apr-for-earn-strategies",
-                "reference/dex/get-i-bc-chain-status",
-                "reference/dex/get-coingecko-osmosis-native-factory-assets-supply",
-                "reference/dex/get-token-real-time-price",
-                "reference/dex/get-earn-strategies",
-                "reference/dex/get-cl-pools-position-apr",
-                "reference/dex/get-pool-stream-data",
-                "reference/dex/get-supply-metrics"
+                "reference/osmosis/get-rewards-estimation-for-bech-32-address",
+                "reference/osmosis/get-token-pair-historical-chart",
+                "reference/osmosis/get-pools-apr",
+                "reference/osmosis/get-portfolio-current",
+                "reference/osmosis/get-apr",
+                "reference/osmosis/get-pools-fees",
+                "reference/osmosis/get-balances-for-earn-strategies",
+                "reference/osmosis/get-closed-limit-orders-history",
+                "reference/osmosis/get-token-data",
+                "reference/osmosis/get-portfolio-over-time",
+                "reference/osmosis/get-tvl-for-earn-strategies",
+                "reference/osmosis/get-rewards-estimation-for-address",
+                "reference/osmosis/get-pools-liquidity-over-time",
+                "reference/osmosis/get-pools-apr-range",
+                "reference/osmosis/get-position-info",
+                "reference/osmosis/get-chain-revenue",
+                "reference/osmosis/get-pairs-summary-v-2",
+                "reference/osmosis/get-token-historical-chart",
+                "reference/osmosis/get-apr-for-earn-strategies",
+                "reference/osmosis/get-i-bc-chain-status",
+                "reference/osmosis/get-token-real-time-price",
+                "reference/osmosis/get-trading-metrics",
+                "reference/osmosis/get-earn-strategies",
+                "reference/osmosis/get-cl-pools-position-apr",
+                "reference/osmosis/get-pool-stream-data",
+                "reference/osmosis/get-supply-metrics",
+                "reference/osmosis/get-rewards-estimation-for-address-and-denom"
               ]
             },
             {
               "groupName": "Engage Ads",
               "subpages": [
                 "reference/engage-ads/get-campaign-for-address",
+                "reference/engage-ads/track-event-sdk",
                 "reference/engage-ads/track-event",
                 "reference/engage-ads/get-campaign-for-addresses",
                 "reference/engage-ads/redirect-click-link"
@@ -403,13 +404,14 @@
             {
               "groupName": "AI Agent Analytics",
               "subpages": [
-                "reference/numiaai/get-market-positions-duration-metrics",
-                "reference/numiaai/get-market-price",
-                "reference/numiaai/get-market-positions-long-short-ratio",
-                "reference/numiaai/get-market-collateral",
-                "reference/numiaai/get-market-orderbook-depth",
-                "reference/numiaai/get-market-leverage",
-                "reference/numiaai/get-market-orderbook-slippage"
+                "reference/numiaai/get-markets-leverage",
+                "reference/numiaai/get-markets-collateral",
+                "reference/numiaai/get-megavault-flow",
+                "reference/numiaai/get-orderbook-depth",
+                "reference/numiaai/get-orderbook-slippage",
+                "reference/numiaai/get-positions-duration-metrics",
+                "reference/numiaai/get-positions-long-short-ratio",
+                "reference/numiaai/get-markets-price"
               ]
             },
             {
