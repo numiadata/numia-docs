@@ -254,6 +254,7 @@
             {
               "groupName": "Osmosis",
               "subpages": [
+                "api/osmosis-overview",
                 {
                   "groupName": "Pools",
                   "subpages": [
