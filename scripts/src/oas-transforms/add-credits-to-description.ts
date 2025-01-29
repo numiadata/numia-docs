@@ -14,12 +14,6 @@ export function addCreditsToDescription(paths: OpenAPIV3.PathsObject): boolean {
         | Record<string, string>;
       const xCredit = attributes?.["x-credits"] || 1;
 
-      if (route === "/pairs/v1/historical/{pool_id}/chart") {
-        console.log("Operation", operation);
-        console.log("attributes", attributes);
-        console.log("xCredit", xCredit);
-      }
-
       const priceTag = `import PriceTag from "@site/src/components/PriceTag";\n\n<PriceTag price={${xCredit}}/>`;
       const priceTagRegex = /<PriceTag price={\d+}\/>/;
       const justTag = `<PriceTag price={${xCredit}}/>`;
