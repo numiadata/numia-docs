@@ -248,51 +248,47 @@
           "categoryName": "Advanced APIs",
           "pages": [
             {
-              "groupName": "Osmosis",
-              "subpages": [
-                "reference/osmosis/get-pools-apr-range",
-                "reference/osmosis/get-closed-limit-orders-history",
-                "reference/osmosis/get-portfolio-over-time",
-                "reference/osmosis/get-token-historical-chart",
-                "reference/osmosis/get-i-bc-chain-status",
-                "reference/osmosis/get-pools-apr",
-                "reference/osmosis/get-position-info",
-                "reference/osmosis/get-token-real-time-price",
-                "reference/osmosis/get-earn-strategies",
-                "reference/osmosis/get-pools-liquidity-over-time",
-                "reference/osmosis/get-cl-pools-position-apr",
-                "reference/osmosis/get-apr",
-                "reference/osmosis/get-rewards-estimation-for-address-and-denom",
-                "reference/osmosis/get-chain-revenue",
-                "reference/osmosis/get-token-pair-historical-chart",
-                "reference/osmosis/get-portfolio-current",
-                "reference/osmosis/get-tvl-for-earn-strategies",
-                "reference/osmosis/get-apr-for-earn-strategies",
-                "reference/osmosis/get-trading-metrics",
-                "reference/osmosis/get-balances-for-earn-strategies",
-                "reference/osmosis/get-pools-fees",
-                "reference/osmosis/get-token-data",
-                "reference/osmosis/get-pairs-summary-v-2",
-                "reference/osmosis/get-rewards-estimation-for-address",
-                "reference/osmosis/get-pool-stream-data",
-                "reference/osmosis/get-supply-metrics",
-                "reference/osmosis/get-rewards-estimation-for-bech-32-address"
-              ]
-            },
-            {
               "groupName": "Osmosis Analytics",
               "subpages": [
                 "reference/osmosis-lenses/get-liquidity-flow",
-                "reference/osmosis-lenses/get-superfluid-flow-by-market",
                 "reference/osmosis-lenses/get-superfluid-flow",
+                "reference/osmosis-lenses/get-superfluid-flow-by-market",
                 "reference/osmosis-lenses/get-liquidity-flow-by-market"
+              ]
+            },
+            {
+              "groupName": "Osmosis",
+              "subpages": [
+                "reference/osmosis/get-rewards-estimation-for-bech-32-address",
+                "reference/osmosis/get-token-pair-historical-chart",
+                "reference/osmosis/get-pools-apr",
+                "reference/osmosis/get-portfolio-current",
+                "reference/osmosis/get-apr",
+                "reference/osmosis/get-pools-fees",
+                "reference/osmosis/get-balances-for-earn-strategies",
+                "reference/osmosis/get-closed-limit-orders-history",
+                "reference/osmosis/get-token-data",
+                "reference/osmosis/get-portfolio-over-time",
+                "reference/osmosis/get-tvl-for-earn-strategies",
+                "reference/osmosis/get-rewards-estimation-for-address",
+                "reference/osmosis/get-pools-liquidity-over-time",
+                "reference/osmosis/get-pools-apr-range",
+                "reference/osmosis/get-position-info",
+                "reference/osmosis/get-chain-revenue",
+                "reference/osmosis/get-pairs-summary-v-2",
+                "reference/osmosis/get-token-historical-chart",
+                "reference/osmosis/get-apr-for-earn-strategies",
+                "reference/osmosis/get-i-bc-chain-status",
+                "reference/osmosis/get-token-real-time-price",
+                "reference/osmosis/get-trading-metrics",
+                "reference/osmosis/get-earn-strategies",
+                "reference/osmosis/get-cl-pools-position-apr",
+                "reference/osmosis/get-pool-stream-data",
+                "reference/osmosis/get-supply-metrics",
+                "reference/osmosis/get-rewards-estimation-for-address-and-denom"
               ]
             }
           ]
-        },
-        {
-          "categoryName": "Tools",
-          "pages": []
         }
       ]
     }

@@ -118,10 +118,10 @@ function generateSidebars(): any {
         categoryName: "Advanced APIs",
         pages: [],
       },
-      {
-        categoryName: "Tools",
-        pages: [],
-      },
+      // {
+      //   categoryName: "Tools",
+      //   pages: [],
+      // },
     ],
   };
 
