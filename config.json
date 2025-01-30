@@ -6,7 +6,9 @@
     "favicon": "media/favicon.ico",
     "darkLogo": "media/logo_numia_docs.svg"
   },
-  "languages": ["en"],
+  "languages": [
+    "en"
+  ],
   "styles": {
     "mainColor": "#F78B4B",
     "navbarColor": "#FFFFFF",
@@ -20,7 +22,11 @@
     "default": "dark",
     "switchOff": false
   },
-  "apiFiles": ["osmosis.json", "osmosis-lenses.json", "engage-ads.json"],
+  "apiFiles": [
+    "osmosis.json",
+    "osmosis-lenses.json",
+    "engage-ads.json"
+  ],
   "homepage": "/api/overview/whats-numia-api/",
   "changelog": false,
   "navbar": [
@@ -246,67 +252,71 @@
               "groupName": "Osmosis",
               "subpages": [
                 "api/osmosis-overview",
-                {
-                  "groupName": "Pools",
-                  "subpages": [
-                    "reference/osmosis/get-token-pair-historical-chart",
-                    "reference/osmosis/get-pools-fees",
-                    "reference/osmosis/get-pool-stream-data",
-                    "reference/osmosis/get-position-info",
-                    "reference/osmosis/get-pools-liquidity-over-time",
-                    "reference/osmosis/get-pools-apr",
-                    "reference/osmosis/get-pools-apr-range",
-                    "reference/osmosis/get-cl-pools-position-apr",
-                    "reference/osmosis/get-pairs-summary-v-2"
-                  ]
-                },
-                {
-                  "groupName": "Tokens",
-                  "subpages": [
-                    "reference/osmosis/get-token-historical-chart",
-                    "reference/osmosis/get-token-real-time-price",
-                    "reference/osmosis/get-token-data"
-                  ]
-                },
-                {
-                  "groupName": "Users",
-                  "subpages": [
-                    "reference/osmosis/get-rewards-estimation-for-bech-32-address",
-                    "reference/osmosis/get-rewards-estimation-for-address-and-denom",
-                    "reference/osmosis/get-rewards-estimation-for-address",
-                    "reference/osmosis/get-portfolio-over-time",
-                    "reference/osmosis/get-portfolio-current",
-                    "reference/osmosis/get-closed-limit-orders-history"
-                  ]
-                },
-                {
-                  "groupName": "Chain",
-                  "subpages": [
-                    "reference/osmosis/get-i-bc-chain-status",
-                    "reference/osmosis/get-apr",
-                    "reference/osmosis/get-supply-metrics",
-                    "reference/osmosis/get-chain-revenue",
-                    "reference/osmosis/get-trading-metrics"
-                  ]
-                },
-                {
-                  "groupName": "Earn",
-                  "subpages": [
-                    "reference/osmosis/get-earn-strategies",
-                    "reference/osmosis/get-balances-for-earn-strategies",
-                    "reference/osmosis/get-apr-for-earn-strategies",
-                    "reference/osmosis/get-tvl-for-earn-strategies"
-                  ]
-                }
+                [
+                  {
+                    "groupName": "Pools",
+                    "subpages": [
+                      "reference/osmosis/get-token-pair-historical-chart",
+                      "reference/osmosis/get-pools-fees",
+                      "reference/osmosis/get-pool-stream-data",
+                      "reference/osmosis/get-position-info",
+                      "reference/osmosis/get-pools-liquidity-over-time",
+                      "reference/osmosis/get-pools-apr",
+                      "reference/osmosis/get-pools-apr-range",
+                      "reference/osmosis/get-cl-pools-position-apr",
+                      "reference/osmosis/get-pairs-summary-v-2"
+                    ]
+                  },
+                  {
+                    "groupName": "Tokens",
+                    "subpages": [
+                      "reference/osmosis/get-token-historical-chart",
+                      "reference/osmosis/get-token-real-time-price",
+                      "reference/osmosis/get-token-data"
+                    ]
+                  },
+                  {
+                    "groupName": "Users",
+                    "subpages": [
+                      "reference/osmosis/get-rewards-estimation-for-bech-32-address",
+                      "reference/osmosis/get-rewards-estimation-for-address-and-denom",
+                      "reference/osmosis/get-rewards-estimation-for-address",
+                      "reference/osmosis/get-portfolio-over-time",
+                      "reference/osmosis/get-portfolio-current",
+                      "reference/osmosis/get-closed-limit-orders-history"
+                    ]
+                  },
+                  {
+                    "groupName": "Chain",
+                    "subpages": [
+                      "reference/osmosis/get-i-bc-chain-status",
+                      "reference/osmosis/get-apr",
+                      "reference/osmosis/get-supply-metrics",
+                      "reference/osmosis/get-chain-revenue",
+                      "reference/osmosis/get-trading-metrics"
+                    ]
+                  },
+                  {
+                    "groupName": "Earn",
+                    "subpages": [
+                      "reference/osmosis/get-earn-strategies",
+                      "reference/osmosis/get-balances-for-earn-strategies",
+                      "reference/osmosis/get-apr-for-earn-strategies",
+                      "reference/osmosis/get-tvl-for-earn-strategies"
+                    ]
+                  }
+                ]
               ]
             },
             {
               "groupName": "Osmosis-lenses",
               "subpages": [
-                "reference/osmosis-lenses/get-liquidity-flow",
-                "reference/osmosis-lenses/get-liquidity-flow-by-market",
-                "reference/osmosis-lenses/get-superfluid-flow",
-                "reference/osmosis-lenses/get-superfluid-flow-by-market"
+                [
+                  "reference/osmosis-lenses/get-liquidity-flow",
+                  "reference/osmosis-lenses/get-liquidity-flow-by-market",
+                  "reference/osmosis-lenses/get-superfluid-flow",
+                  "reference/osmosis-lenses/get-superfluid-flow-by-market"
+                ]
               ]
             }
           ]
