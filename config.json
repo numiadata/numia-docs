@@ -236,7 +236,8 @@
           "categoryName": "Overview",
           "pages": [
             "api/overview/whats-numia-api",
-            "api/overview/getting-started"
+            "api/overview/getting-started",
+            "api/overview/api-pricing"
           ]
         },
         {
