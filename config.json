@@ -6,7 +6,9 @@
     "favicon": "media/favicon.ico",
     "darkLogo": "media/logo_numia_docs.svg"
   },
-  "languages": ["en"],
+  "languages": [
+    "en"
+  ],
   "styles": {
     "mainColor": "#F78B4B",
     "navbarColor": "#FFFFFF",
@@ -20,7 +22,11 @@
     "default": "dark",
     "switchOff": false
   },
-  "apiFiles": ["osmosis.json", "osmosis-lenses.json", "engage-ads.json"],
+  "apiFiles": [
+    "osmosis.json",
+    "osmosis-lenses.json",
+    "engage-ads.json"
+  ],
   "homepage": "/api/overview/whats-numia-api/",
   "changelog": false,
   "navbar": [
@@ -243,18 +249,8 @@
           "categoryName": "Advanced APIs",
           "pages": [
             {
-              "groupName": "Osmosis-lenses",
-              "subpages": [
-                "reference/osmosis-lenses/get-liquidity-flow",
-                "reference/osmosis-lenses/get-liquidity-flow-by-market",
-                "reference/osmosis-lenses/get-superfluid-flow",
-                "reference/osmosis-lenses/get-superfluid-flow-by-market"
-              ]
-            },
-            {
               "groupName": "Osmosis",
               "subpages": [
-                "api/osmosis-overview",
                 {
                   "groupName": "Pools",
                   "subpages": [
@@ -307,6 +303,15 @@
                     "reference/osmosis/get-tvl-for-earn-strategies"
                   ]
                 }
+              ]
+            },
+            {
+              "groupName": "Osmosis-lenses",
+              "subpages": [
+                "reference/osmosis-lenses/get-liquidity-flow",
+                "reference/osmosis-lenses/get-liquidity-flow-by-market",
+                "reference/osmosis-lenses/get-superfluid-flow",
+                "reference/osmosis-lenses/get-superfluid-flow-by-market"
               ]
             }
           ]
