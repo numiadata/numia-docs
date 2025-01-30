@@ -232,7 +232,7 @@ function generateSidebars(): any {
         groupName: capitalize(dir),
         subpages: [
           ...(apiConfigSection?.subpages ?? []),
-          subpages.flat(),
+          ...subpages.flat(),
         ].filter(isTruthy),
       };
 
