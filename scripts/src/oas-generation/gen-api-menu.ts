@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { apiConfig } from "../api-config";
-import { capitalize, kebabCase } from "es-toolkit";
+import { capitalize, kebabCase, sortBy } from "es-toolkit";
 import type { OpenAPIV3 } from "openapi-types";
 import { OAS_ROOT_DIR } from "./download-oas";
 import { getAttributes } from "../openapi-util";
@@ -24,7 +24,7 @@ function isGroup(subPage: string | Group): subPage is Group {
   return typeof subPage !== "string";
 }
 
-interface Group {
+export interface Group {
   groupName: string;
   subpages: (string | Group)[];
 }
@@ -105,6 +105,18 @@ function insertEngageAds(engageIntegrationGroup: any[]): void {
 
 function generateSidebars(): any {
   const directories = getAllDirectories(REFERENCE_PATH);
+
+  // Extract the names from apiConfig
+  const apiConfigNames = apiConfig.map((section) => section.name.toLowerCase());
+
+  // Sort directories based on their index in apiConfigNames
+  const sortedDirectories = directories.sort((a, b) => {
+    return (
+      apiConfigNames.indexOf(a.toLowerCase()) -
+      apiConfigNames.indexOf(b.toLowerCase())
+    );
+  });
+
   const engageIntegrationGroup: any[] = [];
 
   const sidebar: Sidebar = {
@@ -190,7 +202,10 @@ function generateSidebars(): any {
     return { groupedPages, untaggedPages };
   }
 
-  directories.forEach((dir) => {
+  sortedDirectories.forEach((dir) => {
+    const apiConfigSection = apiConfig.find(
+      (section) => section.name.toLowerCase() === dir.toLowerCase()
+    );
     const apiFiles = getApiFiles(path.join(REFERENCE_PATH, dir));
 
     if (apiFiles.length > 0) {
@@ -215,7 +230,10 @@ function generateSidebars(): any {
 
       const group = {
         groupName: capitalize(dir),
-        subpages: subpages.flat(),
+        subpages: [
+          ...(apiConfigSection?.subpages ?? []),
+          ...subpages.flat(),
+        ].filter(isTruthy),
       };
 
       if (configSection) {
@@ -256,4 +274,8 @@ function getApiFiles(dirPath: string): string[] {
     .readdirSync(dirPath, { withFileTypes: true })
     .filter((file) => file.isFile() && file.name.endsWith(".endpoint.mdx"))
     .map((file) => file.name.replace(".endpoint.mdx", ""));
+}
+
+function isTruthy<T>(value: T | null | undefined): value is T {
+  return value !== null && value !== undefined;
 }
