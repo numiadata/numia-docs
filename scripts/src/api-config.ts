@@ -1,10 +1,12 @@
 import path from "path";
+import type { Group } from "./oas-generation/gen-api-menu";
 
 export type ApiSection = {
   title: string;
   categoryName?: "Advanced APIs" | "Tools";
   name: string;
   oasFile: string;
+  subpages?: Group["subpages"];
 };
 
 export const REPOSITORY_ROOT = path.join(__dirname, "../../");
@@ -15,6 +17,7 @@ export const apiConfig: ApiSection[] = [
     categoryName: "Advanced APIs",
     oasFile: "https://api-docs.numia.xyz/osmosis/openapi.json",
     title: "Osmosis",
+    subpages: ["api/osmosis-overview"],
   },
   {
     name: "osmosis-lenses",
