@@ -5,6 +5,7 @@ import { addCreditsToDescription } from "../oas-transforms/add-credits-to-descri
 import { removePrivateEndpoints } from "../oas-transforms/remove-private-endpoints";
 import { addDefaultValues } from "../oas-transforms/default-values";
 import { REPOSITORY_ROOT } from "../api-config";
+import { addDocsServer } from "../oas-transforms/add-docs-server";
 
 const openAPIDir = path.join(REPOSITORY_ROOT, "/openAPI");
 
@@ -32,8 +33,14 @@ fs.readdir(openAPIDir, (err, files) => {
           const updatedCredits = addCreditsToDescription(paths);
           const updatedPrivate = removePrivateEndpoints(paths);
           const withDefaultValues = addDefaultValues(paths);
+          const withDocsServer = addDocsServer(paths);
 
-          if (updatedCredits || updatedPrivate || withDefaultValues) {
+          if (
+            updatedCredits ||
+            updatedPrivate ||
+            withDefaultValues ||
+            withDocsServer
+          ) {
             fs.writeFile(
               filePath,
               JSON.stringify(openAPISpec, null, 2),
