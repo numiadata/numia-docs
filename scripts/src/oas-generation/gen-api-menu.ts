@@ -24,7 +24,7 @@ function isGroup(subPage: string | Group): subPage is Group {
   return typeof subPage !== "string";
 }
 
-interface Group {
+export interface Group {
   groupName: string;
   subpages: (string | Group)[];
 }
@@ -203,6 +203,9 @@ function generateSidebars(): any {
   }
 
   sortedDirectories.forEach((dir) => {
+    const apiConfigSection = apiConfig.find(
+      (section) => section.name.toLowerCase() === dir.toLowerCase()
+    );
     const apiFiles = getApiFiles(path.join(REFERENCE_PATH, dir));
 
     if (apiFiles.length > 0) {
@@ -227,7 +230,10 @@ function generateSidebars(): any {
 
       const group = {
         groupName: capitalize(dir),
-        subpages: subpages.flat(),
+        subpages: [
+          ...(apiConfigSection?.subpages ?? []),
+          subpages.flat(),
+        ].filter(isTruthy),
       };
 
       if (configSection) {
@@ -268,4 +274,8 @@ function getApiFiles(dirPath: string): string[] {
     .readdirSync(dirPath, { withFileTypes: true })
     .filter((file) => file.isFile() && file.name.endsWith(".endpoint.mdx"))
     .map((file) => file.name.replace(".endpoint.mdx", ""));
+}
+
+function isTruthy<T>(value: T | null | undefined): value is T {
+  return value !== null && value !== undefined;
 }
