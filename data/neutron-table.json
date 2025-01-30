@@ -1246,6 +1246,47 @@
       ]
     },
     {
+      "name": "neutron_slinky_prices",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "validator_address",
+          "type": "STRING"
+        },
+        {
+          "name": "validator_power",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_id_flag",
+          "type": "INTEGER"
+        },
+        {
+          "name": "extension_signature",
+          "type": "STRING"
+        },
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "vote_prices",
+          "type": "JSON"
+        },
+        {
+          "name": "ingested_at",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
       "name": "neutron_transactions",
       "description": "Cosmos Ecosystem Blockchain Transactions. This table contains information about all transactions occurring across various chains in the Cosmos ecosystem.",
       "tags": [
