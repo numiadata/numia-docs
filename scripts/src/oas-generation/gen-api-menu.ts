@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { apiConfig } from "../api-config";
-import { capitalize, kebabCase } from "es-toolkit";
+import { capitalize, kebabCase, sortBy } from "es-toolkit";
 import type { OpenAPIV3 } from "openapi-types";
 import { OAS_ROOT_DIR } from "./download-oas";
 import { getAttributes } from "../openapi-util";
@@ -105,6 +105,18 @@ function insertEngageAds(engageIntegrationGroup: any[]): void {
 
 function generateSidebars(): any {
   const directories = getAllDirectories(REFERENCE_PATH);
+
+  // Extract the names from apiConfig
+  const apiConfigNames = apiConfig.map((section) => section.name.toLowerCase());
+
+  // Sort directories based on their index in apiConfigNames
+  const sortedDirectories = directories.sort((a, b) => {
+    return (
+      apiConfigNames.indexOf(a.toLowerCase()) -
+      apiConfigNames.indexOf(b.toLowerCase())
+    );
+  });
+
   const engageIntegrationGroup: any[] = [];
 
   const sidebar: Sidebar = {
@@ -190,7 +202,7 @@ function generateSidebars(): any {
     return { groupedPages, untaggedPages };
   }
 
-  directories.forEach((dir) => {
+  sortedDirectories.forEach((dir) => {
     const apiFiles = getApiFiles(path.join(REFERENCE_PATH, dir));
 
     if (apiFiles.length > 0) {
