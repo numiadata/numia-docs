@@ -27,6 +27,11 @@
     "osmosis-lenses.json",
     "engage-ads.json"
   ],
+  "codeLanguages": [
+    "curl",
+    "python",
+    "javascript"
+  ],
   "homepage": "/api/overview/whats-numia-api/",
   "changelog": false,
   "navbar": [
