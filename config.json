@@ -6,9 +6,8 @@
     "favicon": "media/favicon.ico",
     "darkLogo": "media/logo_numia_docs.svg"
   },
-  "languages": [
-    "en"
-  ],
+  "languages": ["en"],
+  "codeLanguages": ["python", "javascript"],
   "styles": {
     "mainColor": "#F78B4B",
     "navbarColor": "#FFFFFF",
@@ -22,11 +21,7 @@
     "default": "dark",
     "switchOff": false
   },
-  "apiFiles": [
-    "osmosis.json",
-    "osmosis-lenses.json",
-    "engage-ads.json"
-  ],
+  "apiFiles": ["osmosis.json", "osmosis-lenses.json", "engage-ads.json"],
   "homepage": "/api/overview/whats-numia-api/",
   "changelog": false,
   "navbar": [
