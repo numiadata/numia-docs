@@ -317,7 +317,8 @@
                 "reference/osmosis-lenses/get-liquidity-flow",
                 "reference/osmosis-lenses/get-liquidity-flow-by-market",
                 "reference/osmosis-lenses/get-superfluid-flow",
-                "reference/osmosis-lenses/get-superfluid-flow-by-market"
+                "reference/osmosis-lenses/get-superfluid-flow-by-market",
+                "reference/osmosis-lenses/get-top-assets-by-volume"
               ]
             }
           ]
