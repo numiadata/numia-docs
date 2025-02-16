@@ -3,26 +3,26 @@
   "tables": [
     {
       "name": "dydx_aux_accounting_view",
-      "description": "This table provides auxiliary accounting information for DYDX, a decentralized exchange on the Cosmos ecosystem. It offers a comprehensive view of the DYDX financials, including labels, categories, and amounts.",
+      "description": "This table provides an auxiliary accounting view for DYDX, offering insights into its activity within the Cosmos ecosystem. It displays key metrics such as labels, categories, and amounts of transactions.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "labels",
-          "description": "Short description of the labels used in the DYDX accounting view, including asset and token names.",
+          "description": "Unique identifier or label associated with each transaction or activity.",
           "type": "TIMESTAMP",
           "mode": "NULLABLE"
         },
         {
           "name": "category",
-          "description": "Category of the transaction or event, such as 'token' or 'fee', providing context for the accounting information.",
+          "description": "Category or type of transaction or activity (e.g., transfer, swap, etc.).",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "amount",
-          "description": "The amount of the transaction or event, expressed in the relevant currency or token.",
+          "description": "Amount involved in each transaction or activity, represented in the native cryptocurrency of the Cosmos ecosystem (e.g., ATOM).",
           "type": "FLOAT",
           "mode": "NULLABLE"
         }
@@ -30,32 +30,32 @@
     },
     {
       "name": "dydx_balance_module_account",
-      "description": "This module provides a balance overview of accounts on the Cosmos ecosystem. It aggregates balance data for each day, account, and denomination.",
+      "description": "This table provides a daily snapshot of balances for accounts in the Cosmos ecosystem, specifically for the balance module account. It showcases the evolution of account balances over time and across different denominations.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "day",
-          "description": "The day of the balance measurement, in a Unix timestamp format.",
+          "description": "The day for which the balance snapshot was taken, represented as a Unix timestamp.",
           "type": "TIMESTAMP",
           "mode": "NULLABLE"
         },
         {
           "name": "address",
-          "description": "The blockchain address of the account holding the balance.",
+          "description": "The address of the account for which the balance was recorded.",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "denom",
-          "description": "The denomination of the asset held in the account, e.g., 'uatom' for a single atom.",
+          "description": "The denomination of the token, such as uatom, ubtn, or any other custom token in the Cosmos ecosystem.",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "amount",
-          "description": "The balance of the account in the specified denomination.",
+          "description": "The amount of the token held by the account on the specified day.",
           "type": "FLOAT",
           "mode": "NULLABLE"
         }
@@ -63,396 +63,472 @@
     },
     {
       "name": "dydx_block_events",
-      "description": "",
+      "description": "This table contains block events from the Cosmos ecosystem, providing a record of all changes and transactions that occur on the blockchain. The data is organized by block height and timestamp for easy analysis and tracking.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in the blockchain, indicating its position in the chain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block, representing the time at which the block was mined.",
           "type": "TIMESTAMP"
         },
         {
           "name": "event_index",
+          "description": "A unique index for each event within a block, allowing for tracking of specific events.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "The type of event that occurred, categorizing the action or transaction.",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
+          "description": "Additional attributes related to the event, providing more context and information.",
           "type": "JSON"
         },
         {
           "name": "source",
+          "description": "The source of the block event, indicating the specific blockchain or node that reported the event.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the block event was ingested into the database, representing the time of data collection.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to define the structure of the block event data.",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "dydx_blocks",
-      "description": "",
+      "description": "This table contains information about blocks in the Cosmos ecosystem, providing insights into the network's activity and growth. The data is sourced from various blockchains within the ecosystem.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in the blockchain, indicating its position in the chain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block was created, indicating when the transactions within the block were processed.",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
+          "description": "The unique identifier of the blockchain, distinguishing it from others within the Cosmos ecosystem.",
           "type": "STRING"
         },
         {
           "name": "proposer_address",
+          "description": "The address of the validator that proposed the block, responsible for creating and validating the block's transactions.",
           "type": "STRING"
         },
         {
           "name": "validators_hash",
+          "description": "A hash representing the set of validators that voted on the block, ensuring its integrity and consistency within the network.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the block data was ingested into the system, reflecting the time it took for the data to be processed and made available.",
           "type": "TIMESTAMP"
         },
         {
           "name": "messages_bytes",
+          "description": "The total size of the messages (transactions) within the block, indicating the volume of data being processed by the network.",
           "type": "INTEGER"
         },
         {
           "name": "tx_count",
+          "description": "The number of transactions within the block, reflecting the level of activity and engagement within the network.",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "dydx_cancel_order",
-      "description": "",
+      "description": "This table contains a record of all canceled orders on the DYDX exchange, providing insights into the order cancellation activity on the platform. The data is sourced directly from the Cosmos blockchain, ensuring a transparent and tamper-proof record of all transactions.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the order cancellation event was recorded.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp at which the block was mined, indicating the time at which the order cancellation event occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction that contained the order cancellation event.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block, identifying the specific transaction that contained the order cancellation event.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction, identifying the specific message that contained the order cancellation event.",
           "type": "STRING"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message, identifying the specific action that contained the order cancellation event.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the account that initiated the order cancellation event.",
           "type": "STRING"
         },
         {
           "name": "subaccount",
+          "description": "The subaccount associated with the sender, if applicable.",
           "type": "INTEGER"
         },
         {
           "name": "order_id",
+          "description": "The unique identifier of the order that was canceled.",
           "type": "INTEGER"
         },
         {
           "name": "market_id",
+          "description": "The identifier of the market in which the order was canceled.",
           "type": "INTEGER"
         },
         {
           "name": "type",
+          "description": "The type of order that was canceled (e.g., limit, market, etc.).",
           "type": "STRING"
         },
         {
           "name": "expiration_timestamp",
+          "description": "The timestamp at which the order was set to expire, if applicable.",
           "type": "TIMESTAMP"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the order cancellation event was ingested into the database.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_delegate",
-      "description": "",
+      "description": "This table contains information about Cosmos validators' delegation operations, providing insights into the dynamics of the Cosmos ecosystem.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block on which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block on which the transaction was included.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash identifying the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The position of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The position of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The position of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the sender of the transaction.",
           "type": "STRING"
         },
         {
           "name": "validator",
+          "description": "The address of the validator involved in the delegation operation.",
           "type": "STRING"
         },
         {
           "name": "token_amount",
+          "description": "The amount of tokens delegated or undelegated.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom",
+          "description": "The denomination of the tokens (e.g., uatom).",
           "type": "STRING"
         },
         {
           "name": "new_shares",
+          "description": "The new share amount after the delegation or undelegation.",
           "type": "FLOAT"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_deposit",
-      "description": "",
+      "description": "This table contains information about deposits made through the DYDX protocol in the Cosmos ecosystem. Each entry represents a single deposit transaction.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the deposit transaction occurred.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block in which the deposit transaction occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction that facilitated the deposit.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction in the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The sender's address that initiated the deposit transaction.",
           "type": "STRING"
         },
         {
           "name": "recipient",
+          "description": "The recipient's address that received the deposited assets.",
           "type": "STRING"
         },
         {
           "name": "recipient_subaccount",
+          "description": "The subaccount of the recipient's address that received the deposited assets.",
           "type": "INTEGER"
         },
         {
           "name": "quantums",
+          "description": "The amount of assets deposited in quantum units.",
           "type": "INTEGER"
         },
         {
           "name": "asset_id",
+          "description": "The unique identifier of the asset deposited.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_match",
-      "description": "",
+      "description": "This table contains information about matches between makers and takers in the DyDX perpetual contracts, offering insights into the dynamics of the perpetual market within the Cosmos ecosystem.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the match occurred.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "Timestamp of the block in which the match occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "Hash of the transaction that triggered the match.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "Index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "Index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "Index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "taker",
+          "description": "The account that initiated the taker order.",
           "type": "STRING"
         },
         {
           "name": "taker_subaccount",
+          "description": "The subaccount associated with the taker.",
           "type": "INTEGER"
         },
         {
           "name": "taker_order_id",
+          "description": "Unique identifier for the taker order.",
           "type": "INTEGER"
         },
         {
           "name": "maker",
+          "description": "The account that initiated the maker order.",
           "type": "STRING"
         },
         {
           "name": "maker_subaccount",
+          "description": "The subaccount associated with the maker.",
           "type": "INTEGER"
         },
         {
           "name": "maker_order_id",
+          "description": "Unique identifier for the maker order.",
           "type": "INTEGER"
         },
         {
           "name": "taker_order_fee_quote_quantums",
+          "description": "The fees charged to the taker in quote asset units.",
           "type": "INTEGER"
         },
         {
           "name": "maker_order_fee_quote_quantums",
+          "description": "The fees charged to the maker in quote asset units.",
           "type": "INTEGER"
         },
         {
           "name": "maker_quote_balance_delta_quote_quantums",
+          "description": "The change in the maker's quote asset balance.",
           "type": "INTEGER"
         },
         {
           "name": "taker_quote_balance_delta_quote_quantums",
+          "description": "The change in the taker's quote asset balance.",
           "type": "INTEGER"
         },
         {
           "name": "maker_perpetual_quantums_delta_base_quantums",
+          "description": "The change in the maker's perpetual position in base asset units.",
           "type": "INTEGER"
         },
         {
           "name": "taker_perpetual_quantums_delta_base_quantums",
+          "description": "The change in the taker's perpetual position in base asset units.",
           "type": "INTEGER"
         },
         {
           "name": "insurance_fund_delta_quote_quantums",
+          "description": "The change in the insurance fund balance in quote asset units.",
           "type": "INTEGER"
         },
         {
           "name": "is_liquidation",
+          "description": "Flag indicating whether the match was a result of liquidation.",
           "type": "BOOLEAN"
         },
         {
           "name": "is_deleverage",
+          "description": "Flag indicating whether the match resulted in deleveraging.",
           "type": "BOOLEAN"
         },
         {
           "name": "perpetual_id",
+          "description": "Unique identifier for the perpetual contract involved in the match.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "Timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_mempool_transactions",
-      "description": "This table contains information about pending transactions on the Cosmos ecosystem's mempool, providing insights into transaction activity and network congestion. It serves as a real-time indicator of the blockchain's current state and can be used to analyze trends and patterns in transaction volume.",
+      "description": "This table provides information on mempool transactions from the Cosmos ecosystem, offering insights into the pending transactions on the network. It helps users analyze the current state of the network's transaction pool.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "attributes",
-          "description": "Attributes associated with the transaction, such as sender and recipient addresses, transaction type, and other metadata.",
+          "description": "Details about the transaction attributes, such as gas prices, fees, and more.",
           "type": "JSON",
           "mode": "NULLABLE"
         },
         {
           "name": "publish_time",
-          "description": "Timestamp when the transaction was published to the mempool, indicating the time it was received by the network.",
+          "description": "Timestamp when the transaction was published to the mempool, indicating when it became pending.",
           "type": "TIMESTAMP",
           "mode": "NULLABLE"
         },
         {
           "name": "message_id",
-          "description": "Unique identifier for the transaction message, used to track its status and any potential errors.",
+          "description": "Unique identifier for the transaction message, facilitating tracking and analysis.",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "subscription_name",
-          "description": "Name of the subscription used to receive the transaction data, providing context on the source of the information.",
+          "description": "Name of the subscription used to receive the transaction data, providing context for the data source.",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "data",
-          "description": "Raw transaction data, containing detailed information about the transaction, such as sender and recipient addresses, transaction amount, and transaction type.",
+          "description": "Raw transaction data, including the sender, receiver, and transaction details, offering a comprehensive view of the transaction.",
           "type": "BYTES",
           "mode": "NULLABLE"
         }
@@ -460,782 +536,937 @@
     },
     {
       "name": "dydx_message_events",
-      "description": "",
+      "description": "This table stores event data from various blockchains within the Cosmos ecosystem, providing insights into system activity over time. It captures key information about transactions, messages, and events across different blocks.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the event was recorded.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block containing the event was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction that triggered the event.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
+          "description": "The index of the event within the message.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "The type of event that occurred, categorizing the event into different types.",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
+          "description": "Additional attributes associated with the event, providing more context.",
           "type": "JSON"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the event data was ingested into the system.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to store the event data.",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "dydx_message_senders",
-      "description": "",
+      "description": "This table tracks the senders of messages in the Cosmos ecosystem, providing insights into the transactions and interactions within the network. The data is sourced from blockchain transactions and covers various events.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was included, representing the sequence of transactions within the blockchain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp at which the block was created, indicating the time of the transaction occurrence.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "A unique identifier for the transaction, allowing for the tracking of specific transactions across the blockchain.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block, enabling the identification of transactions within a specific block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction, allowing for the isolation of specific messages within a transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message, enabling the tracking of specific actions within a message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the entity that initiated the transaction, representing the origin of the message.",
           "type": "STRING"
         },
         {
           "name": "action",
+          "description": "A description of the action taken by the sender, providing context for the transaction.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the system, indicating the time of data availability.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_message_types_transactions",
-      "description": "This table provides a collection of transaction messages from various blockchains within the Cosmos ecosystem. It captures the metadata associated with these transactions, enabling analysis and insights into the blockchain activity.",
+      "description": "This table contains transaction messages from the Cosmos ecosystem, providing insights into the blockchain activity. It includes metadata such as block height, timestamp, and sender information.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The current height of the block in the blockchain, indicating the order of transactions.",
+          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block was created, representing the time of transaction occurrence.",
+          "description": "The timestamp of the block in which the transaction was included.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
-          "description": "A unique identifier for the transaction, allowing for tracking and verification across the blockchain network.",
+          "description": "The unique identifier of the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
-          "description": "The index of the transaction within the block, facilitating the ordering of transactions within a single block.",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
-          "description": "The index of the message within the transaction, enabling the analysis of multiple messages within a single transaction.",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
-          "description": "The index of the event within the message, allowing for the examination of multiple events within a single message.",
+          "description": "The index of the event within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
-          "description": "The address or entity that initiated the transaction, representing the source of the transaction.",
+          "description": "The address of the entity that initiated the transaction.",
           "type": "STRING"
         },
         {
           "name": "message_type",
-          "description": "The type of message associated with the transaction, categorizing the transaction based on its purpose.",
+          "description": "The type of message sent in the transaction.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the transaction data was ingested into the system, representing the time of data processing.",
+          "description": "The timestamp at which the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_place_order",
-      "description": "",
+      "description": "This table contains records of DYDX Place Orders events, providing insights into the market activity and user interactions within the Cosmos ecosystem. It offers a detailed view of the order placement process, including the sender, order details, and market information.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was mined, indicating the sequence of events in the Cosmos blockchain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block in which the transaction was mined, representing the time when the order was placed.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "A unique hash representing the transaction that contains the order placement event, facilitating the tracing of the order's origin.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block, allowing for the identification of the specific transaction containing the order placement event.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction, enabling the isolation of the order placement message.",
           "type": "STRING"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message, allowing for the identification of the specific action taken during the order placement process.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the user who initiated the order placement, representing the party responsible for the transaction.",
           "type": "STRING"
         },
         {
           "name": "subaccount",
+          "description": "The subaccount associated with the sender's address, allowing for the differentiation of multiple accounts under a single address.",
           "type": "INTEGER"
         },
         {
           "name": "order_id",
+          "description": "A unique identifier for the placed order, facilitating the tracking of the order's status and execution.",
           "type": "INTEGER"
         },
         {
           "name": "quantums",
+          "description": "The quantity of the asset being ordered, representing the amount of the asset being traded.",
           "type": "INTEGER"
         },
         {
           "name": "subticks",
+          "description": "The sub-tick price of the asset, providing a more granular representation of the asset's price.",
           "type": "INTEGER"
         },
         {
           "name": "market_id",
+          "description": "The identifier of the market in which the order was placed, indicating the specific asset pair being traded.",
           "type": "INTEGER"
         },
         {
           "name": "direction",
+          "description": "The direction of the order, specifying whether the order is a buy or sell operation.",
           "type": "STRING"
         },
         {
           "name": "type",
+          "description": "The type of order, such as limit or market order, indicating the conditions under which the order will be executed.",
           "type": "STRING"
         },
         {
           "name": "trigger_condition",
+          "description": "The trigger condition for the order, specifying the conditions under which the order will be activated.",
           "type": "STRING"
         },
         {
           "name": "trigger_subticks",
+          "description": "The sub-tick price at which the trigger condition will be evaluated.",
           "type": "INTEGER"
         },
         {
           "name": "memo",
+          "description": "A memo associated with the order, providing additional context or information about the order.",
           "type": "STRING"
         },
         {
           "name": "reduce_only",
+          "description": "A flag indicating whether the order can be reduced, allowing for the partial execution of the order.",
           "type": "BOOLEAN"
         },
         {
           "name": "expiration_timestamp",
+          "description": "The timestamp at which the order will expire, specifying the deadline for the order's execution.",
           "type": "TIMESTAMP"
         },
         {
           "name": "on_expiration",
+          "description": "The action to take when the order expires, such as cancel or expire, indicating the desired outcome.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the database, representing the time when the order placement event was recorded.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_settled_funding",
-      "description": "",
+      "description": "This table contains information about settled funding events from the Cosmos ecosystem, providing insights into the financial transactions and balances of perpetual contracts. It helps in understanding the overall dynamics of the decentralized financial system.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block in which the transaction was included.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction associated with the funding event.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction in the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "subaccount",
+          "description": "The subaccount associated with the funding event.",
           "type": "STRING"
         },
         {
           "name": "subaccount_number",
+          "description": "The number of the subaccount associated with the funding event.",
           "type": "INTEGER"
         },
         {
           "name": "funding_paid_quote_quantums",
+          "description": "The quantums of quote asset paid or received during the funding event.",
           "type": "INTEGER"
         },
         {
           "name": "perpetual_id",
+          "description": "The ID of the perpetual contract associated with the funding event.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_state",
-      "description": "",
+      "description": "The dydx_state table contains information about the state of decentralized finance (DeFi) lending and borrowing on the Cosmos-based DyDX protocol. It provides a snapshot of the current lending and borrowing positions on the blockchain.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "type",
+          "description": "The type of state on the DyDX protocol (e.g. lending, borrowing, etc.).",
           "type": "STRING"
         },
         {
           "name": "block",
+          "description": "The block number on the Cosmos blockchain where the state was recorded.",
           "type": "INTEGER"
         },
         {
           "name": "block_time",
+          "description": "The timestamp when the block was created, indicating when the state was recorded.",
           "type": "INTEGER"
         },
         {
           "name": "deleted",
+          "description": "A flag indicating whether the state has been deleted or not.",
           "type": "BOOLEAN"
         },
         {
           "name": "val",
+          "description": "The value of the state (e.g. the amount of a specific asset borrowed or lent).",
           "type": "JSON"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the state was ingested into the datasource.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_transactions",
-      "description": "",
+      "description": "This table contains a collection of transactions from the Cosmos ecosystem. It provides insights into the blockchain activity, including transaction details and fees.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "The unique identifier of the Cosmos blockchain.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "A unique identifier for the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_info",
+          "description": "Details about the transaction, including the sender and receiver.",
           "type": "STRING"
         },
         {
           "name": "tx_log_message",
+          "description": "A log message generated during the transaction process.",
           "type": "STRING"
         },
         {
           "name": "memo",
+          "description": "A note or comment left with the transaction.",
           "type": "STRING"
         },
         {
           "name": "fee",
+          "description": "The fee associated with the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_code",
+          "description": "The code executed during the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "gas_used",
+          "description": "The amount of gas used during the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "gas_wanted",
+          "description": "The amount of gas requested for the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction was ingested.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to process the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "fee_coins",
+          "description": "The coins used to pay the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "fee_granter",
+          "description": "The account that granted the fee.",
           "type": "STRING"
         },
         {
           "name": "fee_payer",
+          "description": "The account that paid the transaction fee.",
           "type": "STRING"
         },
         {
           "name": "gas_limit",
+          "description": "The maximum amount of gas allowed for the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "single_sign_mode",
+          "description": "Whether the transaction was executed in single- sign mode.",
           "type": "INTEGER"
         },
         {
           "name": "multi_sign_json",
+          "description": "The JSON data associated with multi-sign transactions.",
           "type": "STRING"
         },
         {
           "name": "timeout_height",
+          "description": "The height at which the transaction will be timed out if not executed.",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "dydx_transfer",
-      "description": "",
+      "description": "This table captures transfer events on the Cosmos ecosystem, representing the movement of assets between users. It provides a detailed record of transactional activities, including sender and recipient information.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the transfer occurred.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block in which the transfer occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction that initiated the transfer.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the user who initiated the transfer.",
           "type": "STRING"
         },
         {
           "name": "sender_subaccount",
+          "description": "The subaccount of the sender, if applicable.",
           "type": "INTEGER"
         },
         {
           "name": "recipient",
+          "description": "The address of the user who received the transfer.",
           "type": "STRING"
         },
         {
           "name": "recipient_subaccount",
+          "description": "The subaccount of the recipient, if applicable.",
           "type": "INTEGER"
         },
         {
           "name": "quantums",
+          "description": "The amount of assets transferred in quantum units.",
           "type": "INTEGER"
         },
         {
           "name": "asset_id",
+          "description": "The unique identifier of the asset being transferred.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_tx_messages",
-      "description": "",
+      "description": "This table contains transaction messages from the Cosmos ecosystem. It provides a detailed record of all messages sent across the network.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in the blockchain where the transaction message was recorded.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "The unique identifier of the Cosmos blockchain where the transaction message was recorded.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "The unique identifier of the transaction that contains the recorded message.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction in the block where the message was recorded.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "STRING"
         },
         {
           "name": "message_type",
+          "description": "The type of message recorded in the transaction.",
           "type": "STRING"
         },
         {
           "name": "message",
+          "description": "The actual message recorded in the transaction.",
           "type": "JSON"
         },
         {
           "name": "schema_version",
+          "description": "The version of the schema used to record the transaction message.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the transaction message was ingested into the data source.",
           "type": "TIMESTAMP"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block where the transaction message was recorded.",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "dydx_undelegate",
-      "description": "",
+      "description": "This table contains information about undelegation events for validators in the Cosmos ecosystem. It provides details about the validators who have delegated tokens to others.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block at which the undelegation event occurred.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the block at which the undelegation event occurred.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction that triggered the undelegation event.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction that triggered the undelegation event within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message that triggered the undelegation event within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action that triggered the undelegation event within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The account that initiated the undelegation event.",
           "type": "STRING"
         },
         {
           "name": "validator",
+          "description": "The validator who was previously delegated tokens.",
           "type": "STRING"
         },
         {
           "name": "token_amount",
+          "description": "The amount of tokens that were undelegated.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "token_denom",
+          "description": "The denomination of the tokens that were undelegated.",
           "type": "STRING"
         },
         {
           "name": "completion_time",
+          "description": "The time at which the undelegation event was finalized.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp at which the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_validators",
-      "description": "",
+      "description": "Table describing active validators on the Cosmos network, containing their operator and account information.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "operator_address",
+          "description": "Address of the validator's operator account.",
           "type": "STRING"
         },
         {
           "name": "account_address",
+          "description": "Address of the validator's account.",
           "type": "STRING"
         },
         {
           "name": "consensus_pubkey",
+          "description": "Validator's consensus public key.",
           "type": "STRING"
         },
         {
           "name": "jailed",
+          "description": "Boolean indicating whether the validator is currently jailed.",
           "type": "BOOLEAN"
         },
         {
           "name": "status",
+          "description": "Validator status.",
           "type": "STRING"
         },
         {
           "name": "tokens",
+          "description": "Validator's staked tokens.",
           "type": "STRING"
         },
         {
           "name": "moniker",
+          "description": "Validator's moniker.",
           "type": "STRING"
         },
         {
           "name": "identity",
+          "description": "Validator's identity.",
           "type": "STRING"
         },
         {
           "name": "website",
+          "description": "Validator's website.",
           "type": "STRING"
         },
         {
           "name": "security_contact",
+          "description": "Validator's security contact.",
           "type": "STRING"
         },
         {
           "name": "details",
+          "description": "Additional details about the validator.",
           "type": "STRING"
         },
         {
           "name": "unbonding_height",
+          "description": "Height at which the validator's unbonding period will end.",
           "type": "INTEGER"
         },
         {
           "name": "unbonding_time",
+          "description": "Timestamp at which the validator's unbonding period will end.",
           "type": "DATETIME"
         },
         {
           "name": "commission_rate",
+          "description": "Validator's commission rate.",
           "type": "FLOAT"
         },
         {
           "name": "commission_max_rate",
+          "description": "Validator's maximum commission rate.",
           "type": "FLOAT"
         },
         {
           "name": "commission_max_change_rate",
+          "description": "Validator's maximum commission rate change.",
           "type": "FLOAT"
         },
         {
           "name": "commission_update_time",
+          "description": "Timestamp at which the validator's commission was last updated.",
           "type": "DATETIME"
         },
         {
           "name": "min_self_delegation",
+          "description": "Minimum self-delegation amount for the validator.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "snapshot_height",
+          "description": "Snapshot height for the validator.",
           "type": "INTEGER"
         },
         {
           "name": "snapshot_time",
+          "description": "Timestamp of the snapshot for the validator.",
           "type": "DATETIME"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "Timestamp when the data was ingested.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_vote",
-      "description": "",
+      "description": "This table contains information about governance votes on the Cosmos network, providing insights into the decision-making process of the community. The data is sourced from blockchains within the Cosmos ecosystem.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the block in which the vote transaction occurred.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp when the block containing the vote transaction was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction that submitted the vote.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within the block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within the transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within the message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the account that submitted the vote.",
           "type": "STRING"
         },
         {
           "name": "proposal_id",
+          "description": "The unique identifier of the proposal being voted on.",
           "type": "STRING"
         },
         {
           "name": "option",
+          "description": "The chosen option by the sender for the proposal.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the database.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "dydx_withdrawal",
-      "description": "",
+      "description": "This table provides data on DYDX withdrawals, offering insights into transaction activity within the Cosmos ecosystem. The data is sourced from blockchain events.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "The height of the blockchain block in which the transaction was included.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "The timestamp of the blockchain block in which the transaction was included.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
+          "description": "The unique hash of the transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "The index of the transaction within a block.",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "The index of the message within a transaction.",
           "type": "INTEGER"
         },
         {
           "name": "action_index",
+          "description": "The index of the action within a message.",
           "type": "INTEGER"
         },
         {
           "name": "sender",
+          "description": "The address of the account that initiated the transaction.",
           "type": "STRING"
         },
         {
           "name": "sender_subaccount",
+          "description": "The subaccount of the sender (if applicable).",
           "type": "INTEGER"
         },
         {
           "name": "recipient",
+          "description": "The address of the account that received the funds.",
           "type": "STRING"
         },
         {
           "name": "quantums",
+          "description": "The amount of quantums transferred.",
           "type": "INTEGER"
         },
         {
           "name": "asset_id",
+          "description": "The unique identifier of the asset being transferred.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "The timestamp when the data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
