@@ -3,278 +3,278 @@
   "tables": [
     {
       "name": "sei_blocks",
-      "description": "This table contains information about blocks in the Cosmos blockchain ecosystem, providing insights into block heights, timestamps, and other relevant metrics.",
+      "description": "This table contains information about each block in the Cosmos ecosystem, including block height and timestamp, as well as details about the proposer and validators.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in the blockchain, indicating its position in the chain.",
+          "description": "The height of the block in the blockchain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block was created, measured in seconds since the Unix epoch.",
+          "description": "The timestamp when the block was created.",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
-          "description": "A unique identifier for the Cosmos blockchain network, distinguishing it from other networks.",
+          "description": "The unique identifier of the Cosmos blockchain.",
           "type": "STRING"
         },
         {
           "name": "proposer_address",
-          "description": "The address of the validator that proposed the block for inclusion in the blockchain.",
+          "description": "The address of the validator that proposed the block.",
           "type": "STRING"
         },
         {
           "name": "validators_hash",
-          "description": "A hash of the validators that participated in the block's validation process.",
+          "description": "A hash of the validators that secured the block.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the block data was ingested into the system, measured in seconds since the Unix epoch.",
+          "description": "The timestamp when the block data was ingested into the system.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "sei_event_attributes",
-      "description": "This table provides information about blockchain events from the Cosmos ecosystem, including metadata and attribute values. It is useful for analyzing and understanding event data in the Cosmos network.",
+      "description": "This table provides a consolidated view of attribute data from various blockchains within the Cosmos ecosystem. It allows for the analysis of blockchain activity and attribute values over time.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in the blockchain",
+          "description": "The height of the block that the event was part of, representing the number of blocks in the blockchain",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "The ID of the blockchain",
+          "description": "Unique identifier for the blockchain network, used to distinguish between different networks",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "The ID of the transaction",
+          "description": "Unique identifier for the transaction, used to track the transaction's history",
           "type": "STRING"
         },
         {
           "name": "event_index",
-          "description": "The index of the event within the transaction",
+          "description": "Index of the event in the transaction, used to identify the specific event",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "The type of the event",
+          "description": "Type of the event, indicating the type of action that occurred",
           "type": "STRING"
         },
         {
           "name": "event_source",
-          "description": "The source of the event",
+          "description": "Source of the event, indicating the module or contract that triggered the event",
           "type": "STRING"
         },
         {
           "name": "attribute_key",
-          "description": "The key of the attribute value",
+          "description": "Key of the attribute, used to identify the attribute being tracked",
           "type": "STRING"
         },
         {
           "name": "attribute_value",
-          "description": "The value of the attribute",
+          "description": "Value of the attribute, providing additional context about the event",
           "type": "STRING"
         },
         {
           "name": "attribute_index",
-          "description": "The index of the attribute within the event",
+          "description": "Index of the attribute in the event, used to track multiple attributes",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the data was ingested",
+          "description": "Timestamp when the data was ingested into the system, indicating the time of data availability",
           "type": "TIMESTAMP"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block was created",
+          "description": "Timestamp when the block was created, indicating the time of the event",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "sei_message_event_attributes",
-      "description": "This table provides detailed information about message events from various blockchains in the Cosmos ecosystem, offering insights into transaction activity and network behavior.",
+      "description": "This table provides a detailed view of blockchain activity within the Cosmos ecosystem, including key information about transactions and their associated attributes. It offers valuable insights into the behavior and characteristics of blockchain usage within this ecosystem.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in which the message event was recorded.",
+          "description": "The height of the block within which the transaction was processed.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "The unique identifier of the blockchain on which the message event occurred.",
+          "description": "A unique identifier for the Cosmos blockchain network, used to distinguish between different networks.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "The unique identifier of the transaction in which the message event occurred.",
+          "description": "A unique identifier for the transaction, used to track its progress and status.",
           "type": "STRING"
         },
         {
           "name": "message_index",
-          "description": "The index of the message within which the event was recorded.",
+          "description": "The index of the message within the transaction, with messages being processed in order.",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
-          "description": "The index of the event within the message.",
+          "description": "The index of the event within the message, with events being processed in order.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "The type of event that occurred.",
+          "description": "A description of the type of event that occurred, such as a contract creation or a token transfer.",
           "type": "STRING"
         },
         {
           "name": "attribute_key",
-          "description": "The key associated with an attribute of the message event.",
+          "description": "A key-value pair that provides additional information about the event, with the key describing the attribute and the value providing the actual data.",
           "type": "STRING"
         },
         {
           "name": "attribute_value",
-          "description": "The value associated with an attribute of the message event.",
+          "description": "The value associated with an attribute key, providing additional context about the event.",
           "type": "STRING"
         },
         {
           "name": "attribute_index",
-          "description": "The index of the attribute within the message event.",
+          "description": "The index of the attribute within the event, with attributes being processed in order.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp at which the message event data was ingested into the database.",
+          "description": "The timestamp at which the data was ingested into the system, used for tracking data freshness and latency.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "sei_transactions",
-      "description": "Cosmos Ecosystem Blockchain Transactions. This table contains information about all transactions occurring across various chains in the Cosmos ecosystem.",
+      "description": "This table contains a comprehensive record of transactions from the Cosmos ecosystem. Each transaction includes relevant metadata for auditing and analysis.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The block height at which the transaction was processed.",
+          "description": "The height of the block within the Cosmos blockchain that this transaction was included in.",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "The ID of the blockchain on which the transaction occurred.",
+          "description": "A unique identifier for the specific Cosmos blockchain that this transaction belongs to.",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "A unique identifier for the transaction.",
+          "description": "A unique identifier for this transaction within the Cosmos blockchain.",
           "type": "STRING"
         },
         {
           "name": "tx_info",
-          "description": "Additional information about the transaction.",
+          "description": "A JSON object containing additional information about this transaction.",
           "type": "STRING"
         },
         {
           "name": "tx_log_message",
-          "description": "A log message related to the transaction.",
+          "description": "A log message generated during the processing of this transaction.",
           "type": "STRING"
         },
         {
           "name": "memo",
-          "description": "A memo or note associated with the transaction.",
+          "description": "A memo or note associated with this transaction.",
           "type": "STRING"
         },
         {
           "name": "fee",
-          "description": "The fee paid for the transaction.",
+          "description": "The fee paid for processing this transaction, expressed in a specific denomination.",
           "type": "STRING"
         },
         {
           "name": "tx_code",
-          "description": "The transaction code or result.",
+          "description": "The code returned by the Cosmos blockchain after processing this transaction.",
           "type": "INTEGER"
         },
         {
           "name": "tx_index",
-          "description": "The index of the transaction within a block.",
+          "description": "The index of this transaction within the block that it was included in.",
           "type": "INTEGER"
         },
         {
           "name": "gas_used",
-          "description": "The amount of gas used during the transaction.",
+          "description": "The amount of gas consumed by this transaction during processing.",
           "type": "INTEGER"
         },
         {
           "name": "gas_wanted",
-          "description": "The amount of gas requested for the transaction.",
+          "description": "The amount of gas requested for processing this transaction.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp at which the transaction was ingested.",
+          "description": "The timestamp when this transaction was ingested into the database.",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
-          "description": "The version of the schema used to process the transaction.",
+          "description": "The version of the schema used to store this transaction.",
           "type": "INTEGER"
         },
         {
           "name": "fee_coins",
-          "description": "The coins used to pay the transaction fee.",
+          "description": "The coins used to pay the fee for processing this transaction.",
           "type": "STRING"
         },
         {
           "name": "fee_granter",
-          "description": "The account that granted the transaction fee.",
+          "description": "The account that granted the fee for processing this transaction.",
           "type": "STRING"
         },
         {
           "name": "fee_payer",
-          "description": "The account that paid the transaction fee.",
+          "description": "The account that paid the fee for processing this transaction.",
           "type": "STRING"
         },
         {
           "name": "gas_limit",
-          "description": "The maximum amount of gas the transaction was allowed to use.",
+          "description": "The maximum amount of gas that can be consumed by this transaction.",
           "type": "INTEGER"
         },
         {
           "name": "single_sign_mode",
-          "description": "Whether the transaction was processed in single sign mode.",
+          "description": "A flag indicating whether this transaction was processed in single-sign mode.",
           "type": "INTEGER"
         },
         {
           "name": "multi_sign_json",
-          "description": "JSON data related to multi- sign transactions.",
+          "description": "A JSON object containing multi-signature information for this transaction.",
           "type": "STRING"
         },
         {
           "name": "timeout_height",
-          "description": "The block height at which the transaction was timed out.",
+          "description": "The height of the block where this transaction will timeout if not processed.",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "sei_tx_messages",
-      "description": "This table contains a collection of transactions from various blockchains within the Cosmos ecosystem, providing insights into the blockchain activity over time.",
+      "description": "This table contains transaction messages from the Cosmos ecosystem, providing a detailed view of blockchain activity. It offers insights into the type of transactions and the associated data.",
       "tags": [
         "raw_table"
       ],
@@ -286,7 +286,7 @@
         },
         {
           "name": "chain_id",
-          "description": "The unique identifier of the blockchain on which the transaction occurred.",
+          "description": "The unique identifier of the Cosmos blockchain network.",
           "type": "STRING"
         },
         {
@@ -301,146 +301,146 @@
         },
         {
           "name": "message_index",
-          "description": "The index of the message within the transaction.",
+          "description": "The index of the transaction message within the transaction.",
           "type": "STRING"
         },
         {
           "name": "message_type",
-          "description": "The type of message within the transaction.",
+          "description": "The type of transaction message (e.g., contract creation, contract call, etc.).",
           "type": "STRING"
         },
         {
           "name": "message",
-          "description": "The actual message within the transaction.",
+          "description": "The actual transaction message data.",
           "type": "JSON"
         },
         {
           "name": "schema_version",
-          "description": "The version of the schema used to store the transaction data.",
+          "description": "The version of the schema used to process the transaction message.",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the transaction data was ingested into the database.",
+          "description": "The timestamp when the transaction message was ingested into the system.",
           "type": "TIMESTAMP"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block was created, which includes the transaction.",
+          "description": "The timestamp of the block in which the transaction was included.",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "sei_validators",
-      "description": "This table lists the active and inactive validators in the Cosmos ecosystem, providing essential information for validators and users to make informed decisions.",
+      "description": "This table contains information about validators in the Cosmos ecosystem, including their operator addresses, jailed status, and commission rates.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "operator_address",
-          "description": "The address associated with the validator's operator.",
+          "description": "Unique address of the validator operator.",
           "type": "STRING"
         },
         {
           "name": "account_address",
-          "description": "The address of the validator, which is used for account management and custody.",
+          "description": "Address associated with the validator account.",
           "type": "STRING"
         },
         {
           "name": "consensus_pubkey",
-          "description": "The public key used by the validator for consensus and vote casting.",
+          "description": "Public key used for consensus in the validator's public keyring.",
           "type": "STRING"
         },
         {
           "name": "jailed",
-          "description": "A flag indicating whether the validator is currently jailed, meaning it is temporarily unable to participate in the network.",
+          "description": "Flag indicating whether the validator is currently jailed (i.e., unable to create new blocks).",
           "type": "BOOLEAN"
         },
         {
           "name": "status",
-          "description": "The current status of the validator, including active, unbonding, or jailed.",
+          "description": "Current status of the validator, including values such as 'bonded', 'unbonding', or 'unbonded'.",
           "type": "STRING"
         },
         {
           "name": "tokens",
-          "description": "The total amount of tokens staked by the validator.",
+          "description": "Total amount of tokens bonded by the validator.",
           "type": "STRING"
         },
         {
           "name": "moniker",
-          "description": "The human- readable name or identifier for the validator.",
+          "description": "Human-readable name of the validator.",
           "type": "STRING"
         },
         {
           "name": "identity",
-          "description": "The identity key of the validator, used for key management and verification.",
+          "description": "Identity of the validator, including any relevant information.",
           "type": "STRING"
         },
         {
           "name": "website",
-          "description": "The validator's official website or contact information.",
+          "description": "Website associated with the validator.",
           "type": "STRING"
         },
         {
           "name": "security_contact",
-          "description": "The contact information for the validator's security team.",
+          "description": "Contact information for security-related issues with the validator.",
           "type": "STRING"
         },
         {
           "name": "details",
-          "description": "Additional details or notes about the validator.",
+          "description": "Additional details about the validator.",
           "type": "STRING"
         },
         {
           "name": "unbonding_height",
-          "description": "The block height at which the validator's unbonding period begins.",
+          "description": "Height of the block at which the validator's unbonding period will end.",
           "type": "INTEGER"
         },
         {
           "name": "unbonding_time",
-          "description": "The duration of the validator's unbonding period.",
+          "description": "Timestamp of the block at which the validator's unbonding period will end.",
           "type": "DATETIME"
         },
         {
           "name": "commission_rate",
-          "description": "The current commission rate charged by the validator.",
+          "description": "Current commission rate of the validator, expressed as a percentage.",
           "type": "FLOAT"
         },
         {
           "name": "commission_max_rate",
-          "description": "The maximum commission rate that the validator can charge.",
+          "description": "Maximum commission rate allowed for the validator.",
           "type": "FLOAT"
         },
         {
           "name": "commission_max_change_rate",
-          "description": "The rate at which the validator's commission rate can change.",
+          "description": "Maximum rate at which the validator's commission rate can change.",
           "type": "FLOAT"
         },
         {
           "name": "commission_update_time",
-          "description": "The block height at which the validator's commission rate was last updated.",
+          "description": "Timestamp at which the validator's commission rate was last updated.",
           "type": "DATETIME"
         },
         {
           "name": "min_self_delegation",
-          "description": "The minimum amount of tokens that validators must self-delegate.",
+          "description": "Minimum amount of tokens that must be self-delegated to the validator.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "snapshot_height",
-          "description": "The block height at which the validator's snapshot was taken.",
+          "description": "Height of the last snapshot taken by the validator.",
           "type": "INTEGER"
         },
         {
           "name": "snapshot_time",
-          "description": "The timestamp at which the validator's snapshot was taken.",
+          "description": "Timestamp of the last snapshot taken by the validator.",
           "type": "DATETIME"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp at which the validator's data was ingested and recorded.",
+          "description": "Timestamp at which the validator's data was last ingested.",
           "type": "TIMESTAMP"
         }
       ]
