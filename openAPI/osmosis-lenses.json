@@ -365,14 +365,14 @@
         "summary": "Get Superfluid Flow By Market"
       }
     },
-    "/trading/volume/top_assets": {
+    "/trading/volume/top_assets_date_range": {
       "get": {
         "servers": [
           {
             "url": "https://osmosis.numia.xyz"
           }
         ],
-        "operationId": "getTopAssetsByVolume",
+        "operationId": "getTopAssetsByVolumeDateRange",
         "tags": [],
         "parameters": [
           {
@@ -443,7 +443,79 @@
           }
         },
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Top Assets By Volume"
+        "summary": "Get Top Assets By Volume Date Range"
+      }
+    },
+    "/trading/volume/top_assets_last_period_hours": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getTopAssetsByVolumeLastPeriodHours",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "default": "24"
+            },
+            "required": true,
+            "name": "period",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "20"
+            },
+            "required": false,
+            "name": "limit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "denom": {
+                        "type": "string"
+                      },
+                      "usd_volume": {
+                        "type": "number"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "symbol": {
+                        "type": "string"
+                      },
+                      "url": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "denom",
+                      "usd_volume",
+                      "name",
+                      "symbol",
+                      "url"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Top Assets By Volume Last Period Hours"
       }
     }
   }
