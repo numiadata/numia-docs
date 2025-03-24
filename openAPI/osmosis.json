@@ -1486,6 +1486,110 @@
         "summary": "Get Pools Liquidity Over Time"
       }
     },
+    "/pools/depth/{pool_id}/current": {
+      "get": {
+        "operationId": "getPoolsDepthCurrent",
+        "tags": [],
+        "sidebar": "pools",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "pool_id",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "2",
+              "description": "Percentage of depth to calculate on both sides"
+            },
+            "required": true,
+            "name": "percent",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "base_sell_depth": {
+                      "type": "object",
+                      "properties": {
+                        "token_denom": {
+                          "type": "string"
+                        },
+                        "token_amount": {
+                          "type": "string"
+                        },
+                        "usd_amount": {
+                          "type": "string"
+                        },
+                        "depth": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "token_denom",
+                        "token_amount",
+                        "usd_amount",
+                        "depth"
+                      ]
+                    },
+                    "quote_sell_depth": {
+                      "type": "object",
+                      "properties": {
+                        "token_denom": {
+                          "type": "string"
+                        },
+                        "token_amount": {
+                          "type": "string"
+                        },
+                        "usd_amount": {
+                          "type": "string"
+                        },
+                        "depth": {
+                          "type": "number"
+                        }
+                      },
+                      "required": [
+                        "token_denom",
+                        "token_amount",
+                        "usd_amount",
+                        "depth"
+                      ]
+                    }
+                  },
+                  "required": [
+                    "base_sell_depth",
+                    "quote_sell_depth"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Pools Depth Current"
+      }
+    },
     "/apr": {
       "get": {
         "operationId": "getApr",
