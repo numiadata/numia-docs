@@ -112,7 +112,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Orderbook Slippage"
       }
     },
     "/market/orderbook/depth": {
@@ -202,7 +204,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Orderbook Depth"
       }
     },
     "/market/positions/duration_metrics": {
@@ -258,7 +262,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Positions Duration Metrics"
       }
     },
     "/market/positions/long_short_ratio": {
@@ -348,7 +354,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Positions Long Short Ratio"
       }
     },
     "/market/leverage": {
@@ -441,7 +449,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Markets Leverage"
       }
     },
     "/market/price": {
@@ -527,7 +537,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Markets Price"
       }
     },
     "/market/collateral": {
@@ -620,7 +632,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Markets Collateral"
       }
     },
     "/megavault/flow": {
@@ -699,7 +713,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Megavault Flow"
       }
     }
   }
