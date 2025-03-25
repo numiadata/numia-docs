@@ -1,0 +1,725 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://cosmos.numia.xyz/lensesV2"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Numia - Cosmos Hub Lenses API"
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/tokenomics/top_stakeholders": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://cosmos.numia.xyz"
+          }
+        ],
+        "operationId": "getTokenomicsTopStakeholders",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "1d",
+                "7d",
+                "30d"
+              ]
+            },
+            "required": false,
+            "name": "comparison_interval",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "address": {
+                        "type": "string"
+                      },
+                      "total_balance": {
+                        "type": "number"
+                      },
+                      "liquid_balance": {
+                        "type": "number"
+                      },
+                      "staking_balance": {
+                        "type": "number"
+                      },
+                      "total_change": {
+                        "type": "number"
+                      },
+                      "liquid_change": {
+                        "type": "number"
+                      },
+                      "staking_change": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "address",
+                      "total_balance",
+                      "liquid_balance",
+                      "staking_balance",
+                      "total_change",
+                      "liquid_change",
+                      "staking_change"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Tokenomics Top Stakeholders"
+      }
+    },
+    "/aez/revenue_share_by_consumer": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://cosmos.numia.xyz"
+          }
+        ],
+        "operationId": "getAezRevenueShareByConsumer",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "consumers",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Aez Revenue Share By Consumer"
+      }
+    },
+    "/staking/liquid/share_by_provider": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://cosmos.numia.xyz"
+          }
+        ],
+        "operationId": "getLiquidStakingShareByProvider",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "providers",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Liquid Staking Share By Provider"
+      }
+    },
+    "/staking/liquid/flow_by_provider": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://cosmos.numia.xyz"
+          }
+        ],
+        "operationId": "getLiquidStakingFlowByProvider",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "provider",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "total_inflow": {
+                        "type": "number"
+                      },
+                      "total_outflow": {
+                        "type": "number"
+                      },
+                      "top_inflow": {
+                        "type": "number"
+                      },
+                      "top_inflow_tx_id": {
+                        "type": "string"
+                      },
+                      "top_outflow": {
+                        "type": "number"
+                      },
+                      "top_outflow_tx_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "total_inflow",
+                      "total_outflow",
+                      "top_inflow",
+                      "top_inflow_tx_id",
+                      "top_outflow",
+                      "top_outflow_tx_id"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Liquid Staking Flow By Provider"
+      }
+    },
+    "/hydro/deployments_overview": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://cosmos.numia.xyz"
+          }
+        ],
+        "operationId": "getHydroDeploymentsOverview",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "round",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "concluded",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "round": {
+                        "type": "string"
+                      },
+                      "tranche": {
+                        "type": "string"
+                      },
+                      "project": {
+                        "type": "string"
+                      },
+                      "project_url": {
+                        "type": "string"
+                      },
+                      "project_logo_url": {
+                        "type": "string"
+                      },
+                      "project_about": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "comments": {
+                        "type": "string"
+                      },
+                      "requested_allocation_denom": {
+                        "type": "string"
+                      },
+                      "requested_allocation_amount": {
+                        "type": "number"
+                      },
+                      "onchain_tribute_assets": {
+                        "type": "string"
+                      },
+                      "onchain_tribute_usdc": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "offchain_tribute": {
+                        "type": "string"
+                      },
+                      "offchain_tribute_info": {
+                        "type": "string"
+                      },
+                      "voters": {
+                        "type": "number"
+                      },
+                      "voting_power": {
+                        "type": "number"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "initial_allocation_amount": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "current_allocation_amount": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "duration_days": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "yield": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "apr": {
+                        "type": "number",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "round",
+                      "tranche",
+                      "project",
+                      "project_url",
+                      "project_logo_url",
+                      "project_about",
+                      "id",
+                      "title",
+                      "description",
+                      "comments",
+                      "requested_allocation_denom",
+                      "requested_allocation_amount",
+                      "onchain_tribute_assets",
+                      "onchain_tribute_usdc",
+                      "offchain_tribute",
+                      "offchain_tribute_info",
+                      "voters",
+                      "voting_power",
+                      "status",
+                      "initial_allocation_amount",
+                      "current_allocation_amount",
+                      "duration_days",
+                      "yield",
+                      "apr"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Hydro Deployments Overview"
+      }
+    },
+    "/hydro/deployments_overview_staging": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://cosmos.numia.xyz"
+          }
+        ],
+        "tags": [
+          "Hydro"
+        ],
+        "operationId": "getHydroDeploymentsOverviewStaging",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "round",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "concluded",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "round": {
+                        "type": "string"
+                      },
+                      "tranche": {
+                        "type": "string"
+                      },
+                      "project": {
+                        "type": "string"
+                      },
+                      "project_url": {
+                        "type": "string"
+                      },
+                      "project_logo_url": {
+                        "type": "string"
+                      },
+                      "project_about": {
+                        "type": "string"
+                      },
+                      "id": {
+                        "type": "string"
+                      },
+                      "title": {
+                        "type": "string"
+                      },
+                      "description": {
+                        "type": "string"
+                      },
+                      "comments": {
+                        "type": "string"
+                      },
+                      "requested_allocation_denom": {
+                        "type": "string"
+                      },
+                      "requested_allocation_amount": {
+                        "type": "number"
+                      },
+                      "onchain_tribute_assets": {
+                        "type": "string"
+                      },
+                      "onchain_tribute_usdc": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "offchain_tribute": {
+                        "type": "string"
+                      },
+                      "offchain_tribute_info": {
+                        "type": "string"
+                      },
+                      "voters": {
+                        "type": "number"
+                      },
+                      "voting_power": {
+                        "type": "number"
+                      },
+                      "status": {
+                        "type": "string"
+                      },
+                      "initial_allocation_amount": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "current_allocation_amount": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "duration_days": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "yield": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "apr": {
+                        "type": "number",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "round",
+                      "tranche",
+                      "project",
+                      "project_url",
+                      "project_logo_url",
+                      "project_about",
+                      "id",
+                      "title",
+                      "description",
+                      "comments",
+                      "requested_allocation_denom",
+                      "requested_allocation_amount",
+                      "onchain_tribute_assets",
+                      "onchain_tribute_usdc",
+                      "offchain_tribute",
+                      "offchain_tribute_info",
+                      "voters",
+                      "voting_power",
+                      "status",
+                      "initial_allocation_amount",
+                      "current_allocation_amount",
+                      "duration_days",
+                      "yield",
+                      "apr"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Hydro Deployments Overview Staging"
+      }
+    },
+    "/hydro/metrics": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://cosmos.numia.xyz"
+          }
+        ],
+        "tags": [
+          "Hydro"
+        ],
+        "operationId": "getHydroMetrics",
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "current_unique_wallets": {
+                        "type": "number"
+                      },
+                      "current_total_atom_locked": {
+                        "type": "number"
+                      },
+                      "current_users_avg_tokens_locked": {
+                        "type": "number"
+                      },
+                      "current_users_avg_rounds_locked": {
+                        "type": "number"
+                      },
+                      "all_time_unique_wallets": {
+                        "type": "number"
+                      },
+                      "all_time_total_atom_locked": {
+                        "type": "number"
+                      },
+                      "all_time_users_avg_tokens_locked": {
+                        "type": "number"
+                      },
+                      "all_time_users_avg_rounds_locked": {
+                        "type": "number"
+                      },
+                      "current_pol_total": {
+                        "type": "number"
+                      },
+                      "current_pol_deployed": {
+                        "type": "number"
+                      },
+                      "current_pol_available": {
+                        "type": "number"
+                      },
+                      "current_pol_deployment_cap": {
+                        "type": "number"
+                      },
+                      "all_time_total_active_rounds": {
+                        "type": "number"
+                      },
+                      "all_time_pol_deployed": {
+                        "type": "number"
+                      },
+                      "all_time_pol_yield": {
+                        "type": "number"
+                      },
+                      "all_time_pol_apr": {
+                        "type": "number"
+                      },
+                      "current_tribute_yield": {
+                        "type": "number"
+                      },
+                      "current_tribute_apr": {
+                        "type": "number"
+                      },
+                      "all_time_tribute_yield": {
+                        "type": "number"
+                      },
+                      "all_time_tribute_apr": {
+                        "type": "number"
+                      },
+                      "all_time_pol_revenue": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "current_unique_wallets",
+                      "current_total_atom_locked",
+                      "current_users_avg_tokens_locked",
+                      "current_users_avg_rounds_locked",
+                      "all_time_unique_wallets",
+                      "all_time_total_atom_locked",
+                      "all_time_users_avg_tokens_locked",
+                      "all_time_users_avg_rounds_locked",
+                      "current_pol_total",
+                      "current_pol_deployed",
+                      "current_pol_available",
+                      "current_pol_deployment_cap",
+                      "all_time_total_active_rounds",
+                      "all_time_pol_deployed",
+                      "all_time_pol_yield",
+                      "all_time_pol_apr",
+                      "current_tribute_yield",
+                      "current_tribute_apr",
+                      "all_time_tribute_yield",
+                      "all_time_tribute_apr",
+                      "all_time_pol_revenue"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Hydro Metrics"
+      }
+    }
+  }
+}

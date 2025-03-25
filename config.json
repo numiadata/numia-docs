@@ -25,7 +25,14 @@
   "apiFiles": [
     "osmosis.json",
     "osmosis-lenses.json",
-    "engage-ads.json"
+    "engage-ads.json",
+    "txbyaddress.json",
+    "cosmos.json",
+    "dydx-lenses.json",
+    "numiaai.json",
+    "stride.json",
+    "xion.json",
+    "snapshots.json"
   ],
   "codeLanguages": [
     "curl",
@@ -322,6 +329,50 @@
                 "reference/osmosis-lenses/get-top-assets-by-volume-date-range",
                 "reference/osmosis-lenses/get-top-assets-by-volume-last-period-hours",
                 "reference/osmosis-lenses/get-top-assets-by-volume"
+              ]
+            },
+            {
+              "groupName": "Cosmos",
+              "subpages": [
+                "reference/cosmos/get-tokenomics-top-stakeholders",
+                "reference/cosmos/get-aez-revenue-share-by-consumer",
+                "reference/cosmos/get-liquid-staking-share-by-provider",
+                "reference/cosmos/get-liquid-staking-flow-by-provider",
+                "reference/cosmos/get-hydro-deployments-overview",
+                "reference/cosmos/get-hydro-deployments-overview-staging",
+                "reference/cosmos/get-hydro-metrics"
+              ]
+            },
+            {
+              "groupName": "Dydx-lenses",
+              "subpages": [
+                "reference/dydx-lenses/get-traders-ranking",
+                "reference/dydx-lenses/get-trading-fees",
+                "reference/dydx-lenses/get-liquidation-flow-by-market",
+                "reference/dydx-lenses/get-tokenomics-wallets-treasury-subdao",
+                "reference/dydx-lenses/get-business-expenses-share-by-destination",
+                "reference/dydx-lenses/get-business-pnl-summary"
+              ]
+            },
+            {
+              "groupName": "Stride",
+              "subpages": [
+                "reference/stride/get-token-metrics",
+                "reference/stride/get-redemption-rate",
+                "reference/stride/get-total-users",
+                "reference/stride/get-average-staked",
+                "reference/stride/get-tvl",
+                "reference/stride/get-total-yield",
+                "reference/stride/get-apr",
+                "reference/stride/get-burnt-supply"
+              ]
+            },
+            {
+              "groupName": "Xion",
+              "subpages": [
+                "reference/xion/get-abstract-account-authenticators",
+                "reference/xion/get-abstract-accounts-by-authenticator",
+                "reference/xion/get-abstract-accounts-details-by-authenticator"
               ]
             }
           ]

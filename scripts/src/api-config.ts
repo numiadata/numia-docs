@@ -30,51 +30,30 @@ export const apiConfig: ApiSection[] = [
     title: "Engage Ads",
     oasFile: "https://api-docs.numia.xyz/engage/ads/openapi.json",
   },
-  //   {
-  //     name: "txbyaddress",
-  //     categoryName: "Tools",
-  //     oasFiles: [
-  //       {
-  //         name: "txbyaddress",
-  //         url: "https://api-docs.numia.xyz/api/byaddress/openapi.json",
-  //       },
-  //     ],
-  //     title: "Transaction by Address",
-  //   },
-  //   {
-  //     name: "cosmos",
-  //     categoryName: "Advanced APIs",
-  //     oasFiles: [
-  //       {
-  //         name: "cosmos",
-  //         url: "https://api-docs.numia.xyz/lenses/cosmos/openapi.json",
-  //       },
-  //     ],
-  //     title: "Analytics",
-  //   },
-
-  //   {
-  //     name: "dydx-lenses",
-  //     categoryName: "Advanced APIs",
-  //     oasFiles: [
-  //       {
-  //         name: "dydx-lenses",
-  //         url: "https://api-docs.numia.xyz/lenses/dydx/openapi.json",
-  //       },
-  //     ],
-  //     title: "Lenses Analytics",
-  //   },
-  //   {
-  //     name: "numiaai",
-  //     categoryName: "Tools",
-  //     oasFiles: [
-  //       {
-  //         name: "numiaai",
-  //         url: "https://api-docs.numia.xyz/numiaAI/openapi.json",
-  //       },
-  //     ],
-  //     title: "AI Agent Analytics",
-  //   },
+  {
+    name: "txbyaddress",
+    categoryName: "Tools",
+    oasFile: "https://api-docs.numia.xyz/api/byaddress/openapi.json",
+    title: "Transaction by Address",
+  },
+  {
+    name: "cosmos",
+    categoryName: "Advanced APIs",
+    oasFile: "https://api-docs.numia.xyz/lenses/cosmos/openapi.json",
+    title: "Analytics",
+  },
+  {
+    name: "dydx-lenses",
+    categoryName: "Advanced APIs",
+    oasFile: "https://api-docs.numia.xyz/lenses/dydx/openapi.json",
+    title: "Lenses Analytics",
+  },
+  {
+    name: "numiaai",
+    categoryName: "Tools",
+    oasFile: "https://api-docs.numia.xyz/numiaAI/openapi.json",
+    title: "AI Agent Analytics",
+  },
   //   {
   //     name: "quasar",
   //     categoryName: "Advanced APIs",
@@ -86,37 +65,22 @@ export const apiConfig: ApiSection[] = [
   //     ],
   //     title: "Quasar",
   //   },
-  //   {
-  //     name: "stride",
-  //     categoryName: "Advanced APIs",
-  //     oasFiles: [
-  //       {
-  //         name: "stride",
-  //         url: "https://api-docs.numia.xyz/stride/openapi.json",
-  //       },
-  //     ],
-  //     title: "Stride",
-  //   },
-  //   {
-  //     name: "xion",
-  //     categoryName: "Advanced APIs",
-  //     oasFiles: [
-  //       {
-  //         name: "xion",
-  //         url: "https://api-docs.numia.xyz/xion/openapi.json",
-  //       },
-  //     ],
-  //     title: "Xion",
-  //   },
-  //   {
-  //     name: "snapshots",
-  //     categoryName: "Tools",
-  //     oasFiles: [
-  //       {
-  //         name: "snapshots",
-  //         url: "https://api-docs.numia.xyz/aadao-snapshots/openapi.json",
-  //       },
-  //     ],
-  //     title: "Snapshots",
-  //   },
+  {
+    name: "stride",
+    categoryName: "Advanced APIs",
+    oasFile: "https://api-docs.numia.xyz/stride/openapi.json",
+    title: "Stride",
+  },
+  {
+    name: "xion",
+    categoryName: "Advanced APIs",
+    oasFile: "https://api-docs.numia.xyz/xion/openapi.json",
+    title: "Xion",
+  },
+  {
+    name: "snapshots",
+    categoryName: "Tools",
+    oasFile: "https://api-docs.numia.xyz/aadao-snapshots/openapi.json",
+    title: "Snapshots",
+  },
 ];
