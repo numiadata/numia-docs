@@ -109,9 +109,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Liquidity Flow"
+        }
       }
     },
     "/liquidity/flow_by_market": {
@@ -198,9 +196,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Liquidity Flow By Market"
+        }
       }
     },
     "/superfluid/superfluid_flow": {
@@ -279,9 +275,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Superfluid Flow"
+        }
       }
     },
     "/staking/superfluid/flow_by_market": {
@@ -360,9 +354,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Superfluid Flow By Market"
+        }
       }
     },
     "/trading/volume/top_assets_date_range": {
@@ -441,9 +433,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Top Assets By Volume Date Range"
+        }
       }
     },
     "/trading/volume/top_assets_last_period_hours": {
@@ -513,9 +503,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Top Assets By Volume Last Period Hours"
+        }
       }
     }
   }

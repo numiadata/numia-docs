@@ -1,0 +1,125 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://stride.numia.xyz"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Numia - Stride API"
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/stride/token-metrics": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "operationId": "getTokenMetrics",
+        "tags": [],
+        "responses": {}
+      }
+    },
+    "/stride/redemption-rate": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "operationId": "getRedemptionRate",
+        "tags": [],
+        "responses": {}
+      }
+    },
+    "/stride/total-users": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "operationId": "getTotalUsers",
+        "tags": [],
+        "responses": {}
+      }
+    },
+    "/stride/average-staked": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "operationId": "getAverageStaked",
+        "tags": [],
+        "responses": {}
+      }
+    },
+    "/stride/tvl": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "operationId": "getTvl",
+        "tags": [],
+        "responses": {}
+      }
+    },
+    "/stride/total-yield": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "operationId": "getTotalYield",
+        "tags": [],
+        "responses": {}
+      }
+    },
+    "/stride/apr": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "operationId": "getApr",
+        "tags": [],
+        "responses": {}
+      }
+    },
+    "/stride/burnt_supply": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://stride.numia.xyz"
+          }
+        ],
+        "operationId": "getBurntSupply",
+        "tags": [],
+        "responses": {}
+      }
+    }
+  }
+}

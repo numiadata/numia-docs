@@ -1,0 +1,286 @@
+{
+  "openapi": "3.0.0",
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "servers": [
+    {
+      "url": "https://xion-testnet.numia.xyz"
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Numia - Xion"
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/v2/smartAccount/{smart_account}/authenticators": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://xion.numia.xyz"
+          },
+          {
+            "url": "https://xion-testnet.numia.xyz"
+          },
+          {
+            "url": "https://xion-testnet-2.numia.xyz"
+          }
+        ],
+        "operationId": "getAbstractAccountAuthenticators",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "smart_account",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "auth_id",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "smart_account": {
+                      "type": "string"
+                    },
+                    "code_id": {
+                      "type": "number",
+                      "nullable": true
+                    },
+                    "account_number": {
+                      "type": "string",
+                      "nullable": true
+                    },
+                    "authenticators": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "type": {
+                            "type": "string"
+                          },
+                          "authenticator": {
+                            "type": "string"
+                          },
+                          "authenticator_index": {
+                            "anyOf": [
+                              {
+                                "type": "string"
+                              },
+                              {
+                                "type": "number"
+                              }
+                            ]
+                          }
+                        },
+                        "required": [
+                          "type",
+                          "authenticator",
+                          "authenticator_index"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "smart_account",
+                    "code_id",
+                    "account_number",
+                    "authenticators"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/authenticators/{authenticator}/smartAccounts": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://xion.numia.xyz"
+          },
+          {
+            "url": "https://xion-testnet.numia.xyz"
+          },
+          {
+            "url": "https://xion-testnet-2.numia.xyz"
+          }
+        ],
+        "operationId": "getAbstractAccountsByAuthenticator",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "authenticator",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "authenticator": {
+                      "type": "string"
+                    },
+                    "smart_accounts": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "smart_account": {
+                            "type": "string"
+                          },
+                          "code_id": {
+                            "type": "number",
+                            "nullable": true
+                          },
+                          "account_number": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        },
+                        "required": [
+                          "smart_account",
+                          "code_id",
+                          "account_number"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "authenticator",
+                    "smart_accounts"
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/authenticators/{authenticator}/smartAccounts/details": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://xion.numia.xyz"
+          },
+          {
+            "url": "https://xion-testnet.numia.xyz"
+          },
+          {
+            "url": "https://xion-testnet-2.numia.xyz"
+          }
+        ],
+        "operationId": "getAbstractAccountsDetailsByAuthenticator",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "authenticator",
+            "in": "path"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "smart_account": {
+                        "type": "string"
+                      },
+                      "code_id": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "account_number": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "authenticators": {
+                        "type": "array",
+                        "items": {
+                          "type": "object",
+                          "properties": {
+                            "type": {
+                              "type": "string"
+                            },
+                            "authenticator": {
+                              "type": "string"
+                            },
+                            "authenticator_index": {
+                              "anyOf": [
+                                {
+                                  "type": "string"
+                                },
+                                {
+                                  "type": "number"
+                                }
+                              ]
+                            }
+                          },
+                          "required": [
+                            "type",
+                            "authenticator",
+                            "authenticator_index"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "smart_account",
+                      "code_id",
+                      "account_number",
+                      "authenticators"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
