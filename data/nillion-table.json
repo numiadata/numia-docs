@@ -1,0 +1,274 @@
+{
+  "dataset": "nillion",
+  "tables": [
+    {
+      "name": "nillion_block_events",
+      "description": "",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "event_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "type": "STRING"
+        },
+        {
+          "name": "event_attributes",
+          "type": "JSON"
+        },
+        {
+          "name": "source",
+          "type": "STRING"
+        },
+        {
+          "name": "schema_version",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "nillion_blocks",
+      "description": "",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "chain_id",
+          "type": "STRING"
+        },
+        {
+          "name": "proposer_address",
+          "type": "STRING"
+        },
+        {
+          "name": "validators_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "messages_bytes",
+          "type": "INTEGER"
+        },
+        {
+          "name": "tx_count",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "nillion_message_events",
+      "description": "",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "type": "STRING"
+        },
+        {
+          "name": "event_attributes",
+          "type": "JSON"
+        },
+        {
+          "name": "schema_version",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "nillion_transactions",
+      "description": "",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_id",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_info",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_log_message",
+          "type": "STRING"
+        },
+        {
+          "name": "memo",
+          "type": "STRING"
+        },
+        {
+          "name": "fee",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_code",
+          "type": "INTEGER"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "gas_used",
+          "type": "INTEGER"
+        },
+        {
+          "name": "gas_wanted",
+          "type": "INTEGER"
+        },
+        {
+          "name": "schema_version",
+          "type": "INTEGER"
+        },
+        {
+          "name": "fee_coins",
+          "type": "STRING"
+        },
+        {
+          "name": "fee_granter",
+          "type": "STRING"
+        },
+        {
+          "name": "fee_payer",
+          "type": "STRING"
+        },
+        {
+          "name": "gas_limit",
+          "type": "INTEGER"
+        },
+        {
+          "name": "single_sign_mode",
+          "type": "INTEGER"
+        },
+        {
+          "name": "multi_sign_json",
+          "type": "STRING"
+        },
+        {
+          "name": "timeout_height",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "nillion_tx_messages",
+      "description": "",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "STRING"
+        },
+        {
+          "name": "chain_id",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_id",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "STRING"
+        },
+        {
+          "name": "message_type",
+          "type": "STRING"
+        },
+        {
+          "name": "message",
+          "type": "JSON"
+        },
+        {
+          "name": "schema_version",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    }
+  ]
+}
