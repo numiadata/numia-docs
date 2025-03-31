@@ -327,8 +327,7 @@
                 "reference/osmosis-lenses/get-superfluid-flow",
                 "reference/osmosis-lenses/get-superfluid-flow-by-market",
                 "reference/osmosis-lenses/get-top-assets-by-volume-date-range",
-                "reference/osmosis-lenses/get-top-assets-by-volume-last-period-hours",
-                "reference/osmosis-lenses/get-top-assets-by-volume"
+                "reference/osmosis-lenses/get-top-assets-by-volume-last-period-hours"
               ]
             },
             {
