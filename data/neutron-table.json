@@ -1168,44 +1168,88 @@
       ],
       "columns": [
         {
+          "name": "block_height",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "missing_height",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "pair",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "decimals",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "price_delta",
+          "type": "FLOAT",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "price",
+          "type": "FLOAT",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "parsed_price",
+          "type": "FLOAT",
+          "mode": "NULLABLE"
+        }
+      ]
+    },
+    {
+      "name": "neutron_slinky_prices_deltas",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
           "name": "validator_address",
-          "description": "Unique address of the validator who voted or participated in the block creation.",
-          "type": "STRING"
+          "type": "STRING",
+          "mode": "NULLABLE"
         },
         {
           "name": "validator_power",
-          "description": "The voting power of the validator, indicating their influence on the network.",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "mode": "NULLABLE"
         },
         {
           "name": "block_id_flag",
-          "description": "Flag indicating whether the block is valid or not.",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "mode": "NULLABLE"
         },
         {
           "name": "extension_signature",
-          "description": "Signature of the extension data associated with the block.",
-          "type": "STRING"
+          "type": "STRING",
+          "mode": "NULLABLE"
         },
         {
           "name": "block_height",
-          "description": "The height of the block in the blockchain, indicating its position within the network.",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "mode": "NULLABLE"
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when the block was created, indicating the time of its creation.",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "mode": "NULLABLE"
         },
         {
           "name": "vote_prices",
-          "description": "Prices of votes cast by the validator, influencing their voting power.",
-          "type": "JSON"
+          "type": "JSON",
+          "mode": "NULLABLE"
         },
         {
           "name": "ingested_at",
-          "description": "Timestamp when the data was ingested into the system, indicating its freshness.",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "mode": "NULLABLE"
         }
       ]
     },
