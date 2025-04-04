@@ -420,6 +420,40 @@
       ]
     },
     {
+      "name": "dydx_megavault_historic_snapshots",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "day",
+          "type": "TIMESTAMP",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "address",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "shares",
+          "type": "BIGNUMERIC",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "token_amount",
+          "type": "BIGNUMERIC",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "token_denom",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        }
+      ]
+    },
+    {
       "name": "dydx_mempool_transactions",
       "description": "This table provides information on mempool transactions from the Cosmos ecosystem, offering insights into the pending transactions on the network. It helps users analyze the current state of the network's transaction pool.",
       "tags": [
@@ -1131,6 +1165,40 @@
         {
           "name": "ingestion_timestamp",
           "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "dydx_vaults_last_snapshot",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "vault_type",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "vault_number",
+          "type": "NUMERIC",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "subaccount_owner",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "subaccount_number",
+          "type": "NUMERIC",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "vault_params",
+          "type": "JSON",
+          "mode": "NULLABLE"
         }
       ]
     },
