@@ -1590,6 +1590,139 @@
         "summary": "Get Pools Depth Current"
       }
     },
+    "/pools/depth/{pool_id}/over_time": {
+      "get": {
+        "operationId": "getPoolsDepthOverTime",
+        "tags": [],
+        "sidebar": "pools",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "pool_id",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "10",
+                "5",
+                "2",
+                "1",
+                "0.1"
+              ]
+            },
+            "required": true,
+            "name": "percent",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "hour": {
+                        "type": "string",
+                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                      },
+                      "base_sell_depth": {
+                        "type": "object",
+                        "properties": {
+                          "token_denom": {
+                            "type": "string"
+                          },
+                          "token_amount": {
+                            "type": "string"
+                          },
+                          "usd_amount": {
+                            "type": "string"
+                          },
+                          "depth": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "token_denom",
+                          "token_amount",
+                          "usd_amount",
+                          "depth"
+                        ]
+                      },
+                      "quote_sell_depth": {
+                        "type": "object",
+                        "properties": {
+                          "token_denom": {
+                            "type": "string"
+                          },
+                          "token_amount": {
+                            "type": "string"
+                          },
+                          "usd_amount": {
+                            "type": "string"
+                          },
+                          "depth": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "token_denom",
+                          "token_amount",
+                          "usd_amount",
+                          "depth"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "hour",
+                      "base_sell_depth",
+                      "quote_sell_depth"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Pools Depth Over Time"
+      }
+    },
     "/apr": {
       "get": {
         "operationId": "getApr",
