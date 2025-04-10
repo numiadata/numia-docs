@@ -1173,13 +1173,23 @@
           "mode": "NULLABLE"
         },
         {
-          "name": "missing_height",
+          "name": "block_timestamp",
+          "type": "TIMESTAMP",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "ticker",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "pair_id",
           "type": "INTEGER",
           "mode": "NULLABLE"
         },
         {
-          "name": "pair",
-          "type": "STRING",
+          "name": "price",
+          "type": "BIGNUMERIC",
           "mode": "NULLABLE"
         },
         {
@@ -1188,18 +1198,8 @@
           "mode": "NULLABLE"
         },
         {
-          "name": "price_delta",
-          "type": "FLOAT",
-          "mode": "NULLABLE"
-        },
-        {
-          "name": "price",
-          "type": "FLOAT",
-          "mode": "NULLABLE"
-        },
-        {
-          "name": "parsed_price",
-          "type": "FLOAT",
+          "name": "nonce",
+          "type": "INTEGER",
           "mode": "NULLABLE"
         }
       ]
