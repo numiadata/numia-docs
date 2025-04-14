@@ -228,6 +228,19 @@
             "required": false,
             "name": "messageTypes",
             "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "true",
+                "false"
+              ],
+              "default": "true"
+            },
+            "required": true,
+            "name": "cleanPrices",
+            "in": "query"
           }
         ],
         "responses": {
