@@ -285,10 +285,6 @@
           "type": "STRING"
         },
         {
-          "name": "fee",
-          "type": "BIGNUMERIC"
-        },
-        {
           "name": "ingestion_timestamp",
           "type": "TIMESTAMP"
         }
@@ -1254,6 +1250,267 @@
       ]
     },
     {
+      "name": "neutron_supervault_dex_deposit",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "contract_address",
+          "type": "STRING"
+        },
+        {
+          "name": "token_0_balance",
+          "type": "STRING"
+        },
+        {
+          "name": "token_1_balance",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "neutron_supervault_dex_withdrawal",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "contract_address",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "neutron_supervault_instantiate",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "sender",
+          "type": "STRING"
+        },
+        {
+          "name": "pool_id",
+          "type": "STRING"
+        },
+        {
+          "name": "contract_address",
+          "type": "STRING"
+        },
+        {
+          "name": "oracle_address",
+          "type": "STRING"
+        },
+        {
+          "name": "config_attributes",
+          "type": "JSON"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "neutron_supervault_user_deposit",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "contract_address",
+          "type": "STRING"
+        },
+        {
+          "name": "token_0_deposited",
+          "type": "STRING"
+        },
+        {
+          "name": "token_1_deposited",
+          "type": "STRING"
+        },
+        {
+          "name": "shares_minted",
+          "type": "STRING"
+        },
+        {
+          "name": "shares_total",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "neutron_supervault_user_withdrawal",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "contract_address",
+          "type": "STRING"
+        },
+        {
+          "name": "token_0_withdrawn",
+          "type": "STRING"
+        },
+        {
+          "name": "token_1_withdrawn",
+          "type": "STRING"
+        },
+        {
+          "name": "shares_burnt",
+          "type": "STRING"
+        },
+        {
+          "name": "shares_total",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
       "name": "neutron_transactions",
       "description": "",
       "tags": [
@@ -1517,23 +1774,15 @@
           "type": "STRING"
         },
         {
-          "name": "tx_index",
-          "type": "INTEGER"
-        },
-        {
-          "name": "message_index",
-          "type": "INTEGER"
-        },
-        {
-          "name": "action_index",
-          "type": "INTEGER"
+          "name": "sender",
+          "type": "STRING"
         },
         {
           "name": "contract_address",
           "type": "STRING"
         },
         {
-          "name": "action",
+          "name": "contract_label",
           "type": "STRING"
         },
         {
