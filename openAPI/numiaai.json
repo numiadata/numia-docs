@@ -717,6 +717,69 @@
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Megavault Flow"
       }
+    },
+    "/market/unrealized_pnl_ranking": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getMarketsUnrealizedPnlRanking",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "market",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "market": {
+                        "type": "string",
+                        "description": "Dydx market"
+                      },
+                      "address": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Address of the user"
+                      },
+                      "unrealized_pnl": {
+                        "type": "number",
+                        "description": "Unrealized PnL of the user"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "description": "Timestamp of the last update"
+                      }
+                    },
+                    "required": [
+                      "market",
+                      "address",
+                      "unrealized_pnl",
+                      "updated_at"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Markets Unrealized Pnl Ranking"
+      }
     }
   }
 }
