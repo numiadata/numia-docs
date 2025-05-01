@@ -545,6 +545,18 @@
           "type": "STRING"
         },
         {
+          "name": "token_amount_in",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "token_denom_out",
+          "type": "STRING"
+        },
+        {
+          "name": "token_amount_out",
+          "type": "BIGNUMERIC"
+        },
+        {
           "name": "reserves",
           "type": "BIGNUMERIC"
         },
@@ -608,6 +620,18 @@
         {
           "name": "token_denom_in",
           "type": "STRING"
+        },
+        {
+          "name": "token_amount_in",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "token_denom_out",
+          "type": "STRING"
+        },
+        {
+          "name": "token_amount_out",
+          "type": "BIGNUMERIC"
         },
         {
           "name": "reserves",
