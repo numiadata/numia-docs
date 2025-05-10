@@ -1730,6 +1730,120 @@
       ]
     },
     {
+      "name": "neutron_validators",
+      "description": "",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "operator_address",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "account_address",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "consensus_pubkey",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "jailed",
+          "type": "BOOLEAN",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "tokens",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "moniker",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "identity",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "website",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "security_contact",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "details",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "unbonding_height",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "unbonding_time",
+          "type": "DATETIME",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "commission_rate",
+          "type": "FLOAT",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "commission_max_rate",
+          "type": "FLOAT",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "commission_max_change_rate",
+          "type": "FLOAT",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "commission_update_time",
+          "type": "DATETIME",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "min_self_delegation",
+          "type": "BIGNUMERIC",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "snapshot_height",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "snapshot_time",
+          "type": "DATETIME",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP",
+          "mode": "NULLABLE"
+        }
+      ]
+    },
+    {
       "name": "neutron_vote",
       "description": "",
       "tags": [
