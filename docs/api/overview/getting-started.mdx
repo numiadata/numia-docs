@@ -16,7 +16,24 @@ To begin using Numia's Advanced API and access rich blockchain data, follow the 
     <Image 
     src="/media/api/add-protocol.gif"
     />
-4. Get your API key to be used for Bearer Token authentication in your API requests, allowing you to interact with Numia’s data. You'll also be able to see the LCD and RPC endpoints for that chain. 
+4. Get your API key to be used for authentication in your API requests, allowing you to interact with Numia's data. You have two ways to authenticate. Let's assume your API key is `sk_your_api_key` and you want to access `/cosmos/base/tendermint/v1beta1/blocks/latest`:
+
+    **Bearer Token Authentication**
+
+    Include your API key in the `Authorization` header as a Bearer Token.
+    ```bash
+    curl -H "Authorization: Bearer sk_your_api_key" \
+      "https://api.numia.xyz/cosmos/base/tendermint/v1beta1/blocks/latest"
+    ```
+
+    **Path-based Authentication**
+
+    Prefix all API URLs with `/apikey/$YOUR_API_KEY/`.
+    ```bash
+    curl "https://api.numia.xyz/apikey/sk_your_api_key/cosmos/base/tendermint/v1beta1/blocks/latest"
+    ```
+
+    You'll also be able to see the LCD and RPC endpoints for that chain. 
 5. Feel free to check the endpoints documentation and send request using the API docs playground. 
 
 ## Services
