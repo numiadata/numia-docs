@@ -267,6 +267,8 @@
                 {
                   "groupName": "Pools",
                   "subpages": [
+                    "reference/osmosis/get-pools-apr-range-v-2",
+                    "reference/osmosis/get-cl-pools-position-apr-v-2",
                     "reference/osmosis/get-token-pair-historical-chart",
                     "reference/osmosis/get-pools-fees",
                     "reference/osmosis/get-pool-stream-data",

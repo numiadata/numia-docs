@@ -14,6 +14,205 @@
     "parameters": {}
   },
   "paths": {
+    "/v2/pools_apr_range": {
+      "get": {
+        "operationId": "getPoolsAprRangeV2",
+        "summary": "Get Pools APR Range V2",
+        "tags": [],
+        "sidebar": "pools",
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": false,
+            "name": "pool",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "pool_id": {
+                        "type": "string"
+                      },
+                      "swap_fees": {
+                        "type": "object",
+                        "properties": {
+                          "lower": {
+                            "type": "number"
+                          },
+                          "upper": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "lower",
+                          "upper"
+                        ]
+                      },
+                      "superfluid": {
+                        "type": "object",
+                        "properties": {
+                          "lower": {
+                            "type": "number"
+                          },
+                          "upper": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "lower",
+                          "upper"
+                        ]
+                      },
+                      "osmosis": {
+                        "type": "object",
+                        "properties": {
+                          "lower": {
+                            "type": "number"
+                          },
+                          "upper": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "lower",
+                          "upper"
+                        ]
+                      },
+                      "boost": {
+                        "type": "object",
+                        "properties": {
+                          "lower": {
+                            "type": "number"
+                          },
+                          "upper": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "lower",
+                          "upper"
+                        ]
+                      },
+                      "total_apr": {
+                        "type": "object",
+                        "properties": {
+                          "lower": {
+                            "type": "number"
+                          },
+                          "upper": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "lower",
+                          "upper"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "pool_id",
+                      "swap_fees",
+                      "superfluid",
+                      "osmosis",
+                      "boost",
+                      "total_apr"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>"
+      }
+    },
+    "/cl/v2/apr/rewards/{pool}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://osmosis-testnet.numia.xyz"
+          }
+        ],
+        "operationId": "getClPoolsPositionAprV2",
+        "summary": "Get CL Pools Position APR V2",
+        "tags": [],
+        "sidebar": "pools",
+        "attributes": {
+          "x-sidebar": "pools"
+        },
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "pool",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "lower_tick",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "upper_tick",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "APR": {
+                      "type": "number"
+                    }
+                  },
+                  "required": [
+                    "APR"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>"
+      }
+    },
     "/pairs/v1/historical/{pool_id}/chart": {
       "get": {
         "servers": [
@@ -1668,10 +1867,10 @@
                             "type": "string"
                           },
                           "token_amount": {
-                            "type": "string"
+                            "type": "number"
                           },
                           "usd_amount": {
-                            "type": "string"
+                            "type": "number"
                           },
                           "depth": {
                             "type": "number"
@@ -1691,10 +1890,10 @@
                             "type": "string"
                           },
                           "token_amount": {
-                            "type": "string"
+                            "type": "number"
                           },
                           "usd_amount": {
-                            "type": "string"
+                            "type": "number"
                           },
                           "depth": {
                             "type": "number"
@@ -1904,7 +2103,7 @@
             "schema": {
               "type": "string"
             },
-            "required": false,
+            "required": true,
             "name": "lower_tick",
             "in": "query"
           },
@@ -1912,7 +2111,7 @@
             "schema": {
               "type": "string"
             },
-            "required": false,
+            "required": true,
             "name": "upper_tick",
             "in": "query"
           }

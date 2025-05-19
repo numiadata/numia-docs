@@ -63,7 +63,8 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "1000"
             },
             "required": false,
             "name": "trade_size",
@@ -147,7 +148,8 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "1"
             },
             "required": true,
             "name": "market",
@@ -155,7 +157,8 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "1"
             },
             "required": false,
             "name": "slippage_tolerance",
@@ -311,7 +314,8 @@
                 "day",
                 "week",
                 "month"
-              ]
+              ],
+              "default": "hour"
             },
             "required": false,
             "name": "granularity",
@@ -329,8 +333,7 @@
                     "type": "object",
                     "properties": {
                       "labels": {
-                        "type": "string",
-                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                        "type": "string"
                       },
                       "mean_acitve_long_positions": {
                         "type": "number"
@@ -394,20 +397,6 @@
             "required": true,
             "name": "market",
             "in": "query"
-          },
-          {
-            "schema": {
-              "type": "string",
-              "enum": [
-                "hour",
-                "day",
-                "week",
-                "month"
-              ]
-            },
-            "required": false,
-            "name": "granularity",
-            "in": "query"
           }
         ],
         "responses": {
@@ -421,8 +410,7 @@
                     "type": "object",
                     "properties": {
                       "labels": {
-                        "type": "string",
-                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                        "type": "string"
                       },
                       "leverage_mean": {
                         "type": "number"
@@ -489,20 +477,6 @@
             "required": true,
             "name": "market",
             "in": "query"
-          },
-          {
-            "schema": {
-              "type": "string",
-              "enum": [
-                "hour",
-                "day",
-                "week",
-                "month"
-              ]
-            },
-            "required": false,
-            "name": "granularity",
-            "in": "query"
           }
         ],
         "responses": {
@@ -516,8 +490,7 @@
                     "type": "object",
                     "properties": {
                       "labels": {
-                        "type": "string",
-                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                        "type": "string"
                       },
                       "price_in_usdc": {
                         "type": "number"
@@ -577,20 +550,6 @@
             "required": true,
             "name": "market",
             "in": "query"
-          },
-          {
-            "schema": {
-              "type": "string",
-              "enum": [
-                "hour",
-                "day",
-                "week",
-                "month"
-              ]
-            },
-            "required": false,
-            "name": "granularity",
-            "in": "query"
           }
         ],
         "responses": {
@@ -604,8 +563,7 @@
                     "type": "object",
                     "properties": {
                       "labels": {
-                        "type": "string",
-                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                        "type": "string"
                       },
                       "collateral_mean": {
                         "type": "number"
@@ -677,8 +635,7 @@
                     "type": "object",
                     "properties": {
                       "labels": {
-                        "type": "string",
-                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                        "type": "string"
                       },
                       "total_inflow": {
                         "type": "number"
