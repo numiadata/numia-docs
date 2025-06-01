@@ -533,6 +533,10 @@
           "type": "INTEGER"
         },
         {
+          "name": "event_index",
+          "type": "INTEGER"
+        },
+        {
           "name": "token_denom_0",
           "type": "STRING"
         },
@@ -607,6 +611,10 @@
         },
         {
           "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_index",
           "type": "INTEGER"
         },
         {
