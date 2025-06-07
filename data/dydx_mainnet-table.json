@@ -734,6 +734,25 @@
       ]
     },
     {
+      "name": "dydx_price",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "minute",
+          "type": "TIMESTAMP",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "price_in_usdc",
+          "type": "FLOAT",
+          "mode": "NULLABLE"
+        }
+      ]
+    },
+    {
       "name": "dydx_settled_funding",
       "description": "",
       "tags": [
