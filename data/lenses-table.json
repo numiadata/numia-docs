@@ -3,297 +3,297 @@
   "tables": [
     {
       "name": "lenses_cosmoshub_apr",
-      "description": "This table provides a snapshot of the annual percentage rates (APRs) for various assets in the Cosmos ecosystem, offering insights into their growth and performance. By analyzing these APRs, users can make informed decisions about their investments and portfolio management.",
+      "description": "This table provides APR data for assets on the Cosmos blockchain, offering insights into the rewarding activities and rates within the Cosmos network. APR (Annual Percentage Rate) is calculated based on the rolling averages of the past day, week, and month.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "labels",
-          "description": "A list of asset labels or names, categorizing the different assets within the Cosmos ecosystem.",
+          "description": "Unique identifiers for project labels and categorizations",
           "type": "TIMESTAMP"
         },
         {
           "name": "symbol",
-          "description": "The unique symbol or identifier for each asset, facilitating easy identification and comparison.",
+          "description": "Token symbols associated with specific blockchain assets",
           "type": "STRING"
         },
         {
           "name": "mean_apr_1d_rolling",
-          "description": "The daily rolling average of the annual percentage rate for each asset over the past 1 day, providing a short-term perspective on their performance.",
+          "description": "Seven-day Simple Moving Average of daily Average Rate of Return",
           "type": "FLOAT"
         },
         {
           "name": "mean_apr_7d_rolling",
-          "description": "The daily rolling average of the annual percentage rate for each asset over the past 7 days, offering a medium-term perspective on their growth.",
+          "description": "Thirty-day Simple Moving Average of weekly Average Rate of Return",
           "type": "FLOAT"
         },
         {
           "name": "mean_apr_30d_rolling",
-          "description": "The daily rolling average of the annual percentage rate for each asset over the past 30 days, providing a long-term perspective on their performance and stability.",
+          "description": "Simple Moving Average of monthly Average Rate of Return",
           "type": "FLOAT"
         }
       ]
     },
     {
       "name": "lenses_cosmoshub_atom_price",
-      "description": "Cosmos Hub Atom price data provides historical exchange rates of Cosmos' native token, Atom, against the USDC stablecoin within the Cosmos ecosystem. This data is useful for analyzing cryptocurrency markets and making informed investment decisions.",
+      "description": "This table contains the current and historical prices of assets within the Cosmos ecosystem. It provides a detailed view of the price fluctuations of these assets over time, allowing users to analyze market trends and patterns.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "time_minutes",
-          "description": "Time in minutes since the Cosmos Hub block was created",
+          "description": "Time elapsed since block proposal, in minutes.",
           "type": "TIMESTAMP"
         },
         {
           "name": "asset",
-          "description": "Name of the Cosmos ecosystem asset (in this case, the native Atom token)",
+          "description": "Token or asset (e.g., ATOM, OSMO) being traded or used.",
           "type": "STRING"
         },
         {
           "name": "price_in_usdc",
-          "description": "Exchange price of the asset against USDC at the time of the block",
+          "description": "Current price of asset in USD coin (USDC) per unit.",
           "type": "FLOAT"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the price data was ingested into the data system",
+          "description": "Timestamp when data was ingested or recorded.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "lenses_cosmoshub_chain_daily_revenue",
-      "description": "This table provides a daily overview of revenue for the Cosmos Hub ecosystem, including transaction fees, Liquid Staking Derivative (LSD) fees, and Inter- Chain Secure (ICS) fees. The data is aggregated from various blockchains within the Cosmos ecosystem.",
+      "description": "This dataset tracks daily revenue from various chains within the Cosmos ecosystem, providing insights into the network's overall financial performance. The daily revenue is calculated from transaction fees and ICS fees.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "date",
-          "description": "Date in YYYY-MM-DD format representing the day for which the revenue data is reported.",
+          "description": "Timestamp of each daily snapshot of blockchain chain performance",
           "type": "DATE"
         },
         {
           "name": "chain_id",
-          "description": "Unique identifier for the Cosmos blockchain network, used to distinguish between different chains in the ecosystem.",
+          "description": "Unique identifier for each Cosmos blockchain network instance",
           "type": "STRING"
         },
         {
           "name": "txn_fees",
-          "description": "Total transaction fees collected from the Cosmos blockchain network for the reported day.",
+          "description": "Total fees collected from all transactions within each chain daily",
           "type": "FLOAT"
         },
         {
           "name": "lsd_fees",
-          "description": "Total fees collected from Liquid Staking Derivatives (LSD) operations on the Cosmos blockchain network for the reported day.",
+          "description": "Total fees collected from Liquidity Staking Deposits (LSD) on each chain daily",
           "type": "FLOAT"
         },
         {
           "name": "ics_fees",
-          "description": "Total fees collected from Inter-Chain Secure (ICS) operations on the Cosmos blockchain network for the reported day.",
+          "description": "Total fees collected from ICS (Inter-Chain Secure) protocol interactions daily",
           "type": "FLOAT"
         }
       ]
     },
     {
       "name": "lenses_cosmoshub_chain_hourly_revenue",
-      "description": "This table provides hourly revenue data from the Cosmos ecosystem, offering insights into the financial performance of the blockchain network. It captures fees generated from transactions and token-related activities.",
+      "description": "The cosmoshub_chain_hourly_revenue table provides data on the total revenue generated by Cosmos blockchain transactions on an hourly basis, including transaction fees, liquidity staking derivatives (LSD) fees, and Inter-Chain Service (ICS) fees. This data offers insights into the economic activity within the Cosmos ecosystem.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "date",
-          "description": "Date in which the hourly revenue was recorded",
+          "description": "Date of snapshot, typically in ISO 8601 format, representing a specific block time",
           "type": "DATE"
         },
         {
           "name": "chain_id",
-          "description": "Identifier of the Cosmos chain where the transactions occurred",
+          "description": "Unique identifier for the Cosmos blockchain network (e.g., Cosmos Hub, Osmosis)",
           "type": "STRING"
         },
         {
           "name": "txn_fees",
-          "description": "Total fees collected from transaction-related activities",
+          "description": "Total fees collected for transaction processing within the chain, aggregated hourly",
           "type": "FLOAT"
         },
         {
           "name": "lsd_fees",
-          "description": "Fees collected from Liquid Staking Derivative (LSD) activities",
+          "description": "Fees associated with transactions processed using LCD (Liquid Staking Derivative) protocol",
           "type": "FLOAT"
         },
         {
           "name": "ics_fees",
-          "description": "Fees collected from Inter-Chain Security (ICS) activities",
+          "description": "Fees associated with Inter-Blockchain Communication (IBC) transactions within the chain",
           "type": "FLOAT"
         }
       ]
     },
     {
       "name": "lenses_cosmoshub_ibc_flow",
-      "description": "This table provides information on IBC flows between Cosmos Hub chains. It captures data on the frequency and duration of these flows, as well as the hub chains involved.",
+      "description": "This table provides insights into IBC flows, which enable the transfer of assets between Cosmos-based blockchains. It captures the key metrics related to these flows.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "date",
-          "description": "The date on which the IBC flow occurred.",
+          "description": "Timestamp of the event occurrence in blockchain network",
           "type": "TIMESTAMP"
         },
         {
           "name": "stride",
-          "description": "The stride of the IBC flow, representing the time interval between two consecutive flows.",
+          "description": "Elapsed time interval between events in a specific blockchain context",
           "type": "FLOAT"
         },
         {
           "name": "persistence",
-          "description": "The persistence of the IBC flow, indicating how long the flow has been active.",
+          "description": "Indication of transaction finality or commitment in blockchain",
           "type": "BIGNUMERIC"
         },
         {
           "name": "cosmoshub",
-          "description": "The Cosmos Hub chain involved in the IBC flow.",
+          "description": "Identifier of the Cosmos Hub or related blockchain network",
           "type": "FLOAT"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the IBC flow data was ingested into the database.",
+          "description": "Time when the event data was ingested or processed",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "lenses_cosmoshub_liquid_staking",
-      "description": "This table tracks the Cosmos Hub liquid staking data, providing insights into the performance and persistence of staking rewards. The data is sourced from the Cosmos ecosystem blockchains, offering a comprehensive view of the liquid staking landscape.",
+      "description": "This table provides an overview of liquid staking data from the Cosmos ecosystem, offering insights into the distribution and dynamics of staked tokens across various Cosmos hubs.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "date",
-          "description": "Date of data collection, representing the timestamp when the staking rewards were calculated.",
+          "description": "The date on which the liquid staking data was recorded.",
           "type": "TIMESTAMP"
         },
         {
           "name": "stride",
-          "description": "Stride is a measure of the staking rewards persistence, indicating the consistency of returns over time.",
+          "description": "Represents the progress or measure of staking activity over time, providing insights into the growth and maintenance of liquidity in the Cosmos ecosystem.",
           "type": "FLOAT"
         },
         {
           "name": "persistence",
-          "description": "Persistence is a measure of how consistent the staking rewards are over time, calculated as a percentage.",
+          "description": "Indicates the level of commitment from validators to participate in liquid staking, reflecting their willingness to maintain their positions in the network.",
           "type": "BIGNUMERIC"
         },
         {
           "name": "cosmoshub",
-          "description": "The Cosmos Hub token balance, reflecting the accumulated staking rewards.",
+          "description": "Represents a specific hub within the Cosmos network, providing a focal point for liquid staking activities and enabling users to target specific nodes for participation.",
           "type": "FLOAT"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the data was ingested into the system, marking the time of data processing.",
+          "description": "The timestamp when the data was ingested into the system, reflecting the most recent point at which the data was processed and updated.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "lenses_cosmoshub_liquid_staking_flow",
-      "description": "This table provides an overview of the liquid staking flow on Cosmos hubs, showcasing key metrics to understand the movement of assets within the ecosystem. It highlights the total and top inflows and outflows, along with relevant transaction IDs.",
+      "description": "This table provides an overview of the liquid staking flow for the Cosmos Hub network, helping users understand the dynamics of asset distribution and movement within the ecosystem. It offers insights into total and top inflows, outflows, and corresponding transactions.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "time_in_hours",
-          "description": "Time in hours since the last block was processed, indicating the freshness of the data.",
+          "description": "Elapsed time since last data ingestion in hours",
           "type": "TIMESTAMP"
         },
         {
           "name": "total_inflow",
-          "description": "Total amount of assets flowing into the liquid staking pool within the specified time period.",
+          "description": "Cumulative Blockchain native token value received by the validator",
           "type": "FLOAT"
         },
         {
           "name": "top_inflow",
-          "description": "The largest single inflow of assets into the liquid staking pool within the specified time period.",
+          "description": "Highest single inflow value as native blockchain token",
           "type": "FLOAT"
         },
         {
           "name": "top_inflow_tx_id",
-          "description": "Transaction ID associated with the top inflow of assets into the liquid staking pool.",
+          "description": "Transaction ID that delivered the top inflow to the validator",
           "type": "STRING"
         },
         {
           "name": "total_outflow",
-          "description": "Total amount of assets flowing out of the liquid staking pool within the specified time period.",
+          "description": "Cumulative Blockchain native token value sent by the validator",
           "type": "FLOAT"
         },
         {
           "name": "top_outflow",
-          "description": "The largest single outflow of assets from the liquid staking pool within the specified time period.",
+          "description": "Highest single outflow value as native blockchain token",
           "type": "FLOAT"
         },
         {
           "name": "top_outflow_tx_id",
-          "description": "Transaction ID associated with the top outflow of assets from the liquid staking pool.",
+          "description": "Transaction ID that processed the top outflow from the validator",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the data was ingested into the system, indicating when the data became available.",
+          "description": "Unix timestamp when the data was ingested into the dataset",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "lenses_cosmoshub_staking_flow",
-      "description": "This table provides an overview of the staking flow for the Cosmos Hub network, offering insights into the hour-by-hour activity of tokens being transferred, staked, and unstaked.",
+      "description": "This table provides a high-level overview of the Cosmos Ecosystem's staking flow, including total and top inflows and outflows. Staking flow is essential for the operation and maintenance of the Cosmos Hub.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "time_in_hours",
-          "description": "The hour at which the staking flow data was recorded, measured in Unix time.",
+          "description": "Elasped time between staking flow records in hours",
           "type": "TIMESTAMP"
         },
         {
           "name": "total_inflow",
-          "description": "The total amount of tokens flowing into the network during the given hour.",
+          "description": "Total value received by validators via Cosmos staking",
           "type": "FLOAT"
         },
         {
           "name": "top_inflow",
-          "description": "The largest amount of tokens flowing into the network during the given hour.",
+          "description": "Highest staking inflow received by a validator",
           "type": "FLOAT"
         },
         {
           "name": "top_inflow_tx_id",
-          "description": "The transaction ID of the transaction that contributed to the top inflow during the given hour.",
+          "description": "Transaction ID of the top staking inflow transaction",
           "type": "STRING"
         },
         {
           "name": "total_outflow",
-          "description": "The total amount of tokens flowing out of the network during the given hour.",
+          "description": "Total value withdrawn by validators via Cosmos staking",
           "type": "FLOAT"
         },
         {
           "name": "top_outflow",
-          "description": "The largest amount of tokens flowing out of the network during the given hour.",
+          "description": "Highest staking outflow made by a validator",
           "type": "FLOAT"
         },
         {
           "name": "top_outflow_tx_id",
-          "description": "The transaction ID of the transaction that contributed to the top outflow during the given hour.",
+          "description": "Transaction ID of the top staking outflow transaction",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp at which the staking flow data was ingested into the database, measured in Unix time.",
+          "description": "Timestamp when data was ingested from the Cosmos blockchain network",
           "type": "TIMESTAMP"
         }
       ]
@@ -307,221 +307,381 @@
       "columns": [
         {
           "name": "time_in_hours",
-          "description": "The time duration in hours, representing the time period over which the liquidity flow was observed.",
+          "description": "Elapsed time in hours since the bonded liquidity flow began",
           "type": "TIMESTAMP"
         },
         {
           "name": "total_inflow",
-          "description": "The total amount of liquidity that has flowed into the Osmosis network during the specified time period.",
+          "description": "Cumulative in-flow value of liquidity from bonded pool participants",
           "type": "BIGNUMERIC"
         },
         {
           "name": "top_inflow",
-          "description": "The maximum amount of liquidity that has flowed into the Osmosis network during the specified time period.",
+          "description": "Maximum in-flow value of a single bonded liquidity participant",
           "type": "BIGNUMERIC"
         },
         {
           "name": "top_inflow_tx_id",
-          "description": "The transaction ID associated with the top inflow of liquidity during the specified time period.",
+          "description": "Hash of the transaction causing the maximum in-flow",
           "type": "STRING"
         },
         {
           "name": "total_outflow",
-          "description": "The total amount of liquidity that has flowed out of the Osmosis network during the specified time period.",
+          "description": "Cumulative out-flow value of liquidity from bonded pool participants",
           "type": "BIGNUMERIC"
         },
         {
           "name": "top_outflow",
-          "description": "The maximum amount of liquidity that has flowed out of the Osmosis network during the specified time period.",
+          "description": "Maximum out-flow value of a single bonded liquidity participant",
           "type": "BIGNUMERIC"
         },
         {
           "name": "top_outflow_tx_id",
-          "description": "The transaction ID associated with the top outflow of liquidity during the specified time period.",
+          "description": "Hash of the transaction causing the maximum out-flow",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the data was ingested into the system, representing the time at which the data was last updated.",
+          "description": "Timestamp when the data was ingested into the database",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "lenses_osmosis_chain_hourly_revenue",
-      "description": "This table provides a detailed breakdown of hourly revenue generated from various transactions within the Cosmos ecosystem. It offers insights into the fee structures of the different blockchain components, highlighting the revenue streams of the network.",
+      "description": "This table provides an hourly breakdown of the revenue generated by the Osmosis blockchain, highlighting its transactional dynamics and fee collection patterns. The data offers valuable insights into the chain's revenue streams across various categories.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "time_in_hours",
-          "description": "The time in hours since the beginning of the data collection, used to track the hourly revenue over time",
+          "description": "Amount of time elapsed in hours at the time of data collection.",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_fees",
-          "description": "Transaction fees collected from various blockchain operations, such as token transfers and smart contract executions",
+          "description": "Total fees collected from executed transactions in the Osmosis chain.",
           "type": "FLOAT"
         },
         {
           "name": "protorev",
-          "description": "Protocol revenue generated from the Cosmos Hub's consensus mechanism, such as staking and validation",
+          "description": "Cumulative PROTO rewards issued on the Osmosis chain per hour.",
           "type": "FLOAT"
         },
         {
           "name": "swap_fees",
-          "description": "Fees collected from liquidity provision and trading on Cosmos- based decentralized exchanges (DEXs)",
+          "description": "Fees generated from on-chain swap transactions on the Osmosis chain.",
           "type": "FLOAT"
         },
         {
           "name": "taker_fees",
-          "description": "Fees collected from market makers and liquidity providers on Cosmos-based DEXs",
+          "description": "Fees earned by takers from on-chain interaction on the Osmosis chain.",
           "type": "FLOAT"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the data was ingested into the database, used for data synchronization and validation",
+          "description": "Timestamp when the data is ingested into the system from the blockchain.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "lenses_osmosis_concentration_of_activity",
-      "description": "This table provides an overview of the concentration of activity on the Osmosis blockchain, showcasing trends and patterns in user engagement and network participation. By analyzing this data, users can gain insights into the growth and development of the Osmosis ecosystem.",
+      "description": "This stream represents the Concentration of Activity (COA) of Osmosis on the Cosmos blockchain ecosystem. It measures the distribution of activity across the network, providing insights into the market dynamics and executing talent.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "day",
-          "description": "The date in which the activity concentration was measured, represented as a Unix timestamp.",
+          "description": "Date of data processing within the context of blockchain networks",
           "type": "TIMESTAMP"
         },
         {
           "name": "COA",
-          "description": "The concentration of activity on the Osmosis blockchain, measured as a ratio of active addresses to total addresses and representing the level of network participation and engagement.",
+          "description": "Concentration of activity, quantifying overall network engagement metrics",
           "type": "FLOAT"
         }
       ]
     },
     {
       "name": "lenses_osmosis_daily_active_users",
-      "description": "This table contains daily active users data from the Osmosis blockchain, providing insights into the network's usage and activity over time. It captures the users who interacted with the blockchain on a daily basis, contributing to the ecosystem's growth and development.",
+      "description": "Daily active users in the Osmosis network. This table contains information about the daily activities of users on the Osmosis blockchain, from blockchains of the cosmos ecosystem. ",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block was created, representing the date and time when the transaction occurred.",
+          "description": "Timestamp of the block when the transaction was processed on the blockchain",
           "type": "TIMESTAMP"
         },
         {
           "name": "sender",
-          "description": "The address of the user who sent a transaction, indicating their participation in the blockchain network on the specified day.",
+          "description": "Public address of the sender initiating the transaction or event",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the block was ingested into the dataset, reflecting the time at which the data was processed and stored.",
+          "description": "Timestamp when the data is ingested into the blockchain analytics system",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "lenses_osmosis_daily_active_users_count",
-      "description": "Daily active users count in the Cosmos ecosystem, providing insights into the growing adoption and user base of blockchain-based applications.",
+      "description": "Daily count of unique active users in the Osmosis network, providing insight into the ecosystem's growth and activity levels. This data is specific to the Cosmos ecosystem, giving a glimpse into the adoption and usage patterns of Osmosis.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "day",
-          "description": "Date of data collection in YYYY-MM-DD format, representing the daily snapshot of active users.",
+          "description": "Date of daily active users count measurement on Osmosis network",
           "type": "TIMESTAMP"
         },
         {
           "name": "unique_users",
-          "description": "Total count of unique users actively engaging with blockchain- based applications within the Cosmos ecosystem on a given day.",
+          "description": "Count of distinct users actively using Osmosis on a daily basis",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "lenses_osmosis_ibc_flow",
-      "description": "This table contains information about IBC (Inter-Blockchain Communication) flows on the Osmosis blockchain, providing insights into token transfers between different chains within the Cosmos ecosystem. It helps in understanding the flow of assets across the ecosystem.",
+      "description": "This table tracks IBC (Inter- Blockchain Communication) flows in the Osmosis ecosystem, providing insights into token movement between different chains.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "time_in_hours",
-          "description": "Time elapsed since the last block in hours, indicating the freshness of the data.",
+          "description": "Timestamp in hours since block validation occurrence",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
-          "description": "Unique identifier for the blockchain where the IBC flow occurred, providing context for the flow of assets.",
+          "description": "Unique identifier of a Cosmos blockchain network",
           "type": "STRING"
         },
         {
           "name": "total_inflow",
-          "description": "Total amount of assets received by the chain through IBC flows, indicating the net inflow of assets.",
+          "description": "Cumulative value of inflows across the blockchain network",
           "type": "FLOAT"
         },
         {
           "name": "top_inflow",
-          "description": "The largest inflow of assets to the chain, providing insight into the most significant IBC flows.",
+          "description": "Largest inflow amount during the measurement period",
           "type": "FLOAT"
         },
         {
           "name": "top_inflow_tx_id",
-          "description": "Transaction ID of the top inflow, allowing for further analysis or investigation of the flow.",
+          "description": "Transaction identifier of the top inflow transaction",
           "type": "STRING"
         },
         {
           "name": "total_outflow",
-          "description": "Total amount of assets sent from the chain through IBC flows, indicating the net outflow of assets.",
+          "description": "Cumulative value of outflows across the blockchain network",
           "type": "FLOAT"
         },
         {
           "name": "top_outflow",
-          "description": "The largest outflow of assets from the chain, providing insight into the most significant IBC flows.",
+          "description": "Largest outflow amount during the measurement period",
           "type": "FLOAT"
         },
         {
           "name": "top_outflow_tx_id",
-          "description": "Transaction ID of the top outflow, allowing for further analysis or investigation of the flow.",
+          "description": "Transaction identifier of the top outflow transaction",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the data was ingested into the database, indicating the freshness and availability of the data.",
+          "description": "Timestamp when data was ingested into the system",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "lenses_osmosis_liquidity_flow",
-      "description": "This table provides an overview of liquidity flow in the Osmosis ecosystem, tracking the movement of assets across different pools and wallets over time. It offers insights into the total inflow and outflow of assets, as well as the top transactions contributing to these flows.",
+      "description": "This table provides an overview of the liquidity flow on the Osmosis blockchain, offering insights into the amount of assets flowing in and out of the network over time. It helps track the evolution of liquidity and the activity on the protocol.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "time_in_hours",
-          "description": "Timestamp of the data point in hours since the start of the Osmosis blockchain",
+          "description": "Timestamp elapsed since Osmosis liquidity flow events, measured in hours",
           "type": "TIMESTAMP"
         },
         {
           "name": "total_inflow",
-          "description": "Total amount of assets flowing into the Osmosis ecosystem during this time period",
+          "description": "Cumulative value of incoming assets to Osmosis liquidity pool",
           "type": "FLOAT"
         },
         {
           "name": "top_inflow",
-          "description": "Top asset flowing into the Osmosis ecosystem during this time period",
+          "description": "Single largest value of incoming assets to Osmosis liquidity pool",
+          "type": "FLOAT"
+        },
+        {
+          "name": "top_inflow_tx_id",
+          "description": "Transaction ID of top inflow event in Osmosis liquidity pool",
+          "type": "STRING"
+        },
+        {
+          "name": "total_outflow",
+          "description": "Cumulative value of outgoing assets from Osmosis liquidity pool",
+          "type": "FLOAT"
+        },
+        {
+          "name": "top_outflow",
+          "description": "Single largest value of outgoing assets from Osmosis liquidity pool",
+          "type": "FLOAT"
+        },
+        {
+          "name": "top_outflow_tx_id",
+          "description": "Transaction ID of top outflow event in Osmosis liquidity pool",
+          "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "Timestamp when data was ingested into data processing system",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "lenses_osmosis_new_users_ratio",
+      "description": "This table tracks the growth and engagement of users in the Osmosis blockchain, providing insights into the adoption rate of the platform. By analyzing new and returning users, we can identify trends and patterns that can inform product development and marketing strategies.",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "new_users",
+          "description": "Number of unique new user addresses in the Osmosis network over time.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "returning_users",
+          "description": "Number of unique returning user addresses in the Osmosis network over time.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "new_users_ratio",
+          "description": "Ratio of new users to total users in the Osmosis network over time.",
+          "type": "FLOAT"
+        },
+        {
+          "name": "day",
+          "description": "Timestamp in days, representing distinct time intervals for Osmosis network activity.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "lenses_osmosis_osmo_price",
+      "description": "This table contains historical price data for OSMOs (Osmosis tokens) fetched from the Cosmos ecosystem, providing a comprehensive snapshot of OSMO price movements. The data is useful for analysts and traders seeking to track OSMO market trends and patterns.",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "time_minutes",
+          "description": "Time elapsed since epoch in minutes, conveying temporal data within blockchain",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "asset",
+          "description": "ISO 4217 standard currency codes or symbols for digital assets within Cosmos ecosystem",
+          "type": "STRING"
+        },
+        {
+          "name": "price_in_usdc",
+          "description": "Current value of assets in United States Dollars according to market rates",
+          "type": "FLOAT"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "Timestamp of when the data was ingested into the system from blockchain networks",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "lenses_osmosis_osmo_top_stakeholders",
+      "description": "This table showcases the top stakeholders in the Osmosis network, demonstrating their level of investment and commitment to the Cosmos ecosystem. The data highlights the key players in the Osmosis economy, providing insight into their staked resources.",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "date",
+          "description": "Date of the stake balance snapshot in UTC format",
+          "type": "STRING"
+        },
+        {
+          "name": "address",
+          "description": "Public key or wallet address performing this stake action",
+          "type": "STRING"
+        },
+        {
+          "name": "staked_amount",
+          "description": "Total amount of OSMO staked by this address at this date",
+          "type": "FLOAT"
+        },
+        {
+          "name": "bonded_amount",
+          "description": "Amount of staked OSMO currently bonded for validation",
+          "type": "FLOAT"
+        },
+        {
+          "name": "liquid_amount",
+          "description": "Amount of staked OSMO available for withdrawal as needed",
+          "type": "FLOAT"
+        }
+      ]
+    },
+    {
+      "name": "lenses_osmosis_returning_users_ratio",
+      "description": "This table provides an overview of the ratio of new users who return to the Osmosis network over time. It helps to analyze user engagement and retention within the Cosmos ecosystem.",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "new_users_ratio",
+          "description": "Proportion of net new users in Osmosis ecosystem over a given time period.",
+          "type": "FLOAT"
+        },
+        {
+          "name": "day",
+          "description": "Continuous date, representing the time scope for new_users_ratio calculation (UTC).",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "lenses_osmosis_staking_flow",
+      "description": "This table provides an overview of the staking flow across the Cosmos ecosystem, displaying key metrics responsible for the change in the token supply over time.",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "time_in_hours",
+          "description": "Timestamp offset in hours since epoch, representing time elapsed in blockchain",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "total_inflow",
+          "description": "Cumulative inflow of Osmosis staking rewards over a given time period",
+          "type": "FLOAT"
+        },
+        {
+          "name": "top_inflow",
+          "description": "Largest Osmosis staking reward amount flowing into an address or validator",
           "type": "FLOAT"
         },
         {
@@ -531,12 +691,12 @@
         },
         {
           "name": "total_outflow",
-          "description": "Total amount of assets flowing out of the Osmosis ecosystem during this time period",
+          "description": "Cumulative outflow of Osmosis staking rewards from a validator or address",
           "type": "FLOAT"
         },
         {
           "name": "top_outflow",
-          "description": "Top asset flowing out of the Osmosis ecosystem during this time period",
+          "description": "Largest Osmosis staking reward amount flowing out of a validator or address",
           "type": "FLOAT"
         },
         {
@@ -546,250 +706,90 @@
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the data was ingested into the dataset, in UTC",
-          "type": "TIMESTAMP"
-        }
-      ]
-    },
-    {
-      "name": "lenses_osmosis_new_users_ratio",
-      "description": "This table provides insights into the growth and retention of users in the Cosmos ecosystem, showcasing the dynamics of new and returning users over time.",
-      "tags": [
-        "parsed_table"
-      ],
-      "columns": [
-        {
-          "name": "new_users",
-          "description": "The number of new users added to the network within a specific time period.",
-          "type": "INTEGER"
-        },
-        {
-          "name": "returning_users",
-          "description": "The number of users who have previously interacted with the network and return within a specific time period.",
-          "type": "INTEGER"
-        },
-        {
-          "name": "new_users_ratio",
-          "description": "A ratio representing the percentage of new users compared to the total number of users within a specific time period.",
-          "type": "FLOAT"
-        },
-        {
-          "name": "day",
-          "description": "A timestamp indicating the date and time at which the user data was recorded.",
-          "type": "TIMESTAMP"
-        }
-      ]
-    },
-    {
-      "name": "lenses_osmosis_osmo_price",
-      "description": "This table contains historical price data of various cryptocurrencies from the Cosmos ecosystem. The data is sourced from blockchain transactions and provides insights into market trends.",
-      "tags": [
-        "parsed_table"
-      ],
-      "columns": [
-        {
-          "name": "time_minutes",
-          "description": "Timestamp of the price data in minutes since the epoch (January 1, 1970).",
-          "type": "TIMESTAMP"
-        },
-        {
-          "name": "asset",
-          "description": "Symbol of the cryptocurrency (e.g. ATOM, OSMO, etc.)",
-          "type": "STRING"
-        },
-        {
-          "name": "price_in_usdc",
-          "description": "Current market price of the cryptocurrency in USDC (US Dollar Coin)",
-          "type": "FLOAT"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "description": "Timestamp when the data was ingested from the blockchain into the database",
-          "type": "TIMESTAMP"
-        }
-      ]
-    },
-    {
-      "name": "lenses_osmosis_osmo_top_stakeholders",
-      "description": "This table provides an overview of the top stakeholders in the Osmosis network. It highlights the addresses with the largest staked amounts, their staked, bonded, and liquid amounts.",
-      "tags": [
-        "parsed_table"
-      ],
-      "columns": [
-        {
-          "name": "date",
-          "description": "Date of snapshot when the staked amounts were recorded.",
-          "type": "STRING"
-        },
-        {
-          "name": "address",
-          "description": "The address of the Osmosis validator or delegate.",
-          "type": "STRING"
-        },
-        {
-          "name": "staked_amount",
-          "description": "The total staked amount held by the validator or delegate.",
-          "type": "FLOAT"
-        },
-        {
-          "name": "bonded_amount",
-          "description": "The amount of tokens bonded by the validator or delegate, which are eligible for voting.",
-          "type": "FLOAT"
-        },
-        {
-          "name": "liquid_amount",
-          "description": "The amount of tokens that are not bonded and can be withdrawn or used for other purposes.",
-          "type": "FLOAT"
-        }
-      ]
-    },
-    {
-      "name": "lenses_osmosis_returning_users_ratio",
-      "description": "This table provides an overview of the ratio of returning users in the Osmosis ecosystem, giving insight into user retention and engagement. The data is based on blockchain transactions and provides a snapshot of user behavior over time.",
-      "tags": [
-        "parsed_table"
-      ],
-      "columns": [
-        {
-          "name": "new_users_ratio",
-          "description": "The ratio of new users to the total number of users in a given period, indicating the rate of user acquisition.",
-          "type": "FLOAT"
-        },
-        {
-          "name": "day",
-          "description": "The day of the observation period, allowing for analysis of trends and patterns over time.",
-          "type": "TIMESTAMP"
-        }
-      ]
-    },
-    {
-      "name": "lenses_osmosis_staking_flow",
-      "description": "This table provides an overview of the staking flow on Osmosis, a decentralized exchange and liquidity protocol within the Cosmos ecosystem, showcasing the total and top inflows and outflows of tokens over time.",
-      "tags": [
-        "parsed_table"
-      ],
-      "columns": [
-        {
-          "name": "time_in_hours",
-          "description": "The time elapsed since the last ingestion in hours.",
-          "type": "TIMESTAMP"
-        },
-        {
-          "name": "total_inflow",
-          "description": "The total amount of tokens flowing into the Osmosis staking pool over the specified time period.",
-          "type": "FLOAT"
-        },
-        {
-          "name": "top_inflow",
-          "description": "The largest single inflow of tokens into the Osmosis staking pool over the specified time period.",
-          "type": "FLOAT"
-        },
-        {
-          "name": "top_inflow_tx_id",
-          "description": "The transaction ID of the top inflow transaction.",
-          "type": "STRING"
-        },
-        {
-          "name": "total_outflow",
-          "description": "The total amount of tokens flowing out of the Osmosis staking pool over the specified time period.",
-          "type": "FLOAT"
-        },
-        {
-          "name": "top_outflow",
-          "description": "The largest single outflow of tokens from the Osmosis staking pool over the specified time period.",
-          "type": "FLOAT"
-        },
-        {
-          "name": "top_outflow_tx_id",
-          "description": "The transaction ID of the top outflow transaction.",
-          "type": "STRING"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "description": "The timestamp of the last data ingestion.",
+          "description": "Timestamp of data ingestion into the analytics system, in seconds since epoch",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "lenses_osmosis_superfluid_staking_flow",
-      "description": "This table provides an overview of the superfluid staking flow on Osmosis, showcasing the total inflow and outflow of tokens, as well as the top inflows and outflows, over time. The data is sourced from the Cosmos blockchain ecosystem.",
+      "description": "This table provides a summary of the osmosis superfluid staking flow, offering insights into the amount of tokens flowing in and out of this staking mechanism within the cosmos ecosystem. It showcases the overall and top inflows and outflows of tokens, providing a comprehensive view of the staking dynamics.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "time_in_hours",
-          "description": "Time elapsed since the beginning of the superfluid staking flow, measured in hours.",
+          "description": "Elapsed time from epoch in hours",
           "type": "TIMESTAMP"
         },
         {
           "name": "total_inflow",
-          "description": "Total amount of tokens flowing into the superfluid staking pool over the specified time period.",
+          "description": "Cumulative total incoming superfluid staking balance",
           "type": "FLOAT"
         },
         {
           "name": "top_inflow",
-          "description": "Largest single transaction inflowing into the superfluid staking pool over the specified time period.",
+          "description": "Largest single incoming superfluid staking balance",
           "type": "FLOAT"
         },
         {
           "name": "top_inflow_tx_id",
-          "description": "Transaction ID of the largest single transaction inflowing into the superfluid staking pool over the specified time period.",
+          "description": "Transaction ID of top inflow superfluid staking balance",
           "type": "STRING"
         },
         {
           "name": "total_outflow",
-          "description": "Total amount of tokens flowing out of the superfluid staking pool over the specified time period.",
+          "description": "Cumulative total outgoing superfluid staking balance",
           "type": "FLOAT"
         },
         {
           "name": "top_outflow",
-          "description": "Largest single transaction outflowing from the superfluid staking pool over the specified time period.",
+          "description": "Largest single outgoing superfluid staking balance",
           "type": "FLOAT"
         },
         {
           "name": "top_outflow_tx_id",
-          "description": "Transaction ID of the largest single transaction outflowing from the superfluid staking pool over the specified time period.",
+          "description": "Transaction ID of top outflow superfluid staking balance",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the data was ingested into the system, indicating the freshness of the data.",
+          "description": "Time data was ingested into database in database-native format",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "lenses_osmosis_trading_flow",
-      "description": "This table provides a detailed view of the trading activities on the Osmosis blockchain, capturing key metrics such as transaction volume and maximum volume in USD. The data allows for analysis of liquidity and trading patterns on the Osmosis network.",
+      "description": "This dataset provides trading volume and pool information for the Osmosis blockchain, offering insights into the liquidity and market activity within the Cosmos ecosystem.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "time_in_hours",
-          "description": "The time of the trading activity in hours, measured from the start of the network",
+          "description": "Elapsed time between transaction and current block in hours",
           "type": "TIMESTAMP"
         },
         {
           "name": "pool_id",
-          "description": "A unique identifier for the pool involved in the trading activity",
+          "description": "Unique identifier for Osmosis liquidity pool",
           "type": "STRING"
         },
         {
           "name": "volume_in_usd",
-          "description": "The total volume of the trading activity in USD",
+          "description": "Total transaction volume in US dollars",
           "type": "FLOAT"
         },
         {
           "name": "tx_id",
-          "description": "The unique transaction ID associated with the trading activity",
+          "description": "Transaction identifier for Osmosis cross-chain trading flow",
           "type": "STRING"
         },
         {
           "name": "max_volume_in_usd",
-          "description": "The maximum volume of the trading activity in USD",
+          "description": "Maximum single transaction volume in US dollars",
           "type": "FLOAT"
         }
       ]

@@ -6,6 +6,8 @@
     "lint": "eslint .",
     "type-check": "tsc --noEmit",
     "table-metadata": "bun run src/cmd/tables-metadata.ts",
+    "column-descriptions": "bun run src/cmd/generate-column-descriptions.ts",
+    "generate-sql-docs": "bun run column-descriptions && bun run table-metadata",
     "check": "bun run src/check.ts"
   },
   "devDependencies": {
@@ -18,7 +20,8 @@
   "dependencies": {
     "@google-cloud/bigquery": "^7.9.1",
     "es-toolkit": "^1.31.0",
-    "p-map": "^7.0.2"
+    "p-map": "^7.0.2",
+    "openai": "^4.0.0"
   },
   "module": "index.ts",
   "type": "module"

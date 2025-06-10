@@ -8,6 +8,13 @@ import {capitalize} from "es-toolkit";
 
 const client = new BigQuery({projectId: "numia-data"});
 
+const DATASETS_TO_IGNORE = [
+    "artemis",
+    "interchain_foundation",
+    "pyth",
+    "stride_private",
+    "wynd"
+]
 const rawTables = [
     "blocks",
     "block_events",
@@ -17,24 +24,24 @@ const rawTables = [
     "tx_messages",
     "transactions",
     "validators",
-];
+]
 
 type ColumnMetadata = {
     name: string;
     description: string;
     type: string;
     mode: string;
-};
+}
 type TableMetadata = {
     name: string;
     description: string;
     columns: ColumnMetadata[];
     tags?: string[];
-};
+}
 type DatasetMetadata = {
     dataset: string;
     tables: TableMetadata[];
-};
+}
 
 
 const TABLES_DIR = '../data'
@@ -48,7 +55,9 @@ async function main() {
     cleanOldData()
     const [bqDatasets] = await client.getDatasets()
 
-    const metadata: DatasetMetadata[] = await pMap(bqDatasets, generateDatasetMetadata, {concurrency: 10})
+    const datasetsToProcess = bqDatasets.filter((dataset) => dataset.id && !DATASETS_TO_IGNORE.includes(dataset.id))
+
+    const metadata: DatasetMetadata[] = await pMap(datasetsToProcess, generateDatasetMetadata, {concurrency: 10})
 
     metadata.forEach((table) => generateDocFile(table))
 }
@@ -104,6 +113,10 @@ async function generateTablesMetadata(table: Table): Promise<TableMetadata> {
 
 
 function generateDocFile(metadata: DatasetMetadata) {
+    if (metadata.dataset === "numia") {
+        // Skip the numia dataset as it is not a chain dataset
+        return;
+    }
     const datasetTags = metadata.tables.flatMap((table) => {
         return table?.tags || []
     })
@@ -114,8 +127,21 @@ function generateDocFile(metadata: DatasetMetadata) {
     createFile(metadata.dataset, hasRawTables, hasParsedTables)
 }
 
-function createFile(tableName: string, hasRawTables: boolean, hasParsedTables: boolean) {
-    const chainName = capitalize(tableName.replaceAll('_', ' '))
+const repoToChainMap: Record<string, string> = {
+    cosmoshub: "Cosmos Hub",
+    dydx_mainnet: "dYdX",
+    interchain_foundation: "Interchain Foundation",
+    kaiyo: "Kujira",
+    lenses: "Numia Lenses",
+    nillion_chain_testnet: "Nillion Testnet",
+    quasar: "Quasar",
+    quasar_testnet: "Quasar Testnet",
+    secret: "Secret Network",
+    terra: "Terra 2",
+}
+
+function createFile(datasetName: string, hasRawTables: boolean, hasParsedTables: boolean) {
+    const pageTitle = repoToChainMap[datasetName] || capitalize(datasetName.replaceAll('_', ' '))
     const rawTableComponent = `
 ## Raw Tables
 <Table data={json} tag="raw_table"/>
@@ -128,19 +154,19 @@ function createFile(tableName: string, hasRawTables: boolean, hasParsedTables: b
 
     const file = `-- This file is generated, don't modify
 ---
-title: ${chainName}
+title: ${pageTitle}
 ---
 
 import Table from '@site/src/components/JsonToTable/JsonToTable';
-import json from '@site/data/${tableName}-table.json'
+import json from '@site/data/${datasetName}-table.json'
 
 
-This page presents the available tables for ${chainName}.
+This page presents the available tables for ${pageTitle}.
 
 ${hasRawTables ? rawTableComponent : ''}
 
 ${hasParsedTables ? parsedTableComponent : ''}
     `
 
-    writeFileSync(Path.join(SQL_DOCS_DIR, `${tableName}.mdx`), file)
+    writeFileSync(Path.join(SQL_DOCS_DIR, `${datasetName}.mdx`), file)
 }
