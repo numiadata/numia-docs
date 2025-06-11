@@ -3,379 +3,379 @@
   "tables": [
     {
       "name": "akash_block_events",
-      "description": "This table provides a comprehensive view of block events from the Cosmos ecosystem, offering insights into the blockchain's activity over time. It includes essential metadata to contextualize each event.",
+      "description": "This table provides a comprehensive overview of every action and occurrence within the Cosmos blockchain ecosystem. It includes detailed information about each block's transactions, enabling the analysis of the blockchain's behavior and evolution over time.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block within the blockchain at the time of the event.",
+          "description": "Height of a block within a blockchain network, representing its position in the chain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block was committed to the blockchain.",
+          "description": "Timestamp when a block was proposed and mined within a blockchain network.",
           "type": "TIMESTAMP"
         },
         {
           "name": "event_index",
-          "description": "The index of the event within the block.",
+          "description": "Unique index for each event happening within a blockchain block or transaction.",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "The type of event that occurred.",
+          "description": "Category or type of event occurring within a blockchain, such as transaction or smart contract.",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
-          "description": "Additional attributes related to the event.",
+          "description": "Custom attributes associated with a specific event in a blockchain protocol.",
           "type": "JSON"
         },
         {
           "name": "source",
-          "description": "The source of the block event data.",
+          "description": "Node or source that originated a block event within a Cosmos blockchain network.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the event data was ingested into the system.",
+          "description": "Timestamp when the block event data was ingested into the dataset.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "akash_blocks",
-      "description": "This table contains information about each block in the Cosmos ecosystem, including block height and timestamp, as well as details about the proposer and validators.",
+      "description": "Cosmos Blocks Table: This table provides information about blocks mined in the Cosmos ecosystem. It contains details such as block height and timestamp, validators, and other key metrics.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in the blockchain.",
+          "description": "Consecutive numerical identifier for each block within a blockchain.",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block was created.",
+          "description": "Timestamp when a block becomes effectively finalized on the blockchain.",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
-          "description": "The unique identifier of the Cosmos blockchain.",
+          "description": "Unique identifier for a blockchain network within the Cosmos ecosystem.",
           "type": "STRING"
         },
         {
           "name": "proposer_address",
-          "description": "The address of the validator that proposed the block.",
+          "description": "Address of the entity that proposes and broadcasts a new block.",
           "type": "STRING"
         },
         {
           "name": "validators_hash",
-          "description": "A hash of the validators that secured the block.",
+          "description": "Hash of validators responsible for validating transactions in a block.",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the block data was ingested into the system.",
+          "description": "Timestamp when the block data was ingested from the blockchain network.",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "akash_message_events",
-      "description": "This table provides an overview of message events from various blockchain sources within the Cosmos ecosystem. It offers insights into the timing and details of these events, allowing for a deeper understanding of the network's activity.",
+      "description": "This table contains event data extracted from Cosmos blockchain transactions. It provides a detailed view of the events occurring within the Cosmos ecosystem.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in which the message event occurred.",
+          "description": "Opt-in blockchain sequence number, x=αλуmetric of block order",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp when the block containing the message event was generated.",
+          "description": "Timestamp when the block was processed on the blockchain",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
-          "description": "A unique identifier for the transaction that triggered the message event.",
+          "description": "Unique transaction hash identifier for on-chain data",
           "type": "STRING"
         },
         {
           "name": "tx_index",
-          "description": "The index of the transaction within a block.",
+          "description": "Transaction index within a block, sequence number",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
-          "description": "The index of the message within a transaction.",
+          "description": "Message index within a transaction",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
-          "description": "The index of the event within a message.",
+          "description": "Event index within a message, sequence number",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "The type of event that occurred, such as a message creation or deletion.",
+          "description": "Type of event that occurred on the blockchain",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
-          "description": "Additional attributes related to the event, including any relevant data or metadata.",
+          "description": "Detailed attributes of the event that occurred",
           "type": "JSON"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the data was ingested into the system.",
+          "description": "Timestamp when data was ingested into the database",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "akash_transactions",
-      "description": "This table contains a comprehensive record of transactions from the Cosmos ecosystem. Each transaction includes relevant metadata for auditing and analysis.",
+      "description": "This table contains transaction information from the Cosmos ecosystem, including their status, fees, and associated block information. It provides a comprehensive view of interactions within the blockchain.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block within the Cosmos blockchain that this transaction was included in.",
+          "description": "Total block count in the blockchain",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "A unique identifier for the specific Cosmos blockchain that this transaction belongs to.",
+          "description": "Unique identifier of the Cosmos blockchain network",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "A unique identifier for this transaction within the Cosmos blockchain.",
+          "description": "Unique transaction identifier within the blockchain",
           "type": "STRING"
         },
         {
           "name": "tx_info",
-          "description": "A JSON object containing additional information about this transaction.",
+          "description": "Transaction details including amounts, addresses, and hashes",
           "type": "STRING"
         },
         {
           "name": "tx_log_message",
-          "description": "A log message generated during the processing of this transaction.",
+          "description": "Detailed logging of transaction events and outcomes",
           "type": "STRING"
         },
         {
           "name": "memo",
-          "description": "A memo or note associated with this transaction.",
+          "description": "Transaction memo containing optional additional information",
           "type": "STRING"
         },
         {
           "name": "fee",
-          "description": "The fee paid for processing this transaction, expressed in a specific denomination.",
+          "description": "Transaction fee paid to validate and process the transaction",
           "type": "STRING"
         },
         {
           "name": "tx_code",
-          "description": "The code returned by the Cosmos blockchain after processing this transaction.",
+          "description": "Transaction execution result code (success, failure, etc.)",
           "type": "INTEGER"
         },
         {
           "name": "tx_index",
-          "description": "The index of this transaction within the block that it was included in.",
+          "description": "Uniquely identifies a transaction within a block",
           "type": "INTEGER"
         },
         {
           "name": "gas_used",
-          "description": "The amount of gas consumed by this transaction during processing.",
+          "description": "Combined gas consumed during transaction execution",
           "type": "INTEGER"
         },
         {
           "name": "gas_wanted",
-          "description": "The amount of gas requested for processing this transaction.",
+          "description": "Total gas requested for transaction execution",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when this transaction was ingested into the database.",
+          "description": "Timestamp when the transaction data was ingested",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "akash_tx_messages",
-      "description": "This table contains transaction messages from the Cosmos ecosystem, providing a detailed view of blockchain activity. It offers insights into the type of transactions and the associated data.",
+      "description": "Cosmos Blockchain Transaction Messages: This table contains raw data from transaction messages on various Cosmos chains. It provides a detailed view of the messages exchanged between validators in the Cosmos ecosystem.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in which the transaction was included.",
+          "description": "Sequential number of blocks in the Cosmos blockchain network",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "The timestamp of the block in which the transaction was included.",
+          "description": "Timestamp of when the block was created or committed",
           "type": "STRING"
         },
         {
           "name": "chain_id",
-          "description": "The unique identifier of the Cosmos blockchain network.",
+          "description": "Unique identifier for each Cosmos blockchain network or hub",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "The unique identifier of the transaction.",
+          "description": "Unique identifier for a transaction in the blockchain",
           "type": "STRING"
         },
         {
           "name": "tx_index",
-          "description": "The index of the transaction within the block.",
+          "description": "Index of the transaction in a block or sequence of transactions",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
-          "description": "The index of the transaction message within the transaction.",
+          "description": "Index of the message within a transaction or block",
           "type": "STRING"
         },
         {
           "name": "message_type",
-          "description": "The type of transaction message (e.g., contract creation, contract call, etc.).",
+          "description": "Type of message or event being transmitted in the blockchain",
           "type": "STRING"
         },
         {
           "name": "message",
-          "description": "The actual transaction message data.",
+          "description": "Payload or content being transmitted in the blockchain",
           "type": "JSON"
         },
         {
           "name": "schema_version",
-          "description": "The version of the schema used to process the transaction message.",
+          "description": "Version number of the data schema or format being used",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "The timestamp when the transaction message was ingested into the system.",
+          "description": "Timestamp of when the data was ingested into the dataset",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "akash_validators",
-      "description": "This table contains information about validators in the Cosmos ecosystem, including their operator addresses, jailed status, and commission rates.",
+      "description": "Active Cosmos validators, a crucial component of the Cosmos Network, store and validate blocks ensuring the integrity and security of the chain. Their details are vital for users to choose a validator that suits their needs.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "operator_address",
-          "description": "Unique address of the validator operator.",
+          "description": "Operator address for certificate holder in staking context",
           "type": "STRING"
         },
         {
           "name": "account_address",
-          "description": "Address associated with the validator account.",
+          "description": "Akash account holding a validator in staking context",
           "type": "STRING"
         },
         {
           "name": "consensus_pubkey",
-          "description": "Public key used for consensus in the validator's public keyring.",
+          "description": "Public key for validator's consensus process",
           "type": "STRING"
         },
         {
           "name": "jailed",
-          "description": "Flag indicating whether the validator is currently jailed (i.e., unable to create new blocks).",
+          "description": "Flag indicating whether validator is jailed or not",
           "type": "BOOLEAN"
         },
         {
           "name": "status",
-          "description": "Current status of the validator, including values such as 'bonded', 'unbonding', or 'unbonded'.",
+          "description": "Current status of a validator (e.g., bonded, unbonded, etc.)",
           "type": "STRING"
         },
         {
           "name": "tokens",
-          "description": "Total amount of tokens bonded by the validator.",
+          "description": "Total tokens staked for a validator",
           "type": "STRING"
         },
         {
           "name": "moniker",
-          "description": "Human-readable name of the validator.",
+          "description": "Validator's unique identifier (human-readable nickname)",
           "type": "STRING"
         },
         {
           "name": "identity",
-          "description": "Identity of the validator, including any relevant information.",
+          "description": "Validator's identity information",
           "type": "STRING"
         },
         {
           "name": "website",
-          "description": "Website associated with the validator.",
+          "description": "Validator's official website",
           "type": "STRING"
         },
         {
           "name": "security_contact",
-          "description": "Contact information for security-related issues with the validator.",
+          "description": "Contact information for validator-related security questions",
           "type": "STRING"
         },
         {
           "name": "details",
-          "description": "Additional details about the validator.",
+          "description": "Additional information about validator",
           "type": "STRING"
         },
         {
           "name": "unbonding_height",
-          "description": "Height of the block at which the validator's unbonding period will end.",
+          "description": "Block height at which unbonding process started",
           "type": "INTEGER"
         },
         {
           "name": "unbonding_time",
-          "description": "Timestamp of the block at which the validator's unbonding period will end.",
+          "description": "Timestamp of unbonding process start",
           "type": "DATETIME"
         },
         {
           "name": "commission_rate",
-          "description": "Current commission rate of the validator, expressed as a percentage.",
+          "description": "Base commission rate collected by a validator",
           "type": "FLOAT"
         },
         {
           "name": "commission_max_rate",
-          "description": "Maximum commission rate allowed for the validator.",
+          "description": "Maximum commission rate a validator can charge",
           "type": "FLOAT"
         },
         {
           "name": "commission_max_change_rate",
-          "description": "Maximum rate at which the validator's commission rate can change.",
+          "description": "Maximum rate at which validator commission can change",
           "type": "FLOAT"
         },
         {
           "name": "commission_update_time",
-          "description": "Timestamp at which the validator's commission rate was last updated.",
+          "description": "Timestamp for commission rate updates",
           "type": "DATETIME"
         },
         {
           "name": "min_self_delegation",
-          "description": "Minimum amount of tokens that must be self-delegated to the validator.",
+          "description": "Minimum self-delegation amount for a validator",
           "type": "BIGNUMERIC"
         },
         {
           "name": "snapshot_height",
-          "description": "Height of the last snapshot taken by the validator.",
+          "description": "Block height for snapshot data",
           "type": "INTEGER"
         },
         {
           "name": "snapshot_time",
-          "description": "Timestamp of the last snapshot taken by the validator.",
+          "description": "Timestamp for snapshot data",
           "type": "DATETIME"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp at which the validator's data was last ingested.",
+          "description": "Timestamp of data ingestion into Akash database",
           "type": "TIMESTAMP"
         }
       ]

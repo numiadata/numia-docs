@@ -3,281 +3,340 @@
   "tables": [
     {
       "name": "comdex_blocks",
-      "description": "",
+      "description": "Cosmos Blocks Table: This table provides information about blocks mined in the Cosmos ecosystem. It contains details such as block height and timestamp, validators, and other key metrics.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "Sequence number uniquely identifying a blockchain block",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
+          "description": "Timestamp when a blockchain block was created or finalized",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
+          "description": "Unique identifier for a specific Cosmos blockchain network or instance",
           "type": "STRING"
         },
         {
           "name": "proposer_address",
+          "description": "Address of the Validator node proposing a new blockchain block",
           "type": "STRING"
         },
         {
           "name": "validators_hash",
+          "description": "Hash value representing a list of active validators in the network",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "Timestamp when the block data was ingested into the database",
           "type": "TIMESTAMP"
         },
         {
           "name": "messages_bytes",
+          "description": "Total size in bytes of all messages within a blockchain block",
           "type": "INTEGER"
         },
         {
           "name": "tx_count",
+          "description": "Count of transactions included within a single blockchain block",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "comdex_event_attributes",
-      "description": "",
+      "description": "This table contains various attributes of events from the cosmos blockchain ecosystem, providing insights into the transaction and block-level data.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "Height of a block in the blockchain",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "Identifier for a Cosmos blockchain or interchain connection",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "Hashed identifier of a transaction on the blockchain",
           "type": "STRING"
         },
         {
           "name": "event_index",
+          "description": "Index of the event within a transaction",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "Type of event or action occurring on the blockchain",
           "type": "STRING"
         },
         {
           "name": "event_source",
+          "description": "Module or contract originating the event",
           "type": "STRING"
         },
         {
           "name": "attribute_key",
+          "description": "Key of an attribute within the event",
           "type": "STRING"
         },
         {
           "name": "attribute_value",
+          "description": "Value associated with the event attribute",
           "type": "STRING"
         },
         {
           "name": "attribute_index",
+          "description": "Index of the attribute key within the event",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "Timestamp when the event was ingested by the system",
           "type": "TIMESTAMP"
         },
         {
           "name": "block_timestamp",
+          "description": "Timestamp when the block containing the event was created",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "comdex_message_event_attributes",
-      "description": "",
+      "description": "This table contains a detailed view of blockchain events in the Cosmos ecosystem, providing attributes about each event occurrence. The attributes are gathered from a variety of blockchain sources.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "Height of the block in which the message event occurred",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "Identifier for the Cosmos blockchain network",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "Hash of the transaction that triggered the message event",
           "type": "STRING"
         },
         {
           "name": "message_index",
+          "description": "Index of the message within the transaction",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
+          "description": "Index of the event within the message",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "Category of the event, e.g., IBC, staking, governance",
           "type": "STRING"
         },
         {
           "name": "attribute_key",
+          "description": "Key provided for the attribute value in the event",
           "type": "STRING"
         },
         {
           "name": "attribute_value",
+          "description": "Actual value provided for the attribute key",
           "type": "STRING"
         },
         {
           "name": "attribute_index",
+          "description": "Index of the attribute key within the event",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "Timestamp when the message event data was ingested",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "comdex_transactions",
-      "description": "",
+      "description": "This table contains transaction information from the Cosmos ecosystem, including their status, fees, and associated block information. It provides a comprehensive view of interactions within the blockchain.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "Height of the blockchain block",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "Unique identifier of the Cosmos blockchain network",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "Transaction hash on the blockchain",
           "type": "STRING"
         },
         {
           "name": "tx_info",
+          "description": "Raw transaction data including sender, receiver, etc.",
           "type": "STRING"
         },
         {
           "name": "tx_log_message",
+          "description": "Log messages associated with transaction execution",
           "type": "STRING"
         },
         {
           "name": "memo",
+          "description": "Transaction memo or description",
           "type": "STRING"
         },
         {
           "name": "fee",
+          "description": "Transaction fee",
           "type": "STRING"
         },
         {
           "name": "tx_code",
+          "description": "Transaction execution result code",
           "type": "INTEGER"
         },
         {
           "name": "tx_index",
+          "description": "Index of the transaction in a block",
           "type": "INTEGER"
         },
         {
           "name": "gas_used",
+          "description": "Amount of gas consumed during transaction execution",
           "type": "INTEGER"
         },
         {
           "name": "gas_wanted",
+          "description": "Desired amount of gas for transaction execution",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "Timestamp when transaction was ingested",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
+          "description": "Version of the blockchain data schema",
           "type": "INTEGER"
         },
         {
           "name": "fee_coins",
+          "description": "Coins used to pay transaction fee",
           "type": "STRING"
         },
         {
           "name": "fee_granter",
+          "description": "Account granting transaction fee",
           "type": "STRING"
         },
         {
           "name": "fee_payer",
+          "description": "Account paying transaction fee account",
           "type": "STRING"
         },
         {
           "name": "gas_limit",
+          "description": "Maximum amount of gas that can be consumed per transaction",
           "type": "INTEGER"
         },
         {
           "name": "single_sign_mode",
+          "description": "Single signature transaction mode flag",
           "type": "INTEGER"
         },
         {
           "name": "multi_sign_json",
+          "description": "Multi-signature transaction JSON",
           "type": "STRING"
         },
         {
           "name": "timeout_height",
+          "description": "Block height after which transaction timeout occurs",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "comdex_tx_messages",
-      "description": "",
+      "description": "Cosmos Blockchain Transaction Messages: This table contains raw data from transaction messages on various Cosmos chains. It provides a detailed view of the messages exchanged between validators in the Cosmos ecosystem.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "Unique identifier for a block within the blockchain",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
+          "description": "Unique identifier for the Cosmos blockchain network",
           "type": "STRING"
         },
         {
           "name": "tx_id",
+          "description": "Unique identifier for a transaction on the blockchain",
           "type": "STRING"
         },
         {
           "name": "tx_index",
+          "description": "Index of a particular transaction within a block (sortable)",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
+          "description": "Index of a particular message within a transaction",
           "type": "STRING"
         },
         {
           "name": "message_type",
+          "description": "Type of message or event occurring on the blockchain",
           "type": "STRING"
         },
         {
           "name": "message",
+          "description": "Detailed information about the message or event occurrence",
           "type": "JSON"
         },
         {
           "name": "schema_version",
+          "description": "Current version of the blockchain's data schema",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "Timestamp of when the data was ingested into the dataset",
           "type": "TIMESTAMP"
         },
         {
           "name": "block_timestamp",
+          "description": "Timestamp of the block on the blockchain",
           "type": "STRING"
         }
       ]
