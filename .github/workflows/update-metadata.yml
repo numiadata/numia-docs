@@ -22,8 +22,8 @@ jobs:
         shell: bash
         run: echo "$GCP_SERVICE_ACCOUNT_JSON" > ${{ runner.temp }}/gateway_service_account.json
 
-      - name: Run Tables Metadata
-        run: bun run table-metadata
+      - name: Run Generate SQL Docs
+        run: bun run generate-sql-docs
         env:
           GOOGLE_APPLICATION_CREDENTIALS: ${{runner.temp}}/gateway_service_account.json
         working-directory: scripts
