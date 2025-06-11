@@ -3,56 +3,56 @@
   "tables": [
     {
       "name": "cosmos_chains_registry",
-      "description": "This table contains information about the Cosmos ecosystem blockchain networks, including their names, identifiers, and status. The data is sourced from various blockchain sources within the Cosmos ecosystem.",
+      "description": "The Cosmos chains registry table provides a comprehensive list of chains within the Cosmos ecosystem, including their name, ID, status, and other relevant details. This table serves as a reference point for developers and users to explore the various chains supported by the Cosmos ecosystem.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "chain_name",
-          "description": "The name of the Cosmos blockchain network.",
+          "description": "Blockchain network name identifier",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "chain_id",
-          "description": "A unique identifier for the Cosmos blockchain network.",
+          "description": "Unique chain identifier (e.g. public key, hash)",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "status",
-          "description": "The current status of the Cosmos blockchain network.",
+          "description": "Blockchain network status (online, offline, etc.)",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "network_type",
-          "description": "The type of network (e.g. public, private, testnet) for the Cosmos blockchain network.",
+          "description": "Type of blockchain network (public, private, etc.)",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "bech32_prefix",
-          "description": "The Bech32 prefix used by the Cosmos blockchain network for addressing.",
+          "description": "Human-readable prefix for addresses on the blockchain network",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "github_repo",
-          "description": "The GitHub repository URL for the Cosmos blockchain network.",
+          "description": "Link to the blockchain network's GitHub repository",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "last_refresh",
-          "description": "The date and time when the data for the Cosmos blockchain network was last refreshed.",
+          "description": "Timestamp for the last updated data from the blockchain network",
           "type": "TIMESTAMP",
           "mode": "NULLABLE"
         },
         {
           "name": "ingestion_date",
-          "description": "The date and time when the data for the Cosmos blockchain network was ingested.",
+          "description": "Date and time the data was ingested into the registry",
           "type": "TIMESTAMP",
           "mode": "NULLABLE"
         }
@@ -60,56 +60,56 @@
     },
     {
       "name": "cosmwasm_github_analysis",
-      "description": "This table provides a GitHub analysis of CosmWasm smart contracts, offering insights into the performance and usage of these contracts on the Cosmos ecosystem. It covers various metrics such as repository activity and contract deployments.",
+      "description": "Cosmos-Blockchain GitHub Analysis: This table provides insights into the GitHub repositories that are leveraging CosmWasm, a framework for building smart contracts on the Cosmos blockchain. It includes metrics such as repository popularity and CosmWasm usage.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "month",
-          "description": "The month in which the GitHub repository was analyzed.",
+          "description": "Month of data collection in calendar format (YYYY-MM)",
           "type": "TIMESTAMP",
           "mode": "NULLABLE"
         },
         {
           "name": "owner",
-          "description": "The owner of the GitHub repository.",
+          "description": "Address owner of CosmWasm repository on GitHub",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "repo_name",
-          "description": "The name of the GitHub repository being analyzed.",
+          "description": "Name of CosmWasm repository on GitHub",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "file_path",
-          "description": "The path to the CosmWasm contract file within the repository.",
+          "description": "Path to files within CosmWasm GitHub repository",
           "type": "STRING",
           "mode": "NULLABLE"
         },
         {
           "name": "stars",
-          "description": "The number of stars the GitHub repository has received.",
+          "description": "Number of GitHub stars received by CosmWasm repository",
           "type": "INTEGER",
           "mode": "NULLABLE"
         },
         {
           "name": "watchers",
-          "description": "The number of users watching the GitHub repository.",
+          "description": "Number of GitHub watchers for CosmWasm repository",
           "type": "INTEGER",
           "mode": "NULLABLE"
         },
         {
           "name": "forks",
-          "description": "The number of times the GitHub repository has been forked.",
+          "description": "Number of GitHub forks for CosmWasm repository",
           "type": "INTEGER",
           "mode": "NULLABLE"
         },
         {
           "name": "cosmwasm",
-          "description": "The total number of CosmWasm contracts deployed from this repository.",
+          "description": "CosmWasm smart contract interaction or event data",
           "type": "STRING",
           "mode": "NULLABLE"
         }
@@ -117,97 +117,97 @@
     },
     {
       "name": "cosmwasm_penetration_analysis",
-      "description": "Cosmos Ecosystem Penetration Analysis: This table provides an overview of the growth and adoption of CosmWasm smart contracts on the Cosmos blockchain ecosystem. It offers insights into the deployment and instantiation of CosmWasm contracts and their economic impact over time.",
+      "description": "This table provides an analysis of CosmWasm penetration in the Cosmos ecosystem, showcasing key metrics on contract deployments and economic impact over time.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "date",
-          "description": "The date in ISO format (YYYY-MM-DD) representing when the data was collected from the Cosmos blockchain.",
+          "description": "Activity timestamp, representing date of blockchain network activity",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
-          "description": "The unique identifier of the Cosmos blockchain from which the data originates.",
+          "description": "Unique identifier for the specific Cosmos blockchain network",
           "type": "STRING"
         },
         {
           "name": "day_deployments",
-          "description": "The number of new CosmWasm smart contracts deployed on the network on a given day.",
+          "description": "Number of CosmWasm smart contracts deployed on a given day",
           "type": "INTEGER"
         },
         {
           "name": "day_instantiations",
-          "description": "The number of new instances created from deployed CosmWasm smart contracts on a given day.",
+          "description": "Number of CosmWasm smart contracts instantiated on a given day",
           "type": "INTEGER"
         },
         {
           "name": "economic_impact",
-          "description": "A measure of the economic activity generated by CosmWasm smart contracts on the network on a given day.",
+          "description": "Estimated economic impact of CosmWasm smart contracts on the network",
           "type": "FLOAT"
         }
       ]
     },
     {
       "name": "cosmwasm_traffic_analysis",
-      "description": "This table provides an analysis of CosmWasm smart contract traffic across the Cosmos ecosystem. It offers insights into the usage and performance of CosmWasm contracts on various chains.",
+      "description": "Cosmos Ecosystem Blockchain Traffic Analysis Data - This data provides insights into the traffic generated by smart contracts in the Cosmos ecosystem. It offers a comprehensive view of the transaction patterns on various blockchain chains.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "date",
-          "description": "The date when the data was recorded in the format YYYY-MM- DD.",
+          "description": "Date transactions were recorded on the blockchain in UTC timezone",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
-          "description": "The unique identifier of the Cosmos chain where the CosmWasm smart contract was executed.",
+          "description": "Unique identifier for the blockchain network within the Cosmos ecosystem",
           "type": "STRING"
         },
         {
           "name": "contract",
-          "description": "The address of the CosmWasm smart contract that was executed.",
+          "description": "Address of the smart contract interacting with the blockchain",
           "type": "STRING"
         },
         {
           "name": "n_txns",
-          "description": "The total number of transactions executed by the CosmWasm smart contract.",
+          "description": "Number of transactions processed on the blockchain network",
           "type": "INTEGER"
         },
         {
           "name": "n_calls",
-          "description": "The total number of function calls made by the CosmWasm smart contract.",
+          "description": "Number of contract function calls made via CosmWasm",
           "type": "INTEGER"
         },
         {
           "name": "fee_amount",
-          "description": "The total amount of fees paid for executing the CosmWasm smart contract transactions.",
+          "description": "Total fees charged for processing transactions on the network",
           "type": "FLOAT"
         }
       ]
     },
     {
       "name": "cosmwasm_users_analysis",
-      "description": "This table provides an analysis of users in the Cosmos ecosystem, analyzing their interactions with CosmWasm smart contracts. It offers insights into the activity of different users across various chains.",
+      "description": "This table contains user analysis data from various blockchain chains in the Cosmos ecosystem. It provides insights into the activities of different users across multiple chains.",
       "tags": [
         "parsed_table"
       ],
       "columns": [
         {
           "name": "date",
-          "description": "The date when the event occurred, represented in a standard date format.",
+          "description": "Timestamp recording the occurrence or update of the blockchain event",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
-          "description": "The ID of the blockchain where the event occurred, unique to each Cosmos chain.",
+          "description": "Unique identifier representing a specific blockchain network within Cosmos",
           "type": "STRING"
         },
         {
           "name": "sender",
-          "description": "The address of the user who initiated the transaction, often representing the user in the analysis.",
+          "description": "Public address associated with the account initiating a transaction or action",
           "type": "STRING"
         }
       ]
