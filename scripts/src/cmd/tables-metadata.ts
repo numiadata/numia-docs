@@ -4,7 +4,6 @@ import fs, { readFileSync, writeFileSync } from "fs";
 import pMap from "p-map";
 import Path from "path";
 import { capitalize } from "es-toolkit";
-import { log } from "console";
 
 
 const client = new BigQuery({ projectId: "numia-data" });
@@ -16,6 +15,12 @@ const DATASETS_TO_IGNORE = [
     "stride_private",
     "wynd"
 ]
+
+const CARDS_TO_IGNORE = [
+    'numia',
+    'quasar_testnet'
+]
+
 const rawTables = [
     "blocks",
     "block_events",
@@ -103,16 +108,17 @@ const SQL_DOCS_DIR = Path.join(REPOSITORY_ROOT, "docs/sql/querying-data/chains")
 main();
 
 async function main() {
-    // cleanOldData()
+    cleanOldData()
     const [bqDatasets] = await client.getDatasets()
-    //
-    // const datasetsToProcess = bqDatasets.filter((dataset) => dataset.id && !DATASETS_TO_IGNORE.includes(dataset.id))
-    //
-    // const metadata: DatasetMetadata[] = await pMap(datasetsToProcess, generateDatasetMetadata, {concurrency: 10})
-    //
-    // metadata.forEach((table) => generateDocFile(table))
 
-    updateIndex(bqDatasets.map((dataset) => dataset.id))
+    const datasetsToProcess = bqDatasets.filter((dataset) => dataset.id && !DATASETS_TO_IGNORE.includes(dataset.id))
+
+    const metadata: DatasetMetadata[] = await pMap(datasetsToProcess, generateDatasetMetadata, {concurrency: 10})
+
+    metadata.forEach((table) => generateDocFile(table))
+
+    updateIndex(datasetsToProcess)
+    updateAvailableChainsPage(datasetsToProcess)
 }
 
 function cleanOldData() {
@@ -193,8 +199,15 @@ const repoToChainMap: Record<string, string> = {
     terra: "Terra 2",
 }
 
+function getPageTitle(datasetName: string): string {
+    if (repoToChainMap[datasetName]) {
+        return repoToChainMap[datasetName];
+    }
+    return capitalize(datasetName.replaceAll('_', ' '));
+}
+
 function createFile(datasetName: string, hasRawTables: boolean, hasParsedTables: boolean) {
-    const pageTitle = repoToChainMap[datasetName] || capitalize(datasetName.replaceAll('_', ' '))
+    const pageTitle = getPageTitle(datasetName)
     const rawTableComponent = `
 ## Raw Tables
 <Table data={json} tag="raw_table"/>
@@ -224,10 +237,9 @@ ${hasParsedTables ? parsedTableComponent : ''}
     writeFileSync(Path.join(SQL_DOCS_DIR, `${datasetName}.mdx`), file)
 }
 
-function updateIndex(datasets: (string | undefined)[]) {
+function updateIndex(datasets: Dataset[]) {
     const currentIndex = JSON.parse(readFileSync('../config.json', 'utf8')) as IndexConfig
 
-    // Access the categoryName Querying Data in the sidebar with sideBArRef sql and the groupName Available chains
     const sqlSubpages = currentIndex.sidebars
         .find((sidebar) => sidebar.sidebarRef === "sql")?.categories
         .find((category) => category.categoryName === "Querying Data")?.pages
@@ -246,11 +258,51 @@ function updateIndex(datasets: (string | undefined)[]) {
     }
 
 
-    const newSQLChainsSubpages = datasets.filter((dataset) => dataset && !DATASETS_TO_IGNORE.includes(dataset)).map((dataset) => {
-        return `sql/querying-data/chains/${dataset}`
+    const newSQLChainsSubpages = datasets.map((dataset) => {
+        return `sql/querying-data/chains/${dataset.id}`
     }).sort((a, b) => a.localeCompare(b))
 
     availableChainsGroup.subpages = newSQLChainsSubpages
 
     writeFileSync('../config.json', JSON.stringify(currentIndex, null, 2))
+}
+
+function getCardImageName(dataset: string) {
+    const chainImageMap: Record<string, string> = {
+        'nillion_chain_testnet': 'nillion',
+        'terra': 'terra-2',
+    }
+    return `card_${chainImageMap[dataset] || dataset}_dark.svg`
+
+}
+
+function updateAvailableChainsPage(bqDatasets: Dataset[]) {
+    const cardTemplate = (dataset: string) => `
+<Card
+  title="${getPageTitle(dataset)}"
+  link="/sql/querying-data/chains/${dataset}"
+  image="/media/sql/chains/${getCardImageName(dataset)}"
+/>
+    `
+    const cards = bqDatasets.filter(
+        (dataset) => dataset.id !== undefined && !CARDS_TO_IGNORE.includes(dataset.id)
+    ).map((dataset) => {
+        return cardTemplate(dataset.id || "")
+    }).join('\n')
+
+    const fileContent = `-- This file is generated, don't modify
+---
+title: Available Chains
+---
+
+Numia supports a variety of blockchain networks, each providing detailed datasets for analysis. Below is a list of the currently supported chains, along with a brief overview of their datasets and key use cases.
+
+
+<CardList cols={4}>
+${cards}
+</CardList>
+`;
+
+    writeFileSync(Path.join(SQL_DOCS_DIR, 'available-chains.mdx'), fileContent);
+
 }
