@@ -1,12 +1,13 @@
-import {BigQuery, Dataset, Table} from "@google-cloud/bigquery";
+import { BigQuery, Dataset, Table } from "@google-cloud/bigquery";
 import assert from "assert";
-import fs, {writeFileSync} from "fs";
+import fs, { readFileSync, writeFileSync } from "fs";
 import pMap from "p-map";
 import Path from "path";
-import {capitalize} from "es-toolkit";
+import { capitalize } from "es-toolkit";
+import { log } from "console";
 
 
-const client = new BigQuery({projectId: "numia-data"});
+const client = new BigQuery({ projectId: "numia-data" });
 
 const DATASETS_TO_IGNORE = [
     "artemis",
@@ -43,6 +44,56 @@ type DatasetMetadata = {
     tables: TableMetadata[];
 }
 
+type IndexConfig = {
+    websiteName: string;
+    description: string;
+    images: {
+        logo: string;
+        favicon: string;
+        darkLogo: string;
+    };
+    languages: string[];
+    styles: {
+        mainColor: string;
+        navbarColor: string;
+        navbarDarkModeColor: string;
+        backgroundDarkModeColor: string;
+        logoSize: string;
+        navbarMode: string;
+        pagination: boolean;
+    };
+    colorMode: {
+        default: string;
+        switchOff: boolean;
+    };
+    apiFiles: string[];
+    codeLanguages: string[];
+    homepage: string;
+    changelog: boolean;
+    navbar: Array<{
+        label: string;
+        sidebarRef: string;
+    }>;
+    externalLinks: Array<{
+        name: string;
+        link: string;
+    }>;
+    sidebars: Array<{
+        sidebarRef: string;
+        categories: Array<{
+            categoryName: string;
+            pages: Array<string | {
+                groupName: string;
+                page?: string;
+                subpages?: Array<string | {
+                    groupName: string;
+                    subpages: string[];
+                }>;
+            }>;
+        }>;
+    }>;
+}
+
 
 const TABLES_DIR = '../data'
 
@@ -52,22 +103,24 @@ const SQL_DOCS_DIR = Path.join(REPOSITORY_ROOT, "docs/sql/querying-data/chains")
 main();
 
 async function main() {
-    cleanOldData()
+    // cleanOldData()
     const [bqDatasets] = await client.getDatasets()
+    //
+    // const datasetsToProcess = bqDatasets.filter((dataset) => dataset.id && !DATASETS_TO_IGNORE.includes(dataset.id))
+    //
+    // const metadata: DatasetMetadata[] = await pMap(datasetsToProcess, generateDatasetMetadata, {concurrency: 10})
+    //
+    // metadata.forEach((table) => generateDocFile(table))
 
-    const datasetsToProcess = bqDatasets.filter((dataset) => dataset.id && !DATASETS_TO_IGNORE.includes(dataset.id))
-
-    const metadata: DatasetMetadata[] = await pMap(datasetsToProcess, generateDatasetMetadata, {concurrency: 10})
-
-    metadata.forEach((table) => generateDocFile(table))
+    updateIndex(bqDatasets.map((dataset) => dataset.id))
 }
 
 function cleanOldData() {
-    fs.rmSync(TABLES_DIR, {recursive: true, force: true})
-    fs.mkdirSync(TABLES_DIR, {recursive: true})
+    fs.rmSync(TABLES_DIR, { recursive: true, force: true })
+    fs.mkdirSync(TABLES_DIR, { recursive: true })
 
-    fs.rmSync(SQL_DOCS_DIR, {recursive: true, force: true})
-    fs.mkdirSync(SQL_DOCS_DIR, {recursive: true})
+    fs.rmSync(SQL_DOCS_DIR, { recursive: true, force: true })
+    fs.mkdirSync(SQL_DOCS_DIR, { recursive: true })
 }
 
 async function generateDatasetMetadata(dataset: Dataset) {
@@ -77,7 +130,7 @@ async function generateDatasetMetadata(dataset: Dataset) {
     const tablesMetadata: TableMetadata[] = await pMap(
         tables,
         generateTablesMetadata,
-        {concurrency: 10}
+        { concurrency: 10 }
     );
     const datasetsMetadata: DatasetMetadata = {
         dataset: id,
@@ -169,4 +222,35 @@ ${hasParsedTables ? parsedTableComponent : ''}
     `
 
     writeFileSync(Path.join(SQL_DOCS_DIR, `${datasetName}.mdx`), file)
+}
+
+function updateIndex(datasets: (string | undefined)[]) {
+    const currentIndex = JSON.parse(readFileSync('../config.json', 'utf8')) as IndexConfig
+
+    // Access the categoryName Querying Data in the sidebar with sideBArRef sql and the groupName Available chains
+    const sqlSubpages = currentIndex.sidebars
+        .find((sidebar) => sidebar.sidebarRef === "sql")?.categories
+        .find((category) => category.categoryName === "Querying Data")?.pages
+
+    if (!sqlSubpages) {
+        throw new Error("no subpages found")
+    }
+
+    const availableChainsGroup = sqlSubpages.find((subpage) => typeof subpage  === 'object' && subpage.groupName === "Available Chains") as {
+        groupName: string;
+        subpages: string[];
+    }
+
+    if (!availableChainsGroup) {
+        throw new Error("no available chains group found")
+    }
+
+
+    const newSQLChainsSubpages = datasets.filter((dataset) => dataset && !DATASETS_TO_IGNORE.includes(dataset)).map((dataset) => {
+        return `sql/querying-data/chains/${dataset}`
+    }).sort((a, b) => a.localeCompare(b))
+
+    availableChainsGroup.subpages = newSQLChainsSubpages
+
+    writeFileSync('../config.json', JSON.stringify(currentIndex, null, 2))
 }
