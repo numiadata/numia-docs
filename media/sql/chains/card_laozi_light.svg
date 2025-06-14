@@ -1,0 +1,32 @@
+<svg width="141" height="60" viewBox="0 0 141 60" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g clip-path="url(#clip0_182_861)">
+<rect width="141" height="60" rx="6" fill="white"/>
+<circle cx="113.571" cy="99.7825" r="77.4977" transform="rotate(149.414 113.571 99.7825)" fill="url(#paint0_radial_182_861)" fill-opacity="0.3" stroke="#EEEEEE" stroke-width="0.408959"/>
+<circle cx="26.4286" cy="-40.5714" r="77.4977" transform="rotate(149.414 26.4286 -40.5714)" fill="url(#paint1_radial_182_861)" fill-opacity="0.3" stroke="#EEEEEE" stroke-width="0.408959"/>
+<rect x="55.65" y="15.25" width="29.5" height="29.5" rx="14.75" fill="white"/>
+<rect x="55.65" y="15.25" width="29.5" height="29.5" rx="14.75" stroke="#BFBFBF" stroke-width="0.5"/>
+    <g transform="translate(49, 9) scale(0.25, 0.25)">
+<title>4A512B99-63FC-4D05-8D22-2329F99F3155</title>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="BandWebsite_Desktop_UI_BrandAsset" transform="translate(-824.000000, -915.000000)">
+            <g id="Logo2-Copy-2" transform="translate(824.000000, 915.000000)">
+                <path d="M108.602889,100.635307 C108.602889,107.35148 103.139711,112.814658 96.4235377,112.814658 L73.0720578,112.814658 L97.3402044,88.5473925 C103.622093,89.0257223 108.602889,94.2329105 108.602889,100.635307 L108.602889,100.635307 Z M69.6284355,87.4487315 L69.6284355,59.22463 L96.4235377,59.22463 C96.8812544,59.22463 97.332981,59.2498238 97.7776603,59.2996829 L69.6284355,87.4487315 Z M113.472868,71.4053911 C113.472868,65.7198732 110.676357,60.6763566 106.386716,57.5769908 L117.963707,46 L111.037879,46.0394644 L101.840204,55.2369626 C100.137773,54.665081 98.3162438,54.3550035 96.4235377,54.3550035 L64.7586328,54.3550035 L64.7586328,99.205074 L102.881783,61.0817477 C106.315363,63.2385483 108.602889,67.0599013 108.602889,71.4053911 C108.602889,78.1215645 103.139711,83.5847428 96.4235377,83.5847428 L95.4152572,83.5847428 L53,126 L59.8863636,126 L68.2020789,117.684461 L96.4235377,117.684461 C105.824348,117.684461 113.472868,110.036117 113.472868,100.635307 C113.472868,94.4353418 110.135835,89.0142706 105.174947,86.0299507 C110.141121,83.0463354 113.472868,77.608351 113.472868,71.4053911 L113.472868,71.4053911 Z" id="Fill-2" fill="#4520E6"></path>
+            </g>
+        </g>
+    </g>
+</g>
+</g>
+<defs>
+<radialGradient id="paint0_radial_182_861" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(113.571 99.7825) rotate(90) scale(77.7021)">
+<stop stop-color="#F9F9F9"/>
+<stop offset="1" stop-color="#F9F9F9"/>
+</radialGradient>
+<radialGradient id="paint1_radial_182_861" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(26.4286 -40.5714) rotate(90) scale(77.7021)">
+<stop stop-color="#F9F9F9"/>
+<stop offset="1" stop-color="#F9F9F9"/>
+</radialGradient>
+<clipPath id="clip0_182_861">
+<rect width="141" height="60" rx="6" fill="white"/>
+</clipPath>
+</defs>
+</svg>
