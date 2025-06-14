@@ -9,6 +9,7 @@ import { capitalize } from "es-toolkit";
 const client = new BigQuery({ projectId: "numia-data" });
 
 const DATASETS_TO_IGNORE = [
+    "numia",
     "artemis",
     "interchain_foundation",
     "pyth",
@@ -17,7 +18,6 @@ const DATASETS_TO_IGNORE = [
 ]
 
 const CARDS_TO_IGNORE = [
-    'numia',
     'quasar_testnet'
 ]
 

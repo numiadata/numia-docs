@@ -176,7 +176,6 @@
                 "sql/querying-data/chains/neutron",
                 "sql/querying-data/chains/nillion",
                 "sql/querying-data/chains/nillion_chain_testnet",
-                "sql/querying-data/chains/numia",
                 "sql/querying-data/chains/osmosis",
                 "sql/querying-data/chains/quasar",
                 "sql/querying-data/chains/quasar_testnet",
