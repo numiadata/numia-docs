@@ -25,14 +25,11 @@
     "parameters": {}
   },
   "paths": {
-    "/v2/smartAccount/{smart_account}/authenticators": {
+    "/v3/smartAccount/{smart_account}/authenticators": {
       "get": {
         "servers": [
           {
             "url": "https://xion.numia.xyz"
-          },
-          {
-            "url": "https://xion-testnet.numia.xyz"
           },
           {
             "url": "https://xion-testnet-2.numia.xyz"
@@ -122,14 +119,11 @@
         "summary": "Get Abstract Account Authenticators"
       }
     },
-    "/v2/authenticators/{authenticator}/smartAccounts": {
+    "/v3/authenticators/{authenticator}/smartAccounts": {
       "get": {
         "servers": [
           {
             "url": "https://xion.numia.xyz"
-          },
-          {
-            "url": "https://xion-testnet.numia.xyz"
           },
           {
             "url": "https://xion-testnet-2.numia.xyz"
@@ -196,14 +190,11 @@
         "summary": "Get Abstract Accounts By Authenticator"
       }
     },
-    "/v2/authenticators/{authenticator}/smartAccounts/details": {
+    "/v3/authenticators/{authenticator}/smartAccounts/details": {
       "get": {
         "servers": [
           {
             "url": "https://xion.numia.xyz"
-          },
-          {
-            "url": "https://xion-testnet.numia.xyz"
           },
           {
             "url": "https://xion-testnet-2.numia.xyz"
