@@ -32,8 +32,7 @@
     "numiaai.json",
     "stride.json",
     "xion.json",
-    "snapshots.json",
-    "stablecoins.json"
+    "snapshots.json"
   ],
   "codeLanguages": [
     "curl",
@@ -373,40 +372,6 @@
                 "reference/xion/get-abstract-account-authenticators",
                 "reference/xion/get-abstract-accounts-by-authenticator",
                 "reference/xion/get-abstract-accounts-details-by-authenticator"
-              ]
-            },
-            {
-              "groupName": "Stablecoins",
-              "subpages": [
-                "api/stablecoins-overview",
-                {
-                  "groupName": "Volume & Activity",
-                  "subpages": [
-                    "reference/stablecoins/get-stablecoins-volume-per-token",
-                    "reference/stablecoins/get-stablecoins-issuing-over-time",
-                    "reference/stablecoins/get-stablecoins-active-senders-over-time",
-                    "reference/stablecoins/get-stablecoins-volume-by-category-over-time",
-                    "reference/stablecoins/get-stablecoins-whale-alerts"
-                  ]
-                },
-                {
-                  "groupName": "Bridge Analytics",
-                  "subpages": [
-                    "reference/stablecoins/get-stablecoins-bridge-total-inflow",
-                    "reference/stablecoins/get-stablecoins-bridge-total-outflow",
-                    "reference/stablecoins/get-stablecoins-bridge-total-netflow",
-                    "reference/stablecoins/get-stablecoins-bridge-cross-chain-volume",
-                    "reference/stablecoins/get-stablecoins-bridge-netflow-over-time"
-                  ]
-                },
-                {
-                  "groupName": "Category Analytics",
-                  "subpages": [
-                    "reference/stablecoins/get-stablecoins-category-total-inflow",
-                    "reference/stablecoins/get-stablecoins-category-total-outflow",
-                    "reference/stablecoins/get-stablecoins-category-total-netflow"
-                  ]
-                }
               ]
             }
           ]
