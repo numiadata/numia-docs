@@ -25,81 +25,6 @@
     "parameters": {}
   },
   "paths": {
-    "/tokenomics/top_stakeholders": {
-      "get": {
-        "servers": [
-          {
-            "url": "https://cosmos.numia.xyz"
-          }
-        ],
-        "operationId": "getTokenomicsTopStakeholders",
-        "tags": [],
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "enum": [
-                "1d",
-                "7d",
-                "30d"
-              ]
-            },
-            "required": false,
-            "name": "comparison_interval",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Status: 200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "address": {
-                        "type": "string"
-                      },
-                      "total_balance": {
-                        "type": "number"
-                      },
-                      "liquid_balance": {
-                        "type": "number"
-                      },
-                      "staking_balance": {
-                        "type": "number"
-                      },
-                      "total_change": {
-                        "type": "number"
-                      },
-                      "liquid_change": {
-                        "type": "number"
-                      },
-                      "staking_change": {
-                        "type": "number"
-                      }
-                    },
-                    "required": [
-                      "address",
-                      "total_balance",
-                      "liquid_balance",
-                      "staking_balance",
-                      "total_change",
-                      "liquid_change",
-                      "staking_change"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Tokenomics Top Stakeholders"
-      }
-    },
     "/aez/revenue_share_by_consumer": {
       "get": {
         "servers": [
@@ -130,7 +55,8 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "total"
             },
             "required": false,
             "name": "consumers",
@@ -184,7 +110,8 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "total"
             },
             "required": false,
             "name": "providers",
@@ -238,7 +165,8 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "\"total\""
             },
             "required": false,
             "name": "provider",
@@ -256,7 +184,15 @@
                     "type": "object",
                     "properties": {
                       "labels": {
-                        "type": "string",
+                        "anyOf": [
+                          {
+                            "type": "string",
+                            "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+                          },
+                          {
+                            "type": "string"
+                          }
+                        ],
                         "description": "Date in the format YYYY-MM-DD HH:MM:SS"
                       },
                       "total_inflow": {
@@ -304,7 +240,7 @@
             "url": "https://cosmos.numia.xyz"
           }
         ],
-        "operationId": "getHydroDeploymentsOverview",
+        "operationId": "getHydroDeploymentsOverviewLenses",
         "tags": [],
         "parameters": [
           {
@@ -341,56 +277,71 @@
                         "type": "string"
                       },
                       "project": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "project_url": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "project_logo_url": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "project_about": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "id": {
                         "type": "string"
                       },
                       "title": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "description": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "comments": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "requested_allocation_denom": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "requested_allocation_amount": {
-                        "type": "number"
+                        "type": "number",
+                        "nullable": true
                       },
                       "onchain_tribute_assets": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "onchain_tribute_usdc": {
                         "type": "number",
                         "nullable": true
                       },
                       "offchain_tribute": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "offchain_tribute_info": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "voters": {
-                        "type": "number"
+                        "type": "number",
+                        "nullable": true
                       },
                       "voting_power": {
-                        "type": "number"
+                        "type": "number",
+                        "nullable": true
                       },
                       "status": {
-                        "type": "string"
+                        "type": "string",
+                        "nullable": true
                       },
                       "initial_allocation_amount": {
                         "type": "number",
@@ -446,161 +397,7 @@
           }
         },
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Hydro Deployments Overview"
-      }
-    },
-    "/hydro/deployments_overview_staging": {
-      "get": {
-        "servers": [
-          {
-            "url": "https://cosmos.numia.xyz"
-          }
-        ],
-        "tags": [
-          "Hydro"
-        ],
-        "operationId": "getHydroDeploymentsOverviewStaging",
-        "parameters": [
-          {
-            "schema": {
-              "type": "string"
-            },
-            "required": false,
-            "name": "round",
-            "in": "query"
-          },
-          {
-            "schema": {
-              "type": "string"
-            },
-            "required": false,
-            "name": "concluded",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Status: 200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "round": {
-                        "type": "string"
-                      },
-                      "tranche": {
-                        "type": "string"
-                      },
-                      "project": {
-                        "type": "string"
-                      },
-                      "project_url": {
-                        "type": "string"
-                      },
-                      "project_logo_url": {
-                        "type": "string"
-                      },
-                      "project_about": {
-                        "type": "string"
-                      },
-                      "id": {
-                        "type": "string"
-                      },
-                      "title": {
-                        "type": "string"
-                      },
-                      "description": {
-                        "type": "string"
-                      },
-                      "comments": {
-                        "type": "string"
-                      },
-                      "requested_allocation_denom": {
-                        "type": "string"
-                      },
-                      "requested_allocation_amount": {
-                        "type": "number"
-                      },
-                      "onchain_tribute_assets": {
-                        "type": "string"
-                      },
-                      "onchain_tribute_usdc": {
-                        "type": "number",
-                        "nullable": true
-                      },
-                      "offchain_tribute": {
-                        "type": "string"
-                      },
-                      "offchain_tribute_info": {
-                        "type": "string"
-                      },
-                      "voters": {
-                        "type": "number"
-                      },
-                      "voting_power": {
-                        "type": "number"
-                      },
-                      "status": {
-                        "type": "string"
-                      },
-                      "initial_allocation_amount": {
-                        "type": "number",
-                        "nullable": true
-                      },
-                      "current_allocation_amount": {
-                        "type": "number",
-                        "nullable": true
-                      },
-                      "duration_days": {
-                        "type": "number",
-                        "nullable": true
-                      },
-                      "yield": {
-                        "type": "number",
-                        "nullable": true
-                      },
-                      "apr": {
-                        "type": "number",
-                        "nullable": true
-                      }
-                    },
-                    "required": [
-                      "round",
-                      "tranche",
-                      "project",
-                      "project_url",
-                      "project_logo_url",
-                      "project_about",
-                      "id",
-                      "title",
-                      "description",
-                      "comments",
-                      "requested_allocation_denom",
-                      "requested_allocation_amount",
-                      "onchain_tribute_assets",
-                      "onchain_tribute_usdc",
-                      "offchain_tribute",
-                      "offchain_tribute_info",
-                      "voters",
-                      "voting_power",
-                      "status",
-                      "initial_allocation_amount",
-                      "current_allocation_amount",
-                      "duration_days",
-                      "yield",
-                      "apr"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Hydro Deployments Overview Staging"
+        "summary": "Get Hydro Deployments Overview Lenses"
       }
     },
     "/hydro/metrics": {
@@ -613,7 +410,7 @@
         "tags": [
           "Hydro"
         ],
-        "operationId": "getHydroMetrics",
+        "operationId": "getHydroMetricsLenses",
         "responses": {
           "200": {
             "description": "Status: 200",
@@ -718,7 +515,7 @@
           }
         },
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Hydro Metrics"
+        "summary": "Get Hydro Metrics Lenses"
       }
     }
   }

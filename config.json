@@ -382,29 +382,29 @@
                 {
                   "groupName": "Volume & Activity",
                   "subpages": [
-                    "reference/stablecoins/get-stablecoins-volume-per-token",
-                    "reference/stablecoins/get-stablecoins-issuing-over-time",
-                    "reference/stablecoins/get-stablecoins-active-senders-over-time",
-                    "reference/stablecoins/get-stablecoins-volume-by-category-over-time",
-                    "reference/stablecoins/get-stablecoins-whale-alerts"
+                    "reference/stablecoins/volume-per-token",
+                    "reference/stablecoins/issuing-over-time",
+                    "reference/stablecoins/active-senders-over-time",
+                    "reference/stablecoins/volume-by-category-over-time",
+                    "reference/stablecoins/whale-alerts"
                   ]
                 },
                 {
                   "groupName": "Bridge Analytics",
                   "subpages": [
-                    "reference/stablecoins/get-stablecoins-bridge-total-inflow",
-                    "reference/stablecoins/get-stablecoins-bridge-total-outflow",
-                    "reference/stablecoins/get-stablecoins-bridge-total-netflow",
-                    "reference/stablecoins/get-stablecoins-bridge-cross-chain-volume",
-                    "reference/stablecoins/get-stablecoins-bridge-netflow-over-time"
+                    "reference/stablecoins/bridge-inflow",
+                    "reference/stablecoins/bridge-outflow",
+                    "reference/stablecoins/bridge-netflow",
+                    "reference/stablecoins/bridge-cross-chain-volume",
+                    "reference/stablecoins/bridge-netflow-over-time"
                   ]
                 },
                 {
                   "groupName": "Category Analytics",
                   "subpages": [
-                    "reference/stablecoins/get-stablecoins-category-total-inflow",
-                    "reference/stablecoins/get-stablecoins-category-total-outflow",
-                    "reference/stablecoins/get-stablecoins-category-total-netflow"
+                    "reference/stablecoins/category-total-inflow",
+                    "reference/stablecoins/category-total-outflow",
+                    "reference/stablecoins/category-total-netflow"
                   ]
                 }
               ]

@@ -25,14 +25,11 @@
     "parameters": {}
   },
   "paths": {
-    "/v2/smartAccount/{smart_account}/authenticators": {
+    "/v3/smartAccount/{smart_account}/authenticators": {
       "get": {
         "servers": [
           {
             "url": "https://xion.numia.xyz"
-          },
-          {
-            "url": "https://xion-testnet.numia.xyz"
           },
           {
             "url": "https://xion-testnet-2.numia.xyz"
@@ -122,14 +119,11 @@
         "summary": "Get Abstract Account Authenticators"
       }
     },
-    "/v2/authenticators/{authenticator}/smartAccounts": {
+    "/v3/authenticators/{authenticator}/smartAccounts": {
       "get": {
         "servers": [
           {
             "url": "https://xion.numia.xyz"
-          },
-          {
-            "url": "https://xion-testnet.numia.xyz"
           },
           {
             "url": "https://xion-testnet-2.numia.xyz"
@@ -196,14 +190,11 @@
         "summary": "Get Abstract Accounts By Authenticator"
       }
     },
-    "/v2/authenticators/{authenticator}/smartAccounts/details": {
+    "/v3/authenticators/{authenticator}/smartAccounts/details": {
       "get": {
         "servers": [
           {
             "url": "https://xion.numia.xyz"
-          },
-          {
-            "url": "https://xion-testnet.numia.xyz"
           },
           {
             "url": "https://xion-testnet-2.numia.xyz"
@@ -286,6 +277,134 @@
         },
         "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Abstract Accounts Details By Authenticator"
+      }
+    },
+    "/v3/address/{address}/permissions": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://xion.numia.xyz"
+          },
+          {
+            "url": "https://xion-testnet-2.numia.xyz"
+          }
+        ],
+        "operationId": "getSmartAccountPermissions",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "address",
+            "in": "path"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "granter",
+                "grantee"
+              ]
+            },
+            "required": true,
+            "name": "role",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "authz": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "granter": {
+                            "type": "string"
+                          },
+                          "grantee": {
+                            "type": "string"
+                          },
+                          "authorization": {
+                            "type": "object",
+                            "properties": {
+                              "type_url": {
+                                "type": "string"
+                              },
+                              "value": {
+                                "nullable": true
+                              }
+                            },
+                            "required": [
+                              "type_url"
+                            ]
+                          },
+                          "expiration": {
+                            "type": "string",
+                            "nullable": true
+                          }
+                        },
+                        "required": [
+                          "granter",
+                          "grantee",
+                          "authorization",
+                          "expiration"
+                        ]
+                      }
+                    },
+                    "feegrants": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "granter": {
+                            "type": "string"
+                          },
+                          "grantee": {
+                            "type": "string"
+                          },
+                          "allowance": {
+                            "type": "object",
+                            "properties": {
+                              "type_url": {
+                                "type": "string",
+                                "nullable": true
+                              },
+                              "value": {
+                                "nullable": true
+                              }
+                            },
+                            "required": [
+                              "type_url"
+                            ]
+                          }
+                        },
+                        "required": [
+                          "granter",
+                          "grantee",
+                          "allowance"
+                        ]
+                      }
+                    }
+                  },
+                  "required": [
+                    "authz",
+                    "feegrants"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Smart Account Permissions"
       }
     }
   }
