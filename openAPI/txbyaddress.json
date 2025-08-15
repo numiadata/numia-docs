@@ -7,61 +7,10 @@
   ],
   "servers": [
     {
-      "url": "https://akash.numia.xyz"
-    },
-    {
-      "url": "https://axelar.numia.xyz"
-    },
-    {
-      "url": "https://celestia.numia.xyz"
-    },
-    {
-      "url": "https://comdex.numia.xyz"
-    },
-    {
       "url": "https://cosmoshub.numia.xyz"
     },
     {
-      "url": "https://cryptoorgchain.numia.xyz"
-    },
-    {
-      "url": "https://dydx.numia.xyz"
-    },
-    {
-      "url": "https://dymension.numia.xyz"
-    },
-    {
-      "url": "https://initia.numia.xyz"
-    },
-    {
-      "url": "https://juno.numia.xyz"
-    },
-    {
-      "url": "https://migaloo.numia.xyz"
-    },
-    {
-      "url": "https://neutron.numia.xyz"
-    },
-    {
-      "url": "https://nillion.numia.xyz"
-    },
-    {
-      "url": "https://noble.numia.xyz"
-    },
-    {
-      "url": "https://nolus.numia.xyz"
-    },
-    {
       "url": "https://osmosis.numia.xyz"
-    },
-    {
-      "url": "https://osmosis-testnet.numia.xyz"
-    },
-    {
-      "url": "https://persistence.numia.xyz"
-    },
-    {
-      "url": "https://quicksilver.numia.xyz"
     },
     {
       "url": "https://stargaze.numia.xyz"
@@ -70,10 +19,61 @@
       "url": "https://stride.numia.xyz"
     },
     {
-      "url": "https://terra2.numia.xyz"
+      "url": "https://juno.numia.xyz"
     },
     {
       "url": "https://umee.numia.xyz"
+    },
+    {
+      "url": "https://terra2.numia.xyz"
+    },
+    {
+      "url": "https://neutron.numia.xyz"
+    },
+    {
+      "url": "https://comdex.numia.xyz"
+    },
+    {
+      "url": "https://persistence.numia.xyz"
+    },
+    {
+      "url": "https://quicksilver.numia.xyz"
+    },
+    {
+      "url": "https://cryptoorgchain.numia.xyz"
+    },
+    {
+      "url": "https://axelar.numia.xyz"
+    },
+    {
+      "url": "https://migaloo.numia.xyz"
+    },
+    {
+      "url": "https://dydx.numia.xyz"
+    },
+    {
+      "url": "https://celestia.numia.xyz"
+    },
+    {
+      "url": "https://nolus.numia.xyz"
+    },
+    {
+      "url": "https://noble.numia.xyz"
+    },
+    {
+      "url": "https://akash.numia.xyz"
+    },
+    {
+      "url": "https://dymension.numia.xyz"
+    },
+    {
+      "url": "https://nillion.numia.xyz"
+    },
+    {
+      "url": "https://initia.numia.xyz"
+    },
+    {
+      "url": "https://osmosis-testnet.numia.xyz"
     }
   ],
   "tags": [
@@ -107,6 +107,9 @@
           },
           {
             "url": "https://osmosis.numia.xyz"
+          },
+          {
+            "url": "https://evmos.numia.xyz"
           },
           {
             "url": "https://stargaze.numia.xyz"
