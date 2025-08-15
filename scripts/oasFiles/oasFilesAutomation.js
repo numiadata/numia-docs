@@ -20,15 +20,11 @@ function getApiFiles(dirPath) {
 function updateConfig(sidebars) {
   const config = JSON.parse(fs.readFileSync(CONFIG_FILE_PATH, "utf-8"));
 
-  config.sidebars = config.sidebars.filter(
-    (sidebar) => sidebar.sidebarRef !== "apiReference"
-  );
+  config.sidebars = config.sidebars.filter((sidebar) => sidebar.sidebarRef !== "apiReference");
 
   config.sidebars.push(sidebars);
 
-  const navbarExists = config.navbar.some(
-    (entry) => entry.sidebarRef === "apiReference"
-  );
+  const navbarExists = config.navbar.some((entry) => entry.sidebarRef === "apiReference");
 
   if (!navbarExists) {
     config.navbar.push({
@@ -44,19 +40,13 @@ function insertEngageAds(engageIntegrationGroup) {
   const configPath = path.join(__dirname, "../../config.json");
   const config = JSON.parse(fs.readFileSync(configPath, "utf-8"));
 
-  const engageSection = config.sidebars.find(
-    (sidebar) => sidebar.sidebarRef === "engage"
-  );
+  const engageSection = config.sidebars.find((sidebar) => sidebar.sidebarRef === "engage");
 
   if (engageSection) {
-    const publisherGuide = engageSection.categories.find(
-      (category) => category.categoryName === "Publisher Guide"
-    );
+    const publisherGuide = engageSection.categories.find((category) => category.categoryName === "Publisher Guide");
 
     if (publisherGuide) {
-      const apiIntegration = publisherGuide.pages.find(
-        (page) => page.groupName === "API Integration"
-      );
+      const apiIntegration = publisherGuide.pages.find((page) => page.groupName === "API Integration");
 
       if (apiIntegration) {
         const existingEndpointsIndex = apiIntegration.subpages.findIndex(
@@ -64,8 +54,7 @@ function insertEngageAds(engageIntegrationGroup) {
         );
 
         if (existingEndpointsIndex !== -1) {
-          apiIntegration.subpages[existingEndpointsIndex] =
-            engageIntegrationGroup[0];
+          apiIntegration.subpages[existingEndpointsIndex] = engageIntegrationGroup[0];
         } else {
           apiIntegration.subpages.push(...engageIntegrationGroup);
         }
@@ -115,6 +104,7 @@ function generateSidebars() {
     "osmosis-lenses": "Analytics",
     quasar: "Quasar",
     snapshots: "Snapshots",
+    stablecoins: "Stablecoins",
     stride: "Stride",
     txbyaddress: "Transaction by Address",
     lenses: "Lenses",
@@ -138,9 +128,7 @@ function generateSidebars() {
       console.warn(`OpenAPI file not found for folder: ${folderName}`);
       return {
         groupedPages,
-        untaggedPages: apiFiles.map(
-          (file) => `reference/${folderName}/${file}`
-        ),
+        untaggedPages: apiFiles.map((file) => `reference/${folderName}/${file}`),
       };
     }
 
@@ -201,9 +189,7 @@ function generateSidebars() {
           subpages: apiFiles.map((file) => `reference/${dir}/${file}`),
         });
       } else if (["dex", "osmosis-lenses"].includes(dir.toLowerCase())) {
-        const osmosisGroup = sidebar.categories[1].pages.find(
-          (group) => group.groupName === "Osmosis"
-        );
+        const osmosisGroup = sidebar.categories[1].pages.find((group) => group.groupName === "Osmosis");
         if (!osmosisGroup) {
           sidebar.categories[1].pages.push({
             groupName: "Osmosis",
@@ -216,13 +202,9 @@ function generateSidebars() {
           subpages: apiFiles.map((file) => `reference/${dir}/${file}`),
         };
 
-        sidebar.categories[1].pages
-          .find((group) => group.groupName === "Osmosis")
-          .subpages.push(group);
+        sidebar.categories[1].pages.find((group) => group.groupName === "Osmosis").subpages.push(group);
       } else if (["dydx-lenses", "numiaai"].includes(dir.toLowerCase())) {
-        const dydxGroup = sidebar.categories[1].pages.find(
-          (group) => group.groupName === "dYdX"
-        );
+        const dydxGroup = sidebar.categories[1].pages.find((group) => group.groupName === "dYdX");
         if (!dydxGroup) {
           sidebar.categories[1].pages.push({ groupName: "dYdX", subpages: [] });
         }
@@ -232,9 +214,7 @@ function generateSidebars() {
           subpages: apiFiles.map((file) => `reference/${dir}/${file}`),
         };
 
-        sidebar.categories[1].pages
-          .find((group) => group.groupName === "dYdX")
-          .subpages.push(group);
+        sidebar.categories[1].pages.find((group) => group.groupName === "dYdX").subpages.push(group);
       } else {
         const { groupedPages, untaggedPages } = groupPagesByTags(apiFiles, dir);
 

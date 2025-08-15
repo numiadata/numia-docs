@@ -83,4 +83,10 @@ export const apiConfig: ApiSection[] = [
     oasFile: "https://api-docs.numia.xyz/aadao-snapshots/openapi.json",
     title: "Snapshots",
   },
+  {
+    name: "stablecoins",
+    categoryName: "Advanced APIs",
+    oasFile: "https://api-docs.numia.xyz/stablecoins/openapi.json",
+    title: "Stablecoins",
+  },
 ];
