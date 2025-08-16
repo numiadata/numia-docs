@@ -3,473 +3,395 @@
   "tables": [
     {
       "name": "migaloo_block_events",
-      "description": "This table provides a comprehensive overview of every action and occurrence within the Cosmos blockchain ecosystem. It includes detailed information about each block's transactions, enabling the analysis of the blockchain's behavior and evolution over time.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "Sequential identifier referencing a block within the blockchain",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp of when a block was added to the blockchain",
           "type": "TIMESTAMP"
         },
         {
           "name": "event_index",
-          "description": "Ordinal identifier for events occurring within a single block",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "Underspecified type or category of an event in the blockchain",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
-          "description": "Additional properties of the event being tracked or published",
           "type": "JSON"
         },
         {
           "name": "source",
-          "description": "Blockchain identifier or name of the data source",
           "type": "STRING"
         },
         {
           "name": "schema_version",
-          "description": "Reference to the version of the data schema used",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when data was ingested or processed",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "migaloo_blocks",
-      "description": "Cosmos Blocks Table: This table provides information about blocks mined in the Cosmos ecosystem. It contains details such as block height and timestamp, validators, and other key metrics.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "Unique identifier for each block within a blockchain",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when a block was proposed and added to the chain",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
-          "description": "Distinct identifier for a blockchain network within the Cosmos ecosystem",
           "type": "STRING"
         },
         {
           "name": "proposer_address",
-          "description": "On-chain address of the validator who proposed a new block",
           "type": "STRING"
         },
         {
           "name": "validators_hash",
-          "description": "Hashed list of active validators for a blockchain network",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when block data was ingested from the blockchain",
           "type": "TIMESTAMP"
         },
         {
           "name": "messages_bytes",
-          "description": "Total size of messages (transactions) within a block in bytes",
           "type": "INTEGER"
         },
         {
           "name": "tx_count",
-          "description": "Total count of transactions (messages) within a block",
           "type": "INTEGER"
+        },
+        {
+          "name": "signatures",
+          "type": "JSON"
         }
       ]
     },
     {
       "name": "migaloo_event_attributes",
-      "description": "This table contains various attributes of events from the cosmos blockchain ecosystem, providing insights into the transaction and block-level data.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "deprecated_warning",
-          "description": "Warning flag indicating attribute is deprecated in protocol spec",
           "type": "STRING"
         },
         {
           "name": "block_height",
-          "description": "Height of the block where event occurred on the blockchain network",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "Unique identifier for the Cosmos blockchain network instance",
           "type": "STRING"
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp of the block where event occurred in the network",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_index",
-          "description": "Index of transaction where event originated within a block",
           "type": "INTEGER"
         },
         {
           "name": "tx_id",
-          "description": "Hash identifier for the transaction where event originated from",
           "type": "STRING"
         },
         {
           "name": "event_index",
-          "description": "Index of the event within a transaction",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "Type of event (e.g. transfer, proposal, vote) emitted by network",
           "type": "STRING"
         },
         {
           "name": "event_source",
-          "description": "Contract or module emitting the event within the network",
           "type": "STRING"
         },
         {
           "name": "attribute_key",
-          "description": "Key for the key-value pair attribute associated with event",
           "type": "STRING"
         },
         {
           "name": "attribute_value",
-          "description": "Value for the key-value pair attribute associated with event",
           "type": "STRING"
         },
         {
           "name": "attribute_index",
-          "description": "Index of the key-value pair attribute within an event",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the event data was ingested into database",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "migaloo_message_event_attributes",
-      "description": "This table contains a detailed view of blockchain events in the Cosmos ecosystem, providing attributes about each event occurrence. The attributes are gathered from a variety of blockchain sources.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "deprecated_warning",
-          "description": "Notice of deprecated functionality removal or obsolescence in Cosmos chain",
           "type": "STRING"
         },
         {
           "name": "block_height",
-          "description": "Sequence number identifying a specific block in a Cosmos blockchain",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "Uniquely identifying ID of a Cosmos blockchain network instance",
           "type": "STRING"
         },
         {
           "name": "block_timestamp",
-          "description": "Unix timestamp representing the time a block was proposed",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_index",
-          "description": "Index referencing a specific transaction within a block",
           "type": "INTEGER"
         },
         {
           "name": "tx_id",
-          "description": "Unique hash identifying a transaction within a Cosmos chain",
           "type": "STRING"
         },
         {
           "name": "message_index",
-          "description": "Index referencing a specific message within a transaction",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
-          "description": "Index referencing a specific event within a message",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "Type describing the occurrence being reported, e.g., transfer or governance",
           "type": "STRING"
         },
         {
           "name": "attribute_key",
-          "description": "Identifies keys for attribute data stored with an event",
           "type": "STRING"
         },
         {
           "name": "attribute_value",
-          "description": "Stores attribute data related to a specific event occurrence",
           "type": "STRING"
         },
         {
           "name": "attribute_index",
-          "description": "Index of attribute data within an event",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Unix timestamp of when the data was ingested into the database",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "migaloo_message_events",
-      "description": "This table contains event data extracted from Cosmos blockchain transactions. It provides a detailed view of the events occurring within the Cosmos ecosystem.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "Height of the block containing the message event",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when the block containing the message event occurred",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
-          "description": "Hash identifying a transaction in the Cosmos blockchain",
           "type": "STRING"
         },
         {
           "name": "tx_index",
-          "description": "Sequential index of the transaction within a block",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
-          "description": "Sequential index of the message within a transaction",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
-          "description": "Sequential index of the event within a message",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "Type of event that occurred (e.g., transfer, proposal, vote)",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
-          "description": "Detailed information about the occurred event",
           "type": "JSON"
         },
         {
           "name": "schema_version",
-          "description": "Version of the schema used to store the message event",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the message event was ingested into the dataset",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
       "name": "migaloo_transactions",
-      "description": "This table contains transaction information from the Cosmos ecosystem, including their status, fees, and associated block information. It provides a comprehensive view of interactions within the blockchain.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The height of the block in the blockchain sequence",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "Unique identifier for the blockchain network",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "Unique identifier for the transaction",
           "type": "STRING"
         },
         {
           "name": "tx_info",
-          "description": "Transaction metadata (network, timestamp, etc.)",
           "type": "STRING"
         },
         {
           "name": "tx_log_message",
-          "description": "Event log messages generated by the transaction",
           "type": "STRING"
         },
         {
           "name": "memo",
-          "description": "Transaction memo with information about the transaction",
           "type": "STRING"
         },
         {
           "name": "fee",
-          "description": "Transaction fee for the network resources used",
           "type": "STRING"
         },
         {
           "name": "tx_code",
-          "description": "Transaction execution status code",
           "type": "INTEGER"
         },
         {
           "name": "tx_index",
-          "description": "Index of the transaction in the block",
           "type": "INTEGER"
         },
         {
           "name": "gas_used",
-          "description": "Gas units consumed during transaction execution",
           "type": "INTEGER"
         },
         {
           "name": "gas_wanted",
-          "description": "Maximum gas units allowed for transaction execution",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the data was ingested into the dataset",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
-          "description": "Version of the schema used to ingested the transaction",
           "type": "INTEGER"
         },
         {
           "name": "fee_coins",
-          "description": "Coins used as transaction fee for network resources",
           "type": "STRING"
         },
         {
           "name": "fee_granter",
-          "description": "Account granting the transaction fee to another account",
           "type": "STRING"
         },
         {
           "name": "fee_payer",
-          "description": "Account paying the transaction fee to the fee granter",
           "type": "STRING"
         },
         {
           "name": "gas_limit",
-          "description": "Maximum gas units allowed for transaction execution limits",
           "type": "INTEGER"
         },
         {
           "name": "single_sign_mode",
-          "description": "Indicates whether the transaction requires single signature",
           "type": "INTEGER"
         },
         {
           "name": "multi_sign_json",
-          "description": "JSON representation of multi-signature transaction",
           "type": "STRING"
         },
         {
           "name": "timeout_height",
-          "description": "Height after which the transaction will be timed out",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "migaloo_tx_messages",
-      "description": "Cosmos Blockchain Transaction Messages: This table contains raw data from transaction messages on various Cosmos chains. It provides a detailed view of the messages exchanged between validators in the Cosmos ecosystem.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "Highest block number in the blockchain at the time of occurrence",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "Unique identifier of the EVM-compatible blockchain",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "Transaction's unique identifier within the blockchain",
           "type": "STRING"
         },
         {
           "name": "tx_index",
-          "description": "Transaction's position in a block within the blockchain",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
-          "description": "Index of the message within the transaction in the blockchain",
           "type": "STRING"
         },
         {
           "name": "message_type",
-          "description": "Type of message (e.g. transaction, governance, IBC) within the blockchain",
           "type": "STRING"
         },
         {
           "name": "message",
-          "description": "Actual message content (data) within the transaction in the blockchain",
           "type": "JSON"
         },
         {
           "name": "schema_version",
-          "description": "Version of the data schema used for message serialization",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the data is ingested into the Cosmos Hub",
           "type": "TIMESTAMP"
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when the block was created in the blockchain",
           "type": "STRING"
         }
       ]

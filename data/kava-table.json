@@ -1,8 +1,8 @@
 {
-  "dataset": "nillion_chain_testnet",
+  "dataset": "kava",
   "tables": [
     {
-      "name": "nillion_chain_testnet_block_events",
+      "name": "kava_block_events",
       "description": "",
       "tags": [
         "raw_table"
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "name": "nillion_chain_testnet_blocks",
+      "name": "kava_blocks",
       "description": "",
       "tags": [
         "raw_table"
@@ -80,15 +80,134 @@
         {
           "name": "tx_count",
           "type": "INTEGER"
-        },
-        {
-          "name": "signatures",
-          "type": "JSON"
         }
       ]
     },
     {
-      "name": "nillion_chain_testnet_message_events",
+      "name": "kava_event_attributes",
+      "description": "This table contains various attributes of events from the cosmos blockchain ecosystem, providing insights into the transaction and block-level data.",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "On-chain block number, incrementing with each new block creation",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "description": "Unique identifier for a specific Cosmos blockchain network",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_id",
+          "description": "Hashed transaction identifier, used to track transactional data",
+          "type": "STRING"
+        },
+        {
+          "name": "event_index",
+          "description": "Atomic index of events within a single transaction or block",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "description": "Categorization of on-chain events (e.g., transaction, governance, transfer)",
+          "type": "STRING"
+        },
+        {
+          "name": "event_source",
+          "description": "Element triggering an event (e.g., transaction, contract, proposal)",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_key",
+          "description": "Narrowly defined key within a broader event attribute",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_value",
+          "description": "Specific value associated with a given attribute key",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
+          "description": "Ordinal position of attribute-value pairs within a broader event",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "Timestamp of when data was added to the dataset",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "Time when a specific block on the blockchain was created",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "kava_message_event_attributes",
+      "description": "This table contains a detailed view of blockchain events in the Cosmos ecosystem, providing attributes about each event occurrence. The attributes are gathered from a variety of blockchain sources.",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "The current block number in a blockchain network's ledger.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "description": "A unique identifier for a blockchain network within the Cosmos ecosystem.",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_id",
+          "description": "A globally unique identifier for a transaction executed on the blockchain.",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "The order in which a message is processed within a transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_index",
+          "description": "The order in which an event is emitted within a message or transaction.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "description": "Information about the type of event that occurred on the blockchain.",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_key",
+          "description": "A key to extract specific information from event attributes.",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_value",
+          "description": "The value associated with a specific attribute key in an event.",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
+          "description": "The order in which attributes are listed within an event.",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "The time at which the event data was ingested in the database.",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "kava_message_events",
       "description": "",
       "tags": [
         "raw_table"
@@ -137,7 +256,7 @@
       ]
     },
     {
-      "name": "nillion_chain_testnet_transactions",
+      "name": "kava_transactions",
       "description": "",
       "tags": [
         "raw_table"
@@ -164,10 +283,6 @@
           "type": "STRING"
         },
         {
-          "name": "memo",
-          "type": "STRING"
-        },
-        {
           "name": "fee",
           "type": "STRING"
         },
@@ -186,6 +301,14 @@
         {
           "name": "gas_wanted",
           "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "memo",
+          "type": "STRING"
         },
         {
           "name": "schema_version",
@@ -218,15 +341,11 @@
         {
           "name": "timeout_height",
           "type": "STRING"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
         }
       ]
     },
     {
-      "name": "nillion_chain_testnet_tx_messages",
+      "name": "kava_tx_messages",
       "description": "",
       "tags": [
         "raw_table"
@@ -235,10 +354,6 @@
         {
           "name": "block_height",
           "type": "INTEGER"
-        },
-        {
-          "name": "block_timestamp",
-          "type": "STRING"
         },
         {
           "name": "chain_id",
@@ -265,12 +380,16 @@
           "type": "JSON"
         },
         {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
           "name": "schema_version",
           "type": "INTEGER"
         },
         {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "name": "block_timestamp",
+          "type": "STRING"
         }
       ]
     }

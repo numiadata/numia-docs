@@ -1,49 +1,8 @@
 {
-  "dataset": "nillion_chain_testnet",
+  "dataset": "mars",
   "tables": [
     {
-      "name": "nillion_chain_testnet_block_events",
-      "description": "",
-      "tags": [
-        "raw_table"
-      ],
-      "columns": [
-        {
-          "name": "block_height",
-          "type": "INTEGER"
-        },
-        {
-          "name": "block_timestamp",
-          "type": "TIMESTAMP"
-        },
-        {
-          "name": "event_index",
-          "type": "INTEGER"
-        },
-        {
-          "name": "event_type",
-          "type": "STRING"
-        },
-        {
-          "name": "event_attributes",
-          "type": "JSON"
-        },
-        {
-          "name": "source",
-          "type": "STRING"
-        },
-        {
-          "name": "schema_version",
-          "type": "INTEGER"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
-        }
-      ]
-    },
-    {
-      "name": "nillion_chain_testnet_blocks",
+      "name": "mars_blocks",
       "description": "",
       "tags": [
         "raw_table"
@@ -80,15 +39,11 @@
         {
           "name": "tx_count",
           "type": "INTEGER"
-        },
-        {
-          "name": "signatures",
-          "type": "JSON"
         }
       ]
     },
     {
-      "name": "nillion_chain_testnet_message_events",
+      "name": "mars_event_attributes",
       "description": "",
       "tags": [
         "raw_table"
@@ -99,16 +54,65 @@
           "type": "INTEGER"
         },
         {
-          "name": "block_timestamp",
-          "type": "TIMESTAMP"
-        },
-        {
-          "name": "tx_hash",
+          "name": "chain_id",
           "type": "STRING"
         },
         {
-          "name": "tx_index",
+          "name": "tx_id",
+          "type": "STRING"
+        },
+        {
+          "name": "event_index",
           "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "type": "STRING"
+        },
+        {
+          "name": "event_source",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_key",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_value",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "mars_message_event_attributes",
+      "description": "",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_id",
+          "type": "STRING"
         },
         {
           "name": "message_index",
@@ -123,11 +127,15 @@
           "type": "STRING"
         },
         {
-          "name": "event_attributes",
-          "type": "JSON"
+          "name": "attribute_key",
+          "type": "STRING"
         },
         {
-          "name": "schema_version",
+          "name": "attribute_value",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
           "type": "INTEGER"
         },
         {
@@ -137,7 +145,7 @@
       ]
     },
     {
-      "name": "nillion_chain_testnet_transactions",
+      "name": "mars_transactions",
       "description": "",
       "tags": [
         "raw_table"
@@ -164,10 +172,6 @@
           "type": "STRING"
         },
         {
-          "name": "memo",
-          "type": "STRING"
-        },
-        {
           "name": "fee",
           "type": "STRING"
         },
@@ -186,6 +190,14 @@
         {
           "name": "gas_wanted",
           "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "memo",
+          "type": "STRING"
         },
         {
           "name": "schema_version",
@@ -218,59 +230,6 @@
         {
           "name": "timeout_height",
           "type": "STRING"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
-        }
-      ]
-    },
-    {
-      "name": "nillion_chain_testnet_tx_messages",
-      "description": "",
-      "tags": [
-        "raw_table"
-      ],
-      "columns": [
-        {
-          "name": "block_height",
-          "type": "INTEGER"
-        },
-        {
-          "name": "block_timestamp",
-          "type": "STRING"
-        },
-        {
-          "name": "chain_id",
-          "type": "STRING"
-        },
-        {
-          "name": "tx_id",
-          "type": "STRING"
-        },
-        {
-          "name": "tx_index",
-          "type": "INTEGER"
-        },
-        {
-          "name": "message_index",
-          "type": "STRING"
-        },
-        {
-          "name": "message_type",
-          "type": "STRING"
-        },
-        {
-          "name": "message",
-          "type": "JSON"
-        },
-        {
-          "name": "schema_version",
-          "type": "INTEGER"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
         }
       ]
     }

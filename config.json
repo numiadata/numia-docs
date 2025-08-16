@@ -29,10 +29,9 @@
     "txbyaddress.json",
     "cosmos.json",
     "dydx-lenses.json",
-    "numiaai.json",
-    "stride.json",
     "xion.json",
-    "snapshots.json"
+    "snapshots.json",
+    "stablecoins.json"
   ],
   "codeLanguages": [
     "curl",
@@ -163,20 +162,33 @@
               "page": "sql/querying-data/chains/available-chains",
               "subpages": [
                 "sql/querying-data/chains/akash",
+                "sql/querying-data/chains/axelar_dojo",
                 "sql/querying-data/chains/celestia",
                 "sql/querying-data/chains/comdex",
+                "sql/querying-data/chains/core",
+                "sql/querying-data/chains/cosmos",
                 "sql/querying-data/chains/cosmoshub",
                 "sql/querying-data/chains/crescent",
+                "sql/querying-data/chains/crypto_org",
                 "sql/querying-data/chains/dydx_mainnet",
+                "sql/querying-data/chains/dydx_testnet",
                 "sql/querying-data/chains/evmos",
+                "sql/querying-data/chains/injective",
                 "sql/querying-data/chains/juno",
                 "sql/querying-data/chains/kaiyo",
+                "sql/querying-data/chains/kava",
                 "sql/querying-data/chains/lenses",
+                "sql/querying-data/chains/mars",
                 "sql/querying-data/chains/migaloo",
+                "sql/querying-data/chains/mocha",
                 "sql/querying-data/chains/neutron",
                 "sql/querying-data/chains/nillion",
                 "sql/querying-data/chains/nillion_chain_testnet",
+                "sql/querying-data/chains/noble",
                 "sql/querying-data/chains/osmosis",
+                "sql/querying-data/chains/pacific",
+                "sql/querying-data/chains/phoenix",
+                "sql/querying-data/chains/pirin",
                 "sql/querying-data/chains/quasar",
                 "sql/querying-data/chains/quasar_testnet",
                 "sql/querying-data/chains/quicksilver",
@@ -185,7 +197,8 @@
                 "sql/querying-data/chains/stargaze",
                 "sql/querying-data/chains/stride",
                 "sql/querying-data/chains/terra",
-                "sql/querying-data/chains/umee"
+                "sql/querying-data/chains/umee",
+                "sql/querying-data/chains/zigchain_testnet"
               ]
             }
           ]
@@ -256,125 +269,7 @@
         },
         {
           "categoryName": "Advanced APIs",
-          "pages": [
-            {
-              "groupName": "Osmosis",
-              "subpages": [
-                "api/osmosis-overview",
-                {
-                  "groupName": "Pools",
-                  "subpages": [
-                    "reference/osmosis/get-pools-apr-range-v-2",
-                    "reference/osmosis/get-cl-pools-position-apr-v-2",
-                    "reference/osmosis/get-token-pair-historical-chart",
-                    "reference/osmosis/get-pools-fees",
-                    "reference/osmosis/get-pool-stream-data",
-                    "reference/osmosis/get-position-info",
-                    "reference/osmosis/get-pools-liquidity-over-time",
-                    "reference/osmosis/get-pools-depth-current",
-                    "reference/osmosis/get-pools-depth-over-time",
-                    "reference/osmosis/get-pools-apr",
-                    "reference/osmosis/get-pools-apr-range",
-                    "reference/osmosis/get-cl-pools-position-apr",
-                    "reference/osmosis/get-pairs-summary-v-2"
-                  ]
-                },
-                {
-                  "groupName": "Tokens",
-                  "subpages": [
-                    "reference/osmosis/get-token-historical-chart",
-                    "reference/osmosis/get-token-real-time-price",
-                    "reference/osmosis/get-token-data"
-                  ]
-                },
-                {
-                  "groupName": "Users",
-                  "subpages": [
-                    "reference/osmosis/get-rewards-estimation-for-bech-32-address",
-                    "reference/osmosis/get-rewards-estimation-for-address-and-denom",
-                    "reference/osmosis/get-rewards-estimation-for-address",
-                    "reference/osmosis/get-portfolio-over-time",
-                    "reference/osmosis/get-portfolio-current",
-                    "reference/osmosis/get-closed-limit-orders-history"
-                  ]
-                },
-                {
-                  "groupName": "Chain",
-                  "subpages": [
-                    "reference/osmosis/get-i-bc-chain-status",
-                    "reference/osmosis/get-apr",
-                    "reference/osmosis/get-supply-metrics",
-                    "reference/osmosis/get-chain-revenue",
-                    "reference/osmosis/get-trading-metrics"
-                  ]
-                },
-                {
-                  "groupName": "Earn",
-                  "subpages": [
-                    "reference/osmosis/get-earn-strategies",
-                    "reference/osmosis/get-balances-for-earn-strategies",
-                    "reference/osmosis/get-apr-for-earn-strategies",
-                    "reference/osmosis/get-tvl-for-earn-strategies"
-                  ]
-                }
-              ]
-            },
-            {
-              "groupName": "Osmosis-lenses",
-              "subpages": [
-                "reference/osmosis-lenses/get-liquidity-flow",
-                "reference/osmosis-lenses/get-liquidity-flow-by-market",
-                "reference/osmosis-lenses/get-superfluid-flow",
-                "reference/osmosis-lenses/get-superfluid-flow-by-market",
-                "reference/osmosis-lenses/get-top-assets-by-volume-date-range",
-                "reference/osmosis-lenses/get-top-assets-by-volume-last-period-hours"
-              ]
-            },
-            {
-              "groupName": "Cosmos",
-              "subpages": [
-                "reference/cosmos/get-tokenomics-top-stakeholders",
-                "reference/cosmos/get-aez-revenue-share-by-consumer",
-                "reference/cosmos/get-liquid-staking-share-by-provider",
-                "reference/cosmos/get-liquid-staking-flow-by-provider",
-                "reference/cosmos/get-hydro-deployments-overview",
-                "reference/cosmos/get-hydro-deployments-overview-staging",
-                "reference/cosmos/get-hydro-metrics"
-              ]
-            },
-            {
-              "groupName": "Dydx-lenses",
-              "subpages": [
-                "reference/dydx-lenses/get-traders-ranking",
-                "reference/dydx-lenses/get-trading-fees",
-                "reference/dydx-lenses/get-liquidation-flow-by-market",
-                "reference/dydx-lenses/get-tokenomics-wallets-treasury-subdao",
-                "reference/dydx-lenses/get-business-expenses-share-by-destination",
-                "reference/dydx-lenses/get-business-pnl-summary"
-              ]
-            },
-            {
-              "groupName": "Stride",
-              "subpages": [
-                "reference/stride/get-token-metrics",
-                "reference/stride/get-redemption-rate",
-                "reference/stride/get-total-users",
-                "reference/stride/get-average-staked",
-                "reference/stride/get-tvl",
-                "reference/stride/get-total-yield",
-                "reference/stride/get-apr",
-                "reference/stride/get-burnt-supply"
-              ]
-            },
-            {
-              "groupName": "Xion",
-              "subpages": [
-                "reference/xion/get-abstract-account-authenticators",
-                "reference/xion/get-abstract-accounts-by-authenticator",
-                "reference/xion/get-abstract-accounts-details-by-authenticator"
-              ]
-            }
-          ]
+          "pages": []
         }
       ]
     }

@@ -1,49 +1,8 @@
 {
-  "dataset": "nillion_chain_testnet",
+  "dataset": "phoenix",
   "tables": [
     {
-      "name": "nillion_chain_testnet_block_events",
-      "description": "",
-      "tags": [
-        "raw_table"
-      ],
-      "columns": [
-        {
-          "name": "block_height",
-          "type": "INTEGER"
-        },
-        {
-          "name": "block_timestamp",
-          "type": "TIMESTAMP"
-        },
-        {
-          "name": "event_index",
-          "type": "INTEGER"
-        },
-        {
-          "name": "event_type",
-          "type": "STRING"
-        },
-        {
-          "name": "event_attributes",
-          "type": "JSON"
-        },
-        {
-          "name": "source",
-          "type": "STRING"
-        },
-        {
-          "name": "schema_version",
-          "type": "INTEGER"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
-        }
-      ]
-    },
-    {
-      "name": "nillion_chain_testnet_blocks",
+      "name": "phoenix_blocks",
       "description": "",
       "tags": [
         "raw_table"
@@ -88,7 +47,7 @@
       ]
     },
     {
-      "name": "nillion_chain_testnet_message_events",
+      "name": "phoenix_event_attributes",
       "description": "",
       "tags": [
         "raw_table"
@@ -99,16 +58,65 @@
           "type": "INTEGER"
         },
         {
-          "name": "block_timestamp",
-          "type": "TIMESTAMP"
-        },
-        {
-          "name": "tx_hash",
+          "name": "chain_id",
           "type": "STRING"
         },
         {
-          "name": "tx_index",
+          "name": "tx_id",
+          "type": "STRING"
+        },
+        {
+          "name": "event_index",
           "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "type": "STRING"
+        },
+        {
+          "name": "event_source",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_key",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_value",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "phoenix_message_event_attributes",
+      "description": "",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_id",
+          "type": "STRING"
         },
         {
           "name": "message_index",
@@ -123,11 +131,15 @@
           "type": "STRING"
         },
         {
-          "name": "event_attributes",
-          "type": "JSON"
+          "name": "attribute_key",
+          "type": "STRING"
         },
         {
-          "name": "schema_version",
+          "name": "attribute_value",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
           "type": "INTEGER"
         },
         {
@@ -137,7 +149,7 @@
       ]
     },
     {
-      "name": "nillion_chain_testnet_transactions",
+      "name": "phoenix_transactions",
       "description": "",
       "tags": [
         "raw_table"
@@ -188,6 +200,10 @@
           "type": "INTEGER"
         },
         {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
           "name": "schema_version",
           "type": "INTEGER"
         },
@@ -218,15 +234,11 @@
         {
           "name": "timeout_height",
           "type": "STRING"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
         }
       ]
     },
     {
-      "name": "nillion_chain_testnet_tx_messages",
+      "name": "phoenix_tx_messages",
       "description": "",
       "tags": [
         "raw_table"
@@ -235,10 +247,6 @@
         {
           "name": "block_height",
           "type": "INTEGER"
-        },
-        {
-          "name": "block_timestamp",
-          "type": "STRING"
         },
         {
           "name": "chain_id",
@@ -265,12 +273,16 @@
           "type": "JSON"
         },
         {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
           "name": "schema_version",
           "type": "INTEGER"
         },
         {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "name": "block_timestamp",
+          "type": "STRING"
         }
       ]
     }
