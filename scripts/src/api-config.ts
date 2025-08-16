@@ -48,12 +48,12 @@ export const apiConfig: ApiSection[] = [
     oasFile: "https://api-docs.numia.xyz/lenses/dydx/openapi.json",
     title: "Lenses Analytics",
   },
-  {
-    name: "numiaai",
-    categoryName: "Tools",
-    oasFile: "https://api-docs.numia.xyz/numiaAI/openapi.json",
-    title: "AI Agent Analytics",
-  },
+  // {
+  //   name: "numiaai",
+  //   categoryName: "Tools",
+  //   oasFile: "https://api-docs.numia.xyz/numiaAI/openapi.json",
+  //   title: "AI Agent Analytics",
+  // },
   //   {
   //     name: "quasar",
   //     categoryName: "Advanced APIs",
@@ -65,12 +65,12 @@ export const apiConfig: ApiSection[] = [
   //     ],
   //     title: "Quasar",
   //   },
-  {
-    name: "stride",
-    categoryName: "Advanced APIs",
-    oasFile: "https://api-docs.numia.xyz/stride/openapi.json",
-    title: "Stride",
-  },
+  // {
+  //   name: "stride",
+  //   categoryName: "Advanced APIs",
+  //   oasFile: "https://api-docs.numia.xyz/stride/openapi.json",
+  //   title: "Stride",
+  // },
   {
     name: "xion",
     categoryName: "Advanced APIs",

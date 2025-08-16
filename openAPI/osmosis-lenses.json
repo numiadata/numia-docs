@@ -25,6 +25,282 @@
     "parameters": {}
   },
   "paths": {
+    "/aux/pool_listings": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getAuxPoolListings",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "query_key": {
+                        "type": "number"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "type": {
+                        "type": "string"
+                      },
+                      "daily_volume": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "query_key",
+                      "name",
+                      "type",
+                      "daily_volume"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/activity/active_whales": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getActivityActiveWhales",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "default": "100"
+            },
+            "required": false,
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "active_volume_last_7_days",
+                "trading_volume_last_7_days",
+                "lp_volume_last_7_days",
+                "delegations_volume_last_7_days"
+              ],
+              "default": "active_volume_last_7_days"
+            },
+            "required": false,
+            "name": "order",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "wallet": {
+                        "type": "string"
+                      },
+                      "trading_volume_last_7_days": {
+                        "type": "number"
+                      },
+                      "lp_volume_last_7_days": {
+                        "type": "number"
+                      },
+                      "staking_volume_last_7_days": {
+                        "type": "number"
+                      },
+                      "total_volume_last_7_days": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "wallet",
+                      "trading_volume_last_7_days",
+                      "lp_volume_last_7_days",
+                      "staking_volume_last_7_days",
+                      "total_volume_last_7_days"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/kpi/cumulative_trading_volume": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getKPICumulativeTradingVolume",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/kpi/cumulative_protocol_revenue": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getKPICumulativeProtocolRevenue",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/kpi/cumulative_supply_side_revenue": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://osmosis.numia.xyz"
+          }
+        ],
+        "operationId": "getKPICumulativeSupplySideRevenue",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/liquidity/liquidity_flow": {
       "get": {
         "servers": [
@@ -55,162 +331,25 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "total"
             },
             "required": false,
             "name": "pool",
             "in": "query"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Status: 200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "labels": {
-                        "type": "string",
-                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-                      },
-                      "total_inflow": {
-                        "type": "number"
-                      },
-                      "total_outflow": {
-                        "type": "number"
-                      },
-                      "top_inflow": {
-                        "type": "number"
-                      },
-                      "top_inflow_tx_id": {
-                        "type": "string"
-                      },
-                      "top_outflow": {
-                        "type": "number"
-                      },
-                      "top_outflow_tx_id": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "labels",
-                      "total_inflow",
-                      "total_outflow",
-                      "top_inflow",
-                      "top_inflow_tx_id",
-                      "top_outflow",
-                      "top_outflow_tx_id"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Liquidity Flow"
+        "responses": {}
       }
     },
-    "/liquidity/flow_by_market": {
+    "/tokenomics/assets_in_chain": {
       "get": {
         "servers": [
           {
             "url": "https://osmosis.numia.xyz"
           }
         ],
-        "operationId": "getLiquidityFlowByMarket",
-        "tags": [],
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-            },
-            "required": false,
-            "name": "start_date",
-            "in": "query"
-          },
-          {
-            "schema": {
-              "type": "string",
-              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-            },
-            "required": false,
-            "name": "end_date",
-            "in": "query"
-          },
-          {
-            "schema": {
-              "type": "string"
-            },
-            "required": false,
-            "name": "pool",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Status: 200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "labels": {
-                        "type": "string",
-                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-                      },
-                      "total_inflow": {
-                        "type": "number"
-                      },
-                      "total_outflow": {
-                        "type": "number"
-                      },
-                      "top_inflow": {
-                        "type": "number"
-                      },
-                      "top_inflow_tx_id": {
-                        "type": "string"
-                      },
-                      "top_outflow": {
-                        "type": "number"
-                      },
-                      "top_outflow_tx_id": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "labels",
-                      "total_inflow",
-                      "total_outflow",
-                      "top_inflow",
-                      "top_inflow_tx_id",
-                      "top_outflow",
-                      "top_outflow_tx_id"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Liquidity Flow By Market"
-      }
-    },
-    "/superfluid/superfluid_flow": {
-      "get": {
-        "servers": [
-          {
-            "url": "https://osmosis.numia.xyz"
-          }
-        ],
-        "operationId": "getSuperfluidFlow",
+        "operationId": "getTokenomicsAssetsInChain",
         "tags": [],
         "parameters": [
           {
@@ -243,126 +382,22 @@
                     "type": "object",
                     "properties": {
                       "labels": {
-                        "type": "string",
-                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-                      },
-                      "total_inflow": {
-                        "type": "number"
-                      },
-                      "total_outflow": {
-                        "type": "number"
-                      },
-                      "top_inflow": {
-                        "type": "number"
-                      },
-                      "top_inflow_tx_id": {
                         "type": "string"
                       },
-                      "top_outflow": {
+                      "assets_in_chain_usdc": {
                         "type": "number"
-                      },
-                      "top_outflow_tx_id": {
-                        "type": "string"
                       }
                     },
                     "required": [
                       "labels",
-                      "total_inflow",
-                      "total_outflow",
-                      "top_inflow",
-                      "top_inflow_tx_id",
-                      "top_outflow",
-                      "top_outflow_tx_id"
+                      "assets_in_chain_usdc"
                     ]
                   }
                 }
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Superfluid Flow"
-      }
-    },
-    "/staking/superfluid/flow_by_market": {
-      "get": {
-        "servers": [
-          {
-            "url": "https://osmosis.numia.xyz"
-          }
-        ],
-        "operationId": "getSuperfluidFlowByMarket",
-        "tags": [],
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-            },
-            "required": false,
-            "name": "start_date",
-            "in": "query"
-          },
-          {
-            "schema": {
-              "type": "string",
-              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-            },
-            "required": false,
-            "name": "end_date",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Status: 200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "labels": {
-                        "type": "string",
-                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-                      },
-                      "total_inflow": {
-                        "type": "number"
-                      },
-                      "total_outflow": {
-                        "type": "number"
-                      },
-                      "top_inflow": {
-                        "type": "number"
-                      },
-                      "top_inflow_tx_id": {
-                        "type": "string"
-                      },
-                      "top_outflow": {
-                        "type": "number"
-                      },
-                      "top_outflow_tx_id": {
-                        "type": "string"
-                      }
-                    },
-                    "required": [
-                      "labels",
-                      "total_inflow",
-                      "total_outflow",
-                      "top_inflow",
-                      "top_inflow_tx_id",
-                      "top_outflow",
-                      "top_outflow_tx_id"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Superfluid Flow By Market"
+        }
       }
     },
     "/trading/volume/top_assets_date_range": {
@@ -380,7 +415,7 @@
               "type": "string",
               "description": "Date in the format YYYY-MM-DD HH:MM:SS"
             },
-            "required": true,
+            "required": false,
             "name": "start_date",
             "in": "query"
           },
@@ -389,7 +424,7 @@
               "type": "string",
               "description": "Date in the format YYYY-MM-DD HH:MM:SS"
             },
-            "required": true,
+            "required": false,
             "name": "end_date",
             "in": "query"
           },
@@ -441,9 +476,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Top Assets By Volume Date Range"
+        }
       }
     },
     "/trading/volume/top_assets_last_period_hours": {
@@ -513,9 +546,7 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Top Assets By Volume Last Period Hours"
+        }
       }
     }
   }

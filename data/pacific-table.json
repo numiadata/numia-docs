@@ -1,49 +1,8 @@
 {
-  "dataset": "nillion_chain_testnet",
+  "dataset": "pacific",
   "tables": [
     {
-      "name": "nillion_chain_testnet_block_events",
-      "description": "",
-      "tags": [
-        "raw_table"
-      ],
-      "columns": [
-        {
-          "name": "block_height",
-          "type": "INTEGER"
-        },
-        {
-          "name": "block_timestamp",
-          "type": "TIMESTAMP"
-        },
-        {
-          "name": "event_index",
-          "type": "INTEGER"
-        },
-        {
-          "name": "event_type",
-          "type": "STRING"
-        },
-        {
-          "name": "event_attributes",
-          "type": "JSON"
-        },
-        {
-          "name": "source",
-          "type": "STRING"
-        },
-        {
-          "name": "schema_version",
-          "type": "INTEGER"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
-        }
-      ]
-    },
-    {
-      "name": "nillion_chain_testnet_blocks",
+      "name": "pacific_blocks",
       "description": "",
       "tags": [
         "raw_table"
@@ -88,56 +47,130 @@
       ]
     },
     {
-      "name": "nillion_chain_testnet_message_events",
-      "description": "",
+      "name": "pacific_event_attributes",
+      "description": "This table contains various attributes of events from the cosmos blockchain ecosystem, providing insights into the transaction and block-level data.",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
+          "description": "Height of the block in the blockchain",
           "type": "INTEGER"
         },
         {
-          "name": "block_timestamp",
-          "type": "TIMESTAMP"
-        },
-        {
-          "name": "tx_hash",
+          "name": "chain_id",
+          "description": "Unique identifier of the EVM-compatible blockchain",
           "type": "STRING"
         },
         {
-          "name": "tx_index",
-          "type": "INTEGER"
-        },
-        {
-          "name": "message_index",
-          "type": "INTEGER"
+          "name": "tx_id",
+          "description": "Hash identifying a specific transaction in the blockchain",
+          "type": "STRING"
         },
         {
           "name": "event_index",
+          "description": "Index to uniquely identify an event within a transaction",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
+          "description": "Type of event triggered by a transaction or block",
           "type": "STRING"
         },
         {
-          "name": "event_attributes",
-          "type": "JSON"
+          "name": "event_source",
+          "description": "Source of the event in the blockchain ecosystem",
+          "type": "STRING"
         },
         {
-          "name": "schema_version",
+          "name": "attribute_key",
+          "description": "Key of an attribute or parameter in an event or transaction",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_value",
+          "description": "Value associated with an attribute or parameter",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
+          "description": "Index to access an attribute within an event or transaction",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
+          "description": "Timestamp of when the data is ingested from the blockchain",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "block_timestamp",
+          "description": "Timestamp of when a block is generated in the blockchain",
           "type": "TIMESTAMP"
         }
       ]
     },
     {
-      "name": "nillion_chain_testnet_transactions",
+      "name": "pacific_message_event_attributes",
+      "description": "This table contains a detailed view of blockchain events in the Cosmos ecosystem, providing attributes about each event occurrence. The attributes are gathered from a variety of blockchain sources.",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "description": "Sequence number of the block within the blockchain",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "description": "Unique identifier for a Cosmos network",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_id",
+          "description": "Hash or unique identifier for a blockchain transaction",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "description": "Index of the message within a transaction",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_index",
+          "description": "Index of the event within a message",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "description": "Type of event occurring within a message",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_key",
+          "description": "Key for an attribute within an event",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_value",
+          "description": "Value for an attribute within an event",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
+          "description": "Index of the attribute within an event",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "description": "Timestamp when the data was ingested into the system",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "pacific_transactions",
       "description": "",
       "tags": [
         "raw_table"
@@ -188,6 +221,10 @@
           "type": "INTEGER"
         },
         {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
           "name": "schema_version",
           "type": "INTEGER"
         },
@@ -218,15 +255,11 @@
         {
           "name": "timeout_height",
           "type": "STRING"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
         }
       ]
     },
     {
-      "name": "nillion_chain_testnet_tx_messages",
+      "name": "pacific_tx_messages",
       "description": "",
       "tags": [
         "raw_table"
@@ -235,10 +268,6 @@
         {
           "name": "block_height",
           "type": "INTEGER"
-        },
-        {
-          "name": "block_timestamp",
-          "type": "STRING"
         },
         {
           "name": "chain_id",
@@ -271,6 +300,10 @@
         {
           "name": "ingestion_timestamp",
           "type": "TIMESTAMP"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "STRING"
         }
       ]
     }

@@ -20,12 +20,19 @@ function cleanOasDir() {
 async function downloadOasFiles() {
   return await Promise.all(
     apiConfig.map(async (apiSection) => {
-      const response = await fetch(apiSection.oasFile);
-      const body = await response.json();
-      writeFileSync(
-        Path.join(OAS_ROOT_DIR, `${apiSection.name}.json`),
-        JSON.stringify(body, null, 2)
-      );
+      try {
+        const response = await fetch(apiSection.oasFile);
+        const body = await response.json();
+        writeFileSync(
+          Path.join(OAS_ROOT_DIR, `${apiSection.name}.json`),
+          JSON.stringify(body, null, 2)
+        );
+      } catch (e) {
+        console.error(
+          `Error downloading OAS file for ${apiSection.name}: ${e}`
+        );
+        throw e;
+      }
     })
   );
 }

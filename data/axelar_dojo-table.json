@@ -1,8 +1,8 @@
 {
-  "dataset": "nillion_chain_testnet",
+  "dataset": "axelar_dojo",
   "tables": [
     {
-      "name": "nillion_chain_testnet_block_events",
+      "name": "axelar_block_events",
       "description": "",
       "tags": [
         "raw_table"
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "name": "nillion_chain_testnet_blocks",
+      "name": "axelar_blocks",
       "description": "",
       "tags": [
         "raw_table"
@@ -88,7 +88,129 @@
       ]
     },
     {
-      "name": "nillion_chain_testnet_message_events",
+      "name": "axelar_event_attributes",
+      "description": "",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "deprecated_warning",
+          "type": "STRING"
+        },
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "type": "STRING"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "tx_id",
+          "type": "STRING"
+        },
+        {
+          "name": "event_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "type": "STRING"
+        },
+        {
+          "name": "event_source",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_key",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_value",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "axelar_message_event_attributes",
+      "description": "",
+      "tags": [
+        "raw_table"
+      ],
+      "columns": [
+        {
+          "name": "deprecated_warning",
+          "type": "STRING"
+        },
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "chain_id",
+          "type": "STRING"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "tx_id",
+          "type": "STRING"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "event_type",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_key",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_value",
+          "type": "STRING"
+        },
+        {
+          "name": "attribute_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "axelar_message_events",
       "description": "",
       "tags": [
         "raw_table"
@@ -137,7 +259,7 @@
       ]
     },
     {
-      "name": "nillion_chain_testnet_transactions",
+      "name": "axelar_transactions",
       "description": "",
       "tags": [
         "raw_table"
@@ -188,6 +310,10 @@
           "type": "INTEGER"
         },
         {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
           "name": "schema_version",
           "type": "INTEGER"
         },
@@ -218,15 +344,11 @@
         {
           "name": "timeout_height",
           "type": "STRING"
-        },
-        {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
         }
       ]
     },
     {
-      "name": "nillion_chain_testnet_tx_messages",
+      "name": "axelar_tx_messages",
       "description": "",
       "tags": [
         "raw_table"
@@ -235,10 +357,6 @@
         {
           "name": "block_height",
           "type": "INTEGER"
-        },
-        {
-          "name": "block_timestamp",
-          "type": "STRING"
         },
         {
           "name": "chain_id",
@@ -265,12 +383,16 @@
           "type": "JSON"
         },
         {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
           "name": "schema_version",
           "type": "INTEGER"
         },
         {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "name": "block_timestamp",
+          "type": "STRING"
         }
       ]
     }

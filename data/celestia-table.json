@@ -78,440 +78,375 @@
     },
     {
       "name": "celestia_block_events",
-      "description": "This table provides a comprehensive overview of every action and occurrence within the Cosmos blockchain ecosystem. It includes detailed information about each block's transactions, enabling the analysis of the blockchain's behavior and evolution over time.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "Unique identifier of a block in the blockchain, incremented with each new block",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when a block was added to the blockchain, in UTC time",
           "type": "TIMESTAMP"
         },
         {
           "name": "event_index",
-          "description": "Sequential order of events within a block, used for data correlation and linkage",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "Type of event being reported, defining the nature of the blockchain occurrence",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
-          "description": "Collection of relevant data associated with a particular event, including key-value pairs",
           "type": "JSON"
         },
         {
           "name": "source",
-          "description": "Identifier of the blockchain network or application origin of the event data",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the event data was imported into the dataset, in UTC time",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
-          "description": "Current or previous schema version of the data, documented for version control",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "celestia_blocks",
-      "description": "Cosmos Blocks Table: This table provides information about blocks mined in the Cosmos ecosystem. It contains details such as block height and timestamp, validators, and other key metrics.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "Sequential block identifier in the blockchain ledger",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp of the block's creation or blocktime",
           "type": "TIMESTAMP"
         },
         {
           "name": "chain_id",
-          "description": "Unique identifier for the blockchain network or chain",
           "type": "STRING"
         },
         {
           "name": "proposer_address",
-          "description": "Address of the validator proposing the block",
           "type": "STRING"
         },
         {
           "name": "validators_hash",
-          "description": "Hash of the validator set and their associated data",
           "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when the block data was ingested",
           "type": "TIMESTAMP"
         },
         {
           "name": "messages_bytes",
-          "description": "Size of messages included in the block in bytes",
           "type": "INTEGER"
         },
         {
           "name": "tx_count",
-          "description": "Number of transactions included in the block",
           "type": "INTEGER"
+        },
+        {
+          "name": "signatures",
+          "type": "JSON"
         }
       ]
     },
     {
       "name": "celestia_message_events",
-      "description": "This table contains event data extracted from Cosmos blockchain transactions. It provides a detailed view of the events occurring within the Cosmos ecosystem.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "The total number of blocks processed in the Cosmos blockchain network",
           "type": "INTEGER"
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when a block was created and added to the blockchain",
           "type": "TIMESTAMP"
         },
         {
           "name": "tx_hash",
-          "description": "Hash unique identifier for a transaction on the blockchain",
           "type": "STRING"
         },
         {
           "name": "tx_index",
-          "description": "Transaction sequence number within a block on the blockchain",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
-          "description": "Message sequence number in a transaction, multiple transactions supported",
           "type": "INTEGER"
         },
         {
           "name": "event_index",
-          "description": "Event sequence number within a message on the blockchain",
           "type": "INTEGER"
         },
         {
           "name": "event_type",
-          "description": "Type of event that occurred, e.g., transaction, governance, IBC, staking",
           "type": "STRING"
         },
         {
           "name": "event_attributes",
-          "description": "Attributes associated with a specific event on the blockchain",
           "type": "JSON"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when data was ingested into the database",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
-          "description": "Identifier of the data schema version for the ingestion",
           "type": "INTEGER"
         }
       ]
     },
     {
       "name": "celestia_transactions",
-      "description": "This table contains transaction information from the Cosmos ecosystem, including their status, fees, and associated block information. It provides a comprehensive view of interactions within the blockchain.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "Unique identifier for each blockchain block",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "Distinct identifier for each Cosmos blockchain network",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "Unique identifier for each blockchain transaction",
           "type": "STRING"
         },
         {
           "name": "tx_info",
-          "description": "Forensic data and parameters of a blockchain transaction",
           "type": "STRING"
         },
         {
           "name": "tx_log_message",
-          "description": "Log information generated during transaction processing",
           "type": "STRING"
         },
         {
           "name": "memo",
-          "description": "Optional human-readable comment accompanying transactions or transfers",
           "type": "STRING"
         },
         {
           "name": "fee",
-          "description": "Transaction fee paid in native blockchain token to validators",
           "type": "STRING"
         },
         {
           "name": "tx_code",
-          "description": "EVM-style opcode outcomes or contract execution errors encountered",
           "type": "INTEGER"
         },
         {
           "name": "tx_index",
-          "description": "Sequential index of transactions within a block",
           "type": "INTEGER"
         },
         {
           "name": "gas_used",
-          "description": "Amount of gas consumed during a transaction execution",
           "type": "INTEGER"
         },
         {
           "name": "gas_wanted",
-          "description": "Initially specified gas limit used in transaction execution",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp of when transaction data was ingested",
           "type": "TIMESTAMP"
         },
         {
           "name": "schema_version",
-          "description": "Version of the blockchain data schema and structure",
           "type": "INTEGER"
         },
         {
           "name": "fee_coins",
-          "description": "Native blockchain tokens used to pay transaction fees",
           "type": "STRING"
         },
         {
           "name": "fee_granter",
-          "description": "Account authorizing fee payments as part of the transaction",
           "type": "STRING"
         },
         {
           "name": "fee_payer",
-          "description": "Account responsible for transaction fee payments",
           "type": "STRING"
         },
         {
           "name": "gas_limit",
-          "description": "Maximum amount of gas gas allocated for transaction execution",
           "type": "INTEGER"
         },
         {
           "name": "single_sign_mode",
-          "description": "Boolean flag indicating single-signature transaction type",
           "type": "INTEGER"
         },
         {
           "name": "multi_sign_json",
-          "description": "JSON-encoded multi-signature authorizer information",
           "type": "STRING"
         },
         {
           "name": "timeout_height",
-          "description": "Block height at which transaction expires or is considered invalid",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "celestia_tx_messages",
-      "description": "Cosmos Blockchain Transaction Messages: This table contains raw data from transaction messages on various Cosmos chains. It provides a detailed view of the messages exchanged between validators in the Cosmos ecosystem.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "block_height",
-          "description": "Height of the blockchain block in which transaction occurred",
           "type": "INTEGER"
         },
         {
           "name": "chain_id",
-          "description": "Unique identifier of the blockchain network (e.g. Cosmos Hub)",
           "type": "STRING"
         },
         {
           "name": "tx_id",
-          "description": "Global identifier for the transaction within the blockchain network",
           "type": "STRING"
         },
         {
           "name": "tx_index",
-          "description": "Sequence identifier for transactions within a block",
           "type": "INTEGER"
         },
         {
           "name": "message_index",
-          "description": "Sequence identifier for messages within a transaction",
           "type": "STRING"
         },
         {
           "name": "message_type",
-          "description": "Type of message (e.g. ibc-transfer, governance-vote, etc.)",
           "type": "STRING"
         },
         {
           "name": "message",
-          "description": "Payload data for the message in JSON format",
           "type": "JSON"
         },
         {
           "name": "schema_version",
-          "description": "Version of the blockchain data schema for this message",
           "type": "INTEGER"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Timestamp when transaction data was ingested by the source",
           "type": "TIMESTAMP"
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp of the blockchain block in which transaction occurred",
           "type": "STRING"
         }
       ]
     },
     {
       "name": "celestia_validators",
-      "description": "Active Cosmos validators, a crucial component of the Cosmos Network, store and validate blocks ensuring the integrity and security of the chain. Their details are vital for users to choose a validator that suits their needs.",
+      "description": "",
       "tags": [
         "raw_table"
       ],
       "columns": [
         {
           "name": "operator_address",
-          "description": "On-chain identifier of the validator operator",
           "type": "STRING"
         },
         {
           "name": "account_address",
-          "description": "Cryptographic address associated with the validator account",
           "type": "STRING"
         },
         {
           "name": "consensus_pubkey",
-          "description": "Validator's public key for consensus protocol participation",
           "type": "STRING"
         },
         {
           "name": "jailed",
-          "description": "Status indicating whether validator is currently.online",
           "type": "BOOLEAN"
         },
         {
           "name": "status",
-          "description": "Validator's active.status within the network",
           "type": "STRING"
         },
         {
           "name": "tokens",
-          "description": "Number of coins delegated to this validator",
           "type": "STRING"
         },
         {
           "name": "moniker",
-          "description": "Username chosen by the validator operator",
           "type": "STRING"
         },
         {
           "name": "identity",
-          "description": "Validator's unique developer.identity account",
           "type": "STRING"
         },
         {
           "name": "website",
-          "description": "Validator's official website link",
           "type": "STRING"
         },
         {
           "name": "security_contact",
-          "description": "Point of contact for security-related issues",
           "type": "STRING"
         },
         {
           "name": "details",
-          "description": "Additional descriptive information for the validator",
           "type": "STRING"
         },
         {
           "name": "unbonding_height",
-          "description": "Block.height triggering a.payout window for validator",
           "type": "INTEGER"
         },
         {
           "name": "unbonding_time",
-          "description": "Unix.timestamp marking the start of unbonding period",
           "type": "DATETIME"
         },
         {
           "name": "commission_rate",
-          "description": "Percentage of delegators' contributions taken as commission",
           "type": "FLOAT"
         },
         {
           "name": "commission_max_rate",
-          "description": "Maximum allowed commission rate for validator",
           "type": "FLOAT"
         },
         {
           "name": "commission_max_change_rate",
-          "description": "Allowed change rate in commission percentage",
           "type": "FLOAT"
         },
         {
           "name": "commission_update_time",
-          "description": "Timestamp for the last commission update",
           "type": "DATETIME"
         },
         {
           "name": "min_self_delegation",
-          "description": "Minimum self-delegated amount by validator",
           "type": "BIGNUMERIC"
         },
         {
           "name": "snapshot_height",
-          "description": "Block.height for last.governance snapshot",
           "type": "INTEGER"
         },
         {
           "name": "snapshot_time",
-          "description": "Unix.timestamp marking the last governance snapshot",
           "type": "DATETIME"
         },
         {
           "name": "ingestion_timestamp",
-          "description": "Time stamp indicating data ingestion into database",
           "type": "TIMESTAMP"
+        },
+        {
+          "name": "consensus_base64_pubkey",
+          "type": "STRING"
+        },
+        {
+          "name": "consensus_address",
+          "type": "STRING"
         }
       ]
     }
