@@ -25,6 +25,873 @@
     "parameters": {}
   },
   "paths": {
+    "/activity/retention_rate": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getActivityRetentionRate",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "new_users": {
+                        "type": "number"
+                      },
+                      "week1": {
+                        "type": "number"
+                      },
+                      "week2": {
+                        "type": "number"
+                      },
+                      "week3": {
+                        "type": "number"
+                      },
+                      "week4": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "new_users",
+                      "week1",
+                      "week2",
+                      "week3",
+                      "week4"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/activity/user_distribution_by_activity": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getActivityUserDistributionByActivity",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "hour",
+                "day",
+                "week"
+              ],
+              "default": "hour"
+            },
+            "required": false,
+            "name": "time_resolution",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "new_users": {
+                        "type": "number"
+                      },
+                      "active_users": {
+                        "type": "number"
+                      },
+                      "inactive_users": {
+                        "type": "number"
+                      },
+                      "total_users": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "new_users",
+                      "active_users",
+                      "inactive_users",
+                      "total_users"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/activity/user_distribution_by_deposits": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getActivityUserDistributionByDeposits",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "hour",
+                "day",
+                "week",
+                "month"
+              ],
+              "default": "hour"
+            },
+            "required": false,
+            "name": "time_resolution",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "small_depositors": {
+                        "type": "number"
+                      },
+                      "medium_depositors": {
+                        "type": "number"
+                      },
+                      "large_depositors": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "small_depositors",
+                      "medium_depositors",
+                      "large_depositors"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/activity/user_distribution_by_trades": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getActivityUserDistributionByTrades",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "hour",
+                "day",
+                "week",
+                "month"
+              ],
+              "default": "hour"
+            },
+            "required": false,
+            "name": "time_resolution",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "at_least_100": {
+                        "type": "number"
+                      },
+                      "at_least_10": {
+                        "type": "number"
+                      },
+                      "at_least_1": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "at_least_100",
+                      "at_least_10",
+                      "at_least_1"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/business/expenses_share_by_destination": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getBusinessExpensesShareByDestination",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "total"
+            },
+            "required": false,
+            "name": "destinations",
+            "in": "query"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/business/pnl_summary": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getBusinessPnlSummary",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/governance/community_pool_usage": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getGovernanceCommunityPoolUsage",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "block_height": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "block_timestamp": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "proposal_id": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "token_amount": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "token_symbol": {
+                        "type": "string",
+                        "nullable": true
+                      },
+                      "receivers_count": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "vote_yes": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "vote_no": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "vote_veto": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "vote_abstain": {
+                        "type": "number",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "block_height",
+                      "block_timestamp",
+                      "proposal_id",
+                      "token_amount",
+                      "token_symbol",
+                      "receivers_count",
+                      "vote_yes",
+                      "vote_no",
+                      "vote_veto",
+                      "vote_abstain"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/liquidation/flow_by_market": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getLiquidationFlowByMarket",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "total"
+            },
+            "required": false,
+            "name": "market",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "hour",
+                "day",
+                "week",
+                "month"
+              ],
+              "default": "hour"
+            },
+            "required": false,
+            "name": "granularity",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "total_long_liquidation_volume": {
+                        "type": "number"
+                      },
+                      "top_long_liquidation": {
+                        "type": "number"
+                      },
+                      "top_long_liquidation_tx_id": {
+                        "type": "string"
+                      },
+                      "total_short_liquidation_volume": {
+                        "type": "number"
+                      },
+                      "top_short_liquidation": {
+                        "type": "number"
+                      },
+                      "top_short_liquidation_tx_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "total_long_liquidation_volume",
+                      "top_long_liquidation",
+                      "top_long_liquidation_tx_id",
+                      "total_short_liquidation_volume",
+                      "top_short_liquidation",
+                      "top_short_liquidation_tx_id"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/liquidation/list": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getLiquidationList",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "tx_hash": {
+                        "type": "string"
+                      },
+                      "account": {
+                        "type": "string"
+                      },
+                      "market": {
+                        "type": "string"
+                      },
+                      "position": {
+                        "type": "string"
+                      },
+                      "liquidated_value": {
+                        "type": "number"
+                      },
+                      "liquidated_value_usdc": {
+                        "type": "number"
+                      },
+                      "dydx_insurance_delta": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "tx_hash",
+                      "account",
+                      "market",
+                      "position",
+                      "liquidated_value",
+                      "liquidated_value_usdc",
+                      "dydx_insurance_delta"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/aux/market_listings": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getAuxMarketListings",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "key": {
+                        "type": "string"
+                      },
+                      "query_key": {
+                        "type": "number"
+                      },
+                      "name": {
+                        "type": "string"
+                      },
+                      "daily_volume": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "key",
+                      "query_key",
+                      "name",
+                      "daily_volume"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trading/funding_rate": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getTradingFundingRate",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "hour",
+                "day",
+                "week",
+                "month"
+              ],
+              "default": "day"
+            },
+            "required": false,
+            "name": "granularity",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "0"
+            },
+            "required": false,
+            "name": "market",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "funding_rate": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "funding_rate"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/trading/open_interest": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getTradingOpenInterest",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "total"
+            },
+            "required": false,
+            "name": "market",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "hour",
+                "day",
+                "week",
+                "month"
+              ],
+              "default": "hour"
+            },
+            "required": false,
+            "name": "granularity",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "open_interest": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "open_interest"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/trading/traders_ranking": {
       "get": {
         "servers": [
@@ -42,7 +909,8 @@
                 "total",
                 "maker",
                 "taker"
-              ]
+              ],
+              "default": "total"
             },
             "required": false,
             "name": "volumeType",
@@ -91,9 +959,80 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Traders Ranking"
+        }
+      }
+    },
+    "/trading/trades_count": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getTradingTradesCount",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "hour",
+                "day",
+                "week",
+                "month"
+              ],
+              "default": "hour"
+            },
+            "required": false,
+            "name": "granularity",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "total_trades": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "total_trades"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     },
     "/trading/trading_fees": {
@@ -167,19 +1106,67 @@
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Trading Fees"
+        }
       }
     },
-    "/trading/liquidation/flow_by_market": {
+    "/trading/trading_share_by_pool": {
       "get": {
         "servers": [
           {
             "url": "https://dydx.numia.xyz"
           }
         ],
-        "operationId": "getLiquidationFlowByMarket",
+        "operationId": "getTradingShareByPool",
+        "tags": [],
+        "responses": {}
+      }
+    },
+    "/aux/validator_listings": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getAuxValidatorListings",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "validator": {
+                        "type": "string"
+                      },
+                      "token_amount": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "validator",
+                      "token_amount"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/staking/share_by_validator": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getStakingShareByValidator",
         "tags": [],
         "parameters": [
           {
@@ -202,24 +1189,56 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "total"
             },
             "required": false,
-            "name": "market",
+            "name": "validators",
+            "in": "query"
+          }
+        ],
+        "responses": {}
+      }
+    },
+    "/tokenomics/wallets/module_accounts": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getTokenomicsWalletsModuleAccounts",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
             "in": "query"
           },
           {
             "schema": {
               "type": "string",
               "enum": [
-                "hour",
-                "day",
-                "week",
-                "month"
-              ]
+                "dydx",
+                "dollar"
+              ],
+              "default": "dydx"
             },
             "required": false,
-            "name": "granularity",
+            "name": "unit",
             "in": "query"
           }
         ],
@@ -234,45 +1253,34 @@
                     "type": "object",
                     "properties": {
                       "labels": {
-                        "type": "string",
-                        "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-                      },
-                      "total_long_liquidation_volume": {
-                        "type": "number"
-                      },
-                      "top_long_liquidation": {
-                        "type": "number"
-                      },
-                      "top_long_liquidation_tx_id": {
                         "type": "string"
                       },
-                      "total_short_liquidation_volume": {
+                      "community_treasury": {
                         "type": "number"
                       },
-                      "top_short_liquidation": {
+                      "community_treasury_vester": {
                         "type": "number"
                       },
-                      "top_short_liquidation_tx_id": {
-                        "type": "string"
+                      "rewards_treasury": {
+                        "type": "number"
+                      },
+                      "rewards_treasury_vester": {
+                        "type": "number"
                       }
                     },
                     "required": [
                       "labels",
-                      "total_long_liquidation_volume",
-                      "top_long_liquidation",
-                      "top_long_liquidation_tx_id",
-                      "total_short_liquidation_volume",
-                      "top_short_liquidation",
-                      "top_short_liquidation_tx_id"
+                      "community_treasury",
+                      "community_treasury_vester",
+                      "rewards_treasury",
+                      "rewards_treasury_vester"
                     ]
                   }
                 }
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Liquidation Flow By Market"
+        }
       }
     },
     "/tokenomics/wallets/treasury_subdao": {
@@ -305,38 +1313,25 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "default": "total"
             },
             "required": false,
             "name": "balance_categories",
             "in": "query"
           }
         ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "additionalProperties": true
-                }
-              }
-            }
-          }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Tokenomics Wallets Treasury Subdao"
+        "responses": {}
       }
     },
-    "/business/expenses_share_by_destination": {
+    "/total_rewards": {
       "get": {
         "servers": [
           {
             "url": "https://dydx.numia.xyz"
           }
         ],
-        "operationId": "getBusinessExpensesShareByDestination",
+        "operationId": "getTotalRewards",
         "tags": [],
         "parameters": [
           {
@@ -359,38 +1354,132 @@
           },
           {
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": [
+                "token",
+                "dollar",
+                "dydx"
+              ],
+              "default": "dydx"
             },
             "required": false,
-            "name": "destinations",
+            "name": "unit",
             "in": "query"
           }
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "Status: 200",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "total_rewards": {
+                        "type": "number"
+                      },
+                      "increase": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "total_rewards",
+                      "increase"
+                    ]
+                  }
                 }
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Business Expenses Share By Destination"
+        }
       }
     },
-    "/business/pnl_summary": {
+    "/users_period_rewards": {
       "get": {
         "servers": [
           {
             "url": "https://dydx.numia.xyz"
           }
         ],
-        "operationId": "getBusinessPnlSummary",
+        "operationId": "getUsersPeriodRewards",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "token",
+                "dollar",
+                "dydx"
+              ],
+              "default": "dydx"
+            },
+            "required": false,
+            "name": "unit",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "address": {
+                        "type": "string"
+                      },
+                      "rewards": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "address",
+                      "rewards"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/apr_split": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getAprSplit",
         "tags": [],
         "parameters": [
           {
@@ -414,19 +1503,51 @@
         ],
         "responses": {
           "200": {
-            "description": "Success",
+            "description": "Status: 200",
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "object",
-                  "additionalProperties": true
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "1d_trailing_avg": {
+                        "type": "number"
+                      },
+                      "7d_trailing_avg": {
+                        "type": "number"
+                      },
+                      "30d_trailing_avg": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "1d_trailing_avg",
+                      "7d_trailing_avg",
+                      "30d_trailing_avg"
+                    ]
+                  }
                 }
               }
             }
           }
-        },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-        "summary": "Get Business Pnl Summary"
+        }
+      }
+    },
+    "/trading/trading_volume_overview": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getTradingVolumeOverview",
+        "tags": [],
+        "responses": {}
       }
     }
   }
