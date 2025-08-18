@@ -135,7 +135,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Volume-per-token"
       }
     },
     "/stablecoins/issuing/over-time": {
@@ -256,7 +258,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Issuing-over-time"
       }
     },
     "/stablecoins/active-senders/over-time": {
@@ -372,7 +376,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Active-senders-over-time"
       }
     },
     "/stablecoins/volume-by-category/over-time": {
@@ -480,7 +486,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Volume-by-category-over-time"
       }
     },
     "/stablecoins/whale-alerts": {
@@ -559,7 +567,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Whale-alerts"
       }
     },
     "/stablecoins/bridge/total-inflow": {
@@ -676,7 +686,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Bridge-inflow"
       }
     },
     "/stablecoins/bridge/total-outflow": {
@@ -793,7 +805,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Bridge-outflow"
       }
     },
     "/stablecoins/bridge/total-netflow": {
@@ -910,7 +924,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Bridge-netflow"
       }
     },
     "/stablecoins/bridge/cross-chain-volume": {
@@ -1031,7 +1047,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Bridge-cross-chain-volume"
       }
     },
     "/stablecoins/bridge/netflow-over-time": {
@@ -1139,7 +1157,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Bridge-netflow-over-time"
       }
     },
     "/stablecoins/category/total-inflow": {
@@ -1230,7 +1262,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Category-total-inflow"
       }
     },
     "/stablecoins/category/total-outflow": {
@@ -1321,7 +1367,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Category-total-outflow"
       }
     },
     "/stablecoins/category/total-netflow": {
@@ -1412,7 +1472,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Category-total-netflow"
       }
     }
   }

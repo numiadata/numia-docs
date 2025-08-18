@@ -114,7 +114,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Abstract Account Authenticators"
       }
     },
     "/v3/authenticators/{authenticator}/smartAccounts": {
@@ -183,7 +185,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Abstract Accounts By Authenticator"
       }
     },
     "/v3/authenticators/{authenticator}/smartAccounts/details": {
@@ -270,7 +274,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Abstract Accounts Details By Authenticator"
       }
     },
     "/v3/address/{address}/permissions": {
@@ -396,7 +402,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Smart Account Permissions"
       }
     }
   }

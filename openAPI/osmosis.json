@@ -143,7 +143,8 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>"
       }
     },
     "/cl/v2/apr/rewards/{pool}": {
@@ -208,7 +209,8 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>"
       }
     },
     "/pairs/v1/historical/{pool_id}/chart": {
@@ -316,7 +318,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={25}/>",
+        "summary": "Get Token Pair Historical Chart"
       }
     },
     "/tokens/v2/historical/{asset}/chart": {
@@ -433,7 +437,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={25}/>",
+        "summary": "Get Token Historical Chart"
       }
     },
     "/tokens/v2/real-time/{asset}/price": {
@@ -486,7 +492,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Token Real Time Price"
       }
     },
     "/tokens/v2/{asset}": {
@@ -616,7 +624,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Token Data"
       }
     },
     "/fees/v1/pools": {
@@ -695,7 +705,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Pools Fees"
       }
     },
     "/stream/pool/v1/all": {
@@ -1143,7 +1155,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Pool Stream Data"
       }
     },
     "/lp/v1/rewards/estimation/{bech32Address}": {
@@ -1222,7 +1236,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Rewards Estimation For Bech32Address"
       }
     },
     "/rewards/token/{address}/{denom}": {
@@ -1293,7 +1309,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Rewards Estimation For Address And Denom"
       }
     },
     "/rewards/token/{address}": {
@@ -1344,7 +1362,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Rewards Estimation For Address"
       }
     },
     "/cl/v1/position/last/id/{positionId}": {
@@ -1525,7 +1545,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Position Info"
       }
     },
     "/ibc/v1/source/{source}/destination/{destination}": {
@@ -1602,7 +1624,8 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>"
       }
     },
     "/pools/liquidity/{pool_id}/over_time": {
@@ -1657,7 +1680,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Pools Liquidity Over Time"
       }
     },
     "/pools/depth/{pool_id}/current": {
@@ -1759,7 +1784,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Pools Depth Current"
       }
     },
     "/pools/depth/{pool_id}/over_time": {
@@ -1890,7 +1917,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Pools Depth Over Time"
       }
     },
     "/apr": {
@@ -1974,7 +2003,8 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>"
       }
     },
     "/pools_apr": {
@@ -1994,7 +2024,20 @@
         "attributes": {
           "x-sidebar": "pools"
         },
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>"
       }
     },
     "/pools_apr_range": {
@@ -2014,7 +2057,20 @@
         "attributes": {
           "x-sidebar": "pools"
         },
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>"
       }
     },
     "/cl/v1/apr/rewards/{pool}": {
@@ -2079,7 +2135,8 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>"
       }
     },
     "/supply/v1/metrics": {
@@ -2113,7 +2170,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Supply Metrics"
       }
     },
     "/users/portfolio/over_time": {
@@ -2184,7 +2255,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Portfolio Over Time"
       }
     },
     "/users/portfolio/current": {
@@ -2232,7 +2305,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Portfolio Current"
       }
     },
     "/users/limit_orders/history/closed": {
@@ -2336,135 +2411,9 @@
               }
             }
           }
-        }
-      }
-    },
-    "/pairs/v1/summary": {
-      "get": {
-        "servers": [
-          {
-            "url": "https://osmosis.numia.xyz"
-          },
-          {
-            "url": "https://osmosis-testnet.numia.xyz"
-          }
-        ],
-        "operationId": "getPairsSummaryV1",
-        "deprecated": true,
-        "description": "Only for CoinGecko integration",
-        "tags": [],
-        "private": true,
-        "sidebar": "pools",
-        "attributes": {
-          "x-private": true,
-          "x-sidebar": "pools"
         },
-        "responses": {
-          "200": {
-            "description": "Status: 200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "data": {
-                      "type": "array",
-                      "items": {
-                        "type": "object",
-                        "properties": {
-                          "pool_address": {
-                            "type": "string",
-                            "description": "Pool address"
-                          },
-                          "pool_id": {
-                            "type": "string",
-                            "description": "Pool id"
-                          },
-                          "base_name": {
-                            "type": "string",
-                            "description": "Name of the base asset"
-                          },
-                          "base_symbol": {
-                            "type": "string",
-                            "description": "Symbol of the base asset"
-                          },
-                          "base_address": {
-                            "type": "string",
-                            "description": "Denom of the base asset"
-                          },
-                          "quote_name": {
-                            "type": "string",
-                            "description": "Name of the quote asset"
-                          },
-                          "quote_symbol": {
-                            "type": "string",
-                            "description": "Symbol of the quote asset"
-                          },
-                          "quote_address": {
-                            "type": "string",
-                            "description": "Denom of the quote asset"
-                          },
-                          "price": {
-                            "type": "number",
-                            "description": "Price of the pair inside the pool"
-                          },
-                          "base_volume_24h": {
-                            "type": "number",
-                            "description": "Total amount of base asset swapped in the pool in the last 24 hours"
-                          },
-                          "quote_volume_24h": {
-                            "type": "number",
-                            "description": "Total amount of quote asset swapped in the pool in the last 24 hours"
-                          },
-                          "volume_24h": {
-                            "type": "number",
-                            "description": "Total amount of USD swapped in the pool in the last 24 hours"
-                          },
-                          "volume_7d": {
-                            "type": "number",
-                            "description": "Total amount of USD swapped in the pool in the last 7 days"
-                          },
-                          "liquidity": {
-                            "type": "number",
-                            "description": "Total value locked in USD in the pool"
-                          },
-                          "liquidity_atom": {
-                            "type": "number",
-                            "description": "Total value locked in ATOM in the pool"
-                          }
-                        },
-                        "required": [
-                          "pool_address",
-                          "pool_id",
-                          "base_name",
-                          "base_symbol",
-                          "base_address",
-                          "quote_name",
-                          "quote_symbol",
-                          "quote_address",
-                          "price",
-                          "base_volume_24h",
-                          "quote_volume_24h",
-                          "volume_24h",
-                          "volume_7d",
-                          "liquidity",
-                          "liquidity_atom"
-                        ]
-                      }
-                    },
-                    "last_update_at": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "data",
-                    "last_update_at"
-                  ]
-                }
-              }
-            }
-          }
-        }
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Closed Limit Orders History"
       }
     },
     "/pairs/v2/summary": {
@@ -2588,7 +2537,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Pairs Summary V2"
       }
     },
     "/tokenomics/chain_revenue": {
@@ -2654,7 +2605,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Chain Revenue"
       }
     },
     "/trading_metrics": {
@@ -2733,155 +2686,9 @@
               }
             }
           }
-        }
-      }
-    },
-    "/external/defillama/chain_fees_and_revenue": {
-      "get": {
-        "operationId": "getDefillamaOsmosisChainFeesAndRevenue",
-        "tags": [],
-        "private": true,
-        "sidebar": "chain",
-        "servers": [
-          {
-            "url": "https://osmosis.numia.xyz"
-          }
-        ],
-        "attributes": {
-          "x-private": true,
-          "x-sidebar": "chain"
         },
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-            },
-            "required": false,
-            "name": "start_date",
-            "in": "query"
-          },
-          {
-            "schema": {
-              "type": "string",
-              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
-            },
-            "required": false,
-            "name": "end_date",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Status: 200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "timestamp": {
-                        "type": "string",
-                        "nullable": true
-                      },
-                      "dailyFees": {
-                        "type": "number",
-                        "nullable": true
-                      },
-                      "totalFees": {
-                        "type": "number",
-                        "nullable": true
-                      },
-                      "dailyRevenue": {
-                        "type": "number",
-                        "nullable": true
-                      },
-                      "totalRevenue": {
-                        "type": "number",
-                        "nullable": true
-                      }
-                    },
-                    "required": [
-                      "timestamp",
-                      "dailyFees",
-                      "totalFees",
-                      "dailyRevenue",
-                      "totalRevenue"
-                    ]
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
-    },
-    "/external/coingecko/native_factory_assets_supply": {
-      "get": {
-        "operationId": "getCoingeckoOsmosisNativeFactoryAssetsSupply",
-        "tags": [],
-        "private": true,
-        "sidebar": "tokens",
-        "servers": [
-          {
-            "url": "https://osmosis.numia.xyz"
-          }
-        ],
-        "attributes": {
-          "x-private": true,
-          "x-sidebar": "tokens"
-        },
-        "parameters": [
-          {
-            "schema": {
-              "type": "string"
-            },
-            "required": true,
-            "name": "asset",
-            "in": "query"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Status: 200",
-            "content": {
-              "application/json": {
-                "schema": {
-                  "type": "object",
-                  "properties": {
-                    "lastUpdated": {
-                      "type": "string"
-                    },
-                    "denom": {
-                      "type": "string"
-                    },
-                    "symbol": {
-                      "type": "string"
-                    },
-                    "circulatingSupply": {
-                      "type": "number"
-                    },
-                    "totalSupply": {
-                      "type": "number"
-                    },
-                    "maxSupply": {
-                      "type": "number"
-                    }
-                  },
-                  "required": [
-                    "lastUpdated",
-                    "denom",
-                    "symbol",
-                    "circulatingSupply",
-                    "totalSupply",
-                    "maxSupply"
-                  ]
-                }
-              }
-            }
-          }
-        }
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Trading Metrics"
       }
     },
     "/earn/strategies": {
@@ -3039,7 +2846,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Earn Strategies"
       }
     },
     "/earn/strategies/{strategy}/balance/{address}": {
@@ -3147,7 +2956,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Balances For Earn Strategies"
       }
     },
     "/earn/strategies/{strategy}/apr": {
@@ -3195,7 +3006,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Apr For Earn Strategies"
       }
     },
     "/earn/strategies/{strategy}/tvl": {
@@ -3268,7 +3081,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Tvl For Earn Strategies"
       }
     }
   }

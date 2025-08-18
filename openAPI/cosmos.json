@@ -63,7 +63,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Aez Revenue Share By Consumer"
       }
     },
     "/staking/liquid/share_by_provider": {
@@ -104,7 +118,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Liquid Staking Share By Provider"
       }
     },
     "/staking/liquid/flow_by_provider": {
@@ -200,7 +228,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Liquid Staking Flow By Provider"
       }
     },
     "/hydro/deployments_overview": {
@@ -365,7 +395,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Hydro Deployments Overview Lenses"
       }
     },
     "/hydro/metrics": {
@@ -481,7 +513,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Hydro Metrics Lenses"
       }
     }
   }

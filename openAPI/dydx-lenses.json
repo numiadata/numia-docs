@@ -96,7 +96,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Activity Retention Rate"
       }
     },
     "/activity/user_distribution_by_activity": {
@@ -180,7 +182,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Activity User Distribution By Activity"
       }
     },
     "/activity/user_distribution_by_deposits": {
@@ -261,7 +265,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Activity User Distribution By Deposits"
       }
     },
     "/activity/user_distribution_by_trades": {
@@ -342,7 +348,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Activity User Distribution By Trades"
       }
     },
     "/business/expenses_share_by_destination": {
@@ -383,7 +391,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Business Expenses Share By Destination"
       }
     },
     "/business/pnl_summary": {
@@ -415,7 +437,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Business Pnl Summary"
       }
     },
     "/governance/community_pool_usage": {
@@ -495,7 +531,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Governance Community Pool Usage"
       }
     },
     "/liquidation/flow_by_market": {
@@ -597,7 +635,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Liquidation Flow By Market"
       }
     },
     "/liquidation/list": {
@@ -679,7 +719,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Liquidation List"
       }
     },
     "/aux/market_listings": {
@@ -725,7 +767,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Aux Market Listings"
       }
     },
     "/trading/funding_rate": {
@@ -807,7 +851,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Trading Funding Rate"
       }
     },
     "/trading/open_interest": {
@@ -889,7 +935,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Trading Open Interest"
       }
     },
     "/trading/traders_ranking": {
@@ -959,7 +1007,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Traders Ranking"
       }
     },
     "/trading/trades_count": {
@@ -1032,7 +1082,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Trading Trades Count"
       }
     },
     "/trading/trading_fees": {
@@ -1106,7 +1158,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Trading Fees"
       }
     },
     "/trading/trading_share_by_pool": {
@@ -1118,7 +1172,21 @@
         ],
         "operationId": "getTradingShareByPool",
         "tags": [],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Trading Share By Pool"
       }
     },
     "/aux/validator_listings": {
@@ -1156,7 +1224,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Aux Validator Listings"
       }
     },
     "/staking/share_by_validator": {
@@ -1197,7 +1267,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Staking Share By Validator"
       }
     },
     "/tokenomics/wallets/module_accounts": {
@@ -1280,7 +1364,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Tokenomics Wallets Module Accounts"
       }
     },
     "/tokenomics/wallets/treasury_subdao": {
@@ -1321,7 +1407,21 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Tokenomics Wallets Treasury Subdao"
       }
     },
     "/total_rewards": {
@@ -1397,7 +1497,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Total Rewards"
       }
     },
     "/users_period_rewards": {
@@ -1469,7 +1571,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Users Period Rewards"
       }
     },
     "/apr_split": {
@@ -1535,7 +1639,9 @@
               }
             }
           }
-        }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Apr Split"
       }
     },
     "/trading/trading_volume_overview": {
@@ -1547,7 +1653,21 @@
         ],
         "operationId": "getTradingVolumeOverview",
         "tags": [],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Trading Volume Overview"
       }
     }
   }

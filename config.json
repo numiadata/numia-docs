@@ -269,7 +269,150 @@
         },
         {
           "categoryName": "Advanced APIs",
-          "pages": []
+          "pages": [
+            {
+              "groupName": "Osmosis",
+              "subpages": [
+                "api/osmosis-overview",
+                {
+                  "groupName": "Pools",
+                  "subpages": [
+                    "reference/osmosis/get-pools-apr-range-v-2",
+                    "reference/osmosis/get-cl-pools-position-apr-v-2",
+                    "reference/osmosis/get-token-pair-historical-chart",
+                    "reference/osmosis/get-pools-fees",
+                    "reference/osmosis/get-pool-stream-data",
+                    "reference/osmosis/get-position-info",
+                    "reference/osmosis/get-pools-liquidity-over-time",
+                    "reference/osmosis/get-pools-depth-current",
+                    "reference/osmosis/get-pools-depth-over-time",
+                    "reference/osmosis/get-pools-apr",
+                    "reference/osmosis/get-pools-apr-range",
+                    "reference/osmosis/get-cl-pools-position-apr",
+                    "reference/osmosis/get-pairs-summary-v-2"
+                  ]
+                },
+                {
+                  "groupName": "Tokens",
+                  "subpages": [
+                    "reference/osmosis/get-token-historical-chart",
+                    "reference/osmosis/get-token-real-time-price",
+                    "reference/osmosis/get-token-data"
+                  ]
+                },
+                {
+                  "groupName": "Users",
+                  "subpages": [
+                    "reference/osmosis/get-rewards-estimation-for-bech-32-address",
+                    "reference/osmosis/get-rewards-estimation-for-address-and-denom",
+                    "reference/osmosis/get-rewards-estimation-for-address",
+                    "reference/osmosis/get-portfolio-over-time",
+                    "reference/osmosis/get-portfolio-current",
+                    "reference/osmosis/get-closed-limit-orders-history"
+                  ]
+                },
+                {
+                  "groupName": "Chain",
+                  "subpages": [
+                    "reference/osmosis/get-i-bc-chain-status",
+                    "reference/osmosis/get-apr",
+                    "reference/osmosis/get-supply-metrics",
+                    "reference/osmosis/get-chain-revenue",
+                    "reference/osmosis/get-trading-metrics"
+                  ]
+                },
+                {
+                  "groupName": "Earn",
+                  "subpages": [
+                    "reference/osmosis/get-earn-strategies",
+                    "reference/osmosis/get-balances-for-earn-strategies",
+                    "reference/osmosis/get-apr-for-earn-strategies",
+                    "reference/osmosis/get-tvl-for-earn-strategies"
+                  ]
+                }
+              ]
+            },
+            {
+              "groupName": "Osmosis-lenses",
+              "subpages": [
+                "reference/osmosis-lenses/get-aux-pool-listings",
+                "reference/osmosis-lenses/get-activity-active-whales",
+                "reference/osmosis-lenses/get-kpi-cumulative-trading-volume",
+                "reference/osmosis-lenses/get-kpi-cumulative-protocol-revenue",
+                "reference/osmosis-lenses/get-kpi-cumulative-supply-side-revenue",
+                "reference/osmosis-lenses/get-liquidity-flow",
+                "reference/osmosis-lenses/get-tokenomics-assets-in-chain",
+                "reference/osmosis-lenses/get-top-assets-by-volume-date-range",
+                "reference/osmosis-lenses/get-top-assets-by-volume-last-period-hours"
+              ]
+            },
+            {
+              "groupName": "Cosmos",
+              "subpages": [
+                "reference/cosmos/get-aez-revenue-share-by-consumer",
+                "reference/cosmos/get-liquid-staking-share-by-provider",
+                "reference/cosmos/get-liquid-staking-flow-by-provider",
+                "reference/cosmos/get-hydro-deployments-overview-lenses",
+                "reference/cosmos/get-hydro-metrics-lenses"
+              ]
+            },
+            {
+              "groupName": "Dydx-lenses",
+              "subpages": [
+                "reference/dydx-lenses/get-activity-retention-rate",
+                "reference/dydx-lenses/get-activity-user-distribution-by-activity",
+                "reference/dydx-lenses/get-activity-user-distribution-by-deposits",
+                "reference/dydx-lenses/get-activity-user-distribution-by-trades",
+                "reference/dydx-lenses/get-business-expenses-share-by-destination",
+                "reference/dydx-lenses/get-business-pnl-summary",
+                "reference/dydx-lenses/get-governance-community-pool-usage",
+                "reference/dydx-lenses/get-liquidation-flow-by-market",
+                "reference/dydx-lenses/get-liquidation-list",
+                "reference/dydx-lenses/get-aux-market-listings",
+                "reference/dydx-lenses/get-trading-funding-rate",
+                "reference/dydx-lenses/get-trading-open-interest",
+                "reference/dydx-lenses/get-traders-ranking",
+                "reference/dydx-lenses/get-trading-trades-count",
+                "reference/dydx-lenses/get-trading-fees",
+                "reference/dydx-lenses/get-trading-share-by-pool",
+                "reference/dydx-lenses/get-aux-validator-listings",
+                "reference/dydx-lenses/get-staking-share-by-validator",
+                "reference/dydx-lenses/get-tokenomics-wallets-module-accounts",
+                "reference/dydx-lenses/get-tokenomics-wallets-treasury-subdao",
+                "reference/dydx-lenses/get-total-rewards",
+                "reference/dydx-lenses/get-users-period-rewards",
+                "reference/dydx-lenses/get-apr-split",
+                "reference/dydx-lenses/get-trading-volume-overview"
+              ]
+            },
+            {
+              "groupName": "Xion",
+              "subpages": [
+                "reference/xion/get-abstract-account-authenticators",
+                "reference/xion/get-abstract-accounts-by-authenticator",
+                "reference/xion/get-abstract-accounts-details-by-authenticator",
+                "reference/xion/get-smart-account-permissions"
+              ]
+            },
+            {
+              "groupName": "Stablecoins",
+              "subpages": [
+                "reference/stablecoins/volume-per-token",
+                "reference/stablecoins/issuing-over-time",
+                "reference/stablecoins/active-senders-over-time",
+                "reference/stablecoins/volume-by-category-over-time",
+                "reference/stablecoins/whale-alerts",
+                "reference/stablecoins/bridge-inflow",
+                "reference/stablecoins/bridge-outflow",
+                "reference/stablecoins/bridge-netflow",
+                "reference/stablecoins/bridge-cross-chain-volume",
+                "reference/stablecoins/bridge-netflow-over-time",
+                "reference/stablecoins/category-total-inflow",
+                "reference/stablecoins/category-total-outflow",
+                "reference/stablecoins/category-total-netflow"
+              ]
+            }
+          ]
         }
       ]
     }
