@@ -100,7 +100,7 @@
     "/v2/txs/{address}": {
       "get": {
         "operationId": "getTransactionsByAddress",
-        "description": "get transactions by address",
+        "description": "get transactions by address\n\nimport PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "servers": [
           {
             "url": "https://cosmoshub.numia.xyz"
@@ -240,7 +240,20 @@
             "in": "query"
           }
         ],
-        "responses": {}
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "summary": "Get Transactions By Address"
       }
     }
   }
