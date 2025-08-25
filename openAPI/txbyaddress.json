@@ -73,6 +73,9 @@
       "url": "https://initia.numia.xyz"
     },
     {
+      "url": "https://zigchain.numia.xyz"
+    },
+    {
       "url": "https://osmosis-testnet.numia.xyz"
     }
   ],
@@ -84,7 +87,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Numia - Api - Transactions by address",
-    "description": "\n            ### Supported Networks\n            \n- akash (https://akash.numia.xyz)\n- axelar (https://axelar.numia.xyz)\n- celestia (https://celestia.numia.xyz)\n- comdex (https://comdex.numia.xyz)\n- cosmoshub (https://cosmoshub.numia.xyz)\n- cryptoorgchain (https://cryptoorgchain.numia.xyz)\n- dydx (https://dydx.numia.xyz)\n- dymension (https://dymension.numia.xyz)\n- initia (https://initia.numia.xyz)\n- juno (https://juno.numia.xyz)\n- migaloo (https://migaloo.numia.xyz)\n- neutron (https://neutron.numia.xyz)\n- nillion (https://nillion.numia.xyz)\n- noble (https://noble.numia.xyz)\n- nolus (https://nolus.numia.xyz)\n- osmosis (https://osmosis.numia.xyz)\n- osmosis-testnet (https://osmosis-testnet.numia.xyz)\n- persistence (https://persistence.numia.xyz)\n- quicksilver (https://quicksilver.numia.xyz)\n- stargaze (https://stargaze.numia.xyz)\n- stride (https://stride.numia.xyz)\n- terra2 (https://terra2.numia.xyz)\n- umee (https://umee.numia.xyz)\n            "
+    "description": "\n            ### Supported Networks\n            \n- akash (https://akash.numia.xyz)\n- axelar (https://axelar.numia.xyz)\n- celestia (https://celestia.numia.xyz)\n- comdex (https://comdex.numia.xyz)\n- cosmoshub (https://cosmoshub.numia.xyz)\n- cryptoorgchain (https://cryptoorgchain.numia.xyz)\n- dydx (https://dydx.numia.xyz)\n- dymension (https://dymension.numia.xyz)\n- initia (https://initia.numia.xyz)\n- juno (https://juno.numia.xyz)\n- migaloo (https://migaloo.numia.xyz)\n- neutron (https://neutron.numia.xyz)\n- nillion (https://nillion.numia.xyz)\n- noble (https://noble.numia.xyz)\n- nolus (https://nolus.numia.xyz)\n- osmosis (https://osmosis.numia.xyz)\n- osmosis-testnet (https://osmosis-testnet.numia.xyz)\n- persistence (https://persistence.numia.xyz)\n- quicksilver (https://quicksilver.numia.xyz)\n- stargaze (https://stargaze.numia.xyz)\n- stride (https://stride.numia.xyz)\n- terra2 (https://terra2.numia.xyz)\n- umee (https://umee.numia.xyz)\n- zigchain (https://zigchain.numia.xyz)\n            "
   },
   "components": {
     "securitySchemes": {
@@ -170,6 +173,9 @@
           },
           {
             "url": "https://initia.numia.xyz"
+          },
+          {
+            "url": "https://zigchain.numia.xyz"
           },
           {
             "url": "https://osmosis-testnet.numia.xyz"
