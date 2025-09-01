@@ -80,7 +80,8 @@
                 "USDtb",
                 "FRXUSD",
                 "USDf",
-                "USDG"
+                "USDG",
+                "LINK"
               ]
             },
             "required": false,
@@ -195,7 +196,8 @@
                 "USDtb",
                 "FRXUSD",
                 "USDf",
-                "USDG"
+                "USDG",
+                "LINK"
               ]
             },
             "required": false,
@@ -627,7 +629,8 @@
                 "USDtb",
                 "FRXUSD",
                 "USDf",
-                "USDG"
+                "USDG",
+                "LINK"
               ]
             },
             "required": false,
@@ -746,7 +749,8 @@
                 "USDtb",
                 "FRXUSD",
                 "USDf",
-                "USDG"
+                "USDG",
+                "LINK"
               ]
             },
             "required": false,
@@ -865,7 +869,8 @@
                 "USDtb",
                 "FRXUSD",
                 "USDf",
-                "USDG"
+                "USDG",
+                "LINK"
               ]
             },
             "required": false,
@@ -984,7 +989,8 @@
                 "USDtb",
                 "FRXUSD",
                 "USDf",
-                "USDG"
+                "USDG",
+                "LINK"
               ]
             },
             "required": false,
@@ -1107,7 +1113,8 @@
                 "USDtb",
                 "FRXUSD",
                 "USDf",
-                "USDG"
+                "USDG",
+                "LINK"
               ]
             },
             "required": false,
@@ -1229,7 +1236,8 @@
                 "USDtb",
                 "FRXUSD",
                 "USDf",
-                "USDG"
+                "USDG",
+                "LINK"
               ]
             },
             "required": false,
@@ -1334,7 +1342,8 @@
                 "USDtb",
                 "FRXUSD",
                 "USDf",
-                "USDG"
+                "USDG",
+                "LINK"
               ]
             },
             "required": false,
@@ -1439,7 +1448,8 @@
                 "USDtb",
                 "FRXUSD",
                 "USDf",
-                "USDG"
+                "USDG",
+                "LINK"
               ]
             },
             "required": false,
