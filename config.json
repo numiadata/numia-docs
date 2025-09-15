@@ -351,9 +351,7 @@
               "subpages": [
                 "reference/cosmos/get-aez-revenue-share-by-consumer",
                 "reference/cosmos/get-liquid-staking-share-by-provider",
-                "reference/cosmos/get-liquid-staking-flow-by-provider",
-                "reference/cosmos/get-hydro-deployments-overview-lenses",
-                "reference/cosmos/get-hydro-metrics-lenses"
+                "reference/cosmos/get-liquid-staking-flow-by-provider"
               ]
             },
             {
