@@ -286,7 +286,6 @@
                     "reference/osmosis/get-pools-liquidity-over-time",
                     "reference/osmosis/get-pools-depth-current",
                     "reference/osmosis/get-pools-depth-over-time",
-                    "reference/osmosis/get-pools-depth-over-time-daily",
                     "reference/osmosis/get-pools-apr",
                     "reference/osmosis/get-pools-apr-range",
                     "reference/osmosis/get-cl-pools-position-apr",
