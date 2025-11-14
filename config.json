@@ -33,7 +33,8 @@
     "stride.json",
     "xion.json",
     "snapshots.json",
-    "stablecoins.json"
+    "stablecoins.json",
+    "neutron.json"
   ],
   "codeLanguages": [
     "curl",
@@ -405,6 +406,30 @@
                     "reference/stablecoins/category-total-inflow",
                     "reference/stablecoins/category-total-outflow",
                     "reference/stablecoins/category-total-netflow"
+                  ]
+                }
+              ]
+            },
+            {
+              "groupName": "Neutron",
+              "subpages": [
+                {
+                  "groupName": "Market",
+                  "subpages": [
+                    "reference/neutron/get-orderbook-slippage",
+                    "reference/neutron/get-orderbook-depth",
+                    "reference/neutron/get-positions-duration-metrics",
+                    "reference/neutron/get-positions-long-short-ratio",
+                    "reference/neutron/get-markets-leverage",
+                    "reference/neutron/get-markets-price",
+                    "reference/neutron/get-markets-collateral",
+                    "reference/neutron/get-markets-unrealized-pnl-ranking"
+                  ]
+                },
+                {
+                  "groupName": "Megavault",
+                  "subpages": [
+                    "reference/neutron/get-megavault-flow"
                   ]
                 }
               ]

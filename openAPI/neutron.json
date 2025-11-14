@@ -1,0 +1,742 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://neutron.numia.xyz"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Neutron API"
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/market/orderbook/slippage": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getOrderbookSlippage",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "market",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "1000"
+            },
+            "required": false,
+            "name": "trade_size",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "sell_spot_price": {
+                        "type": "number"
+                      },
+                      "sell_true_price": {
+                        "type": "number"
+                      },
+                      "sell_slippage": {
+                        "type": "number"
+                      },
+                      "buys_spot_price": {
+                        "type": "number"
+                      },
+                      "buys_true_price": {
+                        "type": "number"
+                      },
+                      "buys_slippage": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "sell_spot_price",
+                      "sell_true_price",
+                      "sell_slippage",
+                      "buys_spot_price",
+                      "buys_true_price",
+                      "buys_slippage"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Orderbook Slippage"
+      }
+    },
+    "/market/orderbook/depth": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getOrderbookDepth",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "1"
+            },
+            "required": true,
+            "name": "market",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "default": "1"
+            },
+            "required": false,
+            "name": "slippage_tolerance",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "spot_price": {
+                        "type": "number"
+                      },
+                      "ask_price_limit": {
+                        "type": "number"
+                      },
+                      "bid_price_limit": {
+                        "type": "number"
+                      },
+                      "asks_depth": {
+                        "type": "number"
+                      },
+                      "bids_depth": {
+                        "type": "number"
+                      },
+                      "total_depth": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "spot_price",
+                      "ask_price_limit",
+                      "bid_price_limit",
+                      "asks_depth",
+                      "bids_depth",
+                      "total_depth"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Orderbook Depth"
+      }
+    },
+    "/market/positions/duration_metrics": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getPositionsDurationMetrics",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "market",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "median_duration_minutes": {
+                        "type": "number"
+                      },
+                      "max_duration_minutes": {
+                        "type": "number"
+                      },
+                      "min_duration_minutes": {
+                        "type": "number"
+                      },
+                      "mean_duration_minutes": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "median_duration_minutes",
+                      "max_duration_minutes",
+                      "min_duration_minutes",
+                      "mean_duration_minutes"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Positions Duration Metrics"
+      }
+    },
+    "/market/positions/long_short_ratio": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getPositionsLongShortRatio",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "market",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "hour",
+                "day",
+                "week",
+                "month"
+              ],
+              "default": "hour"
+            },
+            "required": false,
+            "name": "granularity",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "mean_acitve_long_positions": {
+                        "type": "number"
+                      },
+                      "mean_active_short_positions": {
+                        "type": "number"
+                      },
+                      "mean_long_short_ratio": {
+                        "type": "number",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "mean_acitve_long_positions",
+                      "mean_active_short_positions",
+                      "mean_long_short_ratio"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Positions Long Short Ratio"
+      }
+    },
+    "/market/leverage": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getMarketsLeverage",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "market",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "leverage_mean": {
+                        "type": "number"
+                      },
+                      "leverage_1st_qtle": {
+                        "type": "number"
+                      },
+                      "leverage_2st_qtle": {
+                        "type": "number"
+                      },
+                      "leverage_3st_qtle": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "leverage_mean",
+                      "leverage_1st_qtle",
+                      "leverage_2st_qtle",
+                      "leverage_3st_qtle"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Markets Leverage"
+      }
+    },
+    "/market/price": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getMarketsPrice",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "market",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "price_in_usdc": {
+                        "type": "number"
+                      },
+                      "deviation_from_oracle": {
+                        "type": "number",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "price_in_usdc",
+                      "deviation_from_oracle"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Markets Price"
+      }
+    },
+    "/market/collateral": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getMarketsCollateral",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "market",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "collateral_mean": {
+                        "type": "number"
+                      },
+                      "collateral_1st_qtle": {
+                        "type": "number"
+                      },
+                      "collateral_2st_qtle": {
+                        "type": "number"
+                      },
+                      "collateral_3st_qtle": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "collateral_mean",
+                      "collateral_1st_qtle",
+                      "collateral_2st_qtle",
+                      "collateral_3st_qtle"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Markets Collateral"
+      }
+    },
+    "/megavault/flow": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getMegavaultFlow",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "total_inflow": {
+                        "type": "number"
+                      },
+                      "top_inflow": {
+                        "type": "number"
+                      },
+                      "top_inflow_tx_id": {
+                        "type": "string"
+                      },
+                      "total_outflow": {
+                        "type": "number"
+                      },
+                      "top_outflow": {
+                        "type": "number"
+                      },
+                      "top_outflow_tx_id": {
+                        "type": "string"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "total_inflow",
+                      "top_inflow",
+                      "top_inflow_tx_id",
+                      "total_outflow",
+                      "top_outflow",
+                      "top_outflow_tx_id"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Megavault Flow"
+      }
+    },
+    "/market/unrealized_pnl_ranking": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "operationId": "getMarketsUnrealizedPnlRanking",
+        "tags": [],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string"
+            },
+            "required": true,
+            "name": "market",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "market": {
+                        "type": "string",
+                        "description": "Dydx market"
+                      },
+                      "address": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Address of the user"
+                      },
+                      "unrealized_pnl": {
+                        "type": "number",
+                        "description": "Unrealized PnL of the user"
+                      },
+                      "updated_at": {
+                        "type": "string",
+                        "description": "Timestamp of the last update"
+                      }
+                    },
+                    "required": [
+                      "market",
+                      "address",
+                      "unrealized_pnl",
+                      "updated_at"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Markets Unrealized PnL Ranking"
+      }
+    }
+  }
+}
