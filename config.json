@@ -414,22 +414,19 @@
               "groupName": "Neutron",
               "subpages": [
                 {
-                  "groupName": "Market",
+                  "groupName": "DEX",
                   "subpages": [
-                    "reference/neutron/get-orderbook-slippage",
-                    "reference/neutron/get-orderbook-depth",
-                    "reference/neutron/get-positions-duration-metrics",
-                    "reference/neutron/get-positions-long-short-ratio",
-                    "reference/neutron/get-markets-leverage",
-                    "reference/neutron/get-markets-price",
-                    "reference/neutron/get-markets-collateral",
-                    "reference/neutron/get-markets-unrealized-pnl-ranking"
+                    "reference/neutron/get-dex-pairs",
+                    "reference/neutron/get-dex-liquidity",
+                    "reference/neutron/get-dex-price",
+                    "reference/neutron/get-dex-trades",
+                    "reference/neutron/get-dex-swap-volume"
                   ]
                 },
                 {
-                  "groupName": "Megavault",
+                  "groupName": "Trading",
                   "subpages": [
-                    "reference/neutron/get-megavault-flow"
+                    "reference/neutron/get-trading-volume"
                   ]
                 }
               ]
