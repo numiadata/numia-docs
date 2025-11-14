@@ -31,7 +31,8 @@
     "dydx-lenses.json",
     "xion.json",
     "snapshots.json",
-    "stablecoins.json"
+    "stablecoins.json",
+    "neutron.json"
   ],
   "codeLanguages": [
     "curl",
@@ -409,6 +410,27 @@
                 "reference/stablecoins/category-total-inflow",
                 "reference/stablecoins/category-total-outflow",
                 "reference/stablecoins/category-total-netflow"
+              ]
+            },
+            {
+              "groupName": "Neutron",
+              "subpages": [
+                {
+                  "groupName": "DEX",
+                  "subpages": [
+                    "reference/neutron/get-dex-pairs",
+                    "reference/neutron/get-dex-liquidity",
+                    "reference/neutron/get-dex-price",
+                    "reference/neutron/get-dex-trades",
+                    "reference/neutron/get-dex-swap-volume"
+                  ]
+                },
+                {
+                  "groupName": "Trading",
+                  "subpages": [
+                    "reference/neutron/get-trading-volume"
+                  ]
+                }
               ]
             }
           ]

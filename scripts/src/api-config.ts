@@ -78,6 +78,12 @@ export const apiConfig: ApiSection[] = [
     title: "Xion",
   },
   {
+    name: "neutron",
+    categoryName: "Advanced APIs",
+    oasFile: "https://api-docs.numia.xyz/neutron/openapi.json",
+    title: "Neutron",
+  },
+  {
     name: "snapshots",
     categoryName: "Tools",
     oasFile: "https://api-docs.numia.xyz/aadao-snapshots/openapi.json",
