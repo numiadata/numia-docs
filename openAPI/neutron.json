@@ -38,6 +38,8 @@
                 "attributes": {
                     "x-sidebar": "dex"
                 },
+                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+                "summary": "Get DEX Pairs",
                 "responses": {
                     "200": {
                         "description": "Status: 200",
@@ -139,6 +141,8 @@
                 "attributes": {
                     "x-sidebar": "dex"
                 },
+                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+                "summary": "Get DEX Liquidity",
                 "responses": {
                     "200": {
                         "description": "Status: 200",
@@ -229,6 +233,8 @@
                 "attributes": {
                     "x-sidebar": "dex"
                 },
+                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+                "summary": "Get DEX Price",
                 "responses": {
                     "200": {
                         "description": "Status: 200",
@@ -329,6 +335,8 @@
                 "attributes": {
                     "x-sidebar": "dex"
                 },
+                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+                "summary": "Get DEX Trades",
                 "responses": {
                     "200": {
                         "description": "Status: 200",
@@ -430,6 +438,8 @@
                 "attributes": {
                     "x-sidebar": "dex"
                 },
+                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+                "summary": "Get DEX Swap Volume",
                 "responses": {
                     "200": {
                         "description": "Status: 200",
@@ -511,6 +521,8 @@
                 ],
                 "operationId": "getTradingVolume",
                 "tags": [],
+                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+                "summary": "Get Trading Volume",
                 "responses": {
                     "200": {
                         "description": "Status: 200",
