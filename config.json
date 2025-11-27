@@ -386,12 +386,39 @@
               ]
             },
             {
+              "groupName": "Dydx",
+              "subpages": [
+                "reference/dydx/dydx-transparency-supply",
+                "reference/dydx/dydx-transparency-staking-apr",
+                "reference/dydx/dydx-transparency-trading-fees",
+                "reference/dydx/dydx-nabla-chain-revenue",
+                "reference/dydx/dydx-nabla-staking-supply",
+                "reference/dydx/dydx-nabla-buystake-address-metrics"
+              ]
+            },
+            {
               "groupName": "Xion",
               "subpages": [
                 "reference/xion/get-abstract-account-authenticators",
                 "reference/xion/get-abstract-accounts-by-authenticator",
                 "reference/xion/get-abstract-accounts-details-by-authenticator",
                 "reference/xion/get-smart-account-permissions"
+              ]
+            },
+            {
+              "groupName": "Neutron",
+              "subpages": [
+                {
+                  "groupName": "Dex",
+                  "subpages": [
+                    "reference/neutron/get-dex-pairs",
+                    "reference/neutron/get-dex-liquidity",
+                    "reference/neutron/get-dex-price",
+                    "reference/neutron/get-dex-trades",
+                    "reference/neutron/get-dex-swap-volume"
+                  ]
+                },
+                "reference/neutron/get-trading-volume"
               ]
             },
             {
@@ -410,27 +437,6 @@
                 "reference/stablecoins/category-total-inflow",
                 "reference/stablecoins/category-total-outflow",
                 "reference/stablecoins/category-total-netflow"
-              ]
-            },
-            {
-              "groupName": "Neutron",
-              "subpages": [
-                {
-                  "groupName": "DEX",
-                  "subpages": [
-                    "reference/neutron/get-dex-pairs",
-                    "reference/neutron/get-dex-liquidity",
-                    "reference/neutron/get-dex-price",
-                    "reference/neutron/get-dex-trades",
-                    "reference/neutron/get-dex-swap-volume"
-                  ]
-                },
-                {
-                  "groupName": "Trading",
-                  "subpages": [
-                    "reference/neutron/get-trading-volume"
-                  ]
-                }
               ]
             }
           ]
