@@ -1,0 +1,437 @@
+{
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://dydx.numia.xyz"
+    }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Numia - DYDX API"
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/dydx/transparency/supply": {
+      "get": {
+        "tags": [
+          "dydx"
+        ],
+        "operationId": "dydx-transparency-supply",
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "max_supply",
+                "burnt_supply",
+                "total_supply",
+                "minted_supply",
+                "locked_supply",
+                "circulating_supply"
+              ],
+              "default": "total_supply"
+            },
+            "required": true,
+            "name": "metric",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "prod",
+                "debug"
+              ],
+              "default": "prod"
+            },
+            "required": true,
+            "name": "mode",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Dydx-transparency-supply"
+      }
+    },
+    "/dydx/transparency/staking-apr": {
+      "get": {
+        "tags": [
+          "dydx"
+        ],
+        "operationId": "dydx-transparency-staking-apr",
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "prod",
+                "debug"
+              ],
+              "default": "prod"
+            },
+            "required": true,
+            "name": "mode",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Dydx-transparency-staking-apr"
+      }
+    },
+    "/dydx/transparency/trading-fees": {
+      "get": {
+        "tags": [
+          "dydx"
+        ],
+        "operationId": "dydx-transparency-trading-fees",
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "prod",
+                "debug"
+              ],
+              "default": "prod"
+            },
+            "required": true,
+            "name": "mode",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "additionalProperties": true
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Dydx-transparency-trading-fees"
+      }
+    },
+    "/dydx/tokenomics/chain_revenue": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "tags": [
+          "dydx"
+        ],
+        "operationId": "dydx-nabla-chain-revenue",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "source": {
+                        "type": "string"
+                      },
+                      "amount": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "source",
+                      "amount"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Dydx-nabla-chain-revenue"
+      }
+    },
+    "/dydx/tokenomics/staking_supply": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "tags": [
+          "dydx"
+        ],
+        "operationId": "dydx-nabla-staking-supply",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "stakingSupply": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "stakingApr": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "protocolRevenue": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "buybackFee": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "buybackFeeShare": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "buybackDeposit": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "historicUsers": {
+                        "type": "number",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "stakingSupply",
+                      "stakingApr",
+                      "protocolRevenue",
+                      "buybackFee",
+                      "buybackFeeShare",
+                      "buybackDeposit",
+                      "historicUsers"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Dydx-nabla-staking-supply"
+      }
+    },
+    "/dydx/tokenomics/buystake_address_metrics": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "tags": [
+          "dydx"
+        ],
+        "operationId": "dydx-nabla-buystake-address-metrics",
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "start_date",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Date in the format YYYY-MM-DD HH:MM:SS"
+            },
+            "required": false,
+            "name": "end_date",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "labels": {
+                        "type": "string"
+                      },
+                      "priceDYDX": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "dydxAcquired": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "stakingBalance": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "liquidBalanceDYDX": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "liquidBalanceUSDC": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "stakingRewardsUnclaimedDYDX": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "stakingRewardsUnclaimedUSDC": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "stakingRewardsClaimedDYDX": {
+                        "type": "number",
+                        "nullable": true
+                      },
+                      "stakingRewardsClaimedUSDC": {
+                        "type": "number",
+                        "nullable": true
+                      }
+                    },
+                    "required": [
+                      "labels",
+                      "priceDYDX",
+                      "dydxAcquired",
+                      "stakingBalance",
+                      "liquidBalanceDYDX",
+                      "liquidBalanceUSDC",
+                      "stakingRewardsUnclaimedDYDX",
+                      "stakingRewardsUnclaimedUSDC",
+                      "stakingRewardsClaimedDYDX",
+                      "stakingRewardsClaimedUSDC"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Dydx-nabla-buystake-address-metrics"
+      }
+    }
+  }
+}

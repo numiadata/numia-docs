@@ -29,10 +29,10 @@
     "txbyaddress.json",
     "cosmos.json",
     "dydx-lenses.json",
+    "dydx.json",
     "xion.json",
-    "snapshots.json",
-    "stablecoins.json",
-    "neutron.json"
+    "neutron.json",
+    "stablecoins.json"
   ],
   "codeLanguages": [
     "curl",

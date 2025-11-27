@@ -1,556 +1,554 @@
 {
-    "openapi": "3.0.0",
-    "servers": [
-        {
-            "url": "https://neutron.numia.xyz"
-        }
-    ],
-    "security": [
-        {
-            "bearerAuth": []
-        }
-    ],
-    "info": {
-        "version": "1.0.0",
-        "title": "Neutron API"
-    },
-    "components": {
-        "securitySchemes": {
-            "bearerAuth": {
-                "type": "http",
-                "scheme": "bearer"
-            }
-        },
-        "schemas": {},
-        "parameters": {}
-    },
-    "paths": {
-        "/dex/pairs": {
-            "get": {
-                "servers": [
-                    {
-                        "url": "https://neutron.numia.xyz"
-                    }
-                ],
-                "operationId": "getDexPairs",
-                "tags": [],
-                "sidebar": "dex",
-                "attributes": {
-                    "x-sidebar": "dex"
-                },
-                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-                "summary": "Get DEX Pairs",
-                "responses": {
-                    "200": {
-                        "description": "Status: 200",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "token_0": {
-                                                        "type": "string",
-                                                        "description": "First token in the pair"
-                                                    },
-                                                    "token_1": {
-                                                        "type": "string",
-                                                        "description": "Second token in the pair"
-                                                    },
-                                                    "created_at_height": {
-                                                        "type": "string",
-                                                        "description": "Block height when the pair was created"
-                                                    },
-                                                    "updated_at_height": {
-                                                        "type": "string",
-                                                        "description": "Block height when the pair was last updated"
-                                                    },
-                                                    "created_at": {
-                                                        "type": "string",
-                                                        "description": "Timestamp when the pair was created"
-                                                    },
-                                                    "updated_at": {
-                                                        "type": "string",
-                                                        "description": "Timestamp when the pair was last updated"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "token_0",
-                                                    "token_1",
-                                                    "created_at_height",
-                                                    "updated_at_height",
-                                                    "created_at",
-                                                    "updated_at"
-                                                ]
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Name of the field"
-                                                    },
-                                                    "type": {
-                                                        "type": "string",
-                                                        "description": "Data type of the field in the database"
-                                                    },
-                                                    "units": {
-                                                        "type": "string",
-                                                        "description": ""
-                                                    }
-                                                },
-                                                "required": [
-                                                    "name",
-                                                    "type"
-                                                ]
-                                            }
-                                        },
-                                        "height": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "meta",
-                                        "height"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/dex/liquidity/{denom0}/{denom1}": {
-            "get": {
-                "servers": [
-                    {
-                        "url": "https://neutron.numia.xyz"
-                    }
-                ],
-                "operationId": "getDexLiquidity",
-                "tags": [],
-                "sidebar": "dex",
-                "attributes": {
-                    "x-sidebar": "dex"
-                },
-                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-                "summary": "Get DEX Liquidity",
-                "responses": {
-                    "200": {
-                        "description": "Status: 200",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "index": {
-                                                        "type": "string",
-                                                        "description": "Tick index"
-                                                    },
-                                                    "reserves_0": {
-                                                        "type": "string",
-                                                        "nullable": true,
-                                                        "description": "Reserves for denom0"
-                                                    },
-                                                    "reserves_1": {
-                                                        "type": "string",
-                                                        "nullable": true,
-                                                        "description": "Reserves for denom1"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "index"
-                                                ]
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Name of the field"
-                                                    },
-                                                    "type": {
-                                                        "type": "string",
-                                                        "description": "Data type of the field in the database"
-                                                    },
-                                                    "units": {
-                                                        "type": "string",
-                                                        "description": ""
-                                                    }
-                                                },
-                                                "required": [
-                                                    "name",
-                                                    "type"
-                                                ]
-                                            }
-                                        },
-                                        "height": {
-                                            "type": "string"
-                                        },
-                                        "time": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "meta",
-                                        "height",
-                                        "time"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/dex/price/{denom0}/{denom1}": {
-            "get": {
-                "servers": [
-                    {
-                        "url": "https://neutron.numia.xyz"
-                    }
-                ],
-                "operationId": "getDexPrice",
-                "tags": [],
-                "sidebar": "dex",
-                "attributes": {
-                    "x-sidebar": "dex"
-                },
-                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-                "summary": "Get DEX Price",
-                "responses": {
-                    "200": {
-                        "description": "Status: 200",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "time": {
-                                                        "type": "string",
-                                                        "description": "Timestamp for the OHLC period"
-                                                    },
-                                                    "open": {
-                                                        "type": "number",
-                                                        "description": "Opening tick index"
-                                                    },
-                                                    "high": {
-                                                        "type": "number",
-                                                        "description": "Highest tick index"
-                                                    },
-                                                    "low": {
-                                                        "type": "number",
-                                                        "description": "Lowest tick index"
-                                                    },
-                                                    "close": {
-                                                        "type": "number",
-                                                        "description": "Closing tick index"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "time",
-                                                    "open",
-                                                    "high",
-                                                    "low",
-                                                    "close"
-                                                ]
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Name of the field"
-                                                    },
-                                                    "type": {
-                                                        "type": "string",
-                                                        "description": "Data type of the field in the database"
-                                                    },
-                                                    "units": {
-                                                        "type": "string",
-                                                        "description": ""
-                                                    }
-                                                },
-                                                "required": [
-                                                    "name",
-                                                    "type"
-                                                ]
-                                            }
-                                        },
-                                        "height": {
-                                            "type": "string"
-                                        },
-                                        "time": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "meta",
-                                        "height",
-                                        "time"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/dex/trades/{denom0}/{denom1}": {
-            "get": {
-                "servers": [
-                    {
-                        "url": "https://neutron.numia.xyz"
-                    }
-                ],
-                "operationId": "getDexTrades",
-                "tags": [],
-                "sidebar": "dex",
-                "attributes": {
-                    "x-sidebar": "dex"
-                },
-                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-                "summary": "Get DEX Trades",
-                "responses": {
-                    "200": {
-                        "description": "Status: 200",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "time": {
-                                                        "type": "string"
-                                                    },
-                                                    "height": {
-                                                        "type": "string"
-                                                    },
-                                                    "tx": {
-                                                        "type": "string"
-                                                    },
-                                                    "buy": {
-                                                        "type": "string",
-                                                        "nullable": true
-                                                    },
-                                                    "sell": {
-                                                        "type": "string",
-                                                        "nullable": true
-                                                    },
-                                                    "buy_at": {
-                                                        "type": "number",
-                                                        "nullable": true
-                                                    },
-                                                    "sell_at": {
-                                                        "type": "number",
-                                                        "nullable": true
-                                                    }
-                                                },
-                                                "required": [
-                                                    "time",
-                                                    "height"
-                                                ]
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Name of the field"
-                                                    },
-                                                    "type": {
-                                                        "type": "string",
-                                                        "description": "Data type of the field in the database"
-                                                    },
-                                                    "units": {
-                                                        "type": "string",
-                                                        "description": ""
-                                                    }
-                                                },
-                                                "required": [
-                                                    "name",
-                                                    "type"
-                                                ]
-                                            }
-                                        },
-                                        "height": {
-                                            "type": "string"
-                                        },
-                                        "time": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "meta",
-                                        "height"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/dex/swap-volume/{denom0}/{denom1}": {
-            "get": {
-                "servers": [
-                    {
-                        "url": "https://neutron.numia.xyz"
-                    }
-                ],
-                "operationId": "getDexSwapVolume",
-                "tags": [],
-                "sidebar": "dex",
-                "attributes": {
-                    "x-sidebar": "dex"
-                },
-                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-                "summary": "Get DEX Swap Volume",
-                "responses": {
-                    "200": {
-                        "description": "Status: 200",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "object",
-                                    "properties": {
-                                        "data": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "time": {
-                                                        "type": "string",
-                                                        "description": "Timestamp for the volume period"
-                                                    },
-                                                    "volume": {
-                                                        "type": "string",
-                                                        "description": "Volume amount"
-                                                    }
-                                                },
-                                                "required": [
-                                                    "time",
-                                                    "volume"
-                                                ]
-                                            }
-                                        },
-                                        "meta": {
-                                            "type": "array",
-                                            "items": {
-                                                "type": "object",
-                                                "properties": {
-                                                    "name": {
-                                                        "type": "string",
-                                                        "description": "Name of the field"
-                                                    },
-                                                    "type": {
-                                                        "type": "string",
-                                                        "description": "Data type of the field in the database"
-                                                    },
-                                                    "units": {
-                                                        "type": "string",
-                                                        "description": ""
-                                                    }
-                                                },
-                                                "required": [
-                                                    "name",
-                                                    "type"
-                                                ]
-                                            }
-                                        },
-                                        "height": {
-                                            "type": "string"
-                                        },
-                                        "time": {
-                                            "type": "string"
-                                        }
-                                    },
-                                    "required": [
-                                        "data",
-                                        "meta",
-                                        "height",
-                                        "time"
-                                    ]
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        },
-        "/trading/volume": {
-            "get": {
-                "servers": [
-                    {
-                        "url": "https://neutron.numia.xyz"
-                    }
-                ],
-                "operationId": "getTradingVolume",
-                "tags": [],
-                "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
-                "summary": "Get Trading Volume",
-                "responses": {
-                    "200": {
-                        "description": "Status: 200",
-                        "content": {
-                            "application/json": {
-                                "schema": {
-                                    "type": "array",
-                                    "items": {
-                                        "type": "object",
-                                        "properties": {
-                                            "day": {
-                                                "type": "string"
-                                            },
-                                            "value": {
-                                                "type": "number"
-                                            }
-                                        },
-                                        "required": [
-                                            "day",
-                                            "value"
-                                        ]
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+  "openapi": "3.0.0",
+  "servers": [
+    {
+      "url": "https://neutron.numia.xyz"
     }
+  ],
+  "security": [
+    {
+      "bearerAuth": []
+    }
+  ],
+  "info": {
+    "version": "1.0.0",
+    "title": "Neutron API"
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    },
+    "schemas": {},
+    "parameters": {}
+  },
+  "paths": {
+    "/dex/pairs": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://neutron.numia.xyz"
+          }
+        ],
+        "operationId": "getDexPairs",
+        "tags": [],
+        "sidebar": "dex",
+        "attributes": {
+          "x-sidebar": "dex"
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "token_0": {
+                            "type": "string",
+                            "description": "First token in the pair"
+                          },
+                          "token_1": {
+                            "type": "string",
+                            "description": "Second token in the pair"
+                          },
+                          "created_at_height": {
+                            "type": "string",
+                            "description": "Block height when the pair was created"
+                          },
+                          "updated_at_height": {
+                            "type": "string",
+                            "description": "Block height when the pair was last updated"
+                          },
+                          "created_at": {
+                            "type": "string",
+                            "description": "Timestamp when the pair was created"
+                          },
+                          "updated_at": {
+                            "type": "string",
+                            "description": "Timestamp when the pair was last updated"
+                          }
+                        },
+                        "required": [
+                          "token_0",
+                          "token_1",
+                          "created_at_height",
+                          "updated_at_height",
+                          "created_at",
+                          "updated_at"
+                        ]
+                      }
+                    },
+                    "meta": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Name of the field"
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": "Data type of the field in the database"
+                          },
+                          "units": {
+                            "type": "string",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "type"
+                        ]
+                      }
+                    },
+                    "height": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta",
+                    "height"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Dex Pairs"
+      }
+    },
+    "/dex/liquidity/{denom0}/{denom1}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://neutron.numia.xyz"
+          }
+        ],
+        "operationId": "getDexLiquidity",
+        "tags": [],
+        "sidebar": "dex",
+        "attributes": {
+          "x-sidebar": "dex"
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "index": {
+                            "type": "string",
+                            "description": "Tick index"
+                          },
+                          "reserves_0": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "Reserves for denom0"
+                          },
+                          "reserves_1": {
+                            "type": "string",
+                            "nullable": true,
+                            "description": "Reserves for denom1"
+                          }
+                        },
+                        "required": [
+                          "index"
+                        ]
+                      }
+                    },
+                    "meta": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Name of the field"
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": "Data type of the field in the database"
+                          },
+                          "units": {
+                            "type": "string",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "type"
+                        ]
+                      }
+                    },
+                    "height": {
+                      "type": "string"
+                    },
+                    "time": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta",
+                    "height",
+                    "time"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Dex Liquidity"
+      }
+    },
+    "/dex/price/{denom0}/{denom1}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://neutron.numia.xyz"
+          }
+        ],
+        "operationId": "getDexPrice",
+        "tags": [],
+        "sidebar": "dex",
+        "attributes": {
+          "x-sidebar": "dex"
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "time": {
+                            "type": "string",
+                            "description": "Timestamp for the OHLC period"
+                          },
+                          "open": {
+                            "type": "number",
+                            "description": "Opening tick index"
+                          },
+                          "high": {
+                            "type": "number",
+                            "description": "Highest tick index"
+                          },
+                          "low": {
+                            "type": "number",
+                            "description": "Lowest tick index"
+                          },
+                          "close": {
+                            "type": "number",
+                            "description": "Closing tick index"
+                          }
+                        },
+                        "required": [
+                          "time",
+                          "open",
+                          "high",
+                          "low",
+                          "close"
+                        ]
+                      }
+                    },
+                    "meta": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Name of the field"
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": "Data type of the field in the database"
+                          },
+                          "units": {
+                            "type": "string",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "type"
+                        ]
+                      }
+                    },
+                    "height": {
+                      "type": "string"
+                    },
+                    "time": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta",
+                    "height",
+                    "time"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Dex Price"
+      }
+    },
+    "/dex/trades/{denom0}/{denom1}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://neutron.numia.xyz"
+          }
+        ],
+        "operationId": "getDexTrades",
+        "tags": [],
+        "sidebar": "dex",
+        "attributes": {
+          "x-sidebar": "dex"
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "time": {
+                            "type": "string"
+                          },
+                          "height": {
+                            "type": "string"
+                          },
+                          "tx": {
+                            "type": "string"
+                          },
+                          "buy": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "sell": {
+                            "type": "string",
+                            "nullable": true
+                          },
+                          "buy_at": {
+                            "type": "number"
+                          },
+                          "sell_at": {
+                            "type": "number"
+                          }
+                        },
+                        "required": [
+                          "time",
+                          "height"
+                        ]
+                      }
+                    },
+                    "meta": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Name of the field"
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": "Data type of the field in the database"
+                          },
+                          "units": {
+                            "type": "string",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "type"
+                        ]
+                      }
+                    },
+                    "height": {
+                      "type": "string"
+                    },
+                    "time": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta",
+                    "height"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Dex Trades"
+      }
+    },
+    "/dex/swap-volume/{denom0}/{denom1}": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://neutron.numia.xyz"
+          }
+        ],
+        "operationId": "getDexSwapVolume",
+        "tags": [],
+        "sidebar": "dex",
+        "attributes": {
+          "x-sidebar": "dex"
+        },
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "time": {
+                            "type": "string",
+                            "description": "Timestamp for the volume period"
+                          },
+                          "volume": {
+                            "type": "string",
+                            "description": "Volume amount"
+                          }
+                        },
+                        "required": [
+                          "time",
+                          "volume"
+                        ]
+                      }
+                    },
+                    "meta": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "description": "Name of the field"
+                          },
+                          "type": {
+                            "type": "string",
+                            "description": "Data type of the field in the database"
+                          },
+                          "units": {
+                            "type": "string",
+                            "description": ""
+                          }
+                        },
+                        "required": [
+                          "name",
+                          "type"
+                        ]
+                      }
+                    },
+                    "height": {
+                      "type": "string"
+                    },
+                    "time": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "data",
+                    "meta",
+                    "height",
+                    "time"
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Dex Swap Volume"
+      }
+    },
+    "/trading/volume": {
+      "get": {
+        "servers": [
+          {
+            "url": "https://neutron.numia.xyz"
+          }
+        ],
+        "operationId": "getTradingVolume",
+        "tags": [],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "day": {
+                        "type": "string"
+                      },
+                      "value": {
+                        "type": "number"
+                      }
+                    },
+                    "required": [
+                      "day",
+                      "value"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Get Trading Volume"
+      }
+    }
+  }
 }

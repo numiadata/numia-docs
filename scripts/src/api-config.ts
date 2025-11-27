@@ -48,6 +48,12 @@ export const apiConfig: ApiSection[] = [
     oasFile: "https://api-docs.numia.xyz/lenses/dydx/openapi.json",
     title: "Lenses Analytics",
   },
+  {
+    name: "dydx",
+    categoryName: "Advanced APIs",
+    oasFile: "https://api-docs.numia.xyz/dydx/openapi.json",
+    title: "Dydx",
+  },
   // {
   //   name: "numiaai",
   //   categoryName: "Tools",
@@ -83,12 +89,12 @@ export const apiConfig: ApiSection[] = [
     oasFile: "https://api-docs.numia.xyz/neutron/openapi.json",
     title: "Neutron",
   },
-  {
-    name: "snapshots",
-    categoryName: "Tools",
-    oasFile: "https://api-docs.numia.xyz/aadao-snapshots/openapi.json",
-    title: "Snapshots",
-  },
+  // {
+  //   name: "snapshots",
+  //   categoryName: "Tools",
+  //   oasFile: "https://api-docs.numia.xyz/aadao-snapshots/openapi.json",
+  //   title: "Snapshots",
+  // },
   {
     name: "stablecoins",
     categoryName: "Advanced APIs",
