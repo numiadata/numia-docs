@@ -27,9 +27,7 @@
   "paths": {
     "/dydx/transparency/supply": {
       "get": {
-        "tags": [
-          "dydx"
-        ],
+        "tags": ["dydx"],
         "operationId": "dydx-transparency-supply",
         "servers": [
           {
@@ -53,19 +51,6 @@
             "required": true,
             "name": "metric",
             "in": "query"
-          },
-          {
-            "schema": {
-              "type": "string",
-              "enum": [
-                "prod",
-                "debug"
-              ],
-              "default": "prod"
-            },
-            "required": true,
-            "name": "mode",
-            "in": "query"
           }
         ],
         "responses": {
@@ -87,30 +72,14 @@
     },
     "/dydx/transparency/staking-apr": {
       "get": {
-        "tags": [
-          "dydx"
-        ],
+        "tags": ["dydx"],
         "operationId": "dydx-transparency-staking-apr",
         "servers": [
           {
             "url": "https://dydx.numia.xyz"
           }
         ],
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "enum": [
-                "prod",
-                "debug"
-              ],
-              "default": "prod"
-            },
-            "required": true,
-            "name": "mode",
-            "in": "query"
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "Success",
@@ -130,30 +99,14 @@
     },
     "/dydx/transparency/trading-fees": {
       "get": {
-        "tags": [
-          "dydx"
-        ],
+        "tags": ["dydx"],
         "operationId": "dydx-transparency-trading-fees",
         "servers": [
           {
             "url": "https://dydx.numia.xyz"
           }
         ],
-        "parameters": [
-          {
-            "schema": {
-              "type": "string",
-              "enum": [
-                "prod",
-                "debug"
-              ],
-              "default": "prod"
-            },
-            "required": true,
-            "name": "mode",
-            "in": "query"
-          }
-        ],
+        "parameters": [],
         "responses": {
           "200": {
             "description": "Success",
@@ -178,9 +131,7 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
-        "tags": [
-          "dydx"
-        ],
+        "tags": ["dydx"],
         "operationId": "dydx-nabla-chain-revenue",
         "parameters": [
           {
@@ -222,11 +173,7 @@
                         "type": "number"
                       }
                     },
-                    "required": [
-                      "labels",
-                      "source",
-                      "amount"
-                    ]
+                    "required": ["labels", "source", "amount"]
                   }
                 }
               }
@@ -244,9 +191,7 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
-        "tags": [
-          "dydx"
-        ],
+        "tags": ["dydx"],
         "operationId": "dydx-nabla-staking-supply",
         "parameters": [
           {
@@ -337,9 +282,7 @@
             "url": "https://dydx.numia.xyz"
           }
         ],
-        "tags": [
-          "dydx"
-        ],
+        "tags": ["dydx"],
         "operationId": "dydx-nabla-buystake-address-metrics",
         "parameters": [
           {
