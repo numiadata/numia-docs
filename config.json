@@ -6,9 +6,7 @@
     "favicon": "media/favicon.ico",
     "darkLogo": "media/logo_numia_docs.svg"
   },
-  "languages": [
-    "en"
-  ],
+  "languages": ["en"],
   "styles": {
     "mainColor": "#F78B4B",
     "navbarColor": "#FFFFFF",
@@ -34,11 +32,7 @@
     "neutron.json",
     "stablecoins.json"
   ],
-  "codeLanguages": [
-    "curl",
-    "python",
-    "javascript"
-  ],
+  "codeLanguages": ["curl", "python", "javascript"],
   "homepage": "/api/overview/whats-numia-api/",
   "changelog": false,
   "navbar": [
@@ -287,7 +281,6 @@
                     "reference/osmosis/get-pools-liquidity-over-time",
                     "reference/osmosis/get-pools-depth-current",
                     "reference/osmosis/get-pools-depth-over-time",
-                    "reference/osmosis/get-pools-depth-over-time-daily",
                     "reference/osmosis/get-pools-apr",
                     "reference/osmosis/get-pools-apr-range",
                     "reference/osmosis/get-cl-pools-position-apr",
