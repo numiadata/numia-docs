@@ -29,10 +29,9 @@
       "get": {
         "tags": ["dydx"],
         "operationId": "dydx-transparency-supply",
-        "security": [],
         "servers": [
           {
-            "url": "https://public-dydx-api.numia.xyz"
+            "url": "https://dydx.numia.xyz"
           }
         ],
         "parameters": [
@@ -75,10 +74,9 @@
       "get": {
         "tags": ["dydx"],
         "operationId": "dydx-transparency-staking-apr",
-        "security": [],
         "servers": [
           {
-            "url": "https://public-dydx-api.numia.xyz"
+            "url": "https://dydx.numia.xyz"
           }
         ],
         "parameters": [],
@@ -103,10 +101,9 @@
       "get": {
         "tags": ["dydx"],
         "operationId": "dydx-transparency-trading-fees",
-        "security": [],
         "servers": [
           {
-            "url": "https://public-dydx-api.numia.xyz"
+            "url": "https://dydx.numia.xyz"
           }
         ],
         "parameters": [],
