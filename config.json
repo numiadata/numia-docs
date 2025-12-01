@@ -6,7 +6,9 @@
     "favicon": "media/favicon.ico",
     "darkLogo": "media/logo_numia_docs.svg"
   },
-  "languages": ["en"],
+  "languages": [
+    "en"
+  ],
   "styles": {
     "mainColor": "#F78B4B",
     "navbarColor": "#FFFFFF",
@@ -32,7 +34,11 @@
     "neutron.json",
     "stablecoins.json"
   ],
-  "codeLanguages": ["curl", "python", "javascript"],
+  "codeLanguages": [
+    "curl",
+    "python",
+    "javascript"
+  ],
   "homepage": "/api/overview/whats-numia-api/",
   "changelog": false,
   "navbar": [
