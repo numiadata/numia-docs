@@ -4,9 +4,7 @@
     {
       "name": "evm_blocks",
       "description": "This table (evm_blocks) stores information about each block in the Cosmos ecosystem's blockchain. It provides data on the block number, creation time, and unique identifier.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "height",
@@ -33,9 +31,7 @@
     {
       "name": "evm_logs",
       "description": "EVM logs table containing data from Cosmos ecosystem blockchains. This table stores events related to transactions executed on these blockchains.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "address",
@@ -78,9 +74,7 @@
     {
       "name": "evm_tokens_sales",
       "description": "This table provides insights into token sales events across the Cosmos ecosystem, covering blockchain sales data. It helps track the transactions and marketplaces involved in these events.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -89,7 +83,7 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when the blockchain block was mined or finalized",
+          "description": "Timestamp when the blockchain block was created or finalized",
           "type": "TIMESTAMP"
         },
         {
@@ -137,9 +131,7 @@
     {
       "name": "evm_transactions",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -256,9 +248,7 @@
     {
       "name": "evm_transfer_event",
       "description": "The EVM Transfer Event table represents a collection of transfer events occurring on the Cosmos blockchain ecosystem, documenting token transactions between accounts. This data is crucial for analyzing token activity and understanding the behavior of participants in the network.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -267,7 +257,7 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when the blockchain block was mined or proposed",
+          "description": "Timestamp when the blockchain block was created or proposed",
           "type": "TIMESTAMP"
         },
         {
@@ -315,9 +305,7 @@
     {
       "name": "evm_transfer_single_event",
       "description": "This table contains detailed information about transfers of tokens within the Cosmos ecosystem, providing insights into the characteristics of these transactions. Each entry represents a single transfer operation.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -384,9 +372,7 @@
     {
       "name": "evm_uniswap_v2_dex_swaps",
       "description": "This table contains a detailed summary of decentralized exchange (DEX) swaps executed on Uniswap v2 DEX within the Cosmos network ecosystem. The data is sourced from blockchain events, offering valuable insights into token transfers and swaps between various Cosmos- based blockchains.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -467,10 +453,8 @@
     },
     {
       "name": "evmos_blocks",
-      "description": "Cosmos Blocks Table: This table provides information about blocks mined in the Cosmos ecosystem. It contains details such as block height and timestamp, validators, and other key metrics.",
-      "tags": [
-        "raw_table"
-      ],
+      "description": "Cosmos Blocks Table: This table provides information about blocks created in the Cosmos ecosystem. It contains details such as block height and timestamp, validators, and other key metrics.",
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -517,9 +501,7 @@
     {
       "name": "evmos_convert_ERC20",
       "description": "This table tracks transactions where ERC-20 tokens are being converted or swapped to Cosmos native coins. The data is sourced from the Cosmos ecosystem blockchains.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -581,9 +563,7 @@
     {
       "name": "evmos_convert_coin",
       "description": "This table captures transactions related to token conversions in the Cosmos ecosystem, where tokens can be exchanged or swapped between different assets.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -592,7 +572,7 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when the block was mined and added to the blockchain",
+          "description": "Timestamp when the block was created and added to the blockchain",
           "type": "TIMESTAMP"
         },
         {
@@ -645,9 +625,7 @@
     {
       "name": "evmos_delegate",
       "description": "Cosmos Delegatefuscation event monitoring table. This table provides an overview of changes to the state of Cosmos validators and their stakeholders, providing valuable insights into the dynamic workings of the Cosmos network.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -709,9 +687,7 @@
     {
       "name": "evmos_developer_revenue",
       "description": "This datasource provides insights into the developer revenue from the Cosmos ecosystem, comprising data from various blockchains. The data is extracted directly from the blockchain, offering a granular view of developer earnings.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -773,9 +749,7 @@
     {
       "name": "evmos_event_attributes",
       "description": "This table contains various attributes of events from the cosmos blockchain ecosystem, providing insights into the transaction and block-level data.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -837,9 +811,7 @@
     {
       "name": "evmos_ibc_receive",
       "description": "This table tracks IBC (Inter- Blockchain Communication) receive transactions across the Cosmos ecosystem, enabling users to visualize and analyze IBC transfers.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -848,7 +820,7 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp of when a block was mined or created",
+          "description": "Timestamp of when a block was created or created",
           "type": "TIMESTAMP"
         },
         {
@@ -936,9 +908,7 @@
     {
       "name": "evmos_ibc_transfer",
       "description": "This table contains information about Cosmos IBC (Inter- Blockchain Communication) token transfers between different blockchains within the Cosmos ecosystem. The data provides a detailed overview of the transactions, channels, and token movements across the network.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1030,9 +1000,7 @@
     {
       "name": "evmos_ibc_transfer_delays",
       "description": "This table tracks IBC transfer delays within the Cosmos ecosystem, providing insights into the timelines of transaction approvals and network congestion.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "tx_id",
@@ -1074,9 +1042,7 @@
     {
       "name": "evmos_message_event_attributes",
       "description": "This table contains a detailed view of blockchain events in the Cosmos ecosystem, providing attributes about each event occurrence. The attributes are gathered from a variety of blockchain sources.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1133,9 +1099,7 @@
     {
       "name": "evmos_message_types_transactions",
       "description": "This table provides a comprehensive view of transactional activities within the Cosmos ecosystem, covering key information about blocks, transactions, and messages. It offers insights into the sender-side interactions within the blockchain network.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1182,9 +1146,7 @@
     {
       "name": "evmos_redelegate",
       "description": "Redelegation events in the Cosmos ecosystem track the transfer of validator delegations between validators, allowing for delegation rebalancing and optimizing staking efficiency. These records provide a historical view of validator delegations and transfers.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1256,9 +1218,7 @@
     {
       "name": "evmos_sends",
       "description": "Cosmos Blockchain Transactions - Overview of executed transactions, their timestamps, and token movements between accounts.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1315,9 +1275,7 @@
     {
       "name": "evmos_transactions",
       "description": "This table contains transaction information from the Cosmos ecosystem, including their status, fees, and associated block information. It provides a comprehensive view of interactions within the blockchain.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1424,9 +1382,7 @@
     {
       "name": "evmos_undelegate",
       "description": "The Undelegate datasource tracks undelegation transactions in the Cosmos ecosystem. Undelegation transactions occur when a validator redelegates a portion of its staked tokens to another validator, increasing the token supply available to other validators.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1488,9 +1444,7 @@
     {
       "name": "evmos_validators",
       "description": "Active Cosmos validators, a crucial component of the Cosmos Network, store and validate blocks ensuring the integrity and security of the chain. Their details are vital for users to choose a validator that suits their needs.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "account_address",
@@ -1557,9 +1511,7 @@
     {
       "name": "evmos_voting",
       "description": "This table provides an overview of Cosmos ecosystem blockchain voting data, which is essential for understanding the consensus and decision-making processes within the network. The data includes transaction information, proposal statuses, and voter insights.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1611,9 +1563,7 @@
     {
       "name": "evmos_withdraw_rewards",
       "description": "This table contains records of withdrawals of rewards from validators in the Cosmos ecosystem, as processed by our ingestion service. It captures key events related to token transfers in the blockchain.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",

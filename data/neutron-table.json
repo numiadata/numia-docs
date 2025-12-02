@@ -4,9 +4,7 @@
     {
       "name": "neutron_asset_denoms",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "token_denom",
@@ -33,9 +31,7 @@
     {
       "name": "neutron_block_events",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -74,9 +70,7 @@
     {
       "name": "neutron_blocks",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -123,9 +117,7 @@
     {
       "name": "neutron_delegate",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -180,9 +172,7 @@
     {
       "name": "neutron_dex_limit_order_cancel",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -265,9 +255,7 @@
     {
       "name": "neutron_dex_limit_order_place",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -370,9 +358,7 @@
     {
       "name": "neutron_dex_limit_order_withdraw",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -455,9 +441,7 @@
     {
       "name": "neutron_dex_lp_deposit",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -548,9 +532,7 @@
     {
       "name": "neutron_dex_lp_withdraw",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -641,9 +623,7 @@
     {
       "name": "neutron_dex_swap",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -738,9 +718,7 @@
     {
       "name": "neutron_dex_tick_update",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -835,9 +813,7 @@
     {
       "name": "neutron_dex_tranche_user_update",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -924,9 +900,7 @@
     {
       "name": "neutron_ics20_receive",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -1025,9 +999,7 @@
     {
       "name": "neutron_ics20_transfer",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -1122,9 +1094,7 @@
     {
       "name": "neutron_ics_consumer_validators",
       "description": "This table provides information on ICS (Inter-Blockchain Communication) consumer validators within the Cosmos ecosystem, where validators are nodes that consume data from another blockchain. It includes details about the provider addresses, consumer keys, and commission rates, among other relevant information.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "provider_address",
@@ -1257,9 +1227,7 @@
     {
       "name": "neutron_message_events",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1306,9 +1274,7 @@
     {
       "name": "neutron_redelegate",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1367,9 +1333,7 @@
     {
       "name": "neutron_send",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1420,9 +1384,7 @@
     {
       "name": "neutron_slinky_prices",
       "description": "Cosmos blockchain data related to cryptocurrency trading pairs. This table includes historical prices for various trading pairs within the Cosmos ecosystem.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1432,7 +1394,7 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Unix timestamp when the corresponding block was mined.",
+          "description": "Unix timestamp when the corresponding block was created.",
           "type": "TIMESTAMP",
           "mode": "NULLABLE"
         },
@@ -1471,9 +1433,7 @@
     {
       "name": "neutron_slinky_prices_deltas",
       "description": "This table provides a record of changes in validator vote prices from Cosmos Ecosystem blockchains, capturing the deltas in vote power and price.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "validator_address",
@@ -1528,9 +1488,7 @@
     {
       "name": "neutron_supervault_dex_deposit",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -1605,9 +1563,7 @@
     {
       "name": "neutron_supervault_dex_withdrawal",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -1666,9 +1622,7 @@
     {
       "name": "neutron_supervault_instantiate",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -1743,9 +1697,7 @@
     {
       "name": "neutron_supervault_user_deposit",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -1820,9 +1772,7 @@
     {
       "name": "neutron_supervault_user_withdrawal",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -1897,9 +1847,7 @@
     {
       "name": "neutron_transactions",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -1990,9 +1938,7 @@
     {
       "name": "neutron_tx_messages",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -2039,9 +1985,7 @@
     {
       "name": "neutron_undelegate",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -2096,9 +2040,7 @@
     {
       "name": "neutron_validators",
       "description": "Active Cosmos validators, a crucial component of the Cosmos Network, store and validate blocks ensuring the integrity and security of the chain. Their details are vital for users to choose a validator that suits their needs.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "operator_address",
@@ -2231,9 +2173,7 @@
     {
       "name": "neutron_vote",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -2280,9 +2220,7 @@
     {
       "name": "neutron_wasm_contract_labels",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -2317,9 +2255,7 @@
     {
       "name": "neutron_wasm_executed_actions",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",

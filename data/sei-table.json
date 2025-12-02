@@ -3,10 +3,8 @@
   "tables": [
     {
       "name": "sei_blocks",
-      "description": "Cosmos Blocks Table: This table provides information about blocks mined in the Cosmos ecosystem. It contains details such as block height and timestamp, validators, and other key metrics.",
-      "tags": [
-        "raw_table"
-      ],
+      "description": "Cosmos Blocks Table: This table provides information about blocks created in the Cosmos ecosystem. It contains details such as block height and timestamp, validators, and other key metrics.",
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -43,9 +41,7 @@
     {
       "name": "sei_event_attributes",
       "description": "This table contains various attributes of events from the cosmos blockchain ecosystem, providing insights into the transaction and block-level data.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -99,7 +95,7 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when a block was mined or added to the blockchain",
+          "description": "Timestamp when a block was created or added to the blockchain",
           "type": "TIMESTAMP"
         }
       ]
@@ -107,9 +103,7 @@
     {
       "name": "sei_message_event_attributes",
       "description": "This table contains a detailed view of blockchain events in the Cosmos ecosystem, providing attributes about each event occurrence. The attributes are gathered from a variety of blockchain sources.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -166,9 +160,7 @@
     {
       "name": "sei_transactions",
       "description": "This table contains transaction information from the Cosmos ecosystem, including their status, fees, and associated block information. It provides a comprehensive view of interactions within the blockchain.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -275,9 +267,7 @@
     {
       "name": "sei_tx_messages",
       "description": "Cosmos Blockchain Transaction Messages: This table contains raw data from transaction messages on various Cosmos chains. It provides a detailed view of the messages exchanged between validators in the Cosmos ecosystem.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -334,9 +324,7 @@
     {
       "name": "sei_validators",
       "description": "Active Cosmos validators, a crucial component of the Cosmos Network, store and validate blocks ensuring the integrity and security of the chain. Their details are vital for users to choose a validator that suits their needs.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "operator_address",

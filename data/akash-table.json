@@ -4,9 +4,7 @@
     {
       "name": "akash_block_events",
       "description": "This table provides a comprehensive overview of every action and occurrence within the Cosmos blockchain ecosystem. It includes detailed information about each block's transactions, enabling the analysis of the blockchain's behavior and evolution over time.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -15,7 +13,7 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when a block was proposed and mined within a blockchain network.",
+          "description": "Timestamp when a block was proposed and created within a blockchain network.",
           "type": "TIMESTAMP"
         },
         {
@@ -47,10 +45,8 @@
     },
     {
       "name": "akash_blocks",
-      "description": "Cosmos Blocks Table: This table provides information about blocks mined in the Cosmos ecosystem. It contains details such as block height and timestamp, validators, and other key metrics.",
-      "tags": [
-        "raw_table"
-      ],
+      "description": "Cosmos Blocks Table: This table provides information about blocks created in the Cosmos ecosystem. It contains details such as block height and timestamp, validators, and other key metrics.",
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -87,9 +83,7 @@
     {
       "name": "akash_message_events",
       "description": "This table contains event data extracted from Cosmos blockchain transactions. It provides a detailed view of the events occurring within the Cosmos ecosystem.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -141,9 +135,7 @@
     {
       "name": "akash_transactions",
       "description": "This table contains transaction information from the Cosmos ecosystem, including their status, fees, and associated block information. It provides a comprehensive view of interactions within the blockchain.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -210,9 +202,7 @@
     {
       "name": "akash_tx_messages",
       "description": "Cosmos Blockchain Transaction Messages: This table contains raw data from transaction messages on various Cosmos chains. It provides a detailed view of the messages exchanged between validators in the Cosmos ecosystem.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -269,9 +259,7 @@
     {
       "name": "akash_validators",
       "description": "Active Cosmos validators, a crucial component of the Cosmos Network, store and validate blocks ensuring the integrity and security of the chain. Their details are vital for users to choose a validator that suits their needs.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "operator_address",

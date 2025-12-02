@@ -4,9 +4,7 @@
     {
       "name": "accounting_balances",
       "description": "This table provides a snapshot of user balances across different networks within the Cosmos ecosystem. It includes both stable and unstaked coin balances, separate and in USDC, as well as unclaimed and claimed rewards.",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
@@ -16,7 +14,7 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp representing when a block was successfully mined or confirmed",
+          "description": "Timestamp representing when a block was successfully created or confirmed",
           "type": "TIMESTAMP",
           "mode": "NULLABLE"
         },
@@ -79,9 +77,7 @@
     {
       "name": "celestia_block_events",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -120,9 +116,7 @@
     {
       "name": "celestia_blocks",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -169,9 +163,7 @@
     {
       "name": "celestia_message_events",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -218,9 +210,7 @@
     {
       "name": "celestia_transactions",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -311,9 +301,7 @@
     {
       "name": "celestia_tx_messages",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -360,9 +348,7 @@
     {
       "name": "celestia_validators",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "operator_address",

@@ -3,83 +3,95 @@
   "tables": [
     {
       "name": "stride_block_events",
-      "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "description": "This table contains block-level events from the Cosmos ecosystem, capturing system events that occur at the block level rather than within individual transactions.",
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "event_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the event within the message or transaction"
         },
         {
           "name": "event_type",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Type of event occurring on the blockchain"
         },
         {
           "name": "event_attributes",
-          "type": "JSON"
+          "type": "JSON",
+          "description": "JSON object containing event attributes"
         },
         {
           "name": "source",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Source of the event data"
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         },
         {
           "name": "schema_version",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Version of the data schema"
         }
       ]
     },
     {
       "name": "stride_blocks",
-      "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "description": "This table provides information about blocks created in the Cosmos ecosystem. It contains details such as block height, timestamp, validators, and other key metrics.",
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "chain_id",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Identifier for the specific blockchain network within the Cosmos ecosystem"
         },
         {
           "name": "proposer_address",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the validator responsible for proposing the block"
         },
         {
           "name": "validators_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Hash representing the consensus state of the validators at the time"
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         },
         {
           "name": "messages_bytes",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Total size of the messages included in the block in bytes"
         },
         {
           "name": "tx_count",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Total number of transactions included in the block"
         },
         {
           "name": "signatures",
@@ -94,9 +106,7 @@
     {
       "name": "stride_celestia_tvl",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "date",
@@ -104,11 +114,13 @@
         },
         {
           "name": "token_denom",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination or unit of the token"
         },
         {
           "name": "token_amount",
-          "type": "FLOAT"
+          "type": "FLOAT",
+          "description": "Quantity of tokens transferred"
         },
         {
           "name": "amount_usd",
@@ -119,9 +131,7 @@
     {
       "name": "stride_conversion_rates",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "day",
@@ -129,7 +139,8 @@
         },
         {
           "name": "token_denom",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination or unit of the token"
         },
         {
           "name": "liquid_token_denom",
@@ -141,73 +152,82 @@
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     },
     {
       "name": "stride_delegate",
-      "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "description": "This table tracks delegation events in the Cosmos ecosystem, providing an overview of changes to the state of validators and their stakeholders.",
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "tx_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique transaction hash identifier within the network"
         },
         {
           "name": "tx_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Position of the transaction within the block"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "action_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the action within a message"
         },
         {
           "name": "sender",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account initiating the transaction"
         },
         {
           "name": "validator",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the validator participating in consensus"
         },
         {
           "name": "token_amount",
-          "type": "BIGNUMERIC"
+          "type": "BIGNUMERIC",
+          "description": "Quantity of tokens transferred"
         },
         {
           "name": "token_denom",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination or unit of the token"
         },
         {
           "name": "new_shares",
-          "type": "FLOAT"
+          "type": "FLOAT",
+          "description": "Updated shares for the delegator following the staking action"
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     },
     {
       "name": "stride_ics20_receive",
-      "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "description": "This table tracks IBC (Inter-Blockchain Communication) receive transactions across the Cosmos ecosystem, enabling users to visualize and analyze IBC transfers.",
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -215,11 +235,13 @@
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_section",
@@ -231,23 +253,28 @@
         },
         {
           "name": "tx_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique transaction hash identifier within the network"
         },
         {
           "name": "tx_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Position of the transaction within the block"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "event_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the event within the message or transaction"
         },
         {
           "name": "action_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the action within a message"
         },
         {
           "name": "action_subindex",
@@ -255,27 +282,33 @@
         },
         {
           "name": "sender",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account initiating the transaction"
         },
         {
           "name": "receiver",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account receiving tokens"
         },
         {
           "name": "token_amount",
-          "type": "BIGNUMERIC"
+          "type": "BIGNUMERIC",
+          "description": "Quantity of tokens transferred"
         },
         {
           "name": "token_denom",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination or unit of the token"
         },
         {
           "name": "token_path",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Route of token transfer between chains"
         },
         {
           "name": "memo",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Optional note accompanying a transaction"
         },
         {
           "name": "src_channel",
@@ -299,16 +332,15 @@
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     },
     {
       "name": "stride_ics20_transfer",
-      "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "description": "This table contains information about Cosmos IBC (Inter-Blockchain Communication) token transfers between different blockchains within the Cosmos ecosystem.",
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "key",
@@ -316,11 +348,13 @@
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_section",
@@ -332,23 +366,28 @@
         },
         {
           "name": "tx_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique transaction hash identifier within the network"
         },
         {
           "name": "tx_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Position of the transaction within the block"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "event_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the event within the message or transaction"
         },
         {
           "name": "action_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the action within a message"
         },
         {
           "name": "action_subindex",
@@ -356,27 +395,33 @@
         },
         {
           "name": "sender",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account initiating the transaction"
         },
         {
           "name": "receiver",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account receiving tokens"
         },
         {
           "name": "token_amount",
-          "type": "BIGNUMERIC"
+          "type": "BIGNUMERIC",
+          "description": "Quantity of tokens transferred"
         },
         {
           "name": "token_denom",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination or unit of the token"
         },
         {
           "name": "token_path",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Route of token transfer between chains"
         },
         {
           "name": "memo",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Optional note accompanying a transaction"
         },
         {
           "name": "src_channel",
@@ -396,48 +441,55 @@
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     },
     {
       "name": "stride_liquid_stake",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "tx_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique transaction hash identifier within the network"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "action_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the action within a message"
         },
         {
           "name": "sender",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account initiating the transaction"
         },
         {
           "name": "token_amount",
-          "type": "BIGNUMERIC"
+          "type": "BIGNUMERIC",
+          "description": "Quantity of tokens transferred"
         },
         {
           "name": "token_denom",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination or unit of the token"
         },
         {
           "name": "liquid_token_amount",
@@ -449,52 +501,60 @@
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     },
     {
       "name": "stride_liquid_unstake",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "tx_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique transaction hash identifier within the network"
         },
         {
           "name": "tx_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Position of the transaction within the block"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "action_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the action within a message"
         },
         {
           "name": "sender",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account initiating the transaction"
         },
         {
           "name": "token_amount",
-          "type": "BIGNUMERIC"
+          "type": "BIGNUMERIC",
+          "description": "Quantity of tokens transferred"
         },
         {
           "name": "token_denom",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination or unit of the token"
         },
         {
           "name": "liquid_token_amount",
@@ -506,93 +566,107 @@
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     },
     {
       "name": "stride_message_events",
-      "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "description": "This table contains a detailed view of blockchain events in the Cosmos ecosystem, providing attributes about each event occurrence.",
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "tx_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique transaction hash identifier within the network"
         },
         {
           "name": "tx_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Position of the transaction within the block"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "event_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the event within the message or transaction"
         },
         {
           "name": "event_type",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Type of event occurring on the blockchain"
         },
         {
           "name": "event_attributes",
-          "type": "JSON"
+          "type": "JSON",
+          "description": "JSON object containing event attributes"
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         },
         {
           "name": "schema_version",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Version of the data schema"
         }
       ]
     },
     {
       "name": "stride_redelegate",
-      "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "description": "Redelegation events in the Cosmos ecosystem track the transfer of validator delegations between validators, allowing for delegation rebalancing and optimizing staking efficiency.",
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "tx_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique transaction hash identifier within the network"
         },
         {
           "name": "tx_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Position of the transaction within the block"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "action_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the action within a message"
         },
         {
           "name": "sender",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account initiating the transaction"
         },
         {
           "name": "src_validator",
@@ -604,263 +678,311 @@
         },
         {
           "name": "token_amount",
-          "type": "BIGNUMERIC"
+          "type": "BIGNUMERIC",
+          "description": "Quantity of tokens transferred"
         },
         {
           "name": "token_denom",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination or unit of the token"
         },
         {
           "name": "completion_time",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Timestamp when the delegation action will be completed"
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     },
     {
       "name": "stride_send",
-      "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "description": "Cosmos Blockchain Transactions - Overview of executed transactions, their timestamps, and token movements between accounts.",
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "tx_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique transaction hash identifier within the network"
         },
         {
           "name": "tx_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Position of the transaction within the block"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "action_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the action within a message"
         },
         {
           "name": "sender",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account initiating the transaction"
         },
         {
           "name": "receiver",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account receiving tokens"
         },
         {
           "name": "token_amount",
-          "type": "BIGNUMERIC"
+          "type": "BIGNUMERIC",
+          "description": "Quantity of tokens transferred"
         },
         {
           "name": "token_denom",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination or unit of the token"
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     },
     {
       "name": "stride_transactions",
-      "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "description": "This table contains transaction information from the Cosmos ecosystem, including their status, fees, and associated block information. It provides a comprehensive view of interactions within the blockchain.",
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "chain_id",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Identifier for the specific blockchain network within the Cosmos ecosystem"
         },
         {
           "name": "tx_id",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique identifier for a transaction within a blockchain"
         },
         {
           "name": "tx_info",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Detailed information about a transaction"
         },
         {
           "name": "tx_log_message",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Logs and events generated by a transaction"
         },
         {
           "name": "fee",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Cost incurred by a sender for executing a transaction"
         },
         {
           "name": "tx_code",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Execution result of a transaction"
         },
         {
           "name": "tx_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Position of the transaction within the block"
         },
         {
           "name": "gas_used",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Total gas consumed by a transaction"
         },
         {
           "name": "gas_wanted",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Desired gas limit for transaction execution"
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         },
         {
           "name": "memo",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Optional note accompanying a transaction"
         },
         {
           "name": "schema_version",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Version of the data schema"
         },
         {
           "name": "fee_coins",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination and quantity of transaction fees"
         },
         {
           "name": "fee_granter",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Account responsible for paying transaction fees"
         },
         {
           "name": "fee_payer",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Account authorized to pay transaction fees"
         },
         {
           "name": "gas_limit",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Maximum gas that a transaction is allowed to consume"
         },
         {
           "name": "single_sign_mode",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Indicates single-signature transaction type"
         },
         {
           "name": "multi_sign_json",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Serialized multi-signature transaction data"
         },
         {
           "name": "timeout_height",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Block height after which transactions become invalid"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         }
       ]
     },
     {
       "name": "stride_undelegate",
-      "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "description": "This table tracks undelegation transactions in the Cosmos ecosystem. Undelegation occurs when a delegator withdraws their staked tokens from a validator.",
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "tx_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique transaction hash identifier within the network"
         },
         {
           "name": "tx_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Position of the transaction within the block"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "action_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the action within a message"
         },
         {
           "name": "sender",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account initiating the transaction"
         },
         {
           "name": "validator",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the validator participating in consensus"
         },
         {
           "name": "token_amount",
-          "type": "BIGNUMERIC"
+          "type": "BIGNUMERIC",
+          "description": "Quantity of tokens transferred"
         },
         {
           "name": "token_denom",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Denomination or unit of the token"
         },
         {
           "name": "completion_time",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Timestamp when the delegation action will be completed"
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     },
     {
       "name": "stride_withdraw_delegator_rewards",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "tx_hash",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique transaction hash identifier within the network"
         },
         {
           "name": "tx_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Position of the transaction within the block"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "action_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the action within a message"
         },
         {
           "name": "sender",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the account initiating the transaction"
         },
         {
           "name": "validator",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Address of the validator participating in consensus"
         },
         {
           "name": "reward",
@@ -869,36 +991,40 @@
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     },
     {
       "name": "stride_yield",
       "description": "",
-      "tags": [
-        "parsed_table"
-      ],
+      "tags": ["parsed_table"],
       "columns": [
         {
           "name": "block_height",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Unique identifier for each block in the blockchain"
         },
         {
           "name": "block_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the block was created in the blockchain"
         },
         {
           "name": "tx_id",
-          "type": "STRING"
+          "type": "STRING",
+          "description": "Unique identifier for a transaction within a blockchain"
         },
         {
           "name": "message_index",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Index of the message within a transaction"
         },
         {
           "name": "nth_action",
-          "type": "INTEGER"
+          "type": "INTEGER",
+          "description": "Ordinal position of a specific action within a transaction"
         },
         {
           "name": "rewards_address",
@@ -910,7 +1036,8 @@
         },
         {
           "name": "amount",
-          "type": "FLOAT"
+          "type": "FLOAT",
+          "description": "Value of assets or tokens transferred during a transaction"
         },
         {
           "name": "amount_usd",
@@ -918,7 +1045,8 @@
         },
         {
           "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
+          "type": "TIMESTAMP",
+          "description": "Timestamp when the data was ingested into the database"
         }
       ]
     }

@@ -4,9 +4,7 @@
     {
       "name": "quasar_atom_pro_lp_transactions",
       "description": "This table contains transaction data from LP (Liquidity Pool) transactions within the Cosmos ecosystem, providing insights into the trading activity and token movements within these pools. The data is sourced from various blockchains within the ecosystem.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "tx_id",
@@ -78,9 +76,7 @@
     {
       "name": "quasar_blocks",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -123,9 +119,7 @@
     {
       "name": "quasar_event_attributes",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -176,9 +170,7 @@
     {
       "name": "quasar_message_event_attributes",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -225,9 +217,7 @@
     {
       "name": "quasar_osmo_pro_lp_transactions",
       "description": "This dataset contains financial transactions for OSMO liquidity pool (LP) assets across the Cosmos ecosystem blockchain. It provides information on the sender and receiver of funds, transaction timestamps, and asset values.",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "tx_id",
@@ -246,7 +236,7 @@
         },
         {
           "name": "block_timestamp",
-          "description": "Timestamp when the transaction block was mined and confirmed",
+          "description": "Timestamp when the transaction block was created and confirmed",
           "type": "TIMESTAMP"
         },
         {
@@ -304,9 +294,7 @@
     {
       "name": "quasar_transactions",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
@@ -393,9 +381,7 @@
     {
       "name": "quasar_tx_messages",
       "description": "",
-      "tags": [
-        "raw_table"
-      ],
+      "tags": ["raw_table"],
       "columns": [
         {
           "name": "block_height",
