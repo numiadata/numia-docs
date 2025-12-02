@@ -1,8 +1,8 @@
 {
-  "dataset": "zigchain_testnet",
+  "dataset": "zigchain",
   "tables": [
     {
-      "name": "zigchain_testnet_block_events",
+      "name": "zigchain_block_events",
       "description": "",
       "tags": [
         "raw_table"
@@ -43,7 +43,7 @@
       ]
     },
     {
-      "name": "zigchain_testnet_blocks",
+      "name": "zigchain_blocks",
       "description": "",
       "tags": [
         "raw_table"
@@ -88,7 +88,7 @@
       ]
     },
     {
-      "name": "zigchain_testnet_message_events",
+      "name": "zigchain_message_events",
       "description": "",
       "tags": [
         "raw_table"
@@ -137,7 +137,7 @@
       ]
     },
     {
-      "name": "zigchain_testnet_transactions",
+      "name": "zigchain_transactions",
       "description": "",
       "tags": [
         "raw_table"
@@ -226,7 +226,7 @@
       ]
     },
     {
-      "name": "zigchain_testnet_tx_messages",
+      "name": "zigchain_tx_messages",
       "description": "",
       "tags": [
         "raw_table"
@@ -275,7 +275,7 @@
       ]
     },
     {
-      "name": "zigchain_testnet_validators",
+      "name": "zigchain_validators",
       "description": "",
       "tags": [
         "raw_table"
