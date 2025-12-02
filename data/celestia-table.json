@@ -159,6 +159,10 @@
         {
           "name": "signatures",
           "type": "JSON"
+        },
+        {
+          "name": "header",
+          "type": "JSON"
         }
       ]
     },
@@ -297,6 +301,10 @@
         {
           "name": "timeout_height",
           "type": "STRING"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
         }
       ]
     },

@@ -80,6 +80,14 @@
         {
           "name": "tx_count",
           "type": "INTEGER"
+        },
+        {
+          "name": "header",
+          "type": "JSON"
+        },
+        {
+          "name": "signatures",
+          "type": "JSON"
         }
       ]
     },
@@ -418,6 +426,10 @@
         {
           "name": "timeout_height",
           "type": "STRING"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
         }
       ]
     }

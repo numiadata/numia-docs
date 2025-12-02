@@ -732,6 +732,10 @@
         {
           "name": "ingestion_timestamp",
           "type": "TIMESTAMP"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
         }
       ]
     },

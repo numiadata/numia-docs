@@ -218,6 +218,10 @@
         {
           "name": "signatures",
           "type": "JSON"
+        },
+        {
+          "name": "header",
+          "type": "JSON"
         }
       ]
     },
@@ -275,6 +279,59 @@
         {
           "name": "expiration_timestamp",
           "type": "TIMESTAMP"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        }
+      ]
+    },
+    {
+      "name": "dydx_cancel_undelegate",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "tx_hash",
+          "type": "STRING"
+        },
+        {
+          "name": "tx_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "message_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "sender",
+          "type": "STRING"
+        },
+        {
+          "name": "validator",
+          "type": "STRING"
+        },
+        {
+          "name": "token_amount",
+          "type": "BIGNUMERIC"
+        },
+        {
+          "name": "token_denom",
+          "type": "STRING"
         },
         {
           "name": "ingestion_timestamp",
@@ -436,6 +493,135 @@
       ]
     },
     {
+      "name": "dydx_markets_metrics",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "timestamp",
+          "type": "TIMESTAMP",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "clobPairId",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "ticker",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "status",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "lastPrice",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "oraclePrice",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "priceChange24H",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "volume24H",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "trades24H",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "nextFundingRate",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "initialMarginFraction",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "maintenanceMarginFraction",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "basePositionNotional",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "openInterest",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "atomicResolution",
+          "type": "NUMERIC",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "quantumConversionExponent",
+          "type": "NUMERIC",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "tickSize",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "stepSize",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "subticksPerTick",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "stepBaseQuantums",
+          "type": "INTEGER",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "marketType",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "openInterestLowerCap",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "openInterestUpperCap",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        },
+        {
+          "name": "baseOpenInterest",
+          "type": "STRING",
+          "mode": "NULLABLE"
+        }
+      ]
+    },
+    {
       "name": "dydx_match",
       "description": "",
       "tags": [
@@ -548,6 +734,22 @@
         },
         {
           "name": "builder_code_fee_quantums_maker",
+          "type": "INTEGER"
+        },
+        {
+          "name": "order_router_address_maker",
+          "type": "STRING"
+        },
+        {
+          "name": "order_router_address_taker",
+          "type": "STRING"
+        },
+        {
+          "name": "order_router_fee_quote_quantums_maker",
+          "type": "INTEGER"
+        },
+        {
+          "name": "order_router_fee_quote_quantums_taker",
           "type": "INTEGER"
         },
         {
@@ -811,6 +1013,48 @@
       ]
     },
     {
+      "name": "dydx_mev_logs",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "raw_data",
+          "type": "STRING"
+        }
+      ]
+    },
+    {
+      "name": "dydx_orderbook_avg_daily_2_perc_depth",
+      "description": "",
+      "tags": [
+        "parsed_table"
+      ],
+      "columns": [
+        {
+          "name": "day",
+          "type": "DATE"
+        },
+        {
+          "name": "market_id",
+          "type": "STRING"
+        },
+        {
+          "name": "direction",
+          "type": "STRING"
+        },
+        {
+          "name": "avg_2_perc_depth",
+          "type": "FLOAT"
+        }
+      ]
+    },
+    {
       "name": "dydx_place_order",
       "description": "",
       "tags": [
@@ -899,6 +1143,10 @@
         },
         {
           "name": "builder_code_parameters",
+          "type": "STRING"
+        },
+        {
+          "name": "order_router_address",
           "type": "STRING"
         },
         {
@@ -1149,6 +1397,10 @@
         {
           "name": "timeout_height",
           "type": "STRING"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
         }
       ]
     },

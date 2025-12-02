@@ -222,6 +222,10 @@
         {
           "name": "signatures",
           "type": "JSON"
+        },
+        {
+          "name": "header",
+          "type": "JSON"
         }
       ]
     },
@@ -1347,12 +1351,24 @@
       ],
       "columns": [
         {
-          "name": "block_height",
-          "type": "INTEGER"
+          "name": "key",
+          "type": "STRING"
         },
         {
           "name": "block_timestamp",
           "type": "TIMESTAMP"
+        },
+        {
+          "name": "block_height",
+          "type": "INTEGER"
+        },
+        {
+          "name": "block_section",
+          "type": "STRING"
+        },
+        {
+          "name": "block_section_index",
+          "type": "INTEGER"
         },
         {
           "name": "tx_hash",
@@ -1367,7 +1383,15 @@
           "type": "INTEGER"
         },
         {
+          "name": "event_index",
+          "type": "INTEGER"
+        },
+        {
           "name": "action_index",
+          "type": "INTEGER"
+        },
+        {
+          "name": "action_subindex",
           "type": "INTEGER"
         },
         {
@@ -1675,6 +1699,10 @@
         {
           "name": "timeout_height",
           "type": "STRING"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
         }
       ]
     },

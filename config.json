@@ -199,6 +199,7 @@
                 "sql/querying-data/chains/stride",
                 "sql/querying-data/chains/terra",
                 "sql/querying-data/chains/umee",
+                "sql/querying-data/chains/zigchain",
                 "sql/querying-data/chains/zigchain_testnet"
               ]
             }

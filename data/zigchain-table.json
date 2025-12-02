@@ -33,12 +33,12 @@
           "type": "STRING"
         },
         {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
-        },
-        {
           "name": "schema_version",
           "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
         }
       ]
     },
@@ -70,10 +70,6 @@
           "type": "STRING"
         },
         {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
-        },
-        {
           "name": "messages_bytes",
           "type": "INTEGER"
         },
@@ -84,6 +80,14 @@
         {
           "name": "signatures",
           "type": "JSON"
+        },
+        {
+          "name": "header",
+          "type": "JSON"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
         }
       ]
     },
@@ -127,12 +131,12 @@
           "type": "JSON"
         },
         {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
-        },
-        {
           "name": "schema_version",
           "type": "INTEGER"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
         }
       ]
     },
@@ -188,10 +192,6 @@
           "type": "INTEGER"
         },
         {
-          "name": "ingestion_timestamp",
-          "type": "TIMESTAMP"
-        },
-        {
           "name": "schema_version",
           "type": "INTEGER"
         },
@@ -222,6 +222,14 @@
         {
           "name": "timeout_height",
           "type": "STRING"
+        },
+        {
+          "name": "ingestion_timestamp",
+          "type": "TIMESTAMP"
+        },
+        {
+          "name": "block_timestamp",
+          "type": "TIMESTAMP"
         }
       ]
     },
@@ -291,6 +299,14 @@
         },
         {
           "name": "consensus_pubkey",
+          "type": "STRING"
+        },
+        {
+          "name": "consensus_base64_pubkey",
+          "type": "STRING"
+        },
+        {
+          "name": "consensus_address",
           "type": "STRING"
         },
         {
@@ -364,14 +380,6 @@
         {
           "name": "ingestion_timestamp",
           "type": "TIMESTAMP"
-        },
-        {
-          "name": "consensus_base64_pubkey",
-          "type": "STRING"
-        },
-        {
-          "name": "consensus_address",
-          "type": "STRING"
         }
       ]
     }
