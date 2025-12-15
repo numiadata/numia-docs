@@ -358,18 +358,16 @@
                             "type": "string"
                           },
                           "buy": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                           },
                           "sell": {
-                            "type": "string",
-                            "nullable": true
+                            "type": "string"
                           },
                           "buy_at": {
-                            "type": "number"
+                            "type": "string"
                           },
                           "sell_at": {
-                            "type": "number"
+                            "type": "string"
                           }
                         },
                         "required": [
