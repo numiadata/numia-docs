@@ -13,13 +13,10 @@
       "url": "https://osmosis.numia.xyz"
     },
     {
+      "url": "https://stargaze.numia.xyz"
+    },
+    {
       "url": "https://stride.numia.xyz"
-    },
-    {
-      "url": "https://juno.numia.xyz"
-    },
-    {
-      "url": "https://umee.numia.xyz"
     },
     {
       "url": "https://terra2.numia.xyz"
@@ -28,28 +25,10 @@
       "url": "https://neutron.numia.xyz"
     },
     {
-      "url": "https://comdex.numia.xyz"
-    },
-    {
-      "url": "https://persistence.numia.xyz"
-    },
-    {
-      "url": "https://quicksilver.numia.xyz"
-    },
-    {
-      "url": "https://cryptoorgchain.numia.xyz"
-    },
-    {
-      "url": "https://axelar.numia.xyz"
-    },
-    {
       "url": "https://dydx.numia.xyz"
     },
     {
       "url": "https://celestia.numia.xyz"
-    },
-    {
-      "url": "https://nolus.numia.xyz"
     },
     {
       "url": "https://noble.numia.xyz"
@@ -78,7 +57,7 @@
   "info": {
     "version": "1.0.0",
     "title": "Numia - Api - Transactions by address",
-    "description": "\n            ### Supported Networks\n            \n- akash (https://akash.numia.xyz)\n- axelar (https://axelar.numia.xyz)\n- celestia (https://celestia.numia.xyz)\n- comdex (https://comdex.numia.xyz)\n- cosmoshub (https://cosmoshub.numia.xyz)\n- cryptoorgchain (https://cryptoorgchain.numia.xyz)\n- dydx (https://dydx.numia.xyz)\n- dymension (https://dymension.numia.xyz)\n- initia (https://initia.numia.xyz)\n- juno (https://juno.numia.xyz)\n- neutron (https://neutron.numia.xyz)\n- nillion (https://nillion.numia.xyz)\n- noble (https://noble.numia.xyz)\n- nolus (https://nolus.numia.xyz)\n- osmosis (https://osmosis.numia.xyz)\n- persistence (https://persistence.numia.xyz)\n- quicksilver (https://quicksilver.numia.xyz)\n- stride (https://stride.numia.xyz)\n- terra2 (https://terra2.numia.xyz)\n- umee (https://umee.numia.xyz)\n- zigchain (https://zigchain.numia.xyz)\n            "
+    "description": "\n            ### Supported Networks\n            \n- akash (https://akash.numia.xyz)\n- celestia (https://celestia.numia.xyz)\n- cosmoshub (https://cosmoshub.numia.xyz)\n- dydx (https://dydx.numia.xyz)\n- dymension (https://dymension.numia.xyz)\n- initia (https://initia.numia.xyz)\n- neutron (https://neutron.numia.xyz)\n- nillion (https://nillion.numia.xyz)\n- noble (https://noble.numia.xyz)\n- osmosis (https://osmosis.numia.xyz)\n- stargaze (https://stargaze.numia.xyz)\n- stride (https://stride.numia.xyz)\n- terra2 (https://terra2.numia.xyz)\n- zigchain (https://zigchain.numia.xyz)\n            "
   },
   "components": {
     "securitySchemes": {
@@ -103,13 +82,10 @@
             "url": "https://osmosis.numia.xyz"
           },
           {
+            "url": "https://stargaze.numia.xyz"
+          },
+          {
             "url": "https://stride.numia.xyz"
-          },
-          {
-            "url": "https://juno.numia.xyz"
-          },
-          {
-            "url": "https://umee.numia.xyz"
           },
           {
             "url": "https://terra2.numia.xyz"
@@ -118,28 +94,10 @@
             "url": "https://neutron.numia.xyz"
           },
           {
-            "url": "https://comdex.numia.xyz"
-          },
-          {
-            "url": "https://persistence.numia.xyz"
-          },
-          {
-            "url": "https://quicksilver.numia.xyz"
-          },
-          {
-            "url": "https://cryptoorgchain.numia.xyz"
-          },
-          {
-            "url": "https://axelar.numia.xyz"
-          },
-          {
             "url": "https://dydx.numia.xyz"
           },
           {
             "url": "https://celestia.numia.xyz"
-          },
-          {
-            "url": "https://nolus.numia.xyz"
           },
           {
             "url": "https://noble.numia.xyz"
