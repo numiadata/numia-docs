@@ -171,6 +171,501 @@
         "summary": "Dydx-transparency-trading-fees"
       }
     },
+    "/dydx/crm": {
+      "get": {
+        "tags": [
+          "dydx"
+        ],
+        "operationId": "dydx-crm",
+        "servers": [
+          {
+            "url": "https://dydx.numia.xyz"
+          }
+        ],
+        "parameters": [
+          {
+            "schema": {
+              "type": "string",
+              "minLength": 1,
+              "description": "Filter by specific user address"
+            },
+            "required": false,
+            "name": "address",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "user",
+                "all_time_trades",
+                "all_time_volume_usdc",
+                "all_time_fees_usdc",
+                "all_time_avg_trade_size",
+                "last_30d_trades",
+                "last_30d_volume_usdc",
+                "last_30d_fees_usdc",
+                "last_30d_avg_trade_size",
+                "first_activity_timestamp",
+                "last_activity_timestamp",
+                "all_time_tx_count",
+                "labels",
+                "tier"
+              ],
+              "default": "all_time_volume_usdc",
+              "description": "Field to sort by (excluding array fields)"
+            },
+            "required": false,
+            "name": "sort_by",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "enum": [
+                "ASC",
+                "DESC"
+              ],
+              "default": "DESC",
+              "description": "Sort direction"
+            },
+            "required": false,
+            "name": "sort_order",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 50,
+              "default": 10,
+              "description": "Number of results to return"
+            },
+            "required": false,
+            "name": "limit",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "integer",
+              "nullable": true,
+              "minimum": 0,
+              "default": 0,
+              "description": "Number of results to skip"
+            },
+            "required": false,
+            "name": "offset",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Minimum all-time trades"
+            },
+            "required": false,
+            "name": "min_all_time_trades",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Maximum all-time trades"
+            },
+            "required": false,
+            "name": "max_all_time_trades",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Minimum all-time volume in USDC"
+            },
+            "required": false,
+            "name": "min_all_time_volume_usdc",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Maximum all-time volume in USDC"
+            },
+            "required": false,
+            "name": "max_all_time_volume_usdc",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Minimum all-time fees in USDC"
+            },
+            "required": false,
+            "name": "min_all_time_fees_usdc",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Maximum all-time fees in USDC"
+            },
+            "required": false,
+            "name": "max_all_time_fees_usdc",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Minimum all-time average trade size"
+            },
+            "required": false,
+            "name": "min_all_time_avg_trade_size",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Maximum all-time average trade size"
+            },
+            "required": false,
+            "name": "max_all_time_avg_trade_size",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Minimum last 30d trades"
+            },
+            "required": false,
+            "name": "min_last_30d_trades",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Maximum last 30d trades"
+            },
+            "required": false,
+            "name": "max_last_30d_trades",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Minimum last 30d volume in USDC"
+            },
+            "required": false,
+            "name": "min_last_30d_volume_usdc",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Maximum last 30d volume in USDC"
+            },
+            "required": false,
+            "name": "max_last_30d_volume_usdc",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Minimum last 30d fees in USDC"
+            },
+            "required": false,
+            "name": "min_last_30d_fees_usdc",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Maximum last 30d fees in USDC"
+            },
+            "required": false,
+            "name": "max_last_30d_fees_usdc",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Minimum last 30d average trade size"
+            },
+            "required": false,
+            "name": "min_last_30d_avg_trade_size",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Maximum last 30d average trade size"
+            },
+            "required": false,
+            "name": "max_last_30d_avg_trade_size",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Minimum all-time transaction count"
+            },
+            "required": false,
+            "name": "min_all_time_tx_count",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "number",
+              "nullable": true,
+              "description": "Maximum all-time transaction count"
+            },
+            "required": false,
+            "name": "max_all_time_tx_count",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Filter users with first activity after this date (format: YYYY-MM-DD HH:MM:SS)"
+            },
+            "required": false,
+            "name": "first_activity_after",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Filter users with first activity before this date (format: YYYY-MM-DD HH:MM:SS)"
+            },
+            "required": false,
+            "name": "first_activity_before",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Filter users with last activity after this date (format: YYYY-MM-DD HH:MM:SS)"
+            },
+            "required": false,
+            "name": "last_activity_after",
+            "in": "query"
+          },
+          {
+            "schema": {
+              "type": "string",
+              "description": "Filter users with last activity before this date (format: YYYY-MM-DD HH:MM:SS)"
+            },
+            "required": false,
+            "name": "last_activity_before",
+            "in": "query"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Status: 200",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "user": {
+                        "type": "string",
+                        "description": "User address"
+                      },
+                      "all_time_trades": {
+                        "type": "number",
+                        "nullable": true,
+                        "description": "Total number of trades (all-time)"
+                      },
+                      "all_time_volume_usdc": {
+                        "type": "number",
+                        "nullable": true,
+                        "description": "Total trading volume in USDC (all-time)"
+                      },
+                      "all_time_fees_usdc": {
+                        "type": "number",
+                        "nullable": true,
+                        "description": "Total fees paid in USDC (all-time)"
+                      },
+                      "all_time_avg_trade_size": {
+                        "type": "number",
+                        "nullable": true,
+                        "description": "Average trade size in USDC (all-time)"
+                      },
+                      "all_time_top_3_markets": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Top 3 markets by volume (all-time)"
+                      },
+                      "all_time_top_3_volumes": {
+                        "type": "array",
+                        "items": {
+                          "type": "number",
+                          "nullable": true
+                        },
+                        "description": "Top 3 market volumes in USDC (all-time)"
+                      },
+                      "last_30d_trades": {
+                        "type": "number",
+                        "nullable": true,
+                        "description": "Total number of trades (last 30 days)"
+                      },
+                      "last_30d_volume_usdc": {
+                        "type": "number",
+                        "nullable": true,
+                        "description": "Total trading volume in USDC (last 30 days)"
+                      },
+                      "last_30d_fees_usdc": {
+                        "type": "number",
+                        "nullable": true,
+                        "description": "Total fees paid in USDC (last 30 days)"
+                      },
+                      "last_30d_avg_trade_size": {
+                        "type": "number",
+                        "nullable": true,
+                        "description": "Average trade size in USDC (last 30 days)"
+                      },
+                      "last_30d_top_3_markets": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Top 3 markets by volume (last 30 days)"
+                      },
+                      "last_30d_top_3_volumes": {
+                        "type": "array",
+                        "items": {
+                          "type": "number",
+                          "nullable": true
+                        },
+                        "description": "Top 3 market volumes in USDC (last 30 days)"
+                      },
+                      "first_activity_timestamp": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Timestamp of first activity"
+                      },
+                      "last_activity_timestamp": {
+                        "type": "string",
+                        "nullable": true,
+                        "description": "Timestamp of last activity"
+                      },
+                      "all_time_tx_count": {
+                        "type": "number",
+                        "nullable": true,
+                        "description": "Total transaction count (all-time)"
+                      },
+                      "labels": {
+                        "type": "array",
+                        "items": {
+                          "type": "string"
+                        },
+                        "description": "Label assigned to user"
+                      },
+                      "tier": {
+                        "type": "number",
+                        "nullable": true,
+                        "description": "Tier assigned to user"
+                      },
+                      "liquid_balance_dydx": {
+                        "type": "number",
+                        "description": "Current liquid DYDX balance from LCD"
+                      },
+                      "staking_balance_dydx": {
+                        "type": "number",
+                        "description": "Current staked DYDX balance from LCD"
+                      },
+                      "total_balance_dydx": {
+                        "type": "number",
+                        "description": "Total DYDX balance (liquid + staked)"
+                      },
+                      "total_equity_usdc": {
+                        "type": "number",
+                        "description": "Total account equity in USDC across all subaccounts"
+                      },
+                      "total_free_collateral_usdc": {
+                        "type": "number",
+                        "description": "Total available margin/collateral in USDC"
+                      },
+                      "subaccounts_count": {
+                        "type": "number",
+                        "description": "Number of subaccounts (parent + isolated)"
+                      },
+                      "total_trading_rewards": {
+                        "type": "string",
+                        "description": "Cumulative trading rewards earned"
+                      },
+                      "open_positions_count": {
+                        "type": "number",
+                        "description": "Total number of open perpetual positions"
+                      },
+                      "total_unrealized_pnl_usdc": {
+                        "type": "number",
+                        "description": "Sum of unrealized PnL across all open positions"
+                      },
+                      "asset_positions_count": {
+                        "type": "number",
+                        "description": "Number of different assets held"
+                      },
+                      "has_open_positions": {
+                        "type": "boolean",
+                        "description": "Whether user has any open positions"
+                      },
+                      "margin_enabled": {
+                        "type": "boolean",
+                        "description": "Whether margin trading is enabled on any subaccount"
+                      },
+                      "last_position_update_height": {
+                        "type": "string",
+                        "description": "Most recent block height where positions were updated"
+                      }
+                    },
+                    "required": [
+                      "user",
+                      "all_time_trades",
+                      "all_time_volume_usdc",
+                      "all_time_fees_usdc",
+                      "all_time_avg_trade_size",
+                      "all_time_top_3_markets",
+                      "all_time_top_3_volumes",
+                      "last_30d_trades",
+                      "last_30d_volume_usdc",
+                      "last_30d_fees_usdc",
+                      "last_30d_avg_trade_size",
+                      "last_30d_top_3_markets",
+                      "last_30d_top_3_volumes",
+                      "first_activity_timestamp",
+                      "last_activity_timestamp",
+                      "all_time_tx_count"
+                    ]
+                  }
+                }
+              }
+            }
+          }
+        },
+        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "summary": "Dydx-crm"
+      }
+    },
     "/dydx/tokenomics/chain_revenue": {
       "get": {
         "servers": [
