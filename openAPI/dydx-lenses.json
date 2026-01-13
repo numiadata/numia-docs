@@ -97,7 +97,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Activity Retention Rate"
       }
     },
@@ -183,7 +183,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Activity User Distribution By Activity"
       }
     },
@@ -266,7 +266,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Activity User Distribution By Deposits"
       }
     },
@@ -349,7 +349,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Activity User Distribution By Trades"
       }
     },
@@ -404,7 +404,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Business Expenses Share By Destination"
       }
     },
@@ -450,7 +450,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Business Pnl Summary"
       }
     },
@@ -532,7 +532,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Governance Community Pool Usage"
       }
     },
@@ -636,7 +636,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Liquidation Flow By Market"
       }
     },
@@ -720,7 +720,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Liquidation List"
       }
     },
@@ -768,7 +768,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Aux Market Listings"
       }
     },
@@ -852,7 +852,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Trading Funding Rate"
       }
     },
@@ -936,7 +936,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Trading Open Interest"
       }
     },
@@ -1008,7 +1008,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Traders Ranking"
       }
     },
@@ -1083,7 +1083,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Trading Trades Count"
       }
     },
@@ -1159,7 +1159,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Trading Fees"
       }
     },
@@ -1185,7 +1185,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Trading Share By Pool"
       }
     },
@@ -1225,7 +1225,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Aux Validator Listings"
       }
     },
@@ -1280,7 +1280,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Staking Share By Validator"
       }
     },
@@ -1365,7 +1365,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Tokenomics Wallets Module Accounts"
       }
     },
@@ -1420,7 +1420,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Tokenomics Wallets Treasury Subdao"
       }
     },
@@ -1498,7 +1498,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Total Rewards"
       }
     },
@@ -1572,7 +1572,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Users Period Rewards"
       }
     },
@@ -1640,7 +1640,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Apr Split"
       }
     },
@@ -1666,7 +1666,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Get Trading Volume Overview"
       }
     }

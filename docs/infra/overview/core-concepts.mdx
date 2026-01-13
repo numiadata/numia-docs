@@ -39,32 +39,32 @@ NumiaInfra supports both REST (LCD) and RPC endpoints, each suited for specific 
 
 Understanding when to use REST or RPC will help optimize performance and development workflows.
 
-## Standardization with Cosmos SDK
+## Multi-Chain Support
 
-NumiaInfra aligns with the Cosmos SDK’s conventions for node functionality and data structure. This ensures consistency across chains built on the Cosmos SDK and simplifies development for applications that interact with multiple chains.
+Numia's infrastructure supports any blockchain network, providing standardized access patterns across different architectures:
 
 <CardList cols={3}>
-<Card 
-  title="Modularity"
-  description="Developers can include only the modules they need, ensuring streamlined and efficient blockchains."
+<Card
+  title="EVM Chains"
+  description="Full support for Ethereum and EVM-compatible networks including L2s and sidechains."
   icon="cube"
   iconType="regular"
   iconSize="32px"
 />
-<Card 
-  title="Interoperability"
-  description="Chains built with the Cosmos SDK can communicate with each other through the Inter-Blockchain Communication (IBC) protocol."
+<Card
+  title="Cosmos Ecosystem"
+  description="Native support for Cosmos SDK chains with IBC interoperability and Tendermint consensus."
   icon="plugs"
   iconType="regular"
   iconSize="32px"
 />
-<Card 
-  title="Tendermint Core"
-  description="Provides fast finality, high throughput, and secure consensus."
+<Card
+  title="Other L1s"
+  description="Support for Solana, and other major blockchain architectures with optimized endpoints."
   icon="speedometer"
   iconType="regular"
   iconSize="32px"
 />
 </CardList>
 
-For more information on the Cosmos SDK, visit the [official documentation](https://docs.cosmos.network/).
+Our infrastructure adapts to each chain's specific requirements while providing consistent developer experience.

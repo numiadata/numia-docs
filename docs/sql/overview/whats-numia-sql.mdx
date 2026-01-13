@@ -1,12 +1,12 @@
 ---
-title: What's NumiaSQL?
+title: What's Numia's Data Warehouse?
 ---
 
 
 
-NumiaSQL operates nodes on every chain we support, enabling real-time streaming of on-chain data into our BigQuery data warehouse through a custom-built, reliable data pipeline. BigQuery provides access to this data via its SQL interface, Google Sheets, and Google Looker Studio—versatile tools for data analysis that influenced our decision to use it over other options.
+Numia's Data Warehouse is a real-time streaming of on-chain data into different Data Warehouse technologies. Our main partner is BigQuery, but we also can ingest data to any Database technologies. BigQuery provides access to this data via its SQL interface, Google Sheets, and Google Looker Studio—versatile tools for data analysis that influenced our decision to use it over other options.
 
-Currently, Numia provides SQL-based access to on-chain data through BigQuery, so you can query billions of rows using SQL-like syntax, making it an ideal solution for working with Numia’s extensive datasets.
+We can index your L1 or L2 or build models on top of exisitng chains and make them available to you our your community.
 
 <Image 
   src="/media/sql/sql-overview-2.png"
@@ -25,5 +25,24 @@ Currently, Numia provides SQL-based access to on-chain data through BigQuery, so
 />
 
 <Callout type="info" title="Note">
-Google charges based on the amount of data processed by each query, regardless of computation power. Numia’s raw data tables can be terabytes in size, but we regularly create smaller, optimized tables to reduce query costs. For tips on minimizing expenses, refer to the [Optimze Queries](/sql/querying-data/optimize-queries) page.
+Google charges based on the amount of data processed by each query, regardless of computation power. Numia's raw data tables can be terabytes in size, but we regularly create smaller, optimized tables to reduce query costs. For tips on minimizing expenses, refer to the [Optimze Queries](/sql/querying-data/optimize-queries) page.
 </Callout>
+
+## Other Databases
+
+While Numia's Data Warehouse is optimized for BigQuery, we understand that different organizations have varying infrastructure requirements and database preferences. If you're an L1 blockchain project or a company that needs on-chain data delivered to a different database system, Numia can accommodate your needs.
+
+Numia supports exporting and delivering blockchain data to various database systems beyond BigQuery. We work with enterprises and blockchain projects to provide flexible data delivery solutions that integrate seamlessly with your existing data infrastructure.
+
+**Supported Databases:**
+- **ClickHouse** - High-performance columnar database for analytical workloads
+- **Snowflake** - Cloud-based data warehousing platform
+- **PostgreSQL** - Powerful open-source relational database
+- **MongoDB** - Leading NoSQL document database
+- **DuckDB** - Fast in-process analytical database
+
+If you're interested in receiving Numia's blockchain data in any of these database systems, please reach out to our team to discuss your specific requirements and use case.
+
+**Contact our team:**
+- Email: support@numia.xyz
+- Or reach out through our [website contact form](https://numia.xyz/contact)

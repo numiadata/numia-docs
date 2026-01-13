@@ -14,7 +14,7 @@ export function addCreditsToDescription(paths: OpenAPIV3.PathsObject): boolean {
         | Record<string, string>;
       const xCredit = attributes?.["x-credits"] || 5;
 
-      const priceTag = `import PriceTag from "@site/src/components/PriceTag";\n\n<PriceTag price={${xCredit}}/>`;
+      const priceTag = `import PriceTag from "@site/components/PriceTag";\n\n<PriceTag price={${xCredit}}/>`;
       const priceTagRegex = /<PriceTag price={\d+}\/>/;
       const justTag = `<PriceTag price={${xCredit}}/>`;
 

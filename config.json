@@ -3,20 +3,21 @@
   "description": "Explore our documentation to BUILD, MONITOR and GROW your project in web3.",
   "images": {
     "logo": "media/logo_numia_docs_black.svg",
-    "favicon": "media/favicon.ico",
+    "favicon": "media/favicon.png",
     "darkLogo": "media/logo_numia_docs.svg"
   },
   "languages": [
     "en"
   ],
   "styles": {
-    "mainColor": "#F78B4B",
+    "mainColor": "#F9412C",
     "navbarColor": "#FFFFFF",
-    "navbarDarkModeColor": "#10171F",
-    "backgroundDarkModeColor": "#10171F",
+    "navbarDarkModeColor": "#000000",
+    "backgroundDarkModeColor": "#000000",
     "logoSize": "large",
     "navbarMode": "tabbed",
-    "pagination": true
+    "pagination": true,
+    "buttonBorderRadius": "0px"
   },
   "colorMode": {
     "default": "dark",
@@ -43,28 +44,16 @@
   "changelog": false,
   "navbar": [
     {
-      "label": "Engage",
-      "sidebarRef": "engage"
-    },
-    {
-      "label": "SQL",
-      "sidebarRef": "sql"
-    },
-    {
       "label": "Infra",
-      "sidebarRef": "infra"
+      "sidebarRef": "infraCategory"
     },
     {
-      "label": "AI",
-      "sidebarRef": "ai"
+      "label": "Analytics",
+      "sidebarRef": "analyticsCategory"
     },
     {
-      "label": "Lenses",
-      "sidebarRef": "lenses"
-    },
-    {
-      "label": "API",
-      "sidebarRef": "apiReference"
+      "label": "Growth",
+      "sidebarRef": "growthCategory"
     }
   ],
   "externalLinks": [
@@ -75,371 +64,417 @@
   ],
   "sidebars": [
     {
-      "sidebarRef": "engage",
+      "sidebarRef": "infraCategory",
       "categories": [
         {
-          "categoryName": "Overview",
-          "pages": [
-            "engage/overview/whats-numia-engage",
-            "engage/overview/getting-started",
-            "engage/overview/core-concepts"
-          ]
-        },
-        {
-          "categoryName": "Publisher Guide",
-          "pages": [
-            "engage/publisher-guide/getting-started",
-            "engage/publisher-guide/ads-placement",
-            {
-              "page": "engage/publisher-guide/api-integration/introduction",
-              "groupName": "API Integration",
-              "subpages": [
-                "engage/publisher-guide/api-integration/environments",
-                {
-                  "groupName": "API Guides",
-                  "subpages": [
-                    "engage/publisher-guide/api-integration/guides/get-campaign",
-                    "engage/publisher-guide/api-integration/guides/track-events"
-                  ]
-                },
-                {
-                  "groupName": "API Endpoints",
-                  "subpages": [
-                    "reference/engage-ads/track-event",
-                    "reference/engage-ads/get-campaign-for-address",
-                    "reference/engage-ads/get-campaign-for-addresses",
-                    "reference/engage-ads/redirect-click-link"
-                  ]
-                }
-              ]
-            },
-            "engage/publisher-guide/earnings-payments"
-          ]
-        },
-        {
-          "categoryName": "Advertiser Guide",
-          "pages": [
-            "engage/advertiser-guide/getting-started",
-            "engage/advertiser-guide/campaign-monitoring",
-            "engage/advertiser-guide/advertisement-reference"
-          ]
-        },
-        {
-          "categoryName": "Attribution",
-          "pages": [
-            "engage/attribution/overview",
-            "engage/attribution/attribution-sdk"
-          ]
-        }
-      ]
-    },
-    {
-      "sidebarRef": "sql",
-      "categories": [
-        {
-          "categoryName": "Overview",
-          "pages": [
-            "sql/overview/whats-numia-sql",
-            "sql/overview/usecases",
-            "sql/overview/getting-started",
-            {
-              "groupName": "Core Concepts",
-              "page": "sql/overview/core-concepts/core-concepts",
-              "subpages": [
-                "sql/overview/core-concepts/raw-tables",
-                "sql/overview/core-concepts/processed-tables"
-              ]
-            }
-          ]
-        },
-        {
-          "categoryName": "Querying Data",
-          "pages": [
-            "sql/querying-data/how-to-query-numia-datasets",
-            "sql/querying-data/optimize-queries",
-            "sql/querying-data/sample-sql-queries",
-            {
-              "groupName": "Available Chains",
-              "page": "sql/querying-data/chains/available-chains",
-              "subpages": [
-                "sql/querying-data/chains/akash",
-                "sql/querying-data/chains/axelar_dojo",
-                "sql/querying-data/chains/celestia",
-                "sql/querying-data/chains/comdex",
-                "sql/querying-data/chains/core",
-                "sql/querying-data/chains/cosmos",
-                "sql/querying-data/chains/cosmoshub",
-                "sql/querying-data/chains/crescent",
-                "sql/querying-data/chains/crypto_org",
-                "sql/querying-data/chains/dydx_mainnet",
-                "sql/querying-data/chains/dydx_testnet",
-                "sql/querying-data/chains/evmos",
-                "sql/querying-data/chains/injective",
-                "sql/querying-data/chains/juno",
-                "sql/querying-data/chains/kaiyo",
-                "sql/querying-data/chains/kava",
-                "sql/querying-data/chains/lenses",
-                "sql/querying-data/chains/mars",
-                "sql/querying-data/chains/migaloo",
-                "sql/querying-data/chains/mocha",
-                "sql/querying-data/chains/neutron",
-                "sql/querying-data/chains/nillion",
-                "sql/querying-data/chains/nillion_chain_testnet",
-                "sql/querying-data/chains/noble",
-                "sql/querying-data/chains/osmosis",
-                "sql/querying-data/chains/pacific",
-                "sql/querying-data/chains/phoenix",
-                "sql/querying-data/chains/pirin",
-                "sql/querying-data/chains/quasar",
-                "sql/querying-data/chains/quasar_testnet",
-                "sql/querying-data/chains/quicksilver",
-                "sql/querying-data/chains/secret",
-                "sql/querying-data/chains/sei",
-                "sql/querying-data/chains/stargaze",
-                "sql/querying-data/chains/stride",
-                "sql/querying-data/chains/terra",
-                "sql/querying-data/chains/umee",
-                "sql/querying-data/chains/zigchain",
-                "sql/querying-data/chains/zigchain_testnet"
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "sidebarRef": "infra",
-      "categories": [
-        {
-          "categoryName": "Overview",
-          "pages": [
-            "infra/overview/whats-numia-infra",
-            "infra/overview/supported-chains",
-            "infra/overview/getting-started",
-            "infra/overview/core-concepts"
-          ]
-        },
-        {
-          "categoryName": "Examples",
-          "pages": [
-            "infra/examples/query-balances",
-            "infra/examples/query-transactions",
-            "infra/examples/query-governance-modules",
-            "infra/examples/retrieve-historical-data",
-            "infra/examples/interact-with-validators",
-            "infra/examples/advanced-use-cases-rpc"
-          ]
-        }
-      ]
-    },
-    {
-      "sidebarRef": "lenses",
-      "categories": [
-        {
-          "categoryName": "Overview",
-          "pages": [
-            "lenses/overview/whats-numia-lenses",
-            "lenses/core-components/widgets",
-            "lenses/core-components/data-export",
-            "lenses/core-components/snapshot-tool"
-          ]
-        }
-      ]
-    },
-    {
-      "sidebarRef": "ai",
-      "categories": [
-        {
-          "categoryName": "Overview",
-          "pages": [
-            "ai/overview/whats-numia-ai",
-            "ai/overview/how-numia-ai-works",
-            "ai/overview/best-practices-limitations"
-          ]
-        }
-      ]
-    },
-    {
-      "sidebarRef": "apiReference",
-      "categories": [
-        {
-          "categoryName": "Overview",
-          "pages": [
-            "api/overview/whats-numia-api",
-            "api/overview/getting-started"
-          ]
-        },
-        {
-          "categoryName": "Advanced APIs",
+          "categoryName": "Data Warehouse",
           "pages": [
             {
-              "groupName": "Osmosis",
+              "groupName": "Overview",
               "subpages": [
-                "api/osmosis-overview",
+                "sql/overview/whats-numia-sql",
+                "sql/overview/usecases",
+                "sql/overview/getting-started",
                 {
-                  "groupName": "Pools",
+                  "groupName": "Core Concepts",
+                  "page": "sql/overview/core-concepts/core-concepts",
                   "subpages": [
-                    "reference/osmosis/get-pools-apr-range-v-2",
-                    "reference/osmosis/get-cl-pools-position-apr-v-2",
-                    "reference/osmosis/get-token-pair-historical-chart",
-                    "reference/osmosis/get-pools-fees",
-                    "reference/osmosis/get-pool-stream-data",
-                    "reference/osmosis/get-position-info",
-                    "reference/osmosis/get-pools-liquidity-over-time",
-                    "reference/osmosis/get-pools-depth-current",
-                    "reference/osmosis/get-pools-depth-over-time",
-                    "reference/osmosis/get-pools-apr",
-                    "reference/osmosis/get-pools-apr-range",
-                    "reference/osmosis/get-cl-pools-position-apr",
-                    "reference/osmosis/get-pairs-summary-v-2"
-                  ]
-                },
-                {
-                  "groupName": "Tokens",
-                  "subpages": [
-                    "reference/osmosis/get-token-historical-chart",
-                    "reference/osmosis/get-token-real-time-price",
-                    "reference/osmosis/get-token-data"
-                  ]
-                },
-                {
-                  "groupName": "Users",
-                  "subpages": [
-                    "reference/osmosis/get-rewards-estimation-for-bech-32-address",
-                    "reference/osmosis/get-rewards-estimation-for-address-and-denom",
-                    "reference/osmosis/get-rewards-estimation-for-address",
-                    "reference/osmosis/get-portfolio-over-time",
-                    "reference/osmosis/get-portfolio-current",
-                    "reference/osmosis/get-closed-limit-orders-history"
-                  ]
-                },
-                {
-                  "groupName": "Chain",
-                  "subpages": [
-                    "reference/osmosis/get-i-bc-chain-status",
-                    "reference/osmosis/get-apr",
-                    "reference/osmosis/get-supply-metrics",
-                    "reference/osmosis/get-chain-revenue",
-                    "reference/osmosis/get-trading-metrics"
-                  ]
-                },
-                {
-                  "groupName": "Earn",
-                  "subpages": [
-                    "reference/osmosis/get-earn-strategies",
-                    "reference/osmosis/get-balances-for-earn-strategies",
-                    "reference/osmosis/get-apr-for-earn-strategies",
-                    "reference/osmosis/get-tvl-for-earn-strategies"
+                    "sql/overview/core-concepts/raw-tables",
+                    "sql/overview/core-concepts/processed-tables"
                   ]
                 }
               ]
             },
             {
-              "groupName": "Osmosis-lenses",
+              "groupName": "Querying Data",
               "subpages": [
-                "reference/osmosis-lenses/get-aux-pool-listings",
-                "reference/osmosis-lenses/get-activity-active-whales",
-                "reference/osmosis-lenses/get-kpi-cumulative-trading-volume",
-                "reference/osmosis-lenses/get-kpi-cumulative-protocol-revenue",
-                "reference/osmosis-lenses/get-kpi-cumulative-supply-side-revenue",
-                "reference/osmosis-lenses/get-liquidity-flow",
-                "reference/osmosis-lenses/get-tokenomics-assets-in-chain",
-                "reference/osmosis-lenses/get-top-assets-by-volume-date-range",
-                "reference/osmosis-lenses/get-top-assets-by-volume-last-period-hours"
-              ]
-            },
-            {
-              "groupName": "Cosmos",
-              "subpages": [
-                "reference/cosmos/get-aez-revenue-share-by-consumer",
-                "reference/cosmos/get-liquid-staking-share-by-provider",
-                "reference/cosmos/get-liquid-staking-flow-by-provider"
-              ]
-            },
-            {
-              "groupName": "Dydx-lenses",
-              "subpages": [
-                "reference/dydx-lenses/get-activity-retention-rate",
-                "reference/dydx-lenses/get-activity-user-distribution-by-activity",
-                "reference/dydx-lenses/get-activity-user-distribution-by-deposits",
-                "reference/dydx-lenses/get-activity-user-distribution-by-trades",
-                "reference/dydx-lenses/get-business-expenses-share-by-destination",
-                "reference/dydx-lenses/get-business-pnl-summary",
-                "reference/dydx-lenses/get-governance-community-pool-usage",
-                "reference/dydx-lenses/get-liquidation-flow-by-market",
-                "reference/dydx-lenses/get-liquidation-list",
-                "reference/dydx-lenses/get-aux-market-listings",
-                "reference/dydx-lenses/get-trading-funding-rate",
-                "reference/dydx-lenses/get-trading-open-interest",
-                "reference/dydx-lenses/get-traders-ranking",
-                "reference/dydx-lenses/get-trading-trades-count",
-                "reference/dydx-lenses/get-trading-fees",
-                "reference/dydx-lenses/get-trading-share-by-pool",
-                "reference/dydx-lenses/get-aux-validator-listings",
-                "reference/dydx-lenses/get-staking-share-by-validator",
-                "reference/dydx-lenses/get-tokenomics-wallets-module-accounts",
-                "reference/dydx-lenses/get-tokenomics-wallets-treasury-subdao",
-                "reference/dydx-lenses/get-total-rewards",
-                "reference/dydx-lenses/get-users-period-rewards",
-                "reference/dydx-lenses/get-apr-split",
-                "reference/dydx-lenses/get-trading-volume-overview"
-              ]
-            },
-            {
-              "groupName": "Dydx",
-              "subpages": [
-                "reference/dydx/dydx-transparency-supply",
-                "reference/dydx/dydx-transparency-staking-apr",
-                "reference/dydx/dydx-transparency-trading-fees",
-                "reference/dydx/dydx-crm",
-                "reference/dydx/dydx-nabla-chain-revenue",
-                "reference/dydx/dydx-nabla-staking-supply",
-                "reference/dydx/dydx-nabla-buystake-address-metrics"
-              ]
-            },
-            {
-              "groupName": "Xion",
-              "subpages": [
-                "reference/xion/get-abstract-account-authenticators",
-                "reference/xion/get-abstract-accounts-by-authenticator",
-                "reference/xion/get-abstract-accounts-details-by-authenticator",
-                "reference/xion/get-smart-account-permissions"
-              ]
-            },
-            {
-              "groupName": "Neutron",
-              "subpages": [
+                "sql/querying-data/how-to-query-numia-datasets",
+                "sql/querying-data/optimize-queries",
+                "sql/querying-data/sample-sql-queries",
                 {
-                  "groupName": "Dex",
+                  "groupName": "Available Chains",
+                  "page": "sql/querying-data/chains/available-chains",
                   "subpages": [
-                    "reference/neutron/get-dex-pairs",
-                    "reference/neutron/get-dex-liquidity",
-                    "reference/neutron/get-dex-price",
-                    "reference/neutron/get-dex-trades",
-                    "reference/neutron/get-dex-swap-volume"
+                    "sql/querying-data/chains/akash",
+                    "sql/querying-data/chains/axelar_dojo",
+                    "sql/querying-data/chains/celestia",
+                    "sql/querying-data/chains/comdex",
+                    "sql/querying-data/chains/core",
+                    "sql/querying-data/chains/cosmos",
+                    "sql/querying-data/chains/cosmoshub",
+                    "sql/querying-data/chains/crescent",
+                    "sql/querying-data/chains/crypto_org",
+                    "sql/querying-data/chains/dydx_mainnet",
+                    "sql/querying-data/chains/dydx_testnet",
+                    "sql/querying-data/chains/evmos",
+                    "sql/querying-data/chains/injective",
+                    "sql/querying-data/chains/juno",
+                    "sql/querying-data/chains/kaiyo",
+                    "sql/querying-data/chains/kava",
+                    "sql/querying-data/chains/lenses",
+                    "sql/querying-data/chains/mars",
+                    "sql/querying-data/chains/migaloo",
+                    "sql/querying-data/chains/mocha",
+                    "sql/querying-data/chains/neutron",
+                    "sql/querying-data/chains/nillion",
+                    "sql/querying-data/chains/nillion_chain_testnet",
+                    "sql/querying-data/chains/noble",
+                    "sql/querying-data/chains/osmosis",
+                    "sql/querying-data/chains/pacific",
+                    "sql/querying-data/chains/phoenix",
+                    "sql/querying-data/chains/pirin",
+                    "sql/querying-data/chains/quasar",
+                    "sql/querying-data/chains/quasar_testnet",
+                    "sql/querying-data/chains/quicksilver",
+                    "sql/querying-data/chains/secret",
+                    "sql/querying-data/chains/sei",
+                    "sql/querying-data/chains/stargaze",
+                    "sql/querying-data/chains/stride",
+                    "sql/querying-data/chains/terra",
+                    "sql/querying-data/chains/umee",
+                    "sql/querying-data/chains/zigchain",
+                    "sql/querying-data/chains/zigchain_testnet"
                   ]
-                },
-                "reference/neutron/get-trading-volume"
-              ]
-            },
-            {
-              "groupName": "Stablecoins",
-              "subpages": [
-                "reference/stablecoins/volume-per-token",
-                "reference/stablecoins/issuing-over-time",
-                "reference/stablecoins/active-senders-over-time",
-                "reference/stablecoins/volume-by-category-over-time",
-                "reference/stablecoins/whale-alerts",
-                "reference/stablecoins/bridge-inflow",
-                "reference/stablecoins/bridge-outflow",
-                "reference/stablecoins/bridge-netflow",
-                "reference/stablecoins/bridge-cross-chain-volume",
-                "reference/stablecoins/bridge-netflow-over-time",
-                "reference/stablecoins/category-total-inflow",
-                "reference/stablecoins/category-total-outflow",
-                "reference/stablecoins/category-total-netflow"
+                }
               ]
             }
+          ]
+        },
+        {
+          "categoryName": "Nodes as a Service",
+          "pages": [
+            {
+              "groupName": "Overview",
+              "subpages": [
+                "infra/overview/whats-numia-infra",
+                "infra/overview/supported-chains",
+                "infra/overview/getting-started",
+                "infra/overview/core-concepts"
+              ]
+            },
+            {
+              "groupName": "Examples",
+              "subpages": [
+                "infra/examples/query-balances",
+                "infra/examples/query-transactions",
+                "infra/examples/query-governance-modules",
+                "infra/examples/retrieve-historical-data",
+                "infra/examples/interact-with-validators",
+                "infra/examples/advanced-use-cases-rpc"
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Real-time API",
+          "pages": [
+            {
+              "groupName": "Overview",
+              "subpages": [
+                "api/overview/whats-numia-api",
+                "api/overview/getting-started"
+              ]
+            },
+            {
+              "groupName": "Advanced APIs",
+              "subpages": [
+                {
+                  "groupName": "Osmosis",
+                  "subpages": [
+                    "api/osmosis-overview",
+                    {
+                      "groupName": "Pools",
+                      "subpages": [
+                        "reference/osmosis/get-pools-apr-range-v-2",
+                        "reference/osmosis/get-cl-pools-position-apr-v-2",
+                        "reference/osmosis/get-token-pair-historical-chart",
+                        "reference/osmosis/get-pools-fees",
+                        "reference/osmosis/get-pool-stream-data",
+                        "reference/osmosis/get-position-info",
+                        "reference/osmosis/get-pools-liquidity-over-time",
+                        "reference/osmosis/get-pools-depth-current",
+                        "reference/osmosis/get-pools-depth-over-time",
+                        "reference/osmosis/get-pools-apr",
+                        "reference/osmosis/get-pools-apr-range",
+                        "reference/osmosis/get-cl-pools-position-apr",
+                        "reference/osmosis/get-pairs-summary-v-2"
+                      ]
+                    },
+                    {
+                      "groupName": "Tokens",
+                      "subpages": [
+                        "reference/osmosis/get-token-historical-chart",
+                        "reference/osmosis/get-token-real-time-price",
+                        "reference/osmosis/get-token-data"
+                      ]
+                    },
+                    {
+                      "groupName": "Users",
+                      "subpages": [
+                        "reference/osmosis/get-rewards-estimation-for-bech-32-address",
+                        "reference/osmosis/get-rewards-estimation-for-address-and-denom",
+                        "reference/osmosis/get-rewards-estimation-for-address",
+                        "reference/osmosis/get-portfolio-over-time",
+                        "reference/osmosis/get-portfolio-current",
+                        "reference/osmosis/get-closed-limit-orders-history"
+                      ]
+                    },
+                    {
+                      "groupName": "Chain",
+                      "subpages": [
+                        "reference/osmosis/get-i-bc-chain-status",
+                        "reference/osmosis/get-apr",
+                        "reference/osmosis/get-supply-metrics",
+                        "reference/osmosis/get-chain-revenue",
+                        "reference/osmosis/get-trading-metrics"
+                      ]
+                    },
+                    {
+                      "groupName": "Earn",
+                      "subpages": [
+                        "reference/osmosis/get-earn-strategies",
+                        "reference/osmosis/get-balances-for-earn-strategies",
+                        "reference/osmosis/get-apr-for-earn-strategies",
+                        "reference/osmosis/get-tvl-for-earn-strategies"
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "groupName": "Osmosis-lenses",
+                  "subpages": [
+                    "reference/osmosis-lenses/get-aux-pool-listings",
+                    "reference/osmosis-lenses/get-activity-active-whales",
+                    "reference/osmosis-lenses/get-kpi-cumulative-trading-volume",
+                    "reference/osmosis-lenses/get-kpi-cumulative-protocol-revenue",
+                    "reference/osmosis-lenses/get-kpi-cumulative-supply-side-revenue",
+                    "reference/osmosis-lenses/get-liquidity-flow",
+                    "reference/osmosis-lenses/get-tokenomics-assets-in-chain",
+                    "reference/osmosis-lenses/get-top-assets-by-volume-date-range",
+                    "reference/osmosis-lenses/get-top-assets-by-volume-last-period-hours"
+                  ]
+                },
+                {
+                  "groupName": "Cosmos",
+                  "subpages": [
+                    "reference/cosmos/get-aez-revenue-share-by-consumer",
+                    "reference/cosmos/get-liquid-staking-share-by-provider",
+                    "reference/cosmos/get-liquid-staking-flow-by-provider"
+                  ]
+                },
+                {
+                  "groupName": "Dydx-lenses",
+                  "subpages": [
+                    "reference/dydx-lenses/get-activity-retention-rate",
+                    "reference/dydx-lenses/get-activity-user-distribution-by-activity",
+                    "reference/dydx-lenses/get-activity-user-distribution-by-deposits",
+                    "reference/dydx-lenses/get-activity-user-distribution-by-trades",
+                    "reference/dydx-lenses/get-business-expenses-share-by-destination",
+                    "reference/dydx-lenses/get-business-pnl-summary",
+                    "reference/dydx-lenses/get-governance-community-pool-usage",
+                    "reference/dydx-lenses/get-liquidation-flow-by-market",
+                    "reference/dydx-lenses/get-liquidation-list",
+                    "reference/dydx-lenses/get-aux-market-listings",
+                    "reference/dydx-lenses/get-trading-funding-rate",
+                    "reference/dydx-lenses/get-trading-open-interest",
+                    "reference/dydx-lenses/get-traders-ranking",
+                    "reference/dydx-lenses/get-trading-trades-count",
+                    "reference/dydx-lenses/get-trading-fees",
+                    "reference/dydx-lenses/get-trading-share-by-pool",
+                    "reference/dydx-lenses/get-aux-validator-listings",
+                    "reference/dydx-lenses/get-staking-share-by-validator",
+                    "reference/dydx-lenses/get-tokenomics-wallets-module-accounts",
+                    "reference/dydx-lenses/get-tokenomics-wallets-treasury-subdao",
+                    "reference/dydx-lenses/get-total-rewards",
+                    "reference/dydx-lenses/get-users-period-rewards",
+                    "reference/dydx-lenses/get-apr-split",
+                    "reference/dydx-lenses/get-trading-volume-overview"
+                  ]
+                },
+                {
+                  "groupName": "Dydx",
+                  "subpages": [
+                    "reference/dydx/dydx-transparency-supply",
+                    "reference/dydx/dydx-transparency-staking-apr",
+                    "reference/dydx/dydx-transparency-trading-fees",
+                    "reference/dydx/dydx-crm",
+                    "reference/dydx/dydx-nabla-chain-revenue",
+                    "reference/dydx/dydx-nabla-staking-supply",
+                    "reference/dydx/dydx-nabla-buystake-address-metrics"
+                  ]
+                },
+                {
+                  "groupName": "Xion",
+                  "subpages": [
+                    "reference/xion/get-abstract-account-authenticators",
+                    "reference/xion/get-abstract-accounts-by-authenticator",
+                    "reference/xion/get-abstract-accounts-details-by-authenticator",
+                    "reference/xion/get-smart-account-permissions"
+                  ]
+                },
+                {
+                  "groupName": "Neutron",
+                  "subpages": [
+                    {
+                      "groupName": "Dex",
+                      "subpages": [
+                        "reference/neutron/get-dex-pairs",
+                        "reference/neutron/get-dex-liquidity",
+                        "reference/neutron/get-dex-price",
+                        "reference/neutron/get-dex-trades",
+                        "reference/neutron/get-dex-swap-volume"
+                      ]
+                    },
+                    "reference/neutron/get-trading-volume"
+                  ]
+                },
+                {
+                  "groupName": "Stablecoins",
+                  "subpages": [
+                    "reference/stablecoins/volume-per-token",
+                    "reference/stablecoins/issuing-over-time",
+                    "reference/stablecoins/active-senders-over-time",
+                    "reference/stablecoins/volume-by-category-over-time",
+                    "reference/stablecoins/whale-alerts",
+                    "reference/stablecoins/bridge-inflow",
+                    "reference/stablecoins/bridge-outflow",
+                    "reference/stablecoins/bridge-netflow",
+                    "reference/stablecoins/bridge-cross-chain-volume",
+                    "reference/stablecoins/bridge-netflow-over-time",
+                    "reference/stablecoins/category-total-inflow",
+                    "reference/stablecoins/category-total-outflow",
+                    "reference/stablecoins/category-total-netflow"
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Platform Connectors",
+          "pages": [
+            "platform-connectors/overview/overview"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "analyticsCategory",
+      "categories": [
+        {
+          "categoryName": "Public Dashboards",
+          "pages": [
+            {
+              "groupName": "Overview",
+              "subpages": [
+                "lenses/overview/whats-numia-lenses",
+                "lenses/core-components/widgets",
+                "lenses/core-components/data-export",
+                "lenses/core-components/snapshot-tool"
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "AI Analysts",
+          "pages": [
+            {
+              "groupName": "Overview",
+              "subpages": [
+                "ai/overview/whats-numia-ai",
+                "ai/overview/how-numia-ai-works",
+                "ai/overview/best-practices-limitations"
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Explorers",
+          "pages": [
+            "explorers/overview/overview",
+            "explorers/token-pulse"
+          ]
+        },
+        {
+          "categoryName": "Data Science as a Service",
+          "pages": [
+            "data-science/overview/overview"
+          ]
+        }
+      ]
+    },
+    {
+      "sidebarRef": "growthCategory",
+      "categories": [
+        {
+          "categoryName": "Onchain CRM",
+          "pages": [
+            "onchain-crm/overview/overview"
+          ]
+        },
+        {
+          "categoryName": "Ad Platform",
+          "pages": [
+            {
+              "groupName": "Overview",
+              "subpages": [
+                "engage/overview/whats-numia-engage",
+                "engage/overview/getting-started",
+                "engage/overview/core-concepts"
+              ]
+            },
+            {
+              "groupName": "Publisher Guide",
+              "subpages": [
+                "engage/publisher-guide/getting-started",
+                "engage/publisher-guide/ads-placement",
+                {
+                  "page": "engage/publisher-guide/api-integration/introduction",
+                  "groupName": "API Integration",
+                  "subpages": [
+                    "engage/publisher-guide/api-integration/environments",
+                    {
+                      "groupName": "API Guides",
+                      "subpages": [
+                        "engage/publisher-guide/api-integration/guides/get-campaign",
+                        "engage/publisher-guide/api-integration/guides/track-events"
+                      ]
+                    },
+                    {
+                      "groupName": "API Endpoints",
+                      "subpages": [
+                        "reference/engage-ads/track-event",
+                        "reference/engage-ads/get-campaign-for-address",
+                        "reference/engage-ads/get-campaign-for-addresses",
+                        "reference/engage-ads/redirect-click-link"
+                      ]
+                    }
+                  ]
+                },
+                "engage/publisher-guide/earnings-payments"
+              ]
+            },
+            {
+              "groupName": "Advertiser Guide",
+              "subpages": [
+                "engage/advertiser-guide/getting-started",
+                "engage/advertiser-guide/campaign-monitoring",
+                "engage/advertiser-guide/advertisement-reference"
+              ]
+            },
+            {
+              "groupName": "Attribution",
+              "subpages": [
+                "engage/attribution/overview",
+                "engage/attribution/attribution-sdk"
+              ]
+            }
+          ]
+        },
+        {
+          "categoryName": "Notifications",
+          "pages": [
+            "notifications/overview/overview"
           ]
         }
       ]

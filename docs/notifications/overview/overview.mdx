@@ -1,0 +1,234 @@
+---
+title: Overview
+slug: /notifications/overview
+---
+
+# Notifications
+
+![Numia Notifications](/media/notifications.png)
+
+Numia Notifications provides a real-time, developer-friendly subscription system for tracking blockchain events across any network. Built for L1 blockchains and protocols, our notification infrastructure eliminates the need for custom indexing solutions, allowing your ecosystem to deliver responsive, event-driven experiences.
+
+## The Challenge
+
+In today's fast-paced, multi-chain environment, on-chain actions happen every second: transfers, swaps, NFT mints, liquidations, staking events, governance votes, and more. Most development teams spend significant resources building and maintaining infrastructure just to monitor these events—running indexers and listeners simply to power basic alerts or user activity triggers.
+
+This infrastructure burden slows down development, increases operational costs, and diverts engineering resources from core product innovation.
+
+## The Solution
+
+Numia Notifications eliminates this friction by providing a production-ready, real-time event monitoring system that works across any blockchain. We handle the complex infrastructure so your developers can focus on building exceptional user experiences.
+
+## How It Works
+
+### 1. Continuous Indexing
+Numia continuously indexes on-chain activity across your blockchain network, capturing every transaction, smart contract call, and state change in real-time.
+
+### 2. Event Detection & Structuring
+Events are automatically parsed, decoded, and structured through our real-time API layer, transforming raw blockchain data into clean, actionable event payloads.
+
+### 3. Flexible Subscriptions
+Developers define subscriptions based on:
+- Specific wallet addresses
+- Smart contract addresses
+- Event types and methods
+- Custom filtering criteria
+
+### 4. Instant Delivery
+Matching events are instantly pushed to your backend via webhooks, delivering structured JSON payloads with sub-second latency.
+
+## Key Features
+
+### Event-Based Subscriptions
+Monitor any standard or custom on-chain event across your blockchain:
+- Token transfers and swaps
+- NFT mints, claims, and trades
+- Staking and delegation events
+- Governance proposals and votes
+- Liquidations and margin calls
+- Smart contract interactions
+- Custom protocol-specific events
+
+Filter by wallet address, contract address, event type, or custom parameters to receive only the notifications you need.
+
+### Push-Style Webhooks
+Real-time, structured JSON payloads delivered directly to your backend endpoints:
+- Sub-second latency from on-chain to delivery
+- Reliable delivery with automatic retries
+- Configurable rate limiting and batching
+- Webhook signature verification for security
+
+### Custom Notification Templates
+Pre-built templates for common blockchain use cases:
+- Wallet activity monitoring
+- Staking and unstaking events
+- Governance participation tracking
+- NFT marketplace activity
+- DeFi protocol interactions
+- Liquidation alerts
+- Bridge and cross-chain events
+
+Customize any template or create entirely new notification patterns for your specific needs.
+
+### Multi-Chain Support
+Monitor events across multiple blockchain networks simultaneously with a single integration. Numia Notifications is designed to be chain-agnostic, supporting any blockchain network.
+
+### Scalable Architecture
+Handle thousands of concurrent subscriptions across multiple chains without performance degradation. Our infrastructure scales with your needs, from small pilot projects to ecosystem-wide deployments.
+
+## Business Value
+
+### For Blockchain Networks
+**Modern Developer Experience**: Offer plug-and-play event monitoring that speeds up developer onboarding and reduces time-to-market for new applications.
+
+**Ecosystem Growth**: Lower the barrier to entry for developers building on your chain by providing production-ready notification infrastructure.
+
+**Competitive Advantage**: Differentiate your network with superior developer tooling and real-time capabilities.
+
+### For Protocol Developers
+**Faster Development**: Eliminate the need to build and maintain custom indexers or event listeners.
+
+**Focus on Core Product**: Spend engineering resources on features that differentiate your protocol, not infrastructure.
+
+**Better User Experience**: Power responsive, real-time applications that keep users engaged and informed.
+
+### For End Users
+**Stay Informed**: Receive instant notifications about relevant on-chain activities affecting their assets or interests.
+
+**Take Action Faster**: React to market opportunities, governance proposals, or protocol events without delay.
+
+**Personalized Experience**: Get notifications tailored to their specific on-chain behavior and preferences.
+
+## Use Cases
+
+### Wallet & User Engagement
+- **Transaction Alerts**: Notify users of incoming/outgoing transfers, successful transactions, or failed operations
+- **Activity Monitoring**: Track wallet interactions across protocols and applications
+- **Balance Changes**: Alert users when their token balances cross certain thresholds
+- **Security Notifications**: Detect and alert on suspicious wallet activity
+
+### Governance & Community
+- **Proposal Tracking**: Notify community members of new governance proposals
+- **Vote Reminders**: Alert token holders when proposals are nearing vote deadlines
+- **Participation Rewards**: Trigger reward distributions based on governance engagement
+- **Outcome Notifications**: Inform stakeholders when proposals pass or fail
+
+### DeFi & Trading
+- **Liquidation Protection**: Alert users when positions approach liquidation thresholds
+- **Price Movement Triggers**: Notify traders of significant price changes or arbitrage opportunities
+- **Liquidity Pool Events**: Track LP position changes, fee earnings, and impermanent loss
+- **Yield Farming**: Alert users to new farming opportunities or changing APYs
+
+### NFT Marketplaces
+- **Mint Notifications**: Alert users when new NFT collections launch or specific items become available
+- **Bid Activity**: Notify sellers of new bids or offer updates
+- **Sale Confirmations**: Alert buyers and sellers of successful NFT transactions
+- **Rarity Tracking**: Monitor and alert on rare NFT traits or collection floor prices
+
+### Protocol Automation
+- **Reward Distribution**: Automatically trigger reward calculations and distributions based on on-chain activity
+- **Airdrop Eligibility**: Track qualifying actions and trigger airdrop eligibility notifications
+- **Bot Operations**: Power trading bots, liquidation bots, or arbitrage bots with real-time event data
+- **Analytics Triggers**: Feed event data into analytics systems for real-time dashboard updates
+
+### Enterprise Integration
+- **Compliance Monitoring**: Track transactions requiring regulatory reporting or compliance actions
+- **Treasury Management**: Monitor institutional wallet activity and multi-sig operations
+- **Audit Trails**: Maintain real-time logs of all on-chain activities for audit purposes
+- **Risk Management**: Alert risk teams to large transactions or unusual patterns
+
+## Technical Specifications
+
+### Delivery Methods
+- **Webhooks**: HTTPS POST requests to your endpoints
+- **Message Queues**: Integration with your existing queue infrastructure (coming soon)
+- **WebSockets**: Real-time bidirectional communication (coming soon)
+
+### Performance Characteristics
+- **Latency**: Sub-second from on-chain to delivery (typically 100-500ms)
+- **Throughput**: Support for 10,000+ subscriptions per chain
+- **Reliability**: 99.9% delivery guarantee with automatic retries
+- **Scalability**: Horizontally scalable to support ecosystem-wide deployments
+
+### Data Format
+All notifications include:
+- Event type and category
+- Timestamp (block time and wall clock)
+- Block height and transaction hash
+- Decoded event parameters
+- Relevant addresses (sender, receiver, contract)
+- Transaction metadata and fees
+- Custom fields based on event type
+
+### Security Features
+- Webhook signature verification
+- IP allowlisting
+- Rate limiting and throttling
+- Encrypted payload delivery
+- Access control and authentication
+
+## Integration
+
+### Quick Start
+1. **Define Subscriptions**: Specify which events you want to monitor
+2. **Configure Webhooks**: Provide your endpoint URL and authentication details
+3. **Test & Deploy**: Use our testing tools to verify integration before going live
+4. **Monitor & Scale**: Track delivery metrics and scale subscriptions as needed
+
+### Developer Resources
+- Comprehensive API documentation
+- Sample code and SDKs (JavaScript, Python, Go)
+- Testing playground and webhook simulator
+- Integration guides for popular frameworks
+- Technical support from Numia engineers
+
+## Pricing
+
+Notification pricing is designed to scale with your needs:
+- **Development**: Free tier for testing and small-scale deployments
+- **Production**: Usage-based pricing per notification delivered
+- **Enterprise**: Custom pricing for L1s and large-scale deployments with SLA guarantees
+
+Contact our team for detailed pricing information tailored to your expected volume.
+
+## Getting Started
+
+### For L1 Blockchains
+Deploy Numia Notifications across your entire network to provide world-class developer tooling for your ecosystem. We'll work with you to:
+- Integrate with your chain's event system
+- Customize notification templates for your protocol
+- Provide white-label options for ecosystem branding
+- Offer dedicated support for ecosystem developers
+
+### For Protocol Developers
+Start monitoring events relevant to your protocol in minutes:
+- Define your event subscriptions
+- Configure webhook endpoints
+- Test with sample events
+- Deploy to production
+
+### Schedule a Demo
+See Numia Notifications in action with your blockchain's data:
+- **Email**: notifications@numia.xyz
+- **Book a call**: [numia.xyz/contact](https://numia.xyz/contact)
+
+### Technical Documentation
+Access our full API documentation and integration guides:
+- **API Docs**: [docs.numia.xyz/notifications/api](https://docs.numia.xyz)
+- **GitHub Examples**: Sample implementations and SDKs
+
+## Support
+
+**Technical Support**
+Email: notifications@numia.xyz
+Response time: < 24 hours (Enterprise: < 4 hours)
+
+**Status & Monitoring**
+Real-time system status: status.numia.xyz
+Delivery metrics dashboard: Available in your account portal
+
+---
+
+Stop building infrastructure. Start building experiences.
+
+Contact us today to enable real-time notifications for your blockchain.

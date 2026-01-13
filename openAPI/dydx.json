@@ -81,7 +81,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Dydx-transparency-supply"
       }
     },
@@ -124,7 +124,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Dydx-transparency-staking-apr"
       }
     },
@@ -167,7 +167,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Dydx-transparency-trading-fees"
       }
     },
@@ -728,7 +728,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Dydx-nabla-chain-revenue"
       }
     },
@@ -821,7 +821,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Dydx-nabla-staking-supply"
       }
     },
@@ -924,7 +924,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Dydx-nabla-buystake-address-metrics"
       }
     }

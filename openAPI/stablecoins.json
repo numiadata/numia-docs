@@ -137,7 +137,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Volume-per-token"
       }
     },
@@ -261,7 +261,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Issuing-over-time"
       }
     },
@@ -379,7 +379,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Active-senders-over-time"
       }
     },
@@ -489,7 +489,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Volume-by-category-over-time"
       }
     },
@@ -570,7 +570,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Whale-alerts"
       }
     },
@@ -690,7 +690,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Bridge-inflow"
       }
     },
@@ -810,7 +810,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Bridge-outflow"
       }
     },
@@ -930,7 +930,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Bridge-netflow"
       }
     },
@@ -1054,7 +1054,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Bridge-cross-chain-volume"
       }
     },
@@ -1177,7 +1177,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Bridge-netflow-over-time"
       }
     },
@@ -1283,7 +1283,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Category-total-inflow"
       }
     },
@@ -1389,7 +1389,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Category-total-outflow"
       }
     },
@@ -1495,7 +1495,7 @@
             }
           }
         },
-        "description": "import PriceTag from \"@site/src/components/PriceTag\";\n\n<PriceTag price={5}/>",
+        "description": "import PriceTag from \"@site/components/PriceTag\";\n\n<PriceTag price={5}/>",
         "summary": "Category-total-netflow"
       }
     }

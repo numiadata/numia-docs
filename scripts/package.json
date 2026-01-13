@@ -8,6 +8,7 @@
     "table-metadata": "bun run src/cmd/tables-metadata.ts",
     "column-descriptions": "bun run src/cmd/generate-column-descriptions.ts",
     "generate-sql-docs": "bun run column-descriptions && bun run table-metadata",
+    "regenerate-mdx": "bun run src/cmd/regenerate-mdx-from-json.ts",
     "check": "bun run src/check.ts"
   },
   "devDependencies": {
