@@ -37,9 +37,7 @@ function Tabs({ tables }) {
         {tables.map((table) => (
           <button
             key={table.name}
-            className={
-              activeTab === table.name ? "tabButton activeTab" : "tabButton"
-            }
+            className={activeTab === table.name ? "tabButton activeTab" : "tabButton"}
             onClick={() => setActiveTab(table.name)}
           >
             {table.name}
@@ -47,20 +45,14 @@ function Tabs({ tables }) {
         ))}
       </div>
       <div className="tabContent">
-        {tables.map((table) =>
-          activeTab === table.name ? (
-            <TableDetail key={table.name} table={table} />
-          ) : null
-        )}
+        {tables.map((table) => (activeTab === table.name ? <TableDetail key={table.name} table={table} /> : null))}
       </div>
     </div>
   );
 }
 
-function TablesByTag({ data, tag }) {
-  const filteredTables = data.tables.filter((table) =>
-    table.tags.includes(tag)
-  );
+function Table({ data, tag }) {
+  const filteredTables = data.tables.filter((table) => table.tags.includes(tag));
 
   if (filteredTables.length === 0) {
     return <div>No tables found with tag "{tag}".</div>;
@@ -73,4 +65,4 @@ function TablesByTag({ data, tag }) {
   );
 }
 
-export default TablesByTag;
+export default Table;

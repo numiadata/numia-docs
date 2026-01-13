@@ -62,7 +62,7 @@ function createFile(datasetName: string, hasRawTables: boolean, hasParsedTables:
 title: ${pageTitle}
 ---
 
-import Table from '@site/components/JsonToTable/JsonToTable';
+
 import json from '@site/data/${datasetName}-table.json'
 
 
